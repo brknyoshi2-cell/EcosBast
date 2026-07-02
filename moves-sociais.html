@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Moves: Sociais</title>
+<style>
+.move {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
+}
+.move h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+.move .trigger {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+.move .attribute {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.15rem 0.7rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-variant: small-caps;
+  margin-bottom: 0.8rem;
+}
+.result {
+  margin: 0.4rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid transparent;
+}
+.result.success {
+  border-left-color: var(--success);
+}
+.result.partial {
+  border-left-color: var(--gold);
+}
+.result.failure {
+  border-left-color: var(--danger);
+}
+.result strong {
+  color: var(--accent);
+}
+.choice {
+  background: rgba(184, 134, 11, 0.08);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  margin: 0.2rem 0;
+  font-style: italic;
+}
+.choice strong {
+  color: var(--gold);
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="moves-oficio.html">Moves</a> &gt; <strong>Sociais</strong>
+</div>
+
+<div class="container">
+
+<h2>Os Laços do Coração — Moves Sociais</h2>
+<p>Estes são os moves que definem as conexões do protagonista com as pessoas ao seu redor. São ações de coração e vulnerabilidade — o que você <em>sente</em> e <em>compartilha</em>.</p>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="move">
+<h4>CONVERSAR PROFUNDAMENTE</h4>
+<div class="trigger">Quando você tem uma conversa significativa com um NPC (na Guilda ou na cidade). Bônus se for no local favorito do NPC.</div>
+<span class="attribute">CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> A conversa flui. Você aprende algo importante. Relógio +1. +1 Eco. <em>[VÍNCULO+] + [DOMÉSTICO]</em></div>
+<div class="result partial"><strong>7–9:</strong> A conversa é boa, mas <strong>escolha 1:</strong> (a) o NPC desvia de um tópico importante — você sente que há algo escondido, (b) você se expõe demais e se sente vulnerável (ganha Tag [ECO]), (c) a conversa termina abruptamente — algo aconteceu. Avance o Relógio OU aprenda o segredo.</div>
+<div class="result failure"><strong>6−:</strong> O NPC se fecha. Vocês discutem. Relógio recua 1. <em>[VÍNCULO−] + [TENSÃO]</em></div>
+</div>
+
+<div class="move">
+<h4>CONSOLAR OU ACOLHER</h4>
+<div class="trigger">Quando alguém está ferido, triste ou em perigo emocional, e você tenta ajudar.</div>
+<span class="attribute">CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> Conforto real. A pessoa confia mais. Relógio +1.</div>
+<div class="result partial"><strong>7–9:</strong> Ajuda, mas <strong>escolha 1:</strong> (a) a pessoa não se abre completamente — você sente que há mais, (b) você se envolve emocionalmente demais (ganha Tag [ECO]), (c) o momento é interrompido por algo externo.</div>
+<div class="result failure"><strong>6−:</strong> Seu conforto não funciona — ou piora as coisas. A pessoa se afasta.</div>
+</div>
+
+<div class="move">
+<h4>CUIDAR DE ALGUÉM</h4>
+<div class="trigger">Quando você faz algo prático para ajudar alguém: faz sopa, cuida quando doente, ouve sem julgar, ajuda com tarefa difícil.</div>
+<span class="attribute">MÃOS ou CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> A pessoa se sente cuidada. Relógio +1. +1 Eco. <em>[DOMÉSTICO] + [VÍNCULO+]</em></div>
+<div class="result partial"><strong>7–9:</strong> Ajuda, mas <strong>escolha 1:</strong> (a) a pessoa se sente invadida — você foi intenso demais, (b) você se cansa demais (perde 1 Ato no próximo dia), (c) você fez algo errado sem perceber — precisa consertar depois.</div>
+<div class="result failure"><strong>6−:</strong> A pessoa rejeita a ajuda, ou você faz algo errado. Relógio recua 1. <em>[VÍNCULO−]</em></div>
+</div>
+
+<div class="move">
+<h4>NEGOCIAR OU PERSUADIR</h4>
+<div class="trigger">Quando você tenta convencer alguém, obter um favor ou mudar uma decisão.</div>
+<span class="attribute">MENTE ou CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> A pessoa concorda. +1 Eco.</div>
+<div class="result partial"><strong>7–9:</strong> Concorda, mas <strong>escolha 1:</strong> (a) com uma condição que você não esperava, (b) relutantemente — você sente que ela não está feliz com isso, (c) você precisa oferecer algo em troca (1 Recurso ou um favor).</div>
+<div class="result failure"><strong>6−:</strong> A pessoa se ofende, você perde credibilidade, a situação piora.</div>
+</div>
+
+<div class="move">
+<h4>SEDUZIR OU ENCANTAR</h4>
+<div class="trigger">Quando você flerta, cria tensão romântica ou tenta encantar alguém.</div>
+<span class="attribute">CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> A pessoa fica encantada. Relógio +2. Oportunidade de intimidade.</div>
+<div class="result partial"><strong>7–9:</strong> Há faísca, mas <strong>escolha 1:</strong> (a) a pessoa hesita — você precisa ser mais paciente, (b) o momento é interrompido por algo externo, (c) você precisa escolher: intensidade OU segurança. Se escolher intensidade, Relógio +2 mas ganha Tag [TENSÃO]. Se escolher segurança, Relógio +1.</div>
+<div class="result failure"><strong>6−:</strong> A pessoa se sente desconfortável, ou você revela vulnerabilidade demais. Relógio recua 1.</div>
+</div>
+
+<div class="move">
+<h4>CELEBRAR O AMOR</h4>
+<div class="trigger">Quando você organiza uma festa, faz uma declaração pública, ou celebra um marco no relacionamento (aniversário, conquista, casamento).</div>
+<span class="attribute">CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> Celebração perfeita. Relógio +2. +1 Eco. <em>[DOMÉSTICO] + [VÍNCULO+]</em>. Todos os NPCs presentes ganham +1 no Relógio de Ligação.</div>
+<div class="result partial"><strong>7–9:</strong> Celebração boa, mas <strong>escolha 1:</strong> (a) algo dá errado (convidado problemático, chuva, NPC ausente), (b) um segredo é revelado durante a festa, (c) alguém se sente excluído — Relógio de Ligação recua 1. Relógio +1. <em>[TENSÃO]</em></div>
+<div class="result failure"><strong>6−:</strong> Celebração desastrosa. Alguém se ofende, segredo é revelado, ou NPC parte. Relógio recua 1. <em>[VÍNCULO−] + [TENSÃO]</em></div>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você conhece os Moves Sociais, vá para <a href="moves-investigacao.html">Moves: Investigação →</a> para aprender sobre os caminhos da cidade.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Moves — Sociais</p>
+  <p><a href="moves-oficio.html">← Ofício</a> | <a href="moves-investigacao.html">Próxima: Investigação →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

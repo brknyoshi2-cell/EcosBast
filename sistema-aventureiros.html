@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Sistema: Aventureiros</title>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="sistema-aventureiros.html">Sistema</a> &gt; <strong>Aventureiros</strong>
+</div>
+
+<div class="container">
+
+<div class="tier-badge recomendado">🟡 Recomendado <span class="tier-desc">— usado no Tutorial e no Quick Start</span></div>
+
+<div class="callout rule">
+  <h4>⚖️ Restrições por Fase do Mundo</h4>
+  <p>As expedições disponíveis dependem da <strong>fase atual da Guilda</strong> (veja <a href="sistema-progressao-mundo.html">Progressão do Mundo</a>):</p>
+  <ul>
+    <li><strong>🌱 Fase Inicial (caps 1-3):</strong> Apenas expedições <strong>Fáceis</strong></li>
+    <li><strong>🌿 Fase de Crescimento (caps 4-6):</strong> Expedições <strong>Fáceis e Médias</strong></li>
+    <li><strong>🌳 Fase Estabelecida (caps 7-9):</strong> Expedições <strong>Fáceis, Médias e Difíceis</strong></li>
+    <li><strong>🏛️ Fase Lendária (caps 10+):</strong> Todos os níveis, incluindo <strong>Lendárias</strong></li>
+  </ul>
+  <p>O número de aventureiros disponíveis também é limitado pela fase — veja a tabela em <a href="sistema-progressao-mundo.html">Progressão do Mundo</a>.</p>
+</div>
+
+<h2>Os Heróis que Vão e Vêm — Aventureiros e Expedições</h2>
+<p>Os aventureiros são a vida da Guilda. Eles vão para o mundo, enfrentam perigos, e trazem artefatos, histórias e problemas. Você não vai com eles — você é o restaurador que os espera.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Este sistema gerencia a chegada e partida de aventureiros. Você decide quem vai, para onde, e ouve os relatos quando voltam.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Tipos de Aventureiros</h3>
+
+<table>
+<tr><th>Tipo</th><th>Descrição</th><th>Exemplos</th></tr>
+<tr><td><strong>Regular</strong></td><td>Aventureiros comuns que aparecem na Guilda</td><td>NPCs genéricos, clientes</td></tr>
+<tr><td><strong>Recorrente</strong></td><td>Aventureiros que voltam com frequência</td><td>Podem se tornar conhecidos</td></tr>
+<tr><td><strong>Romanceável</strong></td><td>NPCs romanceáveis que vão em expedições</td><td>Kael, Lyra, Dorian</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Níveis de Expedição</h3>
+
+<table>
+<tr><th>Nível</th><th>Dificuldade</th><th>Duração</th><th>Recompensa Base</th><th>Risco</th></tr>
+<tr><td><strong>Fácil</strong></td><td>1d6</td><td>1-2 dias</td><td>1-3 Recursos</td><td>Baixo</td></tr>
+<tr><td><strong>Média</strong></td><td>2d6</td><td>3-5 dias</td><td>3-6 Recursos</td><td>Médio</td></tr>
+<tr><td><strong>Difícil</strong></td><td>3d6</td><td>5-7 dias</td><td>6-10 Recursos</td><td>Alto</td></tr>
+<tr><td><strong>Lendária</strong></td><td>4d6</td><td>7-14 dias</td><td>10-20 Recursos + Artefato</td><td>Muito Alto</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Resultados de Expedição</h3>
+
+<p>Role <strong>2d6 + Modificadores</strong> para determinar o resultado:</p>
+
+<table>
+<tr><th>Resultado</th><th>Significado</th><th>Efeito</th></tr>
+<tr><td><strong>10+</strong></td><td>Sucesso Total</td><td>Aventureiro retorna com recompensas + bônus</td></tr>
+<tr><td><strong>7–9</strong></td><td>Sucesso Parcial</td><td>Retorna, mas com complicação (ferido, perdeu algo)</td></tr>
+<tr><td><strong>6−</strong></td><td>Falha</td><td>Retorna ferido ou não retorna (NPC pode morrer)</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Modificadores de Expedição</h3>
+
+<table>
+<tr><th>Fator</th><th>Modificador</th><th>Fonte</th></tr>
+<tr><td>Aventureiro tem Tag [GUERREIRO]</td><td>+1</td><td>Módulo Sala de Armas</td></tr>
+<tr><td>Aventureiro tem Tag [SÁBIO]</td><td>+1 em expedições de conhecimento</td><td>Módulo Biblioteca Arcana</td></tr>
+<tr><td>Aventureiro tem Tag [OCULTISTA]</td><td>+1 em expedições perigosas</td><td>Módulo Arquivo dos Espíritos</td></tr>
+<tr><td>NPC Romanceável participa</td><td>+1</td><td>Relacionamento</td></tr>
+<tr><td>NPC Romanceável está em 10/10</td><td>+2</td><td>Relacionamento máximo</td></tr>
+<tr><td>Você tem Sala de Armas</td><td>+1</td><td>Módulo</td></tr>
+<tr><td>Você tem Biblioteca Arcana</td><td>+1 em expedições de conhecimento</td><td>Módulo</td></tr>
+<tr><td>Você tem Arquivo dos Espíritos</td><td>+1 em expedições perigosas</td><td>Módulo</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Enviar uma Expedição</h3>
+
+<p><strong>Custo:</strong> 1 Ato (para organizar) + Recursos (suprimentos)</p>
+
+<table>
+<tr><th>Nível</th><th>Custo em Recursos</th><th>Aventureiros Necessários</th></tr>
+<tr><td>Fácil</td><td>1 Recurso</td><td>1</td></tr>
+<tr><td>Média</td><td>2 Recursos</td><td>2</td></tr>
+<tr><td>Difícil</td><td>4 Recursos</td><td>3</td></tr>
+<tr><td>Lendária</td><td>8 Recursos</td><td>4+ (incluindo Romanceável)</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Eventos Durante a Expedição</h3>
+
+<p>Quando o aventureiro retorna, role 1d6 para um evento:</p>
+
+<table>
+<tr><th>d6</th><th>Evento</th><th>Efeito</th></tr>
+<tr><td>1</td><td><strong>"O Artefato Sussurra"</strong></td><td>O artefato trazido tem uma maldição leve (Relógio de Tensão +1)</td></tr>
+<tr><td>2</td><td><strong>"O Guia Perdido"</strong></td><td>O aventureiro perdeu algo — você pode gastar Recursos para recuperar</td></tr>
+<tr><td>3</td><td><strong>"A Promessa"</strong></td><td>O aventureiro promete voltar com algo especial (próxima expedição +1)</td></tr>
+<tr><td>4</td><td><strong>"A Cicatriz"</strong></td><td>O aventureiro se machucou — ganha Tag [CICATRIZ] (narrativa)</td></tr>
+<tr><td>5</td><td><strong>"O Sussurro"</strong></td><td>O aventureiro ouviu algo sobre um mistério — Relógio de Mistério +1</td></tr>
+<tr><td>6</td><td><strong>"A Descoberta"</strong></td><td>O aventureiro encontrou algo inesperado — ganhe +1 Eco</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>💀 Morte de Aventureiros (Opcional)</h3>
+
+<div class="callout rule">
+  <strong>⚖️ Quem decide?</strong>
+  <p>Se a morte de aventureiros é possível ou não depende do <strong>Modo de Jogo</strong> escolhido — veja a linha "Morte de Aventureiros" na <a href="sistema-modos.html">Tabela Comparativa de Modos</a> para a regra exata de cada um.</p>
+</div>
+
+<p>Se um aventureiro tirar <strong>6−</strong> em uma expedição <strong>Difícil ou Lendária</strong>, ele pode morrer. Role para determinar:</p>
+
+<table>
+<tr><th>Nível</th><th>Chance de Morte</th></tr>
+<tr><td>Fácil</td><td>0%</td></tr>
+<tr><td>Média</td><td>10% (se 6−, role 1d10: 1 = morte)</td></tr>
+<tr><td>Difícil</td><td>25% (se 6−, role 1d4: 1 = morte)</td></tr>
+<tr><td>Lendária</td><td>50% (se 6−, role 1d2: 1 = morte)</td></tr>
+</table>
+
+<h4>Consequências da Morte</h4>
+
+<table>
+<tr><th>Se for...</th><th>Efeito</th></tr>
+<tr><td>NPC Regular</td><td>Perda de Recursos (o equipamento foi perdido)</td></tr>
+<tr><td>NPC Recorrente</td><td>Perda de Recursos + Tag [LUTO] (narrativa)</td></tr>
+<tr><td>NPC Romanceável</td><td>Relógio de Romance é zerado; Tag [LUTO] permanente; Evento Final pode ser afetado</td></tr>
+</table>
+
+<div class="callout rule">
+  <strong>⚖️ Salvando um NPC da morte</strong>
+  <p>Se a morte for possível e ocorrer, você pode gastar <strong>3 Ecos</strong> para salvar o NPC. Ele sobrevive, mas ganha a Tag [CICATRIZ] e a expedição é considerada uma Falha (não recebe recompensas).</p>
+</div>
+
+<h4>Tag [LUTO]</h4>
+
+<table>
+<tr><th>Efeito</th><th>Duração</th></tr>
+<tr><td>−1 em todas as rolagens de CORAÇÃO</td><td>3 capítulos</td></tr>
+<tr><td>+1 em rolagens de MENTE sobre perda</td><td>Permanente</td></tr>
+<tr><td>Pode ser removida com um ritual de despedida</td><td>Gaste 1 Ato + 1 Eco</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Relatos de Expedições (d10)</h3>
+
+<p>Quando um aventureiro retorna, escreva um relato com base no resultado:</p>
+
+<table>
+<tr><th>d10</th><th>Relato</th></tr>
+<tr><td>1</td><td><em>"Encontramos uma caverna cheia de runas antigas. Não conseguimos ler todas, mas trouxemos um pedaço."</em></td></tr>
+<tr><td>2</td><td><em>"O caminho era perigoso. Perdemos dois suprimentos, mas encontramos o artefato."</em></td></tr>
+<tr><td>3</td><td><em>"Havia algo nos observando. Não sei o que era, mas não estava sozinho."</em></td></tr>
+<tr><td>4</td><td><em>"O artefato estava guardado por um espírito. Ele nos deixou passar depois que fizemos uma oferenda."</em></td></tr>
+<tr><td>5</td><td><em>"A expedição foi tranquila. Quase tranquila demais."</em></td></tr>
+<tr><td>6</td><td><em>"Encontramos outro grupo de aventureiros. Eles estavam mortos. Pegamos o que eles deixaram."</em></td></tr>
+<tr><td>7</td><td><em>"O artefato é mais antigo do que pensávamos. Talvez até da fundação da Guilda."</em></td></tr>
+<tr><td>8</td><td><em>"O local estava vazio. O artefato já tinha sido levado. Mas deixaram pistas."</em></td></tr>
+<tr><td>9</td><td><em>"Quase morremos. Mas valeu a pena."</em></td></tr>
+<tr><td>10</td><td><em>"Encontramos algo que não deveríamos ter encontrado. Não sei o que fazer com isso."</em></td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>🏆 Recompensa para Speedrunners que Ignoram a Narrativa</h3>
+
+<p>Se você completou a Trilha de Speedrun <strong>sem usar nenhuma cena narrativa</strong> (sem escrever sobre romance, decoração, ou momentos de humor), você ganha uma recompensa especial:</p>
+
+<table>
+<tr><th>Recompensa</th><th>Efeito</th></tr>
+<tr><td><strong>Conquista "Frio e Calculista"</strong></td><td>+2 em todas as rolagens na próxima campanha (acumulativo com outras recompensas)</td></tr>
+<tr><td><strong>Tag [EFICIENTE]</strong></td><td>+1 em rolagens de otimização e eficiência (permanente)</td></tr>
+<tr><td><strong>+5 Ecos bônus</strong></td><td>Para usar na próxima campanha</td></tr>
+</table>
+
+<div class="callout rule">
+  <strong>Como funciona:</strong>
+  <ul>
+    <li>Para ganhar esta recompensa, você deve <strong>ignorar completamente</strong> os sistemas narrativos: sem escrever cenas de romance, sem decorar, sem usar prompts de escrita.</li>
+    <li>O jogo não te penaliza por isso — apenas te recompensa por escolher um caminho diferente.</li>
+    <li>Se você escrever qualquer cena narrativa durante a campanha, esta recompensa não é concedida.</li>
+  </ul>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Integração com Outros Sistemas</h3>
+
+<h4>Com Módulos</h4>
+<table>
+<tr><th>Módulo</th><th>Efeito em Expedições</th></tr>
+<tr><td><strong>Sala de Armas</strong></td><td>+1 em qualquer expedição (estratégia militar)</td></tr>
+<tr><td><strong>Biblioteca Arcana</strong></td><td>+1 em expedições de conhecimento (mapas, pergaminhos)</td></tr>
+<tr><td><strong>Arquivo dos Espíritos</strong></td><td>+1 em expedições perigosas (sabe onde há perigo)</td></tr>
+</table>
+
+<h4>Com Relógios</h4>
+<table>
+<tr><th>Relógio</th><th>Efeito</th></tr>
+<tr><td><strong>Romance</strong></td><td>NPC Romanceável em expedição: Relógio avança +1 se bem-sucedida (orgulho) ou recua 1 se falhar (preocupação)</td></tr>
+<tr><td><strong>Ligação</strong></td><td>Aventureiros que vão juntos ganham +1 no Relógio de Ligação</td></tr>
+<tr><td><strong>Tensão</strong></td><td>Expedição falha → Relógio de Tensão +1</td></tr>
+<tr><td><strong>Mistério</strong></td><td>Expedição pode avançar Relógio de Mistério se encontrar pistas</td></tr>
+</table>
+
+<h4>Com Ecos</h4>
+<table>
+<tr><th>Ação</th><th>Custo</th></tr>
+<tr><td>Forçar sucesso em expedição</td><td>2 Ecos (rolagem automática 10+)</td></tr>
+<tr><td>Salvar aventureiro da morte</td><td>3 Ecos (sobrevive, mas com consequência)</td></tr>
+<tr><td>Obter relato detalhado</td><td>1 Eco (mais informações sobre o local)</td></tr>
+</table>
+
+<h4>Com Recursos</h4>
+<table>
+<tr><th>Ação</th><th>Custo</th></tr>
+<tr><td>Enviar expedição</td><td>1-8 Recursos</td></tr>
+<tr><td>Curar aventureiro ferido</td><td>1-3 Recursos</td></tr>
+<tr><td>Substituir equipamento perdido</td><td>1-5 Recursos</td></tr>
+<tr><td>Financiar expedição lendária</td><td>10+ Recursos</td></tr>
+</table>
+
+<div class="callout example">
+  <h3>📖 Exemplo de Uso</h3>
+  <p><strong>Jogador:</strong> "Kael quer ir em uma expedição Difícil para a Floresta de Ossun. Ele leva dois aventureiros regulares."</p>
+  <p><strong>Jogador gasta:</strong> 1 Ato + 4 Recursos.</p>
+  <p><strong>Jogador rola:</strong> 2d6 +1 (Sala de Armas) +1 (Kael é romanceável) = 11 → Sucesso Total!</p>
+  <p><strong>Jogador escreve o relato:</strong> <em>"Kael voltou com uma espada antiga. Ele disse que a floresta sussurrava o nome dela. A espada tem runas que ninguém reconhece."</em></p>
+  <p><strong>Recompensa:</strong> 8 Recursos + 1 Artefato (Espada de Ossun) + Relógio de Romance com Kael avança +2.</p>
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Sistema — Aventureiros e Expedições</p>
+  <p><a href="sistema-loop.html">← Sistema: Loop</a> | <a href="index.html">Início →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

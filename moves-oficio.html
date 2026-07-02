@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Moves: Ofício</title>
+<style>
+.move {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
+}
+.move h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+.move .trigger {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+.move .attribute {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.15rem 0.7rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-variant: small-caps;
+  margin-bottom: 0.8rem;
+}
+.result {
+  margin: 0.4rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid transparent;
+}
+.result.success {
+  border-left-color: var(--success);
+}
+.result.partial {
+  border-left-color: var(--gold);
+}
+.result.failure {
+  border-left-color: var(--danger);
+}
+.result strong {
+  color: var(--accent);
+}
+.choice {
+  background: rgba(184, 134, 11, 0.08);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  margin: 0.2rem 0;
+  font-style: italic;
+}
+.choice strong {
+  color: var(--gold);
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="moves-oficio.html">Moves</a> &gt; <strong>Ofício</strong>
+</div>
+
+<div class="container">
+
+<h2>O Ofício do Restaurador — Moves de Trabalho</h2>
+<p>Estes são os moves que definem o trabalho diário do protagonista nos Bastidores. São ações físicas e práticas — o que você <em>faz</em> com as mãos e os olhos.</p>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="move">
+<h4>RESTAURAR UMA RELÍQUIA</h4>
+<div class="trigger">Quando você trabalha fisicamente para limpar, consertar ou reativar um artefato.</div>
+<span class="attribute">MÃOS</span>
+<div class="result success"><strong>10+:</strong> Restauração completa. O artefato funciona — ou melhor. +1 Eco. Você descobre algo útil sobre sua origem. <em>[VÍNCULO+] ou [MISTÉRIO]</em></div>
+<div class="result partial"><strong>7–9:</strong> Funciona, mas <strong>escolha 1:</strong> (a) o artefato tem um defeito persistente que pode ser corrigido depois, (b) o processo gasta Recursos extras (1d3), (c) a restauração revela algo perturbador sobre o artefato. <em>[TENSÃO] ou [ECO]</em></div>
+<div class="result failure"><strong>6−:</strong> O artefato resiste. Ele se danifica, uma maldição se ativa, você se machuca, ou a Guilda fica sabendo. <em>[TENSÃO] + [MISTÉRIO]</em></div>
+</div>
+
+<div class="move">
+<h4>CATALOGAR E ARQUIVAR</h4>
+<div class="trigger">Quando você registra um artefato, organiza documentos ou atualiza o inventário.</div>
+<span class="attribute">MENTE</span>
+<div class="result success"><strong>10+:</strong> Registro perfeito. Você descobre um detalhe que outros perderam. +1 Eco.</div>
+<div class="result partial"><strong>7–9:</strong> Você cataloga, mas <strong>escolha 1:</strong> (a) algo não bate — você encontra uma anotação antiga e suspeita, (b) o processo leva mais tempo que o esperado (perde 1 Ato amanhã), (c) você percebe que alguém alterou os registros recentemente.</div>
+<div class="result failure"><strong>6−:</strong> O arquivo está errado — ou alguém o alterou. Um artefato sumiu do registro, ou você encontra um nome que reconhece.</div>
+</div>
+
+<div class="move">
+<h4>LIMPAR OS BASTIDORES</h4>
+<div class="trigger">Quando você varre, organiza, conserta algo na oficina ou no armazém — como parte do trabalho diário.</div>
+<span class="attribute">MÃOS</span>
+<div class="result success"><strong>10+:</strong> Os Bastidores ficam mais acolhedores. Você encontra algo perdido. +1 Eco. Role 1d10 na Tabela de Maravilhas Cotidianas.</div>
+<div class="result partial"><strong>7–9:</strong> Você limpa, mas <strong>escolha 1:</strong> (a) encontra algo que não deveria estar ali (um objeto estranho), (b) algo quebra durante a limpeza (perde 1 Recurso), (c) percebe que algo mudou de lugar — alguém esteve aqui.</div>
+<div class="result failure"><strong>6−:</strong> A limpeza revela algo perturbador: uma mancha que pulsa, um som nas paredes, um objeto que se move.</div>
+</div>
+
+<div class="move">
+<h4>ESTUDAR UM ARTEFATO</h4>
+<div class="trigger">Quando você examina um artefato de perto, tentando entender sua função, origem ou perigo (sem necessariamente consertá-lo).</div>
+<span class="attribute">OLHOS ou MENTE</span>
+<div class="result success"><strong>10+:</strong> Você descobre algo crucial. +1 Eco. Avança Relógio de mistério.</div>
+<div class="result partial"><strong>7–9:</strong> Aprende algo, mas <strong>escolha 1:</strong> (a) a descoberta levanta mais perguntas do que respostas (avança Relógio de Mistério, mas ganha Tag [MISTÉRIO]), (b) o artefato reage ao exame (atrai atenção), (c) você entende parte, mas não tudo — precisa de mais tempo.</div>
+<div class="result failure"><strong>6−:</strong> O artefato se ativa, você é afetado por maldição, ou a informação é perturbadora.</div>
+</div>
+
+<div class="move">
+<h4>DECIFRAR UM ENIGMA OU SÍMBOLO</h4>
+<div class="trigger">Quando você tenta entender uma inscrição, código, mapa ou símbolo arcano.</div>
+<span class="attribute">MENTE</span>
+<div class="result success"><strong>10+:</strong> Você decifra completamente. +1 Eco.</div>
+<div class="result partial"><strong>7–9:</strong> Entende parte, mas <strong>escolha 1:</strong> (a) há algo que você não consegue traduzir (deixa uma Tag [MISTÉRIO]), (b) sua interpretação é incerta — pode estar errada, (c) o símbolo reage ao seu toque (alerta alguém).</div>
+<div class="result failure"><strong>6−:</strong> Você interpreta errado, o símbolo se ativa, ou a informação é perigosa.</div>
+</div>
+
+<div class="move">
+<h4>PERCEBER ALGO ESTRANHO NOS BASTIDORES</h4>
+<div class="trigger">Quando, durante seu trabalho cotidiano, você nota algo que não deveria estar ali. <em>Só pode ser usado durante outra ação.</em></div>
+<span class="attribute">OLHOS</span>
+<div class="result success"><strong>10+:</strong> Você percebe claramente o que mudou. +1 Eco.</div>
+<div class="result partial"><strong>7–9:</strong> Percebe, mas <strong>escolha 1:</strong> (a) não entende o que viu — o detalhe é estranho demais, (b) o detalhe desaparece quando você tenta mostrar para alguém, (c) você percebe, mas sente que está sendo observado.</div>
+<div class="result failure"><strong>6−:</strong> O detalhe te perturba. Você não consegue se concentrar. Um artefato reage à sua inquietação.</div>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você conhece os Moves de Ofício, vá para <a href="moves-sociais.html">Moves: Sociais →</a> para aprender sobre os laços do coração.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Moves — Ofício</p>
+  <p><a href="sistema-loop.html">← Sistema: Loop</a> | <a href="moves-sociais.html">Próxima: Sociais →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

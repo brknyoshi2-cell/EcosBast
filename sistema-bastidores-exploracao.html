@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Exploração dos Bastidores</title>
+<style>
+.secret-card {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--mystery);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+.secret-card h4 {
+  margin-top: 0;
+  color: var(--mystery);
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="sistema-bastidores-exploracao.html">Sistema</a> &gt; <strong>Exploração dos Bastidores</strong>
+</div>
+
+<div class="container">
+
+<div class="tier-badge avancado">🔵 Avançado <span class="tier-desc">— camada opcional, adicione quando quiser mais profundidade</span></div>
+
+<h2>🔍 Os Segredos dos Bastidores — Exploração</h2>
+<p>Os Bastidores não são apenas um cenário — eles guardam segredos. Com o tempo, você pode explorar cada sala, descobrir passagens escondidas e desvendar mistérios que estão abaixo da superfície.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Quando uma nova sala dos Bastidores é desbloqueada (veja <a href="sistema-progressao-mundo.html">Progressão do Mundo</a>), você pode explorá-la para descobrir segredos.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Salas dos Bastidores e seus Segredos</h3>
+
+<p>Cada sala dos Bastidores tem <strong>segredos escondidos</strong> que você pode descobrir com um move de <strong>Explorar os Bastidores</strong> (use OLHOS ou MENTE).</p>
+
+<div class="secret-card">
+  <h4>🔒 Oficina Principal</h4>
+  <p><strong>Segredos (role 1d6):</strong></p>
+  <ul>
+    <li><strong>1-2:</strong> Ferramenta escondida — +1 em restauração (1x)</li>
+    <li><strong>3-4:</strong> Anotações antigas — Relógio de Mistério +1</li>
+    <li><strong>5-6:</strong> Porta secreta — leva a um corredor escondido</li>
+  </ul>
+  <p><strong>Exploração:</strong> 10+ = descobre o segredo, 7-9 = descobre parcialmente, 6- = o segredo fica escondido</p>
+</div>
+
+<div class="secret-card">
+  <h4>📚 Seus Aposentos</h4>
+  <p><strong>Segredos (role 1d6):</strong></p>
+  <ul>
+    <li><strong>1-2:</strong> Diário antigo — pista sobre um NPC</li>
+    <li><strong>3-4:</strong> Objeto esquecido — +1 Eco</li>
+    <li><strong>5-6:</strong> Passagem secreta — leva à Biblioteca</li>
+  </ul>
+  <p><strong>Exploração:</strong> 10+ = descobre o segredo, 7-9 = descobre parcialmente, 6- = nada encontrado</p>
+</div>
+
+<div class="secret-card">
+  <h4>🪑 Sala de Estar</h4>
+  <p><strong>Segredos (role 1d6):</strong></p>
+  <ul>
+    <li><strong>1-2:</strong> Livro de visitas — +1 em rolagens sociais (1x)</li>
+    <li><strong>3-4:</strong> Quadro que muda — mostra o passado da Guilda</li>
+    <li><strong>5-6:</strong> Esconderijo — 1d4 Recursos</li>
+  </ul>
+  <p><strong>Exploração:</strong> 10+ = descobre o segredo, 7-9 = descobre parcialmente, 6- = nada encontrado</p>
+</div>
+
+<div class="secret-card">
+  <h4>🍳 Cozinha Compartilhada</h4>
+  <p><strong>Segredos (role 1d6):</strong></p>
+  <ul>
+    <li><strong>1-2:</strong> Receita antiga — +1 Eco ao cozinhar</li>
+    <li><strong>3-4:</strong> Armário secreto — 1d3 Recursos</li>
+    <li><strong>5-6:</strong> Nota de um antigo cozinheiro — pista sobre um mistério</li>
+  </ul>
+  <p><strong>Exploração:</strong> 10+ = descobre o segredo, 7-9 = descobre parcialmente, 6- = nada encontrado</p>
+</div>
+
+<div class="secret-card">
+  <h4>📖 Biblioteca (desbloqueada na Fase Estabelecida)</h4>
+  <p><strong>Segredos (role 1d6):</strong></p>
+  <ul>
+    <li><strong>1-2:</strong> Grimório escondido — +1 em decifrar enigmas (permanente)</li>
+    <li><strong>3-4:</strong> Carta de um antigo Mestre — Relógio de Mistério +1</li>
+    <li><strong>5-6:</strong> Seção proibida — Tag [MISTÉRIO] + pista</li>
+  </ul>
+  <p><strong>Exploração:</strong> 10+ = descobre o segredo, 7-9 = descobre parcialmente, 6- = nada encontrado</p>
+</div>
+
+<div class="secret-card">
+  <h4>🌿 Jardim Interno (desbloqueado na Fase Estabelecida)</h4>
+  <p><strong>Segredos (role 1d6):</strong></p>
+  <ul>
+    <li><strong>1-2:</strong> Planta rara — +1 em poções/cuidados (1x)</li>
+    <li><strong>3-4:</strong> Estátua escondida — +1 em rolagens de CORAÇÃO (1x)</li>
+    <li><strong>5-6:</strong> Passagem secreta — leva à Câmara Selada</li>
+  </ul>
+  <p><strong>Exploração:</strong> 10+ = descobre o segredo, 7-9 = descobre parcialmente, 6- = nada encontrado</p>
+</div>
+
+<div class="secret-card">
+  <h4>🏛️ Salão de Festas (desbloqueado na Fase Lendária)</h4>
+  <p><strong>Segredos (role 1d6):</strong></p>
+  <ul>
+    <li><strong>1-2:</strong> Retrato de fundador — +1 Reputação com a Guilda</li>
+    <li><strong>3-4:</strong> Baú de celebração — 1d6 Recursos</li>
+    <li><strong>5-6:</strong> Registro de todas as expedições — Relógio de Mistério +1</li>
+  </ul>
+  <p><strong>Exploração:</strong> 10+ = descobre o segredo, 7-9 = descobre parcialmente, 6- = nada encontrado</p>
+</div>
+
+<div class="secret-card">
+  <h4>👑 Câmara do Mestre (desbloqueado na Fase Lendária)</h4>
+  <p><strong>Segredos (role 1d6):</strong></p>
+  <ul>
+    <li><strong>1-2:</strong> Diário do Mestre — Tag [LENDA] + história</li>
+    <li><strong>3-4:</strong> Artefato pessoal do fundador — +2 em restauração (1x)</li>
+    <li><strong>5-6:</strong> A chave de bronze — abre a Câmara Selada</li>
+  </ul>
+  <p><strong>Exploração:</strong> 10+ = descobre o segredo, 7-9 = descobre parcialmente, 6- = nada encontrado</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Como Explorar os Bastidores</h3>
+
+<div class="callout rule">
+  <h4>⚖️ Move: Explorar os Bastidores</h4>
+  <p><strong>Gatilho:</strong> Quando você dedica tempo para examinar uma sala dos Bastidores em busca de segredos.</p>
+  <p><strong>Capacidade:</strong> OLHOS ou MENTE</p>
+  <p><strong>Custo:</strong> 1 Ato</p>
+  <ul>
+    <li><strong>10+:</strong> Você descobre o segredo da sala. +1 Eco.</li>
+    <li><strong>7-9:</strong> Você descobre parte do segredo, mas algo escapa. (Role 1d6 para o segredo, mas você só entende metade).</li>
+    <li><strong>6-:</strong> Você não encontra nada — ou algo te observa.</li>
+  </ul>
+</div>
+
+<div class="callout tip">
+  <strong>Dica:</strong> Cada sala só pode ser explorada <strong>uma vez por capítulo</strong>. Os segredos descobertos são permanentes e não precisam ser redescobertos.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Segredos Especiais dos Bastidores</h3>
+
+<p>Além dos segredos de cada sala, há <strong>segredos maiores</strong> que se revelam com o tempo:</p>
+
+<table>
+<tr><th>Segredo</th><th>Como descobrir</th><th>Recompensa</th></tr>
+<tr><td><strong>O Mapa dos Bastidores</strong></td><td>Explore todas as salas</td><td>Tag [CARTOGRAFO] +1 em exploração</td></tr>
+<tr><td><strong>A Chave de Bronze</strong></td><td>Encontre na Câmara do Mestre</td><td>Abre a Câmara Selada (Evento Final)</td></tr>
+<tr><td><strong>A Passagem Secreta</strong></td><td>Encontre no Jardim Interno</td><td>Acesso à Câmara Selada sem a chave</td></tr>
+<tr><td><strong>O Diário do Fundador</strong></td><td>Encontre no Salão de Festas</td><td>Lore completa da Guilda + Tag [LENDA]</td></tr>
+</table>
+
+<div class="callout example">
+  <h3>📖 Exemplo de Uso</h3>
+  <p><strong>Juliana (A Exploradora):</strong> "Quero explorar a Biblioteca."</p>
+  <p><strong>Jogador gasta:</strong> 1 Ato.</p>
+  <p><strong>Jogador rola:</strong> 2d6 + OLHOS (1) = 10 → Sucesso!</p>
+  <p><strong>Jogador descobre:</strong> Role 1d6 → 3 → "Carta de um antigo Mestre — Relógio de Mistério +1."</p>
+  <p><strong>Jogador escreve:</strong> <em>"Encontrei uma carta escondida entre as páginas de um livro. A letra é antiga, quase ilegível. Ela fala sobre algo que foi enterrado nos Bastidores há muito tempo."</em></p>
+  <p><strong>Recompensa:</strong> +1 Eco pela cena, +1 no Relógio de Mistério.</p>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você pode explorar os Bastidores, vá para <a href="sistema-legado.html">Sistema: Legado →</a> para ver como tudo se conecta no final.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Sistema — Exploração dos Bastidores</p>
+  <p><a href="sistema-decoracao.html">← Decoração</a> | <a href="sistema-legado.html">Próxima: Legado →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

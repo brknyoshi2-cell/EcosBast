@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Moves: Tensão</title>
+<style>
+.move {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
+}
+.move h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+.move .trigger {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+.move .attribute {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.15rem 0.7rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-variant: small-caps;
+  margin-bottom: 0.8rem;
+}
+.result {
+  margin: 0.4rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid transparent;
+}
+.result.success {
+  border-left-color: var(--success);
+}
+.result.partial {
+  border-left-color: var(--gold);
+}
+.result.failure {
+  border-left-color: var(--danger);
+}
+.result strong {
+  color: var(--accent);
+}
+.choice {
+  background: rgba(184, 134, 11, 0.08);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  margin: 0.2rem 0;
+  font-style: italic;
+}
+.choice strong {
+  color: var(--gold);
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="moves-oficio.html">Moves</a> &gt; <strong>Tensão</strong>
+</div>
+
+<div class="container">
+
+<h2>As Sombras que Avançam — Moves de Tensão</h2>
+<p>Estes são os moves que lidam com os momentos de crise, segredos, riscos e a pressão que cresce nos Bastidores.</p>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="move">
+<h4>ENFRENTAR UMA COMPLICAÇÃO</h4>
+<div class="trigger">Quando algo dá errado e você precisa reagir.</div>
+<span class="attribute">Capacidade relevante</span>
+<div class="result success"><strong>10+:</strong> Você lida com elegância. Situação estabilizada. +1 Eco.</div>
+<div class="result partial"><strong>7–9:</strong> Lida, mas <strong>escolha 1:</strong> (a) com custo (Recursos, tempo, relacionamento), (b) a complicação volta depois — você só adiou o problema, (c) você resolve, mas cria outra complicação menor.</div>
+<div class="result failure"><strong>6−:</strong> A complicação piora. Você perde controle. Relógio avança 2.</div>
+</div>
+
+<div class="move">
+<h4>MANTER UM SEGREDO</h4>
+<div class="trigger">Quando você esconde algo de alguém — a Guilda, um NPC, um amor — ou sente o peso de um segredo.</div>
+<span class="attribute">MENTE ou CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> O segredo permanece seguro. +1 Eco.</div>
+<div class="result partial"><strong>7–9:</strong> <strong>Escolha 1:</strong> (a) quase foi descoberto — você precisa ter mais cuidado, (b) o peso emocional cobra (perde 1 Ato no próximo dia), (c) alguém começa a desconfiar — você sente que está sendo observado.</div>
+<div class="result failure"><strong>6−:</strong> Alguém descobre um pedaço, ou você é confrontado(a) indiretamente. Relógio avança 2.</div>
+</div>
+
+<div class="move">
+<h4>ARRISCAR-SE POR ALGUÉM</h4>
+<div class="trigger">Quando você faz algo perigoso ou imprudente para proteger ou ajudar alguém.</div>
+<span class="attribute">CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> Você consegue. A pessoa fica impressionada. Relógio +2.</div>
+<div class="result partial"><strong>7–9:</strong> Você ajuda, mas <strong>escolha 1:</strong> (a) se machuca levemente (perde 1 Ato amanhã), (b) a pessoa fica preocupada em vez de grata, (c) gasta Recursos (1d3) para conseguir.</div>
+<div class="result failure"><strong>6−:</strong> O risco não vale a pena. Você se machuca seriamente, a pessoa não queria ajuda. Relógio avança 2.</div>
+</div>
+
+<div class="move">
+<h4>PEDIR ADIANTAMENTO À GUILDA</h4>
+<div class="trigger">Quando você está em Débito Narrativo (Recursos zerados) e precisa de ajuda para continuar.</div>
+<span class="attribute">MENTE ou CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> A Guilda concede adiantamento. Ganha 3 Recursos. <em>[TENSÃO: Dívida com a Guilda]</em></div>
+<div class="result partial"><strong>7–9:</strong> Concede, mas <strong>escolha 1:</strong> (a) com condições humilhantes, (b) com trabalho extra (perde 1 Ato amanhã). Ganha 2 Recursos. <em>[TENSÃO]</em></div>
+<div class="result failure"><strong>6−:</strong> A Guilda recusa ou exige favor perigoso. Ganha 1 Recurso. <em>[TENSÃO] + [VÍNCULO−]</em></div>
+</div>
+
+<div class="move">
+<h4>MUDAR DE FOCO</h4>
+<div class="trigger">Após 3 falhas (6−) seguidas. Você decide mudar de atividade para respirar. <strong>Limitado a 1x por capítulo.</strong></div>
+<span class="attribute">Custo: 1 Ato</span>
+<div class="result"><strong>Efeito:</strong> Escreve cena descrevendo mudança de atividade. Reseta a tensão (próxima rolagem não tem penalidade de falha em cadeia). Ganha 1 Eco. Opcionalmente, avança 1 Relógio Suave.</div>
+<div class="result"><strong>Prompt:</strong> <em>"Escreva sobre o momento em que você decidiu que era o suficiente. O que você fez? Para onde foi? O que deixou para trás?"</em></div>
+</div>
+
+<div class="move">
+<h4>MARCAR A PASSAGEM DO TEMPO</h4>
+<div class="trigger">Quando um período significativo passa (uma semana, uma estação, um mês).</div>
+<span class="attribute">Sem rolagem</span>
+<div class="result"><strong>Efeito:</strong> Role 1d6 para cada categoria e descreva como mudou:</div>
+<p><strong>Na cidade:</strong> 1. Mais agitada | 2. Mais quieta | 3. Festival se aproxima | 4. Clima mudou drasticamente | 5. Nova facção chegou | 6. Nada mudou (e é estranho)</p>
+<p><strong>Na Guilda:</strong> 1. Novos aventureiros | 2. Alguém importante saiu | 3. Mais rica/pobre | 4. Nova regra | 5. Tensão interna | 6. Tudo como sempre</p>
+<p><strong>Nos Bastidores:</strong> 1. Algo novo adicionado | 2. Algo sumiu | 3. Mais frio/quente/barulhento | 4. Encontrou algo esquecido | 5. Artefato antigo mudou comportamento | 6. Nada mudou</p>
+<p><strong>Nos relacionamentos (1d6 por NPC romanceável):</strong> 1. Afastaram-se | 2. Aproximaram-se | 3. Algo mudou | 4. Sonhou com a pessoa | 5. Momento não resolvido | 6. Tudo como estava</p>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você conhece os Moves de Tensão, vá para <a href="moves-amor.html">Moves: Amor →</a> para aprender sobre corações partidos e encontrados.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Moves — Tensão</p>
+  <p><a href="moves-base.html">← Base</a> | <a href="moves-amor.html">Próxima: Amor →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Ficha do Mundo</title>
+<style>
+.sheet {
+  background: #fefcf7;
+  border: 2px solid var(--accent);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
+  page-break-inside: avoid;
+  border-radius: 6px;
+}
+[data-theme="dark"] .sheet {
+  background: #2a2a2a;
+}
+.sheet h3 {
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.field {
+  display: flex;
+  align-items: baseline;
+  margin: 0.5rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.field-label {
+  font-weight: bold;
+  color: var(--accent);
+  min-width: 140px;
+  font-variant: small-caps;
+}
+.field-line {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+}
+.print-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  transition: background 0.2s;
+}
+.print-btn:hover {
+  background: var(--gold);
+}
+@media print {
+  .top-nav, .floating-controls, .back-to-top, .no-print, .print-btn { display: none !important; }
+  body { background: white !important; }
+  .sheet { box-shadow: none !important; border: 1px solid #ccc !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="ficha-mundo.html">Ferramentas</a> &gt; <strong>Ficha do Mundo</strong>
+</div>
+
+<div class="container">
+
+<div class="sheet" id="sheet-mundo">
+<h3>📋 Ficha do Mundo</h3>
+<button class="print-btn no-print" onclick="window.print()">🖨 Imprimir</button>
+
+<h4>A Guilda</h4>
+<div class="field"><span class="field-label">Estrutura:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Mestre:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Regra Inquebrável:</span><span class="field-line"></span></div>
+
+<h4>Os Bastidores</h4>
+<div class="field"><span class="field-label">Presença:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Câmara Selada:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Fase Atual:</span><span class="field-line"></span> (1-Abandonado / 2-Funcional / 3-Acolhedor / 4-Lendário)</div>
+<div class="field"><span class="field-label">Detalhe Oficina:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Detalhe Armazém:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Detalhe Arquivo:</span><span class="field-line"></span></div>
+
+<h4>A Cidade</h4>
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Caráter:</span><span class="field-line"></span></div>
+
+<h4>Bairros</h4>
+<table>
+<tr><th>Nome</th><th>Atmosfera</th><th>Locais Notáveis</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<h4>⚔️ Aventureiros da Guilda</h4>
+<table>
+<tr><th>Nome</th><th>Tipo</th><th>Especialidade</th><th>Tags</th></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h4>Módulos Desbloqueados</h4>
+<table>
+<tr><th>Módulo</th><th>NPC</th><th>Custo Pago</th><th>Desbloqueado?</th></tr>
+<tr><td>Sala de Armas</td><td></td><td></td><td>☐</td></tr>
+<tr><td>Biblioteca Arcana</td><td></td><td></td><td>☐</td></tr>
+<tr><td>Arquivo dos Espíritos</td><td></td><td></td><td>☐</td></tr>
+</table>
+
+<h4>✨ Sinergias Desbloqueadas</h4>
+<p><em>Marque as sinergias que você já desbloqueou (requer 2 módulos).</em></p>
+<table>
+<tr><th>Combinação</th><th>Sinergia Ativa</th><th>Sinergia Emergente</th><th>Desbloqueada?</th></tr>
+<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Pesquisa de Campo"</td><td>"Arqueologia Bélica"</td><td>☐</td></tr>
+<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Comunhão Guerreira"</td><td>"Exorcismo Prático"</td><td>☐</td></tr>
+<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Leitura de Almas"</td><td>"Cartografia das Almas"</td><td>☐</td></tr>
+</table>
+
+<h4>Fusões de Módulos</h4>
+<div class="field"><span class="field-label">Fusão Ativa:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Bônus:</span><span class="field-line"></span></div>
+
+<h4>🌱 Progressão da Guilda e Cidade</h4>
+<div class="field"><span class="field-label">Fase Atual:</span><span class="field-line"></span> (🌱 Inicial / 🌿 Crescimento / 🌳 Estabelecida / 🏛️ Lendária)</div>
+<div class="field"><span class="field-label">Trabalhadores:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Aventureiros Regulares:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">NPCs Romanceáveis Chegados:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Bairros da Cidade:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Próximo Marco:</span><span class="field-line"></span></div>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Vá para <a href="ficha-rastro.html">Ficha de Rastreamento →</a> para a ficha única com todos os Relógios.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Ferramentas — Ficha do Mundo</p>
+  <p><a href="ficha-npcs.html">← Ficha NPCs</a> | <a href="ficha-rastro.html">Próxima: Ficha Rastro →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

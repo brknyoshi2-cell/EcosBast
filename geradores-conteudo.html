@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Geradores: Conteúdo</title>
+<style>
+.gen-section {
+  margin: 0.8rem 0;
+}
+.gen-section strong {
+  color: var(--accent);
+}
+.generator-output h4 {
+  color: var(--gold);
+  margin-top: 0;
+  border-bottom: 1px solid var(--accent-light);
+  padding-bottom: 0.5rem;
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="geradores-conteudo.html">Ferramentas</a> &gt; <strong>Gerar Conteúdo</strong>
+</div>
+
+<div class="container">
+
+<h2>🎲 Geradores de Conteúdo</h2>
+<p>Use estes geradores para criar artefatos, eventos, momentos e muito mais para sua campanha.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Clique em um botão para gerar conteúdo. Você pode usar o resultado diretamente ou como inspiração.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<!-- GERADOR 1: ARTEFATOS -->
+<div class="generator-section">
+<h3>✨ Gerador de Artefatos</h3>
+<div class="generator-controls">
+  <button class="generator-btn" onclick="generateWithLoading('artifactOutput', () => renderArtifact(generateArtifact()))">✨ Gerar Artefato</button>
+  <button class="generator-btn" onclick="generateWithLoading('artifactOutput', () => renderWonder(generateWonder()))">🌟 Gerar Maravilha Cotidiana</button>
+</div>
+<div class="generator-output" id="artifactOutput">
+  <div class="loading-spinner" id="spinner-artifactOutput">
+    <div class="spinner"></div>
+    <div class="loading-text">Gerando artefato...</div>
+  </div>
+  <p style="text-align: center; color: var(--ink-soft); font-style: italic;">Clique em um botão para gerar</p>
+</div>
+</div>
+
+<!-- GERADOR 2: CONTEÚDO DIVERSO -->
+<div class="generator-section">
+<h3>🎲 Geradores de Conteúdo</h3>
+<div class="generator-controls">
+  <button class="generator-btn" onclick="generateWithLoading('contentOutput', () => generateCityEvent())">🏙️ Evento da Cidade</button>
+  <button class="generator-btn" onclick="generateWithLoading('contentOutput', () => generateSmallMoment())">💕 Momento Pequeno</button>
+  <button class="generator-btn" onclick="generateWithLoading('contentOutput', () => generateMelancholyEnd())">💔 Fim Melancólico</button>
+  <button class="generator-btn" onclick="generateWithLoading('contentOutput', () => generateChapterHook())">📜 Gancho de Capítulo</button>
+  <button class="generator-btn" onclick="generateWithLoading('contentOutput', () => generateFestival())">🎉 Festival Sazonal</button>
+</div>
+<div class="generator-output" id="contentOutput">
+  <div class="loading-spinner" id="spinner-contentOutput">
+    <div class="spinner"></div>
+    <div class="loading-text">Gerando conteúdo...</div>
+  </div>
+  <p style="text-align: center; color: var(--ink-soft); font-style: italic;">Clique em um botão para gerar conteúdo</p>
+</div>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você pode gerar conteúdo, vá para <a href="ficha-prota.html">Ficha do Protagonista →</a> para imprimir sua ficha.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Ferramentas — Geradores de Conteúdo</p>
+  <p><a href="geradores-npcs.html">← Gerar NPCs</a> | <a href="ficha-prota.html">Próxima: Ficha Prota →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+<script src="generators.js"></script>
+
+<script>
+// LOADING STATE NOS GERADORES
+function generateWithLoading(outputId, generatorFn) {
+  const output = document.getElementById(outputId);
+  const spinner = document.getElementById('spinner-' + outputId);
+
+  output.querySelectorAll(':not(.loading-spinner)').forEach(el => el.style.display = 'none');
+  spinner.classList.add('active');
+
+  const buttons = output.parentElement.querySelectorAll('.generator-btn');
+  buttons.forEach(btn => btn.disabled = true);
+
+  setTimeout(() => {
+    spinner.classList.remove('active');
+    generatorFn();
+    buttons.forEach(btn => btn.disabled = false);
+  }, 300);
+}
+
+// GERADORES
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+// Renderizadores
+function renderArtifact(art) {
+  document.getElementById('artifactOutput').innerHTML = `
+    <h4>✨ ${art.nome}</h4>
+    <div class="gen-section"><strong>Nível:</strong> ${art.nivel}</div>
+    <div class="gen-section"><strong>Origem:</strong> ${art.origem}</div>
+    <div class="gen-section"><strong>Função:</strong> ${art.funcao}</div>
+    <div class="gen-section"><strong>Defeito Mágico:</strong> ${art.defeito}</div>
+    <div class="gen-section"><strong>O que Pede:</strong> ${art.pedido}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Use este artefato em uma cena de restauração ou como gancho de mistério.</p>
+  `;
+}
+
+function renderWonder(wonder) {
+  document.getElementById('artifactOutput').innerHTML = `
+    <h4>🌟 Maravilha Cotidiana</h4>
+    <div class="gen-section">${wonder}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Incorpore esta maravilha na próxima cena de rotina nos Bastidores.</p>
+  `;
+}
+
+function generateCityEvent() {
+  const eventos = [
+    'Festival de primavera — a cidade está colorida e barulhenta.',
+    'Chegada de caravana — mercadores exóticos trazem novidades.',
+    'Tempestade mágica — o céu brilha em cores estranhas.',
+    'Visita de nobre — a cidade está em polvorosa.',
+    'Mercado negro noturno — algo raro está sendo vendido.',
+    'Aniversário da Guilda — todos estão convidados.',
+    'Eclipse — a cidade fica em silêncio estranho.',
+    'Chegada de aventureiros famosos — há comoção.',
+    'Proclamação real — algo mudou nas leis da cidade.',
+    'Dia de luto — algo ou alguém importante morreu.'
+  ];
+  const evento = pick(eventos);
+  document.getElementById('contentOutput').innerHTML = `
+    <h4>🏙️ Evento da Cidade</h4>
+    <div class="gen-section">${evento}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Use este evento no início do próximo capítulo.</p>
+  `;
+}
+
+function generateSmallMoment() {
+  const momentos = [
+    'Fazer café juntos em silêncio confortável.',
+    'Dividir um cobertor durante tempestade.',
+    'Ler lado a lado sem conversar.',
+    'Cozinhar algo simples juntos.',
+    'Caminhar sem destino pela cidade.',
+    'Assistir chuva pela janela.',
+    'Organizar livros por cor, não por uso.',
+    'Contar histórias de infância.',
+    'Dançar sem música na cozinha.',
+    'Cair no sono no sofá do outro.'
+  ];
+  const momento = pick(momentos);
+  document.getElementById('contentOutput').innerHTML = `
+    <h4>💕 Momento Pequeno</h4>
+    <div class="gen-section">${momento}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Incorpore este momento em uma cena de intimidade sem pressão.</p>
+  `;
+}
+
+function generateMelancholyEnd() {
+  const fins = [
+    'Vocês se tornam amigos distantes — se veem na cidade, mas não conversam mais.',
+    'Um de vocês muda para outra cidade — o amor não acabou, mas a distância sim.',
+    'Vocês percebem que querem coisas diferentes — e escolhem seguir caminhos separados.',
+    'Um segredo vem à tona e quebra a confiança — não há reconciliação possível.',
+    'Vocês percebem que amam pessoas diferentes — e escolhem ser honestos.',
+    'A vida acontece — não há drama, só o tempo passando e o amor esfriando.',
+    'Um de vocês escolhe a Guilda sobre o amor — e o outro aceita.',
+    'Vocês percebem que o relacionamento era uma fuga — e voltam para a realidade.',
+    'Um de vocês parte para uma expedição — e não volta.',
+    'Vocês percebem que o amor acabou — e escolhem terminar com dignidade.'
+  ];
+  const fim = pick(fins);
+  document.getElementById('contentOutput').innerHTML = `
+    <h4>💔 Fim Melancólico</h4>
+    <div class="gen-section">${fim}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Use este fim quando um Relógio de Romance estagnar ou regredir permanentemente.</p>
+  `;
+}
+
+function generateChapterHook() {
+  const ganchos = [
+    'Aventureiro traz artefato estranho que ninguém quer tocar.',
+    'Trabalhador da Guilda pede favor pessoal urgente.',
+    'Carta anônima chega com aviso sobre os Bastidores.',
+    'NPC da cidade aparece com problema que só você pode resolver.',
+    'Artefato no armazém começa a reagir sozinho.',
+    'Mestre convoca reunião urgente sobre mudança na Guilda.',
+    'Vizinho dos Bastidores reclama de barulhos estranhos.',
+    'Expedição retorna com sobrevivente único e traumatizado.',
+    'Relógio de Tensão avança sem gatilho claro — algo está errado.',
+    'Você encontra objeto pessoal de NPC desaparecido nos Bastidores.'
+  ];
+  const gancho = pick(ganchos);
+  document.getElementById('contentOutput').innerHTML = `
+    <h4>📜 Gancho de Capítulo</h4>
+    <div class="gen-section">${gancho}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Use este gancho no início do próximo capítulo.</p>
+  `;
+}
+
+function generateFestival() {
+  const festivais = [
+    { nome: '🌸 Festival da Primavera', recompensa: '+2 Ecos, Tag [DOMÉSTICO] permanente' },
+    { nome: '☀️ Festival do Solstício', recompensa: '+3 Ecos, todos os Relógios de Romance +1' },
+    { nome: '🍂 Festival da Colheita', recompensa: '+5 Recursos, Tag [VÍNCULO+] com NPC da cidade' },
+    { nome: '❄️ Festival do Inverno', recompensa: '+1 Ato permanente por 1 capítulo, todos os Relógios de Ligação +1' }
+  ];
+  const festival = pick(festivais);
+  document.getElementById('contentOutput').innerHTML = `
+    <h4>🎉 Festival Sazonal</h4>
+    <div class="gen-section"><strong>Festival:</strong> ${festival.nome}</div>
+    <div class="gen-section"><strong>Recompensa:</strong> ${festival.recompensa}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Use este festival a cada 4 capítulos. Dura 1 dia narrativo completo.</p>
+  `;
+}
+</script>
+</body>
+</html>

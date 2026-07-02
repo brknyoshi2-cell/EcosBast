@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Tutorial</title>
+<style>
+.tutorial-step {
+  background: var(--parchment-dark);
+  border-left: 5px solid var(--gold);
+  padding: 1rem 1.3rem;
+  margin: 1rem 0;
+}
+.tutorial-step .step-num {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2rem;
+  font-weight: bold;
+  margin-right: 0.7rem;
+}
+.tutorial-step.done {
+  border-left-color: var(--success);
+}
+.tutorial-step.done .step-num {
+  background: var(--success);
+}
+.tutorial-step .hint {
+  background: rgba(184, 134, 11, 0.08);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  font-style: italic;
+}
+.prompt-box {
+  background: rgba(184, 134, 11, 0.08);
+  border: 1px dashed var(--gold);
+  padding: 0.8rem 1.2rem;
+  margin: 0.8rem 0;
+  font-style: italic;
+  border-radius: 4px;
+}
+.prompt-box::before {
+  content: "🪶 ";
+  font-style: normal;
+}
+.share-box {
+  background: rgba(184, 92, 138, 0.08);
+  border: 2px solid var(--romance);
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+}
+.share-box h4 {
+  margin-top: 0;
+  color: var(--romance);
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="tutorial.html">Sistema</a> &gt; <strong>Tutorial</strong>
+</div>
+
+<div class="container">
+
+<h2>🎓 Tutorial Integrado — Aprenda Jogando</h2>
+<p>Este tutorial te guia pelo jogo passo a passo. Siga cada etapa e marque como concluída quando terminar.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Leia cada passo, faça o que ele pede, e marque ☐ como ☑ quando terminar. Você pode voltar aqui quantas vezes quiser.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Dia 1 — Conhecendo os Bastidores</h3>
+
+<div class="tutorial-step">
+  <span class="step-num">1</span>
+  <strong>Crie seu protagonista</strong>
+  <p>Use o <a href="criacao-protagonista.html">Criador de Protagonista</a> para criar seu personagem. Escolha nome, Capacidades Inatas, Background, Relíquia, Medo, Hábito e Lugar Favorito.</p>
+  <div class="hint">💡 <strong>Dica:</strong> Não precisa ser perfeito. Você pode mudar depois.</div>
+  <div class="prompt-box">
+    <strong>🪶 Prompt de Escrita:</strong> "Descreva o momento em que você acordou nos Bastidores pela primeira vez. O que você viu? O que você sentiu?"
+  </div>
+  <p>☐ Concluído</p>
+</div>
+
+<div class="tutorial-step">
+  <span class="step-num">2</span>
+  <strong>Crie seus NPCs romanceáveis</strong>
+  <p>Use o <a href="criacao-npcs.html">Criador de NPCs</a> para criar 3 NPCs romanceáveis: um Explorador, um Colega e um Forasteiro.</p>
+  <div class="hint">💡 <strong>Dica:</strong> Pense em como cada um se relaciona com seu protagonista.</div>
+  <div class="prompt-box">
+    <strong>🪶 Prompt de Escrita:</strong> "Imagine o momento em que você encontrará cada um deles. O que você espera? O que você teme?"
+  </div>
+  <p>☐ Concluído</p>
+</div>
+
+<div class="tutorial-step">
+  <span class="step-num">3</span>
+  <strong>Crie a Guilda e os Bastidores</strong>
+  <p>Use <a href="criacao-guilda.html">Criação: Guilda</a> e <a href="criacao-bastidores.html">Criação: Bastidores</a> para construir o cenário.</p>
+  <div class="hint">💡 <strong>Dica:</strong> A Regra Inquebrável é importante — ela vai aparecer mais tarde.</div>
+  <div class="prompt-box">
+    <strong>🪶 Prompt de Escrita:</strong> "Descreva a entrada dos Bastidores. Qual é a primeira coisa que as pessoas veem?"
+  </div>
+  <p>☐ Concluído</p>
+</div>
+
+<div class="tutorial-step">
+  <span class="step-num">4</span>
+  <strong>Crie a Cidade</strong>
+  <p>Use <a href="criacao-cidade.html">Criação: Cidade</a> para definir onde sua história acontece.</p>
+  <div class="hint">💡 <strong>Dica:</strong> Comece com uma cidade pequena — você pode expandir depois.</div>
+  <div class="prompt-box">
+    <strong>🪶 Prompt de Escrita:</strong> "Descreva a rua principal da cidade. O que você ouve? O que você cheira?"
+  </div>
+  <p>☐ Concluído</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Dia 2 — Primeiros Passos no Jogo</h3>
+
+<div class="tutorial-step">
+  <span class="step-num">5</span>
+  <strong>Escolha seu Modo de Jogo</strong>
+  <p>Leia <a href="sistema-modos.html">Modos de Jogo</a> e escolha o que combina com você: Cozy, Narrativo, Épico ou Speedrun.</p>
+  <div class="hint">💡 <strong>Dica:</strong> Se está começando, recomendamos <strong>Narrativo</strong> ou <strong>Cozy</strong>.</div>
+  <p>☐ Concluído</p>
+</div>
+
+<div class="hint" style="margin: 1rem 0;">🔁 <strong>Prévia:</strong> Os próximos passos (Manhã → Tarde → Noite) seguem um padrão que se repete todo dia — o <a href="sistema-loop.html">Loop do Jogo</a>. Não precisa ler agora; só saiba que esse padrão tem nome, caso queira consultar depois.</div>
+
+<div class="tutorial-step">
+  <span class="step-num">6</span>
+  <strong>Seu primeiro dia — Manhã</strong>
+  <p>Você acorda nos Bastidores. São 5h da manhã. O que você faz primeiro?</p>
+  <div class="hint">💡 <strong>Sugestão:</strong> Faça café! É o primeiro Ato do dia e você ganha +1 <a href="sistema-ecos-recursos.html">Recurso</a> bônus.</div>
+  <div class="prompt-box">
+    <strong>🪶 Prompt de Escrita:</strong> "O café está pronto. O cheiro preenche a sala. O que você pensa enquanto bebe?"
+  </div>
+  <p>☐ Concluído</p>
+</div>
+
+<div class="tutorial-step">
+  <span class="step-num">7</span>
+  <strong>Seu primeiro dia — Tarde</strong>
+  <p>Você está na oficina. Um aventureiro traz um artefato estranho. Use o move <strong>Restaurar uma Relíquia</strong>.</p>
+  <div class="hint">💡 <strong>Dica:</strong> Role 2d6 + MÃOS. Veja o resultado em <a href="sistema-resolucao.html">Resolução</a>.</div>
+  <div class="prompt-box">
+    <strong>🪶 Prompt de Escrita:</strong> "O artefato está na sua mão. O que você sente ao tocá-lo?"
+  </div>
+  <p>☐ Concluído</p>
+</div>
+
+<div class="tutorial-step">
+  <span class="step-num">8</span>
+  <strong>Seu primeiro dia — Noite</strong>
+  <p>O dia acabou. Use o move <strong>Descansar e Refletir</strong> para recuperar seus Atos.</p>
+  <div class="hint">💡 <strong>Dica:</strong> Se você escrever sobre o dia, ganha +1 <a href="sistema-ecos-recursos.html">Eco</a>.</div>
+  <div class="prompt-box">
+    <strong>🪶 Prompt de Escrita:</strong> "O dia acabou. Você está em seus aposentos. O que você pensa sobre o que viveu?"
+  </div>
+  <p>☐ Concluído</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Dia 3 — Aprofundando</h3>
+
+<div class="tutorial-step">
+  <span class="step-num">9</span>
+  <strong>Converse com um NPC</strong>
+  <p>Use o move <strong>Conversar Profundamente</strong> com um dos seus NPCs romanceáveis.</p>
+  <div class="hint">💡 <strong>Dica:</strong> Role 2d6 + CORAÇÃO. Veja a tabela de avanço de Relógios em <a href="sistema-relogios.html">Relógios</a>.</div>
+  <div class="prompt-box">
+    <strong>🪶 Prompt de Escrita:</strong> "O que [NPC] disse que você não esperava? O que você sentiu ao ouvir?"
+  </div>
+  <p>☐ Concluído</p>
+</div>
+
+<div class="tutorial-step">
+  <span class="step-num">10</span>
+  <strong>Explore a Cidade</strong>
+  <p>Use o move <strong>Explorar um Bairro</strong> para conhecer a cidade.</p>
+  <div class="hint">💡 <strong>Dica:</strong> Role 2d6 + OLHOS. O que você encontra?</div>
+  <div class="prompt-box">
+    <strong>🪶 Prompt de Escrita:</strong> "O que chamou sua atenção na cidade? Um cheiro, um som, uma cor?"
+  </div>
+  <p>☐ Concluído</p>
+</div>
+
+<div class="tutorial-step">
+  <span class="step-num">11</span>
+  <strong>Envie uma Expedição</strong>
+  <p>Use o <a href="sistema-aventureiros.html">Sistema de Aventureiros</a> para enviar um grupo em uma expedição.</p>
+  <div class="hint">💡 <strong>Dica:</strong> Comece com uma expedição Fácil — custa 1 <a href="sistema-ecos-recursos.html">Recurso</a> e 1 Ato.</div>
+  <div class="prompt-box">
+    <strong>🪶 Prompt de Escrita:</strong> "Quem vai na expedição? O que você espera que eles encontrem?"
+  </div>
+  <p>☐ Concluído</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>📤 Compartilhamento — O Fim do Capítulo</h3>
+
+<div class="share-box">
+  <h4>📤 Compartilhe sua História</h4>
+  <p>No final de cada capítulo, escreva um <strong>resumo</strong> do que aconteceu. Você pode compartilhar com outros jogadores ou guardar para si.</p>
+
+  <div class="prompt-box">
+    <strong>🪶 Prompt de Resumo:</strong> "O que aconteceu neste capítulo? Quem apareceu? O que mudou? O que você sentiu?"
+  </div>
+
+  <div style="border: 1px dashed var(--romance); padding: 1rem; min-height: 120px; margin: 0.5rem 0; background: var(--parchment); border-radius: 4px;">
+    <p style="color: var(--ink-soft); font-style: italic; text-align: center;">Escreva aqui seu resumo do capítulo...</p>
+  </div>
+
+  <p style="font-size: 0.9rem; color: var(--ink-soft);">
+    <strong>Dica:</strong> Compartilhar suas histórias com outros jogadores pode inspirar novas ideias e criar uma comunidade em torno do jogo.
+  </p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>🎉 Parabéns!</h3>
+
+<div class="callout celestial">
+  <p>Você completou o tutorial! Agora você sabe:</p>
+  <ul>
+    <li>✅ Como criar seu protagonista, NPCs e mundo</li>
+    <li>✅ Como funciona o loop do jogo (Manhã → Tarde → Noite)</li>
+    <li>✅ Como usar moves e rolar dados</li>
+    <li>✅ Como avançar Relógios</li>
+    <li>✅ Como enviar expedições</li>
+    <li>✅ Como compartilhar sua história</li>
+  </ul>
+  <p><strong>Próximo passo:</strong> Continue sua jornada com <a href="sistema-loop.html">O Loop do Jogo →</a>, ou conheça as <a href="sistema-tags.html">Tags</a> — pequenas marcas que sua história vai deixar conforme você joga.</p>
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Sistema — Tutorial Integrado</p>
+  <p><a href="sistema-modos.html">← Modos de Jogo</a> | <a href="sistema-loop.html">Próxima: Loop →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

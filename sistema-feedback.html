@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Feedback de Progresso</title>
+<style>
+.progress-container {
+  background: var(--parchment-dark);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.progress-bar {
+  height: 20px;
+  background: var(--parchment);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s;
+  background: linear-gradient(90deg, var(--gold), var(--success));
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+.milestone {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.milestone-achieved {
+  background: var(--success);
+  color: white;
+}
+.milestone-pending {
+  background: var(--parchment-dark);
+  color: var(--ink-soft);
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="sistema-feedback.html">Sistema</a> &gt; <strong>Feedback</strong>
+</div>
+
+<div class="container">
+
+<div class="tier-badge avancado">🔵 Avançado <span class="tier-desc">— camada opcional, adicione quando quiser mais profundidade</span></div>
+
+<h2>📈 Onde Você Está — Feedback Visual de Progresso</h2>
+<p>Esta página te mostra como você está progredindo. Use-a para ver seu crescimento e planejar seus próximos passos.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Preencha as barras de progresso com seus números atuais. Veja onde você está e onde quer chegar.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Progresso do Protagonista</h3>
+
+<div class="progress-container">
+  <div class="progress-label">
+    <span>Ofício (Ticks)</span>
+    <span>0 / 20</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 0%;"></div>
+  </div>
+</div>
+
+<div class="progress-container">
+  <div class="progress-label">
+    <span>Reputação na Guilda</span>
+    <span>0 / 20</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 0%;"></div>
+  </div>
+</div>
+
+<div class="progress-container">
+  <div class="progress-label">
+    <span>Reputação na Cidade</span>
+    <span>0 / 20</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 0%;"></div>
+  </div>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Relógios</h3>
+
+<div class="progress-container">
+  <div class="progress-label">
+    <span>Relógio de Romance (NPC 1)</span>
+    <span>0 / 10</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 0%;"></div>
+  </div>
+</div>
+
+<div class="progress-container">
+  <div class="progress-label">
+    <span>Relógio de Romance (NPC 2)</span>
+    <span>0 / 10</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 0%;"></div>
+  </div>
+</div>
+
+<div class="progress-container">
+  <div class="progress-label">
+    <span>Relógio de Romance (NPC 3)</span>
+    <span>0 / 10</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 0%;"></div>
+  </div>
+</div>
+
+<div class="progress-container">
+  <div class="progress-label">
+    <span>Evento Final</span>
+    <span>0 / 8</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width: 0%;"></div>
+  </div>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Conquistas</h3>
+
+<div>
+  <span class="milestone milestone-pending">☐ Mãos de Ouro</span>
+  <span class="milestone milestone-pending">☐ Coração Aberto</span>
+  <span class="milestone milestone-pending">☐ Mente Brilhante</span>
+  <span class="milestone milestone-pending">☐ Olhos Aguçados</span>
+  <span class="milestone milestone-pending">☐ Lenda dos Bastidores</span>
+  <span class="milestone milestone-pending">☐ Mestre do Amor</span>
+  <span class="milestone milestone-pending">☐ Colecionador de Histórias</span>
+  <span class="milestone milestone-pending">☐ Guardião dos Bastidores</span>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Próximos Marcos</h3>
+
+<ul>
+  <li><strong>Próximo nível de Ofício:</strong> ___ Ticks restantes</li>
+  <li><strong>Próximo nível de Reputação:</strong> ___ Ticks restantes</li>
+  <li><strong>Próximo Relógio de Romance:</strong> ___ segmentos restantes</li>
+  <li><strong>Próxima Conquista:</strong> ___</li>
+</ul>
+
+<div class="callout tip">
+  <strong>Dica:</strong> Use esta página no final de cada capítulo para ver seu progresso. Celebre cada marco alcançado!
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você tem feedback visual, vá para <a href="progressao-conquistas.html">Conquistas Expandidas →</a> para ver todas as conquistas.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Sistema — Feedback</p>
+  <p><a href="sistema-estatisticas.html">← Estatísticas</a> | <a href="progressao-conquistas.html">Próxima: Conquistas →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

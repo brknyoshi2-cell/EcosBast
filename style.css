@@ -1,0 +1,986 @@
+/* ============================================================
+   style.css — Estilos Compartilhados do Ecos dos Bastidores
+   ============================================================ */
+
+:root {
+  --parchment: #f4ecd8;
+  --parchment-dark: #e8dcc0;
+  --ink: #2b1d0e;
+  --ink-soft: #4a3820;
+  --accent: #8b4513;
+  --accent-light: #c9873d;
+  --gold: #b8860b;
+  --danger: #7a2e2e;
+  --success: #4a6b3a;
+  --mystery: #4a4a6b;
+  --romance: #b85c8a;
+  --soft: #6b8a4a;
+}
+
+[data-theme="dark"] {
+  --parchment: #1a1a1a;
+  --parchment-dark: #2a2a2a;
+  --ink: #e8dcc0;
+  --ink-soft: #e8dcc0;
+  --accent: #c9873d;
+  --accent-light: #b8860b;
+  --gold: #d4a574;
+  --danger: #a04040;
+  --success: #6b8a4a;
+  --mystery: #6b6b8a;
+  --romance: #d47aa0;
+  --soft: #8aaa6a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: var(--parchment);
+  color: var(--ink);
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ============================================================
+   FOCO E ACESSIBILIDADE
+   ============================================================ */
+a:focus,
+button:focus,
+.control-btn:focus,
+.nav-links a:focus,
+.generator-btn:focus,
+.print-btn:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   BOTÕES FLUTUANTES (Tema + outros)
+   ============================================================ */
+.floating-controls {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.control-btn {
+  background: var(--accent);
+  color: var(--parchment);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.control-btn:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   MENU DE NAVEGAÇÃO (AGRESSIVAMENTE COMPACTO)
+   ============================================================ */
+.top-nav {
+  position: sticky;
+  top: 0;
+  background: var(--ink);
+  color: var(--parchment);
+  padding: 0.3rem 1rem; /* ← reduzido de 0.8rem para 0.3rem */
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.top-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem; /* ← reduzido de 1rem para 0.5rem */
+}
+
+.top-nav h1 {
+  font-size: 1.1rem; /* ← reduzido de 1.3rem para 1.1rem */
+  color: var(--gold);
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem; /* ← reduzido de 0.3rem para 0.2rem */
+}
+
+.nav-links a {
+  color: var(--parchment);
+  text-decoration: none;
+  padding: 0.15rem 0.5rem; /* ← reduzido de 0.3rem 0.7rem para 0.15rem 0.5rem */
+  border-radius: 3px;
+  font-size: 0.8rem; /* ← reduzido de 0.85rem para 0.8rem */
+  transition: background 0.2s;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  background: var(--accent);
+}
+
+/* ============================================================
+   MIGALHAS DE PÃO (Breadcrumbs)
+   ============================================================ */
+.breadcrumbs {
+  background: var(--parchment-dark);
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--accent-light);
+}
+
+.breadcrumbs a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   CONTAINER PRINCIPAL
+   ============================================================ */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ============================================================
+   TÍTULOS
+   ============================================================ */
+h2 {
+  font-size: 2.2rem;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent-light);
+  padding-bottom: 0.3rem;
+  margin: 3rem 0 1.5rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin: 2rem 0 1rem;
+  font-variant: small-caps;
+}
+
+h4 {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin: 1.5rem 0 0.5rem;
+  font-weight: bold;
+}
+
+p {
+  margin: 0.8rem 0;
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+  margin: 0.8rem 0;
+}
+
+li {
+  margin: 0.3rem 0;
+}
+
+/* ============================================================
+   TABELAS
+   ============================================================ */
+
+/* Estilo padrão (para lore, descrições, conteúdo geral) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  background: var(--parchment-dark);
+  box-shadow: 0 2px 6px rgba(43, 29, 14, 0.15);
+  font-size: 0.95rem;
+  display: block;
+  overflow-x: auto;
+}
+
+th {
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+td {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: rgba(244, 236, 216, 0.3);
+}
+
+/* Estilo compacto (para referência rápida, consultas) */
+table.compact {
+  font-size: 0.85rem;
+}
+
+table.compact th {
+  padding: 0.5rem 0.7rem;
+}
+
+table.compact td {
+  padding: 0.4rem 0.7rem;
+}
+
+/* Estilo extra-compacto (para telas pequenas) */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.85rem;
+  }
+
+  th,
+  td {
+    padding: 0.4rem;
+  }
+
+  table.compact {
+    font-size: 0.78rem;
+  }
+
+  table.compact th,
+  table.compact td {
+    padding: 0.3rem 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  table {
+    font-size: 0.75rem;
+  }
+
+  th,
+  td {
+    padding: 0.25rem 0.3rem;
+  }
+
+  table.compact {
+    font-size: 0.7rem;
+  }
+
+  table.compact th,
+  table.compact td {
+    padding: 0.2rem 0.25rem;
+  }
+}
+/* ============================================================
+   CALLOUTS
+   ============================================================ */
+.callout {
+  background: rgba(184, 134, 11, 0.08);
+  border: 1px dashed var(--gold);
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+.callout::before {
+  content: "❦ ";
+  color: var(--gold);
+  font-style: normal;
+}
+
+.callout.tip {
+  background: rgba(74, 107, 58, 0.08);
+  border-color: var(--success);
+}
+
+.callout.tip::before {
+  content: "✦ ";
+  color: var(--success);
+  font-style: normal;
+}
+
+.callout.warning {
+  background: rgba(122, 46, 46, 0.08);
+  border-color: var(--danger);
+}
+
+.callout.warning::before {
+  content: "⚠️ ";
+  color: var(--danger);
+  font-style: normal;
+}
+
+.callout.rule {
+  background: rgba(74, 74, 107, 0.08);
+  border: 2px solid var(--mystery);
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.callout.rule::before {
+  content: "⚖️ ";
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+.callout.example {
+  background: rgba(184, 134, 11, 0.12);
+  border: 2px solid var(--gold);
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.callout.example::before {
+  content: "📖 ";
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+.callout.celestial {
+  background: rgba(184, 134, 11, 0.15);
+  border: 3px solid var(--gold);
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.callout.celestial::before {
+  content: "✨ ";
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+/* ============================================================
+   DIVISORES
+   ============================================================ */
+.section-divider {
+  text-align: center;
+  margin: 3rem 0;
+  color: var(--gold);
+  font-size: 1.5rem;
+  letter-spacing: 1rem;
+}
+
+/* ============================================================
+   BOTÃO VOLTAR AO TOPO
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent);
+  color: var(--parchment);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 999;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+}
+
+.back-to-top:hover {
+  background: var(--gold);
+}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+  border-top: 3px double var(--accent);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ============================================================
+   GERADOR (artefatos.html, fichas.html etc)
+   ============================================================ */
+.generator-section {
+  background: var(--parchment-dark);
+  border: 2px solid var(--gold);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+.generator-section h3 {
+  text-align: center;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.generator-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.generator-btn {
+  background: var(--accent);
+  color: var(--parchment);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.2s;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  position: relative;
+}
+
+.generator-btn:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+}
+
+.generator-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.generator-output {
+  background: var(--parchment);
+  border: 1px solid var(--accent-light);
+  padding: 1.5rem;
+  margin-top: 1rem;
+  min-height: 150px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.gen-field {
+  margin: 0.8rem 0;
+}
+
+.gen-field strong {
+  color: var(--accent);
+  display: inline-block;
+  min-width: 140px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  text-align: center;
+}
+
+.loading-spinner.active {
+  display: block;
+}
+
+.spinner {
+  border: 4px solid var(--parchment-dark);
+  border-top: 4px solid var(--gold);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 0.5rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  color: var(--accent);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   ELEMENTOS ESPECÍFICOS DO INDEX.HTML
+   ============================================================ */
+header.hero {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  border-bottom: 3px double var(--accent);
+  margin-bottom: 3rem;
+}
+
+header.hero h1 {
+  font-size: 3.5rem;
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: 0.1em;
+  font-variant: small-caps;
+}
+
+header.hero .subtitle {
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+
+header.hero .flavor {
+  max-width: 650px;
+  margin: 2rem auto 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+  padding: 1rem 1.5rem;
+  background: rgba(184, 134, 11, 0.05);
+  line-height: 1.8;
+}
+
+.toc {
+  background: var(--parchment-dark);
+  border: 1px solid var(--accent-light);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+
+.toc h3 {
+  margin-top: 0;
+}
+
+.toc ol {
+  padding-left: 1.5rem;
+}
+
+.toc a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent-light);
+}
+
+.toc a:hover {
+  color: var(--gold);
+}
+
+/* Badges de Camada (Essencial/Recomendado/Avançado) */
+.tier-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  margin: 0 0 1.5rem;
+  border: 1px solid transparent;
+}
+.tier-badge .tier-desc {
+  font-weight: normal;
+  font-variant: normal;
+  font-style: italic;
+  letter-spacing: normal;
+  opacity: 0.85;
+}
+.tier-badge.essencial {
+  background: rgba(74, 107, 58, 0.12);
+  color: var(--success);
+  border-color: var(--success);
+}
+.tier-badge.recomendado {
+  background: rgba(184, 134, 11, 0.12);
+  color: var(--gold);
+  border-color: var(--gold);
+}
+.tier-badge.avancado {
+  background: rgba(74, 74, 107, 0.12);
+  color: var(--mystery);
+  border-color: var(--mystery);
+}
+
+/* Playtesters */
+.playtesters-section {
+  margin: 3rem 0;
+  padding: 1.5rem;
+  background: var(--parchment-dark);
+  border: 2px solid var(--accent-light);
+  border-radius: 8px;
+}
+
+.collapsible {
+  width: 100%;
+}
+
+.collapsible-title {
+  font-size: 1.3rem;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 0.8rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  list-style: none;
+  transition: background 0.2s;
+}
+
+.collapsible-title:hover {
+  background: rgba(184, 134, 11, 0.1);
+}
+
+.collapsible-title::marker {
+  content: "";
+}
+
+.collapsible-content {
+  padding: 1rem 0.8rem;
+  border-top: 1px dashed var(--accent-light);
+  margin-top: 0.5rem;
+}
+
+.disclaimer {
+  background: rgba(122, 46, 46, 0.08);
+  border: 1px solid var(--danger);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.playtester-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.playtester-card {
+  background: var(--parchment);
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--accent-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.playtester-card strong {
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.playtester-card em {
+  color: var(--gold);
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.note {
+  background: rgba(184, 92, 138, 0.08);
+  border: 1px solid var(--romance);
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ============================================================
+   IMPRESSÃO
+   ============================================================ */
+@media print {
+  .top-nav,
+  .floating-controls,
+  .back-to-top,
+  .no-print,
+  .generator-section,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  header.hero {
+    padding: 1rem 0;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 768px) {
+  header.hero h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  th,
+  td {
+    padding: 0.4rem;
+  }
+
+  .floating-controls {
+    top: 70px;
+    right: 10px;
+    bottom: auto;
+  }
+
+  .control-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.3rem;
+  }
+
+  .top-nav h1 {
+    font-size: 0.95rem;
+  }
+
+  .playtester-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-nav-inner {
+    gap: 0.3rem;
+  }
+
+  .generator-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .generator-btn {
+    max-width: 100%;
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav {
+    padding: 0.2rem 0.5rem;
+  }
+
+  .top-nav h1 {
+    font-size: 0.85rem;
+  }
+
+  .nav-links a {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.25rem;
+  }
+
+  .breadcrumbs {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+
+
+/* ============================================================
+   MENU DROPDOWN HIERÁRQUICO
+   ============================================================ */
+
+/* Container do dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Botão do dropdown */
+.dropbtn {
+  background: transparent;
+  color: var(--parchment);
+  border: none;
+  padding: 0.15rem 0.5rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.2s;
+  line-height: 1.4;
+  white-space: nowrap;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.dropbtn:hover {
+  background: var(--accent);
+}
+
+/* Conteúdo do dropdown (escondido por padrão) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--ink);
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  padding: 0.3rem 0;
+  z-index: 1000;
+  border: 1px solid var(--accent-light);
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+  color: var(--parchment);
+  padding: 0.3rem 0.8rem;
+  text-decoration: none;
+  display: block;
+  font-size: 0.8rem;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background: var(--accent);
+}
+
+/* Mostrar dropdown ao passar o mouse (desktop) */
+@media (hover: hover) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+/* Mostrar dropdown ao clicar (mobile/touch) */
+@media (hover: none) {
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+  .dropbtn {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.3rem;
+  }
+
+  .dropdown-content {
+    min-width: 160px;
+    right: 0;
+    left: auto;
+  }
+
+  .dropdown-content a {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .top-nav-inner {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropbtn {
+    font-size: 0.6rem;
+    padding: 0.05rem 0.2rem;
+  }
+
+  .dropdown-content {
+    min-width: 140px;
+  }
+
+  .dropdown-content a {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+  }
+}
+
+/* ============================================================
+   SINERGIAS E NARRATIVA
+   ============================================================ */
+
+.callout.narrative {
+  background: rgba(74, 74, 107, 0.08);
+  border: 1px dashed var(--mystery);
+  padding: 0.8rem 1.2rem;
+  margin: 0.8rem 0;
+  font-style: italic;
+  border-radius: 4px;
+}
+
+.callout.narrative::before {
+  content: "📖 ";
+  font-style: normal;
+}

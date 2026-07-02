@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Sistema de Crafting</title>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="sistema-crafting.html">Sistema</a> &gt; <strong>Crafting</strong>
+</div>
+
+<div class="container">
+
+<div class="tier-badge avancado">🔵 Avançado <span class="tier-desc">— camada opcional, adicione quando quiser mais profundidade</span></div>
+
+<div class="callout rule">
+  <h4>⚖️ Regra de Empilhamento de Bônus</h4>
+  <p>Bônus de diferentes fontes <strong>não se acumulam</strong> automaticamente. Use a seguinte ordem de prioridade:</p>
+  <ol>
+    <li><strong>Bônus de Módulos</strong> (+1 ou +2)</li>
+    <li><strong>Bônus de Crafting</strong> (+1 ou +2)</li>
+    <li><strong>Bônus de Tags</strong> (+1)</li>
+    <li><strong>Bônus de Conquistas</strong> (+1)</li>
+  </ol>
+  <p><strong>Regra:</strong> Use o <strong>maior bônus</strong> disponível. Bônus de fontes diferentes <strong>não se somam</strong> (ex: +1 de módulo + +1 de crafting = +1, não +2).</p>
+  <p><strong>Exceção:</strong> Bônus de Sinergias Ativas podem ser somados a um bônus base (ex: +1 de módulo + +2 de sinergia = +3).</p>
+</div>
+
+<h2>🔨 Forjando o Novo — Sistema de Crafting</h2>
+<p>Você não é apenas um restaurador — você também pode criar. Com as ferramentas certas e materiais, você pode forjar novos itens, melhorar artefatos e personalizar seu equipamento.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Gaste Recursos e Atos para criar itens. O crafting é opcional, mas pode dar vantagens significativas.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Níveis de Crafting</h3>
+
+<p>Seu nível de crafting é igual ao seu <strong>Nível de Ofício</strong> (veja <a href="progressao-oficio.html">Progressão: Ofício</a>). Cada nível desbloqueia novas receitas.</p>
+
+<table>
+<tr><th>Nível</th><th>Nome</th><th>Itens que pode criar</th></tr>
+<tr><td>1</td><td>Aprendiz</td><td>Itens simples (ferramentas básicas)</td></tr>
+<tr><td>2</td><td>Artesão</td><td>Itens médios (móveis, utensílios)</td></tr>
+<tr><td>3</td><td>Mestre Restaurador</td><td>Itens complexos (decoração, armaduras leves)</td></tr>
+<tr><td>4</td><td>Sábio das Relíquias</td><td>Itens raros (artefatos personalizados)</td></tr>
+<tr><td>5</td><td>Lenda Viva</td><td>Itens lendários (objetos únicos)</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Materiais de Crafting</h3>
+
+<p>Materiais podem ser encontrados na cidade, em expedições, ou comprados com Recursos.</p>
+
+<table>
+<tr><th>Material</th><th>Onde encontrar</th><th>Custo (se comprar)</th></tr>
+<tr><td><strong>Madeira Comum</strong></td><td>Mercado, expedições fáceis</td><td>1 Recurso</td></tr>
+<tr><td><strong>Metal Básico</strong></td><td>Ferreiro, expedições médias</td><td>2 Recursos</td></tr>
+<tr><td><strong>Tecido</strong></td><td>Mercado, comerciantes</td><td>1 Recurso</td></tr>
+<tr><td><strong>Couro</strong></td><td>Caçadores, expedições</td><td>2 Recursos</td></tr>
+<tr><td><strong>Madeira Rara</strong></td><td>Expedições difíceis, florestas antigas</td><td>4 Recursos</td></tr>
+<tr><td><strong>Metal Raro</strong></td><td>Expedições difíceis, minas abandonadas</td><td>5 Recursos</td></tr>
+<tr><td><strong>Gema Bruta</strong></td><td>Expedições lendárias, ruínas antigas</td><td>8 Recursos</td></tr>
+<tr><td><strong>Essência Mágica</strong></td><td>Artefatos desmontados, expedições lendárias</td><td>10 Recursos</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Receitas de Crafting</h3>
+
+<h4>Nível 1 — Aprendiz</h4>
+<table>
+<tr><th>Item</th><th>Materiais</th><th>Custo em Atos</th><th>Efeito</th></tr>
+<tr><td>Ferramentas Básicas</td><td>Madeira Comum (2) + Metal Básico (1)</td><td>1 Ato</td><td>+1 em restauração de artefatos comuns</td></tr>
+<tr><td>Caixa de Armazenamento</td><td>Madeira Comum (3)</td><td>1 Ato</td><td>+1 espaço para artefatos</td></tr>
+</table>
+
+<h4>Nível 2 — Artesão</h4>
+<table>
+<tr><th>Item</th><th>Materiais</th><th>Custo em Atos</th><th>Efeito</th></tr>
+<tr><td>Bancada de Trabalho</td><td>Madeira Comum (4) + Metal Básico (2)</td><td>2 Atos</td><td>+1 em todos os moves de Ofício</td></tr>
+<tr><td>Estante de Livros</td><td>Madeira Comum (3) + Tecido (1)</td><td>1 Ato</td><td>+1 em rolagens de MENTE</td></tr>
+<tr><td>Poltrona Confortável</td><td>Madeira Comum (2) + Couro (2)</td><td>2 Atos</td><td>+1 em rolagens de descanso</td></tr>
+</table>
+
+<h4>Nível 3 — Mestre Restaurador</h4>
+<table>
+<tr><th>Item</th><th>Materiais</th><th>Custo em Atos</th><th>Efeito</th></tr>
+<tr><td>Ferramentas de Precisão</td><td>Metal Raro (2) + Madeira Rara (1)</td><td>2 Atos</td><td>+2 em restauração de artefatos raros</td></tr>
+<tr><td>Armadura Leve</td><td>Couro (3) + Metal Básico (2)</td><td>2 Atos</td><td>+1 em expedições (proteção)</td></tr>
+<tr><td>Luminária Mágica</td><td>Metal Básico (2) + Essência Mágica (1)</td><td>2 Atos</td><td>+1 em rolagens noturnas</td></tr>
+</table>
+
+<h4>Nível 4 — Sábio das Relíquias</h4>
+<table>
+<tr><th>Item</th><th>Materiais</th><th>Custo em Atos</th><th>Efeito</th></tr>
+<tr><td>Artefato Personalizado</td><td>Metal Raro (3) + Gema Bruta (2) + Essência Mágica (2)</td><td>3 Atos</td><td>Escolha um bônus (+1 em qualquer capacidade)</td></tr>
+<tr><td>Mapa Encantado</td><td>Madeira Rara (1) + Essência Mágica (1)</td><td>2 Atos</td><td>+2 em expedições de conhecimento</td></tr>
+</table>
+
+<h4>Nível 5 — Lenda Viva</h4>
+<table>
+<tr><th>Item</th><th>Materiais</th><th>Custo em Atos</th><th>Efeito</th></tr>
+<tr><td>Artefato Lendário</td><td>Metal Raro (5) + Gema Bruta (5) + Essência Mágica (5)</td><td>5 Atos</td><td>+3 em uma capacidade específica + Tag [LENDA]</td></tr>
+<tr><td>Relíquia Única</td><td>Materiais especiais (determinados pela história)</td><td>5 Atos</td><td>Efeito narrativo único — defina com a história</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Especializações de Crafting</h3>
+
+<p>Você pode se especializar em um tipo de crafting, ganhando bônus adicionais:</p>
+
+<table>
+<tr><th>Especialização</th><th>Requisito</th><th>Bônus</th></tr>
+<tr><td><strong>Mestre Ferreiro</strong></td><td>Nível 3 + Sala de Armas</td><td>Itens de metal custam −1 Recurso</td></tr>
+<tr><td><strong>Mestre Marceneiro</strong></td><td>Nível 3 + Biblioteca Arcana</td><td>Itens de madeira custam −1 Recurso</td></tr>
+<tr><td><strong>Mestre Tecelão</strong></td><td>Nível 3 + Arquivo dos Espíritos</td><td>Itens de tecido/couro custam −1 Recurso</td></tr>
+</table>
+
+<div class="callout example">
+  <h3>📖 Exemplo de Uso</h3>
+  <p><strong>Gabriel (O Restaurador):</strong> "Quero criar Ferramentas de Precisão para restaurar artefatos raros."</p>
+  <p><strong>Requisitos:</strong> Nível 3 (Mestre Restaurador) + Metal Raro (2) + Madeira Rara (1) + 2 Atos.</p>
+  <p><strong>Resultado:</strong> Gabriel ganha +2 em restauração de artefatos raros — exatamente o que ele precisava.</p>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você pode criar itens, vá para <a href="sistema-misterios.html">Sistema: Mistérios →</a> para descobrir segredos escondidos.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Sistema — Crafting</p>
+  <p><a href="sistema-decoracao.html">← Decoração</a> | <a href="sistema-misterios.html">Próxima: Mistérios →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

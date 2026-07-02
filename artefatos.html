@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Artefatos e Maravilhas</title>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <strong>Artefatos e Maravilhas</strong>
+</div>
+
+<div class="container">
+
+<h2>As Relíquias dos Bastidores — Artefatos e Maravilhas</h2>
+<p>Os artefatos são o coração dos Bastidores. Cada um carrega uma história, um defeito, e um desejo próprio. Eles não são apenas objetos — são personagens silenciosos que esperam para serem compreendidos.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Role as tabelas abaixo para criar artefatos únicos, ou use o gerador automático para inspiração rápida.
+</div>
+
+<!-- GERADOR DE ARTEFATOS -->
+<div class="generator-section">
+<h3>🎲 Gerador de Artefatos</h3>
+<div class="generator-controls">
+  <button class="generator-btn" onclick="generateWithLoading('artifactOutput', () => renderArtifact(generateArtifact()))">✨ Gerar Artefato</button>
+  <button class="generator-btn" onclick="generateWithLoading('artifactOutput', () => renderWonder(generateWonder()))">🌟 Gerar Maravilha Cotidiana</button>
+</div>
+<div class="generator-output" id="artifactOutput">
+  <div class="loading-spinner" id="spinner-artifactOutput">
+    <div class="spinner"></div>
+    <div class="loading-text">Invocando artefato...</div>
+  </div>
+  <p style="text-align: center; color: var(--ink-soft); font-style: italic;">Clique em um botão para gerar</p>
+</div>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Tabela de Defeitos Mágicos (d10)</h3>
+<p>Todo artefato tem um defeito. Role 1d10 ou escolha:</p>
+<table>
+<tr><th>d10</th><th>Defeito Mágico</th></tr>
+<tr><td>1</td><td>Sussurra à noite em uma língua que ninguém entende.</td></tr>
+<tr><td>2</td><td>Drena energia vital de quem o toca por muito tempo (causa fadiga).</td></tr>
+<tr><td>3</td><td>Muda de lugar dentro dos Bastidores quando ninguém está olhando.</td></tr>
+<tr><td>4</td><td>Reage violentamente a mentiras (esquenta, treme, ou emite luz).</td></tr>
+<tr><td>5</td><td>Mostra memórias do dono anterior para quem o segura.</td></tr>
+<tr><td>6</td><td>Atrai criaturas mágicas pequenas e inofensivas (mariposas de luz, ratos de sombra).</td></tr>
+<tr><td>7</td><td>Funciona apenas sob a luz da lua ou em escuridão total.</td></tr>
+<tr><td>8</td><td>Tem uma personalidade teimosa e recusa funcionar se não for "pedido com educação".</td></tr>
+<tr><td>9</td><td>Causa alucinações leves em quem o usa por mais de uma hora.</td></tr>
+<tr><td>10</td><td>Está lentamente se desintegrando — resta pouco tempo antes que suma para sempre.</td></tr>
+</table>
+
+<h3>Tabela: O que o Artefato Pede (d10)</h3>
+<p>Artefatos têm necessidades. Role 1d10 para descobrir o que este exige para funcionar bem:</p>
+<table>
+<tr><th>d10</th><th>O que o Artefato Pede</th></tr>
+<tr><td>1</td><td>Para ser polido com óleo de lavanda toda semana.</td></tr>
+<tr><td>2</td><td>Para ouvir música (cantarolar funciona) antes de ser usado.</td></tr>
+<tr><td>3</td><td>Silêncio absoluto. Não funciona se houver barulho por perto.</td></tr>
+<tr><td>4</td><td>Para ser guardado perto de uma fonte de água corrente.</td></tr>
+<tr><td>5</td><td>Que o usuário diga seu nome verdadeiro antes de tocá-lo.</td></tr>
+<tr><td>6</td><td>Para ser alimentado com uma gota de sangue ou uma lágrima (uma vez por mês).</td></tr>
+<tr><td>7</td><td>Para ficar virado para o norte, ou perde a função.</td></tr>
+<tr><td>8</td><td>Que alguém conte uma história verdadeira para ele antes de dormir.</td></tr>
+<tr><td>9</td><td>Para ser envolto em seda vermelha quando não estiver em uso.</td></tr>
+<tr><td>10</td><td>Nada. Ele é perfeitamente autossuficiente — e isso é assustador.</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3 id="maravilhas-cotidianas">Tabela de Maravilhas Cotidianas (d10)</h3>
+<p>A magia permeia o dia a dia nos Bastidores. Quando tirar 10+ em "Preparar Café/Chá" ou "Limpar os Bastidores", role 1d10:</p>
+<table>
+<tr><th>d10</th><th>Maravilha Cotidiana</th></tr>
+<tr><td>1</td><td>A poeira forma constelações se não for varrida por 24h.</td></tr>
+<tr><td>2</td><td>O chá muda de sabor conforme o humor de quem bebe.</td></tr>
+<tr><td>3</td><td>As sombras dos objetos imitam seus movimentos com 2 segundos de atraso.</td></tr>
+<tr><td>4</td><td>A vassoura varre sozinha por 1 hora se você pedir com educação.</td></tr>
+<tr><td>5</td><td>A xícara de café nunca esfria, não importa quanto tempo passe.</td></tr>
+<tr><td>6</td><td>O espelho do corredor reflete o clima de amanhã.</td></tr>
+<tr><td>7</td><td>Os livros sussurram uns com os outros quando ninguém está olhando.</td></tr>
+<tr><td>8</td><td>As velas dos candelabros acendem sozinhas ao entardecer.</td></tr>
+<tr><td>9</td><td>Um gato fantasma (invisível, mas audível) dorme em cima dos artefatos perigosos.</td></tr>
+<tr><td>10</td><td>Os degraus da escada contam seus passos em voz baixa e melodiosa.</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3 id="nao-tradicionais">Artefatos Não-Tradicionais (d10)</h3>
+<p>Estes artefatos não fazem o que você espera — e isso é parte da graça.</p>
+
+<table>
+<tr><th>d10</th><th>Artefato</th><th>O que parece fazer</th><th>O que realmente faz</th></tr>
+<tr><td>1</td><td><strong>A Espada que Brilha</strong></td><td>Uma espada lendária que deveria cortar qualquer coisa</td><td>Ela brilha intensamente... mas só para iluminar salas escuras. É uma lanterna glorificada.</td></tr>
+<tr><td>2</td><td><strong>O Amuleto Barulhento</strong></td><td>Um amuleto que deveria proteger contra maldições</td><td>Ele avisa quando há perigo... fazendo um barulho tão alto que o perigo já te encontrou.</td></tr>
+<tr><td>3</td><td><strong>A Poção Amarga</strong></td><td>Uma poção que deveria curar ferimentos</td><td>Ela cura, mas o sabor é tão ruim que você prefere ficar ferido(a).</td></tr>
+<tr><td>4</td><td><strong>O Mapa da Taverna</strong></td><td>Um mapa do tesouro que mostra o caminho para riquezas</td><td>Mostra o caminho... para a taverna mais próxima.</td></tr>
+<tr><td>5</td><td><strong>O Anel Silencioso</strong></td><td>Um anel que deveria tornar você invisível</td><td>Torna você invisível... mas também inaudível. Você não pode falar.</td></tr>
+<tr><td>6</td><td><strong>A Capa que Anda para Trás</strong></td><td>Uma capa que deveria dar velocidade</td><td>Faz você andar rápido... mas só para trás.</td></tr>
+<tr><td>7</td><td><strong>A Varinha de Virar Pão</strong></td><td>Uma varinha que deveria conjurar magia poderosa</td><td>Transforma qualquer coisa em pão. Pão é sempre útil.</td></tr>
+<tr><td>8</td><td><strong>O Espelho da Verdade</strong></td><td>Um espelho que deveria mostrar a verdade</td><td>Mostra você... mas sempre com uma expressão engraçada.</td></tr>
+<tr><td>9</td><td><strong>O Livro que Lê Você</strong></td><td>Um livro que deveria contar histórias</td><td>Ele lê você — suas expressões, seus pensamentos — e comenta sobre eles.</td></tr>
+<tr><td>10</td><td><strong>A Pedra da Sorte</strong></td><td>Uma pedra que deveria trazer boa sorte</td><td>Ela traz sorte... mas apenas para outras pessoas. Não para você.</td></tr>
+</table>
+
+<div class="callout example">
+  <h3>📖 Exemplo de Uso</h3>
+  <p><strong>Jogador:</strong> "Quero usar a Espada que Brilha para cortar uma corda."</p>
+  <p><strong>Sistema:</strong> "Ela brilha intensamente... mas não corta a corda. Agora a sala está iluminada, e você pode ver a corda que você não consegue cortar."</p>
+  <p><strong>Jogador:</strong> "Eu uso a espada como lanterna para encontrar uma faca."</p>
+  <p><strong>Sistema:</strong> "Você encontra uma faca. Ela é muito mais útil que a espada. Você se pergunta por que trouxe a espada."</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>📖 Artefatos com Lore (d10)</h3>
+
+<p>Quando você restaura um artefato, role 1d10 para descobrir sua história — cada artefato tem uma lore que você pode descobrir.</p>
+
+<table>
+<tr><th>d10</th><th>Artefato</th><th>Lore</th></tr>
+<tr><td>1</td><td><strong>O Relógio que Anda para Trás</strong></td><td><em>"Criado por um relojoeiro que perdeu seu filho. Ele queria voltar no tempo. O relógio anda para trás como um lembrete do que ele não pode mudar."</em></td></tr>
+<tr><td>2</td><td><strong>A Chave de Cristal Fumê</strong></td><td><em>"Esta chave não abre portas — ela abre memórias. Foi usada por um rei para esquecer seu passado."</em></td></tr>
+<tr><td>3</td><td><strong>A Pena de Fênix Adormecida</strong></td><td><em>"Uma pena que nunca queima. Dizem que a fênix que a perdeu está esperando para despertar."</em></td></tr>
+<tr><td>4</td><td><strong>O Mapa de Tinta Viva</strong></td><td><em>"O mapa se redesenha sozinho. Ele mostra não onde você está, mas onde você deveria estar."</em></td></tr>
+<tr><td>5</td><td><strong>O Relógio de Bolso sem Ponteiros</strong></td><td><em>"Este relógio não marca horas. Ele marca momentos — os momentos que você nunca esquece."</em></td></tr>
+<tr><td>6</td><td><strong>A Taça que Nunca Esvazia</strong></td><td><em>"Criada por um druida para um rei moribundo. A taça cura, mas o rei nunca mais sentiu o gosto de vinho."</em></td></tr>
+<tr><td>7</td><td><strong>O Anel das Memórias Alheias</strong></td><td><em>"Vendido como experiência imersiva em Marrath. O último dono esqueceu o nome da própria mãe."</em></td></tr>
+<tr><td>8</td><td><strong>A Espada que Brilha</strong></td><td><em>"Uma espada que deveria cortar qualquer coisa. Ela foi criada por um ferreiro que queria iluminar o caminho de seu filho. Funciona melhor como lanterna."</em></td></tr>
+<tr><td>9</td><td><strong>O Amuleto Barulhento</strong></td><td><em>"Um amuleto que deveria proteger contra maldições. Ele avisa de perigos... com um barulho tão alto que o perigo já te encontrou."</em></td></tr>
+<tr><td>10</td><td><strong>A Poção Amarga</strong></td><td><em>"Uma poção que cura, mas o sabor é tão ruim que você prefere ficar ferido. Criada por um alquimista que odiava seus pacientes."</em></td></tr>
+</table>
+
+<div class="callout rule">
+  <strong>Regra:</strong> Quando você restaura um artefato, role 1d10 para descobrir sua lore. Ganhe <strong>+1 Eco</strong> por escrever sobre ela.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Artefatos Lendários (com Lore Curta)</h3>
+<p>Artefatos raros que carregam histórias completas. Use como ganchos principais de campanha:</p>
+<table>
+<tr><th>Nome</th><th>Origem</th><th>Função</th><th>Defeito</th><th>Lore (1 parágrafo)</th></tr>
+<tr>
+  <td><strong>A Ampulheta de Areia Estelar</strong></td>
+  <td>Império Caído de Ossun</td>
+  <td>Reverte o tempo em 10 minutos dentro de um cômodo.</td>
+  <td>Cada uso envelhece o usuário 1 ano.</td>
+  <td>Criada pelo último Cronomante de Ossun para salvar sua filha de uma doença. Ele a usou 7 vezes. Ele morreu de velhice aos 24 anos. A filha sobreviveu, mas nunca soube o que ele fez.</td>
+</tr>
+<tr>
+  <td><strong>O Espelho de Prata Líquida</strong></td>
+  <td>Guilda dos Navegantes de Vaelstrom</td>
+  <td>Mostra o rosto da pessoa que o usuário mais ama.</td>
+  <td>Nunca mostra o rosto do próprio usuário.</td>
+  <td>Usado por capitães para navegar pela saudade. Dizem que um capitão olhou para ele por 3 dias seguidos e morreu de sede, sorrindo.</td>
+</tr>
+<tr>
+  <td><strong>A Bússola de Ossos</strong></td>
+  <td>Tribos Nômades de Dusthaven</td>
+  <td>Aponta para o que o usuário mais perdeu na vida.</td>
+  <td>Nunca aponta para o norte. Sempre treme.</td>
+  <td>Feita com os ossos de um ancestral. Os nômades a usam para encontrar cemitérios perdidos. Um dia, ela apontou para o próprio usuário.</td>
+</tr>
+<tr>
+  <td><strong>O Diário de Tinta Invisível</strong></td>
+  <td>Universidade de Thys</td>
+  <td>Revela segredos de quem o toca, escritos em suas páginas.</td>
+  <td>Os segredos são sempre verdades dolorosas.</td>
+  <td>Escrito por um professor que queria que seus alunos conhecessem a verdade sobre si mesmos. Ele foi expulso. O diário foi trancado nos Bastidores.</td>
+</tr>
+<tr>
+  <td><strong>A Taça que Nunca Esvazia</strong></td>
+  <td>Reino Perdido de Kelfen</td>
+  <td>Contém sempre um líquido que cura ferimentos físicos.</td>
+  <td>O líquido muda de sabor e cor a cada uso, e nunca é o que o usuário quer beber.</td>
+  <td>Presente de um druida para um rei moribundo. O rei bebeu por 40 anos. Ele nunca mais sentiu o gosto de vinho.</td>
+</tr>
+<tr>
+  <td><strong>O Anel das Memórias Alheias</strong></td>
+  <td>Mercado Negro de Marrath</td>
+  <td>Permite viver uma memória de quem o usou anteriormente.</td>
+  <td>O usuário esquece uma memória própria para cada memória vivida.</td>
+  <td>Vendido como "experiência imersiva" em Marrath. O último dono esqueceu o nome da própria mãe. O anel foi confiscado pela Guilda.</td>
+</tr>
+</table>
+
+<div class="callout example">
+  <h3>📖 Exemplo de Uso em Jogo</h3>
+  <p><strong>Jogador:</strong> "Quero restaurar a Ampulheta de Areia Estelar que o Explorador trouxe."</p>
+  <p><strong>Mestre (ou sistema):</strong> "Role Restaurar uma Relíquia. Se tirar 10+, você descobre a lore completa e o defeito. Se tirar 7-9, você restaura, mas a areia começa a vazar. Se tirar 6-, a ampulheta ativa o defeito e você envelhece 1 ano instantaneamente."</p>
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Página anterior: <a href="rapido.html">← Referência Rápida</a> | Próxima página: <a href="lore.html">Lore →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+
+<script>
+// TEMA
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme') || 'light';
+if (savedTheme === 'dark') { document.body.setAttribute('data-theme', 'dark'); themeToggle.textContent = '☀️ Tema Claro'; }
+themeToggle.addEventListener('click', () => {
+  const current = document.body.getAttribute('data-theme');
+  if (current === 'dark') { document.body.removeAttribute('data-theme'); themeToggle.textContent = '🌙 Tema Escuro'; localStorage.setItem('theme', 'light'); }
+  else { document.body.setAttribute('data-theme', 'dark'); themeToggle.textContent = '☀️ Tema Claro'; localStorage.setItem('theme', 'dark'); }
+});
+
+// LOADING STATE NOS GERADORES
+function generateWithLoading(outputId, generatorFn) {
+  const output = document.getElementById(outputId);
+  const spinner = document.getElementById('spinner-' + outputId);
+  output.querySelectorAll(':not(.loading-spinner)').forEach(el => el.style.display = 'none');
+  spinner.classList.add('active');
+  const buttons = output.parentElement.querySelectorAll('.generator-btn');
+  buttons.forEach(btn => btn.disabled = true);
+  setTimeout(() => {
+    spinner.classList.remove('active');
+    generatorFn();
+    buttons.forEach(btn => btn.disabled = false);
+  }, 300);
+}
+
+// GERADORES
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+function generateArtifact() {
+  const nomes = ['Ampulheta de Areia Estelar','Espelho de Prata Líquida','Bússola de Ossos','Diário de Tinta Invisível','Taça que Nunca Esvazia','Anel das Memórias Alheias','Chave de Cristal Fumê','Pena de Fênix Adormecida','Mapa de Tinta Viva','Relógio de Bolso sem Ponteiros'];
+  const origens = ['Império Caído de Ossun','Guilda dos Navegantes de Vaelstrom','Tribos Nômades de Dusthaven','Universidade de Thys','Reino Perdido de Kelfen','Mercado Negro de Marrath'];
+  const funcoes = ['Reverte o tempo em 10 minutos','Mostra o rosto de quem o usuário mais ama','Aponta para o que o usuário mais perdeu','Revela segredos de quem o toca','Cura ferimentos físicos','Permite viver memórias alheias'];
+  const defeitos = ['Sussurra à noite em língua desconhecida','Drena energia vital (causa fadiga)','Muda de lugar quando ninguém olha','Reage violentamente a mentiras','Mostra memórias do dono anterior','Atrai criaturas mágicas pequenas'];
+  const pedidos = ['Ser polido com óleo de lavanda','Ouvir música antes de ser usado','Silêncio absoluto para funcionar','Ser guardado perto de água corrente','Que o usuário diga seu nome verdadeiro','Uma gota de sangue ou lágrima por mês'];
+  const niveis = ['Comum (1d3 Recursos)','Incomum (1d4 Recursos)','Raro (1d6 Recursos)','Épico (1d8 Recursos)','Lendário (1d10 Recursos)'];
+  
+  const nome = pick(nomes);
+  const origem = pick(origens);
+  const funcao = pick(funcoes);
+  const defeito = pick(defeitos);
+  const pedido = pick(pedidos);
+  const nivel = pick(niveis);
+  
+  return { nome, origem, funcao, defeito, pedido, nivel };
+}
+
+function generateWonder() {
+  const maravilhas = [
+    'A poeira forma constelações se não for varrida por 24h.',
+    'O chá muda de sabor conforme o humor de quem bebe.',
+    'As sombras imitam movimentos com 2 segundos de atraso.',
+    'A vassoura varre sozinha por 1 hora se pedir com educação.',
+    'A xícara de café nunca esfria.',
+    'O espelho do corredor reflete o clima de amanhã.',
+    'Os livros sussurram uns com os outros quando ninguém olha.',
+    'As velas acendem sozinhas ao entardecer.',
+    'Um gato fantasma dorme em cima dos artefatos perigosos.',
+    'Os degraus contam seus passos em voz baixa e melodiosa.'
+  ];
+  return pick(maravilhas);
+}
+
+function renderArtifact(art) {
+  document.getElementById('artifactOutput').innerHTML = `
+    <h4>✨ ${art.nome}</h4>
+    <div class="gen-field"><strong>Nível:</strong> ${art.nivel}</div>
+    <div class="gen-field"><strong>Origem:</strong> ${art.origem}</div>
+    <div class="gen-field"><strong>Função:</strong> ${art.funcao}</div>
+    <div class="gen-field"><strong>Defeito Mágico:</strong> ${art.defeito}</div>
+    <div class="gen-field"><strong>O que Pede:</strong> ${art.pedido}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Use este artefato em uma cena de restauração ou como gancho de mistério.</p>
+  `;
+}
+
+function renderWonder(wonder) {
+  document.getElementById('artifactOutput').innerHTML = `
+    <h4>🌟 Maravilha Cotidiana</h4>
+    <div class="gen-field">${wonder}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Incorpore esta maravilha na próxima cena de rotina nos Bastidores.</p>
+  `;
+}
+
+// VOLTAR AO TOPO
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) { backToTop.classList.add('visible'); }
+  else { backToTop.classList.remove('visible'); }
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>

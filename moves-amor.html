@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Moves: Amor</title>
+<style>
+.move {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
+}
+.move h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+.move .trigger {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+.move .attribute {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.15rem 0.7rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-variant: small-caps;
+  margin-bottom: 0.8rem;
+}
+.result {
+  margin: 0.4rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid transparent;
+}
+.result.success {
+  border-left-color: var(--success);
+}
+.result.partial {
+  border-left-color: var(--gold);
+}
+.result.failure {
+  border-left-color: var(--danger);
+}
+.result strong {
+  color: var(--accent);
+}
+.choice {
+  background: rgba(184, 134, 11, 0.08);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  margin: 0.2rem 0;
+  font-style: italic;
+}
+.choice strong {
+  color: var(--gold);
+}
+.callout.critical {
+  background: rgba(122, 46, 46, 0.08);
+  border: 2px solid var(--danger);
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+}
+.callout.critical::before {
+  content: "💔 ";
+  font-style: normal;
+  font-size: 1.2rem;
+}
+.callout.romance {
+  background: rgba(184, 92, 138, 0.08);
+  border: 2px solid var(--romance);
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+}
+.callout.romance::before {
+  content: "💕 ";
+  font-style: normal;
+  font-size: 1.2rem;
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="moves-oficio.html">Moves</a> &gt; <strong>Amor</strong>
+</div>
+
+<div class="container">
+
+<h2>💕 Corações Partidos e Encontrados — Moves de Amor</h2>
+<p>Estes são os moves que lidam com o coração — o amor que floresce, o amor que se desfaz, e os momentos que ficam para sempre.</p>
+
+<div class="callout tip">
+  <strong>Dica:</strong> O amor não é uma linha reta. Às vezes estagna. Às vezes regrede. E tudo bem. O jogo abraça a dor tanto quanto a alegria.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>✨ Clímax Emocional</h3>
+
+<div class="callout celestial">
+  <h3>✨ MOVE: MOMENTO DE CLÍMAX EMOCIONAL</h3>
+  <p><strong>Gatilho:</strong> Quando um Relógio de Romance atinge <strong>6/10</strong>, <strong>8/10</strong> ou <strong>10/10</strong>.</p>
+  <p><strong>Custo:</strong> 2 Ecos</p>
+  <p><strong>Efeito:</strong> Você força uma <strong>Cena de Virada</strong> — um momento especial sem rolagem, apenas escrito. Você ganha <strong>3 Ecos de volta</strong> e uma <strong>Tag Permanente</strong> que dá <strong>+2</strong> em rolagens relacionadas.</p>
+  <p><strong>Exemplos de Tags Permanentes:</strong></p>
+  <ul>
+    <li><em>"Memória do Primeiro Beijo"</em> (+2 em CORAÇÃO com este NPC)</li>
+    <li><em>"A Noite da Confissão"</em> (+2 em vulnerabilidade)</li>
+    <li><em>"O Pedido"</em> (+2 em Celebrar o Amor)</li>
+    <li><em>"A Promessa"</em> (+2 em Arriscar-se por Alguém)</li>
+  </ul>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>💔 Quando o Amor Acaba (6/10+)</h3>
+
+<div class="callout critical">
+  <h3>💔 MOVE: QUANDO O AMOR ACABA</h3>
+  <p><strong>Gatilho:</strong> Quando um Relógio de Romance estagna em 6/10 ou regrede permanentemente (não há reconciliação possível).</p>
+  <p><strong>Capacidade:</strong> CORAÇÃO</p>
+  <div class="result success"><strong>10+:</strong> Você aceita com graça. Ganha tag <em>[ECO: Cicatriz do Amor]</em>. +2 Ecos. O NPC continua presente como amigo.</div>
+  <div class="result partial"><strong>7–9:</strong> Você aceita, mas com dor. <strong>Escolha 1:</strong> (a) o NPC se afasta temporariamente, (b) você precisa de um tempo sozinho(a) (perde 1 Ato amanhã), (c) o término revela algo sobre você mesmo(a) (ganha Tag [ECO: Autoconhecimento]). Ganha tag <em>[ECO: Cicatriz do Amor]</em>. +1 Eco.</div>
+  <div class="result failure"><strong>6−:</strong> Você não aceita. Relógio de Tensão avança 2. Ganha tag <em>[VÍNCULO−]</em>. O NPC parte ou se torna hostil.</div>
+  <p><strong>Prompt de Escrita:</strong> <em>"Escreva sobre o que você não disse, mas gostaria. O que ficou preso na garganta? O que você gostaria que ele soubesse? O que você nunca vai contar?"</em></p>
+</div>
+
+<h4>Cicatrizes Emocionais (6/10+)</h4>
+<p>Relógios que não completam (estagnam em 6/10 ou regredem) deixam tag <span style="background: var(--gold); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">ECO: Cicatriz do Amor</span>:</p>
+<ul>
+  <li><strong>+1</strong> em rolagens de CORAÇÃO sobre vulnerabilidade</li>
+  <li><strong>−1</strong> em rolagens de SEDUZIR com novos NPCs</li>
+</ul>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>💔 Fim Antecipado (0/10)</h3>
+
+<div class="callout critical">
+  <h3>💔 MOVE: FIM ANTECIPADO</h3>
+  <p><strong>Gatilho:</strong> Quando você termina um relacionamento <strong>antes</strong> de chegar a 6/10 (em 0/10, por exemplo).</p>
+  <p><strong>Capacidade:</strong> CORAÇÃO</p>
+  <div class="result success"><strong>10+:</strong> Você termina com clareza e respeito. Ganha tag <em>[ECO: Fim Antecipado]</em>. +2 Ecos. O NPC entende e permanece como conhecido.</div>
+  <div class="result partial"><strong>7–9:</strong> Você termina, mas com dúvidas. <strong>Escolha 1:</strong> (a) o NPC fica magoado — você precisa se desculpar depois, (b) você se sente culpado(a) (perde 1 Ato amanhã), (c) o término revela algo que você não esperava. Ganha tag <em>[ECO: Fim Antecipado]</em>. +1 Eco.</div>
+  <div class="result failure"><strong>6−:</strong> O término é doloroso e confuso. Relógio de Tensão avança 1. Ganha tag <em>[VÍNCULO−]</em>.</div>
+  <p><strong>Efeito da Tag [ECO: Fim Antecipado]:</strong></p>
+  <ul>
+    <li><strong>+1</strong> em rolagens de CORAÇÃO sobre superação</li>
+    <li><strong>+1</strong> em rolagens de MENTE para reconhecer padrões em relacionamentos</li>
+  </ul>
+  <p><em>"Alguns amores nunca chegam a começar. E isso também é uma história."</em></p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Tabela de Fins Melancólicos (d10)</h3>
+
+<p>Quando usar os moves de amor, role 1d10 ou escolha:</p>
+
+<ol>
+  <li>Vocês se tornam amigos distantes — se veem na cidade, mas não conversam mais.</li>
+  <li>Um de vocês muda para outra cidade — o amor não acabou, mas a distância sim.</li>
+  <li>Vocês percebem que querem coisas diferentes — e escolhem seguir caminhos separados.</li>
+  <li>Um segredo vem à tona e quebra a confiança — não há reconciliação possível.</li>
+  <li>Vocês percebem que amam pessoas diferentes — e escolhem ser honestos.</li>
+  <li>A vida acontece — não há drama, só o tempo passando e o amor esfriando.</li>
+  <li>Um de vocês escolhe a Guilda sobre o amor — e o outro aceita.</li>
+  <li>Vocês percebem que o relacionamento era uma fuga — e voltam para a realidade.</li>
+  <li>Um de vocês parte para uma expedição — e não volta.</li>
+  <li>Vocês percebem que o amor acabou — e escolhem terminar com dignidade.</li>
+</ol>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você conhece os Moves de Amor, vá para <a href="progressao-oficio.html">Progressão: Ofício →</a> para aprender sobre o crescimento do protagonista.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Moves — Amor</p>
+  <p><a href="moves-tensao.html">← Tensão</a> | <a href="progressao-oficio.html">Próxima: Progressão →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Ficha do Protagonista</title>
+<style>
+.sheet {
+  background: #fefcf7;
+  border: 2px solid var(--accent);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
+  page-break-inside: avoid;
+  border-radius: 6px;
+}
+[data-theme="dark"] .sheet {
+  background: #2a2a2a;
+}
+.sheet h3 {
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.field {
+  display: flex;
+  align-items: baseline;
+  margin: 0.5rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.field-label {
+  font-weight: bold;
+  color: var(--accent);
+  min-width: 140px;
+  font-variant: small-caps;
+}
+.field-line {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+}
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+.field-box {
+  border: 1px solid var(--accent);
+  padding: 0.5rem;
+  text-align: center;
+  background: var(--parchment);
+  border-radius: 4px;
+}
+.field-box .label {
+  font-variant: small-caps;
+  color: var(--accent);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+}
+.field-box .value {
+  border-bottom: 1px solid var(--ink-soft);
+  height: 1.5rem;
+}
+.print-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  transition: background 0.2s;
+}
+.print-btn:hover {
+  background: var(--gold);
+}
+@media print {
+  .top-nav, .floating-controls, .back-to-top, .no-print, .print-btn { display: none !important; }
+  body { background: white !important; }
+  .sheet { box-shadow: none !important; border: 1px solid #ccc !important; }
+}
+@media (max-width: 768px) {
+  .field-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="ficha-prota.html">Ferramentas</a> &gt; <strong>Ficha do Protagonista</strong>
+</div>
+
+<div class="container">
+
+<div class="sheet" id="sheet-prota">
+<h3>📋 Ficha do Protagonista</h3>
+<button class="print-btn no-print" onclick="window.print()">🖨 Imprimir</button>
+
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Background:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Relíquia Pessoal:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Maior Medo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Hábito:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Lugar Favorito:</span><span class="field-line"></span></div>
+
+<h4>Capacidades Inatas (NUNCA aumentam)</h4>
+<div class="field-grid">
+  <div class="field-box"><span class="label">MÃOS</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">OLHOS</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">CORAÇÃO</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">MENTE</span><div class="value"></div></div>
+</div>
+
+<h4>Recursos e Progressão</h4>
+<div class="field-grid">
+  <div class="field-box"><span class="label">Ecos (máx 5)</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Recursos</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Ofício (Ticks)</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Reputação (Ticks)</span><div class="value"></div></div>
+</div>
+
+<h4>Atos do Dia (máx 3)</h4>
+<div class="field-grid">
+  <div class="field-box"><span class="label">Manhã</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Tarde</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Noite</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Capítulo</span><div class="value"></div></div>
+</div>
+
+<h4>Tags Narrativas</h4>
+<table>
+<tr><th>Tag</th><th>Descrição</th><th>Usada?</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<h4>Conquistas Ativas (máx 3)</h4>
+<table>
+<tr><th>Conquista</th><th>Bônus (Perícia)</th><th>Ativo?</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Vá para <a href="ficha-npcs.html">Ficha de NPCs →</a> para imprimir fichas para seus NPCs.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Ferramentas — Ficha do Protagonista</p>
+  <p><a href="geradores-conteudo.html">← Gerar Conteúdo</a> | <a href="ficha-npcs.html">Próxima: Ficha NPCs →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

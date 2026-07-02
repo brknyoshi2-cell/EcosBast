@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Sistema de Legado</title>
+<style>
+.legacy-card {
+  background: var(--parchment-dark);
+  border: 2px solid var(--gold);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  text-align: center;
+}
+.legacy-card h3 {
+  margin-top: 0;
+  color: var(--gold);
+}
+.legacy-card .legacy-value {
+  font-size: 2rem;
+  color: var(--accent);
+  font-weight: bold;
+}
+.contribution-card {
+  background: var(--parchment);
+  border: 1px solid var(--accent-light);
+  padding: 1rem;
+  margin: 0.8rem 0;
+  border-radius: 6px;
+}
+.contribution-card h4 {
+  margin-top: 0;
+  color: var(--accent);
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="sistema-legado.html">Sistema</a> &gt; <strong>Legado</strong>
+</div>
+
+<div class="container">
+
+<div class="tier-badge avancado">🔵 Avançado <span class="tier-desc">— camada opcional, adicione quando quiser mais profundidade</span></div>
+
+<h2>📜 O Que Fica — Sistema de Legado</h2>
+<p>Toda história deixa um legado. O que você construiu, quem você amou, o que você restaurou — tudo contribui para a memória que você deixa nos Bastidores.</p>
+
+<div class="callout tip">
+  <strong>⚖️ Legado x Reputação:</strong> Não são a mesma coisa. <strong><a href="progressao-reputacao.html">Reputação</a></strong> é contínua — muda durante o jogo, capítulo a capítulo. <strong>Legado</strong> é um cálculo único, feito no final da campanha, que resume tudo que ficou.
+</div>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> No final da campanha, calcule seu Legado com base em suas conquistas. O Legado determina o que será lembrado sobre você.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Componentes do Legado</h3>
+
+<p>Seu Legado é composto por <strong>5 pilares</strong>, cada um representando um aspecto da sua jornada:</p>
+
+<table>
+<tr><th>Pilar</th><th>O que representa</th><th>Como acumular pontos</th></tr>
+<tr><td><strong>❤️ Amor</strong></td><td>Relacionamentos construídos</td><td>Pontos em Relógios de Romance</td></tr>
+<tr><td><strong>⚔️ Glória</strong></td><td>Aventuras e expedições</td><td>Expedições completadas</td></tr>
+<tr><td><strong>📚 Sabedoria</strong></td><td>Conhecimento e restauração</td><td>Artefatos restaurados e mistérios resolvidos</td></tr>
+<tr><td><strong>🏛️ Comunidade</strong></td><td>Crescimento da Guilda e cidade</td><td>Fase do Mundo, trabalhadores, bairros</td></tr>
+<tr><td><strong>🪶 Criatividade</strong></td><td>Escrita e decoração</td><td>Cenas escritas e itens decorados</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Calculando seu Legado</h3>
+
+<div class="legacy-card">
+  <h3>📊 Seu Legado</h3>
+  <p><strong>❤️ Amor:</strong> ___ / 30 (10 por NPC romanceável)</p>
+  <p><strong>⚔️ Glória:</strong> ___ / 20 (1 por expedição)</p>
+  <p><strong>📚 Sabedoria:</strong> ___ / 30 (2 por artefato, 5 por mistério)</p>
+  <p><strong>🏛️ Comunidade:</strong> ___ / 20 (5 por fase, 2 por trabalhador, 1 por bairro)</p>
+  <p><strong>🪶 Criatividade:</strong> ___ / 20 (1 por cena, 2 por item decorado)</p>
+  <hr>
+  <div class="legacy-value">___ / 120</div>
+  <p style="font-size: 0.9rem; color: var(--ink-soft);">Seu Legado Total</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Níveis de Legado</h3>
+
+<table>
+<tr><th>Pontos</th><th>Nível</th><th>Descrição</th></tr>
+<tr><td>0-20</td><td><strong>Esquecido</strong></td><td>"Sua história se perdeu no tempo."</td></tr>
+<tr><td>21-40</td><td><strong>Lembrado</strong></td><td>"Alguns se lembram de você."</td></tr>
+<tr><td>41-60</td><td><strong>Conhecido</strong></td><td>"Sua história é contada na Guilda."</td></tr>
+<tr><td>61-80</td><td><strong>Respeitado</strong></td><td>"Seu nome é mencionado com honra."</td></tr>
+<tr><td>81-100</td><td><strong>Lendário</strong></td><td>"Sua história vive em canções."</td></tr>
+<tr><td>101-120</td><td><strong>Imortal</strong></td><td>"Você se tornou parte dos Bastidores."</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Contribuições Especiais</h3>
+
+<p>Certas ações dão <strong>contribuições especiais</strong> para o Legado:</p>
+
+<div class="contribution-card">
+  <h4>❤️ Amor — O Primeiro Beijo</h4>
+  <p><strong>Bônus:</strong> +5 ao Legado</p>
+  <p><strong>Como obter:</strong> Atingir 8/10 em um Relógio de Romance</p>
+  <p><strong>Descrição:</strong> <em>"Você amou profundamente."</em></p>
+</div>
+
+<div class="contribution-card">
+  <h4>⚔️ Glória — A Expedição Lendária</h4>
+  <p><strong>Bônus:</strong> +5 ao Legado</p>
+  <p><strong>Como obter:</strong> Completar uma expedição Lendária</p>
+  <p><strong>Descrição:</strong> <em>"Você ousou ir onde ninguém mais iria."</em></p>
+</div>
+
+<div class="contribution-card">
+  <h4>📚 Sabedoria — A Relíquia Perdida</h4>
+  <p><strong>Bônus:</strong> +5 ao Legado</p>
+  <p><strong>Como obter:</strong> Restaurar um artefato lendário</p>
+  <p><strong>Descrição:</strong> <em>"Você trouxe de volta o que estava perdido."</em></p>
+</div>
+
+<div class="contribution-card">
+  <h4>🏛️ Comunidade — O Novo Mestre</h4>
+  <p><strong>Bônus:</strong> +5 ao Legado</p>
+  <p><strong>Como obter:</strong> Tornar-se Mestre da Guilda (Fase Lendária)</p>
+  <p><strong>Descrição:</strong> <em>"Você liderou com coração."</em></p>
+</div>
+
+<div class="contribution-card">
+  <h4>🪶 Criatividade — O Livro dos Bastidores</h4>
+  <p><strong>Bônus:</strong> +5 ao Legado</p>
+  <p><strong>Como obter:</strong> Escrever 20 cenas profundas</p>
+  <p><strong>Descrição:</strong> <em>"Suas palavras viverão para sempre."</em></p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>O Legado no New Game+</h3>
+
+<div class="callout celestial">
+  <h3>✨ Legado no New Game+</h3>
+  <p>Quando você começa uma nova campanha no New Game+, seu Legado da campanha anterior <strong>não é perdido</strong> — ele é a base para a nova história.</p>
+
+  <h4>O que é herdado:</h4>
+  <ul>
+    <li><strong>Nível de Legado:</strong> Você começa com +1 em um atributo de sua escolha para cada nível de Legado acima de "Esquecido".</li>
+    <li><strong>Tags de Legado:</strong> Você ganha tags permanentes baseadas no seu Legado.</li>
+    <li><strong>Histórias:</strong> As histórias da campanha anterior são conhecidas na nova cidade.</li>
+  </ul>
+
+  <h4>Tags de Legado:</h4>
+  <ul>
+    <li><strong>Legado 21-40:</strong> [LEMBRADO] — +1 em rolagens sociais (sua história é conhecida)</li>
+    <li><strong>Legado 41-60:</strong> [CONHECIDO] — +2 em rolagens sociais</li>
+    <li><strong>Legado 61-80:</strong> [RESPEITADO] — +1 em todas as rolagens</li>
+    <li><strong>Legado 81-100:</strong> [LENDÁRIO] — +2 em todas as rolagens</li>
+    <li><strong>Legado 101-120:</strong> [IMORTAL] — +3 em todas as rolagens + Tag [BASTIDORES] (permanente)</li>
+  </ul>
+
+  <p><em>"Seu legado não é o que você deixou — é o que você construiu."</em></p>
+</div>
+
+<div class="callout example">
+  <h3>📖 Exemplo de Legado</h3>
+  <p><strong>Elara (a protagonista):</strong></p>
+  <ul>
+    <li><strong>❤️ Amor:</strong> 10/10 com Kael, 8/10 com Lyra, 4/10 com Dorian = 22/30</li>
+    <li><strong>⚔️ Glória:</strong> 2 expedições Fáceis, 3 Médias, 1 Difícil, 1 Lendária = 7/20</li>
+    <li><strong>📚 Sabedoria:</strong> 8 artefatos restaurados, 3 mistérios resolvidos = 16 + 15 = 31/30</li>
+    <li><strong>🏛️ Comunidade:</strong> Fase Lendária (5), 7 trabalhadores (14), 6 bairros (6) = 25/20</li>
+    <li><strong>🪶 Criatividade:</strong> 15 cenas (15), 5 itens decorados (10) = 25/20</li>
+  </ul>
+  <p><strong>Total:</strong> 22 + 7 + 31 + 25 + 25 = 110/120 → <strong>Nível: Imortal</strong></p>
+  <p><strong>Descrição:</strong> <em>"Elara se tornou parte dos Bastidores. Sua história é contada em cada sala, em cada artefato, em cada coração que ela tocou."</em></p>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você entende o Legado, vá para <a href="tutorial.html">Tutorial →</a> ou <a href="finais.html">Finais →</a> para encerrar sua campanha.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Sistema — Legado</p>
+  <p><a href="sistema-bastidores-exploracao.html">← Exploração dos Bastidores</a> | <a href="finais.html">Próxima: Finais →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

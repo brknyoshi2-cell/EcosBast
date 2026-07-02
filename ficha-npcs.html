@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Ficha de NPCs</title>
+<style>
+.sheet {
+  background: #fefcf7;
+  border: 2px solid var(--accent);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
+  page-break-inside: avoid;
+  border-radius: 6px;
+}
+[data-theme="dark"] .sheet {
+  background: #2a2a2a;
+}
+.sheet h3 {
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.field {
+  display: flex;
+  align-items: baseline;
+  margin: 0.5rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.field-label {
+  font-weight: bold;
+  color: var(--accent);
+  min-width: 140px;
+  font-variant: small-caps;
+}
+.field-line {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+}
+.print-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  transition: background 0.2s;
+}
+.print-btn:hover {
+  background: var(--gold);
+}
+.section-divider {
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
+}
+@media print {
+  .top-nav, .floating-controls, .back-to-top, .no-print, .print-btn { display: none !important; }
+  body { background: white !important; }
+  .sheet { box-shadow: none !important; border: 1px solid #ccc !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="ficha-npcs.html">Ferramentas</a> &gt; <strong>Ficha de NPCs</strong>
+</div>
+
+<div class="container">
+
+<div class="sheet" id="sheet-npcs">
+<h3>📋 Ficha de NPCs</h3>
+<button class="print-btn no-print" onclick="window.print()">🖨 Imprimir</button>
+<p style="text-align: center; font-style: italic;">Imprima quantas cópias precisar (recomendado: 3 romanceáveis + várias não-romanceáveis)</p>
+
+<h4>NPC Romanceável</h4>
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Arquétipo:</span><span class="field-line"></span> (Explorador / Colega / Forasteiro)</div>
+<div class="field"><span class="field-label">Classe/Profissão:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Módulo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Adjetivo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Traço Físico:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Vestimenta:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Desejo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Medo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Segredo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Residência:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Local Favorito:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Vínculo Inicial:</span><span class="field-line"></span></div>
+
+<h4>😄 Piadas Internas (opcional)</h4>
+<div class="field"><span class="field-label">Piada que o NPC conta:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Piada que o NPC não entende:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Coisa que o NPC acha engraçada:</span><span class="field-line"></span></div>
+
+<h4>Relógio de Romance ("Coração", 10 segmentos)</h4>
+<p>Estado: ☐ Conhecimento (0–3) | ☐ Amizade (4–6) | ☐ Romance (7–8) | ☐ Compromisso (9–10)</p>
+<p>Segmentos: ____ / 10</p>
+
+<h4>Marcos Visuais de Evolução</h4>
+<div class="field"><span class="field-label">Item 1 (4-6 seg):</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Item 2 (7-8 seg):</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Item 3 (9-10 seg):</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Tag Permanente:</span><span class="field-line"></span></div>
+
+<div class="section-divider">❦</div>
+
+<h4>NPC Não-Romanceável</h4>
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Tipo:</span><span class="field-line"></span> (Cidade / Trabalhador / Cliente)</div>
+<div class="field"><span class="field-label">Profissão/Papel:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Bairro/Local:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Traço Marcante:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Personalidade:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Segredo Pequeno:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Relação com a Guilda:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Com Protagonista:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">O que Quer:</span><span class="field-line"></span></div>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Vá para <a href="ficha-mundo.html">Ficha do Mundo →</a> para imprimir a ficha da Guilda, Bastidores e Cidade.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Ferramentas — Ficha de NPCs</p>
+  <p><a href="ficha-prota.html">← Ficha Prota</a> | <a href="ficha-mundo.html">Próxima: Ficha Mundo →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

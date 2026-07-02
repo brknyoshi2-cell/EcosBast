@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Quick Start Pack</title>
+<style>
+/* ============================================================
+   ESTILOS ESPECÍFICOS DO QUICKSTART.HTML
+   ============================================================ */
+
+header.hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  border-bottom: 3px double var(--accent);
+  margin-bottom: 2rem;
+}
+header.hero h1 {
+  font-size: 2.8rem;
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: 0.1em;
+  font-variant: small-caps;
+}
+header.hero .subtitle {
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+header.hero .flavor {
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+  padding: 1rem 1.5rem;
+  background: rgba(184, 134, 11, 0.05);
+  line-height: 1.8;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 2.5rem 0 1.2rem;
+}
+h3 {
+  font-size: 1.4rem;
+  margin: 1.8rem 0 0.8rem;
+}
+h4 {
+  font-size: 1.1rem;
+  margin: 1.2rem 0 0.4rem;
+}
+
+.step {
+  background: var(--parchment-dark);
+  border-left: 5px solid var(--gold);
+  padding: 1rem 1.3rem;
+  margin: 1rem 0;
+}
+.step-number {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2rem;
+  font-weight: bold;
+  margin-right: 0.7rem;
+}
+
+.move {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
+}
+.move h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+.move .trigger {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+.move .attribute {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.15rem 0.7rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-variant: small-caps;
+  margin-bottom: 0.8rem;
+}
+.result {
+  margin: 0.4rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid transparent;
+}
+.result.success {
+  border-left-color: var(--success);
+}
+.result.partial {
+  border-left-color: var(--gold);
+}
+.result.failure {
+  border-left-color: var(--danger);
+}
+.result strong {
+  color: var(--accent);
+}
+
+.npc-card {
+  background: var(--parchment-dark);
+  border: 1px solid var(--accent-light);
+  padding: 1.2rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+.npc-card h4 {
+  margin-top: 0;
+  color: var(--gold);
+}
+.npc-card strong {
+  color: var(--accent);
+}
+
+.tutorial-extra {
+  background: rgba(74, 107, 58, 0.08);
+  border: 1px solid var(--success);
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
+  border-radius: 4px;
+}
+.tutorial-extra h4 {
+  margin-top: 0;
+  color: var(--success);
+}
+
+/* Quickstart específico — headers menores */
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+  header.hero h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media print {
+  header.hero {
+    padding: 1rem 0;
+  }
+  header.hero h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <strong>Quick Start Pack</strong>
+</div>
+
+<div class="container">
+
+<header class="hero">
+  <h1>Quick Start Pack</h1>
+  <div class="subtitle">Comece a jogar em 15 minutos</div>
+  <div class="flavor">
+    Tudo pré-pronto: protagonista, NPCs, cidade, mistério. Só falta você escolher um nome e começar.
+  </div>
+</header>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Este pacote tem tudo que você precisa para jogar o primeiro capítulo — <strong>se quiser</strong>. Você pode seguir cada passo, ou pular o que não te interessa. O jogo é seu — faça o que quiser.
+</div>
+
+<div class="callout rule">
+  <strong>🕊️ Liberdade Total:</strong> Este Quick Start é um <strong>ponto de partida</strong>, não regras obrigatórias — siga, pule ou mude qualquer passo. Não há maneira errada de jogar. <em>(Se quiser o resumo de uma caixa só do jogo inteiro, veja <a href="index.html#nucleo-minimo">O Essencial</a>.)</em>
+</div>
+
+<div class="callout rule">
+  <strong>🌱 Nota sobre o Início do Jogo:</strong>
+  <p>Este Quick Start começa na <strong>Fase Inicial</strong> (capítulos 1-3). A Guilda é pequena, a cidade é modesta, e os NPCs romanceáveis <strong>não estão presentes ainda</strong> — eles chegam nos capítulos 4 e 7. <strong>Mas se você quiser que eles cheguem antes, faça-os chegar antes.</strong> As regras são sugestões.</p>
+</div>
+
+<div class="callout rule">
+  <strong>🎮 Modo de Jogo — já definido (Narrativo):</strong>
+  <p>Este Quick Start já assume o <strong>Modo Narrativo</strong> — o mais indicado pra quem está começando. Não precisa escolher nada agora. Se quiser trocar (Cozy, Épico, Speedrun ou Livre), veja <a href="sistema-modos.html">Modos de Jogo</a> a qualquer momento — mudar custa só 1 Eco.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>1. O Protagonista (Pré-Pronto)</h2>
+
+<p>Você é um(a) <strong>Restaurador(a) de Relíquias</strong> nos Bastidores da Guilda de Vaelstrom.</p>
+
+<div class="step">
+  <span class="step-number">1</span>
+  <strong>Escolha um nome</strong> (ou role na tabela abaixo, ou invente um):
+</div>
+
+<table>
+<tr><th>d6</th><th>Nome Feminino</th><th>Nome Masculino</th></tr>
+<tr><td>1</td><td>Elara</td><td>Aldric</td></tr>
+<tr><td>2</td><td>Bryn</td><td>Bram</td></tr>
+<tr><td>3</td><td>Dahlia</td><td>Dorian</td></tr>
+<tr><td>4</td><td>Fiora</td><td>Jasper</td></tr>
+<tr><td>5</td><td>Lyra</td><td>Rowan</td></tr>
+<tr><td>6</td><td>Vesper</td><td>Zephyr</td></tr>
+</table>
+
+<div class="step">
+  <span class="step-number">2</span>
+  <strong>Capacidades Inatas</strong> (distribuição recomendada para iniciantes — <strong>ou crie a sua própria</strong>):
+</div>
+
+<table>
+<tr><th>Capacidade</th><th>Valor</th><th>Por que?</th></tr>
+<tr><td><strong>MÃOS</strong></td><td>+2</td><td>Você é ótimo(a) no ofício</td></tr>
+<tr><td><strong>OLHOS</strong></td><td>+1</td><td>Percebe detalhes</td></tr>
+<tr><td><strong>CORAÇÃO</strong></td><td>+1</td><td>Conecta-se com pessoas</td></tr>
+<tr><td><strong>MENTE</strong></td><td>0</td><td>Conhecimento médio</td></tr>
+</table>
+
+<div class="step">
+  <span class="step-number">3</span>
+  <strong>Background</strong> (escolha um, ou invente o seu):
+</div>
+
+<table>
+<tr><td><strong>Aprendiz do Antigo Restaurador</strong></td><td>Você aprendeu o ofício com um mestre que desapareceu. +1 Eco ao estudar artefatos antigos.</td></tr>
+<tr><td><strong>Ex-Aventureiro(a) Aposentado(a)</strong></td><td>Você já foi herói, mas agora quer paz. 1 artefato pessoal de sua carreira.</td></tr>
+<tr><td><strong>Órfão(ã) da Guilda</strong></td><td>A Guilda te criou. +1 em Explorar Bairro (conhece as ruas).</td></tr>
+</table>
+
+<div class="step">
+  <span class="step-number">4</span>
+  <strong>Relíquia Pessoal</strong> (role 1d6, ou invente a sua):
+</div>
+
+<table>
+<tr><td>1</td><td>Um relógio que parou no momento em que você perdeu alguém.</td></tr>
+<tr><td>2</td><td>Uma carta nunca aberta — deixada por alguém que partiu.</td></tr>
+<tr><td>3</td><td>Um espelho quebrado — mostra algo que você não quer ver.</td></tr>
+<tr><td>4</td><td>Uma chave sem porta — abre algo que você ainda não encontrou.</td></tr>
+<tr><td>5</td><td>Um diário em língua morta — você não lê, mas sente que entende.</td></tr>
+<tr><td>6</td><td>Um objeto que muda de forma — nunca é o mesmo dois dias seguidos.</td></tr>
+</table>
+
+<div class="step">
+  <span class="step-number">5</span>
+  <strong>Medo nos Bastidores</strong> (role 1d6, ou invente o seu):
+</div>
+
+<table>
+<tr><td>1</td><td>Um artefato que reconhece sua voz.</td></tr>
+<tr><td>2</td><td>Uma porta que não existia ontem.</td></tr>
+<tr><td>3</td><td>Um espelho que mostra você velho(a) — ou morto(a) — ou feliz.</td></tr>
+<tr><td>4</td><td>Um som que vem de dentro das paredes.</td></tr>
+<tr><td>5</td><td>Um artefato que conta seu passado.</td></tr>
+<tr><td>6</td><td>Um objeto idêntico ao que você guarda.</td></tr>
+</table>
+
+<div class="callout example">
+  <strong>Exemplo de Protagonista:</strong><br>
+  Nome: <strong>Elara Thornwood</strong><br>
+  Capacidades: MÃOS +2, OLHOS +1, CORAÇÃO +1, MENTE 0<br>
+  Background: Aprendiz do Antigo Restaurador<br>
+  Relíquia: Uma carta nunca aberta<br>
+  Medo: Um som que vem de dentro das paredes
+</div>
+
+<div class="callout tip">
+  <strong>Lembre-se:</strong> Você pode mudar qualquer coisa a qualquer momento. Se não gostar de um atributo, mude. Se não gostar de um background, mude. É seu jogo.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>2. Os 3 NPCs Romanceáveis (Pré-Gerados)</h2>
+
+<div class="callout rule">
+  <strong>⚖️ Nota sobre Chegada:</strong>
+  <p>Estes NPCs <strong>não estão presentes no início do jogo</strong> no cenário padrão. Eles chegam nos capítulos 4 e 7. <strong>Mas se você quiser que eles cheguem antes, faça-os chegar antes.</strong> Você também pode criar seus próprios NPCs, ou usar apenas um, ou nenhum.</p>
+</div>
+
+<div class="npc-card">
+  <h4>🗡️ Kael Ashenmere — O Explorador</h4>
+  <p><strong>Classe:</strong> Guerreiro | <strong>Módulo:</strong> A Sala de Armas</p>
+  <p><strong>Adjetivo:</strong> Veterano | <strong>Traço:</strong> Cicatriz que conta uma história</p>
+  <p><strong>Desejo:</strong> Ser perdoado(a) por algo | <strong>Medo:</strong> Perder o controle</p>
+  <p><strong>Segredo:</strong> Cometeu um crime que ninguém descobriu</p>
+  <p><strong>Vínculo Inicial:</strong> Vocês já se conhecem — há história antiga.</p>
+  <p><strong>Residência:</strong> Apartamento pequeno no Porto Velho</p>
+</div>
+
+<div class="npc-card">
+  <h4>📚 Lyra Moonwhisper — A Colega</h4>
+  <p><strong>Profissão:</strong> Arquibibliotecária | <strong>Módulo:</strong> A Biblioteca Arcana</p>
+  <p><strong>Adjetivo:</strong> Melancólica | <strong>Traço:</strong> Olhos que não combinam entre si</p>
+  <p><strong>Desejo:</strong> Descobrir quem realmente é | <strong>Medo:</strong> Ser abandonada de novo</p>
+  <p><strong>Segredo:</strong> Não é totalmente humana</p>
+  <p><strong>Vínculo Inicial:</strong> Primeiro encontro recente — algo marcou.</p>
+  <p><strong>Residência:</strong> Quarto em estalagem no Campus</p>
+</div>
+
+<div class="npc-card">
+  <h4>🎭 Dorian Nightshade — O Forasteiro</h4>
+  <p><strong>Mistério:</strong> Necromancia Burocrática | <strong>Módulo:</strong> O Arquivo dos Espíritos</p>
+  <p><strong>Adjetivo:</strong> Misterioso | <strong>Traço:</strong> Um detalhe que não é humano</p>
+  <p><strong>Desejo:</strong> Ser visto(a) de verdade | <strong>Medo:</strong> Que descubram seu segredo</p>
+  <p><strong>Segredo:</strong> Sabe algo sobre o protagonista</p>
+  <p><strong>Vínculo Inicial:</strong> Alguém avisou você sobre essa pessoa.</p>
+  <p><strong>Residência:</strong> Lugar secreto no Bairro dos Contrabandistas</p>
+</div>
+
+<div class="callout tip">
+  <strong>Dica:</strong> Os 3 já estão prontos — não precisa decidir nada agora. Se quiser trocar por NPCs seus, ou usar só 1 ou 2, mude quando quiser.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>3. A Cidade: Vaelstrom (Pré-Definida — Fase Inicial)</h2>
+
+<p><strong>Vaelstrom</strong> é uma cidade-porto nebulosa, cheia de marinheiros e contrabandistas. No início, apenas alguns bairros estão ativos.</p>
+
+<h4>Bairros Iniciais:</h4>
+<ul>
+  <li><strong>Porto Velho</strong> — Vibrante e barulhento. Tavernas, docas, mercadores.</li>
+</ul>
+
+<h4>Locais Notáveis Iniciais:</h4>
+<ul>
+  <li><strong>A Taverna do Kraken</strong> — Onde marinheiros contam histórias.</li>
+  <li><strong>O Mercado Flutuante</strong> — Barcos que vendem especiarias exóticas.</li>
+</ul>
+
+<div class="callout tip">
+  <strong>🌱 A cidade vai crescer:</strong> Mais bairros e locais aparecerão conforme você avança — <strong>se você quiser</strong>. Você pode decidir que a cidade já é grande, ou que nunca cresce. É sua escolha.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>4. O Mistério Inicial: "O Artefato que Sussurra"</h2>
+
+<div class="callout example">
+  <strong>A Situação:</strong><br>
+  Um aventureiro trouxe um amuleto de prata para a Guilda. Ele diz que o amuleto "sussurra à noite" e que ele não consegue mais dormir. O Mestre da Guilda pediu para você investigar.
+</div>
+
+<h4>O que você sabe:</h4>
+<ul>
+  <li>O amuleto é antigo (pelo menos 200 anos).</li>
+  <li>Tem inscrições em uma língua que você não reconhece.</li>
+  <li>O aventureiro diz que comprou no Mercado Negro de Marrath.</li>
+  <li>Ele está com medo de voltar para os Bastidores.</li>
+</ul>
+
+<h4>O que você não sabe (mistério):</h4>
+<ul>
+  <li>Quem criou o amuleto?</li>
+  <li>O que ele sussurra?</li>
+  <li>Por que o aventureiro realmente o trouxe?</li>
+</ul>
+
+<div class="callout rule">
+  <strong>Relógio de Mistério:</strong> "O Enigma do Amuleto" — 6 segmentos. Avance com moves: Estudar Artefato, Decifrar Enigma, Descobrir Segredo da Cidade, Sonhar. <strong>Ou ignore o Relógio e apenas descubra a história do seu jeito.</strong>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>5. Tutorial Guiado — Faça o que Quiser</h2>
+
+<div class="callout tip">
+  <strong>Objetivo:</strong> Este tutorial mostra o que você pode fazer com o essencial (ver <a href="index.html#nucleo-minimo">O Essencial</a>) já em ação numa cena concreta.
+</div>
+
+<h3>Capítulo 1 — O Começo (3 Atos disponíveis — se você quiser usar Atos)</h3>
+
+<div class="step">
+  <span class="step-number">1</span>
+  <strong>Ato 1: Restaurar o Amuleto (ou fazer outra coisa)</strong>
+</div>
+
+<p>Você pode examinar o amuleto — ou pode ignorá-lo e fazer algo completamente diferente. O jogo é seu.</p>
+
+<p>Se quiser examinar, use o move <strong>Restaurar uma Relíquia</strong> — o mesmo motor de <a href="index.html#nucleo-minimo">2d6 + Capacidade</a>, aplicado a esta cena:</p>
+
+<div class="move">
+  <h4>RESTAURAR UMA RELÍQUIA</h4>
+  <div class="trigger">Quando você trabalha fisicamente para limpar, consertar ou reativar um artefato.</div>
+  <span class="attribute">MÃOS (+2)</span>
+  <div class="result success"><strong>10+:</strong> Restauração completa. +1 Eco. Você descobre algo útil sobre sua origem.</div>
+  <div class="result partial"><strong>7–9:</strong> Funciona, mas com defeito OU gasta Recursos OU revela algo perturbador.</div>
+  <div class="result failure"><strong>6−:</strong> O artefato resiste. Ele se danifica, uma maldição se ativa, você se machuca.</div>
+</div>
+
+<p>Anote o resultado — ou ignore e apenas escreva o que acontece.</p>
+
+<div class="tutorial-extra">
+  <h4>🪶 Prompt de Escrita</h4>
+  <p><em>"O amuleto está na sua mão. O que você sente ao tocá-lo? Ele é frio? Quente? Ele vibra? O que você vê ao examiná-lo?"</em> — <strong>ou escreva sobre o que quiser.</strong></p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>6. Relógios Iniciais (já definidos — mude se quiser)</h2>
+
+<p>Estes Relógios já estão prontos na sua ficha. <strong>Você não precisa decidir nada agora</strong> — se não quiser usar Relógios, é só ignorar esta seção.</p>
+
+<table>
+<tr><th>Relógio</th><th>Segmentos</th><th>Inicial</th></tr>
+<tr><td>O Enigma do Amuleto</td><td>6</td><td>0/6</td></tr>
+<tr><td>O Interesse da Guilda</td><td>6</td><td>0/6</td></tr>
+<tr><td>O Evento Final</td><td>8</td><td>0/8</td></tr>
+</table>
+
+<p><strong>Nota:</strong> Os Relógios de Romance entram sozinhos quando os NPCs romanceáveis chegarem — nenhuma decisão extra da sua parte.</p>
+
+<div class="callout rule">
+  <strong>Como avançar Relógios:</strong> Veja a <a href="rapido.html">Referência Rápida</a> para a Tabela Mestra — <strong>ou ignore Relógios completamente</strong>.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>7. Próximos Passos — Seus Próximos Passos</h2>
+
+<div class="callout tip">
+  <strong>Parabéns!</strong> Você começou sua jornada. Agora, o que você quer fazer?
+  <ul>
+    <li><strong>Quer mais romance?</strong> Leia <a href="sistema-rotas-romance.html">Rotas de Romance</a></li>
+    <li><strong>Quer mais aventura?</strong> Leia <a href="sistema-aventureiros.html">Sistema de Aventureiros</a></li>
+    <li><strong>Quer mais mistério?</strong> Leia <a href="sistema-misterios.html">Sistema de Mistérios</a></li>
+    <li><strong>Quer mais decoração?</strong> Leia <a href="sistema-decoracao.html">Sistema de Decoração</a></li>
+    <li><strong>Quer apenas escrever?</strong> Leia <a href="prompts-escrita.html">Prompts de Escrita</a></li>
+    <li><strong>Quer ignorar tudo e fazer o que quiser?</strong> Então faça o que quiser!</li>
+  </ul>
+  <p><strong>Não há caminho certo. Apenas o seu caminho.</strong></p>
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Quick Start Pack — Comece a jogar em 15 minutos</p>
+  <p><a href="criacao-protagonista.html">Criação Completa →</a> | <a href="sistema-modos.html">Modos de Jogo →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

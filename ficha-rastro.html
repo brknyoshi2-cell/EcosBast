@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Ficha de Rastreamento</title>
+<style>
+.sheet {
+  background: #fefcf7;
+  border: 2px solid var(--accent);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
+  page-break-inside: avoid;
+  border-radius: 6px;
+}
+[data-theme="dark"] .sheet {
+  background: #2a2a2a;
+}
+.sheet h3 {
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.field {
+  display: flex;
+  align-items: baseline;
+  margin: 0.5rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.field-label {
+  font-weight: bold;
+  color: var(--accent);
+  min-width: 140px;
+  font-variant: small-caps;
+}
+.field-line {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+}
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+.field-box {
+  border: 1px solid var(--accent);
+  padding: 0.5rem;
+  text-align: center;
+  background: var(--parchment);
+  border-radius: 4px;
+}
+.field-box .label {
+  font-variant: small-caps;
+  color: var(--accent);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+}
+.field-box .value {
+  border-bottom: 1px solid var(--ink-soft);
+  height: 1.5rem;
+}
+.print-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  transition: background 0.2s;
+}
+.print-btn:hover {
+  background: var(--gold);
+}
+@media print {
+  .top-nav, .floating-controls, .back-to-top, .no-print, .print-btn { display: none !important; }
+  body { background: white !important; }
+  .sheet { box-shadow: none !important; border: 1px solid #ccc !important; }
+}
+@media (max-width: 768px) {
+  .field-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="ficha-rastro.html">Ferramentas</a> &gt; <strong>Ficha de Rastreamento</strong>
+</div>
+
+<div class="container">
+
+<div class="sheet" id="sheet-rastro">
+<h3>📋 Ficha de Rastreamento</h3>
+<button class="print-btn no-print" onclick="window.print()">🖨 Imprimir</button>
+<p style="text-align: center; font-style: italic;">Combina Relógios, Tags, Ticks, Recursos, Artefatos, Conquistas e Aventureiros</p>
+
+<div class="field"><span class="field-label">Modo de Jogo:</span><span class="field-line"></span> (🕊️ Livre / 🌿 Cozy / 📖 Narrativo / ⚔️ Épico / 🏃 Speedrun)</div>
+
+<h4>Relógios de Romance (10 seg. cada)</h4>
+<table>
+<tr><th>NPC</th><th>Segmentos</th><th>Fase</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<h4>Relógios de Ligação (8 seg.)</h4>
+<table>
+<tr><th>Par</th><th>Segmentos</th><th>Estado</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<h4>Relógios de Tensão</h4>
+<table>
+<tr><th>Nome</th><th>Máx</th><th>Atual</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<h4>Relógios de Mistério</h4>
+<table>
+<tr><th>Nome</th><th>Máx</th><th>Atual</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<h4>Evento Final (8 seg.)</h4>
+<div class="field"><span class="field-label">Evento:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Segmentos:</span><span class="field-line"></span> / 8</div>
+
+<h4>🔒 Câmara Selada (6 seg.)</h4>
+<div class="field"><span class="field-label">Segmentos:</span><span class="field-line"></span> / 6</div>
+<div class="field"><span class="field-label">Violação da Regra? (ignora limite):</span><span class="field-line"></span></div>
+
+<h4>Progressão (Ticks)</h4>
+<div class="field-grid">
+  <div class="field-box"><span class="label">Ofício</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Reputação Guilda</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Reputação Cidade</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Capítulo Atual</span><div class="value"></div></div>
+</div>
+
+<h4>Recursos e Ecos</h4>
+<div class="field-grid">
+  <div class="field-box"><span class="label">Recursos</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Ecos</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Atos Hoje</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Falhas Seguidas</span><div class="value"></div></div>
+</div>
+
+<h4>Tags Ativas</h4>
+<table>
+<tr><th>Tag</th><th>Descrição</th><th>Usada?</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<h4>✨ Artefatos de Estimação (máx 3)</h4>
+<table>
+<tr><th>Nome</th><th>Função</th><th>Bônus (+1 em)</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<h4>Artefatos em Restauração (máx 3)</h4>
+<table>
+<tr><th>Nome</th><th>Nível</th><th>Recursos Gastos</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<h4>✨ Sinergias de Módulos Ativas</h4>
+<p><em>Gaste 1 Eco para ativar. Cada uma pode ser usada 1x por capítulo.</em></p>
+<table>
+<tr><th>Combinação</th><th>Sinergia Ativa</th><th>Efeito</th><th>Usada?</th></tr>
+<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Pesquisa de Campo"</td><td>Estude artefato sem gastar Ato</td><td>☐</td></tr>
+<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Comunhão Guerreira"</td><td>+2 em rolagem com artefato de conflito</td><td>☐</td></tr>
+<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Leitura de Almas"</td><td>Descubra segredo sem rolagem</td><td>☐</td></tr>
+</table>
+
+<h4>✨ Sinergias Emergentes (Automáticas)</h4>
+<table>
+<tr><th>Combinação</th><th>Sinergia Emergente</th><th>Efeito</th></tr>
+<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Arqueologia Bélica"</td><td>+1 Eco ao estudar artefatos de guerra</td></tr>
+<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Exorcismo Prático"</td><td>−1 Recurso ao restaurar artefato amaldiçoado</td></tr>
+<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Cartografia das Almas"</td><td>Pista sobre NPC ao decifrar enigma</td></tr>
+</table>
+
+<h4>🏆 Conquistas Ativas (máx 3)</h4>
+<table>
+<tr><th>Conquista</th><th>Perícia com Bônus</th><th>Ativo?</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<h4>💔 Tags de Fim de Relacionamento</h4>
+<table>
+<tr><th>NPC</th><th>Tag</th><th>Bônus</th></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+
+<h4>⚔️ Aventureiros e Expedições</h4>
+<table>
+<tr><th>Nome</th><th>Tipo</th><th>Status</th><th>Última Expedição</th></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h4>Expedições em Andamento</h4>
+<table>
+<tr><th>Destino</th><th>Nível</th><th>Aventureiros</th><th>Dias Restantes</th></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h4>🌱 Progressão do Mundo</h4>
+<div class="field"><span class="field-label">Fase Atual:</span><span class="field-line"></span> (🌱 Inicial / 🌿 Crescimento / 🌳 Estabelecida / 🏛️ Lendária)</div>
+<div class="field"><span class="field-label">Capítulos na Fase Atual:</span><span class="field-line"></span></div>
+<table>
+<tr><th>Trabalhadores</th><th>Aventureiros Regulares</th><th>Bairros</th><th>Romanceáveis</th></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h4>🎉 Festivais Sazonais</h4>
+<div class="field"><span class="field-label">Próximo Festival:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Capítulo do Último:</span><span class="field-line"></span></div>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Volte para o <a href="index.html">Início →</a> ou consulte a <a href="rapido.html">Referência Rápida</a> durante o jogo.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Ferramentas — Ficha de Rastreamento</p>
+  <p><a href="ficha-mundo.html">← Ficha Mundo</a> | <a href="index.html">Início →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Moves: Investigação</title>
+<style>
+.move {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
+}
+.move h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+.move .trigger {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+.move .attribute {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.15rem 0.7rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-variant: small-caps;
+  margin-bottom: 0.8rem;
+}
+.result {
+  margin: 0.4rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid transparent;
+}
+.result.success {
+  border-left-color: var(--success);
+}
+.result.partial {
+  border-left-color: var(--gold);
+}
+.result.failure {
+  border-left-color: var(--danger);
+}
+.result strong {
+  color: var(--accent);
+}
+.choice {
+  background: rgba(184, 134, 11, 0.08);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  margin: 0.2rem 0;
+  font-style: italic;
+}
+.choice strong {
+  color: var(--gold);
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="moves-oficio.html">Moves</a> &gt; <strong>Investigação</strong>
+</div>
+
+<div class="container">
+
+<h2>Os Caminhos da Cidade — Moves de Investigação</h2>
+<p>Estes são os moves que definem como o protagonista explora a cidade, descobre segredos e encontra o que está escondido.</p>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="move">
+<h4>EXPLORAR UM BAIRRO</h4>
+<div class="trigger">Quando você caminha por um bairro, observa, ou procura algo específico.</div>
+<span class="attribute">OLHOS</span>
+<div class="result success"><strong>10+:</strong> Percebe algo interessante. +1 Eco. <em>[MISTÉRIO] + [DOMÉSTICO]</em></div>
+<div class="result partial"><strong>7–9:</strong> Percebe, mas <strong>escolha 1:</strong> (a) é sutil — você não tem certeza do que viu, (b) você chama atenção indesejada (alguém te observa), (c) o bairro está diferente do que você lembra — algo mudou.</div>
+<div class="result failure"><strong>6−:</strong> Você se perde, é reconhecido por alguém, ou vê algo perturbador. <em>[TENSÃO] + [VÍNCULO−]</em></div>
+</div>
+
+<div class="move">
+<h4>VISITAR UM LOCAL</h4>
+<div class="trigger">Quando você entra em um local notável (taverna, mercado, templo, etc.).</div>
+<span class="attribute">MÃOS ou CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> Bem recebido(a). Aprende algo útil. +1 Eco.</div>
+<div class="result partial"><strong>7–9:</strong> <strong>Escolha 1:</strong> (a) o local está cheio/vazio/diferente do esperado, (b) alguém te reconhece e isso é complicado, (c) você precisa gastar Recursos para obter o que quer (1d3).</div>
+<div class="result failure"><strong>6−:</strong> Expulso(a), algo roubado, ou ofende alguém.</div>
+</div>
+
+<div class="move">
+<h4>VISITAR NPC ROMANCEÁVEL EM CASA</h4>
+<div class="trigger">Quando você vai à residência de um NPC romanceável fora da Guilda.</div>
+<span class="attribute">CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> Visita bem-sucedida. Momento íntimo. Relógio +2. +1 Eco. <em>[DOMÉSTICO] + [VÍNCULO+]</em></div>
+<div class="result partial"><strong>7–9:</strong> <strong>Escolha 1:</strong> (a) o NPC está ocupado ou distraído — a visita é mais curta que o esperado (Relógio +1), (b) a residência revela algo inesperado sobre o NPC (Relógio +1, ganha Tag [MISTÉRIO]), (c) um vizinho ou familiar interfere (Relógio +1, ganha Tag [TENSÃO]).</div>
+<div class="result failure"><strong>6−:</strong> NPC não está, ou você é mal recebido(a). Relógio recua 1. <em>[VÍNCULO−] + [TENSÃO]</em></div>
+</div>
+
+<div class="move">
+<h4>DESCOBRIR UM SEGREDO DA CIDADE</h4>
+<div class="trigger">Quando você ouve um rumor, vê algo estranho ou percebe que há mais na cidade do que parece.</div>
+<span class="attribute">OLHOS ou MENTE</span>
+<div class="result success"><strong>10+:</strong> Descobre algo importante. +1 Eco. Avança Relógio de mistério.</div>
+<div class="result partial"><strong>7–9:</strong> Descobre algo, mas <strong>escolha 1:</strong> (a) a informação é incompleta — você precisa de mais pistas, (b) é perturbador — você não tem certeza se queria saber, (c) você foi visto(a) ouvindo/observando — alguém sabe que você está investigando.</div>
+<div class="result failure"><strong>6−:</strong> Visto(a) ouvindo/observando. Alguém tenta te silenciar. Relógio avança 2.</div>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você conhece os Moves de Investigação, vá para <a href="moves-base.html">Moves: Base →</a> para aprender sobre a rotina dos Bastidores.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Moves — Investigação</p>
+  <p><a href="moves-sociais.html">← Sociais</a> | <a href="moves-base.html">Próxima: Base →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

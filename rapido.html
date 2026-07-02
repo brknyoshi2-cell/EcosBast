@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Referência Rápida</title>
+<style>
+/* ============================================================
+   ESTILOS ESPECÍFICOS DO RAPIDO.HTML
+   ============================================================ */
+
+body {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 0.8rem;
+}
+
+h4 {
+  font-size: 1.05rem;
+  margin: 1rem 0 0.4rem;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+ul,
+ol {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+li {
+  margin: 0.2rem 0;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  margin: 0.1rem;
+  font-variant: small-caps;
+}
+.tag.vinculo-plus {
+  background: var(--success);
+}
+.tag.vinculo-minus {
+  background: var(--danger);
+}
+.tag.misterio {
+  background: var(--mystery);
+}
+.tag.tensao {
+  background: #a04040;
+}
+.tag.domestico {
+  background: var(--soft);
+}
+.tag.eco {
+  background: var(--gold);
+}
+
+/* Grids */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Quick links */
+.quick-link {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.3rem 0.8rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin: 0.2rem;
+  transition: background 0.2s;
+}
+.quick-link:hover {
+  background: var(--gold);
+}
+
+/* Rodapé menor */
+footer {
+  font-size: 0.85rem;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   IMPRESSÃO
+   ============================================================ */
+@media print {
+  .grid-2,
+  .grid-3 {
+    page-break-inside: avoid;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+  <button class="control-btn" onclick="window.print()">🖨 Imprimir</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <strong>Referência Rápida</strong>
+</div>
+
+<div class="container">
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Esta é sua folha de consulta durante o jogo. Mantenha aberta ao lado das fichas. Tudo que você precisa está aqui.
+</div>
+
+<div class="callout rule" id="indice">
+  <strong>📑 Índice — clique pra pular direto:</strong>
+  <p style="line-height: 2.2;">
+    <a href="#resolucao" class="quick-link">1. Resolução</a>
+    <a href="#atos" class="quick-link">2. Atos</a>
+    <a href="#ecos" class="quick-link">3. Ecos</a>
+    <a href="#recursos" class="quick-link">4. Recursos</a>
+    <a href="#tags" class="quick-link">5. Tags</a>
+    <a href="#relogios" class="quick-link">6. Relógios</a>
+    <a href="#camara" class="quick-link">7. Câmara Selada</a>
+    <a href="#progressao" class="quick-link">8. Progressão</a>
+    <a href="#sinergias" class="quick-link">9. Sinergias</a>
+    <a href="#aventureiros" class="quick-link">10. Expedições</a>
+    <a href="#cidade" class="quick-link">11. Cidade</a>
+    <a href="#fantasia-nao-tradicional" class="quick-link">12. Fantasia Não-Tradicional</a>
+    <a href="#humor" class="quick-link">13. Humor</a>
+    <a href="#falhas" class="quick-link">14. Falhas em Cadeia</a>
+    <a href="#fins" class="quick-link">15. Fins Melancólicos</a>
+    <a href="#maravilhas" class="quick-link">16. Maravilhas Cotidianas</a>
+    <a href="#momentos" class="quick-link">17. Momentos Pequenos</a>
+    <a href="#fims" class="quick-link">18. Quando o Amor Acaba</a>
+    <a href="#fim-antecipado" class="quick-link">19. Fim Antecipado</a>
+    <a href="#links" class="quick-link">Links Rápidos</a>
+  </p>
+</div>
+
+<h2 id="resolucao">1. Resolução de Ações</h2>
+<p><strong>2d6 + Capacidade Inata</strong> → 10+ (sucesso total) | 7–9 (sucesso com custo) | 6− (complicação)</p>
+
+<table class="compact">
+<tr><th>Resultado</th><th>Significado</th><th>Ecos</th></tr>
+<tr><td><strong>10+</strong></td><td>Sucesso total. Algo bom acontece.</td><td><strong>+1 Eco</strong></td></tr>
+<tr><td><strong>7–9</strong></td><td>Sucesso parcial. Você consegue, mas com custo.</td><td>—</td></tr>
+<tr><td><strong>6−</strong></td><td>Complicação. Virada narrativa.</td><td>+1 Eco se aceitar com estilo (<strong>aplica-se a todas as falhas</strong>)</td></tr>
+</table>
+
+<div class="callout rule">
+  <strong>Regra de Ouro:</strong> 6− nunca é "game over". É convite para a história mudar de direção. <strong>Aceitar com estilo</strong> se aplica a todas as falhas, incluindo falhas em cadeia.
+</div>
+
+<h3>Tabela de Complicações (d20 — Versão Rápida)</h3>
+<table class="compact">
+<tr><th>d20</th><th>Complicação</th></tr>
+<tr><td>1–3</td><td>Artefato quebra ou reage mal</td></tr>
+<tr><td>4–6</td><td>NPC se ofende ou se afasta</td></tr>
+<tr><td>7–9</td><td>Você se machuca (perde 1 Ato amanhã)</td></tr>
+<tr><td>10–12</td><td>Relógio de Tensão avança 1</td></tr>
+<tr><td>13–15</td><td>Você perde algo ou alguém descobre um segredo</td></tr>
+<tr><td>16–18</td><td>Algo estranho acontece (Relógio de Mistério avança 1)</td></tr>
+<tr><td>19–20</td><td>Nada grave — mas você sente que algo está por vir (+1 Eco)</td></tr>
+</table>
+
+<h3>Árvore de Decisão de Moves</h3>
+<table class="compact">
+<tr><th>Situação</th><th>Move a Usar</th><th>Capacidade</th></tr>
+<tr><td>Consertando/limpando fisicamente</td><td>Restaurar uma Relíquia</td><td>MÃOS</td></tr>
+<tr><td>Analisando/entendendo magia</td><td>Estudar um Artefato</td><td>OLHOS ou MENTE</td></tr>
+<tr><td>Conversando para criar laço</td><td>Conversar Profundamente</td><td>CORAÇÃO</td></tr>
+<tr><td>Conversando para obter favor</td><td>Negociar/Persuadir</td><td>MENTE ou CORAÇÃO</td></tr>
+<tr><td>Andando pela cidade sem destino</td><td>Explorar Bairro</td><td>OLHOS</td></tr>
+<tr><td>Indo a local específico</td><td>Visitar Local</td><td>MÃOS ou CORAÇÃO</td></tr>
+<tr><td>Flertando</td><td>Seduzir ou Encantar</td><td>CORAÇÃO</td></tr>
+<tr><td>Cuidando de alguém</td><td>Consolar ou Acolher</td><td>CORAÇÃO</td></tr>
+<tr><td>Decifrando código/runa</td><td>Decifrar Enigma</td><td>MENTE</td></tr>
+<tr><td>Escondendo algo</td><td>Manter um Segredo</td><td>MENTE ou CORAÇÃO</td></tr>
+<tr><td>Trabalhando com NPC</td><td>Trabalhar em Conjunto</td><td>MÃOS</td></tr>
+<tr><td>Celebrando algo</td><td>Celebrar o Amor</td><td>CORAÇÃO</td></tr>
+<tr><td>Terminando relacionamento (6/10+)</td><td>Quando o Amor Acaba</td><td>CORAÇÃO</td></tr>
+<tr><td>Terminando relacionamento (0/10)</td><td>Fim Antecipado</td><td>CORAÇÃO</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="atos">2. Atos — Energia e Tempo</h2>
+<p>Você tem <strong>3 Atos por dia narrativo</strong>. Cada ação significativa custa 1 Ato.</p>
+
+<table class="compact">
+<tr><th>Ação</th><th>Custo</th></tr>
+<tr><td>Trabalhar nos Bastidores</td><td>1 Ato</td></tr>
+<tr><td>Conversa profunda com NPC</td><td>1 Ato</td></tr>
+<tr><td>Sair dos Bastidores (cidade)</td><td>2 Atos (ida + volta)</td></tr>
+<tr><td>Visitar NPC em casa</td><td>1 Ato</td></tr>
+<tr><td>Melhorar oficina</td><td>1 Ato</td></tr>
+<tr><td>Marcar Passagem do Tempo</td><td>Gratuito (1x/capítulo)</td></tr>
+<tr><td>Ações rápidas (café, varrer)</td><td>Gratuito</td></tr>
+</table>
+
+<div class="callout rule">
+  <strong>Regras de Ouro dos Atos:</strong>
+  <ul>
+    <li><strong>Não acumulam:</strong> Atos não usados no fim do dia são perdidos.</li>
+    <li><strong>Não empilham:</strong> Não gaste 2 Atos na mesma ação.</li>
+    <li><strong>Recuperação:</strong> Recupera 3 Atos ao fim do dia (move "Descansar e Refletir").</li>
+    <li><strong>Descanso Extra:</strong> Gaste 1 Eco OU 2 Recursos para +1 Ato temporário (máx 1/dia).</li>
+  </ul>
+</div>
+
+<h3>Capítulo</h3>
+<p>Um capítulo dura <strong>1 sessão de jogo real</strong> OU <strong>3–5 dias narrativos</strong>, o que vier primeiro.</p>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="ecos">3. Ecos — Moeda Narrativa (máx 5)</h2>
+
+<div class="grid-2">
+<div>
+<h4>Ganhar Ecos</h4>
+<ul>
+<li>Rolagem 10+: <strong>+1 Eco</strong></li>
+<li>Aceitar 6− com estilo: <strong>+1 Eco</strong> (aplica-se a todas as falhas)</li>
+<li>Relógio avança 1 seg: <strong>+1 Eco</strong> (separado do limite de escrita)</li>
+<li>Escrever cena emocional: <strong>+1 Eco</strong> (máx 1/cena, não cumulativo com 10+)</li>
+<li>Marcar Passagem do Tempo: <strong>+1 Eco</strong></li>
+<li>Usar move "Mudar de Foco": <strong>+1 Eco</strong></li>
+<li><strong>Expedição bem-sucedida:</strong> +1 Eco (veja seção 9)</li>
+</ul>
+</div>
+<div>
+<h4>Gastar Ecos (1 cada)</h4>
+<ul>
+<li>+1 no dado (rerolar)</li>
+<li>Forçar encontro com NPC</li>
+<li>Lembrar detalhe útil</li>
+<li>Reduzir Relógio tensão/mistério</li>
+<li>Visitar local favorito sem custo</li>
+<li>Descobrir segredo antes de rolar</li>
+<li>Preparar bebida fora sem custo</li>
+<li>Reduzir/avançar Evento Final</li>
+<li>Descanso Extra (+1 Ato)</li>
+<li>Epifania Narrativa (fechar Relógio)</li>
+<li>Mudar o modo do Evento Final (1x por campanha)</li>
+<li><strong>Sinergia Ativa de Módulo</strong> — ative uma sinergia</li>
+<li><strong>Forçar sucesso em expedição</strong> — 2 Ecos (rolagem automática 10+)</li>
+<li><strong>Salvar aventureiro da morte</strong> — 3 Ecos</li>
+</ul>
+</div>
+</div>
+
+<h3>Níveis de Escrita (para ganhar Ecos)</h3>
+<table class="compact">
+<tr><th>Nível</th><th>Tamanho</th><th>Ecos</th></tr>
+<tr><td><strong>Rápida</strong></td><td>1 frase</td><td>+0 Eco (apenas narrativo)</td></tr>
+<tr><td><strong>Média</strong></td><td>1 parágrafo</td><td>+1 Eco</td></tr>
+<tr><td><strong>Profunda</strong></td><td>1+ página</td><td>+2 Ecos</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="recursos">4. Recursos — Moeda Material</h2>
+<p><strong>Comece com 3 Recursos.</strong> Ganhe através de: venda de artefatos (1d6), recompensa da Guilda (1d6), achados (1d6), presentes de NPCs (1d6), <strong>expedições bem-sucedidas</strong>.</p>
+
+<table class="compact">
+<tr><th>Uso</th><th>Custo</th></tr>
+<tr><td>Materiais de Restauração</td><td>1 Recurso por artefato</td></tr>
+<tr><td>Comida e Bebida</td><td>1 Recurso/dia (opcional, +1 Eco se descritivo)</td></tr>
+<tr><td><strong>Presentes</strong> (ver tabela abaixo)</td><td>1–8 Recursos</td></tr>
+<tr><td>Melhorias na Oficina</td><td>6–15 Recursos</td></tr>
+<tr><td>Itens da Cidade</td><td>1–10 Recursos</td></tr>
+<tr><td>Suborno/Informação</td><td>2–5 Recursos</td></tr>
+<tr><td><strong>Enviar expedição</strong></td><td>1–8 Recursos (veja seção 9)</td></tr>
+<tr><td><strong>Curar aventureiro ferido</strong></td><td>1–3 Recursos</td></tr>
+</table>
+
+<div class="callout warning">
+  <strong>Se Recursos chegam a 0:</strong> O jogo NÃO para. Você entra em <strong>"Débito Narrativo"</strong> — não pode restaurar, comprar ou dar presentes. Para sair: faça favor para Guilda, venda item pessoal, ou peça ajuda a NPC.
+</div>
+
+<h3>Tabela de Presentes</h3>
+<table class="compact">
+<tr><th>Tipo</th><th>Custo</th><th>Efeito</th></tr>
+<tr><td>Pequeno (flor, carta)</td><td>1 Recurso</td><td>+0 Relógio, +1 Eco</td></tr>
+<tr><td>Médio (livro, ferramenta)</td><td>3 Recursos</td><td>+1 Relógio</td></tr>
+<tr><td>Grande (joia, artefato simples)</td><td>5 Recursos</td><td>+2 Relógios</td></tr>
+<tr><td>Personalizado (relíquia)</td><td>8 Recursos</td><td>+3 Relógios</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="tags">5. Tags Narrativas</h2>
+<p>
+  <span class="tag vinculo-plus">VÍNCULO+</span>
+  <span class="tag vinculo-minus">VÍNCULO−</span>
+  <span class="tag misterio">MISTÉRIO</span>
+  <span class="tag tensao">TENSÃO</span>
+  <span class="tag domestico">DOMÉSTICO</span>
+  <span class="tag eco">ECO</span>
+  <span class="tag">GUERREIRO</span>
+  <span class="tag">SÁBIO</span>
+  <span class="tag">OCULTISTA</span>
+  <span class="tag">LUTO</span>
+</p>
+
+<div class="callout rule">
+  <strong>Regras de Invocação:</strong>
+  <ul>
+    <li>Tags podem ser invocadas para <strong>+1/+2 em rolagens</strong> (máx +2 por rolagem)</li>
+    <li>Justifique narrativamente por que a tag ajuda</li>
+    <li><span class="tag vinculo-minus">VÍNCULO−</span> pode ser invocada como penalidade: −1 no dado para ganhar +1 Eco</li>
+    <li>Tags <span class="tag eco">ECO</span> representam momentos que já deram Ecos quando criadas</li>
+    <li><span class="tag">GUERREIRO</span>, <span class="tag">SÁBIO</span>, <span class="tag">OCULTISTA</span> são tags de especialização de aventureiros</li>
+    <li><span class="tag">LUTO</span> é uma tag temporária de perda (−1 em CORAÇÃO por 3 capítulos)</li>
+  </ul>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="relogios">6. Tabela Mestra de Avanço de Relógios</h2>
+
+<h3>Relógios de Romance (10 segmentos)</h3>
+<table class="compact">
+<tr><th>Ação / Move</th><th>10+</th><th>7–9</th><th>6−</th></tr>
+<tr><td>Conversar Profundamente</td><td>+1 seg</td><td>+0 (pendência)</td><td>−1 seg</td></tr>
+<tr><td>Visitar Casa do NPC</td><td>+2 seg</td><td>+1 seg (complicação)</td><td>−1 seg</td></tr>
+<tr><td>Preparar Café/Chá para NPC</td><td>+1 seg</td><td>+0 (interrompido)</td><td>−1 seg</td></tr>
+<tr><td>Dar Presente</td><td>+1 seg</td><td>+1 seg (constrangido)</td><td>+0 (rejeitado)</td></tr>
+<tr><td>Seduzir ou Encantar</td><td>+2 seg</td><td>+1 seg (hesitação)</td><td>−1 seg</td></tr>
+<tr><td>Arriscar-se por Alguém</td><td>+2 seg</td><td>+1 seg (custo físico)</td><td>−1 seg</td></tr>
+<tr><td>Consolar ou Acolher</td><td>+1 seg</td><td>+0 (não se abre)</td><td>−1 seg</td></tr>
+<tr><td>Celebrar o Amor</td><td>+2 seg</td><td>+1 seg (com condição)</td><td>−1 seg</td></tr>
+</table>
+
+<h3>Relógios de Ligação entre NPCs (8 segmentos)</h3>
+<ul>
+<li><strong>+1 seg:</strong> NPCs interagem na mesma cena</li>
+<li><strong>+2 seg:</strong> Protagonista gasta 1 Eco para forçar encontro</li>
+<li><strong>+1 seg:</strong> Protagonista escolhe um NPC em detrimento do outro (ciúme)</li>
+<li><strong>+1 seg:</strong> Aventureiros que vão juntos em expedição</li>
+</ul>
+
+<h3>Relógios de Tensão (4–8 segmentos)</h3>
+<ul>
+<li>Avançam conforme gatilhos específicos de cada Relógio</li>
+<li><strong>Recuam:</strong> 1 Eco por segmento</li>
+<li><strong>No máximo:</strong> Crise imediata + avanço do Evento Final</li>
+<li><strong>Expedição falha:</strong> Relógio de Tensão +1</li>
+</ul>
+
+<h3>Relógios de Mistério (6–8 segmentos)</h3>
+<ul>
+<li>Avançam com moves: Estudar Artefato, Decifrar Enigma, Descobrir Segredo, Sonhar</li>
+<li><strong>Não recuam</strong> — só se resolvem</li>
+<li><strong>Epifania Narrativa:</strong> Gastar 3 Ecos para preencher instantaneamente</li>
+<li><strong>Expedição pode avançar:</strong> se encontrar pistas</li>
+</ul>
+
+<h3>Relógio do Evento Final (8 segmentos)</h3>
+<ul>
+<li><strong>Pressão automática:</strong> +1 seg a cada 3 capítulos (padrão). No <a href="sistema-modos.html">Modo Speedrun</a>, +1 seg por capítulo.</li>
+<li><strong>Mudança de modo:</strong> 1 Eco (1x por campanha, no fim de um capítulo)</li>
+<li><strong>Respiração:</strong> Gastar 1 Eco para −1 seg (mínimo 4/8)</li>
+</ul>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="camara">7. 🔒 Câmara Selada — Relógio Visível</h2>
+<p>A Câmara Selada tem um <strong>Relógio Visível de 6 segmentos</strong>. Avança conforme:</p>
+
+<table class="compact">
+<tr><th>Gatilho</th><th>Avanço</th></tr>
+<tr><td>6− em move de Ofício dentro dos Bastidores</td><td>+1 seg</td></tr>
+<tr><td>Usar move proibido pela Regra Inquebrável</td><td>+2 seg</td></tr>
+<tr><td><strong>Violar Regra Inquebrável</strong></td><td><strong>+3 seg (ignora o limite de 1/capítulo)</strong></td></tr>
+<tr><td>Resolver mistério sobre os Bastidores</td><td>+1 seg</td></tr>
+</table>
+
+<div class="callout warning">
+  <strong>Limite:</strong> Máximo de <strong>1 segmento por capítulo</strong> para gatilhos normais. A <strong>Violação da Regra Inquebrável ignora este limite</strong>.
+</div>
+
+<div class="callout rule">
+  <strong>Controle do Jogador:</strong>
+  <ul>
+    <li><strong>Selar a Câmara:</strong> Gastar 3 Ecos + 1 Ato para reduzir 2 segmentos.</li>
+    <li><strong>Quando atinge 6/6:</strong> A Câmara Selada se abre, desencadeando o Evento Final imediatamente.</li>
+  </ul>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="progressao">8. Progressão — Ofício e Reputação</h2>
+
+<h3>Sistema de Ticks</h3>
+<p>Cada vez que você tira <strong>10+ ou 7–9</strong> em move relacionado, faça um <strong>Tick (✓)</strong> na ficha. A cada <strong>5 Ticks</strong>, sobe um nível.</p>
+
+<h3>Nível de Ofício</h3>
+<table class="compact">
+<tr><th>Nível</th><th>Nome</th><th>Benefícios</th><th>Ticks</th></tr>
+<tr><td>1</td><td>Aprendiz</td><td>Move básico "Restaurar uma Relíquia"</td><td>Início</td></tr>
+<tr><td>2</td><td>Artesão</td><td>+1 em restauração comum; acesso a nível 2</td><td>5</td></tr>
+<tr><td>3</td><td>Mestre Restaurador</td><td>"Restauração Mestre"; acesso a nível 3; +1 investigação</td><td>10</td></tr>
+<tr><td>4</td><td>Sábio das Relíquias</td><td>+2 em raros; estuda lendários sem risco</td><td>15</td></tr>
+<tr><td>5</td><td>Lenda Viva</td><td>Lendários revelam segredos; +1 em todos moves de ofício</td><td>20</td></tr>
+</table>
+
+<h3>Reputação da Guilda</h3>
+<table class="compact">
+<tr><th>Nível</th><th>Nome</th><th>Benefícios</th><th>Ticks</th></tr>
+<tr><td>1</td><td>Desconhecido</td><td>Nenhum</td><td>Início</td></tr>
+<tr><td>2</td><td>Confiável</td><td>+1 social com trabalhadores; pedidos básicos</td><td>5</td></tr>
+<tr><td>3</td><td>Respeitado</td><td>"Favor da Guilda"; pedidos moderados</td><td>10</td></tr>
+<tr><td>4</td><td>Essencial</td><td>+2 social com Mestre; pedidos complexos</td><td>15</td></tr>
+<tr><td>5</td><td>Lenda da Guilda</td><td>Favores ilimitados; artefatos secretos</td><td>20</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="sinergias">9. ✨ Sinergias de Módulos — Resumo</h2>
+
+<h3>Sinergias Ativas (1 Eco, 1x por capítulo)</h3>
+<table class="compact">
+<tr><th>Combinação</th><th>Sinergia</th><th>Efeito</th></tr>
+<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Pesquisa de Campo"</td><td>Estude artefato sem gastar Ato</td></tr>
+<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Comunhão Guerreira"</td><td>+2 em rolagem com artefato de conflito</td></tr>
+<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Leitura de Almas"</td><td>Descubra segredo sem rolagem</td></tr>
+</table>
+
+<h3>Sinergias Emergentes (Automáticas)</h3>
+<table class="compact">
+<tr><th>Combinação</th><th>Sinergia</th><th>Efeito</th></tr>
+<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Arqueologia Bélica"</td><td>+1 Eco ao estudar artefatos de guerra</td></tr>
+<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Exorcismo Prático"</td><td>−1 Recurso ao restaurar artefato amaldiçoado</td></tr>
+<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Cartografia das Almas"</td><td>Pista sobre NPC ao decifrar enigma</td></tr>
+</table>
+
+<h3>Custo de Módulos</h3>
+<table class="compact">
+<tr><th>Ordem</th><th>Custo em Recursos</th><th>Acumulado</th></tr>
+<tr><td>1º módulo</td><td>6 Recursos</td><td>6 Recursos</td></tr>
+<tr><td>2º módulo</td><td>8 Recursos (+2)</td><td>14 Recursos</td></tr>
+<tr><td>3º módulo</td><td>10 Recursos (+2)</td><td>24 Recursos</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="aventureiros">10. ⚔️ Expedições — Resumo</h2>
+
+<h3>Níveis de Expedição</h3>
+<table class="compact">
+<tr><th>Nível</th><th>Dificuldade</th><th>Duração</th><th>Custo</th><th>Recompensa</th></tr>
+<tr><td>Fácil</td><td>1d6</td><td>1-2 dias</td><td>1 Recurso</td><td>1-3 Recursos</td></tr>
+<tr><td>Média</td><td>2d6</td><td>3-5 dias</td><td>2 Recursos</td><td>3-6 Recursos</td></tr>
+<tr><td>Difícil</td><td>3d6</td><td>5-7 dias</td><td>4 Recursos</td><td>6-10 Recursos</td></tr>
+<tr><td>Lendária</td><td>4d6</td><td>7-14 dias</td><td>8 Recursos</td><td>10-20 Recursos + Artefato</td></tr>
+</table>
+
+<h3>Resultados de Expedição (2d6 + Modificadores)</h3>
+<table class="compact">
+<tr><th>Resultado</th><th>Significado</th></tr>
+<tr><td><strong>10+</strong></td><td>Sucesso Total — recompensas + bônus</td></tr>
+<tr><td><strong>7–9</strong></td><td>Sucesso Parcial — retorna com complicação</td></tr>
+<tr><td><strong>6−</strong></td><td>Falha — retorna ferido ou não retorna</td></tr>
+</table>
+
+<h3>Modificadores de Expedição</h3>
+<table class="compact">
+<tr><th>Fator</th><th>Modificador</th></tr>
+<tr><td>Aventureiro tem Tag [GUERREIRO]</td><td>+1</td></tr>
+<tr><td>NPC Romanceável participa</td><td>+1</td></tr>
+<tr><td>NPC Romanceável em 10/10</td><td>+2</td></tr>
+<tr><td>Você tem Sala de Armas</td><td>+1</td></tr>
+<tr><td>Você tem Biblioteca Arcana (expedições de conhecimento)</td><td>+1</td></tr>
+<tr><td>Você tem Arquivo dos Espíritos (expedições perigosas)</td><td>+1</td></tr>
+</table>
+
+<div class="callout tip">
+  <strong>Ver completo:</strong> <a href="sistema-aventureiros.html">Sistema: Aventureiros</a>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="cidade">11. 🏘️ Eventos & Presenças da Cidade</h2>
+
+<h3>Eventos da Cidade (d6)</h3>
+<table class="compact">
+<tr><th>d6</th><th>Evento</th></tr>
+<tr><td>1</td><td><strong>Festival do Arco-Íris</strong> — a cidade celebra suas comunidades. Todos os Relógios de Romance +1</td></tr>
+<tr><td>2</td><td><strong>O Casamento da Padeira</strong> — ela se casa com sua parceira, e você é convidado(a). Relógio de Romance com NPC que você levar +2</td></tr>
+<tr><td>3</td><td><strong>Chegada de Refugiados</strong> — um grupo se muda para a cidade, entre eles um casal que se conheceu na fuga. +1 trabalhador na Guilda</td></tr>
+<tr><td>4</td><td><strong>Nova Seção na Biblioteca</strong> — Lyra organiza um acervo dedicado a histórias pouco contadas. +1 em rolagens de conhecimento</td></tr>
+<tr><td>5</td><td><strong>O Beijo Sob a Lua</strong> — um momento romântico entre dois NPCs. +1 Eco</td></tr>
+<tr><td>6</td><td><strong>A Declaração</strong> — um NPC se declara para você. Relógio de Romance +2</td></tr>
+</table>
+
+<h3>NPCs de Pano de Fundo (d3)</h3>
+<p style="font-size: 0.85rem; color: var(--ink-soft);">Não inclui Kael, Lyra ou Dorian — a identidade dos 3 NPCs romanceáveis é decidida na <a href="sistema-rotas-romance.html#cenas-chegada">Cena de Chegada</a> de cada um, não sorteada aqui.</p>
+<table class="compact">
+<tr><th>d3</th><th>NPC</th><th>História</th></tr>
+<tr><td>1</td><td><strong>A Padeira</strong></td><td>Está se casando com sua parceira</td></tr>
+<tr><td>2</td><td><strong>O Guarda</strong></td><td>Não entende muito de romance, mas entende lealdade</td></tr>
+<tr><td>3</td><td><strong>A Cartomante</strong></td><td>Muda de apresentação conforme a lua</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="fantasia-nao-tradicional">12. ✨ Fantasia Não-Tradicional</h2>
+
+<h3>Artefatos que Não Fazem o que Esperamos (d6)</h3>
+<table class="compact">
+<tr><th>d6</th><th>Artefato</th><th>O que realmente faz</th></tr>
+<tr><td>1</td><td><strong>Espada Lendária</strong></td><td>Ilumina salas escuras (é uma lanterna glorificada)</td></tr>
+<tr><td>2</td><td><strong>Amuleto de Proteção</strong></td><td>Faz barulho tão alto que o perigo já te encontrou</td></tr>
+<tr><td>3</td><td><strong>Poção de Cura</strong></td><td>Cura, mas o sabor é tão ruim que você prefere ficar ferido</td></tr>
+<tr><td>4</td><td><strong>Mapa do Tesouro</strong></td><td>Mostra o caminho... para a taverna mais próxima</td></tr>
+<tr><td>5</td><td><strong>Anel da Invisibilidade</strong></td><td>Torna você invisível... mas também inaudível. Você não pode falar.</td></tr>
+<tr><td>6</td><td><strong>Capa da Velocidade</strong></td><td>Faz você andar rápido... mas só para trás</td></tr>
+</table>
+
+<h3>Aventureiros que Não Querem Ser Heróis (d6)</h3>
+<table class="compact">
+<tr><th>d6</th><th>Aventureiro</th><th>Motivação</th></tr>
+<tr><td>1</td><td><strong>O Padeiro</strong></td><td>Quer abrir uma padaria, só vai em expedições para pagar os ingredientes</td></tr>
+<tr><td>2</td><td><strong>A Medrosa</strong></td><td>Ótima aventureira, mas tem pavor de monstros</td></tr>
+<tr><td>3</td><td><strong>O Mercenário</strong></td><td>Só quer o dinheiro, não se importa com a glória</td></tr>
+<tr><td>4</td><td><strong>A Jardineira</strong></td><td>Vai em expedições para coletar sementes raras</td></tr>
+<tr><td>5</td><td><strong>O Poeta</strong></td><td>Quer escrever um épico sobre suas aventuras — mas nunca faz nada de épico</td></tr>
+<tr><td>6</td><td><strong>A Cozinheira</strong></td><td>Quer encontrar ingredientes exóticos para sua taverna</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="humor">13. 😄 Humor e Leveza</h2>
+
+<h3>Momentos de Humor (d12)</h3>
+<table class="compact">
+<tr><th>d12</th><th>Momento</th></tr>
+<tr><td>1</td><td>Alguém derruba chá no momento mais dramático</td></tr>
+<tr><td>2</td><td>O gato fantasma derruba um artefato importante</td></tr>
+<tr><td>3</td><td>Um NPC tenta ser sério, mas ri no meio</td></tr>
+<tr><td>4</td><td>O relógio da parede toca uma música estranha</td></tr>
+<tr><td>5</td><td>Alguém tropeça em uma vassoura que varreu sozinha</td></tr>
+<tr><td>6</td><td>Um artefato faz um barulho perfeitamente inadequado</td></tr>
+<tr><td>7</td><td>O Mestre oferece chá frio novamente</td></tr>
+<tr><td>8</td><td>Alguém conta uma piada que ninguém entende, mas todo mundo ri</td></tr>
+<tr><td>9</td><td>Uma carta chega com uma notícia absurda</td></tr>
+<tr><td>10</td><td>O gato fantasma aparece — só para roubar seu café</td></tr>
+<tr><td>11</td><td>Um aventureiro tenta ser dramático, mas sua armadura range</td></tr>
+<tr><td>12</td><td>Alguém diz algo tão inesperado que você precisa parar e rir</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="falhas">14. Falhas em Cadeia</h2>
+<table class="compact">
+<tr><th>Falhas Consecutivas</th><th>Efeito</th></tr>
+<tr><td>1ª falha (6−)</td><td>Complicação normal</td></tr>
+<tr><td>2ª falha consecutiva</td><td>Complicação + −1 na próxima rolagem</td></tr>
+<tr><td>3ª falha consecutiva</td><td>Desbloqueia move "Mudar de Foco" (1x/cap)</td></tr>
+<tr><td>4+ falhas</td><td>−2 em todas rolagens até usar "Mudar de Foco"</td></tr>
+</table>
+
+<div class="callout tip">
+  <strong>Move "Mudar de Foco":</strong> Após 3 falhas, gaste 1 Ato para escrever cena de mudança, resetar tensão, ganhar +1 Eco e opcionalmente avançar 1 Relógio Suave. <strong>Limitado a 1x por capítulo.</strong>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="fins">15. 💔 Fins Melancólicos (d10)</h2>
+<p>Quando um Relógio de Romance estagna em 6/10 ou regrede permanentemente:</p>
+<ol>
+<li>Vocês se tornam amigos distantes</li>
+<li>Um muda para outra cidade — distância, não falta de amor</li>
+<li>Percebem que querem coisas diferentes</li>
+<li>Segredo vem à tona e quebra confiança</li>
+<li>Percebem que amam pessoas diferentes</li>
+<li>A vida acontece — tempo passando, amor esfriando</li>
+<li>Um escolhe a Guilda sobre o amor</li>
+<li>Relacionamento era uma fuga — volta à realidade</li>
+<li>Um parte para expedição — e não volta</li>
+<li>Percebem que o amor acabou — terminam com dignidade</li>
+</ol>
+
+<h3>Cicatrizes Emocionais</h3>
+<p>Relógios que não completam deixam tag <span class="tag eco">ECO: Cicatriz do Amor</span>:</p>
+<ul>
+<li><strong>+1</strong> em rolagens de CORAÇÃO sobre vulnerabilidade</li>
+<li><strong>−1</strong> em rolagens de SEDUZIR com novos NPCs</li>
+</ul>
+
+<h3>Fim Antecipado de Relacionamento (0/10)</h3>
+<p>Se você terminar um relacionamento antes de chegar a 6/10, ganha tag <span class="tag eco">ECO: Fim Antecipado</span>:</p>
+<ul>
+<li><strong>+1</strong> em rolagens de CORAÇÃO sobre superação</li>
+<li><strong>+1</strong> em rolagens de MENTE para reconhecer padrões em relacionamentos</li>
+</ul>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="maravilhas">16. ✨ Maravilhas Cotidianas (d10)</h2>
+<p>Quando tirar 10+ em "Preparar Café/Chá" ou "Limpar os Bastidores", role 1d10:</p>
+<ol>
+<li>A poeira forma constelações se não varrida</li>
+<li>O chá muda de sabor conforme o humor de quem bebe</li>
+<li>As sombras imitam movimentos com leve atraso</li>
+<li>A vassoura varre sozinha por 1 hora</li>
+<li>A xícara nunca esfria</li>
+<li>O espelho reflete o clima de amanhã</li>
+<li>Os livros sussurram quando ninguém olha</li>
+<li>As velas acendem sozinhas ao entardecer</li>
+<li>Um gato fantasma dorme nos artefatos</li>
+<li>Os degraus contam seus passos em voz baixa</li>
+</ol>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="momentos">17. 💕 Momentos Pequenos (d10)</h2>
+<p>Para cenas de intimidade sem pressão:</p>
+<ol>
+<li>Fazer café juntos em silêncio confortável</li>
+<li>Dividir um cobertor durante tempestade</li>
+<li>Ler lado a lado sem conversar</li>
+<li>Cozinhar algo simples juntos</li>
+<li>Caminhar sem destino pela cidade</li>
+<li>Assistir chuva pela janela</li>
+<li>Organizar livros por cor, não por uso</li>
+<li>Contar histórias de infância</li>
+<li>Dançar sem música na cozinha</li>
+<li>Cair no sono no sofá do outro</li>
+</ol>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="fims">18. 💔 Move "Quando o Amor Acaba" (6/10+)</h2>
+
+<div class="callout rule">
+  <strong>Gatilho:</strong> Quando Relógio de Romance estagna em 6/10 ou regrede permanentemente.<br>
+  <strong>Capacidade:</strong> CORAÇÃO
+</div>
+
+<table class="compact">
+<tr><th>Resultado</th><th>Efeito</th></tr>
+<tr><td><strong>10+</strong></td><td>Você aceita com graça. Ganha tag <em>[ECO: Cicatriz do Amor]</em>. +2 Ecos.</td></tr>
+<tr><td><strong>7–9</strong></td><td>Você aceita, mas com dor. Ganha tag <em>[ECO: Cicatriz do Amor]</em>. +1 Eco.</td></tr>
+<tr><td><strong>6−</strong></td><td>Você não aceita. Relógio de Tensão avança 2. Ganha tag <em>[VÍNCULO−]</em>.</td></tr>
+</table>
+
+<h2 id="fim-antecipado">19. 💔 Move "Fim Antecipado" (0/10)</h2>
+
+<div class="callout rule">
+  <strong>Gatilho:</strong> Quando você termina um relacionamento antes de chegar a 6/10.<br>
+  <strong>Capacidade:</strong> CORAÇÃO
+</div>
+
+<table class="compact">
+<tr><th>Resultado</th><th>Efeito</th></tr>
+<tr><td><strong>10+</strong></td><td>Você termina com clareza. Ganha tag <em>[ECO: Fim Antecipado]</em>. +2 Ecos.</td></tr>
+<tr><td><strong>7–9</strong></td><td>Você termina, mas com dúvidas. Ganha tag <em>[ECO: Fim Antecipado]</em>. +1 Eco.</td></tr>
+<tr><td><strong>6−</strong></td><td>O término é doloroso. Relógio de Tensão avança 1. Ganha tag <em>[VÍNCULO−]</em>.</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="links">Links Rápidos</h2>
+<p>
+  <a href="index.html" class="quick-link">Início</a>
+  <a href="quickstart.html" class="quick-link">Quick Start</a>
+  <a href="criacao-protagonista.html" class="quick-link">Criação</a>
+  <a href="sistema-resolucao.html" class="quick-link">Sistema</a>
+  <a href="moves-oficio.html" class="quick-link">Moves</a>
+  <a href="progressao-oficio.html" class="quick-link">Progressão</a>
+  <a href="finais.html" class="quick-link">Finais</a>
+  <a href="geradores-npcs.html" class="quick-link">Ferramentas</a>
+  <a href="artefatos.html" class="quick-link">Artefatos</a>
+  <a href="lore.html" class="quick-link">Lore</a>
+</p>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Referência Rápida — Mantenha aberta durante o jogo</p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

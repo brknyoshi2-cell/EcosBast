@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Rotas de Romance</title>
+<style>
+.arrival-scene {
+  background: rgba(184, 134, 11, 0.08);
+  border: 2px solid var(--gold);
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+}
+.arrival-scene h4 {
+  margin-top: 0;
+  color: var(--gold);
+}
+.arrival-scene .prompt {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.evolution-card {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--romance);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+.milestone-scene {
+  background: rgba(184, 92, 138, 0.08);
+  border: 2px solid var(--romance);
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+}
+.milestone-scene h4 {
+  margin-top: 0;
+  color: var(--romance);
+}
+.trait-table td {
+  padding: 0.4rem 0.7rem;
+}
+.evolution-segment {
+  background: rgba(74, 107, 58, 0.08);
+  border: 1px solid var(--success);
+  padding: 0.8rem 1.2rem;
+  margin: 0.8rem 0;
+  border-radius: 4px;
+}
+.evolution-segment h4 {
+  margin-top: 0;
+  color: var(--success);
+}
+.phase-interaction {
+  background: rgba(184, 134, 11, 0.05);
+  border: 1px solid var(--gold);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+.phase-interaction h4 {
+  margin-top: 0;
+  color: var(--gold);
+}
+.visual-evolution {
+  background: rgba(74, 74, 107, 0.08);
+  border: 1px solid var(--mystery);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+.visual-evolution h4 {
+  margin-top: 0;
+  color: var(--mystery);
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="sistema-rotas-romance.html">Sistema</a> &gt; <strong>Rotas de Romance</strong>
+</div>
+
+<div class="container">
+
+<div class="tier-badge avancado">🔵 Avançado <span class="tier-desc">— camada opcional, adicione quando quiser mais profundidade</span></div>
+
+<div class="callout rule">
+  <strong>⚖️ Nota Importante:</strong>
+  <p>O romance é uma <strong>parte</strong> do jogo, não o jogo inteiro. Use as Rotas de Romance para aprofundar relacionamentos, mas lembre-se de que há outros sistemas para explorar — restauração de artefatos, expedições, decoração, mistérios e muito mais.</p>
+</div>
+
+<h2 id="cenas-chegada">🚪 Cenas de Chegada — Recebendo seus NPCs</h2>
+
+<p>Os NPCs romanceáveis <strong>não estão presentes no início do jogo</strong>. Eles chegam nos capítulos 4 e 7. Quando eles chegam, use estas <strong>Cenas de Chegada</strong> para descrever o momento — transforme a mecânica em narrativa.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Quando um NPC romanceável chega, leia a cena correspondente. Use os prompts para descrever o momento. Não precisa ser perfeito — apenas deixe a cena acontecer.
+</div>
+
+<div class="callout rule">
+  <strong>⚖️ Este é o momento de decidir gênero e identidade:</strong>
+  <p>Nada foi fixado na criação. Quando o NPC chegar, decida ali — na cena, com base no que fizer sentido pra sua história — a identidade de gênero, orientação e pronomes dele(a), se quiser defini-los. Não há tabela, não há dado: é só sua escolha.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>🗡️ Explorador(a) — "O Artefato Perigoso"</h3>
+
+<div class="arrival-scene">
+  <h4>☀️ Primeiro Encontro</h4>
+  <p><em>A porta da Guilda se abre com um rangido. Um(a) aventureiro(a) entra, coberto(a) de poeira e sangue. Ele(a) carrega algo — um artefato que parece <strong>vivo</strong>.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "Descreva a primeira vez que você viu [Nome]. O que ele(a) estava carregando? O que ele(a) disse? O que você sentiu ao vê-lo(a)?"
+  </div>
+  <div class="prompt">
+    <strong>🪶 Detalhes:</strong> "O artefato brilha? Ele(a) está ferido(a)? Há outros aventureiros com ele(a)? O que o Mestre diz?"
+  </div>
+</div>
+
+<div class="arrival-scene">
+  <h4>🌙 Primeira Conversa</h4>
+  <p><em>Depois que o artefato é guardado, você e [Nome] se sentam. Ele(a) está cansado(a), mas há algo em seus olhos — uma história que ele(a) quer contar.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "O que [Nome] conta sobre o artefato? O que ele(a) não conta? O que você pergunta?"
+  </div>
+</div>
+
+<div class="section-divider" style="margin: 1.5rem 0;">❦</div>
+
+<h3>📚 Colega — "O Pesquisador Solitário"</h3>
+
+<div class="arrival-scene">
+  <h4>☀️ Primeiro Encontro</h4>
+  <p><em>Você encontra alguém nos arquivos da Guilda — uma figura curvada sobre um livro antigo. Ele(a) parece não ter dormido há dias.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "Descreva a primeira vez que você viu [Nome] nos arquivos. O que ele(a) estava lendo? Qual era a expressão dele(a)?"
+  </div>
+  <div class="prompt">
+    <strong>🪶 Detalhes:</strong> "Há outros livros ao redor? Ele(a) parece perdido(a)? O que você diz para quebrar o silêncio?"
+  </div>
+</div>
+
+<div class="arrival-scene">
+  <h4>🌙 Primeira Conversa</h4>
+  <p><em>Ele(a) levanta os olhos do livro. Há algo nos olhos dele(a) — uma curiosidade insaciável, ou talvez uma fuga.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "O que [Nome] está procurando? O que ele(a) encontrou? O que ele(a) não encontrou?"
+  </div>
+</div>
+
+<div class="section-divider" style="margin: 1.5rem 0;">❦</div>
+
+<h3>🎭 Forasteiro(a) — "O Mistério que Chega"</h3>
+
+<div class="arrival-scene">
+  <h4>☀️ Primeiro Encontro</h4>
+  <p><em>Um(a) estranho(a) aparece na porta da Guilda. Ele(a) não parece um aventureiro — suas roupas são diferentes, seu olhar é diferente. Ele(a) tem um pedido.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "Descreva a primeira vez que você viu [Nome]. O que ele(a) vestia? O que ele(a) carregava? O que havia em seus olhos?"
+  </div>
+  <div class="prompt">
+    <strong>🪶 Detalhes:</strong> "Ele(a) parece perdido(a)? Determinado(a)? Com medo? O que ele(a) diz primeiro?"
+  </div>
+</div>
+
+<div class="arrival-scene">
+  <h4>🌙 Primeira Conversa</h4>
+  <p><em>Ele(a) se senta. Há algo que ele(a) não está dizendo — uma história que ele(a) guarda. Você sente que pode confiar nele(a), mas algo te diz para ter cuidado.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "O que [Nome] pede? O que ele(a) oferece em troca? O que você sente sobre ele(a)?"
+  </div>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>📜 Cenas de Marco — Cada Fase do Relógio</h2>
+
+<p>Para cada fase do Relógio de Romance, há uma <strong>Cena de Marco</strong> — um momento especial que você pode descrever.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Quando o Relógio de Romance atinge 3/10, 6/10, 8/10 e 10/10, use a cena correspondente. Cada cena dá +1 Eco se for escrita.
+</div>
+
+<div class="section-divider" style="margin: 1.5rem 0;">❦</div>
+
+<h3>Fase 1: Conhecimento (3/10) — "O Primeiro Sinal"</h3>
+
+<div class="milestone-scene">
+  <p><em>Algo mudou. Você não sabe exatamente o que, mas há um calor no peito quando [Nome] está por perto. Talvez seja só admiração. Talvez seja algo mais.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "Qual é o momento em que você percebeu que [Nome] é especial? O que aconteceu? O que você sentiu?"
+  </div>
+  <p><strong>Recompensa:</strong> +1 Eco</p>
+</div>
+
+<h3>Fase 2: Amizade Profunda (6/10) — "O Momento de Confiança"</h3>
+
+<div class="milestone-scene">
+  <p><em>[Nome] se abre com você. Ele(a) conta algo que nunca contou a ninguém. Há lágrimas nos olhos dele(a) — ou nos seus.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "O que [Nome] revelou? Por que ele(a) escolheu você para contar? Como você reagiu?"
+  </div>
+  <p><strong>Recompensa:</strong> +1 Eco</p>
+</div>
+
+<h3>Fase 3: Romance (8/10) — "A Confissão"</h3>
+
+<div class="milestone-scene">
+  <p><em>O silêncio entre vocês é diferente agora. Há algo não dito — algo que ambos sentem. Alguém precisa falar primeiro.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "Quem falou primeiro? O que foi dito? Como o outro reagiu? Onde vocês estavam?"
+  </div>
+  <p><strong>Recompensa:</strong> +1 Eco</p>
+</div>
+
+<h3>Fase 4: Compromisso (10/10) — "A Promessa"</h3>
+
+<div class="milestone-scene">
+  <p><em>Vocês estão juntos. Não há mais dúvidas. O que vem agora é uma escolha — uma promessa que vocês fazem um ao outro.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "Qual é a promessa que vocês fazem? Onde vocês estão? Quem está presente? Como é o momento?"
+  </div>
+  <p><strong>Recompensa:</strong> +1 Eco</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>🌱 Evolução em Cada Fase do Relógio</h3>
+
+<p>Além das Cenas de Marco (em 3, 6, 8 e 10/10), cada segmento do Relógio de Romance pode ter um <strong>momento de evolução</strong> para o NPC.</p>
+
+<div class="callout rule">
+  <h4>⚖️ Como funciona:</h4>
+  <p>Quando o Relógio de Romance avança <strong>qualquer segmento</strong>, você pode escrever uma cena curta sobre como o NPC mudou ou cresceu. Ganhe <strong>+1 Eco</strong> por cada cena de evolução.</p>
+</div>
+
+<div class="evolution-segment">
+  <h4>📖 Exemplo de Evolução em Cada Segmento</h4>
+  <p><strong>Relógio com Kael avança de 2/10 para 3/10:</strong></p>
+  <p><em>"Kael estava mais calmo hoje. Ele não falou muito, mas quando eu olhei para ele, ele estava sorrindo — um sorriso pequeno, mas verdadeiro. Pela primeira vez, ele pareceu em paz."</em></p>
+  <p><strong>Recompensa:</strong> +1 Eco</p>
+</div>
+
+<div class="callout tip">
+  <strong>Dica:</strong> Você não precisa escrever uma cena para cada segmento — apenas quando sentir que o NPC mudou. Isso dá flexibilidade e profundidade ao relacionamento.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>💕 Interações Específicas por Fase</h2>
+
+<p>Cada fase do Relógio de Romance tem <strong>interações específicas</strong> que você pode usar para aprofundar o relacionamento:</p>
+
+<div class="phase-interaction">
+  <h4>Fase 1: Conhecimento (0-3/10) — "O Primeiro Café"</h4>
+  <p><strong>Cena sugerida:</strong> Café da manhã juntos nos Bastidores.</p>
+  <p><strong>Prompt:</strong> <em>"O café está pronto. [NPC] está sentado à sua frente. O que vocês conversam? O que você nota sobre ele(a)?"</em></p>
+  <p><strong>Recompensa:</strong> +1 Eco</p>
+</div>
+
+<div class="phase-interaction">
+  <h4>Fase 2: Amizade Profunda (4-6/10) — "O Passeio"</h4>
+  <p><strong>Cena sugerida:</strong> Um passeio pela cidade ou pelos arredores.</p>
+  <p><strong>Prompt:</strong> <em>"Vocês caminham juntos. O que chama a atenção de vocês? O que [NPC] diz sobre a cidade?"</em></p>
+  <p><strong>Recompensa:</strong> +1 Eco</p>
+</div>
+
+<div class="phase-interaction">
+  <h4>Fase 3: Romance (7-8/10) — "A Noite Especial"</h4>
+  <p><strong>Cena sugerida:</strong> Um jantar, uma dança ou um momento sob as estrelas.</p>
+  <p><strong>Prompt:</strong> <em>"A noite está perfeita. O que vocês fazem? O que [NPC] diz que te faz sentir especial?"</em></p>
+  <p><strong>Recompensa:</strong> +1 Eco</p>
+</div>
+
+<div class="phase-interaction">
+  <h4>Fase 4: Compromisso (9-10/10) — "O Futuro"</h4>
+  <p><strong>Cena sugerida:</strong> Planejando o futuro juntos.</p>
+  <p><strong>Prompt:</strong> <em>"O que vocês veem no futuro? O que vocês querem construir juntos?"</em></p>
+  <p><strong>Recompensa:</strong> +1 Eco</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>👁️ Impacto Visual na Evolução de NPCs</h2>
+
+<p>Quando um NPC evolui (ganha uma nova fase no Relógio de Romance), sua <strong>aparência pode mudar</strong> para refletir seu crescimento.</p>
+
+<div class="visual-evolution">
+  <h4>🗡️ Explorador(a) — Kael</h4>
+  <table>
+  <tr><th>Fase</th><th>Mudança Visual</th></tr>
+  <tr><td><strong>Conhecimento (0-3)</strong></td><td>Veste roupas gastas de viagem. Cicatriz visível no rosto. Olhar cansado.</td></tr>
+  <tr><td><strong>Amizade (4-6)</strong></td><td>Roupas mais limpas. A cicatriz parece menos marcante. Sorri mais.</td></tr>
+  <tr><td><strong>Romance (7-8)</strong></td><td>Usa um colar que você lhe deu. Postura mais confiante. Olhar mais suave.</td></tr>
+  <tr><td><strong>Compromisso (9-10)</strong></td><td>Veste roupas novas. A cicatriz agora é parte de sua história, não de sua dor.</td></tr>
+  </table>
+</div>
+
+<div class="visual-evolution">
+  <h4>📚 Colega — Lyra</h4>
+  <table>
+  <tr><th>Fase</th><th>Mudança Visual</th></tr>
+  <tr><td><strong>Conhecimento (0-3)</strong></td><td>Roupas escuras, olhos baixos. Sempre com um livro na mão.</td></tr>
+  <tr><td><strong>Amizade (4-6)</strong></td><td>Roupas mais claras. Olha nos olhos das pessoas. O livro agora é compartilhado.</td></tr>
+  <tr><td><strong>Romance (7-8)</strong></td><td>Usa uma flor no cabelo. Sorri mais. O livro é sobre algo que vocês dois amam.</td></tr>
+  <tr><td><strong>Compromisso (9-10)</strong></td><td>Veste roupas que refletem sua verdadeira identidade. Confiante, presente.</td></tr>
+  </table>
+</div>
+
+<div class="visual-evolution">
+  <h4>🎭 Forasteiro(a) — Dorian</h4>
+  <table>
+  <tr><th>Fase</th><th>Mudança Visual</th></tr>
+  <tr><td><strong>Conhecimento (0-3)</strong></td><td>Roupas que escondem o corpo. Capuz. Olhar desconfiado.</td></tr>
+  <tr><td><strong>Amizade (4-6)</strong></td><td>Capuz abaixado. Roupas mais confortáveis. Olhar mais aberto.</td></tr>
+  <tr><td><strong>Romance (7-8)</strong></td><td>Mostra sua verdadeira identidade. Roupas que refletem quem ele(a) é.</td></tr>
+  <tr><td><strong>Compromisso (9-10)</strong></td><td>Veste roupas novas, confiante. O passado não o(a) define mais.</td></tr>
+  </table>
+</div>
+
+<div class="callout rule">
+  <strong>Como usar:</strong> Quando o Relógio de Romance atinge uma nova fase, descreva como o NPC mudou visualmente. Isso torna a evolução tangível.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>🌱 Evolução de NPCs — Crescendo com a Cidade</h2>
+
+<p>Os NPCs romanceáveis não são estáticos. Eles evoluem <strong>com a cidade</strong>. Cada fase do mundo traz um momento de crescimento para cada NPC.</p>
+
+<div class="callout rule">
+  <strong>⚖️ Como funciona:</strong> No início de cada nova fase (quando a Guilda avança), escolha <strong>1 NPC</strong> para ter um momento de evolução. Escreva uma cena curta sobre como a cidade mudou e como isso afetou o NPC.
+</div>
+
+<div class="section-divider" style="margin: 1.5rem 0;">❦</div>
+
+<h3>🗡️ Explorador(a) — A Rota da Coragem</h3>
+
+<div class="evolution-card">
+  <h4>🌿 Fase de Crescimento (Capítulos 4-6)</h4>
+  <p><em>O(a) Explorador(a) começa a se abrir. Ele(a) não é mais apenas um(a) cliente — é alguém que confia em você.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "O que [Nome] conta sobre seu passado? Por que ele(a) se tornou aventureiro(a)?"
+  </div>
+</div>
+
+<div class="evolution-card">
+  <h4>🌳 Fase Estabelecida (Capítulos 7-9)</h4>
+  <p><em>O(a) Explorador(a) enfrenta um medo. Ele(a) se arrisca — não por um artefato, mas por alguém.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "Qual é o medo de [Nome]? Como ele(a) o enfrenta? Quem está ao lado dele(a)?"
+  </div>
+</div>
+
+<div class="evolution-card">
+  <h4>🏛️ Fase Lendária (Capítulos 10+)</h4>
+  <p><em>O(a) Explorador(a) encontra seu lugar. Ele(a) não é mais um(a) aventureiro(a) solitário(a) — é parte de algo maior.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "O que [Nome] faz agora? Ele(a) continua viajando? Ele(a) fica? O que ele(a) deixou para trás?"
+  </div>
+</div>
+
+<div class="section-divider" style="margin: 1.5rem 0;">❦</div>
+
+<h3>📚 Colega — A Rota do Conhecimento</h3>
+
+<div class="evolution-card">
+  <h4>🌿 Fase de Crescimento (Capítulos 4-6)</h4>
+  <p><em>O(a) Colega encontra algo nos arquivos — algo que muda tudo. Ele(a) compartilha com você.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "O que [Nome] descobriu? Por que ele(a) decidiu compartilhar com você?"
+  </div>
+</div>
+
+<div class="evolution-card">
+  <h4>🌳 Fase Estabelecida (Capítulos 7-9)</h4>
+  <p><em>O(a) Colega enfrenta uma verdade difícil. O conhecimento tem um preço — e ele(a) está disposto(a) a pagá-lo.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "Qual é a verdade que [Nome] descobriu? Como ele(a) lida com ela? Como você o(a) ajuda?"
+  </div>
+</div>
+
+<div class="evolution-card">
+  <h4>🏛️ Fase Lendária (Capítulos 10+)</h4>
+  <p><em>O(a) Colega encontra seu propósito. O conhecimento não é mais uma fuga — é uma ferramenta para ajudar os outros.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "Como [Nome] usa seu conhecimento agora? Ele(a) ensina? Ele(a) escreve? Ele(a) cura?"
+  </div>
+</div>
+
+<div class="section-divider" style="margin: 1.5rem 0;">❦</div>
+
+<h3>🎭 Forasteiro(a) — A Rota da Redenção</h3>
+
+<div class="evolution-card">
+  <h4>🌿 Fase de Crescimento (Capítulos 4-6)</h4>
+  <p><em>O(a) Forasteiro(a) começa a confiar. Ele(a) revela algo sobre seu passado — algo que nunca contou a ninguém.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "O que [Nome] revela? Por que ele(a) escolheu você para contar?"
+  </div>
+</div>
+
+<div class="evolution-card">
+  <h4>🌳 Fase Estabelecida (Capítulos 7-9)</h4>
+  <p><em>O(a) Forasteiro(a) enfrenta seu passado. Alguém do passado aparece — e ele(a) precisa escolher entre fugir ou enfrentar.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "Quem aparece? O que eles querem? Como [Nome] reage? Como você o(a) ajuda?"
+  </div>
+</div>
+
+<div class="evolution-card">
+  <h4>🏛️ Fase Lendária (Capítulos 10+)</h4>
+  <p><em>O(a) Forasteiro(a) encontra seu lar. A Guilda não é mais um refúgio — é sua casa.</em></p>
+  <div class="prompt">
+    <strong>🪶 Prompt:</strong> "O que [Nome] faz agora? Ele(a) fica? Ele(a) parte? O que ele(a) deixou para trás? O que ele(a) encontrou?"
+  </div>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>🎭 Traços de Personalidade — NPCs Únicos</h2>
+
+<p>Para dar personalidade distinta a cada NPC, role 1d6 para um <strong>Traço de Personalidade</strong> além do arquétipo:</p>
+
+<table class="trait-table">
+<tr><th>d6</th><th>Explorador(a)</th><th>Colega</th><th>Forasteiro(a)</th></tr>
+<tr><td>1</td><td>Otimista incorrigível</td><td>Perfeccionista obsessivo</td><td>Desconfiado crônico</td></tr>
+<tr><td>2</td><td>Pessimista encantador</td><td>Sonhador distraído</td><td>Leal até a morte</td></tr>
+<tr><td>3</td><td>Brincalhão provocador</td><td>Silencioso observador</td><td>Manipulador gentil</td></tr>
+<tr><td>4</td><td>Protetor exagerado</td><td>Curioso insaciável</td><td>Fugitivo eterno</td></tr>
+<tr><td>5</td><td>Impulsivo apaixonado</td><td>Metódico paciente</td><td>Redentor em busca</td></tr>
+<tr><td>6</td><td>Sábio cansado</td><td>Excêntrico adorável</td><td>Misterioso profundo</td></tr>
+</table>
+
+<div class="callout rule">
+  <strong>⚖️ Tags de Evolução de NPCs:</strong>
+  <p>Quando um NPC completa um marco de evolução, ele ganha uma <strong>Tag de Evolução</strong>:</p>
+  <ul>
+    <li><strong>Explorador:</strong> [CORAJOSO] — +1 em rolagens de risco</li>
+    <li><strong>Colega:</strong> [SÁBIO] — +1 em rolagens de conhecimento (já existe, mas agora é uma Tag de Evolução)</li>
+    <li><strong>Forasteiro:</strong> [CONFIÁVEL] — +1 em rolagens de confiança</li>
+  </ul>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>💕 O Caminho do Coração — Rotas de Romance</h2>
+<p>Cada NPC romanceável tem sua própria jornada emocional. Seguir sua "rota" significa se aprofundar em sua história, superar seus desafios e construir um relacionamento único.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Escolha um NPC para focar. Complete os marcos da rota para desbloquear cenas especiais e finais únicos.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Estrutura de uma Rota de Romance</h3>
+
+<div class="callout rule">
+  <h4>⚖️ Recompensas são Adicionais</h4>
+  <p>As recompensas de cada fase da Rota de Romance são <strong>adicionais</strong> às recompensas normais do Relógio de Romance (que já avançam com interações).</p>
+  <p><strong>Exemplo:</strong> Quando você atinge 4-6/10 (Amizade Profunda), você já ganhou os benefícios normais (visitar a casa do NPC). Além disso, você ganha a Tag [CONFIANÇA] da Rota.</p>
+</div>
+
+<p>Cada rota tem 4 fases, cada uma com um marco específico:</p>
+
+<table>
+<tr><th>Fase</th><th>Relógio</th><th>Marco</th><th>Recompensa</th></tr>
+<tr><td><strong>Conhecimento</strong></td><td>0-3</td><td>Descubra o desejo do NPC</td><td>Tag [VÍNCULO+]</td></tr>
+<tr><td><strong>Amizade Profunda</strong></td><td>4-6</td><td>Ajude o NPC a superar um medo</td><td>Tag [CONFIANÇA]</td></tr>
+<tr><td><strong>Romance</strong></td><td>7-8</td><td>Revele seu segredo ao NPC</td><td>Tag [INTIMIDADE]</td></tr>
+<tr><td><strong>Compromisso</strong></td><td>9-10</td><td>Faça uma promessa ao NPC</td><td>Tag [PARCEIRO] + Módulo</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Finais de Romance Personalizados</h3>
+
+<p>Quando você completa uma Rota de Romance (10/10), em vez de rolar 1d10, você pode <strong>escolher</strong> o final que deseja. Isso dá a você controle total sobre o destino do relacionamento.</p>
+
+<div class="callout rule">
+  <h4>⚖️ Como funciona:</h4>
+  <p>No momento em que você atinge 10/10, escolha uma das opções abaixo. Você também pode <strong>criar seu próprio final</strong> — não há limites.</p>
+</div>
+
+<h4>Opções de Final (escolha ou crie o seu):</h4>
+
+<table>
+<tr><th>Final</th><th>Descrição</th></tr>
+<tr><td><strong>A União</strong></td><td>Vocês celebram seu vínculo em uma cerimônia íntima — pode ser um casamento, uma união civil, ou um ritual simbólico.</td></tr>
+<tr><td><strong>A Viagem</strong></td><td>Vocês partem juntos para novas aventuras — exploram o mundo, encontram novos lugares, criam novas histórias.</td></tr>
+<tr><td><strong>O Lar</strong></td><td>Vocês transformam os Bastidores em um lar compartilhado — cada canto tem a marca de vocês dois.</td></tr>
+<tr><td><strong>A Lenda</strong></td><td>A história do amor de vocês se torna uma lenda — é contada por gerações, cantada por bardos.</td></tr>
+<tr><td><strong>A Promessa</strong></td><td>Vocês juram estar juntos em todas as vidas — é um voto que transcende o tempo.</td></tr>
+<tr><td><strong>O Legado</strong></td><td>Vocês criam algo juntos — um artefato, um livro, uma tradição, uma nova ala na Guilda.</td></tr>
+<tr><td><strong>A Família Escolhida</strong></td><td>Vocês constroem uma família — biológica, adotiva, ou uma comunidade de pessoas que amam.</td></tr>
+<tr><td><strong>O Refúgio</strong></td><td>Vocês encontram paz um no outro — um porto seguro em um mundo que nem sempre é gentil.</td></tr>
+<tr><td><strong>A Canção</strong></td><td>A história de amor de vocês é cantada pelos bardos — cada verso é uma memória.</td></tr>
+<tr><td><strong>O Eterno</strong></td><td>Seu amor transcende o tempo — magia, reencarnação, imortalidade, ou algo que só vocês dois entendem.</td></tr>
+</table>
+
+<div class="callout tip">
+  <strong>Dica:</strong> Você pode combinar finais. Por exemplo: "A União" + "O Legado" = vocês se casam e criam uma tradição nova. Ou "A Viagem" + "A Canção" = vocês viajam e se tornam lendas vivas.
+</div>
+
+<div class="callout example">
+  <h4>📖 Exemplo de Final Personalizado</h4>
+  <p><strong>Lucas:</strong> "Quero um final com Kael. Nós viajamos juntos, restauramos artefatos pelo mundo, e em cada cidade que visitamos, contamos a história de como nos conhecemos. Nos tornamos lendas vivas."</p>
+  <p><strong>Resultado:</strong> Lucas escolhe "A Viagem" + "A Canção" — e escreve o final que sempre quis.</p>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você tem rotas de romance, cenas de chegada e marcos, vá para <a href="sistema-progressao-mundo.html">Progressão do Mundo →</a> para ver como a cidade cresce com você.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Sistema — Rotas de Romance</p>
+  <p><a href="sistema-progressao-mundo.html">← Progressão do Mundo</a> | <a href="sistema-modos.html">Próxima: Modos de Jogo →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

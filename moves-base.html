@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Moves: Base</title>
+<style>
+.move {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
+}
+.move h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+.move .trigger {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+.move .attribute {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.15rem 0.7rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-variant: small-caps;
+  margin-bottom: 0.8rem;
+}
+.result {
+  margin: 0.4rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid transparent;
+}
+.result.success {
+  border-left-color: var(--success);
+}
+.result.partial {
+  border-left-color: var(--gold);
+}
+.result.failure {
+  border-left-color: var(--danger);
+}
+.result strong {
+  color: var(--accent);
+}
+.choice {
+  background: rgba(184, 134, 11, 0.08);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  margin: 0.2rem 0;
+  font-style: italic;
+}
+.choice strong {
+  color: var(--gold);
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="moves-oficio.html">Moves</a> &gt; <strong>Base</strong>
+</div>
+
+<div class="container">
+
+<h2>A Rotina dos Bastidores — Moves de Base</h2>
+<p>Estes são os moves que definem a vida cotidiana do protagonista — os rituais, o descanso, o trabalho em equipe.</p>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="move">
+<h4>MELHORAR A OFICINA</h4>
+<div class="trigger">Quando você instala um módulo, conserta algo ou adiciona um aprimoramento.</div>
+<span class="attribute">MÃOS</span>
+<div class="result success"><strong>10+:</strong> A melhoria é instalada perfeitamente. +1 Eco.</div>
+<div class="result partial"><strong>7–9:</strong> Funciona, mas <strong>escolha 1:</strong> (a) custa mais Recursos que o esperado (+1d3), (b) tem um pequeno defeito que precisa ser corrigido depois, (c) a instalação revela algo sobre os Bastidores (ganha Tag [MISTÉRIO]).</div>
+<div class="result failure"><strong>6−:</strong> Algo quebra, a oficina fica inutilizável temporariamente, ou os Bastidores "não querem" essa mudança.</div>
+</div>
+
+<div class="move">
+<h4>PREPARAR CAFÉ OU CHÁ</h4>
+<div class="trigger">Quando você faz uma bebida quente para si ou para alguém. Pode ser levado para a cidade.</div>
+<span class="attribute">MÃOS ou CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> A bebida é perfeita. Se for para NPC, Relógio +1. +1 Eco. Role 1d10 na Tabela de Maravilhas Cotidianas.</div>
+<div class="result partial"><strong>7–9:</strong> Boa, mas <strong>escolha 1:</strong> (a) gasta Recursos extras (1), (b) o momento é interrompido, (c) a conversa que surge é mais profunda que o esperado — você não estava preparado(a).</div>
+<div class="result failure"><strong>6−:</strong> A bebida derrama, o sabor está estranho, ou você se queima.</div>
+</div>
+
+<div class="callout celestial">
+  <h3>✨ Daily Reward: O Primeiro Café do Dia</h3>
+  <p>Se você usar <strong>Preparar Café ou Chá</strong> como o <strong>primeiro Ato do dia</strong>, ganha <strong>+1 Recurso bônus</strong> <strong>adicional</strong> ao resultado do move (se tirar 10+, ganha +2 Recursos no total).</p>
+</div>
+
+<div class="move">
+<h4>TRABALHAR EM CONJUNTO</h4>
+<div class="trigger">Quando você colabora com um NPC na oficina para restaurar artefato complexo ou realizar projeto.</div>
+<span class="attribute">MÃOS</span>
+<div class="result success"><strong>10+:</strong> Trabalho perfeito. +1 Eco. Relógio +1. <em>[VÍNCULO+] + [DOMÉSTICO]</em>. Artefato restaurado com bônus.</div>
+<div class="result partial"><strong>7–9:</strong> Funciona, mas <strong>escolha 1:</strong> (a) há um desentendimento sobre o método — vocês precisam conversar depois, (b) o NPC se cansa — perde 1 Ato amanhã, (c) o projeto revela um segredo sobre o NPC. Relógio +1 com complicação.</div>
+<div class="result failure"><strong>6−:</strong> O trabalho falha. Vocês discutem. Relógio recua 1. <em>[VÍNCULO−] + [TENSÃO]</em></div>
+</div>
+
+<div class="move">
+<h4>DESCANSAR E REFLETIR</h4>
+<div class="trigger">Quando você termina o dia em seus aposentos, escreve em um diário, ou simplesmente para para pensar.</div>
+<span class="attribute">Sem rolagem</span>
+<div class="result"><strong>Efeito:</strong> Recupera todos os 3 Atos para o próximo dia. Se escrever sobre o dia, +1 Eco. Se refletir sobre NPC, Relógio +1.</div>
+</div>
+
+<div class="move">
+<h4>SONHAR</h4>
+<div class="trigger">Quando você dorme em seus aposentos e tem um sonho (ou pesadelo).</div>
+<span class="attribute">CORAÇÃO</span>
+<div class="result success"><strong>10+:</strong> O sonho é revelador. Você recebe pista, aviso ou visão. +1 Eco.</div>
+<div class="result partial"><strong>7–9:</strong> O sonho é estranho: <strong>escolha 1:</strong> (a) sensação ruim — você acorda inquieto, (b) incompleto — você lembra de parte, mas não de tudo, (c) sobre NPC específico — Relógio +1, mas você não sabe se é real.</div>
+<div class="result failure"><strong>6−:</strong> Perturbador. Você acorda exausto (−1 Ato no próximo dia), ou algo do sonho "seguiu" você.</div>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você conhece os Moves de Base, vá para <a href="moves-tensao.html">Moves: Tensão →</a> para aprender sobre as sombras que avançam.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Moves — Base</p>
+  <p><a href="moves-investigacao.html">← Investigação</a> | <a href="moves-tensao.html">Próxima: Tensão →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>

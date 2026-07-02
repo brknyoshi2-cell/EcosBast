@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Geradores: NPCs</title>
+<style>
+.gen-section {
+  margin: 0.8rem 0;
+}
+.gen-section strong {
+  color: var(--accent);
+}
+.generator-output h4 {
+  color: var(--gold);
+  margin-top: 0;
+  border-bottom: 1px solid var(--accent-light);
+  padding-bottom: 0.5rem;
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="geradores-npcs.html">Ferramentas</a> &gt; <strong>Gerar NPCs</strong>
+</div>
+
+<div class="container">
+
+<h2>🎲 Geradores de NPCs</h2>
+<p>Use estes geradores para criar NPCs rápidos e interessantes para sua campanha. Clique em um botão para gerar um NPC aleatório.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Clique em um botão para gerar um NPC. Você pode usar o resultado diretamente ou como inspiração para criar seu próprio NPC.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<!-- GERADOR 1: NPCs ROMANCEÁVEIS -->
+<div class="generator-section">
+<h3>🌹 Gerador de NPCs Romanceáveis</h3>
+<div class="generator-controls">
+  <button class="generator-btn" onclick="generateWithLoading('romanceOutput', () => generateRomanceNPC('explorador'))">🗡️ Explorador(a)</button>
+  <button class="generator-btn" onclick="generateWithLoading('romanceOutput', () => generateRomanceNPC('colega'))">📚 Colega</button>
+  <button class="generator-btn" onclick="generateWithLoading('romanceOutput', () => generateRomanceNPC('forasteiro'))">🎭 Forasteiro(a)</button>
+</div>
+<div class="generator-output" id="romanceOutput">
+  <div class="loading-spinner" id="spinner-romanceOutput">
+    <div class="spinner"></div>
+    <div class="loading-text">Gerando NPC...</div>
+  </div>
+  <p style="text-align: center; color: var(--ink-soft); font-style: italic;">Clique em um botão para gerar um NPC romanceável</p>
+</div>
+</div>
+
+<!-- GERADOR 2: NPCs NÃO-ROMANCEÁVEIS -->
+<div class="generator-section">
+<h3>🏙️ Gerador de NPCs Não-Romanceáveis</h3>
+<p style="text-align: center; font-style: italic; color: var(--ink-soft); margin-bottom: 1rem;">Comerciantes, vizinhos, trabalhadores da Guilda, aventureiros de passagem...</p>
+<div class="generator-controls">
+  <button class="generator-btn" onclick="generateWithLoading('cityOutput', () => generateCityNPC())">🏙️ NPC da Cidade</button>
+  <button class="generator-btn" onclick="generateWithLoading('cityOutput', () => generateGuildWorker())">⚔️ Trabalhador da Guilda</button>
+  <button class="generator-btn" onclick="generateWithLoading('cityOutput', () => generateGuildClient())">🎒 Cliente da Guilda</button>
+</div>
+<div class="generator-output" id="cityOutput">
+  <div class="loading-spinner" id="spinner-cityOutput">
+    <div class="spinner"></div>
+    <div class="loading-text">Gerando NPC...</div>
+  </div>
+  <p style="text-align: center; color: var(--ink-soft); font-style: italic;">Clique em um botão para gerar um NPC não-romanceável</p>
+</div>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você pode gerar NPCs, vá para <a href="geradores-conteudo.html">Geradores: Conteúdo →</a> para gerar artefatos, eventos e momentos.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Ferramentas — Geradores de NPCs</p>
+  <p><a href="progressao-consequencias.html">← Progressão: Consequências</a> | <a href="geradores-conteudo.html">Próxima: Gerar Conteúdo →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+<script src="generators.js"></script>
+
+<script>
+// LOADING STATE NOS GERADORES
+function generateWithLoading(outputId, generatorFn) {
+  const output = document.getElementById(outputId);
+  const spinner = document.getElementById('spinner-' + outputId);
+
+  output.querySelectorAll(':not(.loading-spinner)').forEach(el => el.style.display = 'none');
+  spinner.classList.add('active');
+
+  const buttons = output.parentElement.querySelectorAll('.generator-btn');
+  buttons.forEach(btn => btn.disabled = true);
+
+  setTimeout(() => {
+    spinner.classList.remove('active');
+    generatorFn();
+    buttons.forEach(btn => btn.disabled = false);
+  }, 300);
+}
+
+// GERADORES
+function roll(d) { return Math.floor(Math.random() * d) + 1; }
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+const nomesFem = ['Aelara','Bryn','Cael','Dahlia','Elowen','Fiora','Gwen','Halia','Iris','Kaelen','Lyra','Mira','Nyx','Orla','Petra','Quinn','Rhea','Seren','Thalia','Vesper','Wren','Yara','Zara'];
+const nomesMasc = ['Aldric','Bram','Caelum','Dorian','Elian','Fenris','Garrick','Halden','Ivo','Jasper','Kael','Lucian','Maren','Nolan','Osric','Perrin','Quill','Rowan','Soren','Theron','Varen','Wynn','Zephyr'];
+const sobrenomes = ['Vael','Thornwood','Ashenmere','Blackthorn','Cinderfall','Duskhollow','Emberlyn','Frostvale','Greyhollow','Ironwood','Kettleburn','Lightforge','Moonwhisper','Nightshade','Oakenshield','Pinehart','Ravencroft','Silverveil','Thornberry','Whitmore','Yarrow','Zephyrine'];
+
+function nomeAleatorio() {
+  return pick([...nomesFem, ...nomesMasc]) + ' ' + pick(sobrenomes);
+}
+
+function generateRomanceNPC(type) {
+  const nome = nomeAleatorio();
+  const adj = pick(['Veterano(a)','Jovem','Cansado(a)','Entusiasmado(a)','Melancólico(a)','Misterioso(a)']);
+  const traco = pick(['Cicatriz que conta uma história','Olhos que não combinam entre si','Mãos marcadas pelo ofício','Um detalhe que não é humano','Cabelo que desafia a gravidade','Um cheiro que fica no ar']);
+  const vest = pick(['Usa algo que não combina com a estação','Joias que parecem antigas demais','Postura que ocupa espaço — ou tenta desaparecer','Um acessório que nunca tira','Roupas remendadas com cuidado','Algo que brilha onde não deveria']);
+  const desejo = pick(['Ser lembrado(a) por algo verdadeiro','Ter um lugar para chamar de lar','Ser perdoado(a) por algo','Descobrir quem realmente é','Proteger alguém que não sabe que precisa','Ser visto(a) de verdade']);
+  const medo = pick(['Que descubram seu segredo','Perder o controle','Ser abandonado(a) de novo','Tornar-se como alguém que odeia','Que a verdade sobre seu passado venha à tona','Amar e perder']);
+  const segredo = pick(['Não é quem diz ser','Cometeu um crime que ninguém descobriu','Tem um poder que esconde','Ama alguém que não deveria','Sabe algo sobre o protagonista','Não é totalmente humano(a)']);
+  const resid = pick(['Apartamento pequeno','Casa compartilhada','Quarto em estalagem','Mansão familiar','Barco/Carroça','Lugar secreto']);
+  const local = pick(['Taverna','Parque/jardim','Oficina/ateliê','Templo','Livraria','Lugar secreto']);
+  const vinc = pick(['Já se conhecem — há história antiga','Primeiro encontro recente — algo marcou','Se devem um favor','Há uma tensão não resolvida','Compartilham gosto/hábito estranho','Alguém avisou sobre essa pessoa']);
+
+  let arq, classe, modulo;
+  if (type === 'explorador') {
+    arq = '🗡️ Explorador(a)';
+    const opts = [['Guerreiro','A Sala de Armas'],['Mago','O Laboratório de Magia'],['Ladino','A Oficina de Falsificação'],['Clérigo','O Altar Discreto'],['Bardo','O Canto das Histórias'],['Druida','O Jardim Interno']];
+    const o = pick(opts);
+    classe = o[0];
+    modulo = o[1];
+  } else if (type === 'colega') {
+    arq = '📚 Colega';
+    const opts = [['Arquibibliotecário','A Biblioteca Arcana'],['Herborista/Alquimista','A Estufa Subterrânea'],['Cartógrafo','A Sala dos Mapas'],['Artesão de Runas','A Forja Silenciosa'],['Historiador','O Arquivo das Memórias'],['Astrólogo','O Observatório Oculto']];
+    const o = pick(opts);
+    classe = o[0];
+    modulo = o[1];
+  } else {
+    arq = '🎭 Forasteiro(a)';
+    const opts = [['Oniromancia Mecânica','O Laboratório dos Sonhos'],['Necromancia Burocrática','O Arquivo dos Espíritos'],['Astronomia Culinária','A Cozinha Celeste'],['Criptoarqueologia','O Laboratório Clandestino'],['Etnoengenharia','A Oficina das Culturas Perdidas'],['Cartografia Somática','O Estúdio dos Mapas Vivos']];
+    const o = pick(opts);
+    classe = o[0];
+    modulo = o[1];
+  }
+
+  document.getElementById('romanceOutput').innerHTML = `
+    <h4>${nome}</h4>
+    <div class="gen-section"><strong>Arquétipo:</strong> ${arq} — ${adj}</div>
+    <div class="gen-section"><strong>Classe/Mistério:</strong> ${classe}</div>
+    <div class="gen-section"><strong>Módulo na Oficina:</strong> ${modulo}</div>
+    <div class="gen-section"><strong>Traço Físico:</strong> ${traco}</div>
+    <div class="gen-section"><strong>Vestimenta:</strong> ${vest}</div>
+    <div class="gen-section"><strong>Desejo (oculto):</strong> ${desejo}</div>
+    <div class="gen-section"><strong>Medo:</strong> ${medo}</div>
+    <div class="gen-section"><strong>Segredo:</strong> ${segredo}</div>
+    <div class="gen-section"><strong>Residência:</strong> ${resid}</div>
+    <div class="gen-section"><strong>Local Favorito:</strong> ${local}</div>
+    <div class="gen-section"><strong>Vínculo Inicial:</strong> ${vinc}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Copie essas informações para a Ficha de NPCs.</p>
+  `;
+}
+
+function generateCityNPC() {
+  const nome = nomeAleatorio();
+  const profissao = pick(['Padeiro(a)','Ferreiro(a)','Bibliotecário(a)','Herborista','Taverneiro(a)','Costureiro(a)','Carpinteiro','Vendedor(a) ambulante','Guarda noturno(a)','Cartomante','Músico(a) de rua','Pescador(a)','Jardineiro(a)','Escriba público','Professor(a)','Médico(a) de bairro','Coveiro(a)','Ladrão(a) arrependido(a)','Nobre decadente','Sacerdote(a) de templo pequeno']);
+  const bairro = pick(['Porto Velho','Cidade Alta','Cidade Baixa','O Campus','O Grande Bazar','As Copas','A Superfície','Bairro dos Artesãos','Bairro Religioso','Bairro dos Mercadores']);
+  const traco = pick(['Sorriso fácil e mãos calejadas','Olhar desconfiado mas coração mole','Sempre sujo(a) de farinha/tinta/terra','Voz que ecoa quando fala','Mania de contar histórias','Cicatriz que esconde','Cheiro de ervas/especiarias','Andar apressado eterno','Risos altos que atraem atenção','Silêncio que incomoda']);
+  const personalidade = pick(['Falante e acolhedor(a) — quer saber da sua vida','Reservado(a) mas leal — amigo(a) silencioso(a)','Rabugento(a) com coração mole — reclama mas ajuda','Alegre demais — esconde tristeza profunda','Misterioso(a) — sempre sabe de tudo','Pragmático(a) — vê o mundo em termos de troca','Sonhador(a) — vive em outro mundo','Cínico(a) — já viu de tudo, não se impressiona']);
+  const segredo = pick(['Deve dinheiro a agiotas perigosos','Viu algo que não devia nos Bastidores','É espião(ã) de facção rival','Perdeu alguém para a Guilda e guarda rancor','Tem um talento mágico que esconde','É parente distante de alguém importante','Guarda um artefato pequeno e proibido','Finge ser quem não é — tem outra identidade']);
+  const relGuilda = pick(['Cliente fiel','Fornecedor(a)','Inimigo(a) declarado(a)','Aliado(a) discreto(a)','Indiferente','Tem familiar na Guilda','Depende da Guilda para viver','Odeia aventureiros','Venera a Guilda','Medo da Guilda']);
+  const relProta = pick(['Conhece de vista','Já fez negócio','Vizinho(a) dos Bastidores','Tem história antiga','Nunca trocou palavra','Curioso(a) sobre o trabalho','Já pediu favor','Ofereceu ajuda uma vez','Tem algo a esconder']);
+  const quer = pick(['Vender algo específico','Conselho sobre problema pessoal','Informação sobre alguém','Proteção discreta','Um favor antigo cobrado','Apenas conversa','Indicação de cliente','Ajuda com artefato suspeito','Uma história boa para contar']);
+
+  document.getElementById('cityOutput').innerHTML = `
+    <h4>🏙️ ${nome}</h4>
+    <div class="gen-section"><strong>Profissão:</strong> ${profissao}</div>
+    <div class="gen-section"><strong>Bairro:</strong> ${bairro}</div>
+    <div class="gen-section"><strong>Traço Marcante:</strong> ${traco}</div>
+    <div class="gen-section"><strong>Personalidade:</strong> ${personalidade}</div>
+    <div class="gen-section"><strong>Segredo Pequeno:</strong> ${segredo}</div>
+    <div class="gen-section"><strong>Relação com a Guilda:</strong> ${relGuilda}</div>
+    <div class="gen-section"><strong>Relação com Protagonista:</strong> ${relProta}</div>
+    <div class="gen-section"><strong>O que Quer Agora:</strong> ${quer}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Copie para a Ficha de NPCs.</p>
+  `;
+}
+
+function generateGuildWorker() {
+  const nome = nomeAleatorio();
+  const profissao = pick(['Arauto — anuncia missões e novidades','Quartelmeister — cuida de suprimentos e estoque','Curandeiro(a) — atende aventureiros feridos','Escriba — registra contratos e relatórios','Cozinheiro(a) — alimenta a casa','Guarda — protege a entrada e o subsolo','Mensageiro(a) — leva recados pela cidade','Limpador(a) — cuida dos Bastidores','Aprendiz Geral — faz de tudo um pouco','Especialista Arcano(a) — consulta técnica em magia']);
+  const tempoGuilda = pick(['Novato(a) — 1 mês','Jovem — 1 ano','Veterano(a) — 5 anos','Antigo(a) — 10+ anos','Sempre esteve aqui']);
+  const personalidade = pick(['Leal até a morte — a Guilda é família','Cansado(a) mas competente — faz o mínimo','Ambicioso(a) — quer subir na hierarquia','Fofoqueiro(a) — sabe de tudo sobre todos','Silencioso(a) — observa mais do que fala','Bravo(a) mas justo(a) — não tolera bobagem','Gentil demais — todos pedem favor','Ressentido(a) — acha que merece mais']);
+  const segredo = pick(['Rouba pequenos itens para complementar salário','É espião(ã) do Mestre para outra facção','Tem caso com alguém proibido','Sabe o que há na Câmara Selada','Quer sair da Guilda mas não pode','Deve favores a pessoas perigosas','Guarda rancor do protagonista por algo antigo','É parente do Mestre sem ninguém saber']);
+  const relProta = pick(['Amigo(a) próximo(a) — almoçam juntos','Respeito profissional — colegas competentes','Rivalidade leve — competem por reconhecimento','Mentor(a) — ensinou coisas ao protagonista','Aprendiz — vê o protagonista como mestre','Indiferente — mal se conhecem','Tensão não resolvida — algo aconteceu','Aliado(a) em segredo — compartilham informações']);
+  const quer = pick(['Ajudar com trabalho extra','Pedir favor pessoal','Compartilhar fofoca importante','Pedir conselho sobre dilema','Oferecer item raro que encontrou','Reclamar de outro trabalhador','Convidar para beber depois do turno','Alertar sobre algo estranho nos Bastidores']);
+
+  document.getElementById('cityOutput').innerHTML = `
+    <h4>⚔️ ${nome}</h4>
+    <div class="gen-section"><strong>Profissão:</strong> ${profissao}</div>
+    <div class="gen-section"><strong>Tempo na Guilda:</strong> ${tempoGuilda}</div>
+    <div class="gen-section"><strong>Personalidade:</strong> ${personalidade}</div>
+    <div class="gen-section"><strong>Segredo:</strong> ${segredo}</div>
+    <div class="gen-section"><strong>Relação com Protagonista:</strong> ${relProta}</div>
+    <div class="gen-section"><strong>O que Quer Agora:</strong> ${quer}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Copie para a Ficha de NPCs.</p>
+  `;
+}
+
+function generateGuildClient() {
+  const nome = nomeAleatorio();
+  const tipo = pick(['Guerreiro(a) — espada nas costas, cicatrizes no rosto','Mago(a) — túnicas manchadas, cheiro de enxofre','Ladino(a) — sorriso rápido, mãos inquietas','Clérigo(a) — símbolo divino amassado, olhar cansado','Bardo(a) — instrumento sempre à mão, histórias na ponta da língua','Druida — folhas no cabelo, cheiro de floresta','Ranger — arco e animal de estimação estranho','Paladino(a) — armadura polida demais para o lugar','Bárbaro(a) — tatuagens tribais, riso alto','Artificeiro(a) — engrenagens nos bolsos, óculos na testa']);
+  const motivo = pick(['Vender loot de expedição recente','Pedir restauração de artefato danificado','Comprar suprimentos para nova missão','Procurar informação sobre relíquia específica','Contratar guia para local perigoso','Fugir de algo — não diz o quê','Celebrar vitória recente — quer companhia','Lamentar perda — parceiro(a) morreu na missão','Pedir favor especial — fora do protocolo','Apenas beber — passou pelo bairro']);
+  const humor = pick(['Eufórico(a) — missão foi sucesso','Exausto(a) — mal dorme há dias','Paranoico(a) — olha por cima do ombro','Melancólico(a) — perdeu algo importante','Apressado(a) — tem pressa, mas precisa disso','Desconfiado(a) — não confia em ninguém','Alegre demais — suspeito','Silencioso(a) — só fala o necessário']);
+  const segredo = pick(['O artefato que traz é roubado','Está sendo seguido(a)','Mentiu sobre a missão — era outra coisa','Não é quem diz ser — identidade falsa','Deve dinheiro a pessoa perigosa','Trouxe algo que não devia — maldito','Veio procurar o protagonista especificamente','É espião(ã) de facção rival']);
+  const relacao = pick(['Cliente habitual — já veio antes','Primeira vez — não conhece o protocolo','Foi indicado(a) por alguém importante','Tem má reputação — outros trabalhadores avisaram','Conhecido(a) distante — já se cruzaram','Aventureiro(a) lendário(a) — todos conhecem','Novato(a) — primeira missão sozinha','Veterano(a) — histórias impressionantes']);
+  const artefato = pick(['Espada que sussurra à noite','Amuleto que esquenta quando mentem','Livro com páginas em branco que se preenchem','Anel que mostra memórias de quem o usou','Adaga que nunca corta o que deve','Bússola que aponta para o que se perdeu','Taça que nunca esvazia — mas o líquido muda','Mapa que se redesenha sozinho']);
+
+  document.getElementById('cityOutput').innerHTML = `
+    <h4>🎒 ${nome}</h4>
+    <div class="gen-section"><strong>Tipo:</strong> ${tipo}</div>
+    <div class="gen-section"><strong>Motivo da Visita:</strong> ${motivo}</div>
+    <div class="gen-section"><strong>Humor Atual:</strong> ${humor}</div>
+    <div class="gen-section"><strong>Segredo:</strong> ${segredo}</div>
+    <div class="gen-section"><strong>Relação com Protagonista:</strong> ${relacao}</div>
+    <div class="gen-section"><strong>Artefato que Traz:</strong> ${artefato}</div>
+    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Copie para a Ficha de NPCs.</p>
+  `;
+}
+</script>
+</body>
+</html>

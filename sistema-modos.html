@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Ecos dos Bastidores — Modos de Jogo</title>
+<style>
+.modo-card {
+  background: var(--parchment-dark);
+  border: 2px solid var(--accent-light);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+}
+.modo-card h3 {
+  margin-top: 0;
+  color: var(--gold);
+}
+.modo-card .tag-modo {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.tag-cozy { background: #6b8a4a; color: white; }
+.tag-narrativo { background: #4a4a6b; color: white; }
+.tag-epico { background: #8b4513; color: white; }
+.tag-speedrun { background: #a04040; color: white; }
+.tag-livre { background: var(--mystery); color: white; }
+.speedrun-track {
+  background: var(--parchment);
+  border: 1px solid var(--danger);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+.speedrun-track h4 {
+  margin-top: 0;
+  color: var(--danger);
+}
+.speedrun-track .shortcut {
+  background: rgba(160, 64, 64, 0.08);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  margin: 0.3rem 0;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="sistema-modos.html">Sistema</a> &gt; <strong>Modos de Jogo</strong>
+</div>
+
+<div class="container">
+
+<div class="tier-badge recomendado">🟡 Recomendado <span class="tier-desc">— usado no Tutorial e no Quick Start</span></div>
+
+<div class="callout rule">
+  <h4>🎯 O objetivo do jogo</h4>
+  <p>O objetivo de Ecos dos Bastidores <strong>não é vencer</strong>. É <strong>contar uma história</strong>. Você pode jogar devagar, rápido, com ou sem desafios — o importante é que a história seja significativa para você.</p>
+  <p><strong>Não se preocupe em "fazer certo".</strong> Não há maneira errada de jogar.</p>
+</div>
+
+<h2>🎮 Modos de Jogo</h2>
+<p>Ecos dos Bastidores pode ser jogado de diferentes maneiras, dependendo do que você procura. Escolha o modo que melhor se adapta ao seu estilo no início da campanha.</p>
+
+<div class="callout tip">
+  <strong>Dica:</strong> Você pode mudar de modo <strong>uma vez por campanha</strong>, no fim de um capítulo, gastando 1 Eco e descrevendo uma cena de "Reavaliação".
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<!-- MODO LIVRE -->
+<div class="modo-card">
+  <span class="tag-modo tag-livre">🕊️ LIVRE</span>
+  <h3>Modo Livre — Para quem quer jogar do seu jeito</h3>
+  <p><strong>Para jogadores como:</strong> Todos que querem liberdade total</p>
+
+  <h4>O que muda:</h4>
+  <ul>
+    <li><strong>Nenhuma regra é obrigatória</strong> — use o que quiser, ignore o que não quiser</li>
+    <li><strong>Sem Relógios</strong> — a menos que você queira usá-los</li>
+    <li><strong>Sem Atos</strong> — a menos que você queira usá-los</li>
+    <li><strong>Sem Ecos ou Recursos</strong> — a menos que você queira usá-los</li>
+    <li><strong>Sem Progressão do Mundo</strong> — a menos que você queira usá-la</li>
+    <li><strong>Você decide tudo</strong> — o que acontece, quando acontece, como acontece</li>
+  </ul>
+
+  <h4>Recompensa:</h4>
+  <ul>
+    <li>A liberdade de jogar exatamente como você quer</li>
+    <li>Nenhuma pressão para "seguir as regras"</li>
+  </ul>
+
+  <p><em>"Não há regras. Apenas a sua história."</em></p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<!-- MODO COZY -->
+<div class="modo-card">
+  <span class="tag-modo tag-cozy">🌿 COZY</span>
+  <h3>Modo Cozy — Para quem quer paz e conforto</h3>
+  <p><strong>Para jogadores como:</strong> Bia (Narrativa), Ana Clara (Caseira), Luca (Descobridor)</p>
+
+  <div class="callout rule">
+    <h4>🌿 Progressão do Mundo no Modo Cozy</h4>
+    <p>No Modo Cozy, a Progressão do Mundo é <strong>totalmente opcional</strong>. A cidade só cresce <strong>se você quiser</strong>.</p>
+    <p>Se você quiser que a cidade cresça, use as regras normais (eventos a cada 2 capítulos). Se não quiser, ignore completamente — a cidade fica como está.</p>
+    <p><strong>Não há pressão.</strong> O Modo Cozy é sobre paz e conforto.</p>
+  </div>
+
+  <h4>O que muda:</h4>
+  <ul>
+    <li><strong>Sem Relógios de Tensão</strong> — eles não existem neste modo</li>
+    <li><strong>Sem Falhas em Cadeia</strong> — 6− é sempre uma complicação leve</li>
+    <li><strong>NPCs não morrem</strong> — mesmo em expedições difíceis</li>
+    <li><strong>Relógios de Romance avançam +1 extra</strong> — relacionamentos florescem</li>
+    <li><strong>Fins Melancólicos são opcionais</strong> — você pode escolher um final feliz</li>
+    <li><strong>Progressão do Mundo:</strong> Opcional (eventos a cada 2 capítulos se quiser)</li>
+  </ul>
+
+  <h4>Recompensa:</h4>
+  <ul>
+    <li>+1 Eco por cena de conforto escrita</li>
+    <li>Tags [DOMÉSTICO] permanentes são mais fáceis de obter</li>
+  </ul>
+
+  <p><em>"Um jogo onde nada de ruim acontece. Apenas café, abraços e histórias felizes."</em></p>
+</div>
+
+<!-- MODO NARRATIVO -->
+<div class="modo-card">
+  <span class="tag-modo tag-narrativo">📖 NARRATIVO</span>
+  <h3>Modo Narrativo — Para quem quer história sem pressão</h3>
+  <p><strong>Para jogadores como:</strong> Bia (Narrativa), Luca (Descobridor), Rike (Fã de Digimon)</p>
+
+  <h4>O que muda:</h4>
+  <ul>
+    <li><strong>Regras simplificadas:</strong> Menos mecânicas para rastrear</li>
+    <li><strong>Sem Ticks:</strong> Progressão é puramente narrativa</li>
+    <li><strong>Relógios avançam com cenas bem escritas</strong> — não apenas com rolagens</li>
+    <li><strong>Prompts de escrita aparecem automaticamente</strong> em cada cena</li>
+    <li><strong>Foco em personagens e relacionamentos</strong></li>
+  </ul>
+
+  <h4>Recompensa:</h4>
+  <ul>
+    <li>+2 Ecos por cena bem escrita (em vez de +1)</li>
+    <li>Tags narrativas são mais fáceis de obter</li>
+  </ul>
+
+  <p><em>"O jogo é sobre a história. As regras são só para guiar."</em></p>
+</div>
+
+<!-- MODO ÉPICO -->
+<div class="modo-card">
+  <span class="tag-modo tag-epico">⚔️ ÉPICO</span>
+  <h3>Modo Épico — Para quem quer aventura e perigo</h3>
+  <p><strong>Para jogadores como:</strong> Thiago (Épico), Carlos (Worldbuilder)</p>
+
+  <h4>O que muda:</h4>
+  <ul>
+    <li><strong>Ameaças são maiores:</strong> Relógios de Tensão têm 8 segmentos</li>
+    <li><strong>Expedições Lendárias são mais comuns</strong></li>
+    <li><strong>NPCs podem morrer</strong> — mesmo em expedições médias</li>
+    <li><strong>Evento Final é mais dramático</strong> — pode envolver o mundo inteiro</li>
+    <li><strong>Lore expansiva disponível</strong> — deuses, profecias, história antiga</li>
+    <li><strong>Conquistas dão bônus maiores</strong></li>
+    <li><strong>Progressão do Mundo:</strong> Eventos Épicos adicionais (veja <a href="sistema-progressao-mundo.html">Progressão do Mundo</a>)</li>
+  </ul>
+
+  <h4>Recompensa:</h4>
+  <ul>
+    <li>+2 Ecos por superar desafios épicos</li>
+    <li>Tags [LENDA] permanentes disponíveis</li>
+  </ul>
+
+  <p><em>"O destino do mundo está em jogo. E você está no centro."</em></p>
+</div>
+
+<!-- MODO SPEEDRUN -->
+<div class="modo-card">
+  <span class="tag-modo tag-speedrun">🏃 SPEEDRUN</span>
+  <h3>Modo Speedrun — Para quem quer completar rápido</h3>
+  <p><strong>Para jogadores como:</strong> Fernanda (Speedrunner), Pepe (Competitivo)</p>
+
+  <div class="callout rule">
+    <strong>⚖️ Lembrete importante:</strong>
+    <p>A Trilha de Speedrun é <strong>opcional</strong>. Você não precisa segui-la para jogar. Ela existe apenas para jogadores que querem um desafio de tempo. Se você está se sentindo pressionado(a), <strong>ignore-a</strong> e jogue no seu próprio ritmo.</p>
+  </div>
+
+  <h4>O que muda:</h4>
+  <ul>
+    <li><strong>Evento Final em 3-5 capítulos</strong> (em vez de 5-8)</li>
+    <li><strong>Atalhos disponíveis:</strong> Gaste Ecos/Recursos para acelerar</li>
+    <li><strong>Sem escrita obrigatória</strong> — apenas rolagens</li>
+    <li><strong>Progressão acelerada:</strong> Ticks valem o dobro</li>
+    <li><strong>Progressão do Mundo:</strong> Cada capítulo conta como <strong>2</strong> para fins de progressão</li>
+    <li><strong>Evento Final:</strong> Pode ser concluído na Fase Estabelecida (capítulos 7-9)</li>
+    <li><strong>Finais definitivos:</strong> "Você venceu" ou "Você perdeu"</li>
+  </ul>
+
+  <div class="speedrun-track">
+    <h4>⚡ Atalhos do Speedrun</h4>
+    <div class="shortcut">
+      <strong>Pular um capítulo:</strong> Gaste <strong>5 Ecos</strong> (em vez de 10) para avançar imediatamente para o próximo capítulo
+    </div>
+    <div class="shortcut">
+      <strong>Acelerar Evento Final:</strong> Gaste <strong>3 Ecos</strong> (em vez de 5) para avançar o Relógio do Evento Final em 1 segmento
+    </div>
+    <div class="shortcut">
+      <strong>Contratar Aventureiros:</strong> Gaste <strong>2 Recursos</strong> (em vez de 3) para ter um aventureiro extra disponível
+    </div>
+    <div class="shortcut">
+      <strong>Restauração Rápida:</strong> Gaste <strong>1 Eco</strong> (em vez de 2) para restaurar um artefato instantaneamente (sem rolagem)
+    </div>
+    <div class="shortcut">
+      <strong>Atalho de Romance:</strong> Gaste <strong>2 Ecos</strong> para avançar um Relógio de Romance em 1 segmento (1x por capítulo)
+    </div>
+  </div>
+
+  <div class="callout rule">
+    <h4>🏆 Recompensa por Completar a Trilha de Speedrun</h4>
+    <p>Se você completar a Trilha de Speedrun (todos os 5 capítulos), você ganha:</p>
+    <ul>
+      <li><strong>Conquista "Speedrunner"</strong> — um marco permanente</li>
+      <li><strong>+2 em todas as rolagens</strong> na sua <strong>próxima campanha</strong> (New Game+)</li>
+      <li><strong>Tag [VELOZ]</strong> — +1 em rolagens de agilidade e velocidade (permanente)</li>
+      <li><strong>+5 Ecos bônus</strong> para usar na próxima campanha</li>
+    </ul>
+    <p><strong>Nota:</strong> Se você não completar a Trilha, não há penalidade. O jogo continua normalmente.</p>
+  </div>
+
+  <h4>Recompensa:</h4>
+  <ul>
+    <li>Conquista "Speedrunner" ao completar</li>
+    <li>+5 Ecos bônus por capítulo completado</li>
+    <li><strong>Bônus para próxima campanha:</strong> +2 em todas as rolagens iniciais</li>
+  </ul>
+
+  <p><em>"Sem enrolação. Apenas o essencial."</em></p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>🏃 Trilha de Speedrun — 5 Capítulos</h3>
+
+<div class="speedrun-track">
+  <h4>Capítulo 1 — O Começo</h4>
+  <ul>
+    <li>☐ Complete o Quick Start (criação do protagonista)</li>
+    <li>☐ Restaure <strong>2 artefatos</strong></li>
+    <li>☐ Converse com o Mestre</li>
+    <li>☐ Meta: <strong>1 Relógio de Mistério</strong> iniciado</li>
+  </ul>
+
+  <h4>Capítulo 2 — Aceleração</h4>
+  <ul>
+    <li>☐ Envie <strong>2 expedições Fáceis</strong></li>
+    <li>☐ Restaure <strong>4 artefatos</strong></li>
+    <li>☐ Explore <strong>1 bairro</strong> da cidade</li>
+    <li>☐ Meta: <strong>3 Relógios</strong> em andamento</li>
+    <li>☐ <strong>Fase de Crescimento</strong> alcançada (capítulo 3)</li>
+  </ul>
+
+  <h4>Capítulo 3 — O Primeiro Romanceável</h4>
+  <ul>
+    <li>☐ Receba o <strong>primeiro NPC romanceável</strong></li>
+    <li>☐ Converse profundamente com ele(a)</li>
+    <li>☐ Complete <strong>2 expedições Médias</strong></li>
+    <li>☐ Meta: <strong>Relógio de Romance</strong> em 4/10</li>
+    <li>☐ <strong>Fase Estabelecida</strong> alcançada (capítulo 4)</li>
+  </ul>
+
+  <h4>Capítulo 4 — Expansão</h4>
+  <ul>
+    <li>☐ Receba os <strong>outros 2 NPCs romanceáveis</strong></li>
+    <li>☐ Complete <strong>3 expedições Médias</strong></li>
+    <li>☐ Restaure <strong>7 artefatos</strong></li>
+    <li>☐ Resolva <strong>1 mistério</strong></li>
+    <li>☐ Meta: <strong>Evento Final</strong> em 6/8</li>
+  </ul>
+
+  <h4>Capítulo 5 — Conclusão</h4>
+  <ul>
+    <li>☐ Complete <strong>1 expedição Difícil</strong></li>
+    <li>☐ Resolva <strong>2 mistérios</strong></li>
+    <li>☐ Meta: <strong>Evento Final</strong> concluído</li>
+    <li>☐ <strong>Fim de Jogo</strong> — Parabéns, Speedrunner!</li>
+  </ul>
+
+<div class="callout rule">
+  <strong>⚖️ Recompensa para quem ignora a narrativa:</strong>
+  <p>Se você completar a Trilha de Speedrun <strong>sem usar nenhuma cena narrativa</strong> (sem escrever sobre romance, decoração, ou momentos de humor), você ganha a <strong>Conquista "Frio e Calculista"</strong>, a Tag [EFICIENTE] e +5 Ecos bônus. Veja <a href="sistema-aventureiros.html">Sistema de Aventureiros</a> para detalhes.</p>
+</div>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>O que muda em cada modo — Tabela Comparativa</h3>
+
+<table>
+<tr><th>Característica</th><th>🕊️ Livre</th><th>🌿 Cozy</th><th>📖 Narrativo</th><th>⚔️ Épico</th><th>🏃 Speedrun</th></tr>
+<tr><td>Regras obrigatórias</td><td>❌ Nenhuma</td><td>✅ Algumas</td><td>✅ Algumas</td><td>✅ Algumas</td><td>✅ Algumas</td></tr>
+<tr><td>Relógios de Tensão</td><td>Opcional</td><td>❌ Removidos</td><td>✅ (4 seg)</td><td>✅ (8 seg)</td><td>✅ (4 seg)</td></tr>
+<tr><td>Morte de NPCs</td><td>Você decide</td><td>❌ Impossível</td><td>Opcional (jogador decide)</td><td>✅ Possível</td><td>Opcional (jogador decide)</td></tr>
+<tr><td>Falhas em Cadeia</td><td>Opcional</td><td>❌ Apenas complicações leves</td><td>✅ Normal</td><td>✅ Normal</td><td>✅ Normal</td></tr>
+<tr><td>Escrita obrigatória</td><td>Opcional</td><td>Opcional</td><td>✅ Sim</td><td>Opcional</td><td>❌ Não</td></tr>
+<tr><td>Duração (capítulos)</td><td>Você decide</td><td>10-15</td><td>10-15</td><td>10-15</td><td>3-5</td></tr>
+<tr><td>Sistema de Ticks</td><td>Opcional</td><td>✅ Normal</td><td>❌ Removido (progressão narrativa)</td><td>✅ Normal</td><td>✅ Dobrado</td></tr>
+<tr><td>Fins Melancólicos</td><td>Opcional</td><td>Opcional (finais felizes garantidos)</td><td>✅ Normal</td><td>✅ Normal</td><td>✅ Normal</td></tr>
+<tr><td>Atalhos</td><td>Opcional</td><td>Não</td><td>Não</td><td>Não</td><td>✅ 5 Ecos = +1 Evento Final</td></tr>
+<tr><td>Progressão do Mundo</td><td>Opcional</td><td>Opcional (a cada 2 capítulos se quiser)</td><td>Normal</td><td>Normal + Eventos Épicos</td><td>Acelerada (×2)</td></tr>
+<tr><td>Evento Final</td><td>Opcional</td><td>Normal</td><td>Normal</td><td>Normal</td><td>Pode concluir na Fase Estabelecida</td></tr>
+<tr><td>Bônus de Eco</td><td>Opcional</td><td>Cenas de conforto (+1)</td><td>Cenas bem escritas (+2)</td><td>Desafios épicos (+2)</td><td>Velocidade (+5 por capítulo)</td></tr>
+<tr><td>Morte de Aventureiros (expedições)</td><td>Você decide</td><td>❌ Impossível</td><td>Chance normal por dificuldade*</td><td>Chance normal por dificuldade*, mesmo em expedições Médias</td><td>Chance normal por dificuldade*</td></tr>
+<tr><td>Eventos de Progressão do Mundo</td><td>Opcional</td><td>A cada 2 capítulos, sempre positivos</td><td>A cada 1 capítulo, sempre positivos</td><td>A cada 1 capítulo; eventos 1–5 podem ser negativos (retrocesso)</td><td>A cada 1 capítulo, contando em dobro (×2)</td></tr>
+</table>
+<p style="font-size: 0.85rem; color: var(--ink-soft);">*Ver <a href="sistema-aventureiros.html">Sistema de Aventureiros</a> para a tabela de chance de morte por dificuldade de expedição (Fácil 0% / Média 10% / Difícil 25% / Lendária 50%).</p>
+
+<div class="callout rule">
+  <h4>⚖️ Como mudar de modo</h4>
+  <p>Você pode mudar de modo <strong>uma vez por campanha</strong>, no fim de um capítulo, gastando <strong>1 Eco</strong> e descrevendo uma cena de "Reavaliação".</p>
+  <p><strong>Exceção:</strong> No Modo Speedrun, você <strong>não pode</strong> mudar para outro modo — a campanha já está em andamento acelerado.</p>
+</div>
+
+<div class="callout warning">
+  <h4>⚠️ Sistema Aposentado: "Modo Acelerador"</h4>
+  <p>Versões anteriores do material mencionavam um segundo sistema de ritmo, separado destes 5 Modos — "Modo Acelerador: Campanha Longa vs. Conto Curto", usado só para a pressão do Relógio do Evento Final. Esse sistema foi <strong>aposentado</strong>: ele fazia o mesmo trabalho que o <strong>Modo Speedrun</strong> já faz, com números diferentes, o que gerava ambiguidade. Se você quiser uma campanha mais curta e com mais pressão, use o Modo Speedrun (ver acima) — ele já cobre isso.</p>
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Agora que você escolheu seu modo, vá para <a href="tutorial.html">Tutorial Integrado →</a> para aprender o jogo passo a passo.
+</div>
+
+<footer>
+  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>Sistema — Modos de Jogo</p>
+  <p><a href="sistema-rotas-romance.html">← Rotas de Romance</a> | <a href="tutorial.html">Próxima: Tutorial →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
+</body>
+</html>
