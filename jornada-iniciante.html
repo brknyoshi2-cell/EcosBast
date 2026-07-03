@@ -6,17 +6,14 @@
   <title>Ecos dos Bastidores — Jornada I: Primeiros Dias</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="dark">
-  <nav class="top-nav">
-    <div class="top-nav-inner">
-      <h1>Ecos dos Bastidores</h1>
-      <div class="nav-links">
-        <a href="index.html">Início</a>
-      </div>
-    </div>
-  </nav>
+<body>
+  <div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
 
-  <div class="breadcrumbs">
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+  <div class="breadcrumbs no-print">
     <a href="index.html">Início</a> > <a href="jornada-iniciante.html">Jornada do Jogador</a> > I — Primeiros Dias
   </div>
 
@@ -31,36 +28,25 @@
       <h3>Como Usar Esta Página</h3>
       <p>Esta é a primeira parte da <strong>Jornada do Jogador</strong> — um guia prático de "o que fazer hoje" para suas primeiras sessões. Cada momento do dia (Manhã, Tarde, Noite) oferece um cardápio de ações. Escolha uma ação que você ainda não tenha feito e explore-a com calma. Um dia de jogo = uma ação em cada momento (ou menos — você decide o ritmo).</p>
 
-      <div class="callout tip">
-        <strong>Dica:</strong> Marque com ☑️ as ações que você já fez (imprima a página ou anote na <a href="ficha-rastro.html">Ficha de Rastreamento</a>). Assim você nunca repete e descobre o jogo aos poucos. Não há ordem certa — faça o que te atrair.
-      </div>
+      <p>Marque com ☑️ as ações que você já fez — assim você nunca repete. Não há ordem certa. Se uma ação não te interessa, pule. Se te empolga, fique nela o tempo que quiser.</p>
 
-      <div class="callout rule">
-        <strong>⚖️ Regra de Ouro:</strong> Se uma ação não te interessa, pule. Se uma ação te empolga, fique nela. Se uma ação te assusta, explore por quê. O jogo é seu.
-      </div>
+      <p>Veio do Quick Start? As ações abaixo funcionam com qualquer mundo. Os NPCs romanceáveis chegam nos capítulos 4 e 7 — use as fichas que já tem ou recrie-os quando chegar a hora.</p>
 
-      <div class="callout example">
-        <strong>🚀 Veio do Quick Start?</strong> Se você usou o pacote pré-pronto e quer continuar, você já está no lugar certo. As ações abaixo funcionam com qualquer mundo — o seu ou o de Vaelstrom. Quando chegar a hora dos NPCs romanceáveis entrarem na história (Capítulo 4 e 7), use as fichas que você já tem — ou recrie-os do zero, se quiser surpresa.
-      </div>
-
-      <div class="callout">
-        <strong>🗺️ Onde você está:</strong>
-        <a href="sessao0.html">Sessão 0</a> (Criar o mundo) → <strong>Jornada I</strong> (Capítulos 1–3 · você está aqui) → <a href="jornada-avancada.html">Jornada II</a> (Capítulos 4+ · aprofundar e encerrar) → <a href="finais.html">Finais</a> (Evento Final, Epílogo, New Game+)
-      </div>
+      <p class="callout"><a href="sessao0.html">Sessão 0</a> → <strong>Jornada I</strong> (Caps 1–3 · você está aqui) → <a href="jornada-avancada.html">Jornada II</a> (Caps 4+) → <a href="finais.html">Finais</a></p>
     </section>
 
     <section>
       <h3>🎚️ O que Ligar Nesta Fase</h3>
       <p>Nos Primeiros Dias, jogue com o mínimo. O resto do jogo espera por você — e será liberado na <a href="jornada-avancada.html">Jornada II</a>.</p>
 
-      <table class="compact">
+      <details class="tabela-colapsavel"><summary>ver tabela</summary><table class="compact">
         <tr><th>Sistema</th><th>Status</th><th>Onde ler</th></tr>
         <tr><td>Resolução (2d6 + Capacidade)</td><td>✅ Ligado</td><td><a href="sistema-resolucao.html">Resolução</a></td></tr>
         <tr><td>Ecos & Recursos</td><td>✅ Ligado</td><td><a href="sistema-ecos-recursos.html">Ecos & Recursos</a></td></tr>
         <tr><td>Atos (3 por dia)</td><td>🟡 Opcional</td><td><a href="sistema-atos.html">Atos</a></td></tr>
         <tr><td>Modo de Jogo</td><td>🟡 Escolha um</td><td><a href="sistema-modos.html">Modos de Jogo</a></td></tr>
         <tr><td>Relógios, Tags, Reputação, Módulos, Crafting, Facções…</td><td>⏸️ Ainda não</td><td>Entram na <a href="jornada-avancada.html">Jornada II</a></td></tr>
-      </table>
+      </table></details>
     </section>
 
     <section>
@@ -69,7 +55,7 @@
 
       <div class="callout example">
         <strong>🎲 Role 1d6 — O Primeiro Momento da Manhã:</strong>
-        <table>
+        <details class="tabela-colapsavel"><summary>ver opções</summary><table>
           <tr><th>d6</th><th>Momento</th></tr>
           <tr><td>1</td><td><strong>A luz entra pela janela errada</strong> — há uma janela nos Bastidores que não deveria existir. De manhã, ela brilha.</td></tr>
           <tr><td>2</td><td><strong>O café tem gosto diferente</strong> — hoje, o café tem um sabor que você não reconhece. Algo mudou.</td></tr>
@@ -77,22 +63,25 @@
           <tr><td>4</td><td><strong>A planta cresceu</strong> — a planta que você cuida (ou finge cuidar) floresceu durante a noite.</td></tr>
           <tr><td>5</td><td><strong>O relógio parou</strong> — o relógio da Oficina parou. Ninguém o tocou.</td></tr>
           <tr><td>6</td><td><strong>Você sonhou com a Câmara</strong> — e acordou com a sensação de que ela sonhou com você.</td></tr>
-        </table>
+        </table></details>
       </div>
 
       <h3>Ações da Manhã (escolha uma que ainda não fez)</h3>
 
       <div class="acao">
         <h4>☐ 1. Acordar e fazer seu hábito diário</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Todo protagonista tem um <strong>hábito que o mantém são</strong> — um pequeno ritual diário que o ancora. Hoje, faça-o com atenção plena.</p>
         <p><strong>Como executar:</strong> Descreva o hábito em detalhes. O que você sente? O que vê? O que muda quando você o faz?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-base.html">Moves de Base</a> — "Marcar Passagem do Tempo"</p>
         <p><strong>Interações:</strong> Se houver um trabalhador nos Bastidores, ele pode te ver. Se houver uma Presença, ela pode reagir.</p>
         <p><strong>Tabela:</strong> Use seu <strong>Hábito</strong> da ficha do protagonista. Se não tiver, role 1d6 em <a href="criacao-protagonista.html">Criação: Protagonista</a>.</p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 2. Inspecionar os Bastidores</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Os Bastidores são seu lar. Hoje, caminhe por eles com atenção. O que você nota que não notava antes?</p>
         <p><strong>Como executar:</strong> Escolha uma zona (Oficina, Armazém, Arquivo, Aposentos, Câmara Selada). Descreva o que você vê, ouve, cheira.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-investigacao.html">Moves de Investigação</a> — "Examinar com Cuidado"</p>
@@ -108,10 +97,12 @@
             <tr><td>6</td><td>Nada — mas a sensação de que algo observou</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 3. Preparar o café da manhã</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A comida é cuidado. Hoje, prepare algo — para você, para um trabalhador, para a Presença dos Bastidores.</p>
         <p><strong>Como executar:</strong> Descreva o que você prepara. O que você come? O que você bebe? Com quem você compartilha?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-base.html">Moves de Base</a> — "Cuidar de Si ou de Outro". Se for seu primeiro Ato do dia, o café rende +1 Recurso (Daily Reward — veja o <a href="sistema-loop.html">Loop</a>).</p>
@@ -127,10 +118,12 @@
             <tr><td>6</td><td>Nada — você esqueceu de comer</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 4. Receber um artefato novo</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Um aventureiro chegou. Ele traz algo — quebrado, sussurrante, perigoso. É seu trabalho recebê-lo.</p>
         <p><strong>Como executar:</strong> Descreva o aventureiro (use <a href="geradores-npcs.html">Gerador de NPCs</a> se quiser). Descreva o artefato (use <a href="geradores-conteudo.html">Gerador de Conteúdo</a>).</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-oficio.html">Moves de Ofício</a> — "Inspecionar Artefato"</p>
@@ -146,10 +139,12 @@
             <tr><td>6</td><td>Vazio — não faz nada. E isso assusta.</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 5. Começar uma restauração</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você tem um artefato na Oficina. Hoje, você começa a restaurá-lo. O que você descobre?</p>
         <p><strong>Como executar:</strong> Escolha um artefato (ou role um). Descreva o processo — o que você faz, o que sente, o que o artefato revela. Role 2d6 + MÃOS.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-oficio.html">Moves de Ofício</a> — "Restaurar Artefato"</p>
@@ -165,10 +160,12 @@
             <tr><td>6</td><td>O artefato não quer ser restaurado — e luta</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 6. Conversar com um trabalhador</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Há alguém nos Bastidores além de você. Hoje, converse. O que você descobre?</p>
         <p><strong>Como executar:</strong> Escolha um trabalhador (ou role um em <a href="criacao-guilda.html">Criação: Guilda</a>). Descreva a conversa — o que vocês falam? O que ele esconde?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-sociais.html">Moves Sociais</a> — "Conversar com Sinceridade"</p>
@@ -184,10 +181,12 @@
             <tr><td>6</td><td>Ele não tem segredo — e isso é o mais estranho</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 7. Organizar o Arquivo</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>O Arquivo está uma bagunça. Hoje, você organiza. O que você encontra?</p>
         <p><strong>Como executar:</strong> Descreva o processo — o que você organiza? O que você descobre? O que você decide esconder?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-investigacao.html">Moves de Investigação</a> — "Buscar nos Registros"</p>
@@ -203,10 +202,12 @@
             <tr><td>6</td><td>Nada — mas a sensação de que alguém organizou antes de você</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 8. Meditar sobre a Câmara Selada</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A Câmara Selada está lá embaixo. Hoje, você pensa nela. O que você sente?</p>
         <p><strong>Como executar:</strong> Descreva seus pensamentos — o que você sabe sobre a Câmara? O que você teme? O que você quer?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-base.html">Moves de Base</a> — "Refletir"</p>
@@ -222,6 +223,7 @@
             <tr><td>6</td><td>"Não importa. Não vou pensar nisso."</td></tr>
           </table>
         </p>
+      </details>
       </div>
     </section>
 
@@ -231,7 +233,7 @@
 
       <div class="callout example">
         <strong>🎲 Role 1d6 — O que a Cidade Oferece Hoje:</strong>
-        <table>
+        <details class="tabela-colapsavel"><summary>ver opções</summary><table>
           <tr><th>d6</th><th>Oferecimento</th></tr>
           <tr><td>1</td><td><strong>Um convite</strong> — alguém te convidou para algo. Você vai?</td></tr>
           <tr><td>2</td><td><strong>Um problema</strong> — algo precisa ser resolvido. Você ajuda?</td></tr>
@@ -239,22 +241,25 @@
           <tr><td>4</td><td><strong>Um reencontro</strong> — alguém que você não via há tempos. Você conversa?</td></tr>
           <tr><td>5</td><td><strong>Um mistério</strong> — algo estranho aconteceu. Você pergunta?</td></tr>
           <tr><td>6</td><td><strong>Nada</strong> — a cidade está quieta. Você observa?</td></tr>
-        </table>
+        </table></details>
       </div>
 
       <h3>Ações da Tarde (escolha uma que ainda não fez)</h3>
 
       <div class="acao">
         <h4>☐ 1. Sair para a cidade</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Os Bastidores são seu lar, mas a cidade é seu mundo. Hoje, saia. O que você vê?</p>
         <p><strong>Como executar:</strong> Descreva a saída — o que você sente ao deixar os Bastidores? O que a cidade te mostra?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-investigacao.html">Moves de Investigação</a> — "Explorar Lugar"</p>
         <p><strong>Interações:</strong> Você pode encontrar NPCs, ver eventos, sentir a tensão da cidade.</p>
         <p><strong>Tabela:</strong> Use as tabelas de <a href="criacao-cidade.html">Criação: Cidade</a> — bairros, locais, eventos.</p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 2. Visitar o NPC de conexão</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você tem alguém na cidade que te conhece. Hoje, visite. O que vocês fazem?</p>
         <p><strong>Como executar:</strong> Descreva a visita — onde vocês se encontram? O que vocês falam? O que você não diz?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-sociais.html">Moves Sociais</a> — "Conversar com Sinceridade", "Compartilhar Momento"</p>
@@ -270,15 +275,17 @@
             <tr><td>6</td><td>Vocês discutem — e algo se quebra</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 3. Explorar um bairro</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A cidade tem bairros. Hoje, explore um que você não conhece. O que você descobre?</p>
         <p><strong>Como executar:</strong> Escolha um bairro (ou role em <a href="criacao-cidade.html">Criação: Cidade</a>). Descreva o que você vê, ouve, sente. Role 2d6 + OLHOS.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-investigacao.html">Moves de Investigação</a> — "Explorar Lugar"</p>
-        <p><strong>Interações:</strong> Você pode encontrar NPCs, locais notáveis, problemas.</p>
-        <p><strong>Tabela:</strong> Role 1d6 para o <strong>Descobrimento do Bairro</strong>:
+        <p><strong>Interações:</strong> Você pode encontrar NPCs, locais notáveis, problemas. <em>Bairros são a tabela que você <strong>volta a rolar</strong>: a cada capítulo a cidade pode ganhar um novo — role-o em <a href="criacao-cidade.html">Criação: Cidade</a> e anote-o na <a href="ficha-mundo.html">Ficha do Mundo</a>.</em></p>
+        <p><strong>Tabela:</strong> Role 1d6 para o <strong>Descobrimento do Bairro</strong> (o resultado depende da sua rolagem de OLHOS — em <strong>7–9</strong> o achado vem com um custo; em <strong>6−</strong>, o bairro te acha antes):
           <table>
             <tr><th>d6</th><th>Descobrimento</th></tr>
             <tr><td>1</td><td>Um local que não deveria existir — mas existe</td></tr>
@@ -286,13 +293,15 @@
             <tr><td>3</td><td>Um problema que ninguém resolve — e você pode</td></tr>
             <tr><td>4</td><td>Um segredo que todos sabem — mas ninguém fala</td></tr>
             <tr><td>5</td><td>Um lugar bonito — e você não sabia que existia</td></tr>
-            <tr><td>6</td><td>Nada — mas a sensação de que algo observou</td></tr>
+            <tr><td>6</td><td>Uma porta, uma pessoa ou um cheiro que puxa você para <em>outro</em> bairro — um que a cidade ainda não tinha</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 4. Ir ao mercado</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>O mercado é o coração da cidade. Hoje, vá. O que você compra? O que você vê?</p>
         <p><strong>Como executar:</strong> Descreva o mercado — o que você compra? Com quem você fala? O que você não compra?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-sociais.html">Moves Sociais</a> — "Negociar", "Conversar com Sinceridade"</p>
@@ -308,10 +317,12 @@
             <tr><td>6</td><td>Nada — mas você gasta mais do que deveria</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 5. Visitar um local notável</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A cidade tem locais notáveis. Hoje, visite um. O que você descobre?</p>
         <p><strong>Como executar:</strong> Escolha um local (ou role em <a href="criacao-cidade.html">Criação: Cidade</a>). Descreva o que você vê, sente, faz.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-investigacao.html">Moves de Investigação</a> — "Explorar Lugar"</p>
@@ -327,10 +338,12 @@
             <tr><td>6</td><td>Você não deveria estar ali — mas está</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 6. Encontrar um aventureiro</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Aventureiros passam pela cidade. Hoje, você encontra um. O que ele traz?</p>
         <p><strong>Como executar:</strong> Descreva o aventureiro (use <a href="geradores-npcs.html">Gerador de NPCs</a>). Descreva o encontro — o que ele diz? O que ele esconde?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-sociais.html">Moves Sociais</a> — "Conversar com Sinceridade", "Ouvir História"</p>
@@ -346,10 +359,12 @@
             <tr><td>6</td><td>Um aviso — sobre algo que está vindo</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 7. Resolver um problema urbano</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A cidade tem problemas. Hoje, você resolve um. Qual?</p>
         <p><strong>Como executar:</strong> Escolha um problema (ou role 1d6). Descreva como você resolve — o que você faz? O que você sacrifica?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-sociais.html">Moves Sociais</a> — "Ajudar Alguém", <a href="moves-investigacao.html">Moves de Investigação</a> — "Investigar Problema"</p>
@@ -365,10 +380,12 @@
             <tr><td>6</td><td>Nada grave — mas alguém precisa de você</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 8. Observar as presenças culturais</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A cidade é diversa. Hoje, observe. O que você nota?</p>
         <p><strong>Como executar:</strong> Escolha uma presença cultural (veja <a href="criacao-racas.html">Criação: Raças</a>). Descreva o que você vê — como elas vivem? Como interagem?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-investigacao.html">Moves de Investigação</a> — "Observar com Atenção"</p>
@@ -384,6 +401,7 @@
             <tr><td>6</td><td>Você não aprende nada — mas vê algo bonito</td></tr>
           </table>
         </p>
+      </details>
       </div>
     </section>
 
@@ -393,7 +411,7 @@
 
       <div class="callout example">
         <strong>🎲 Role 1d6 — O que a Noite Traz:</strong>
-        <table>
+        <details class="tabela-colapsavel"><summary>ver opções</summary><table>
           <tr><th>d6</th><th>Noite</th></tr>
           <tr><td>1</td><td><strong>Um sonho estranho</strong> — você sonha com algo que não entende</td></tr>
           <tr><td>2</td><td><strong>Um sussurro</strong> — algo nos Bastidores fala</td></tr>
@@ -401,13 +419,14 @@
           <tr><td>4</td><td><strong>Um silêncio</strong> — os Bastidores estão quietos demais</td></tr>
           <tr><td>5</td><td><strong>Uma luz</strong> — algo brilha onde não deveria</td></tr>
           <tr><td>6</td><td><strong>Nada</strong> — mas você não consegue dormir</td></tr>
-        </table>
+        </table></details>
       </div>
 
       <h3>Ações da Noite (escolha uma que ainda não fez)</h3>
 
       <div class="acao">
         <h4>☐ 1. Escrever no diário</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você tem um diário. Hoje, escreva. O que você diz?</p>
         <p><strong>Como executar:</strong> Descreva o que você escreve — o que você sente? O que você esconde? O que você revela?</p>
         <p><strong>Moves envolvidos:</strong> <a href="sistema-escrita-epifania.html">Sistema de Escrita</a> — "Escrever Reflexão"</p>
@@ -423,19 +442,23 @@
             <tr><td>6</td><td>O que você esqueceu — mas não deveria</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 2. Decorar os aposentos</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Seus aposentos são seu refúgio. Hoje, decore. O que você adiciona?</p>
         <p><strong>Como executar:</strong> Descreva o que você adiciona — o que você escolhe? O que isso diz sobre você?</p>
         <p><strong>Moves envolvidos:</strong> <a href="sistema-decoracao.html">Sistema de Decoração</a> — "Decorar Aposentos"</p>
         <p><strong>Interações:</strong> Você pode ganhar conforto, revelar algo sobre si, atrair a atenção de alguém.</p>
         <p><strong>Tabela:</strong> Use a tabela de <a href="criacao-bastidores.html">Criação: Bastidores</a> — "Seus Aposentos".</p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 3. Ouvir uma história</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Alguém tem uma história. Hoje, ouça. O que você descobre?</p>
         <p><strong>Como executar:</strong> Escolha quem conta (trabalhador, NPC, aventureiro). Descreva a história — o que ela revela?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-sociais.html">Moves Sociais</a> — "Ouvir História"</p>
@@ -451,10 +474,12 @@
             <tr><td>6</td><td>Uma história sobre você — que você não contou</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 4. Investigar um mistério</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Há algo estranho acontecendo. Hoje, investigue. O que você descobre?</p>
         <p><strong>Como executar:</strong> Escolha um mistério (tensão da cidade, conflito da Guilda, algo dos Bastidores). Descreva o que você faz.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-investigacao.html">Moves de Investigação</a> — "Investigar Mistério"</p>
@@ -470,10 +495,12 @@
             <tr><td>6</td><td>Você encontra a si mesmo — e não se reconhece</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 5. Ter um momento íntimo com NPC</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Alguém está perto de você. Hoje, tenha um momento íntimo. O que acontece?</p>
         <p><strong>Como executar:</strong> Escolha um NPC (o de conexão, um trabalhador, um aventureiro). Descreva o momento — o que vocês fazem? O que vocês não dizem?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-amor.html">Moves de Amor</a> — "Compartilhar Momento", "Confessar Algo"</p>
@@ -489,10 +516,12 @@
             <tr><td>6</td><td>Vocês não falam — mas se entendem</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 6. Trabalhar até tarde</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A Oficina te chama. Hoje, você fica além da hora. O que a noite muda no trabalho?</p>
         <p><strong>Como executar:</strong> Descreva o trabalho noturno — a luz das velas, o silêncio, o artefato sob suas mãos. Role 2d6 + MÃOS, mas a noite tem suas regras: em 6−, algo além do artefato responde.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-oficio.html">Moves de Ofício</a> — "Restaurar Artefato"</p>
@@ -508,10 +537,12 @@
             <tr><td>6</td><td>Você adormece na bancada — e sonha com o artefato pronto</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 7. Deixar a noite falar (sonhar)</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você dorme. E os Bastidores sonham com você. O que o sonho mostra?</p>
         <p><strong>Como executar:</strong> Descreva o sonho em fragmentos — imagens, sons, sensações. Não precisa fazer sentido. Sonhos são pistas do que sua história quer se tornar.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-base.html">Moves de Base</a> — "Refletir"</p>
@@ -527,10 +558,12 @@
             <tr><td>6</td><td>Nada — o sonho mais silencioso da sua vida</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 8. Descansar e Refletir (encerrar o dia)</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>O dia acabou. Hoje, encerre-o com intenção. O que fica?</p>
         <p><strong>Como executar:</strong> Use o move Descansar e Refletir: recupere seus 3 Atos e descreva um pensamento final do dia. Se escrever sobre o dia (diário, carta, lista), ganhe +1 Eco.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-base.html">Moves de Base</a> — "Descansar e Refletir"</p>
@@ -546,6 +579,7 @@
             <tr><td>6</td><td>"Alguma coisa vai acontecer. Eu sinto."</td></tr>
           </table>
         </p>
+      </details>
       </div>
     </section>
 
@@ -586,17 +620,10 @@
     </footer>
   </div>
 
-  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+  <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
-  <script>
-    window.onscroll = function() {
-      const btn = document.querySelector('.back-to-top');
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btn.classList.add('visible');
-      } else {
-        btn.classList.remove('visible');
-      }
-    };
-  </script>
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
 </body>
 </html>

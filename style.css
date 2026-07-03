@@ -1056,3 +1056,63 @@ header.hero .flavor {
 .jornada-mapa .etapa small {
   color: var(--ink-soft);
 }
+
+/* ============================================================
+   COLAPSÁVEIS DE JORNADA / SESSÃO 0 — abinha com setinha
+   (leve, não é a barra "por pressão" do index)
+   ============================================================ */
+details.acao-corpo,
+details.tabela-colapsavel {
+  margin: 0.4rem 0 0.2rem 0;
+}
+details.acao-corpo > summary,
+details.tabela-colapsavel > summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.18rem 0.7rem 0.18rem 0.55rem;
+  border: 1px solid var(--accent-light);
+  border-radius: 999px;
+  background: var(--parchment);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.15s;
+  user-select: none;
+}
+details > summary::-webkit-details-marker { display: none; }
+details.acao-corpo > summary::before,
+details.tabela-colapsavel > summary::before {
+  content: "▸";
+  font-size: 0.85em;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+details[open].acao-corpo > summary::before,
+details[open].tabela-colapsavel > summary::before {
+  transform: rotate(90deg);
+}
+details.acao-corpo > summary:hover,
+details.tabela-colapsavel > summary:hover {
+  background: rgba(184, 134, 11, 0.12);
+}
+details.acao-corpo[open] > summary,
+details.tabela-colapsavel[open] > summary {
+  margin-bottom: 0.5rem;
+}
+/* Sessão 0: a própria pergunta é o rótulo — mantém peso de título */
+details.tabela-colapsavel > summary.pergunta {
+  font-size: 0.98rem;
+  border-radius: 6px;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+}
+/* dentro do corpo de ação, os parágrafos herdam o espaçamento de .acao */
+details.acao-corpo > *:not(summary) {
+  margin-left: 0.1rem;
+}

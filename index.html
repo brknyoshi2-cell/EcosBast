@@ -6,15 +6,12 @@
   <title>Ecos dos Bastidores — Início</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="dark">
-  <nav class="top-nav">
-    <div class="top-nav-inner">
-      <h1>Ecos dos Bastidores</h1>
-      <div class="nav-links">
-        <a href="index.html">Início</a>
-      </div>
-    </div>
-  </nav>
+<body>
+  <div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
 
   <div class="container">
     <header class="hero">
@@ -332,17 +329,10 @@
     </footer>
   </div>
 
-  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+  <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
-  <script>
-    window.onscroll = function() {
-      const btn = document.querySelector('.back-to-top');
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btn.classList.add('visible');
-      } else {
-        btn.classList.remove('visible');
-      }
-    };
-  </script>
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
 </body>
 </html>

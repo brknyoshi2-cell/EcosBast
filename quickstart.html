@@ -6,17 +6,14 @@
   <title>Ecos dos Bastidores — Quick Start Pack</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="dark">
-  <nav class="top-nav">
-    <div class="top-nav-inner">
-      <h1>Ecos dos Bastidores</h1>
-      <div class="nav-links">
-        <a href="index.html">Início</a>
-      </div>
-    </div>
-  </nav>
+<body>
+  <div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
 
-  <div class="breadcrumbs">
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+  <div class="breadcrumbs no-print">
     <a href="index.html">Início</a> > Quick Start Pack
   </div>
 
@@ -28,19 +25,11 @@
     </header>
 
     <section>
-      <div class="callout tip">
-        <strong>🕊️ Liberdade Total:</strong> Este Quick Start é um ponto de partida, não regras obrigatórias — siga, pule ou mude qualquer passo. Não há maneira errada de jogar. (Se quiser o resumo de uma caixa só do jogo inteiro, veja <a href="index.html#nucleo-minimo">O Essencial</a>.)
-      </div>
 
-      <div class="callout rule">
-        <strong>🌱 Nota sobre o Início do Jogo:</strong>
-        Este Quick Start começa na Fase Inicial (capítulos 1-3). A Guilda é pequena, a cidade é modesta, e os NPCs romanceáveis <strong>não estão presentes ainda</strong> — eles chegam nos capítulos 4 e 7. Mas se você quiser que eles cheguem antes, faça-os chegar antes. As regras são sugestões.
-      </div>
 
-      <div class="callout">
-        <strong>🎮 Modo de Jogo — já definido (Narrativo):</strong>
-        Este Quick Start já assume o Modo Narrativo — o mais indicado pra quem está começando. Não precisa escolher nada agora. Se quiser trocar (Cozy, Épico, Speedrun ou Livre), veja <a href="sistema-modos.html">Modos de Jogo</a> a qualquer momento — mudar custa só 1 Eco.
-      </div>
+      <p>Este Quick Start começa na Fase Inicial (capítulos 1–3): Guilda pequena, cidade modesta, NPCs romanceáveis ainda a caminho. Eles chegam nos capítulos 4 e 7 — ou antes, se você quiser.</p>
+
+      <p>O Quick Start usa o <strong>Modo Narrativo</strong> por padrão. Para trocar (Cozy, Épico, Speedrun, Livre), veja <a href="sistema-modos.html">Modos de Jogo</a> — mudar custa 1 Eco, pode ser feito a qualquer momento.</p>
     </section>
 
     <section>
@@ -103,9 +92,7 @@
         <strong>Medo:</strong> Um som que vem de dentro das paredes</p>
       </div>
 
-      <div class="callout tip">
-        <strong>Lembre-se:</strong> Você pode mudar qualquer coisa a qualquer momento. Se não gostar de um atributo, mude. Se não gostar de um background, mude. É seu jogo.
-      </div>
+
     </section>
 
     <section>
@@ -148,9 +135,7 @@
         <li><strong>Residência:</strong> Lugar secreto no Bairro dos Contrabandistas</li>
       </ul>
 
-      <div class="callout tip">
-        <strong>Dica:</strong> Os 3 já estão prontos — não precisa decidir nada agora. Quando chegar a hora deles entrarem na história (Capítulo 4 e 7), use as fichas que você já tem — ou recrie-os do zero, se quiser surpresa.
-      </div>
+
     </section>
 
     <section>
@@ -170,9 +155,7 @@
         <li><strong>O Farol Abandonado</strong> — Ninguém sabe por que foi desativado.</li>
       </ul>
 
-      <div class="callout">
-        <strong>🌱 A cidade vai crescer:</strong> Mais bairros e locais aparecerão conforme você avança — se você quiser. Você pode decidir que a cidade já é grande, ou que nunca cresce. É sua escolha.
-      </div>
+      <p>A cidade cresce conforme você avança — ou não, se você preferir. Novos bairros e locais aparecem quando a narrativa pedir (ou nunca, se você decidir assim).</p>
     </section>
 
     <section>
@@ -239,9 +222,7 @@
         <tr><td>O Evento Final</td><td>8</td><td>0/8</td></tr>
       </table>
 
-      <div class="callout tip">
-        <strong>Nota:</strong> Os Relógios de Romance entram sozinhos quando os NPCs romanceáveis chegarem — nenhuma decisão extra da sua parte. Como avançar Relógios: veja a <a href="rapido.html">Referência Rápida</a> para a Tabela Mestra — ou ignore Relógios completamente.
-      </div>
+      <p>Relógios de Romance entram automaticamente quando os NPCs romanceáveis chegarem. Para saber como avançar qualquer Relógio, veja a <a href="rapido.html">Referência Rápida</a>.</p>
     </section>
 
     <section>
@@ -271,17 +252,10 @@
     </footer>
   </div>
 
-  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+  <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
-  <script>
-    window.onscroll = function() {
-      const btn = document.querySelector('.back-to-top');
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btn.classList.add('visible');
-      } else {
-        btn.classList.remove('visible');
-      }
-    };
-  </script>
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
 </body>
 </html>

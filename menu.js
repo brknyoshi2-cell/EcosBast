@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
       label: '🧭 Jornada',
       items: [
         { label: '🚀 Quick Start (15 min)', url: 'quickstart.html' },
-        { label: '🎓 Tutorial — Primeiro Dia Guiado', url: 'tutorial.html' },
         { label: '🌍 Sessão 0 — Criação do Mundo', url: 'sessao0.html' },
         { label: '🌅 Jornada I — Primeiros Dias', url: 'jornada-iniciante.html' },
         { label: '🌿 Jornada II — Aprofundando e o Fim', url: 'jornada-avancada.html' },
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'Loop', url: 'sistema-loop.html' },
         { label: '⚔️ Aventureiros', url: 'sistema-aventureiros.html' },
         { label: '🎮 Modos de Jogo', url: 'sistema-modos.html' },
-        { label: '🎓 Tutorial', url: 'tutorial.html' },
         { label: '🪑 Decoração', url: 'sistema-decoracao.html' },
         { label: '🔨 Crafting', url: 'sistema-crafting.html' },
         { label: '🔍 Mistérios', url: 'sistema-misterios.html' },

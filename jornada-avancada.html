@@ -6,17 +6,14 @@
   <title>Ecos dos Bastidores — Jornada II: Aprofundando e o Fim</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="dark">
-  <nav class="top-nav">
-    <div class="top-nav-inner">
-      <h1>Ecos dos Bastidores</h1>
-      <div class="nav-links">
-        <a href="index.html">Início</a>
-      </div>
-    </div>
-  </nav>
+<body>
+  <div class="floating-controls no-print">
+  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
+</div>
 
-  <div class="breadcrumbs">
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+  <div class="breadcrumbs no-print">
     <a href="index.html">Início</a> > <a href="jornada-iniciante.html">Jornada do Jogador</a> > II — Aprofundando e o Fim
   </div>
 
@@ -31,14 +28,9 @@
       <h3>Como Usar Esta Página</h3>
       <p>Esta é a segunda parte da Jornada do Jogador. Ela é dividida em duas fases. A <strong>Fase 2 — Aprofundando</strong> (Capítulos 4–8) introduz sistemas mais complexos e a chegada dos NPCs romanceáveis. A <strong>Fase 3 — Rumo ao Final</strong> (Capítulos 9+) abre todos os mecanismos do jogo e te convida a customizar, desafiar, e preparar o final.</p>
 
-      <div class="callout">
-        <strong>🗺️ Onde você está:</strong>
-        <a href="sessao0.html">Sessão 0</a> (Criar o mundo) → <a href="jornada-iniciante.html">Jornada I</a> (Capítulos 1–3) → <strong>Jornada II</strong> (Capítulos 4+ · você está aqui) → <a href="finais.html">Finais</a> (Evento Final, Epílogo, New Game+)
-      </div>
+      <p class="callout"><a href="sessao0.html">Sessão 0</a> → <a href="jornada-iniciante.html">Jornada I</a> (Caps 1–3) → <strong>Jornada II</strong> (Caps 4+ · você está aqui) → <a href="finais.html">Finais</a></p>
 
-      <div class="callout tip">
-        <strong>Dica:</strong> Não pule direto para a Fase 3. As ações da Fase 2 constroem a base emocional e narrativa que torna o final significativo. Mas se você já se sente confortável, vá em frente — os Marcos ao fim de cada fase te ajudam a decidir.
-      </div>
+      <p>Não pule direto para a Fase 3 — as ações da Fase 2 constroem o peso emocional que torna o final significativo. Se já se sentir em casa, os Marcos ao fim de cada fase te dirão quando avançar.</p>
 
       <div class="callout rule">
         <strong>⚖️ Regra de Ouro:</strong> Se uma ação não te interessa, pule. Se uma ação te empolga, fique nela. Se uma ação te assusta, explore por quê. O jogo é seu.
@@ -50,7 +42,7 @@
       <p>Quando você já explorou as ações dos <a href="jornada-iniciante.html">Primeiros Dias</a> e quer aprofundar. Aqui entram Relógios, Tags, Crafting, Mistérios, Facções — e a chegada dos NPCs romanceáveis.</p>
 
       <h3>🎚️ O que Ligar Nesta Fase</h3>
-      <table class="compact">
+      <details class="tabela-colapsavel"><summary>ver tabela</summary><table class="compact">
         <tr><th>Sistema</th><th>Status</th><th>Onde ler</th></tr>
         <tr><td>Relógios (Tensão, Romance, Mistério)</td><td>✅ Ligar agora</td><td><a href="sistema-relogios.html">Relógios</a></td></tr>
         <tr><td>Tags narrativas</td><td>✅ Ligar agora</td><td><a href="sistema-tags.html">Tags</a></td></tr>
@@ -59,11 +51,11 @@
         <tr><td>Módulos da Oficina e Sinergias</td><td>🟡 Se quiser construir</td><td><a href="progressao-oficina.html">Oficina</a>, <a href="sinergias.html">Sinergias</a></td></tr>
         <tr><td>Crafting, Mistérios, Facções, Aventureiros</td><td>🟡 Ao seu gosto</td><td><a href="sistema-crafting.html">Crafting</a>, <a href="sistema-misterios.html">Mistérios</a>, <a href="sistema-faccoes.html">Facções</a>, <a href="sistema-aventureiros.html">Aventureiros</a></td></tr>
         <tr><td>Evento Final, Legado, Fusões, New Game+</td><td>⏸️ Ainda não</td><td>Entram na Fase 3, abaixo</td></tr>
-      </table>
+      </table></details>
 
       <div class="callout example">
         <strong>🎲 Role 1d6 — O Momento da Campanha:</strong>
-        <table>
+        <details class="tabela-colapsavel"><summary>ver opções</summary><table>
           <tr><th>d6</th><th>Momento</th></tr>
           <tr><td>1</td><td><strong>Capítulo 3</strong> — A cidade começa a te conhecer. O primeiro NPC romanceável está a caminho.</td></tr>
           <tr><td>2</td><td><strong>Capítulo 4</strong> — O primeiro NPC romanceável chega. Tudo muda um pouco.</td></tr>
@@ -71,13 +63,14 @@
           <tr><td>4</td><td><strong>Capítulo 6</strong> — A Guilda enfrenta um desafio. Você precisa decidir.</td></tr>
           <tr><td>5</td><td><strong>Capítulo 7</strong> — Os outros dois NPCs romanceáveis chegam. A casa está cheia.</td></tr>
           <tr><td>6</td><td><strong>Capítulo 8+</strong> — O fim se aproxima. O que você deixou para trás?</td></tr>
-        </table>
+        </table></details>
       </div>
 
       <h3>☀️ Ações — Manhã (escolha uma que ainda não fez)</h3>
 
       <div class="acao">
         <h4>☐ 1. Configurar Relógios de Tensão</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Os Relógios são a tensão que avança. Hoje, configure os primeiros. O que está prestes a acontecer?</p>
         <p><strong>Como executar:</strong> Escolha 2-3 Relógios de Tensão (veja <a href="sistema-relogios.html">Sistema: Relógios</a>). Defina os gatilhos de avanço.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-base.html">Moves de Base</a> — "Marcar Passagem do Tempo"</p>
@@ -93,10 +86,12 @@
             <tr><td>6</td><td><strong>Algo Pessoal</strong> — um medo seu está se manifestando</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 2. Receber uma Tag narrativa</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Tags são marcas da história. Hoje, ganhe uma. O que aconteceu com você?</p>
         <p><strong>Como executar:</strong> Descreva um evento marcante. Ganhe uma Tag que representa isso (veja <a href="sistema-tags.html">Sistema: Tags</a>).</p>
         <p><strong>Moves envolvidos:</strong> Qualquer move que resultou em consequência significativa</p>
@@ -112,10 +107,12 @@
             <tr><td>6</td><td><strong>Eco Antigo</strong> — algo do passado te encontrou</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 3. Começar um Crafting</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você quer criar algo. Hoje, comece. O que você faz?</p>
         <p><strong>Como executar:</strong> Escolha um projeto de Crafting (veja <a href="sistema-crafting.html">Sistema: Crafting</a>). Defina o que você quer criar, quais recursos precisa, quanto tempo vai levar.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-oficio.html">Moves de Ofício</a> — "Criar Algo Novo"</p>
@@ -131,10 +128,12 @@
             <tr><td>6</td><td><strong>Algo que você não deveria</strong> — e sabe disso</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 4. Investigar um Mistério</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Há algo que você não entende. Hoje, investigue. O que você descobre?</p>
         <p><strong>Como executar:</strong> Escolha um Mistério (tensão da cidade, conflito da Guilda, algo dos Bastidores). Use os moves de Investigação (veja <a href="sistema-misterios.html">Sistema: Mistérios</a>).</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-investigacao.html">Moves de Investigação</a> — "Investigar Mistério"</p>
@@ -150,10 +149,12 @@
             <tr><td>6</td><td><strong>Você mesmo(a)</strong> — algo sobre seu passado que você não lembra</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 5. Interagir com uma Facção</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A cidade tem facções. Hoje, interaja com uma. O que você descobre?</p>
         <p><strong>Como executar:</strong> Escolha uma Facção (ou crie uma — veja <a href="sistema-faccoes.html">Sistema: Facções</a>). Descreva a interação — o que você quer? O que eles querem?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-sociais.html">Moves Sociais</a> — "Negociar", "Conversar com Sinceridade"</p>
@@ -169,19 +170,23 @@
             <tr><td>6</td><td><strong>Os Anarquistas</strong> — querem derrubar a Guilda, liberar os artefatos</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 6. Desbloquear um Módulo da Oficina</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A Oficina pode crescer. Hoje, desbloqueie um módulo. O que você adiciona?</p>
         <p><strong>Como executar:</strong> Escolha um Módulo (veja <a href="progressao-oficina.html">Progressão: Oficina</a>). Pague o custo. Descreva o que muda nos Bastidores.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-oficio.html">Moves de Ofício</a> — "Expandir Espaço"</p>
         <p><strong>Interações:</strong> O módulo pode atrair NPCs, criar sinergias, mudar a dinâmica.</p>
         <p><strong>Tabela:</strong> Use a lista de módulos de <a href="progressao-oficina.html">Progressão: Oficina</a>.</p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 7. Avançar um Relógio de Romance</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Alguém está perto de você. Hoje, avance o Relógio. O que acontece?</p>
         <p><strong>Como executar:</strong> Escolha um NPC romanceável (ou o NPC de conexão). Descreva um momento íntimo. Avance o Relógio (veja <a href="progressao-relacionamentos.html">Progressão: Relacionamentos</a>).</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-amor.html">Moves de Amor</a> — "Compartilhar Momento", "Confessar Algo"</p>
@@ -197,10 +202,12 @@
             <tr><td>6</td><td>Vocês não falam — mas se entendem</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 8. A Chegada do Primeiro NPC Romanceável (Capítulo 4)</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>O primeiro NPC romanceável chega. Tudo muda. Quem é?</p>
 
         <div class="callout example">
@@ -219,12 +226,14 @@
           </table>
         </p>
         <p><strong>Nota:</strong> Use as tabelas de <a href="criacao-npcs.html">Criação: NPCs</a> para definir o NPC completo. Ele chega com um módulo desbloqueado.</p>
+      </details>
       </div>
 
       <h3>🌤️ Ações — Tarde (escolha uma que ainda não fez)</h3>
 
       <div class="acao">
         <h4>☐ 1. Resolver um Problema da Cidade</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A cidade tem problemas. Hoje, resolva um mais complexo. O que você faz?</p>
         <p><strong>Como executar:</strong> Escolha um problema (tensão da cidade, conflito de facções, algo pessoal). Use os moves de Investigação e Sociais.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-investigacao.html">Moves de Investigação</a>, <a href="moves-sociais.html">Moves Sociais</a></p>
@@ -240,28 +249,34 @@
             <tr><td>6</td><td><strong>Um bairro inteiro está em pânico</strong> — e você precisa acalmar</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 2. Criar uma Sinergia entre Módulos</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você tem módulos. Hoje, crie uma sinergia. O que acontece?</p>
         <p><strong>Como executar:</strong> Escolha dois módulos (veja <a href="sinergias.html">Sinergias</a>). Descreva como eles se combinam. Ganhe o bônus.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-oficio.html">Moves de Ofício</a> — "Combinar Conhecimentos"</p>
         <p><strong>Interações:</strong> A sinergia pode atrair NPCs, criar oportunidades, mudar a dinâmica.</p>
         <p><strong>Tabela:</strong> Use a lista de sinergias de <a href="sinergias.html">Sinergias</a>.</p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 3. Avançar a Reputação na Cidade</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A cidade te conhece. Hoje, avance sua reputação. O que você faz?</p>
         <p><strong>Como executar:</strong> Descreva uma ação que aumenta sua reputação (veja <a href="progressao-reputacao.html">Progressão: Reputação</a>). Avance os Ticks.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-sociais.html">Moves Sociais</a> — "Ajudar Alguém", "Construir Confiança"</p>
         <p><strong>Interações:</strong> Você pode ganhar benefícios, acesso a informações, convites.</p>
         <p><strong>Tabela:</strong> Use a tabela de <a href="progressao-reputacao.html">Progressão: Reputação</a>.</p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 4. Ter um Momento de Tensão com NPC</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Nem tudo é harmonia. Hoje, tenha um momento de tensão. O que acontece?</p>
         <p><strong>Como executar:</strong> Escolha um NPC (romanceável ou não). Descreva o conflito — o que vocês discutem? O que se quebra?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-amor.html">Moves de Amor</a> — "Quando o Amor Acaba" (se aplicável), <a href="moves-tensao.html">Moves de Tensão</a></p>
@@ -277,10 +292,12 @@
             <tr><td>6</td><td>Vocês não falam — e o silêncio dói</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 5. Explorar os Bastidores Profundamente</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Os Bastidores têm segredos. Hoje, explore um. O que você descobre?</p>
         <p><strong>Como executar:</strong> Escolha uma zona (Oficina, Armazém, Arquivo, Aposentos, Câmara Selada). Use os moves de Investigação (veja <a href="sistema-bastidores-exploracao.html">Sistema: Explorar Bastidores</a>).</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-investigacao.html">Moves de Investigação</a> — "Explorar Lugar"</p>
@@ -296,21 +313,25 @@
             <tr><td>6</td><td>Nada — mas a sensação de que algo observou</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 6. A Chegada dos Outros NPCs Romanceáveis (Capítulo 7)</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Os outros dois NPCs romanceáveis chegam. A casa está cheia. Quem são?</p>
         <p><strong>Como executar:</strong> Crie os outros dois NPCs (veja <a href="criacao-npcs.html">Criação: NPCs</a>). Descreva a chegada — como vocês se encontram? O que marca?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-sociais.html">Moves Sociais</a> — "Primeiro Encontro"</p>
         <p><strong>Interações:</strong> Os NPCs trazem módulos, histórias, tensões. Eles mudam os Bastidores.</p>
         <p><strong>Tabela:</strong> Use as tabelas de <a href="criacao-npcs.html">Criação: NPCs</a> para definir os NPCs completos.</p>
+      </details>
       </div>
 
       <h3>🌙 Ações — Noite (escolha uma que ainda não fez)</h3>
 
       <div class="acao">
         <h4>☐ 1. Escrever uma Epifania</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você teve uma percepção. Hoje, escreva. O que você descobre?</p>
         <p><strong>Como executar:</strong> Descreva a epifania (veja <a href="sistema-escrita-epifania.html">Sistema: Escrita</a>). Ganhe +1 Eco.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-base.html">Moves de Base</a> — "Escrever Reflexão"</p>
@@ -326,10 +347,12 @@
             <tr><td>6</td><td>O que você quer — e não admite</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 2. Avançar um Relógio de Mistério</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Há algo que você não entende. Hoje, avance o Relógio. O que você descobre?</p>
         <p><strong>Como executar:</strong> Escolha um Mistério. Descreva o que você faz. Avance o Relógio (veja <a href="sistema-misterios.html">Sistema: Mistérios</a>).</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-investigacao.html">Moves de Investigação</a> — "Investigar Mistério"</p>
@@ -345,10 +368,12 @@
             <tr><td>6</td><td><strong>A Verdade sobre Você</strong> — quem você realmente é</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 3. Ter um Momento com Todos os NPCs</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A casa está cheia. Hoje, tenha um momento com todos. O que acontece?</p>
         <p><strong>Como executar:</strong> Descreva um momento com todos os NPCs (romanceáveis e de conexão). O que vocês fazem? O que vocês não dizem?</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-sociais.html">Moves Sociais</a> — "Compartilhar Momento"</p>
@@ -364,29 +389,19 @@
             <tr><td>6</td><td>Vocês não falam — mas se entendem</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 4. Preparar o Evento Final</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>O fim se aproxima. Hoje, prepare-se. O que você faz?</p>
         <p><strong>Como executar:</strong> Role 1d10 para o Evento Final (veja <a href="sistema-evento-final.html">Sistema: Evento Final</a>). Defina os gatilhos de avanço.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-base.html">Moves de Base</a> — "Preparar para o Fim"</p>
         <p><strong>Interações:</strong> O Evento Final se aproxima. Você pode acelerar ou retardar.</p>
-        <p><strong>Tabela:</strong> Role 1d10 para o <strong>Evento Final</strong>:
-          <table>
-            <tr><th>d10</th><th>Evento</th></tr>
-            <tr><td>1</td><td><strong>A Guilda Fecha</strong> — o que você faz com o subsolo?</td></tr>
-            <tr><td>2</td><td><strong>O Mestre Desaparece</strong> — você assume?</td></tr>
-            <tr><td>3</td><td><strong>A Cidade em Crise</strong> — como você ajuda?</td></tr>
-            <tr><td>4</td><td><strong>O Artefato Desperta</strong> — você o destrói? Controla?</td></tr>
-            <tr><td>5</td><td><strong>Um NPC Parte</strong> — você vai com ele?</td></tr>
-            <tr><td>6</td><td><strong>O Segredo Vem à Tona</strong> — como você lida?</td></tr>
-            <tr><td>7</td><td><strong>A Cidade é Evacuada</strong> — você vai?</td></tr>
-            <tr><td>8</td><td><strong>Um NPC Morre</strong> — como você lida?</td></tr>
-            <tr><td>9</td><td><strong>Os Bastidores Mudam</strong> — como você se adapta?</td></tr>
-            <tr><td>10</td><td><strong>Você é Chamado(a) para Fora</strong> — você vai?</td></tr>
-          </table>
-        </p>
+        <p><strong>Tabela:</strong> o <strong>Evento Final (1d10)</strong> e seus gatilhos de avanço são escolhidos <strong>uma única vez</strong> e moram no arquivo do sistema — role lá e traga o resultado para cá.</p>
+        <p><a href="sistema-evento-final.html" class="callout example">📖 Rolar o Evento Final (1d10) e definir gatilhos →</a></p>
+      </details>
       </div>
     </section>
 
@@ -416,18 +431,18 @@
       <p>Quando você já viveu o Aprofundamento e quer abrir todos os mecanismos do jogo. Aqui entram Legado, New Game+, Fusões de Módulos, e os desafios "e se eu modificar isso".</p>
 
       <h3>🎚️ O que Ligar Nesta Fase</h3>
-      <table class="compact">
+      <details class="tabela-colapsavel"><summary>ver tabela</summary><table class="compact">
         <tr><th>Sistema</th><th>Status</th><th>Onde ler</th></tr>
         <tr><td>Evento Final</td><td>✅ Ligar agora</td><td><a href="sistema-evento-final.html">Evento Final</a></td></tr>
         <tr><td>Legado (5 pilares)</td><td>✅ Ligar agora</td><td><a href="sistema-legado.html">Legado</a></td></tr>
         <tr><td>Fusões de Módulos</td><td>🟡 Se tiver módulos avançados</td><td><a href="progressao-oficina.html">Oficina</a></td></tr>
         <tr><td>Finais, Epílogo e New Game+</td><td>✅ Ler antes do fim</td><td><a href="finais.html">Finais</a></td></tr>
         <tr><td>Customização total (desafios "e se…")</td><td>🟡 Para veteranos</td><td>Abaixo, nesta página</td></tr>
-      </table>
+      </table></details>
 
       <div class="callout example">
         <strong>🎲 Role 1d6 — O Momento Final:</strong>
-        <table>
+        <details class="tabela-colapsavel"><summary>ver opções</summary><table>
           <tr><th>d6</th><th>Momento</th></tr>
           <tr><td>1</td><td><strong>Capítulo 9</strong> — O Evento Final está próximo. O que você deixa para trás?</td></tr>
           <tr><td>2</td><td><strong>Capítulo 10</strong> — O Evento Final aconteceu. Como você lida?</td></tr>
@@ -435,31 +450,36 @@
           <tr><td>4</td><td><strong>New Game+</strong> — Você começa de novo, mas carrega o legado.</td></tr>
           <tr><td>5</td><td><strong>Customização Total</strong> — Você quer modificar o jogo. O que muda?</td></tr>
           <tr><td>6</td><td><strong>O Fim</strong> — Você terminou. O que você aprendeu?</td></tr>
-        </table>
+        </table></details>
       </div>
 
       <h3>🌳 Ações da Fase Final (escolha uma que ainda não fez)</h3>
 
       <div class="acao">
         <h4>☐ 1. Calcular seu Legado</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>A campanha está acabando. Hoje, calcule seu Legado. O que você deixou?</p>
         <p><strong>Como executar:</strong> Some os 5 pilares (veja <a href="sistema-legado.html">Sistema: Legado</a>). Descreva o que cada pilar representa.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-base.html">Moves de Base</a> — "Refletir sobre o Legado"</p>
         <p><strong>Interações:</strong> O Legado define o que você carrega para o New Game+.</p>
         <p><strong>Tabela:</strong> Use os 5 pilares de <a href="sistema-legado.html">Sistema: Legado</a>.</p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 2. Realizar uma Fusão de Módulos</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você tem módulos avançados. Hoje, funda dois. O que acontece?</p>
         <p><strong>Como executar:</strong> Escolha dois módulos avançados (veja <a href="progressao-oficina.html">Progressão: Oficina</a>). Pague o custo. Descreva a fusão.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-oficio.html">Moves de Ofício</a> — "Fundir Conhecimentos"</p>
         <p><strong>Interações:</strong> A fusão pode criar algo único, mudar os Bastidores, atrair atenção.</p>
         <p><strong>Tabela:</strong> Use a lista de fusões de <a href="progressao-oficina.html">Progressão: Oficina</a>.</p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 3. Iniciar um New Game+</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você terminou. Hoje, comece de novo. O que você carrega?</p>
         <p><strong>Como executar:</strong> Defina o que você carrega do Legado (veja <a href="finais.html">Finais</a>). Comece uma nova campanha.</p>
         <p><strong>Moves envolvidos:</strong> <a href="moves-base.html">Moves de Base</a> — "Começar de Novo"</p>
@@ -475,10 +495,12 @@
             <tr><td>6</td><td><strong>Nada</strong> — você começa do zero, mas sabe que já esteve aqui</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 4. Desafio: E se eu modificar a magia?</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você quer mudar como a magia funciona. Hoje, experimente. O que muda?</p>
         <p><strong>Como executar:</strong> Escolha um aspecto da magia (origem, limite, acesso). Mude. Descreva as consequências.</p>
         <p><strong>Moves envolvidos:</strong> Nenhum — é customização pura</p>
@@ -494,10 +516,12 @@
             <tr><td>6</td><td><strong>A magia está em guerra</strong> — facções lutam pelo controle</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 5. Desafio: E se eu modificar os NPCs?</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você quer mudar como os NPCs funcionam. Hoje, experimente. O que muda?</p>
         <p><strong>Como executar:</strong> Escolha um aspecto dos NPCs (chegada, romance, morte). Mude. Descreva as consequências.</p>
         <p><strong>Moves envolvidos:</strong> Nenhum — é customização pura</p>
@@ -513,10 +537,12 @@
             <tr><td>6</td><td><strong>NPCs podem não ser reais</strong> — e você pode nunca saber</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 6. Desafio: E se eu modificar os Bastidores?</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você quer mudar como os Bastidores funcionam. Hoje, experimente. O que muda?</p>
         <p><strong>Como executar:</strong> Escolha um aspecto dos Bastidores (estrutura, Câmara Selada, Presença). Mude. Descreva as consequências.</p>
         <p><strong>Moves envolvidos:</strong> Nenhum — é customização pura</p>
@@ -532,10 +558,12 @@
             <tr><td>6</td><td><strong>Os Bastidores estão desaparecendo</strong> — zona por zona, e só você percebe</td></tr>
           </table>
         </p>
+      </details>
       </div>
 
       <div class="acao">
         <h4>☐ 7. Desafio: E se eu modificar o tempo?</h4>
+        <details class="acao-corpo"><summary>Como jogar</summary>
         <p>Você quer mudar como o tempo funciona no jogo. Hoje, experimente. O que muda?</p>
         <p><strong>Como executar:</strong> Escolha um aspecto do tempo (Atos, capítulos, estações, o Loop). Mude. Descreva as consequências.</p>
         <p><strong>Moves envolvidos:</strong> Nenhum — é customização pura</p>
@@ -551,6 +579,7 @@
             <tr><td>6</td><td><strong>Sem tempo</strong> — abandone Atos e capítulos; jogue por cenas, como um romance</td></tr>
           </table>
         </p>
+      </details>
       </div>
     </section>
 
@@ -587,17 +616,10 @@
     </footer>
   </div>
 
-  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+  <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
-  <script>
-    window.onscroll = function() {
-      const btn = document.querySelector('.back-to-top');
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btn.classList.add('visible');
-      } else {
-        btn.classList.remove('visible');
-      }
-    };
-  </script>
+<script src="menu.js"></script>
+<script src="theme.js"></script>
+<script src="backtotop.js"></script>
 </body>
 </html>
