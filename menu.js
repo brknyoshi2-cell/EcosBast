@@ -5,6 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const menuData = [
     {
+      label: '🧭 Jornada',
+      items: [
+        { label: '🚀 Quick Start (15 min)', url: 'quickstart.html' },
+        { label: '🎓 Tutorial — Primeiro Dia Guiado', url: 'tutorial.html' },
+        { label: '🌍 Sessão 0 — Criação do Mundo', url: 'sessao0.html' },
+        { label: '🌅 Jornada I — Primeiros Dias', url: 'jornada-iniciante.html' },
+        { label: '🌿 Jornada II — Aprofundando e o Fim', url: 'jornada-avancada.html' },
+        { label: '🌅 Finais', url: 'finais.html' }
+      ]
+    },
+    {
       label: '🎭 Criação',
       items: [
         { label: 'Protagonista', url: 'criacao-protagonista.html' },

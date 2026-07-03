@@ -1,172 +1,486 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Ficha do Mundo</title>
-<style>
-.sheet {
-  background: #fefcf7;
-  border: 2px solid var(--accent);
-  padding: 2rem;
-  margin: 2rem 0;
-  box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
-  page-break-inside: avoid;
-  border-radius: 6px;
-}
-[data-theme="dark"] .sheet {
-  background: #2a2a2a;
-}
-.sheet h3 {
-  text-align: center;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-.field {
-  display: flex;
-  align-items: baseline;
-  margin: 0.5rem 0;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-.field-label {
-  font-weight: bold;
-  color: var(--accent);
-  min-width: 140px;
-  font-variant: small-caps;
-}
-.field-line {
-  flex: 1;
-  border-bottom: 1px solid var(--ink-soft);
-  min-height: 1.5rem;
-  min-width: 150px;
-}
-.print-btn {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--parchment);
-  padding: 0.5rem 1.2rem;
-  border-radius: 4px;
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
-  font-size: 0.95rem;
-  margin: 0.5rem 0;
-  transition: background 0.2s;
-}
-.print-btn:hover {
-  background: var(--gold);
-}
-@media print {
-  .top-nav, .floating-controls, .back-to-top, .no-print, .print-btn { display: none !important; }
-  body { background: white !important; }
-  .sheet { box-shadow: none !important; border: 1px solid #ccc !important; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecos dos Bastidores — Ficha do Mundo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="dark">
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <h1>Ecos dos Bastidores</h1>
+      <div class="nav-links">
+        <a href="index.html">Início</a>
+      </div>
+    </div>
+  </nav>
 
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
+  <div class="breadcrumbs">
+    <a href="index.html">Início</a> > <a href="index.html#ferramentas">Ferramentas</a> > Ficha do Mundo
+  </div>
 
-<nav class="top-nav no-print" id="nav-container"></nav>
+  <div class="container">
+    <header>
+      <h2>📋 Ficha do Mundo</h2>
+      <p class="callout"><em>"Antes de restaurar relíquias, você precisa saber que mundo as forjou."</em></p>
+      <button class="print-btn" onclick="window.print()">🖨 Imprimir</button>
+    </header>
 
-<div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="ficha-mundo.html">Ferramentas</a> &gt; <strong>Ficha do Mundo</strong>
-</div>
+    <section>
+      <h3>🌍 O Mundo</h3>
+      
+      <h4>A Natureza da Magia</h4>
+      <p><strong>Como aparece no dia a dia:</strong> _________________________________</p>
+      <p><strong>Como as pessoas comuns veem:</strong> _________________________________</p>
+      <p><strong>Onde vem?</strong> _________________________________</p>
+      <p><strong>Há limites?</strong> _________________________________</p>
+      <p><strong>Quem pode usá-la?</strong> _________________________________</p>
 
-<div class="container">
+      <h4>O Conflito do Mundo</h4>
+      <p><strong>Conflito central:</strong> _________________________________</p>
+      <p><strong>Última grande guerra:</strong> _________________________________</p>
+      <p><strong>Quem são os "heróis"?</strong> _________________________________</p>
+      <p><strong>O que os comuns pensam sobre aventureiros?</strong> _________________________________</p>
 
-<div class="sheet" id="sheet-mundo">
-<h3>📋 Ficha do Mundo</h3>
-<button class="print-btn no-print" onclick="window.print()">🖨 Imprimir</button>
+      <h4>O Tom do Mundo</h4>
+      <p><strong>Tom geral:</strong> _________________________________</p>
+      <p><strong>O que te empolga nesse mundo?</strong> _________________________________</p>
+      <p><strong>O que te assusta?</strong> _________________________________</p>
+    </section>
 
-<h4>A Guilda</h4>
-<div class="field"><span class="field-label">Estrutura:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Mestre:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Regra Inquebrável:</span><span class="field-line"></span></div>
+    <section>
+      <h3>👥 Presenças Culturais (3-5)</h3>
+      
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Como aparecem no cotidiano</th>
+          <th>Relação com a magia</th>
+          <th>Relação com outras presenças</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
 
-<h4>Os Bastidores</h4>
-<div class="field"><span class="field-label">Presença:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Câmara Selada:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Fase Atual:</span><span class="field-line"></span> (1-Abandonado / 2-Funcional / 3-Acolhedor / 4-Lendário)</div>
-<div class="field"><span class="field-label">Detalhe Oficina:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Detalhe Armazém:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Detalhe Arquivo:</span><span class="field-line"></span></div>
+      <p><strong>Qual presença é mais comum?</strong> _________________________________</p>
+      <p><strong>Há presença rara ou em extinção?</strong> _________________________________</p>
+      <p><strong>Como se misturam?</strong> _________________________________</p>
+    </section>
 
-<h4>A Cidade</h4>
-<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Caráter:</span><span class="field-line"></span></div>
+    <section>
+      <h3>🏙️ A Cidade</h3>
+      
+      <p><strong>Nome:</strong> _________________________________</p>
+      <p><strong>Caráter:</strong> _________________________________</p>
+      <p><strong>Cheiro característico:</strong> _________________________________</p>
+      <p><strong>O que forasteiros reparam primeiro?</strong> _________________________________</p>
+      <p><strong>Economia principal:</strong> _________________________________</p>
+      <p><strong>Governo:</strong> _________________________________</p>
 
-<h4>Bairros</h4>
-<table>
-<tr><th>Nome</th><th>Atmosfera</th><th>Locais Notáveis</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-</table>
+      <h4>Presenças na Cidade</h4>
+      <p><strong>Qual presença domina?</strong> _________________________________</p>
+      <p><strong>Há bairros segregados?</strong> _________________________________</p>
+      <p><strong>Há tensão visível?</strong> _________________________________</p>
+      <p><strong>Como forasteiros são tratados?</strong> _________________________________</p>
+      <p><strong>Dinâmica entre presenças:</strong> _________________________________</p>
 
-<h4>⚔️ Aventureiros da Guilda</h4>
-<table>
-<tr><th>Nome</th><th>Tipo</th><th>Especialidade</th><th>Tags</th></tr>
-<tr><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td></tr>
-</table>
+      <h4>Bairros (role 1d3 para quantidade, 1d10 para tipo)</h4>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo (d10)</th>
+          <th>Atmosfera (d10)</th>
+          <th>Locais Notáveis</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </section>
 
-<h4>Módulos Desbloqueados</h4>
-<table>
-<tr><th>Módulo</th><th>NPC</th><th>Custo Pago</th><th>Desbloqueado?</th></tr>
-<tr><td>Sala de Armas</td><td></td><td></td><td>☐</td></tr>
-<tr><td>Biblioteca Arcana</td><td></td><td></td><td>☐</td></tr>
-<tr><td>Arquivo dos Espíritos</td><td></td><td></td><td>☐</td></tr>
-</table>
+    <section>
+      <h3>🏛️ A Guilda</h3>
+      
+      <p><strong>Nome:</strong> _________________________________</p>
+      <p><strong>Estrutura (d6):</strong> _________________________________</p>
+      <p><strong>Trabalhadores iniciais (d2-1):</strong> _________________________________</p>
+      
+      <h4>O Mestre da Guilda (d10)</h4>
+      <p><strong>Nome:</strong> _________________________________</p>
+      <p><strong>Tipo:</strong> _________________________________</p>
+      <p><strong>Traço marcante:</strong> _________________________________</p>
 
-<h4>✨ Sinergias Desbloqueadas</h4>
-<p><em>Marque as sinergias que você já desbloqueou (requer 2 módulos).</em></p>
-<table>
-<tr><th>Combinação</th><th>Sinergia Ativa</th><th>Sinergia Emergente</th><th>Desbloqueada?</th></tr>
-<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Pesquisa de Campo"</td><td>"Arqueologia Bélica"</td><td>☐</td></tr>
-<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Comunhão Guerreira"</td><td>"Exorcismo Prático"</td><td>☐</td></tr>
-<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Leitura de Almas"</td><td>"Cartografia das Almas"</td><td>☐</td></tr>
-</table>
+      <h4>A Lenda de Fundação</h4>
+      <p><strong>Origem real (d6):</strong> _________________________________</p>
+      <p><strong>O que os comuns acham que aconteceu:</strong> _________________________________</p>
+      <p><strong>O que realmente aconteceu:</strong> _________________________________</p>
 
-<h4>Fusões de Módulos</h4>
-<div class="field"><span class="field-label">Fusão Ativa:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Bônus:</span><span class="field-line"></span></div>
+      <h4>🔒 A Regra Inquebrável</h4>
+      <p>_______________________________</p>
+    </section>
 
-<h4>🌱 Progressão da Guilda e Cidade</h4>
-<div class="field"><span class="field-label">Fase Atual:</span><span class="field-line"></span> (🌱 Inicial / 🌿 Crescimento / 🌳 Estabelecida / 🏛️ Lendária)</div>
-<div class="field"><span class="field-label">Trabalhadores:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Aventureiros Regulares:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">NPCs Romanceáveis Chegados:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Bairros da Cidade:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Próximo Marco:</span><span class="field-line"></span></div>
-</div>
+    <section>
+      <h3>🏚️ Os Bastidores</h3>
+      
+      <h4>As 5 Zonas (role 1d6 para cada)</h4>
+      <table>
+        <tr>
+          <th>Zona</th>
+          <th>Detalhe (d6)</th>
+        </tr>
+        <tr>
+          <td><strong>Oficina</strong></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>Armazém</strong></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>Arquivo</strong></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>Aposentos</strong></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>Câmara Selada</strong></td>
+          <td></td>
+        </tr>
+      </table>
 
-<div class="callout tip">
-  <strong>Próximo passo:</strong> Vá para <a href="ficha-rastro.html">Ficha de Rastreamento →</a> para a ficha única com todos os Relógios.
-</div>
+      <h4>Presença nos Bastidores (d6)</h4>
+      <p>_______________________________</p>
 
-<footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Ferramentas — Ficha do Mundo</p>
-  <p><a href="ficha-npcs.html">← Ficha NPCs</a> | <a href="ficha-rastro.html">Próxima: Ficha Rastro →</a></p>
-</footer>
+      <h4>Seus Aposentos (role 2d6 ou escolha 2)</h4>
+      <p>_______________________________</p>
 
-</div>
+      <p><strong>Som mais comum:</strong> _________________________________</p>
+      <p><strong>Detalhe vivo?</strong> _________________________________</p>
+      <p><strong>Zona que mais evita:</strong> _________________________________</p>
+    </section>
 
-<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+    <section>
+      <h3>🧍 O Protagonista</h3>
+      
+      <p><strong>Nome:</strong> _________________________________</p>
+      <p><strong>Aparência marcante:</strong> _________________________________</p>
+      <p><strong>Por que é Restaurador(a)?</strong> _________________________________</p>
 
-<script src="menu.js"></script>
-<script src="theme.js"></script>
-<script src="backtotop.js"></script>
+      <h4>Capacidades Inatas</h4>
+      <table class="compact">
+        <tr>
+          <th>MÃOS</th>
+          <th>OLHOS</th>
+          <th>CORAÇÃO</th>
+          <th>MENTE</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+      <h4>Background (d10)</h4>
+      <p>_______________________________</p>
+
+      <h4>Relíquia Pessoal (d6)</h4>
+      <p>_______________________________</p>
+
+      <h4>Medo nos Bastidores (d6)</h4>
+      <p>_______________________________</p>
+
+      <h4>Hábito que te Mantém São (d6)</h4>
+      <p>_______________________________</p>
+
+      <h4>Lugar Favorito na Cidade (d6)</h4>
+      <p>_______________________________</p>
+    </section>
+
+    <section>
+      <h3>🤝 NPC de Conexão</h3>
+      
+      <p><strong>Nome:</strong> _________________________________</p>
+      <p><strong>Tipo de conexão (d6):</strong> _________________________________</p>
+      <p><strong>Profissão/presença (d6):</strong> _________________________________</p>
+      <p><strong>Aparência marcante:</strong> _________________________________</p>
+      <p><strong>O que vocês fazem juntos?</strong> _________________________________</p>
+      <p><strong>O que essa pessoa sabe sobre você?</strong> _________________________________</p>
+
+      <div class="callout warning">
+        <strong>Importante:</strong> Este NPC <strong>NÃO é romanceável</strong>. É um amigo, mentor, ou figura familiar que te ancora na cidade.
+      </div>
+    </section>
+
+    <section>
+      <h3>⚔️ Aventureiros da Guilda</h3>
+      
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Especialidade</th>
+          <th>Tags</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h3>✨ Módulos Desbloqueados</h3>
+      
+      <table>
+        <tr>
+          <th>Módulo</th>
+          <th>NPC</th>
+          <th>Custo Pago</th>
+          <th>Desbloqueado?</th>
+        </tr>
+        <tr>
+          <td>Sala de Armas</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Biblioteca Arcana</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Arquivo dos Espíritos</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Oficina de Falsificação</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Altar Discreto</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Canto das Histórias</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Jardim Interno</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Laboratório de Magia</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Estufa Subterrânea</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Sala dos Mapas</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Forja Silenciosa</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Arquivo das Memórias</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Observatório Oculto</td>
+          <td></td>
+          <td></td>
+          <td>☐</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h3>🔗 Sinergias Desbloqueadas</h3>
+      
+      <table>
+        <tr>
+          <th>Combinação</th>
+          <th>Sinergia Ativa</th>
+          <th>Sinergia Emergente</th>
+          <th>Desbloqueada?</th>
+        </tr>
+        <tr>
+          <td>Sala de Armas + Biblioteca Arcana</td>
+          <td>"Pesquisa de Campo"</td>
+          <td>"Arqueologia Bélica"</td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Sala de Armas + Arquivo dos Espíritos</td>
+          <td>"Comunhão Guerreira"</td>
+          <td>"Exorcismo Prático"</td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Biblioteca Arcana + Arquivo dos Espíritos</td>
+          <td>"Leitura de Almas"</td>
+          <td>"Cartografia das Almas"</td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Oficina de Falsificação + Forja Silenciosa</td>
+          <td>"Arte Perfeita"</td>
+          <td>"Ilusão Tangível"</td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Altar Discreto + Arquivo das Memórias</td>
+          <td>"Rituais Esquecidos"</td>
+          <td>"Memória Sagrada"</td>
+          <td>☐</td>
+        </tr>
+        <tr>
+          <td>Jardim Interno + Estufa Subterrânea</td>
+          <td>"Flora Arcana"</td>
+          <td>"Jardim dos Sonhos"</td>
+          <td>☐</td>
+        </tr>
+      </table>
+
+      <h4>Fusão de Módulos</h4>
+      <p><strong>Fusão Ativa:</strong> _________________________________</p>
+      <p><strong>Bônus:</strong> _________________________________</p>
+    </section>
+
+    <section>
+      <h3>🌱 Progressão da Guilda e Cidade</h3>
+      
+      <p><strong>Fase Atual:</strong> ☐ 🌱 Inicial / ☐ 🌿 Crescimento / ☐ 🌳 Estabelecida / ☐ 🏛️ Lendária</p>
+      <p><strong>Trabalhadores:</strong> _________________________________</p>
+      <p><strong>Aventureiros Regulares:</strong> _________________________________</p>
+      <p><strong>NPCs Romanceáveis Chegados:</strong> _________________________________</p>
+      <p><strong>Bairros da Cidade:</strong> _________________________________</p>
+      <p><strong>Próximo Marco:</strong> _________________________________</p>
+    </section>
+
+    <footer>
+      <p>❦ Ecos dos Bastidores ❦</p>
+      <p><em>Um jogo sobre o que resta depois que os heróis partem.</em></p>
+      <p>Próxima página: <a href="ficha-rastro.html">Ficha de Rastreamento →</a></p>
+    </footer>
+  </div>
+
+  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+  <script>
+    window.onscroll = function() {
+      const btn = document.querySelector('.back-to-top');
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    };
+  </script>
 </body>
 </html>

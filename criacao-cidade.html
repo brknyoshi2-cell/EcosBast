@@ -1,200 +1,555 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Criação: Cidade</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecos dos Bastidores — Criação: Cidade</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="dark">
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <h1>Ecos dos Bastidores</h1>
+      <div class="nav-links">
+        <a href="index.html">Início</a>
+      </div>
+    </div>
+  </nav>
 
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
+  <div class="breadcrumbs">
+    <a href="index.html">Início</a> > <a href="criacao-protagonista.html">Criação</a> > Cidade
+  </div>
 
-<nav class="top-nav no-print" id="nav-container"></nav>
+  <div class="container">
+    <header>
+      <h2>Onde as Histórias Acontecem — A Cidade</h2>
+      <p class="callout">A cidade é o palco externo dos Bastidores. É onde você encontra seus NPCs, onde os eventos acontecem, e onde a vida pulsa fora do subsolo.</p>
+    </header>
 
-<div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="criacao-protagonista.html">Criação</a> &gt; <strong>Cidade</strong>
-</div>
+    <section>
+      <div class="callout rule">
+        <h3>⚖️ Nota sobre Crescimento</h3>
+        <p>A cidade que você está criando agora é o núcleo inicial. Ela vai se expandir com o tempo — novos bairros, locais e moradores vão aparecer conforme a história avança. Veja <a href="sistema-progressao-mundo.html">Progressão do Mundo</a> para detalhes.</p>
+      </div>
 
-<div class="container">
+      <div class="callout tip">
+        <h3>🌱 Visão de Futuro</h3>
+        <p>O que você está criando agora é a visão do que a cidade pode se tornar. No início do jogo, a cidade é modesta — apenas 1-2 bairros e alguns locais. Conforme você avança, a cidade cresce. Não se preocupe se parecer pequena agora — ela vai crescer.</p>
+      </div>
 
-<div class="callout rule">
-  <strong>⚖️ Nota sobre Crescimento:</strong>
-  <p>A cidade que você está criando agora é <strong>o núcleo inicial</strong>. Ela vai se expandir com o tempo — novos bairros, locais e moradores vão aparecer conforme a história avança. Veja <a href="sistema-progressao-mundo.html">Progressão do Mundo</a> para detalhes.</p>
-</div>
+      <p><strong>Dica:</strong> A cidade não precisa ser enorme. Um punhado de bairros bem definidos é mais útil do que uma metrópole genérica.</p>
+    </section>
 
-<div class="callout tip">
-  <strong>🌱 Visão de Futuro:</strong>
-  <p>O que você está criando agora é a <strong>visão do que a cidade pode se tornar</strong>. No início do jogo, a cidade é modesta — apenas 1-2 bairros e alguns locais. Conforme você avança, a cidade cresce. <strong>Não se preocupe se parecer pequena agora — ela vai crescer.</strong></p>
-</div>
+    <section>
+      <h3>As Seis Cidades Possíveis (role 1d6)</h3>
+      <table>
+        <tr>
+          <th>d6</th>
+          <th>Cidade</th>
+          <th>Caráter</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><strong>Vaelstrom</strong></td>
+          <td>Cidade-porto nebulosa, cheia de marinheiros e contrabandistas</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Ossun</strong></td>
+          <td>Cidade construída sobre ruínas de um império caído</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Thys</strong></td>
+          <td>Cidade universitária, torre sobre torre, perpétuo crepúsculo</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Marrath</strong></td>
+          <td>Cidade-mercado, onde tudo tem preço — até memórias</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>Kelfen</strong></td>
+          <td>Cidade-floresta, árvores gigantes servem de edifícios</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Dusthaven</strong></td>
+          <td>Cidade-deserto, enterrada até os telhados em areia mágica</td>
+        </tr>
+      </table>
+    </section>
 
-<h2>Onde as Histórias Acontecem — A Cidade</h2>
-<p>A cidade é o palco externo dos Bastidores. É onde você encontra seus NPCs, onde os eventos acontecem, e onde a vida pulsa fora do subsolo.</p>
+    <section>
+      <h3>Bairros da Cidade</h3>
+      <p>A cidade começa pequena. <strong>Role 1d3</strong> para saber quantos bairros existem no início:</p>
+      
+      <table>
+        <tr>
+          <th>1d3</th>
+          <th>Número de Bairros</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1 bairro</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2 bairros</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>3 bairros</td>
+        </tr>
+      </table>
 
-<div class="callout tip">
-  <strong>Dica:</strong> A cidade não precisa ser enorme. Um punhado de bairros bem definidos é mais útil do que uma metrópole genérica.
-</div>
+      <h4>Para cada bairro, role 1d10 na tabela abaixo:</h4>
+      <table>
+        <tr>
+          <th>d10</th>
+          <th>Tipo de Bairro</th>
+        </tr>
+        <tr>
+          <td>1-3</td>
+          <td><strong>Bairro Único</strong> — role 1d3 na tabela específica da sua cidade (veja abaixo)</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Distrito Comercial</strong> — lojas, mercadores, movimento constante</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>Bairro Residencial</strong> — casas, famílias, vida tranquila</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Quartel dos Artesãos</strong> — oficinas, ferreiros, tecelões, fumaceiras</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><strong>Bairro Antigo</strong> — construções velhas, ruas estreitas, história</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><strong>Distrito dos Nobres</strong> — mansões, jardins murados, portões fechados</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td><strong>Bairro Popular</strong> — vielas, tavernas, gente simples, vida dura</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td><strong>Distrito Sagrado</strong> — templos, silêncio, incenso, peregrinos</td>
+        </tr>
+      </table>
 
-<div class="section-divider">❦ ❦ ❦</div>
+      <h4>Atmosfera do bairro (role 1d10):</h4>
+      <table>
+        <tr>
+          <th>d10</th>
+          <th>Atmosfera</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Vibrante e barulhento</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Silencioso e melancólico</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Perigoso e tenso</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Acolhedor e familiar</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Místico e estranho</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Abandonado e em ruínas</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Rico e elegante</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Pobre e apertado</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Religioso e solene</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Misterioso e fechado</td>
+        </tr>
+      </table>
+    </section>
 
-<h3>As Seis Cidades Possíveis (role 1d6)</h3>
+    <section>
+      <h3>Bairros Únicos por Cidade</h3>
+      <p>Se você rolou 1-3 na tabela de bairros, role 1d3 para escolher um bairro único da sua cidade:</p>
 
-<table>
-<tr><th>d6</th><th>Cidade</th><th>Caráter</th></tr>
-<tr><td>1</td><td><strong>Vaelstrom</strong></td><td>Cidade-porto nebulosa, cheia de marinheiros e contrabandistas</td></tr>
-<tr><td>2</td><td><strong>Ossun</strong></td><td>Cidade construída sobre ruínas de um império caído</td></tr>
-<tr><td>3</td><td><strong>Thys</strong></td><td>Cidade universitária, torre sobre torre, perpétuo crepúsculo</td></tr>
-<tr><td>4</td><td><strong>Marrath</strong></td><td>Cidade-mercado, onde tudo tem preço — até memórias</td></tr>
-<tr><td>5</td><td><strong>Kelfen</strong></td><td>Cidade-floresta, árvores gigantes servem de edifícios</td></tr>
-<tr><td>6</td><td><strong>Dusthaven</strong></td><td>Cidade-deserto, enterrada até os telhados em areia mágica</td></tr>
-</table>
+      <h4>🌊 Vaelstrom (Cidade-Porto)</h4>
+      <table>
+        <tr>
+          <th>1d3</th>
+          <th>Bairro Único</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><strong>Porto Velho</strong> — docas antigas, armazéns úmidos, cheiro de sal e peixe</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Bairro dos Contrabandistas</strong> — vielas escuras, portas que só abrem com senha, mercadorias proibidas</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Alto da Bruma</strong> — colina sempre coberta de neblina, mansões dos capitães do mar</td>
+        </tr>
+      </table>
 
-<div class="section-divider">❦ ❦ ❦</div>
+      <h4>🏛️ Ossun (Cidade sobre Ruínas)</h4>
+      <table>
+        <tr>
+          <th>1d3</th>
+          <th>Bairro Único</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><strong>Cidade Alta</strong> — construída sobre os topos das ruínas, vista para o vale</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Cidade Baixa</strong> — nas fundações antigas, túneis, mercados subterrâneos</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>O Ossário</strong> — bairro construído dentro de um cemitério antigo, ossos integram as paredes</td>
+        </tr>
+      </table>
 
-<h3>Bairros da Cidade</h3>
+      <h4>📚 Thys (Cidade Universitária)</h4>
+      <table>
+        <tr>
+          <th>1d3</th>
+          <th>Bairro Único</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><strong>O Campus</strong> — torres, pátios, estudantes perpétuos, livros em cada esquina</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Bairro dos Professores</strong> — casas elegantes, jardins bem cuidados, silêncio intelectual</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>O Beco dos Livros</strong> — livrarias empilhadas, cheiro de papel velho, segredos entre páginas</td>
+        </tr>
+      </table>
 
-<p>A cidade começa pequena. <strong>Role 1d3</strong> para saber quantos bairros existem no início (1-3, com 1-2 sendo o mais comum):</p>
+      <h4>💰 Marrath (Cidade-Mercado)</h4>
+      <table>
+        <tr>
+          <th>1d3</th>
+          <th>Bairro Único</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><strong>O Grande Bazar</strong> — labirinto de tendas, especiarias, tapetes, negociações constantes</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Bairro dos Mercadores</strong> — mansões douradas, cofres, ostentação discreta</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>O Bairro dos Pobres</strong> — onde vivem os que não podem pagar, mas ainda tentam</td>
+        </tr>
+      </table>
 
-<table>
-<tr><td>1</td><td>1 bairro (role 1d6 para atmosfera)</td></tr>
-<tr><td>2-3</td><td>2 bairros</td></tr>
-<tr><td>4-5</td><td>3 bairros</td></tr>
-<tr><td>6</td><td>4 bairros (raro — a cidade já está crescendo)</td></tr>
-</table>
+      <h4>🌳 Kelfen (Cidade-Floresta)</h4>
+      <table>
+        <tr>
+          <th>1d3</th>
+          <th>Bairro Único</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><strong>As Copas</strong> — casas nas árvores, pontes suspensas, vista para o infinito verde</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>O Tronco</strong> — bairro no nível do solo, raízes gigantes, mercados entre árvores</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>O Coração Verde</strong> — clareira sagrada no centro, árvore-mãe, rituais antigos</td>
+        </tr>
+      </table>
 
-<p><strong>Atmosfera do bairro (role 1d10):</strong></p>
-<table>
-<tr><th>d10</th><th>Atmosfera</th></tr>
-<tr><td>1</td><td>Vibrante e barulhento</td></tr>
-<tr><td>2</td><td>Silencioso e melancólico</td></tr>
-<tr><td>3</td><td>Perigoso e tenso</td></tr>
-<tr><td>4</td><td>Acolhedor e familiar</td></tr>
-<tr><td>5</td><td>Místico e estranho</td></tr>
-<tr><td>6</td><td>Abandonado e em ruínas</td></tr>
-<tr><td>7</td><td>Rico e elegante</td></tr>
-<tr><td>8</td><td>Pobre e apertado</td></tr>
-<tr><td>9</td><td>Religioso e solene</td></tr>
-<tr><td>10</td><td>Misterioso e fechado</td></tr>
-</table>
+      <h4>🏜️ Dusthaven (Cidade-Deserto)</h4>
+      <table>
+        <tr>
+          <th>1d3</th>
+          <th>Bairro Único</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><strong>A Superfície</strong> — telhados emergindo da areia, mercados ao ar livre, sol implacável</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>O Subsolo Habitado</strong> — túneis frescos, mercados subterrâneos, vida longe do calor</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>O Deserto Morto</strong> — ruínas enterradas, areia movediça, segredos antigos</td>
+        </tr>
+      </table>
+    </section>
 
-<div class="section-divider">❦ ❦ ❦</div>
+    <section>
+      <h3>Locais Notáveis (role 1d3+1 para cada bairro no início)</h3>
+      
+      <h4>Tipo (role 1d10):</h4>
+      <table>
+        <tr>
+          <th>d10</th>
+          <th>Tipo</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Taverna/Estalagem</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Mercado/Bazar</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Templo/Santuário</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Biblioteca/Livraria</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Oficina/Ateliê</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Jardim/Parque</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Praça/Largo</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Beco/Vielas</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Mansão/Residência</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Lugar Estranho</td>
+        </tr>
+      </table>
 
-<h3>Locais Notáveis (role 1d3+1 para cada bairro no início)</h3>
+      <h4>Detalhe do local (role 1d6):</h4>
+      <table>
+        <tr>
+          <td>1</td>
+          <td>Dono marcante — uma personalidade inesquecível</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Em decadência — já foi melhor, mas ainda está de pé</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Mais novo do que deveria — como se tivesse surgido do nada</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Reputação estranha — as pessoas sussurram sobre esse lugar</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Mais caro/barato do que deveria — algo não está certo</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Fechado — mas às vezes aberto. Você nunca sabe.</td>
+        </tr>
+      </table>
+    </section>
 
-<p><strong>Tipo (role 1d10):</strong></p>
-<table>
-<tr><th>d10</th><th>Tipo</th></tr>
-<tr><td>1</td><td>Taverna/Estalagem</td></tr>
-<tr><td>2</td><td>Mercado/Bazar</td></tr>
-<tr><td>3</td><td>Templo/Santuário</td></tr>
-<tr><td>4</td><td>Biblioteca/Livraria</td></tr>
-<tr><td>5</td><td>Oficina/Ateliê</td></tr>
-<tr><td>6</td><td>Jardim/Parque</td></tr>
-<tr><td>7</td><td>Praça/Largo</td></tr>
-<tr><td>8</td><td>Beco/Vielas</td></tr>
-<tr><td>9</td><td>Mansão/Residência</td></tr>
-<tr><td>10</td><td>Lugar Estranho</td></tr>
-</table>
+    <section>
+      <h3>Locais Únicos por Cidade</h3>
+      <p>Se quiser adicionar um local único da sua cidade específica:</p>
 
-<p><strong>Detalhe do local (role 1d6):</strong></p>
-<table>
-<tr><td>1</td><td>Dono marcante — uma personalidade inesquecível</td></tr>
-<tr><td>2</td><td>Em decadência — já foi melhor, mas ainda está de pé</td></tr>
-<tr><td>3</td><td>Mais novo do que deveria — como se tivesse surgido do nada</td></tr>
-<tr><td>4</td><td>Reputação estranha — as pessoas sussurram sobre esse lugar</td></tr>
-<tr><td>5</td><td>Mais caro/barato do que deveria — algo não está certo</td></tr>
-<tr><td>6</td><td>Fechado — mas às vezes aberto. Você nunca sabe.</td></tr>
-</table>
+      <h4>🌊 Vaelstrom</h4>
+      <ul>
+        <li><strong>A Taverna do Kraken</strong> — marinheiros contam histórias impossíveis</li>
+        <li><strong>O Mercado Flutuante</strong> — barcos que vendem mercadorias exóticas</li>
+        <li><strong>O Farol Abandonado</strong> — ninguém sabe por que foi desativado</li>
+      </ul>
 
-<div class="section-divider">❦ ❦ ❦</div>
+      <h4>🏛️ Ossun</h4>
+      <ul>
+        <li><strong>A Catedral Invertida</strong> — construída para baixo, nas ruínas</li>
+        <li><strong>O Mercado dos Eco</strong> — vozes do passado ainda negociam aqui</li>
+        <li><strong>A Biblioteca Submersa</strong> — livros que sobreviveram à catástrofe</li>
+      </ul>
 
-<h3>Detalhes Específicos por Cidade</h3>
+      <h4>📚 Thys</h4>
+      <ul>
+        <li><strong>A Torre do Relógio Quebrado</strong> — parou há séculos, ninguém ousa consertar</li>
+        <li><strong>O Café dos Filósofos</strong> — debates eternos, café infinito</li>
+        <li><strong>A Livraria Proibida</strong> — livros que não deveriam ser lidos</li>
+      </ul>
 
-<h4>🌊 Vaelstrom (Cidade-Porto)</h4>
-<ul>
-  <li><strong>Bairros:</strong> Porto Velho | Bairro dos Contrabandistas | Alto da Bruma</li>
-  <li><strong>Locais únicos:</strong> A Taverna do Kraken | O Mercado Flutuante | O Farol Abandonado</li>
-</ul>
+      <h4>💰 Marrath</h4>
+      <ul>
+        <li><strong>A Casa de Leilões</strong> — onde memórias são vendidas ao melhor lance</li>
+        <li><strong>O Mercado Negro</strong> — só funciona à noite, só com convite</li>
+        <li><strong>A Praça das Moedas</strong> — fonte onde se jogam moedas e fazem pedidos</li>
+      </ul>
 
-<h4>🏛️ Ossun (Cidade sobre Ruínas)</h4>
-<ul>
-  <li><strong>Bairros:</strong> Cidade Alta | Cidade Baixa | O Ossário</li>
-  <li><strong>Locais únicos:</strong> A Catedral Invertida | O Mercado dos Eco | A Biblioteca Submersa</li>
-</ul>
+      <h4>🌳 Kelfen</h4>
+      <ul>
+        <li><strong>A Árvore-Mãe</strong> — a maior árvore, sagrada, centro de rituais</li>
+        <li><strong>O Mercado das Folhas</strong> — produtos da floresta, ervas, frutos estranhos</li>
+        <li><strong>O Jardim Suspenso</strong> — cultivado nas copas, acesso por escadas vivas</li>
+      </ul>
 
-<h4>📚 Thys (Cidade Universitária)</h4>
-<ul>
-  <li><strong>Bairros:</strong> O Campus | Bairro dos Professores | O Beco dos Livros</li>
-  <li><strong>Locais únicos:</strong> A Torre do Relógio Quebrado | O Café dos Filósofos | A Livraria Proibida</li>
-</ul>
+      <h4>🏜️ Dusthaven</h4>
+      <ul>
+        <li><strong>O Poço Eterno</strong> — água que nunca seca, no centro do deserto</li>
+        <li><strong>A Biblioteca de Areia</strong> — livros enterrados, conhecimento perdido</li>
+        <li><strong>O Mercado das Sombras</strong> — funciona apenas quando o sol se põe</li>
+      </ul>
+    </section>
 
-<h4>💰 Marrath (Cidade-Mercado)</h4>
-<ul>
-  <li><strong>Bairros:</strong> O Grande Bazar | Bairro dos Mercadores | O Bairro dos Pobres</li>
-  <li><strong>Locais únicos:</strong> A Casa de Leilões | O Mercado Negro | A Praça das Moedas</li>
-</ul>
+    <section>
+      <h3>Eventos Aleatórios da Cidade (role 1d6 no início de cada capítulo)</h3>
+      <p>No início de cada capítulo, role 1d6 para dar vida à cidade:</p>
+      
+      <table>
+        <tr>
+          <th>d6</th>
+          <th>Evento</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><strong>Festival de primavera</strong> — a cidade está colorida e barulhenta.</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Chegada de caravana</strong> — mercadores exóticos trazem novidades.</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Tempestade mágica</strong> — o céu brilha em cores estranhas.</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Visita de nobre</strong> — a cidade está em polvorosa.</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>Mercado negro noturno</strong> — algo raro está sendo vendido.</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Aniversário da Guilda</strong> — todos estão convidados.</td>
+        </tr>
+      </table>
+    </section>
 
-<h4>🌳 Kelfen (Cidade-Floresta)</h4>
-<ul>
-  <li><strong>Bairros:</strong> As Copas | O Tronco | O Coração Verde</li>
-  <li><strong>Locais únicos:</strong> A Árvore-Mãe | O Mercado das Folhas | O Jardim Suspenso</li>
-</ul>
+    <section>
+      <h3>Reputação na Cidade</h3>
+      <p>Como a cidade vê o protagonista? Avança conforme você interage com NPCs da cidade, ajuda comerciantes, ou resolve problemas urbanos.</p>
+      
+      <table>
+        <tr>
+          <th>Nível</th>
+          <th>Nome</th>
+          <th>Benefícios</th>
+          <th>Ticks</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Desconhecido</td>
+          <td>Nenhum</td>
+          <td>Início</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Conhecido</td>
+          <td>+1 em rolagens sociais com comerciantes; descontos pequenos</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Respeitado</td>
+          <td>Acesso a informações privilegiadas; convites para eventos</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Influente</td>
+          <td>+2 em rolagens sociais na cidade; favores de NPCs poderosos</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Lenda Urbana</td>
+          <td>Reconhecimento em toda a cidade; acesso a lugares secretos</td>
+          <td>20</td>
+        </tr>
+      </table>
+    </section>
 
-<h4>🏜️ Dusthaven (Cidade-Deserto)</h4>
-<ul>
-  <li><strong>Bairros:</strong> A Superfície | O Subsolo Habitado | O Deserto Morto</li>
-  <li><strong>Locais únicos:</strong> O Poço Eterno | A Biblioteca de Areia | O Mercado das Sombras</li>
-</ul>
+    <section>
+      <div class="callout celestial">
+        <h3>Próximo passo</h3>
+        <p>Agora que você construiu a cidade, vá para <a href="criacao-racas.html">Criação: Raças →</a> para dar vida à diversidade do mundo.</p>
+      </div>
+    </section>
 
-<div class="section-divider">❦ ❦ ❦</div>
+    <footer>
+      <p>❦ Ecos dos Bastidores ❦</p>
+      <p><em>Um jogo sobre o que resta depois que os heróis partem.</em></p>
+      <p>Próxima página: <a href="criacao-racas.html">Criação: Raças →</a></p>
+    </footer>
+  </div>
 
-<h3>Eventos Aleatórios da Cidade (role 1d6 no início de cada capítulo)</h3>
+  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
 
-<p>No início de cada capítulo, role 1d6 para dar vida à cidade:</p>
-
-<table>
-<tr><th>d6</th><th>Evento</th></tr>
-<tr><td>1</td><td>Festival de primavera — a cidade está colorida e barulhenta.</td></tr>
-<tr><td>2</td><td>Chegada de caravana — mercadores exóticos trazem novidades.</td></tr>
-<tr><td>3</td><td>Tempestade mágica — o céu brilha em cores estranhas.</td></tr>
-<tr><td>4</td><td>Visita de nobre — a cidade está em polvorosa.</td></tr>
-<tr><td>5</td><td>Mercado negro noturno — algo raro está sendo vendido.</td></tr>
-<tr><td>6</td><td>Aniversário da Guilda — todos estão convidados.</td></tr>
-</table>
-
-<div class="section-divider">❦ ❦ ❦</div>
-
-<h3>Reputação na Cidade</h3>
-
-<p>Como a cidade vê o protagonista? Avança conforme você interage com NPCs da cidade, ajuda comerciantes, ou resolve problemas urbanos.</p>
-
-<table>
-<tr><th>Nível</th><th>Nome</th><th>Benefícios</th><th>Ticks</th></tr>
-<tr><td>1</td><td><strong>Desconhecido</strong></td><td>Nenhum</td><td>Início</td></tr>
-<tr><td>2</td><td><strong>Conhecido</strong></td><td>+1 em rolagens sociais com comerciantes; descontos pequenos</td><td>5</td></tr>
-<tr><td>3</td><td><strong>Respeitado</strong></td><td>Acesso a informações privilegiadas; convites para eventos</td><td>10</td></tr>
-<tr><td>4</td><td><strong>Influente</strong></td><td>+2 em rolagens sociais na cidade; favores de NPCs poderosos</td><td>15</td></tr>
-<tr><td>5</td><td><strong>Lenda Urbana</strong></td><td>Reconhecimento em toda a cidade; acesso a lugares secretos</td><td>20</td></tr>
-</table>
-
-<div class="callout tip">
-  <strong>Próximo passo:</strong> Agora que você construiu a cidade, vá para <a href="criacao-racas.html">Criação: Raças →</a> para dar vida à diversidade do mundo.
-</div>
-
-<footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Criação de Personagem — Cidade</p>
-  <p><a href="criacao-bastidores.html">← Bastidores</a> | <a href="criacao-racas.html">Próxima: Raças →</a></p>
-</footer>
-
-</div>
-
-<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
-
-<script src="menu.js"></script>
-<script src="theme.js"></script>
-<script src="backtotop.js"></script>
+  <script>
+    window.onscroll = function() {
+      const btn = document.querySelector('.back-to-top');
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    };
+  </script>
 </body>
 </html>

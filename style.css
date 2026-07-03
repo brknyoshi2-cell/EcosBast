@@ -984,3 +984,75 @@ header.hero .flavor {
   content: "📖 ";
   font-style: normal;
 }
+/* ============================================================
+   JORNADA DO JOGADOR — Ações, Marcos e Fases
+   ============================================================ */
+.acao {
+  border: 1px solid var(--accent-light);
+  border-left: 4px solid var(--accent);
+  background: var(--parchment-dark);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
+}
+.acao h4 {
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+.acao p {
+  margin: 0.4rem 0;
+}
+.acao table {
+  margin: 0.6rem 0 0.2rem 0;
+}
+
+.fase-badge {
+  display: inline-block;
+  background: var(--parchment-dark);
+  border: 2px solid var(--gold);
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  font-weight: bold;
+  color: var(--accent);
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+.marco-lista {
+  list-style: none;
+  padding-left: 0;
+}
+.marco-lista li {
+  padding: 0.45rem 0.6rem;
+  margin: 0.35rem 0;
+  border: 1px dashed var(--gold);
+  border-radius: 4px;
+  background: var(--parchment);
+}
+.marco-lista li::before {
+  content: "☐ ";
+  color: var(--gold);
+  font-weight: bold;
+}
+
+.jornada-mapa {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+.jornada-mapa .etapa {
+  border: 1px solid var(--accent-light);
+  border-radius: 6px;
+  padding: 0.8rem;
+  background: var(--parchment-dark);
+  text-align: center;
+}
+.jornada-mapa .etapa strong {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.jornada-mapa .etapa small {
+  color: var(--ink-soft);
+}
