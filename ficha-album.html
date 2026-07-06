@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Retalhos da Contracena — Núcleo: Álbum de Nomes Verdadeiros</title>
+<style>
+.sheet {
+  background: #fefcf7;
+  border: 2px solid var(--accent);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
+  border-radius: 6px;
+}
+.sheet h3 {
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+.print-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin: 0.5rem 0 1rem;
+  transition: background 0.2s;
+}
+.print-btn:hover { background: var(--gold); }
+
+.ficha-controles {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5rem 0 1rem;
+}
+.save-btn {
+  display: inline-block;
+  background: var(--success);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: filter 0.2s;
+}
+.save-btn:hover { filter: brightness(1.1); }
+.ficha-status {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* Cabeçalho do Canto */
+.canto-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 1.6rem 0 0.2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--accent-light);
+}
+.canto-titulo {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--accent);
+  font-variant: small-caps;
+}
+.canto-subtitulo {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* Página do Álbum */
+.pagina-album {
+  border: 1px solid var(--parchment-dark);
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  margin: 0.7rem 0;
+  background: var(--parchment);
+  page-break-inside: avoid;
+}
+.pagina-num {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 0.4rem;
+}
+.pagina-campo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0.35rem 0;
+}
+.pagina-label {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-variant: small-caps;
+  font-weight: bold;
+  min-width: 130px;
+  flex-shrink: 0;
+}
+.pagina-linha {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.3rem;
+  min-width: 100px;
+}
+.pagina-eco {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+}
+.pagina-eco-label {
+  color: var(--gold);
+  font-variant: small-caps;
+  font-weight: bold;
+  min-width: 130px;
+  flex-shrink: 0;
+}
+.pagina-eco-linha {
+  flex: 1;
+  border-bottom: 1px dotted var(--gold);
+  min-height: 1.2rem;
+}
+.pagina-album input[type="text"],
+.nome-si-mesmo input[type="text"] {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 100%;
+}
+.pagina-linha:is(input) { border-bottom: 1px solid var(--ink-soft); }
+.pagina-eco-linha:is(input) { border-bottom: 1px dotted var(--gold); }
+.pagina-album input[type="text"]:focus,
+.nome-si-mesmo input[type="text"]:focus {
+  outline: none;
+  border-bottom-color: var(--gold);
+}
+
+/* Resumo final */
+.album-total {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: var(--parchment-dark);
+  border-radius: 6px;
+  border-left: 4px solid var(--gold);
+}
+.album-total h4 {
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+  font-variant: small-caps;
+}
+.total-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px dotted var(--ink-soft);
+  gap: 0.6rem;
+}
+.total-linha:last-child { border-bottom: none; }
+.total-input {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-soft);
+  text-align: right;
+  min-width: 120px;
+  max-width: 200px;
+  padding: 0;
+}
+.total-input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--gold);
+}
+
+.nome-si-mesmo {
+  margin-top: 1.4rem;
+  padding: 1rem 1.2rem;
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  background: rgba(184, 134, 11, 0.05);
+}
+.nome-si-mesmo h4 {
+  color: var(--gold);
+  font-variant: small-caps;
+  margin-bottom: 0.5rem;
+}
+
+@media print {
+  .top-nav, .floating-controls, .back-to-top, .no-print, .print-btn, .ficha-controles { display: none !important; }
+  body { background: white !important; }
+  .sheet { box-shadow: none !important; border: 1px solid #ccc !important; }
+  .pagina-album { page-break-inside: avoid; }
+  .pagina-album input[type="text"], .nome-si-mesmo input[type="text"], .total-input { border-bottom-color: #999 !important; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>Álbum de Nomes Verdadeiros</strong>
+</div>
+
+<div class="container">
+
+<div class="callout tip no-print">
+  <strong>Como usar esta ficha:</strong> Preencha uma página por Nome Verdadeiro descoberto. Cada página tem três campos — o Nome, como foi descoberto, e a palavra-eco (opcional). Logo após A Lareira, há também um Resumo de Rota de Romance opcional, pra guardar o que ficou de um relacionamento completo. No final da campanha, conte o total de páginas para calcular o nível do Que Fica. → <a href="sistema-legado.html">Sistema: O Que Fica</a>
+</div>
+
+<div class="sheet" id="sheet-album">
+<h3>📖 Álbum de Nomes Verdadeiros</h3>
+<div class="ficha-controles no-print">
+  <button class="save-btn" onclick="salvarFicha()">💾 Salvar</button>
+  <button class="print-btn" onclick="window.print()">🖨 Imprimir (preenchida)</button>
+  <button class="print-btn" onclick="location.href='fichas-impressao.html#print-album'">🖨 Imprimir em Branco</button>
+  <span class="ficha-status" id="ficha-status"></span>
+</div>
+
+<div class="canto-header">
+  <span class="canto-titulo">🔥 A Lareira</span>
+  <span class="canto-subtitulo">— Nomes de NPCs (revelados ao completar as 5 Facetas)</span>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 1</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="lareira1Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">NPC:</span><input type="text" class="pagina-linha" data-field="lareira1NPC"></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><input type="text" class="pagina-linha" data-field="lareira1Descoberto"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="lareira1Eco"></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 2</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="lareira2Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">NPC:</span><input type="text" class="pagina-linha" data-field="lareira2NPC"></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><input type="text" class="pagina-linha" data-field="lareira2Descoberto"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="lareira2Eco"></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 3</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="lareira3Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">NPC:</span><input type="text" class="pagina-linha" data-field="lareira3NPC"></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><input type="text" class="pagina-linha" data-field="lareira3Descoberto"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="lareira3Eco"></div>
+</div>
+
+<div class="canto-header">
+  <span class="canto-titulo">💕 Resumo de Rota de Romance</span>
+  <span class="canto-subtitulo">— opcional, preencha ao completar uma Rota (Fio 10/10)</span>
+</div>
+
+<div class="pagina-album" style="border-left: 3px solid var(--romance);">
+  <div class="pagina-num">Rota Completa</div>
+  <div class="pagina-campo"><span class="pagina-label">NPC:</span><input type="text" class="pagina-linha" data-field="romanceNPC"></div>
+  <div class="pagina-campo"><span class="pagina-label">Fio Final:</span><input type="text" class="pagina-linha" data-field="romanceFioFinal"></div>
+  <div class="pagina-campo"><span class="pagina-label">Marcas da Rota:</span><input type="text" class="pagina-linha" data-field="romanceMarcas"></div>
+  <div class="pagina-campo"><span class="pagina-label">Final Escolhido:</span><input type="text" class="pagina-linha" data-field="romanceFinal"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Uma frase que resume tudo:</span><input type="text" class="pagina-eco-linha" data-field="romanceFrase"></div>
+</div>
+
+<div class="canto-header">
+  <span class="canto-titulo">🪟 A Janela</span>
+  <span class="canto-subtitulo">— Nomes de Lugares (locais da cidade e do mundo)</span>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 1</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="janela1Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">Lugar:</span><input type="text" class="pagina-linha" data-field="janela1Lugar"></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><input type="text" class="pagina-linha" data-field="janela1Descoberto"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="janela1Eco"></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 2</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="janela2Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">Lugar:</span><input type="text" class="pagina-linha" data-field="janela2Lugar"></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><input type="text" class="pagina-linha" data-field="janela2Descoberto"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="janela2Eco"></div>
+</div>
+
+<div class="canto-header">
+  <span class="canto-titulo">📚 A Estante</span>
+  <span class="canto-subtitulo">— Nomes de Artefatos (revelados na Fase Nomear)</span>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 1</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="estante1Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">Artefato:</span><input type="text" class="pagina-linha" data-field="estante1Artefato"></div>
+  <div class="pagina-campo"><span class="pagina-label">Propriedade Única:</span><input type="text" class="pagina-linha" data-field="estante1Propriedade"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="estante1Eco"></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 2</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="estante2Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">Artefato:</span><input type="text" class="pagina-linha" data-field="estante2Artefato"></div>
+  <div class="pagina-campo"><span class="pagina-label">Propriedade Única:</span><input type="text" class="pagina-linha" data-field="estante2Propriedade"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="estante2Eco"></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 3</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="estante3Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">Artefato:</span><input type="text" class="pagina-linha" data-field="estante3Artefato"></div>
+  <div class="pagina-campo"><span class="pagina-label">Propriedade Única:</span><input type="text" class="pagina-linha" data-field="estante3Propriedade"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="estante3Eco"></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 4</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="estante4Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">Artefato:</span><input type="text" class="pagina-linha" data-field="estante4Artefato"></div>
+  <div class="pagina-campo"><span class="pagina-label">Propriedade Única:</span><input type="text" class="pagina-linha" data-field="estante4Propriedade"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="estante4Eco"></div>
+</div>
+
+<div class="canto-header">
+  <span class="canto-titulo">🚪 A Soleira da Porta</span>
+  <span class="canto-subtitulo">— Nomes de Comunidades (grupos que você formou ou nomeou)</span>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 1</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="soleira1Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">Comunidade:</span><input type="text" class="pagina-linha" data-field="soleira1Comunidade"></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><input type="text" class="pagina-linha" data-field="soleira1Descoberto"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="soleira1Eco"></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 2</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="soleira2Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">Comunidade:</span><input type="text" class="pagina-linha" data-field="soleira2Comunidade"></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><input type="text" class="pagina-linha" data-field="soleira2Descoberto"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="soleira2Eco"></div>
+</div>
+
+<div class="canto-header">
+  <span class="canto-titulo">🪣 O Porão</span>
+  <span class="canto-subtitulo">— Nomes de Criações (Moldagem significativa, Revelação na escrita, ou conjunto completo do Ninho)</span>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 1</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="porao1Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">Via (Moldagem / Escrita / Ninho):</span><input type="text" class="pagina-linha" data-field="porao1Via"></div>
+  <div class="pagina-campo"><span class="pagina-label">O que foi criado:</span><input type="text" class="pagina-linha" data-field="porao1Criado"></div>
+  <div class="pagina-campo"><span class="pagina-label">O que se tornou:</span><input type="text" class="pagina-linha" data-field="porao1Tornou"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="porao1Eco"></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 2</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><input type="text" class="pagina-linha" data-field="porao2Nome"></div>
+  <div class="pagina-campo"><span class="pagina-label">Via (Moldagem / Escrita / Ninho):</span><input type="text" class="pagina-linha" data-field="porao2Via"></div>
+  <div class="pagina-campo"><span class="pagina-label">O que foi criado:</span><input type="text" class="pagina-linha" data-field="porao2Criado"></div>
+  <div class="pagina-campo"><span class="pagina-label">O que se tornou:</span><input type="text" class="pagina-linha" data-field="porao2Tornou"></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><input type="text" class="pagina-eco-linha" data-field="porao2Eco"></div>
+</div>
+
+<div class="album-total">
+  <h4>📊 Total de Páginas — O Que Fica</h4>
+  <div class="total-linha"><span>🔥 A Lareira (NPCs)</span><input type="text" class="total-input" data-field="totalLareira" placeholder="_____ páginas"></div>
+  <div class="total-linha"><span>🪟 A Janela (Lugares)</span><input type="text" class="total-input" data-field="totalJanela" placeholder="_____ páginas"></div>
+  <div class="total-linha"><span>📚 A Estante (Artefatos)</span><input type="text" class="total-input" data-field="totalEstante" placeholder="_____ páginas"></div>
+  <div class="total-linha"><span>🚪 A Soleira da Porta (Comunidades)</span><input type="text" class="total-input" data-field="totalSoleira" placeholder="_____ páginas"></div>
+  <div class="total-linha"><span>🪣 O Porão (Criações)</span><input type="text" class="total-input" data-field="totalPorao" placeholder="_____ páginas"></div>
+  <div class="total-linha" style="font-weight:bold; border-top: 2px solid var(--gold); padding-top:0.3rem; margin-top:0.2rem;"><span>Total</span><input type="text" class="total-input" data-field="totalGeral" placeholder="_____ páginas"></div>
+  <div class="total-linha"><span>Nível do Que Fica</span><input type="text" class="total-input" data-field="nivelQueFica" placeholder="_____________________"></div>
+</div>
+
+<div class="nome-si-mesmo">
+  <h4>✦ O Nome de Si Mesmo</h4>
+  <p style="font-size:0.85rem; color:var(--ink-soft); margin-bottom:0.8rem;"><em>Declarado no Entardecer (Fio 8/8). Não o nome que seus pais deram — o que a jornada revelou. Eleva o nível do Que Fica em +1.</em></p>
+  <div class="pagina-campo"><span class="pagina-label">O Nome:</span><input type="text" class="pagina-linha" data-field="nomeSiMesmo"></div>
+  <div class="pagina-campo" style="margin-top:0.4rem;"><span class="pagina-label">Declarado no Capítulo:</span><input type="text" class="pagina-linha" data-field="nomeSiMesmoCapitulo"></div>
+</div>
+
+</div>
+
+<div class="callout tip no-print">
+  <strong>Precisa de mais páginas?</strong> Imprima esta ficha quantas vezes precisar — não há limite canônico por Canto, nem para o Resumo de Rota de Romance (um por NPC com quem você completar uma rota). → <a href="sistema-legado.html">Sistema: O Que Fica</a>
+</div>
+
+<footer>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Ferramentas — Álbum de Nomes Verdadeiros</p>
+  <p><a href="ficha-rastro.html">← Ficha de Rastros</a> | <a href="finais.html">Próxima: Finais →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="backtotop.js"></script>
+<script src="dado.js"></script>
+<script src="fichas-storage.js"></script>
+<script>
+function salvarFicha() {
+  var sheet = document.getElementById('sheet-album');
+  FichasStorage.saveFixed('album', sheet);
+  var status = document.getElementById('ficha-status');
+  status.textContent = 'Salvo às ' + new Date().toLocaleTimeString();
+}
+
+(function () {
+  var sheet = document.getElementById('sheet-album');
+  if (!FichasStorage.isBlankPrint()) {
+    FichasStorage.loadFixed('album', sheet);
+  }
+})();
+</script>
+</body>
+</html>

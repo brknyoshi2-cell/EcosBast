@@ -4,143 +4,271 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Moves: Ofício</title>
+<title>Retalhos da Contracena — Curadoria: Gestos</title>
 <style>
-.move {
+.nome-verdadeiro {
   background: var(--parchment-dark);
-  border-left: 4px solid var(--gold);
-  padding: 1rem 1.2rem;
-  margin: 1rem 0;
-  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  padding: 1.4rem 1.6rem;
+  margin: 1.5rem 0 2rem;
+  box-shadow: 0 2px 8px rgba(43, 29, 14, 0.15);
 }
-.move h4 {
+.nome-verdadeiro h3 {
   margin-top: 0;
-  font-size: 1.2rem;
   color: var(--accent);
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
 }
-.move .trigger {
-  font-style: italic;
-  color: var(--ink-soft);
-  margin-bottom: 0.5rem;
+.nome-verdadeiro .nv-opcional {
+  display: inline-block;
+  background: var(--ink-soft);
+  color: var(--parchment);
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  padding: 0.1rem 0.6rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  opacity: 0.75;
 }
-.move .attribute {
+.nv-fase {
+  margin: 1.1rem 0 0.4rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.05);
+  border-left: 4px solid var(--ink-soft);
+}
+.nv-fase.fase-ouvir {
+  border-left-color: var(--success);
+}
+.nv-fase.fase-moldar {
+  border-left-color: var(--gold);
+}
+.nv-fase.fase-nomear {
+  border-left-color: var(--accent);
+}
+.nv-fase h5 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.nv-fase p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+.nv-fase .nv-instrumento {
   display: inline-block;
   background: var(--accent);
   color: var(--parchment);
-  padding: 0.15rem 0.7rem;
+  padding: 0.1rem 0.55rem;
   border-radius: 3px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-variant: small-caps;
-  margin-bottom: 0.8rem;
+  margin-right: 0.3rem;
 }
-.result {
-  margin: 0.4rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid transparent;
+.nv-resultado {
+  margin-top: 1.2rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--ink-soft);
 }
-.result.success {
-  border-left-color: var(--success);
+.nv-resultado p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
 }
-.result.partial {
-  border-left-color: var(--gold);
-}
-.result.failure {
-  border-left-color: var(--danger);
-}
-.result strong {
-  color: var(--accent);
-}
-.choice {
-  background: rgba(184, 134, 11, 0.08);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  margin: 0.2rem 0;
+.nv-nota {
+  margin-top: 1rem;
   font-style: italic;
-}
-.choice strong {
-  color: var(--gold);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--ink-soft);
+  opacity: 0.8;
 }
 </style>
 </head>
 <body>
 
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
-
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="moves-oficio.html">Moves</a> &gt; <strong>Ofício</strong>
+  <a href="index.html">Início</a> &gt; <a href="pilar-curadoria.html">Curadoria</a> &gt; <a href="pilar-curadoria-gestos.html">Gestos</a> &gt; <strong>Gestos de Curadoria</strong>
 </div>
 
 <div class="container">
 
-<h2>O Ofício do Restaurador — Moves de Trabalho</h2>
-<p>Estes são os moves que definem o trabalho diário do protagonista nos Bastidores. São ações físicas e práticas — o que você <em>faz</em> com as mãos e os olhos.</p>
+<h2>A Curadoria <em>(análogo a: Crafting / Perícia de Ofício)</em> do Restaurador — Gestos de Trabalho</h2>
+<p>Estes são os gestos que definem o trabalho diário do jogador na Contracena. São ações físicas e práticas — o que você <em>faz</em> com as mãos e os olhos.</p>
+
+<div class="callout rule">
+  <strong>⚖️ Lembrete da Regra de Ouro:</strong> quando um artefato resiste e o resultado cai em Cacos, isso não é fracasso — é o material contando outra história. Aceite com estilo e ganhe +1 Retalho. Ver <a href="sistema-resolucao.html">A Regra de Ouro</a>.
+</div>
+
+<details class="cartilha">
+<summary>📋 Índice da Curadoria</summary>
+<table>
+<tr><th>Gesto</th><th>Instrumento</th><th>Trigger</th></tr>
+<tr><td><a href="#restaurar-uma-reliquia">Restaurar uma Relíquia</a></td><td>AGULHA</td><td>Trabalha fisicamente para limpar, consertar ou reativar um artefato.</td></tr>
+<tr><td><a href="#entregar-o-trabalho">Entregar o Trabalho</a></td><td>PENA ou BRASA</td><td>Entrega ao cliente um artefato já restaurado.</td></tr>
+<tr><td><a href="#catalogar-e-arquivar">Catalogar e Arquivar</a></td><td>PENA</td><td>Registra um artefato ou atualiza o inventário.</td></tr>
+<tr><td><a href="#limpar-a-contracena">Limpar a Contracena</a></td><td>AGULHA</td><td>Varre, organiza ou conserta algo na oficina.</td></tr>
+<tr><td><a href="#estudar-um-artefato">Estudar um Artefato</a></td><td>LENTE ou PENA</td><td>Examina um artefato de perto para entendê-lo.</td></tr>
+<tr><td><a href="#decifrar-um-enigma-ou-simbolo">Decifrar um Enigma ou Símbolo</a></td><td>PENA</td><td>Tenta entender inscrição, código, mapa ou símbolo.</td></tr>
+<tr><td><a href="#perceber-algo-estranho-na-contracena">Perceber Algo Estranho na Contracena</a></td><td>LENTE</td><td>Nota algo fora do lugar durante outra ação.</td></tr>
+</table>
+</details>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<div class="move">
+<div class="nome-verdadeiro" id="nome-verdadeiro">
+  <h3>O Nome Verdadeiro <em>(análogo a: Identidade Oculta / Lore Check)</em> <span class="nv-opcional">Camada Opcional</span></h3>
+  <p>Todo artefato antigo carrega uma história antes de carregar uma função. Um reparo comum devolve o uso; um reparo profundo devolve a <em>alma</em>. O Nome Verdadeiro é a prática de ouvir o artefato antes de consertá-lo — e, ao final, nomeá-lo pelo que ele realmente é.</p>
+  <p>Esta camada é inteiramente opcional. O gesto <strong>Restaurar uma Relíquia</strong> continua funcionando normalmente sem ela. O Nome Verdadeiro só é buscado quando o jogador decide que este artefato merece mais do que um reparo.</p>
+
+  <div class="nv-fase fase-ouvir">
+    <h5>Fase 1 — Ouvir</h5>
+    <p><span class="nv-instrumento">LENTE</span> ou <span class="nv-instrumento">BRASA</span></p>
+    <p>Antes de tocar o artefato com ferramentas, você o examina com atenção ou o segura em silêncio, esperando alguma resposta. Role 2d6 + LENTE ou 2d6 + BRASA (sua escolha) para cada pista que buscar.</p>
+    <p>Você precisa de <strong>3 pistas</strong> sobre a história do artefato — sua origem, quem o usou, o que testemunhou, o que perdeu — antes de poder avançar para o Nome. Cada rolagem bem-sucedida revela uma pista; resultados em Ouro revelam a pista com uma complicação menor; Cacos revelam algo, mas de forma perturbadora ou incompleta.</p>
+    <p>Não há pressa. Você pode buscar as 3 pistas em dias diferentes, entre outros trabalhos.</p>
+    <p><strong>Pista Viva:</strong> Se uma das pistas apontar claramente para uma pessoa — e não apenas para um objeto ou evento —, você pode declarar: <em>"Essa pista pertence a [NPC]."</em> Se fizer isso, a pista conta normalmente para o Nome Verdadeiro do artefato e, ao mesmo tempo, revela automaticamente a Faceta mais relevante ainda não desbloqueada daquele NPC — sem rolagem, como uma Revelação Natural. Você escolhe qual Faceta. A pista foi viva o suficiente para tocar alguém além do objeto.</p>
+  </div>
+
+  <div class="nv-fase fase-moldar">
+    <h5>Fase 2 — Moldar</h5>
+    <p><span class="nv-instrumento">AGULHA</span></p>
+    <p>O trabalho físico acontece normalmente: use o gesto <strong>Restaurar uma Relíquia</strong>, com todos os seus resultados e consequências habituais. O artefato é reparado — ou resiste. Esta fase não muda nada na mecânica do reparo.</p>
+    <p>Só há uma diferença: se você chegou aqui com 3 pistas em mãos, o reparo carrega intenção. Você não está apenas consertando — está preparando o artefato para receber um nome.</p>
+  </div>
+
+  <div class="nv-fase fase-nomear">
+    <h5>Fase 3 — Nomear</h5>
+    <p>Com as 3 pistas reunidas e o artefato reparado, você declara o Nome Verdadeiro em voz alta — ou por escrito, no diário da Contracena. Ninguém decide esse nome por você, e não existe uma resposta certa esperando para ser encontrada: você olha para as pistas e escreve o que enxerga nelas. Escreva o Nome e registre as 3 pistas que o fundamentam.</p>
+  </div>
+
+  <div class="nv-fase" style="border-left-color: var(--accent);">
+    <h5>Ressoar o Nome</h5>
+    <p><span class="nv-instrumento">LENTE</span> ou <span class="nv-instrumento">BRASA</span></p>
+    <p>Depois de declarar o Nome, role 2d6 + LENTE ou 2d6 + BRASA (sua escolha) para saber se aquilo que você viu no artefato encontra eco de verdade nele.</p>
+    <div class="result success"><strong>Inteiro:</strong> O nome ressoa por completo. +1 Retalho. O artefato reconhece o que você viu nele e ganha uma <strong>propriedade única permanente</strong>. Registre-a na ficha como <em>[NOME VERDADEIRO: ...]</em>.</div>
+    <div class="result partial"><strong>Cicatrizes de Ouro:</strong> O nome captura algo real, mas não tudo. A propriedade nasce — <strong>escolha 1:</strong> (a) ela vem com um Custo, um pequeno preço pago a cada uso (adapte uma entrada da tabela de Preços de artefatos); (b) ela só funciona sob uma condição específica, ligada às pistas, que você declara agora; (c) falta uma peça — a propriedade existe, mas fica adormecida até você reunir <strong>1 pista extra</strong> que a complete. <em>[FIOS]</em></div>
+    <div class="result failure"><strong>Cacos:</strong> Esse não é o Nome Verdadeiro — mas a tentativa foi honesta, e isso também é Curadoria. O reparo continua valendo normalmente; a propriedade não nasce ainda. <strong>Escolha 1</strong> (ou role 1d3): (a) o nome pega como <strong>Apelido</strong> — passa a ser como todos chamam o artefato, mas uma pista nova e mais estranha aparece, contradizendo o que você pensava saber; (b) o nome errado gruda como uma Marca <em>[NOME EM DÚVIDA]</em> — o artefato reage de um jeito sutilmente diferente sempre que é chamado por ele, como quem responde por educação a um nome que não é seu; (c) alguém — um Quebrador, um antigo dono, um NPC — ouve o nome que você declarou e reage: essa pessoa sabe (ou acha que sabe) o nome de verdade, e agora tem um motivo para te procurar. <em>[VÍNCULO] ou [MISTÉRIO]</em>. Regra de Ouro: aceite esse resultado com estilo e ganhe +1 Retalho mesmo assim.</div>
+  </div>
+
+  <div class="nv-resultado">
+    <p>Em qualquer um dos três resultados, você guarda as 3 pistas e o Nome declarado — nada se perde. Se a propriedade não nasceu (ou nasceu incompleta), você pode tentar Nomear de novo mais tarde: não é preciso recomeçar do zero, basta buscar <strong>1 pista nova</strong> (Fase Ouvir) que substitua ou complete o que faltava, e rolar Ressoar o Nome outra vez.</p>
+    <p><strong>Fio de Mistério a partir do Nome:</strong> Em um resultado de Inteiro ou Cicatrizes de Ouro, você pode abrir imediatamente um <strong>Fio de Mistério de 6 nós</strong> ligado àquele artefato — ou à pessoa que o criou, usou ou perdeu. O Fio começa em <strong>3/6</strong>, pré-preenchido com as 3 pistas que você reuniu na Fase Ouvir. Você não parte do zero: a história já começou. A pergunta do Fio deve emergir das pistas — o que elas sugerem que ainda está escondido? Em um resultado de Cacos, a Marca <em>[NOME EM DÚVIDA]</em> ou o interesse de quem ouviu o nome errado servem igualmente bem como semente de um Fio: a própria busca pelo Nome Verdadeiro pode virar o mistério.</p>
+    <p><strong>Revelação com desconto:</strong> Se já existir um Fio de Mistério ativo cujo centro seja esse artefato, um resultado de Inteiro ou Cicatrizes de Ouro reduz o custo de uma Revelação desse Fio: em vez de 3 Retalhos, custa apenas <strong>1 Retalho</strong>. Nomear é compreender — e compreensão abrevia o caminho até a verdade.</p>
+  </div>
+
+  <p class="nv-nota">Mesmo com a rolagem, não existe um Nome Verdadeiro pré-escrito esperando para ser descoberto — nem o sistema, nem você enquanto mestre de si mesmo(a), sabe o nome antes de dizê-lo em voz alta. Você inventa livremente, a partir do que ouviu nas 3 pistas. O dado não corrige sua autoria: ele mede a ressonância, se essa leitura sua, feita agora, encontra eco de verdade no artefato. Um resultado em Cacos não é um erro seu enquanto jogador(a) — é o artefato dizendo que sua verdade ainda não estava pronta para ser vista. E isso, como qualquer Caco, é uma virada, não um fim.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="move" id="restaurar-uma-reliquia">
 <h4>RESTAURAR UMA RELÍQUIA</h4>
 <div class="trigger">Quando você trabalha fisicamente para limpar, consertar ou reativar um artefato.</div>
-<span class="attribute">MÃOS</span>
-<div class="result success"><strong>10+:</strong> Restauração completa. O artefato funciona — ou melhor. +1 Eco. Você descobre algo útil sobre sua origem. <em>[VÍNCULO+] ou [MISTÉRIO]</em></div>
-<div class="result partial"><strong>7–9:</strong> Funciona, mas <strong>escolha 1:</strong> (a) o artefato tem um defeito persistente que pode ser corrigido depois, (b) o processo gasta Recursos extras (1d3), (c) a restauração revela algo perturbador sobre o artefato. <em>[TENSÃO] ou [ECO]</em></div>
-<div class="result failure"><strong>6−:</strong> O artefato resiste. Ele se danifica, uma maldição se ativa, você se machuca, ou a Guilda fica sabendo. <em>[TENSÃO] + [MISTÉRIO]</em></div>
+<span class="attribute">AGULHA</span>
+<div class="result success"><strong>Inteiro:</strong> Restauração completa. O artefato funciona — ou melhor. +1 Retalho. Você descobre algo útil sobre sua origem. <em>[VÍNCULO+] ou [MISTÉRIO]</em></div>
+<div class="result partial"><strong>Ouro:</strong> Funciona, mas <strong>escolha 1:</strong> (a) o artefato tem um defeito persistente que pode ser corrigido depois, (b) o processo gasta Recursos extras (1d3), (c) a restauração revela algo perturbador sobre o artefato. <em>[FIOS] ou [MEMÓRIA]</em></div>
+<div class="result failure"><strong>Cacos:</strong> O artefato resiste. Ele se danifica, uma maldição se ativa, você se machuca, ou a Confraria fica sabendo. <em>[FIOS] + [MISTÉRIO]</em></div>
 </div>
 
-<div class="move">
+<div class="move" id="entregar-o-trabalho">
+<h4>ENTREGAR O TRABALHO</h4>
+<div class="trigger">Quando você entrega ao cliente um artefato que já foi fisicamente restaurado (depois do gesto <a href="#restaurar-uma-reliquia">Restaurar uma Relíquia</a>).</div>
+<span class="attribute">PENA ou BRASA</span>
+<p>O gesto combina o resultado da restauração e a pontualidade do <a href="sistema-encomendas.html#fio-de-encomenda">Fio de Encomenda</a> como modificadores da rolagem: <strong>+1</strong> se a restauração saiu em Inteiro, <strong>−1</strong> se saiu em Cacos; <strong>+1</strong> se o Fio de Encomenda está abaixo de 50% dos nós, <strong>−1</strong> se o Fio já fechou.</p>
+<div class="result success"><strong>Inteiro:</strong> +1 Retalho extra. Vínculo ou Reputação sobe. O cliente vira Recorrente. <em>[VÍNCULO+]</em></div>
+<div class="result partial"><strong>Ouro:</strong> Aceito com ressalva — <strong>escolha 1:</strong> (a) desconto no pagamento, (b) reclamação pontual, (c) o vínculo fica neutro.</div>
+<div class="result failure"><strong>Cacos:</strong> Aceito contrariado (ganha uma marca de encerramento do vínculo, registre livremente) ou o item é rejeitado e volta para a Contracena — vira <a href="sistema-encomendas.html#achado-sem-dono">Achado Sem Dono</a>. <em>[FIOS]</em></div>
+<p>Veja o sistema completo de chegada, prazos e cobrança em <a href="sistema-encomendas.html">Sistema: Encomendas</a>.</p>
+</div>
+
+<div class="move" id="catalogar-e-arquivar">
 <h4>CATALOGAR E ARQUIVAR</h4>
 <div class="trigger">Quando você registra um artefato, organiza documentos ou atualiza o inventário.</div>
-<span class="attribute">MENTE</span>
-<div class="result success"><strong>10+:</strong> Registro perfeito. Você descobre um detalhe que outros perderam. +1 Eco.</div>
-<div class="result partial"><strong>7–9:</strong> Você cataloga, mas <strong>escolha 1:</strong> (a) algo não bate — você encontra uma anotação antiga e suspeita, (b) o processo leva mais tempo que o esperado (perde 1 Ato amanhã), (c) você percebe que alguém alterou os registros recentemente.</div>
-<div class="result failure"><strong>6−:</strong> O arquivo está errado — ou alguém o alterou. Um artefato sumiu do registro, ou você encontra um nome que reconhece.</div>
+<span class="attribute">PENA</span>
+<div class="result success"><strong>Inteiro:</strong> Registro perfeito. Você descobre um detalhe que outros perderam. +1 Retalho.</div>
+<div class="result partial"><strong>Ouro:</strong> Você cataloga, mas <strong>escolha 1:</strong> (a) algo não bate — você encontra uma anotação antiga e suspeita, (b) o processo leva mais tempo que o esperado (perde 1 Fôlego amanhã), (c) você percebe que alguém alterou os registros recentemente.</div>
+<div class="result failure"><strong>Cacos:</strong> O arquivo está errado — ou alguém o alterou. Um artefato sumiu do registro, ou você encontra um nome que reconhece.</div>
 </div>
 
-<div class="move">
-<h4>LIMPAR OS BASTIDORES</h4>
+<div class="move" id="limpar-a-contracena">
+<h4>LIMPAR A CONTRACENA</h4>
 <div class="trigger">Quando você varre, organiza, conserta algo na oficina ou no armazém — como parte do trabalho diário.</div>
-<span class="attribute">MÃOS</span>
-<div class="result success"><strong>10+:</strong> Os Bastidores ficam mais acolhedores. Você encontra algo perdido. +1 Eco. Role 1d10 na Tabela de Maravilhas Cotidianas.</div>
-<div class="result partial"><strong>7–9:</strong> Você limpa, mas <strong>escolha 1:</strong> (a) encontra algo que não deveria estar ali (um objeto estranho), (b) algo quebra durante a limpeza (perde 1 Recurso), (c) percebe que algo mudou de lugar — alguém esteve aqui.</div>
-<div class="result failure"><strong>6−:</strong> A limpeza revela algo perturbador: uma mancha que pulsa, um som nas paredes, um objeto que se move.</div>
+<span class="attribute">AGULHA</span>
+<div class="result success"><strong>Inteiro:</strong> A Contracena fica mais acolhedora. Você encontra algo perdido. +1 Retalho. Role 1d10 na Tabela de Maravilhas Cotidianas.</div>
+<div class="result partial"><strong>Ouro:</strong> Você limpa, mas <strong>escolha 1:</strong> (a) encontra algo que não deveria estar ali (um objeto estranho), (b) algo quebra durante a limpeza (perde 1 Recurso), (c) percebe que algo mudou de lugar — alguém esteve aqui.</div>
+<div class="result failure"><strong>Cacos:</strong> A limpeza revela algo perturbador: uma mancha que pulsa, um som nas paredes, um objeto que se move.</div>
 </div>
 
-<div class="move">
+<div class="move" id="estudar-um-artefato">
 <h4>ESTUDAR UM ARTEFATO</h4>
 <div class="trigger">Quando você examina um artefato de perto, tentando entender sua função, origem ou perigo (sem necessariamente consertá-lo).</div>
-<span class="attribute">OLHOS ou MENTE</span>
-<div class="result success"><strong>10+:</strong> Você descobre algo crucial. +1 Eco. Avança Relógio de mistério.</div>
-<div class="result partial"><strong>7–9:</strong> Aprende algo, mas <strong>escolha 1:</strong> (a) a descoberta levanta mais perguntas do que respostas (avança Relógio de Mistério, mas ganha Tag [MISTÉRIO]), (b) o artefato reage ao exame (atrai atenção), (c) você entende parte, mas não tudo — precisa de mais tempo.</div>
-<div class="result failure"><strong>6−:</strong> O artefato se ativa, você é afetado por maldição, ou a informação é perturbadora.</div>
+<span class="attribute">LENTE ou PENA</span>
+<div class="result success"><strong>Inteiro:</strong> Você descobre algo crucial. +1 Retalho. Avança Fio de Mistério.</div>
+<div class="result partial"><strong>Ouro:</strong> Aprende algo, mas <strong>escolha 1:</strong> (a) a descoberta levanta mais perguntas do que respostas (avança Fio de Mistério, mas ganha Marca [MISTÉRIO]), (b) o artefato reage ao exame (atrai atenção), (c) você entende parte, mas não tudo — precisa de mais tempo.</div>
+<div class="result failure"><strong>Cacos:</strong> O artefato se ativa, você é afetado por maldição, ou a informação é perturbadora.</div>
 </div>
 
-<div class="move">
+<div class="move" id="decifrar-um-enigma-ou-simbolo">
 <h4>DECIFRAR UM ENIGMA OU SÍMBOLO</h4>
 <div class="trigger">Quando você tenta entender uma inscrição, código, mapa ou símbolo arcano.</div>
-<span class="attribute">MENTE</span>
-<div class="result success"><strong>10+:</strong> Você decifra completamente. +1 Eco.</div>
-<div class="result partial"><strong>7–9:</strong> Entende parte, mas <strong>escolha 1:</strong> (a) há algo que você não consegue traduzir (deixa uma Tag [MISTÉRIO]), (b) sua interpretação é incerta — pode estar errada, (c) o símbolo reage ao seu toque (alerta alguém).</div>
-<div class="result failure"><strong>6−:</strong> Você interpreta errado, o símbolo se ativa, ou a informação é perigosa.</div>
+<span class="attribute">PENA</span>
+<div class="result success"><strong>Inteiro:</strong> Você decifra completamente. +1 Retalho.</div>
+<div class="result partial"><strong>Ouro:</strong> Entende parte, mas <strong>escolha 1:</strong> (a) há algo que você não consegue traduzir (deixa uma Marca [MISTÉRIO]), (b) sua interpretação é incerta — pode estar errada, (c) o símbolo reage ao seu toque (alerta alguém).</div>
+<div class="result failure"><strong>Cacos:</strong> Você interpreta errado, o símbolo se ativa, ou a informação é perigosa.</div>
 </div>
 
-<div class="move">
-<h4>PERCEBER ALGO ESTRANHO NOS BASTIDORES</h4>
+<div class="move" id="perceber-algo-estranho-na-contracena">
+<h4>PERCEBER ALGO ESTRANHO NA CONTRACENA</h4>
 <div class="trigger">Quando, durante seu trabalho cotidiano, você nota algo que não deveria estar ali. <em>Só pode ser usado durante outra ação.</em></div>
-<span class="attribute">OLHOS</span>
-<div class="result success"><strong>10+:</strong> Você percebe claramente o que mudou. +1 Eco.</div>
-<div class="result partial"><strong>7–9:</strong> Percebe, mas <strong>escolha 1:</strong> (a) não entende o que viu — o detalhe é estranho demais, (b) o detalhe desaparece quando você tenta mostrar para alguém, (c) você percebe, mas sente que está sendo observado.</div>
-<div class="result failure"><strong>6−:</strong> O detalhe te perturba. Você não consegue se concentrar. Um artefato reage à sua inquietação.</div>
+<span class="attribute">LENTE</span>
+<div class="result success"><strong>Inteiro:</strong> Você percebe claramente o que mudou. +1 Retalho.</div>
+<div class="result partial"><strong>Ouro:</strong> Percebe, mas <strong>escolha 1:</strong> (a) não entende o que viu — o detalhe é estranho demais, (b) o detalhe desaparece quando você tenta mostrar para alguém, (c) você percebe, mas sente que está sendo observado.</div>
+<div class="result failure"><strong>Cacos:</strong> O detalhe te perturba. Você não consegue se concentrar. Um artefato reage à sua inquietação.</div>
 </div>
 
 
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Quando os Cacos Caem — Curadoria</h3>
+<p>Nos Gestos de Curadoria, a complicação vem do artefato, das mãos, do espaço de trabalho. Role 1d6 ou escolha o que ressoa com o momento:</p>
+
+<table>
+<tr><th>d6</th><th>Complicação</th></tr>
+<tr><td>1</td><td>O artefato absorveu algo de você durante o trabalho — descreva o quê.</td></tr>
+<tr><td>2</td><td>Uma peça que parecia decorativa era estrutural. Agora falta, e você não sabe por quanto tempo faltou.</td></tr>
+<tr><td>3</td><td>Suas mãos tremem pelo resto do dia. Por que esse artefato te afetou assim?</td></tr>
+<tr><td>4</td><td>O cheiro do material te leva a uma memória que você não esperava encontrar aqui.</td></tr>
+<tr><td>5</td><td>O trabalho ficou pronto — mas o artefato está diferente do que deveria. Não errado. Diferente.</td></tr>
+<tr><td>6</td><td>Alguém passou pela Contracena enquanto você estava concentrado demais para perceber. O que ficou diferente?</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<details class="cartilha">
+<summary>🏷️ As Marcas nesta Página</summary>
+<table>
+<tr><th>Marca</th><th>O Que Significa</th></tr>
+<tr><td><em>[VÍNCULO+] / [VÍNCULO]</em></td><td>Um laço se firma ou se aprofunda com alguém — ou, em resultados incertos, alguém passa a ter motivo para te procurar.</td></tr>
+<tr><td><em>[MISTÉRIO]</em></td><td>Uma pergunta que a história ainda não respondeu, e que te acompanha.</td></tr>
+<tr><td><em>[MEMÓRIA]</em></td><td>Um momento que marcou você e ficou registrado, pronto para ser revisitado.</td></tr>
+<tr><td><em>[FIOS]</em></td><td>O resultado toca um Fio em andamento — ou acende um novo, ainda por nomear.</td></tr>
+<tr><td><em>[NOME EM DÚVIDA]</em></td><td>O nome errado grudou no artefato, que passa a responder por ele por educação — não porque seja o Nome Verdadeiro.</td></tr>
+</table>
+<p>Referência completa: <a href="sistema-tags.html">Sistema de Marcas</a>.</p>
+</details>
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Moves — Ofício</p>
-  <p><a href="sistema-loop.html">← Sistema: Loop</a> | <a href="moves-sociais.html">Próxima: Sociais →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Gestos — Curadoria</p>
+  <p><a href="sistema-loop.html">← Sistema: A Estação</a> | <a href="moves-sociais.html">Próxima: Conversas →</a></p>
 </footer>
 
 </div>
@@ -148,7 +276,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

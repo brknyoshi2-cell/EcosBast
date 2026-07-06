@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Ficha de NPCs</title>
+<title>Retalhos da Contracena — Romance: Ficha de NPCs</title>
 <style>
 .sheet {
   background: #fefcf7;
@@ -14,9 +14,6 @@
   box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
   page-break-inside: avoid;
   border-radius: 6px;
-}
-[data-theme="dark"] .sheet {
-  background: #2a2a2a;
 }
 .sheet h3 {
   text-align: center;
@@ -66,85 +63,369 @@
   font-size: 1.2rem;
   letter-spacing: 0.5rem;
 }
+.arvore-bloco {
+  border: 1px solid var(--accent-light);
+  border-radius: 5px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  background: rgba(139, 90, 43, 0.04);
+}
+.arvore-bloco h5 {
+  margin: 0 0 0.6rem 0;
+  color: var(--accent);
+  font-size: 1rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+.faceta-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0.45rem 0;
+  flex-wrap: wrap;
+}
+.faceta-check {
+  font-size: 1rem;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+.faceta-nome {
+  font-weight: bold;
+  color: var(--ink);
+  font-size: 0.92rem;
+  min-width: 105px;
+  flex-shrink: 0;
+}
+.faceta-line {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.4rem;
+  min-width: 120px;
+}
+.fruto-bloco {
+  border: 2px solid var(--romance, #b85c8a);
+  border-radius: 5px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  background: rgba(184, 92, 138, 0.05);
+}
+.fruto-bloco h5 {
+  margin: 0 0 0.6rem 0;
+  color: var(--romance, #b85c8a);
+  font-size: 1rem;
+  font-variant: small-caps;
+}
+.fruto-status {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+.fruto-status .field-label {
+  min-width: auto;
+}
+.estado-fio {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+.estado-fio label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
 @media print {
   .top-nav, .floating-controls, .back-to-top, .no-print, .print-btn { display: none !important; }
   body { background: white !important; }
   .sheet { box-shadow: none !important; border: 1px solid #ccc !important; }
 }
+.ficha-controles {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5rem 0 1rem;
+}
+.save-btn {
+  display: inline-block;
+  background: var(--success);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: filter 0.2s;
+}
+.save-btn:hover { filter: brightness(1.1); }
+.ficha-status {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.sheet input[type="text"] {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+  width: 100%;
+  padding: 0;
+}
+.sheet input[type="text"]:focus {
+  outline: none;
+  border-bottom: 1px solid var(--gold);
+}
+#nome-salvo {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--parchment);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.5rem 0.7rem;
+  min-width: 240px;
+}
+.lista-npcs {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+}
+.lista-npcs li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--accent-light);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background: rgba(139, 90, 43, 0.04);
+}
+.lista-npcs .print-btn {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  margin: 0;
+}
+@media print {
+  .ficha-controles { display: none !important; }
+  .sheet input[type="text"] { border-bottom: 1px solid #999 !important; }
+}
 </style>
 </head>
 <body>
 
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
-
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="ficha-npcs.html">Ferramentas</a> &gt; <strong>Ficha de NPCs</strong>
+  <a href="index.html">Início</a> &gt; <a href="pilar-romance.html">Romance</a> &gt; <a href="pilar-romance-ferramentas.html">Ferramentas</a> &gt; <strong>Ficha de NPCs</strong>
 </div>
 
 <div class="container">
 
 <div class="sheet" id="sheet-npcs">
 <h3>📋 Ficha de NPCs</h3>
-<button class="print-btn no-print" onclick="window.print()">🖨 Imprimir</button>
-<p style="text-align: center; font-style: italic;">Imprima quantas cópias precisar (recomendado: 3 romanceáveis + várias não-romanceáveis)</p>
+<div class="ficha-controles no-print">
+  <input type="text" id="nome-salvo" placeholder="Nome do NPC (pra identificar na lista)">
+  <button class="save-btn" onclick="salvarFicha()">💾 Salvar</button>
+  <button class="print-btn" onclick="novoNpc()">➕ Novo</button>
+  <button class="print-btn" onclick="window.print()">🖨 Imprimir (preenchida)</button>
+  <button class="print-btn" onclick="location.href='fichas-impressao.html#print-npcs'">🖨 Imprimir em Branco</button>
+  <span class="ficha-status" id="ficha-status"></span>
+</div>
+<p style="text-align: center; font-style: italic;">Cada NPC completo (romanceável e/ou não-romanceável nesta mesma ficha) fica salvo como um item na lista abaixo.</p>
+
+<div id="lista-salvos" class="no-print"></div>
 
 <h4>NPC Romanceável</h4>
-<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Arquétipo:</span><span class="field-line"></span> (Explorador / Colega / Forasteiro)</div>
-<div class="field"><span class="field-label">Classe/Profissão:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Módulo:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Adjetivo:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Traço Físico:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Vestimenta:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Desejo:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Medo:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Segredo:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Residência:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Local Favorito:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Vínculo Inicial:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Nome:</span><input type="text" class="field-line" data-field="romNome"></div>
+<div class="field"><span class="field-label">Arquétipo:</span><input type="text" class="field-line" data-field="romArquetipo"> (Explorador / Colega / Forasteiro)</div>
+<div class="field"><span class="field-label">Classe/Profissão:</span><input type="text" class="field-line" data-field="romClasse"></div>
+<div class="field"><span class="field-label">Cômodo:</span><input type="text" class="field-line" data-field="romComodo"></div>
+<div class="field"><span class="field-label">Adjetivo:</span><input type="text" class="field-line" data-field="romAdjetivo"></div>
+<div class="field"><span class="field-label">Traço Físico:</span><input type="text" class="field-line" data-field="romTracoFisico"></div>
+<div class="field"><span class="field-label">Vestimenta:</span><input type="text" class="field-line" data-field="romVestimenta"></div>
+<div class="field"><span class="field-label">Desejo:</span><input type="text" class="field-line" data-field="romDesejo"></div>
+<div class="field"><span class="field-label">Medo:</span><input type="text" class="field-line" data-field="romMedo"></div>
+<div class="field"><span class="field-label">Residência:</span><input type="text" class="field-line" data-field="romResidencia"></div>
+<div class="field"><span class="field-label">Local Favorito:</span><input type="text" class="field-line" data-field="romLocalFavorito"></div>
+<div class="field"><span class="field-label">Vínculo Inicial:</span><input type="text" class="field-line" data-field="romVinculoInicial"></div>
 
 <h4>😄 Piadas Internas (opcional)</h4>
-<div class="field"><span class="field-label">Piada que o NPC conta:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Piada que o NPC não entende:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Coisa que o NPC acha engraçada:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Piada que o NPC conta:</span><input type="text" class="field-line" data-field="romPiadaConta"></div>
+<div class="field"><span class="field-label">Piada que o NPC não entende:</span><input type="text" class="field-line" data-field="romPiadaNaoEntende"></div>
+<div class="field"><span class="field-label">Coisa que o NPC acha engraçada:</span><input type="text" class="field-line" data-field="romPiadaEngracada"></div>
 
-<h4>Relógio de Romance ("Coração", 10 segmentos)</h4>
-<p>Estado: ☐ Conhecimento (0–3) | ☐ Amizade (4–6) | ☐ Romance (7–8) | ☐ Compromisso (9–10)</p>
-<p>Segmentos: ____ / 10</p>
+<h4>Fio de Romance ("Coração", 10 nós)</h4>
+<div class="estado-fio">
+  <label><input type="checkbox" data-field="romEstadoConhecimento"> Conhecimento (0–3)</label>
+  <label><input type="checkbox" data-field="romEstadoAmizade"> Amizade (4–6)</label>
+  <label><input type="checkbox" data-field="romEstadoRomance"> Romance (7–8)</label>
+  <label><input type="checkbox" data-field="romEstadoCompromisso"> Compromisso (9–10)</label>
+</div>
+<div class="field"><span class="field-label">Nós:</span><input type="text" class="field-line" data-field="romFioNos" style="max-width: 80px; flex: none;"> / 10</div>
 
-<h4>Marcos Visuais de Evolução</h4>
-<div class="field"><span class="field-label">Item 1 (4-6 seg):</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Item 2 (7-8 seg):</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Item 3 (9-10 seg):</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Tag Permanente:</span><span class="field-line"></span></div>
+<h4>Sinais Visuais de Evolução</h4>
+<div class="field"><span class="field-label">Item 1 (4–6 nós):</span><input type="text" class="field-line" data-field="romSinalItem1"></div>
+<div class="field"><span class="field-label">Item 2 (7–8 nós):</span><input type="text" class="field-line" data-field="romSinalItem2"></div>
+<div class="field"><span class="field-label">Item 3 (9–10 nós):</span><input type="text" class="field-line" data-field="romSinalItem3"></div>
+<div class="field"><span class="field-label">Marca Permanente:</span><input type="text" class="field-line" data-field="romMarcaPermanente"></div>
+
+<div class="section-divider">🌱</div>
+
+<h4>Árvore da Intimidade</h4>
+
+<div class="arvore-bloco">
+  <h5>🌱 Semente — O Nome Comum</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.4rem 0; color: var(--ink-soft);">Desbloqueada automaticamente no primeiro encontro.</p>
+  <div class="field"><span class="field-label">Nome Comum:</span><input type="text" class="field-line" data-field="romArvoreNomeComum"></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🪵 Raízes — Contexto e Origem</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.4rem 0; color: var(--ink-soft);">De onde veio. Fragmentos de história revelados em 1–2 interações.</p>
+  <div class="field"><span class="field-label">Origem:</span><input type="text" class="field-line" data-field="romArvoreOrigem"></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🌳 Tronco — A Essência Observável</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.4rem 0; color: var(--ink-soft);">Como age no mundo. Hábitos, postura, o que defende sem precisar falar. (Pode exigir rolagem de LENTE.)</p>
+  <div class="field"><span class="field-label">Essência:</span><input type="text" class="field-line" data-field="romArvoreEssencia"></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🌿 Galhos — As 5 Facetas</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.7rem 0; color: var(--ink-soft);">Marque a Faceta quando revelada. Anote o que <em>aquele NPC</em> mostrou — não o que o sistema diz.</p>
+  <div class="faceta-row">
+    <input type="checkbox" class="faceta-check" data-field="romFacetaOficioCheck">
+    <span class="faceta-nome">🔨 O Ofício</span>
+    <input type="text" class="faceta-line" data-field="romFacetaOficioTexto">
+  </div>
+  <div class="faceta-row">
+    <input type="checkbox" class="faceta-check" data-field="romFacetaFeridaCheck">
+    <span class="faceta-nome">🩹 A Ferida</span>
+    <input type="text" class="faceta-line" data-field="romFacetaFeridaTexto">
+  </div>
+  <div class="faceta-row">
+    <input type="checkbox" class="faceta-check" data-field="romFacetaSonhoCheck">
+    <span class="faceta-nome">✨ O Sonho</span>
+    <input type="text" class="faceta-line" data-field="romFacetaSonhoTexto">
+  </div>
+  <div class="faceta-row">
+    <input type="checkbox" class="faceta-check" data-field="romFacetaSegredoCheck">
+    <span class="faceta-nome">🗝️ O Segredo</span>
+    <input type="text" class="faceta-line" data-field="romFacetaSegredoTexto">
+  </div>
+  <div class="faceta-row">
+    <input type="checkbox" class="faceta-check" data-field="romFacetaAlegriaCheck">
+    <span class="faceta-nome">☀️ A Alegria</span>
+    <input type="text" class="faceta-line" data-field="romFacetaAlegriaTexto">
+  </div>
+</div>
+
+<div class="fruto-bloco">
+  <h5>🍎 Fruto — O Nome Verdadeiro</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.6rem 0; color: var(--ink-soft);">Surge quando todas as 5 Facetas estão reveladas. Uma palavra, uma frase curta — o nome que captura quem essa pessoa é de verdade.</p>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><input type="text" class="field-line" data-field="romFrutoNome"></div>
+  <div class="fruto-status">
+    <label><span class="field-label">Fruto invocado?</span> <input type="checkbox" data-field="romFrutoInvocado"></label>
+    <span>Quando / como: <input type="text" data-field="romFrutoQuandoComo" style="display:inline-block; min-width: 180px; width: auto;"></span>
+  </div>
+</div>
 
 <div class="section-divider">❦</div>
 
 <h4>NPC Não-Romanceável</h4>
-<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Tipo:</span><span class="field-line"></span> (Cidade / Trabalhador / Cliente)</div>
-<div class="field"><span class="field-label">Profissão/Papel:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Bairro/Local:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Traço Marcante:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Personalidade:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Segredo Pequeno:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Relação com a Guilda:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Com Protagonista:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">O que Quer:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Nome:</span><input type="text" class="field-line" data-field="nromNome"></div>
+<div class="field"><span class="field-label">Tipo:</span><input type="text" class="field-line" data-field="nromTipo"> (Cidade / Trabalhador / Cliente)</div>
+<div class="field"><span class="field-label">Profissão/Papel:</span><input type="text" class="field-line" data-field="nromProfissao"></div>
+<div class="field"><span class="field-label">Bairro/Local:</span><input type="text" class="field-line" data-field="nromBairro"></div>
+<div class="field"><span class="field-label">Traço Marcante:</span><input type="text" class="field-line" data-field="nromTracoMarcante"></div>
+<div class="field"><span class="field-label">Personalidade:</span><input type="text" class="field-line" data-field="nromPersonalidade"></div>
+<div class="field"><span class="field-label">Segredo Pequeno:</span><input type="text" class="field-line" data-field="nromSegredo"></div>
+<div class="field"><span class="field-label">Relação com a Confraria:</span><input type="text" class="field-line" data-field="nromRelacaoConfraria"></div>
+<div class="field"><span class="field-label">Com o Jogador:</span><input type="text" class="field-line" data-field="nromComJogador"></div>
+<div class="field"><span class="field-label">O que Quer:</span><input type="text" class="field-line" data-field="nromQueQuer"></div>
+
+<div class="section-divider">🌱</div>
+
+<h4>Árvore da Intimidade</h4>
+
+<div class="arvore-bloco">
+  <h5>🌱 Semente — O Nome Comum</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.4rem 0; color: var(--ink-soft);">Desbloqueada automaticamente no primeiro encontro.</p>
+  <div class="field"><span class="field-label">Nome Comum:</span><input type="text" class="field-line" data-field="nromArvoreNomeComum"></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🪵 Raízes — Contexto e Origem</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.4rem 0; color: var(--ink-soft);">De onde veio. Fragmentos de história revelados em 1–2 interações.</p>
+  <div class="field"><span class="field-label">Origem:</span><input type="text" class="field-line" data-field="nromArvoreOrigem"></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🌳 Tronco — A Essência Observável</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.4rem 0; color: var(--ink-soft);">Como age no mundo. Hábitos, postura, o que defende sem precisar falar. (Pode exigir rolagem de LENTE.)</p>
+  <div class="field"><span class="field-label">Essência:</span><input type="text" class="field-line" data-field="nromArvoreEssencia"></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🌿 Galhos — As 5 Facetas</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.7rem 0; color: var(--ink-soft);">Marque a Faceta quando revelada. Anote o que <em>aquele NPC</em> mostrou — não o que o sistema diz.</p>
+  <div class="faceta-row">
+    <input type="checkbox" class="faceta-check" data-field="nromFacetaOficioCheck">
+    <span class="faceta-nome">🔨 O Ofício</span>
+    <input type="text" class="faceta-line" data-field="nromFacetaOficioTexto">
+  </div>
+  <div class="faceta-row">
+    <input type="checkbox" class="faceta-check" data-field="nromFacetaFeridaCheck">
+    <span class="faceta-nome">🩹 A Ferida</span>
+    <input type="text" class="faceta-line" data-field="nromFacetaFeridaTexto">
+  </div>
+  <div class="faceta-row">
+    <input type="checkbox" class="faceta-check" data-field="nromFacetaSonhoCheck">
+    <span class="faceta-nome">✨ O Sonho</span>
+    <input type="text" class="faceta-line" data-field="nromFacetaSonhoTexto">
+  </div>
+  <div class="faceta-row">
+    <input type="checkbox" class="faceta-check" data-field="nromFacetaSegredoCheck">
+    <span class="faceta-nome">🗝️ O Segredo</span>
+    <input type="text" class="faceta-line" data-field="nromFacetaSegredoTexto">
+  </div>
+  <div class="faceta-row">
+    <input type="checkbox" class="faceta-check" data-field="nromFacetaAlegriaCheck">
+    <span class="faceta-nome">☀️ A Alegria</span>
+    <input type="text" class="faceta-line" data-field="nromFacetaAlegriaTexto">
+  </div>
+</div>
+
+<div class="fruto-bloco">
+  <h5>🍎 Fruto — O Nome Verdadeiro</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.6rem 0; color: var(--ink-soft);">Surge quando todas as 5 Facetas estão reveladas. Uma palavra, uma frase curta — o nome que captura quem essa pessoa é de verdade.</p>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><input type="text" class="field-line" data-field="nromFrutoNome"></div>
+  <div class="fruto-status">
+    <label><span class="field-label">Fruto invocado?</span> <input type="checkbox" data-field="nromFrutoInvocado"></label>
+    <span>Quando / como: <input type="text" data-field="nromFrutoQuandoComo" style="display:inline-block; min-width: 180px; width: auto;"></span>
+  </div>
+</div>
+
 </div>
 
 <div class="callout tip">
-  <strong>Próximo passo:</strong> Vá para <a href="ficha-mundo.html">Ficha do Mundo →</a> para imprimir a ficha da Guilda, Bastidores e Cidade.
+  <strong>Próximo passo:</strong> Vá para <a href="ficha-mundo.html">Ficha do Mundo →</a> para imprimir a ficha da Confraria, Contracena e Cidade.
 </div>
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>❦ Retalhos da Contracena ❦</p>
   <p>Ferramentas — Ficha de NPCs</p>
-  <p><a href="ficha-prota.html">← Ficha Prota</a> | <a href="ficha-mundo.html">Próxima: Ficha Mundo →</a></p>
+  <p><a href="ficha-prota.html">← Ficha do Jogador</a> | <a href="ficha-mundo.html">Próxima: Ficha Mundo →</a></p>
 </footer>
 
 </div>
@@ -152,7 +433,84 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
+<script src="fichas-storage.js"></script>
+<script>
+var TIPO_NPC = 'npc';
+var sheetNpcs = document.getElementById('sheet-npcs');
+var currentId = null;
+
+function renderLista() {
+  var lista = document.getElementById('lista-salvos');
+  var itens = FichasStorage.getList(TIPO_NPC);
+  if (itens.length === 0) {
+    lista.innerHTML = '<p class="ficha-status">Nenhum NPC salvo ainda.</p>';
+    return;
+  }
+  itens.sort(function (a, b) {
+    return new Date(b.atualizado) - new Date(a.atualizado);
+  });
+  var html = '<ul class="lista-npcs">';
+  itens.forEach(function (item) {
+    var dataFormatada = new Date(item.atualizado).toLocaleString();
+    html += '<li><strong>' + item.nome + '</strong><span class="ficha-status">' + dataFormatada + '</span>';
+    html += '<button class="print-btn" onclick="abrirNpc(\'' + item.id + '\')">Abrir</button>';
+    html += '<button class="print-btn" onclick="excluirNpc(\'' + item.id + '\')">Excluir</button></li>';
+  });
+  html += '</ul>';
+  lista.innerHTML = html;
+}
+
+function salvarFicha() {
+  if (!currentId) {
+    currentId = FichasStorage.newId();
+  }
+  var nomeDigitado = document.getElementById('nome-salvo').value;
+  FichasStorage.saveItem(TIPO_NPC, currentId, nomeDigitado, sheetNpcs);
+  var status = document.getElementById('ficha-status');
+  status.textContent = 'Salvo às ' + new Date().toLocaleTimeString();
+  renderLista();
+}
+
+function novoNpc() {
+  FichasStorage.clearFields(sheetNpcs);
+  document.getElementById('nome-salvo').value = '';
+  currentId = FichasStorage.newId();
+  var status = document.getElementById('ficha-status');
+  status.textContent = '';
+}
+
+function abrirNpc(id) {
+  FichasStorage.loadItem(TIPO_NPC, id, sheetNpcs);
+  currentId = id;
+  var itens = FichasStorage.getList(TIPO_NPC);
+  var item = itens.find(function (i) { return i.id === id; });
+  document.getElementById('nome-salvo').value = item ? item.nome : '';
+  var status = document.getElementById('ficha-status');
+  status.textContent = 'Aberto às ' + new Date().toLocaleTimeString();
+}
+
+function excluirNpc(id) {
+  if (!confirm('Excluir este NPC salvo? Essa ação não pode ser desfeita.')) return;
+  FichasStorage.deleteItem(TIPO_NPC, id);
+  if (currentId === id) {
+    FichasStorage.clearFields(sheetNpcs);
+    document.getElementById('nome-salvo').value = '';
+    currentId = null;
+    var status = document.getElementById('ficha-status');
+    status.textContent = '';
+  }
+  renderLista();
+}
+
+(function () {
+  if (!FichasStorage.isBlankPrint()) {
+    renderLista();
+  } else {
+    document.getElementById('lista-salvos').style.display = 'none';
+  }
+})();
+</script>
 </body>
 </html>

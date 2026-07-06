@@ -4,13 +4,65 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Finais e Epílogo</title>
+<title>Retalhos da Contracena — Finais e Epílogo</title>
+<style>
+.album-momento {
+  background: var(--parchment-dark);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 1.5rem 1.8rem;
+  margin: 2rem 0;
+}
+.album-momento h3 {
+  color: var(--gold);
+  margin-top: 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.03em;
+}
+.album-passo {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.5rem 1rem;
+  align-items: start;
+  margin: 1rem 0;
+}
+.album-passo-num {
+  width: 2rem;
+  height: 2rem;
+  background: var(--gold);
+  color: var(--parchment);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.album-passo-corpo strong {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.nome-si-mesmo {
+  background: rgba(184,134,11,0.07);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 1.4rem 1.7rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.nome-si-mesmo h4 {
+  color: var(--gold);
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+</style>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
@@ -25,37 +77,35 @@
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h2 id="evento-final">A. O Evento Final</h2>
-<p>No início do jogo, role <strong>1d10</strong> para determinar o evento que encerrará a história. A tabela completa de 10 eventos, os modos do Relógio e os gatilhos de avanço estão em <a href="sistema-evento-final.html">Sistema: Evento Final</a>. Aqui ficam os ganchos de capítulo e os marcos do Relógio que você vai querer consultar enquanto joga:</p>
+<h2 id="evento-final">A. O Entardecer <em>(análogo a: Fim de Campanha / Ato Final)</em></h2>
+<p>No início do jogo, role <strong>1d10</strong> para determinar o evento que encerrará a história. A tabela completa de 10 eventos, os modos do Fio e os gatilhos de avanço estão em <a href="sistema-evento-final.html">Sistema: O Entardecer</a>. Aqui ficam os ganchos de capítulo e os Sinais do Fio que você vai querer consultar enquanto joga:</p>
 
-<h3>Ganchos de Capítulo (Quadro de Avisos da Guilda)</h3>
+<h3>Ganchos de Capítulo (Quadro de Avisos da Confraria)</h3>
 <p>No início de cada capítulo, role 1d10 para um gancho que empurra a ação:</p>
 <table>
 <tr><th>d10</th><th>Gancho</th></tr>
-<tr><td>1</td><td>Aventureiro traz artefato estranho que ninguém quer tocar.</td></tr>
-<tr><td>2</td><td>Trabalhador da Guilda pede favor pessoal urgente.</td></tr>
-<tr><td>3</td><td>Carta anônima chega com aviso sobre os Bastidores.</td></tr>
+<tr><td>1</td><td>Quebrador traz artefato estranho que ninguém quer tocar.</td></tr>
+<tr><td>2</td><td>Trabalhador da Confraria pede favor pessoal urgente.</td></tr>
+<tr><td>3</td><td>Carta anônima chega com aviso sobre a Contracena.</td></tr>
 <tr><td>4</td><td>NPC da cidade aparece com problema que só você pode resolver.</td></tr>
 <tr><td>5</td><td>Artefato no armazém começa a reagir sozinho.</td></tr>
-<tr><td>6</td><td>Mestre convoca reunião urgente sobre mudança na Guilda.</td></tr>
-<tr><td>7</td><td>Vizinho dos Bastidores reclama de barulhos estranhos.</td></tr>
+<tr><td>6</td><td>Mestre convoca reunião urgente sobre mudança na Confraria.</td></tr>
+<tr><td>7</td><td>Vizinho da Contracena reclama de barulhos estranhos.</td></tr>
 <tr><td>8</td><td>Expedição retorna com sobrevivente único e traumatizado.</td></tr>
-<tr><td>9</td><td>Relógio de Tensão avança sem gatilho claro — algo está errado.</td></tr>
-<tr><td>10</td><td>Você encontra objeto pessoal de NPC desaparecido nos Bastidores.</td></tr>
+<tr><td>9</td><td>Fio de Tensão avança sem gatilho claro — algo está errado.</td></tr>
+<tr><td>10</td><td>Você encontra objeto pessoal de NPC desaparecido na Contracena.</td></tr>
 </table>
 
-
-
 <div class="callout rule">
-  <h3>⚖️ Ritmo do Relógio do Evento Final</h3>
-  <p>Veja <a href="sistema-evento-final.html">Sistema: Evento Final</a> para o ritmo padrão do Relógio e para o <a href="sistema-modos.html">Modo Speedrun</a>, que acelera esse ritmo junto com o resto da campanha.</p>
+  <h3>⚖️ Ritmo do Fio do Entardecer</h3>
+  <p>Veja <a href="sistema-evento-final.html">Sistema: O Entardecer</a> para o ritmo padrão do Fio e para o <a href="sistema-modos.html">Clima Vendaval</a>, que acelera esse ritmo junto com o resto da campanha.</p>
 </div>
 
-<h3>Marcos do Relógio</h3>
+<h3>Sinais do Fio</h3>
 <ul>
   <li><strong>4/8:</strong> o evento começa a se manifestar (sinais, rumores)</li>
   <li><strong>6/8:</strong> o evento se intensifica (consequências visíveis)</li>
-  <li><strong>8/8:</strong> o evento acontece — <em>fim do jogo principal</em></li>
+  <li><strong>8/8:</strong> o evento acontece — <em>fim do jogo principal, início do Entardecer</em></li>
 </ul>
 
 <div class="section-divider">❦ ❦ ❦</div>
@@ -64,9 +114,9 @@
 
 <div class="callout farewell">
   <h3>🕯️ Epílogo Antecipado</h3>
-  <p>Você pode encerrar a campanha <strong>a qualquer momento</strong>, no fim de um capítulo, mesmo que o Relógio do Evento Final não esteja cheio. Isso é útil se:</p>
+  <p>Você pode encerrar a campanha <strong>a qualquer momento</strong>, no fim de um capítulo, mesmo que o Fio do Entardecer não esteja cheio. Isso é útil se:</p>
   <ul>
-    <li>A história <strong>naturalmente chegou ao fim</strong> antes do Relógio encher</li>
+    <li>A história <strong>naturalmente chegou ao fim</strong> antes do Fio encher</li>
     <li>Você <strong>perdeu o interesse</strong> na campanha atual e quer começar outra</li>
     <li>Você quer <strong>experimentar um final diferente</strong></li>
   </ul>
@@ -75,8 +125,9 @@
   <ol>
     <li>Declare que está encerrando a campanha no fim do capítulo atual.</li>
     <li>Descreva um <strong>Epílogo Antecipado</strong> — amarre todas as pontas soltas que puder.</li>
-    <li>Ganhe <strong>+3 Ecos</strong> por cada ponta solta que você amarrar (máx +9 Ecos).</li>
-    <li>Se quiser, role 1d6 na tabela de <strong>Continuação</strong> (ver seção F) para um gancho de New Game+.</li>
+    <li>Ganhe <strong>+3 Retalhos</strong> por cada ponta solta que você amarrar (máx +9 Retalhos).</li>
+    <li>Abra o Álbum de Nomes Verdadeiros e faça o ritual do Entardecer na seção G, mesmo que abreviado.</li>
+    <li>Se quiser, role 1d6 na tabela de <strong>Continuação</strong> (ver seção H) para um gancho de Amanhecer de Novo.</li>
   </ol>
 
   <p><em>"Nem toda história precisa esperar o fim programado. Às vezes, a história termina quando você sente que terminou."</em></p>
@@ -89,25 +140,25 @@
 <div class="callout critical">
   <h3>💀 Finais Trágicos</h3>
   <p>Este jogo é <em>cozy</em> por padrão, mas alguns jogadores gostam de explorar finais mais sombrios. Se você quiser, pode usar <strong>Finais Trágicos</strong> como uma opção narrativa.</p>
-  <p><strong>⚖️ Exceção ao Modo Cozy:</strong> Se você está jogando no <a href="sistema-modos.html">Modo Cozy</a>, a morte de NPCs é impossível por padrão — usar Finais Trágicos aqui é uma escolha explícita de <strong>desligar</strong> essa proteção só para esta cena. Você pode fazer isso, mas é bom saber que é uma exceção deliberada, não a regra do modo.</p>
+  <p><strong>⚖️ Exceção ao Clima Ameno:</strong> Se você está jogando no <a href="sistema-modos.html">Clima Ameno</a>, a morte de NPCs é impossível por padrão — usar Finais Trágicos aqui é uma escolha explícita de <strong>desligar</strong> essa proteção só para esta cena. Você pode fazer isso, mas é bom saber que é uma exceção deliberada, não a regra do clima.</p>
 
   <h4>Morte de um NPC:</h4>
   <ul>
-    <li><strong>Gatilho:</strong> Quando um Relógio de Romance atinge 0/10 <strong>e</strong> você tira 6− em um move crítico com ele.</li>
-    <li><strong>Efeito:</strong> O NPC morre (ou desaparece permanentemente). Você ganha +5 Ecos pela coragem narrativa. O Relógio é substituído por uma <strong>Tag [ECO: Luto]</strong> que dá +2 em rolagens de CORAÇÃO sobre memória e perda.</li>
-    <li><strong>Opção:</strong> Você pode <strong>escolher</strong> que o NPC morra mesmo sem o gatilho, se sentir que a história pede. Ganhe +3 Ecos.</li>
+    <li><strong>Gatilho:</strong> Quando um Fio de Romance atinge 0/10 <strong>e</strong> você tira Cacos em um gesto crítico com ele.</li>
+    <li><strong>Efeito:</strong> O NPC morre (ou desaparece permanentemente). Você ganha +5 Retalhos pela coragem narrativa. O Fio é substituído por uma <strong>Marca [MEMÓRIA: Luto]</strong> que dá +2 em rolagens de BRASA sobre memória e perda.</li>
+    <li><strong>Opção:</strong> Você pode <strong>escolher</strong> que o NPC morra mesmo sem o gatilho, se sentir que a história pede. Ganhe +3 Retalhos.</li>
   </ul>
 
-  <h4>Morte do Protagonista:</h4>
+  <h4>Morte do Jogador:</h4>
   <ul>
-    <li><strong>Gatilho:</strong> Você pode <strong>escolher</strong> que o protagonista morra no clímax da história.</li>
-    <li><strong>Efeito:</strong> A campanha termina imediatamente. Escreva um <strong>Epílogo Trágico</strong> descrevendo o legado do protagonista. Ganhe +5 Ecos e uma <strong>Tag [ECO: Lenda Trágica]</strong> que pode ser usada em New Game+.</li>
+    <li><strong>Gatilho:</strong> Você pode <strong>escolher</strong> que o jogador morra no clímax da história.</li>
+    <li><strong>Efeito:</strong> A campanha termina imediatamente. Escreva um <strong>Epílogo Trágico</strong> descrevendo o legado do jogador. Ganhe +5 Retalhos e uma <strong>Marca [MEMÓRIA: Lenda Trágica]</strong> que pode ser usada em Amanhecer de Novo.</li>
   </ul>
 
   <h4>Fracasso Irreversível:</h4>
   <ul>
-    <li><strong>Gatilho:</strong> Você pode <strong>escolher</strong> que o protagonista falhe em seu objetivo principal.</li>
-    <li><strong>Efeito:</strong> A campanha termina com o protagonista vivo, mas tendo perdido algo importante. Escreva um <strong>Epílogo de Fracasso</strong>. Ganhe +3 Ecos e uma <strong>Tag [ECO: Lição Aprendida]</strong> que dá +1 em rolagens de MENTE em New Game+.</li>
+    <li><strong>Gatilho:</strong> Você pode <strong>escolher</strong> que o jogador falhe em seu objetivo principal.</li>
+    <li><strong>Efeito:</strong> A campanha termina com o jogador vivo, mas tendo perdido algo importante. Escreva um <strong>Epílogo de Fracasso</strong>. Ganhe +3 Retalhos e uma <strong>Marca [MEMÓRIA: Lição Aprendida]</strong> que dá +1 em rolagens de PENA em Amanhecer de Novo.</li>
   </ul>
 
   <p><em>"Nem toda história tem um final feliz. E isso também é uma história que vale ser contada."</em></p>
@@ -117,13 +168,13 @@
 
 <h2 id="misterios">D. Mistérios</h2>
 
-<h3>Passado do Protagonista (pré-escrito, 6 segmentos)</h3>
+<h3>Passado do Jogador (pré-escrito, 6 nós)</h3>
 <table>
 <tr><th>d6</th><th>Background</th><th>Revelação (quando atinge 6/6)</th></tr>
-<tr><td>1</td><td>Aprendiz do Antigo Restaurador</td><td>O antigo restaurador foi assassinado pela Guilda. Você sabe quem foi.</td></tr>
-<tr><td>2</td><td>Ex-Aventureiro(a) Aposentado(a)</td><td>Você abandonou seu grupo para morrer. Eles sobreviveram e te procuram.</td></tr>
-<tr><td>3</td><td>Órfão(ã) da Guilda</td><td>Seus pais foram executados pela Guilda. Você foi poupado(a) por ser criança.</td></tr>
-<tr><td>4</td><td>Forasteiro(a) em Refúgio</td><td>Você fugiu de uma facção poderosa. Eles te encontraram.</td></tr>
+<tr><td>1</td><td>Aprendiz do Antigo Restaurador</td><td>O antigo restaurador foi assassinado pela Confraria. Você sabe quem foi.</td></tr>
+<tr><td>2</td><td>Ex-Quebrador(a) Aposentado(a)</td><td>Você abandonou seu grupo para morrer. Eles sobreviveram e te procuram.</td></tr>
+<tr><td>3</td><td>Órfão(ã) da Confraria</td><td>Seus pais foram executados pela Confraria. Você foi poupado(a) por ser criança.</td></tr>
+<tr><td>4</td><td>Forasteiro(a) em Refúgio</td><td>Você fugiu de um Círculo poderoso. Eles te encontraram.</td></tr>
 <tr><td>5</td><td>Bibliotecário(a) Desonrado(a)</td><td>Você roubou um livro proibido. O livro está no subsolo e alguém sabe.</td></tr>
 <tr><td>6</td><td>Filho(a) de Artesão(ã) Falecido(a)</td><td>Seu pai/mãe criou um artefato proibido. Você herdou o conhecimento e o perigo.</td></tr>
 </table>
@@ -132,16 +183,17 @@
   <h3>📖 O que é "Resolver" um Mistério?</h3>
   <p>Um mistério é considerado <strong>resolvido</strong> quando:</p>
   <ol>
-    <li>O Relógio de Mistério atinge o <strong>máximo de segmentos</strong> (6 ou 8).</li>
-    <li>Isso deve ser feito através de rolagens bem-sucedidas (10+ ou 7–9) nos moves: <em>Estudar um Artefato</em>, <em>Decifrar um Enigma</em>, <em>Descobrir Segredo da Cidade</em> ou <em>Sonhar</em>.</li>
+    <li>O Fio de Mistério atinge o <strong>máximo de nós</strong> (6 ou 8).</li>
+    <li>Isso deve ser feito através de rolagens bem-sucedidas (Inteiro ou Cicatrizes de Ouro) nos gestos: <em>Estudar um Artefato</em>, <em>Decifrar um Enigma</em>, <em>Descobrir Segredo da Cidade</em> ou <em>Sonhar</em>.</li>
     <li>Ao atingir o máximo, você <strong>escreve a revelação</strong> (ou rola na tabela de Revelações abaixo).</li>
   </ol>
-  <p><strong>Nota:</strong> Você não precisa resolver TODOS os mistérios para terminar o jogo. Mas resolver todos desbloqueia o <strong>Módulo Bônus: Sala das Verdades</strong> (custo: 5 Recursos).</p>
+  <p><strong>Nota:</strong> Você não precisa resolver todos os mistérios para terminar o jogo. Mas resolver todos desbloqueia o <strong>Cômodo Bônus: Sala das Verdades</strong> (custo: 5 Recursos).</p>
 </div>
 
 <h3>Revelações de Mistério (d10)</h3>
-<p>Quando o Relógio atinge o máximo, role 1d10 para o tom da revelação:</p>
+<p>Quando o Fio atinge o máximo, role 1d10 para o tom da revelação:</p>
 <table>
+<tr><th>d10</th><th>Revelação</th></tr>
 <tr><td>1</td><td>A verdade é mais simples do que você imaginava</td></tr>
 <tr><td>2</td><td>A verdade envolve alguém que você confia</td></tr>
 <tr><td>3</td><td>A verdade muda tudo o que você sabia</td></tr>
@@ -155,7 +207,7 @@
 </table>
 
 <h3>Ameaças Sutis</h3>
-<p>As "ameaças" neste jogo não são vilões épicos — são <strong>presenças</strong>, <strong>ecos</strong>, <strong>lembranças</strong>. Veja <a href="lore.html">Lore e Atmosfera</a> para a tabela completa de Ameaças Sutis.</p>
+<p>As "ameaças" neste jogo não são vilões épicos — são <strong>presenças</strong>, <strong>ecos</strong>, <strong>lembranças</strong>. Veja <a href="lore.html">Atmosfera</a> para a tabela completa de Ameaças Sutis.</p>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
@@ -166,28 +218,28 @@
   <p>Nem todo amor chega a 10/10. Às vezes estagna em 6/10. Às vezes regrede. E tudo bem. <strong>O fim não é falha — é parte da vida.</strong> O jogo precisa abraçar a dor tanto quanto a alegria.</p>
 </div>
 
-<h3>Move: Quando o Amor Acaba (6/10+)</h3>
-<p><strong>Gatilho:</strong> Quando Relógio de Romance estagna em 6/10 ou regrede permanentemente.</p>
-<p><strong>Capacidade:</strong> CORAÇÃO</p>
+<h3>Gesto: Quando o Amor Acaba (6/Inteiro)</h3>
+<p><strong>Gatilho:</strong> Quando Fio de Romance estagna em 6/10 ou regrede permanentemente.</p>
+<p><strong>Instrumento:</strong> BRASA</p>
 <table>
 <tr><th>Resultado</th><th>Efeito</th></tr>
-<tr><td><strong>10+</strong></td><td>Você aceita com graça. Ganha tag <span style="background: var(--gold); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">ECO: Cicatriz do Amor</span>. +2 Ecos.</td></tr>
-<tr><td><strong>7–9</strong></td><td>Você aceita, mas com dor. <strong>Escolha 1:</strong> (a) o NPC se afasta temporariamente, (b) você precisa de um tempo sozinho(a) (perde 1 Ato amanhã), (c) o término revela algo sobre você mesmo(a) (ganha Tag [ECO: Autoconhecimento]). Ganha tag <span style="background: var(--gold); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">ECO: Cicatriz do Amor</span>. +1 Eco.</td></tr>
-<tr><td><strong>6−</strong></td><td>Você não aceita. Relógio de Tensão avança 2. Ganha tag <span style="background: var(--danger); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">VÍNCULO−</span>.</td></tr>
+<tr><td><strong>Inteiro</strong></td><td>Você aceita com graça. Ganha Marca <span style="background: var(--gold); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">MEMÓRIA: Cicatriz do Amor</span>. +2 Retalhos.</td></tr>
+<tr><td><strong>Cicatrizes de Ouro</strong></td><td>Você aceita, mas com dor. <strong>Escolha 1:</strong> (a) o NPC se afasta temporariamente, (b) você precisa de um tempo sozinho(a) (perde 1 Fôlego amanhã), (c) o término revela algo sobre você mesmo(a) (ganha Marca [MEMÓRIA: Autoconhecimento]). Ganha Marca <span style="background: var(--gold); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">MEMÓRIA: Cicatriz do Amor</span>. +1 Retalho.</td></tr>
+<tr><td><strong>Cacos</strong></td><td>Você não aceita. Fio de Tensão avança 2 nós. Ganha Marca <span style="background: var(--danger); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">VÍNCULO−</span>.</td></tr>
 </table>
 
-<h3>Move: Fim Antecipado (0/10)</h3>
+<h3>Gesto: Fim Antecipado (0/10)</h3>
 <p><strong>Gatilho:</strong> Quando você termina um relacionamento <strong>antes</strong> de chegar a 6/10.</p>
-<p><strong>Capacidade:</strong> CORAÇÃO</p>
+<p><strong>Instrumento:</strong> BRASA</p>
 <table>
 <tr><th>Resultado</th><th>Efeito</th></tr>
-<tr><td><strong>10+</strong></td><td>Você termina com clareza e respeito. Ganha tag <span style="background: var(--mystery); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">ECO: Fim Antecipado</span>. +2 Ecos.</td></tr>
-<tr><td><strong>7–9</strong></td><td>Você termina, mas com dúvidas. <strong>Escolha 1:</strong> (a) o NPC fica magoado — você precisa se desculpar depois, (b) você se sente culpado(a) (perde 1 Ato amanhã), (c) o término revela algo que você não esperava. Ganha tag <span style="background: var(--mystery); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">ECO: Fim Antecipado</span>. +1 Eco.</td></tr>
-<tr><td><strong>6−</strong></td><td>O término é doloroso e confuso. Relógio de Tensão avança 1. Ganha tag <span style="background: var(--danger); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">VÍNCULO−</span>.</td></tr>
+<tr><td><strong>Inteiro</strong></td><td>Você termina com clareza e respeito. Ganha Marca <span style="background: var(--mystery); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">MEMÓRIA: Fim Antecipado</span>. +2 Retalhos.</td></tr>
+<tr><td><strong>Cicatrizes de Ouro</strong></td><td>Você termina, mas com dúvidas. <strong>Escolha 1:</strong> (a) o NPC fica magoado — você precisa se desculpar depois, (b) você se sente culpado(a) (perde 1 Fôlego amanhã), (c) o término revela algo que você não esperava. Ganha Marca <span style="background: var(--mystery); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">MEMÓRIA: Fim Antecipado</span>. +1 Retalho.</td></tr>
+<tr><td><strong>Cacos</strong></td><td>O término é doloroso e confuso. Fio de Tensão avança 1 nó. Ganha Marca <span style="background: var(--danger); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">VÍNCULO−</span>.</td></tr>
 </table>
 
 <h3>Tabela de Fins Melancólicos (d10)</h3>
-<p>Quando usar o move, role 1d10 ou escolha:</p>
+<p>Quando usar o gesto, role 1d10 ou escolha:</p>
 <ol>
 <li>Vocês se tornam amigos distantes — se veem na cidade, mas não conversam mais.</li>
 <li>Um de vocês muda para outra cidade — o amor não acabou, mas a distância sim.</li>
@@ -195,32 +247,32 @@
 <li>Um segredo vem à tona e quebra a confiança — não há reconciliação possível.</li>
 <li>Vocês percebem que amam pessoas diferentes — e escolhem ser honestos.</li>
 <li>A vida acontece — não há drama, só o tempo passando e o amor esfriando.</li>
-<li>Um de vocês escolhe a Guilda sobre o amor — e o outro aceita.</li>
+<li>Um de vocês escolhe a Confraria sobre o amor — e o outro aceita.</li>
 <li>Vocês percebem que o relacionamento era uma fuga — e voltam para a realidade.</li>
 <li>Um de vocês parte para uma expedição — e não volta.</li>
 <li>Vocês percebem que o amor acabou — e escolhem terminar com dignidade.</li>
 </ol>
 
-<h3>Cicatrizes Emocionais</h3>
-<p>Relógios que não completam deixam tag <span style="background: var(--gold); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">ECO: Cicatriz do Amor</span>:</p>
+<h3>Rastros Emocionais</h3>
+<p>Fios que não completam deixam Marca <span style="background: var(--gold); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">MEMÓRIA: Cicatriz do Amor</span>:</p>
 <ul>
-<li><strong>+1</strong> em rolagens de CORAÇÃO sobre vulnerabilidade</li>
-<li><strong>−1</strong> em rolagens de SEDUZIR com novos NPCs</li>
+<li><strong>+1</strong> em rolagens de BRASA sobre vulnerabilidade</li>
+<li><strong>−1</strong> em rolagens de BRASA ao se abrir com novos NPCs</li>
 </ul>
 <p>Representa que o amor passado molda o amor futuro. A dor é real, mas também é aprendizado.</p>
 
-<h3>Prompt de Escrita: "O que você não disse"</h3>
-<p>Após usar o move "Quando o Amor Acaba", escreva sobre:</p>
+<h3>Convite de Escrita: "O que você não disse"</h3>
+<p>Após usar o gesto "Quando o Amor Acaba", escreva sobre:</p>
 <div class="callout example">
   <em>"Escreva sobre o que você não disse, mas gostaria. O que ficou preso na garganta? O que você gostaria que ele soubesse? O que você nunca vai contar?"</em>
 </div>
 
-<h3>Prompt de Escrita: "O dia seguinte"</h3>
+<h3>Convite de Escrita: "O dia seguinte"</h3>
 <div class="callout example">
   <em>"Escreva sobre a manhã depois. O que você faz primeiro? O que você evita? O que você encontra nos seus aposentos que lembra ele(a)? O que você faz com esse objeto?"</em>
 </div>
 
-<h3>Prompt de Escrita: "A última conversa"</h3>
+<h3>Convite de Escrita: "A última conversa"</h3>
 <div class="callout example">
   <em>"Escreva a última conversa que vocês tiveram. O que foi dito? O que ficou implícito? O que nenhum dos dois teve coragem de dizer? Onde vocês estavam? Que horas eram?"</em>
 </div>
@@ -232,72 +284,121 @@
 <div class="callout festival">
   <h3>🎉 Festivais Sazonais</h3>
   <p>A cada <strong>4 capítulos</strong>, acontece um <strong>Festival Sazonal</strong> na cidade — um evento especial que reúne todos os NPCs e dá recompensas únicas.</p>
-  
+
   <h4>Tipos de Festivais (role 1d4):</h4>
   <table>
   <tr><th>d4</th><th>Festival</th><th>Recompensa</th></tr>
-  <tr><td>1</td><td><strong>Festival da Primavera</strong></td><td>+2 Ecos, Tag [DOMÉSTICO] permanente</td></tr>
-  <tr><td>2</td><td><strong>Festival do Solstício</strong></td><td>+3 Ecos, todos os Relógios de Romance +1</td></tr>
-  <tr><td>3</td><td><strong>Festival da Colheita</strong></td><td>+5 Recursos, Tag [VÍNCULO+] com NPC da cidade</td></tr>
-  <tr><td>4</td><td><strong>Festival do Inverno</strong></td><td>+1 Ato permanente por 1 capítulo, todos os Relógios de Ligação +1</td></tr>
+  <tr><td>1</td><td><strong>Festival da Primavera</strong></td><td>+2 Retalhos, Marca [DOMÉSTICO] permanente</td></tr>
+  <tr><td>2</td><td><strong>Festival do Solstício</strong></td><td>+3 Retalhos, todos os Fios de Romance +1 nó</td></tr>
+  <tr><td>3</td><td><strong>Festival da Colheita</strong></td><td>+5 Recursos, Marca [VÍNCULO+] com NPC da cidade</td></tr>
+  <tr><td>4</td><td><strong>Festival do Inverno</strong></td><td>+1 Fôlego permanente por 1 capítulo, todos os Fios de Ligação +1 nó</td></tr>
   </table>
-  
+
   <h4>Como Funciona:</h4>
   <ul>
-    <li>O Festival dura <strong>1 dia narrativo completo</strong> (3 Atos dedicados).</li>
+    <li>O Festival dura <strong>1 dia narrativo completo</strong> (3 Fôlegos dedicados).</li>
     <li>Durante o Festival, você pode fazer <strong>1 ação especial</strong> (dançar com NPC, cozinhar juntos, presentear alguém).</li>
-    <li>Todos os NPCs presentes ganham <strong>+1 no Relógio de Ligação</strong>.</li>
-    <li>Você pode escolher <strong>1 Relógio de Romance</strong> para avançar +2 segmentos.</li>
+    <li>Todos os NPCs presentes ganham <strong>+1 no Fio de Ligação</strong>.</li>
+    <li>Você pode escolher <strong>1 Fio de Romance</strong> para avançar +2 nós.</li>
   </ul>
-  
-  <p><em>"Uma vez por estação, a cidade para. As luzes mágicas acendem. A música toca. E por um dia, os Bastidores não importam. Só as pessoas importam."</em></p>
+
+  <p><em>"Uma vez por estação, a cidade para. As luzes mágicas acendem. A música toca. E por um dia, a Contracena não importa. Só as pessoas importam."</em></p>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h2 id="epilogo">G. 🕯️ Epílogo Estendido — A Despedida</h2>
+<h2 id="epilogo">G. 🕯️ Epílogo Estendido — O Ritual do Entardecer</h2>
+
+<p>Quando o Fio do Entardecer atinge 8/8, a história principal chega ao fim — mas a campanha não se encerra de imediato. O que vem a seguir é o <strong>Ritual do Entardecer</strong>: o momento de abrir o Álbum de Nomes Verdadeiros e reconhecer tudo que foi aprendido.</p>
+
+<div class="album-momento">
+  <h3>📖 Abrindo o Álbum</h3>
+  <p>Antes de qualquer outra coisa — antes das cenas de despedida, antes do epílogo —, você abre o <a href="sistema-legado.html">Álbum de Nomes Verdadeiros</a> e faz o seguinte:</p>
+
+  <div class="album-passo">
+    <div class="album-passo-num">1</div>
+    <div class="album-passo-corpo">
+      <strong>Releia os Nomes descobertos</strong>
+      Percorra cada Canto do Álbum — A Lareira, A Janela, A Estante, A Soleira da Porta, O Porão — e releia em voz alta (ou em pensamento) cada Nome Verdadeiro que você registrou. Não é uma verificação de pontuação: é um ato de memória. Você está lembrando, em sequência, de tudo que esteve realmente presente.
+    </div>
+  </div>
+
+  <div class="album-passo">
+    <div class="album-passo-num">2</div>
+    <div class="album-passo-corpo">
+      <strong>Conte as páginas preenchidas</strong>
+      Registre o total de páginas em todos os Cantos. Esse número determina o nível do Que Fica — conforme a tabela em <a href="sistema-legado.html">O Que Fica</a>. Não há cálculo complexo: uma página, um Nome, uma presença real.
+    </div>
+  </div>
+
+  <div class="album-passo">
+    <div class="album-passo-num">3</div>
+    <div class="album-passo-corpo">
+      <strong>Releia as palavras-eco</strong>
+      Se você preencheu o campo opcional de cada página — "O que esse Nome diz sobre mim" —, agora é a hora de reunir essas palavras. Leia-as em sequência, sem pressa. Elas não são o Nome de Si Mesmo: são o caminho que levou até ele. O que elas têm em comum? O que elas contradizem? O que elas revelam que você não teria dito sozinho?
+    </div>
+  </div>
+
+  <div class="album-passo">
+    <div class="album-passo-num">4</div>
+    <div class="album-passo-corpo">
+      <strong>A oportunidade do Nome de Si Mesmo</strong>
+      Antes de fechar o Álbum, você tem uma última oportunidade. Veja a caixa abaixo.
+    </div>
+  </div>
+</div>
+
+<div class="nome-si-mesmo">
+  <h4>✦ O Nome de Si Mesmo</h4>
+  <p>No Entardecer — quando o Fio atinge 8/8 e a história chega ao seu fim —, o jogador pode fazer uma última coisa antes de fechar o Álbum.</p>
+  <p>Pode declarar seu próprio Nome Verdadeiro.</p>
+  <p>Não o nome que seus pais deram, não o título que a Confraria usa. O nome que toda a jornada revelou. Quem você é depois de tudo que viveu, perdeu, consertou e nomeou.</p>
+  <p>Escreva esse Nome na última página do Álbum. Não há gatilho mecânico: ele nasce do que você viveu. Se a história não o revelou, o Nome ainda não chegou — e não chegar também é uma resposta.</p>
+  <p><strong>Se o Nome de Si Mesmo for declarado, ele eleva o nível do Que Fica em +1.</strong></p>
+</div>
 
 <div class="callout farewell">
-  <h3>🕯️ Epílogo Estendido: 3 Capítulos de Despedida</h3>
-  <p>Após o Evento Final (quando o Relógio atinge 8/8), a história <strong>não termina imediatamente</strong>. Você tem <strong>3 capítulos de despedida</strong> para resolver cada Relógio com calma, dizer adeus aos personagens, e construir o epílogo.</p>
-  
+  <h3>🕯️ Os 3 Capítulos de Despedida</h3>
+  <p>Após o ritual do Álbum, você tem <strong>3 capítulos de despedida</strong> para resolver cada Fio com calma, dizer adeus aos personagens, e construir o epílogo.</p>
+
   <h4>Capítulo de Despedida 1: "O Que Aconteceu"</h4>
   <ul>
-    <li>Descreva o Evento Final em detalhes.</li>
+    <li>Descreva o Entardecer em detalhes.</li>
     <li>Como você reagiu? O que mudou?</li>
-    <li>Quais Relógios foram afetados?</li>
-    <li><strong>Prompt:</strong> <em>"Escreva o momento exato em que você soube que tudo havia mudado. Onde você estava? O que você sentiu? O que você fez primeiro?"</em></li>
+    <li>Quais Fios foram afetados?</li>
+    <li><strong>Convite de Escrita:</strong> <em>"Escreva o momento exato em que você soube que tudo havia mudado. Onde você estava? O que você sentiu? O que você fez primeiro?"</em></li>
   </ul>
-  
+
   <h4>Capítulo de Despedida 2: "As Consequências"</h4>
   <ul>
-    <li>Resolva cada Relógio pendente (Romance, Mistério, Tensão).</li>
+    <li>Resolva cada Fio pendente (Romance, Mistério, Tensão).</li>
     <li>Para cada NPC importante, escreva uma cena de despedida.</li>
     <li>Decida o destino de cada relacionamento.</li>
-    <li><strong>Prompt:</strong> <em>"Escreva a última conversa que você teve com cada NPC importante. O que foi dito? O que ficou implícito? O que você gostaria de ter dito?"</em></li>
+    <li><strong>Convite de Escrita:</strong> <em>"Escreva a última conversa que você teve com cada NPC importante. O que foi dito? O que ficou implícito? O que você gostaria de ter dito?"</em></li>
   </ul>
-  
+
   <h4>Capítulo de Despedida 3: "O Novo Começo"</h4>
   <ul>
-    <li>Descreva o destino do protagonista.</li>
+    <li>Descreva o destino do jogador.</li>
     <li>Escolha a imagem final da campanha.</li>
-    <li>Decida se há continuação (New Game+).</li>
-    <li><strong>Prompt:</strong> <em>"Escreva a última cena. Onde você está? O que está fazendo? Quem está com você? O que você vê pela última vez? O que você sente?"</em></li>
+    <li>Decida se há continuação (Amanhecer de Novo).</li>
+    <li><strong>Convite de Escrita:</strong> <em>"Escreva a última cena. Onde você está? O que está fazendo? Quem está com você? O que você vê pela última vez? O que você sente?"</em></li>
   </ul>
-  
+
   <p><em>"Toda história merece uma despedida digna. Não um corte abrupto, mas um suspiro lento. Um adeus que honra tudo que foi vivido."</em></p>
 </div>
 
-<h3>Sequência de Prompts para Epílogo</h3>
+<h3>Sequência de Convites para o Epílogo</h3>
 
-<div class="step"><span class="step-number">1</span><strong>EVENTO FINAL:</strong> "Descreva o Evento Final. O que aconteceu? Como você reagiu? O que mudou?"</div>
-<div class="step"><span class="step-number">2</span><strong>ROMANCE</strong> (para cada NPC): "Descreva o destino do seu relacionamento com [NPC]. Vocês estão juntos? Separados? Amigos?"</div>
-<div class="step"><span class="step-number">3</span><strong>GUILDA:</strong> "Descreva o destino da sua relação com a Guilda. Você continua? Saiu? Tornou-se Mestre?"</div>
-<div class="step"><span class="step-number">4</span><strong>CIDADE:</strong> "Descreva o destino da sua relação com a cidade. Você continua morando aqui? Saiu? Tornou-se uma lenda?"</div>
-<div class="step"><span class="step-number">5</span><strong>OFÍCIO:</strong> "Descreva o destino do seu ofício. Você continua restaurando? Aposentou-se? Tornou-se mestre?"</div>
-<div class="step"><span class="step-number">6</span><strong>POLIAMOR</strong> (opcional): "Descreva o destino do relacionamento múltiplo. Vocês estão juntos? Separados? Como funciona?"</div>
-<div class="step"><span class="step-number">7</span><strong>CASAMENTO</strong> (opcional): "Se houve casamento, descreva a cerimônia. Quem estava presente? Quais foram os votos? Como foi a festa?"</div>
-<div class="step"><span class="step-number">8</span><strong>IMAGEM FINAL:</strong> "Descreva a imagem final. Onde você está? O que está fazendo? Quem está com você? Qual é a última coisa que você vê?"</div>
+<div class="step"><span class="step-number">1</span><strong>O ÁLBUM:</strong> "Releia cada Nome do Álbum em voz alta. Qual deles você mal consegue pronunciar sem sentir algo? Por quê?"</div>
+<div class="step"><span class="step-number">2</span><strong>O ENTARDECER:</strong> "Descreva o que aconteceu. Como você reagiu? O que mudou?"</div>
+<div class="step"><span class="step-number">3</span><strong>ROMANCE</strong> (para cada NPC): "Descreva o destino do seu relacionamento com [NPC]. Vocês estão juntos? Separados? Amigos?"</div>
+<div class="step"><span class="step-number">4</span><strong>CONFRARIA:</strong> "Descreva o destino da sua relação com a Confraria. Você continua? Saiu? Tornou-se Mestre?"</div>
+<div class="step"><span class="step-number">5</span><strong>CIDADE:</strong> "Descreva o destino da sua relação com a cidade. Você continua morando aqui? Saiu? Tornou-se uma lenda?"</div>
+<div class="step"><span class="step-number">6</span><strong>CURADORIA:</strong> "Descreva o destino do seu ofício. Você continua restaurando? Aposentou-se? Tornou-se mestre?"</div>
+<div class="step"><span class="step-number">7</span><strong>POLIAMOR</strong> (opcional): "Descreva o destino do relacionamento múltiplo. Vocês estão juntos? Separados? Como funciona?"</div>
+<div class="step"><span class="step-number">8</span><strong>CASAMENTO</strong> (opcional): "Se houve casamento, descreva a cerimônia. Quem estava presente? Quais foram os votos? Como foi a festa?"</div>
+<div class="step"><span class="step-number">9</span><strong>IMAGEM FINAL:</strong> "Descreva a última cena. Onde você está? O que está fazendo? Quem está com você? Qual é a última coisa que você vê?"</div>
 
 <h3>Perguntas Específicas por Arquétipo</h3>
 <p><strong>EXPLORADOR(A):</strong> "O que você aprendeu sobre o mundo lá fora através de [NPC]? O que vai explorar agora? Vocês vão viajar juntos?"</p>
@@ -309,75 +410,83 @@
 <div class="callout tip">
   <strong>Elementos opcionais:</strong>
   <ul>
-    <li><strong>Local:</strong> Nos Bastidores, na cidade, em lugar significativo</li>
-    <li><strong>Convidados:</strong> NPCs da cidade, trabalhadores da Guilda, outros NPCs romanceáveis</li>
+    <li><strong>Local:</strong> Na Contracena, na cidade, em lugar significativo</li>
+    <li><strong>Convidados:</strong> NPCs da cidade, trabalhadores da Confraria, outros NPCs romanceáveis</li>
     <li><strong>Votos:</strong> O que cada um promete ao outro?</li>
-    <li><strong>Festa:</strong> Comida, música, dança, drag show (se aplicável)</li>
+    <li><strong>Festa:</strong> Comida, música, dança</li>
     <li><strong>Presentes:</strong> Artefatos restaurados, objetos pessoais, promessas</li>
   </ul>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h2 id="continuacao">H. Continuação e New Game+</h2>
+<h2 id="continuacao">H. Continuação e Amanhecer de Novo</h2>
 
 <h3>Continuação (d6)</h3>
 <p>No final do epílogo, role 1d6 para gancho de continuação:</p>
 <table>
+<tr><th>d6</th><th>Gancho</th></tr>
 <tr><td>1</td><td><strong>NPC Retorna</strong> — Um NPC que partiu retorna com uma proposta</td></tr>
 <tr><td>2</td><td><strong>Artefato se Manifesta</strong> — Um artefato restaurado começa a agir por conta própria</td></tr>
 <tr><td>3</td><td><strong>Cidade Muda</strong> — A cidade passa por uma transformação radical</td></tr>
-<tr><td>4</td><td><strong>Bastidores Revelam Nível Novo</strong> — Os Bastidores revelam um nível secreto</td></tr>
+<tr><td>4</td><td><strong>Contracena Revela Nível Novo</strong> — A Contracena revela um espaço secreto</td></tr>
 <tr><td>5</td><td><strong>Mistério Ressurge</strong> — Um mistério resolvido volta com novas pistas</td></tr>
-<tr><td>6</td><td><strong>Novo Personagem Aparece</strong> — Um novo NPC aparece com uma proposta</td></tr>
+<tr><td>6</td><td><strong>Novo Personagem Aparece</strong> — Um novo NPC chega com uma proposta</td></tr>
 </table>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h2 id="new-game-plus">I. ✨ New Game+ — A Próxima Geração</h2>
+<h2 id="new-game-plus">I. ✨ Amanhecer de Novo <em>(análogo a: Novo Jogo+ (NG+))</em> — A Próxima Geração</h2>
 
 <div class="callout celestial">
-  <h3>✨ New Game+: Passando a Oficina</h3>
-  <p>Para jogadores que querem continuar a história, existe o <strong>New Game+</strong> — uma nova campanha onde o protagonista envelhece e passa a oficina para um aprendiz.</p>
-  
+  <h3>✨ Amanhecer de Novo: Passando a Contracena</h3>
+  <p>Para jogadores que querem continuar a história, existe o <strong>Amanhecer de Novo</strong> — uma nova campanha onde o jogador envelhece e passa a Contracena a um aprendiz. O nível do Que Fica (determinado pelas páginas do Álbum de Nomes Verdadeiros) define o que atravessa esse limiar.</p>
+
+  <h4>O Que o Álbum Transfere:</h4>
+  <p>No novo ciclo, o jogador carrega <strong>1 Marca [MEMÓRIA:]</strong> por nível do Que Fica alcançado na campanha anterior. O conteúdo de cada Marca é escolhido pelo jogador com base nas páginas do Álbum: pode ser o Nome de um NPC que permanece vivo na memória, o Nome de um artefato que ainda existe na Contracena, uma lição que a jornada ensinou.</p>
+  <p>As Marcas são narrativas — não dão bônus automáticos, mas podem ser invocadas em cenas relevantes como qualquer outra Marca [MEMÓRIA:], conforme descrito em <a href="sistema-tags.html">Sistema: Marcas</a>.</p>
+  <p>As páginas do Álbum não se transferem: os Nomes que o novo jogador vai descobrir são os seus. Mas os ecos dos Nomes anteriores existem no mundo — como lendas, como objetos deixados para trás, como a razão pela qual a Contracena ainda está de pé.</p>
+
   <h4>Como Funciona:</h4>
   <ul>
-    <li>O protagonista original se torna <strong>Mentor</strong> (NPC importante na nova campanha).</li>
-    <li>Você cria um <strong>novo protagonista</strong> — o aprendiz que assume os Bastidores.</li>
-    <li>Todos os <strong>Relógios são zerados</strong>, mas as <strong>Conquistas permanecem</strong> (como lendas contadas).</li>
-    <li>Os <strong>Artefatos de Estimação</strong> do protagonista original ficam nos Bastidores como relíquias.</li>
-    <li>O <strong>Módulo Conjunto</strong> (se desbloqueado) vira uma sala histórica.</li>
+    <li>O jogador original se torna <strong>Mentor</strong> (NPC importante na nova campanha).</li>
+    <li>Você cria um <strong>novo jogador</strong> — o aprendiz que assume a Contracena.</li>
+    <li>Todos os <strong>Fios são zerados</strong>, mas as <strong>Marcas [MEMÓRIA:]</strong> herdadas do Álbum permanecem.</li>
+    <li><strong>Fios de Romance</strong> não são exceção: um Fio que chegou a 8/8 ou 10/10 na campanha anterior <strong>recomeça em 0 nós</strong> no Amanhecer de Novo, como qualquer outro Fio — a numeração não carrega crédito algum. O que permanece é puramente narrativo: se o NPC ainda estiver presente (como Mentor ou figura recorrente), a história entre ele e o jogador original já é conhecida e pode ser referenciada em cena; mas a relação do <strong>novo</strong> jogador com esse NPC é um Fio novo, do zero, mecânica e narrativamente.</li>
+    <li>Os <strong>Saberes</strong> (conquistas ativas, máx. 5) da campanha anterior <strong>não atravessam</strong> — o novo jogador começa sem nenhum. O que representa o aprendizado herdado são as Marcas [MEMÓRIA:] acima, não os Saberes em si.</li>
+    <li>Os <strong>artefatos de estimação</strong> do jogador original ficam na Contracena como relíquias.</li>
   </ul>
-  
+
   <h4>O que Muda:</h4>
   <ul>
-    <li>O novo protagonista começa com <strong>+1 em todas as Capacidades Inatas</strong> (herdou o conhecimento do mentor).</li>
-    <li>Os Bastidores têm <strong>+1 Maravilha Cotidiana permanente</strong> (deixada pelo mentor).</li>
-    <li>A cidade lembra do protagonista original (<strong>+1 em Reputação</strong> inicial).</li>
+    <li>O novo jogador começa com <strong>+1 em todos os Instrumentos</strong> (herdou o conhecimento do mentor).</li>
+    <li>A Contracena tem <strong>+1 Maravilha Cotidiana permanente</strong> (deixada pelo mentor).</li>
+    <li>A cidade lembra do jogador original (<strong>+1 em Vínculos</strong> inicial).</li>
     <li>Os NPCs romanceáveis da campanha anterior podem aparecer como <strong>NPCs da cidade</strong> (não romanceáveis).</li>
   </ul>
-  
+
   <h4>O que Permanece:</h4>
   <ul>
     <li>Todos os <strong>segredos revelados</strong> permanecem revelados.</li>
     <li>Todos os <strong>relacionamentos resolvidos</strong> permanecem resolvidos.</li>
     <li>Todos os <strong>mistérios resolvidos</strong> permanecem resolvidos.</li>
-    <li>O <strong>Evento Final</strong> da campanha anterior é conhecido como lenda.</li>
+    <li>O <strong>Entardecer</strong> da campanha anterior é conhecido como lenda.</li>
   </ul>
-  
-  <h4>Recompensa de New Game+:</h4>
+
+  <h4>Recompensa de Amanhecer de Novo:</h4>
   <ul>
-    <li>Comece com <strong>+5 Ecos</strong> iniciais (herança do mentor).</li>
+    <li>Comece com <strong>+5 Retalhos</strong> iniciais (herança do mentor).</li>
     <li>Comece com <strong>+3 Recursos</strong> adicionais.</li>
-    <li>Ganhe a Tag <span style="background: var(--gold); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">ECO: Herdeiro dos Bastidores</span> que dá +1 em todas as rolagens dentro dos Bastidores.</li>
+    <li>Ganhe a Marca <span style="background: var(--gold); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">MEMÓRIA: Herdeiro da Contracena</span>, que pode ser invocada em cenas que envolvam a história da Contracena.</li>
   </ul>
-  
-  <p><em>"Os Bastidores não são seus. Eles são de todos que passaram por aqui. Você só está cuidando deles por enquanto. Um dia, alguém vai cuidar por você."</em></p>
+
+  <p><em>"A Contracena não é sua. É de todos que passaram por aqui. Você só está cuidando dela por enquanto. Um dia, alguém vai cuidar por você."</em></p>
 </div>
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Página anterior: <a href="progressao-consequencias.html">← Progressão</a> | Próxima página: <a href="geradores-npcs.html">Fichas e Geradores →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Finais e Epílogo</p>
+  <p><a href="sistema-legado.html">← O Que Fica</a> | <a href="index.html">Início →</a></p>
 </footer>
 
 </div>
@@ -385,7 +494,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

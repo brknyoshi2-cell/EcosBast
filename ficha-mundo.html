@@ -1,486 +1,325 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecos dos Bastidores — Ficha do Mundo</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Retalhos da Contracena — Confraria & Cidade: Ficha do Mundo</title>
+<style>
+.sheet {
+  background: #fefcf7;
+  border: 2px solid var(--accent);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
+  border-radius: 6px;
+}
+.sheet h3 {
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+.sheet h4 {
+  color: var(--accent);
+  margin: 1.2rem 0 0.4rem;
+  font-size: 0.95rem;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+}
+.field {
+  display: flex;
+  align-items: baseline;
+  margin: 0.45rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.field-label {
+  font-weight: bold;
+  color: var(--accent);
+  min-width: 160px;
+  font-variant: small-caps;
+  font-size: 0.9rem;
+}
+.field-line {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.4rem;
+  min-width: 140px;
+}
+.section-break {
+  border: none;
+  border-top: 1px dashed var(--accent-light);
+  margin: 1.4rem 0;
+}
+.print-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin: 0.5rem 0 1rem;
+  transition: background 0.2s;
+}
+.print-btn:hover { background: var(--gold); }
+@media print {
+  .top-nav, .floating-controls, .back-to-top, .no-print, .print-btn { display: none !important; }
+  body { background: white !important; }
+  .sheet { box-shadow: none !important; border: 1px solid #ccc !important; page-break-inside: avoid; }
+}
+.ficha-controles {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5rem 0 1rem;
+}
+.save-btn {
+  display: inline-block;
+  background: var(--success);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: filter 0.2s;
+}
+.save-btn:hover { filter: brightness(1.1); }
+.ficha-status {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.sheet input[type="text"] {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.4rem;
+  min-width: 140px;
+  width: 100%;
+  padding: 0;
+}
+.sheet input[type="text"]:focus {
+  outline: none;
+  border-bottom: 1px solid var(--gold);
+}
+table input[type="text"] {
+  border: none;
+  border-bottom: 1px dotted var(--ink-soft);
+  min-width: unset;
+}
+@media print {
+  .ficha-controles { display: none !important; }
+  .sheet input[type="text"], table input[type="text"] { border-bottom: 1px solid #999 !important; }
+}
+</style>
 </head>
-<body data-theme="dark">
-  <nav class="top-nav">
-    <div class="top-nav-inner">
-      <h1>Ecos dos Bastidores</h1>
-      <div class="nav-links">
-        <a href="index.html">Início</a>
-      </div>
-    </div>
-  </nav>
+<body>
 
-  <div class="breadcrumbs">
-    <a href="index.html">Início</a> > <a href="index.html#ferramentas">Ferramentas</a> > Ficha do Mundo
-  </div>
+<nav class="top-nav no-print" id="nav-container"></nav>
 
-  <div class="container">
-    <header>
-      <h2>📋 Ficha do Mundo</h2>
-      <p class="callout"><em>"Antes de restaurar relíquias, você precisa saber que mundo as forjou."</em></p>
-      <button class="print-btn" onclick="window.print()">🖨 Imprimir</button>
-    </header>
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="pilar-confraria.html">Confraria &amp; Cidade</a> &gt; <a href="pilar-confraria-ferramentas.html">Ferramentas</a> &gt; <strong>Ficha do Mundo</strong>
+</div>
 
-    <section>
-      <h3>🌍 O Mundo</h3>
-      
-      <h4>A Natureza da Magia</h4>
-      <p><strong>Como aparece no dia a dia:</strong> _________________________________</p>
-      <p><strong>Como as pessoas comuns veem:</strong> _________________________________</p>
-      <p><strong>Onde vem?</strong> _________________________________</p>
-      <p><strong>Há limites?</strong> _________________________________</p>
-      <p><strong>Quem pode usá-la?</strong> _________________________________</p>
+<div class="container">
 
-      <h4>O Conflito do Mundo</h4>
-      <p><strong>Conflito central:</strong> _________________________________</p>
-      <p><strong>Última grande guerra:</strong> _________________________________</p>
-      <p><strong>Quem são os "heróis"?</strong> _________________________________</p>
-      <p><strong>O que os comuns pensam sobre aventureiros?</strong> _________________________________</p>
+<div class="sheet" id="sheet-mundo">
+<h3>🌍 Ficha do Mundo</h3>
+<div class="ficha-controles no-print">
+  <button class="save-btn" onclick="salvarFicha()">💾 Salvar</button>
+  <button class="print-btn" onclick="window.print()">🖨 Imprimir (preenchida)</button>
+  <button class="print-btn" onclick="location.href='fichas-impressao.html#print-mundo'">🖨 Imprimir em Branco</button>
+  <span class="ficha-status" id="ficha-status"></span>
+</div>
 
-      <h4>O Tom do Mundo</h4>
-      <p><strong>Tom geral:</strong> _________________________________</p>
-      <p><strong>O que te empolga nesse mundo?</strong> _________________________________</p>
-      <p><strong>O que te assusta?</strong> _________________________________</p>
-    </section>
+<h4>🌍 O Mundo</h4>
+<div class="field"><span class="field-label">Como a magia aparece:</span><input type="text" class="field-line" data-field="mundoMagia"></div>
+<div class="field"><span class="field-label">De onde vem / limites:</span><input type="text" class="field-line" data-field="mundoOrigemLimites"></div>
+<div class="field"><span class="field-label">Conflito central:</span><input type="text" class="field-line" data-field="mundoConflitoCentral"></div>
+<div class="field"><span class="field-label">Tom geral:</span><input type="text" class="field-line" data-field="mundoTom"></div>
+<div class="field"><span class="field-label">O que são os artefatos:</span><input type="text" class="field-line" data-field="mundoArtefatos"></div>
 
-    <section>
-      <h3>👥 Presenças Culturais (3-5)</h3>
-      
-      <table>
-        <tr>
-          <th>Nome</th>
-          <th>Como aparecem no cotidiano</th>
-          <th>Relação com a magia</th>
-          <th>Relação com outras presenças</th>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
+<hr class="section-break">
 
-      <p><strong>Qual presença é mais comum?</strong> _________________________________</p>
-      <p><strong>Há presença rara ou em extinção?</strong> _________________________________</p>
-      <p><strong>Como se misturam?</strong> _________________________________</p>
-    </section>
+<h4>👥 Presenças Culturais</h4>
+<table>
+<tr><th>Nome</th><th>Como aparecem no cotidiano</th><th>Relação com magia</th></tr>
+<tr><td><input type="text" data-field="presenca1Nome"></td><td><input type="text" data-field="presenca1Cotidiano"></td><td><input type="text" data-field="presenca1Magia"></td></tr>
+<tr><td><input type="text" data-field="presenca2Nome"></td><td><input type="text" data-field="presenca2Cotidiano"></td><td><input type="text" data-field="presenca2Magia"></td></tr>
+<tr><td><input type="text" data-field="presenca3Nome"></td><td><input type="text" data-field="presenca3Cotidiano"></td><td><input type="text" data-field="presenca3Magia"></td></tr>
+<tr><td><input type="text" data-field="presenca4Nome"></td><td><input type="text" data-field="presenca4Cotidiano"></td><td><input type="text" data-field="presenca4Magia"></td></tr>
+</table>
 
-    <section>
-      <h3>🏙️ A Cidade</h3>
-      
-      <p><strong>Nome:</strong> _________________________________</p>
-      <p><strong>Caráter:</strong> _________________________________</p>
-      <p><strong>Cheiro característico:</strong> _________________________________</p>
-      <p><strong>O que forasteiros reparam primeiro?</strong> _________________________________</p>
-      <p><strong>Economia principal:</strong> _________________________________</p>
-      <p><strong>Governo:</strong> _________________________________</p>
+<hr class="section-break">
 
-      <h4>Presenças na Cidade</h4>
-      <p><strong>Qual presença domina?</strong> _________________________________</p>
-      <p><strong>Há bairros segregados?</strong> _________________________________</p>
-      <p><strong>Há tensão visível?</strong> _________________________________</p>
-      <p><strong>Como forasteiros são tratados?</strong> _________________________________</p>
-      <p><strong>Dinâmica entre presenças:</strong> _________________________________</p>
+<h4>🏙️ A Cidade</h4>
+<div class="field"><span class="field-label">Nome:</span><input type="text" class="field-line" data-field="cidadeNome"></div>
+<div class="field"><span class="field-label">Caráter / tom:</span><input type="text" class="field-line" data-field="cidadeCarater"></div>
+<div class="field"><span class="field-label">Cheiro característico:</span><input type="text" class="field-line" data-field="cidadeCheiro"></div>
+<div class="field"><span class="field-label">Economia:</span><input type="text" class="field-line" data-field="cidadeEconomia"></div>
+<div class="field"><span class="field-label">Governo:</span><input type="text" class="field-line" data-field="cidadeGoverno"></div>
+<div class="field"><span class="field-label">Tensão atual:</span><input type="text" class="field-line" data-field="cidadeTensao"></div>
 
-      <h4>Bairros (role 1d3 para quantidade, 1d10 para tipo)</h4>
-      <table>
-        <tr>
-          <th>Nome</th>
-          <th>Tipo (d10)</th>
-          <th>Atmosfera (d10)</th>
-          <th>Locais Notáveis</th>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
-    </section>
+<h4>Bairros</h4>
+<table>
+<tr><th>Nome</th><th>Atmosfera</th><th>Locais Notáveis</th></tr>
+<tr><td><input type="text" data-field="bairro1Nome"></td><td><input type="text" data-field="bairro1Atmosfera"></td><td><input type="text" data-field="bairro1Locais"></td></tr>
+<tr><td><input type="text" data-field="bairro2Nome"></td><td><input type="text" data-field="bairro2Atmosfera"></td><td><input type="text" data-field="bairro2Locais"></td></tr>
+<tr><td><input type="text" data-field="bairro3Nome"></td><td><input type="text" data-field="bairro3Atmosfera"></td><td><input type="text" data-field="bairro3Locais"></td></tr>
+</table>
 
-    <section>
-      <h3>🏛️ A Guilda</h3>
-      
-      <p><strong>Nome:</strong> _________________________________</p>
-      <p><strong>Estrutura (d6):</strong> _________________________________</p>
-      <p><strong>Trabalhadores iniciais (d2-1):</strong> _________________________________</p>
-      
-      <h4>O Mestre da Guilda (d10)</h4>
-      <p><strong>Nome:</strong> _________________________________</p>
-      <p><strong>Tipo:</strong> _________________________________</p>
-      <p><strong>Traço marcante:</strong> _________________________________</p>
+<hr class="section-break">
 
-      <h4>A Lenda de Fundação</h4>
-      <p><strong>Origem real (d6):</strong> _________________________________</p>
-      <p><strong>O que os comuns acham que aconteceu:</strong> _________________________________</p>
-      <p><strong>O que realmente aconteceu:</strong> _________________________________</p>
+<h4>🏛️ A Confraria</h4>
+<div class="field"><span class="field-label">Nome:</span><input type="text" class="field-line" data-field="confrariaNome"></div>
+<div class="field"><span class="field-label">Estrutura:</span><input type="text" class="field-line" data-field="confrariaEstrutura"></div>
+<div class="field"><span class="field-label">Conflito recente:</span><input type="text" class="field-line" data-field="confrariaConflito"></div>
+<div class="field"><span class="field-label">🔒 Regra Inquebrável:</span><input type="text" class="field-line" data-field="confrariaRegraInquebravel"></div>
 
-      <h4>🔒 A Regra Inquebrável</h4>
-      <p>_______________________________</p>
-    </section>
+<h4>O Mestre da Confraria</h4>
+<div class="field"><span class="field-label">Nome:</span><input type="text" class="field-line" data-field="mestreNome"></div>
+<div class="field"><span class="field-label">Tipo / traço marcante:</span><input type="text" class="field-line" data-field="mestreTipo"></div>
 
-    <section>
-      <h3>🏚️ Os Bastidores</h3>
-      
-      <h4>As 5 Zonas (role 1d6 para cada)</h4>
-      <table>
-        <tr>
-          <th>Zona</th>
-          <th>Detalhe (d6)</th>
-        </tr>
-        <tr>
-          <td><strong>Oficina</strong></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><strong>Armazém</strong></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><strong>Arquivo</strong></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><strong>Aposentos</strong></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><strong>Câmara Selada</strong></td>
-          <td></td>
-        </tr>
-      </table>
+<h4>A Lenda de Fundação</h4>
+<div class="field"><span class="field-label">O que os comuns acham:</span><input type="text" class="field-line" data-field="lendaComuns"></div>
+<div class="field"><span class="field-label">O que realmente aconteceu:</span><input type="text" class="field-line" data-field="lendaRealidade"></div>
 
-      <h4>Presença nos Bastidores (d6)</h4>
-      <p>_______________________________</p>
+<hr class="section-break">
 
-      <h4>Seus Aposentos (role 2d6 ou escolha 2)</h4>
-      <p>_______________________________</p>
+<h4>🏚️ A Contracena — As 5 Zonas</h4>
+<table>
+<tr><th>Zona</th><th>Detalhe / primeiro detalhe vivo</th></tr>
+<tr><td><strong>Oficina</strong></td><td><input type="text" data-field="zonaOficinaDetalhe"></td></tr>
+<tr><td><strong>Armazém</strong></td><td><input type="text" data-field="zonaArmazemDetalhe"></td></tr>
+<tr><td><strong>Arquivo</strong></td><td><input type="text" data-field="zonaArquivoDetalhe"></td></tr>
+<tr><td><strong>Aposentos</strong></td><td><input type="text" data-field="zonaAposentosDetalhe"></td></tr>
+<tr><td><strong>Relicário Selado</strong></td><td><input type="text" data-field="zonaRelicarioDetalhe"></td></tr>
+</table>
+<div class="field"><span class="field-label">Presença:</span><input type="text" class="field-line" data-field="contracenaPresenca"></div>
+<div class="field"><span class="field-label">Som mais comum:</span><input type="text" class="field-line" data-field="contracenaSom"></div>
+<div class="field"><span class="field-label">Zona que mais evita:</span><input type="text" class="field-line" data-field="contracenaZonaEvitada"></div>
 
-      <p><strong>Som mais comum:</strong> _________________________________</p>
-      <p><strong>Detalhe vivo?</strong> _________________________________</p>
-      <p><strong>Zona que mais evita:</strong> _________________________________</p>
-    </section>
+<h4>Zonas Lendárias (desbloqueadas na Fase Lendária)</h4>
+<table>
+<tr><th>Zona</th><th>Desbloqueada?</th><th>Detalhe</th></tr>
+<tr><td>Salão de Festas</td><td><input type="checkbox" data-field="zonaFestasDesbloqueada"></td><td><input type="text" data-field="zonaFestasDetalhe"></td></tr>
+<tr><td>Salão do Mestre</td><td><input type="checkbox" data-field="zonaMestreDesbloqueada"></td><td><input type="text" data-field="zonaMestreDetalhe"></td></tr>
+</table>
 
-    <section>
-      <h3>🧍 O Protagonista</h3>
-      
-      <p><strong>Nome:</strong> _________________________________</p>
-      <p><strong>Aparência marcante:</strong> _________________________________</p>
-      <p><strong>Por que é Restaurador(a)?</strong> _________________________________</p>
+<hr class="section-break">
 
-      <h4>Capacidades Inatas</h4>
-      <table class="compact">
-        <tr>
-          <th>MÃOS</th>
-          <th>OLHOS</th>
-          <th>CORAÇÃO</th>
-          <th>MENTE</th>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
+<h4>🧍 O Jogador</h4>
+<div class="field"><span class="field-label">Nome:</span><input type="text" class="field-line" data-field="jogadorNome"></div>
+<div class="field"><span class="field-label">Aparência marcante:</span><input type="text" class="field-line" data-field="jogadorAparencia"></div>
+<div class="field"><span class="field-label">Por que é Restaurador(a)?</span><input type="text" class="field-line" data-field="jogadorPorque"></div>
+<div class="field"><span class="field-label">Background:</span><input type="text" class="field-line" data-field="jogadorBackground"></div>
+<div class="field"><span class="field-label">Relíquia Pessoal:</span><input type="text" class="field-line" data-field="jogadorReliquia"></div>
+<div class="field"><span class="field-label">Medo:</span><input type="text" class="field-line" data-field="jogadorMedo"></div>
+<div class="field"><span class="field-label">Hábito:</span><input type="text" class="field-line" data-field="jogadorHabito"></div>
+<div class="field"><span class="field-label">Lugar Favorito:</span><input type="text" class="field-line" data-field="jogadorLugarFavorito"></div>
 
-      <h4>Background (d10)</h4>
-      <p>_______________________________</p>
+<h4>Instrumentos</h4>
+<table>
+<tr><th>AGULHA</th><th>LENTE</th><th>BRASA</th><th>PENA</th></tr>
+<tr><td><input type="text" data-field="instrumentoAgulha"></td><td><input type="text" data-field="instrumentoLente"></td><td><input type="text" data-field="instrumentoBrasa"></td><td><input type="text" data-field="instrumentoPena"></td></tr>
+</table>
 
-      <h4>Relíquia Pessoal (d6)</h4>
-      <p>_______________________________</p>
+<hr class="section-break">
 
-      <h4>Medo nos Bastidores (d6)</h4>
-      <p>_______________________________</p>
+<h4>🤝 NPC de Conexão (não romanceável)</h4>
+<div class="field"><span class="field-label">Nome:</span><input type="text" class="field-line" data-field="npcConexaoNome"></div>
+<div class="field"><span class="field-label">Tipo de conexão:</span><input type="text" class="field-line" data-field="npcConexaoTipo"></div>
+<div class="field"><span class="field-label">O que sabe sobre você:</span><input type="text" class="field-line" data-field="npcConexaoSabe"></div>
 
-      <h4>Hábito que te Mantém São (d6)</h4>
-      <p>_______________________________</p>
+<hr class="section-break">
 
-      <h4>Lugar Favorito na Cidade (d6)</h4>
-      <p>_______________________________</p>
-    </section>
+<h4>⚔️ Quebradores</h4>
+<table>
+<tr><th>Nome</th><th>Tipo</th><th>Especialidade</th><th>Status</th></tr>
+<tr><td><input type="text" data-field="quebrador1Nome"></td><td><input type="text" data-field="quebrador1Tipo"></td><td><input type="text" data-field="quebrador1Especialidade"></td><td><input type="text" data-field="quebrador1Status"></td></tr>
+<tr><td><input type="text" data-field="quebrador2Nome"></td><td><input type="text" data-field="quebrador2Tipo"></td><td><input type="text" data-field="quebrador2Especialidade"></td><td><input type="text" data-field="quebrador2Status"></td></tr>
+<tr><td><input type="text" data-field="quebrador3Nome"></td><td><input type="text" data-field="quebrador3Tipo"></td><td><input type="text" data-field="quebrador3Especialidade"></td><td><input type="text" data-field="quebrador3Status"></td></tr>
+<tr><td><input type="text" data-field="quebrador4Nome"></td><td><input type="text" data-field="quebrador4Tipo"></td><td><input type="text" data-field="quebrador4Especialidade"></td><td><input type="text" data-field="quebrador4Status"></td></tr>
+<tr><td><input type="text" data-field="quebrador5Nome"></td><td><input type="text" data-field="quebrador5Tipo"></td><td><input type="text" data-field="quebrador5Especialidade"></td><td><input type="text" data-field="quebrador5Status"></td></tr>
+</table>
 
-    <section>
-      <h3>🤝 NPC de Conexão</h3>
-      
-      <p><strong>Nome:</strong> _________________________________</p>
-      <p><strong>Tipo de conexão (d6):</strong> _________________________________</p>
-      <p><strong>Profissão/presença (d6):</strong> _________________________________</p>
-      <p><strong>Aparência marcante:</strong> _________________________________</p>
-      <p><strong>O que vocês fazem juntos?</strong> _________________________________</p>
-      <p><strong>O que essa pessoa sabe sobre você?</strong> _________________________________</p>
+<hr class="section-break">
 
-      <div class="callout warning">
-        <strong>Importante:</strong> Este NPC <strong>NÃO é romanceável</strong>. É um amigo, mentor, ou figura familiar que te ancora na cidade.
-      </div>
-    </section>
+<h4>✨ Cômodos Desbloqueados</h4>
+<p style="font-size:0.85rem; color:var(--ink-soft); margin-bottom:0.5rem;"><em>Cada cômodo está ligado a um NPC romanceável (Fio 9–10/10) e custa Recursos crescentes. → <a href="progressao-oficio.html">Progressão: Cômodos</a></em></p>
+<table>
+<tr><th>Cômodo</th><th>NPC</th><th>Custo Pago</th><th>✓</th></tr>
+<tr><td>Sala de Armas</td><td><input type="text" data-field="comodoArmasNpc"></td><td><input type="text" data-field="comodoArmasCusto"></td><td><input type="checkbox" data-field="comodoArmasDesbloqueado"></td></tr>
+<tr><td>Biblioteca Arcana</td><td><input type="text" data-field="comodoBibliotecaNpc"></td><td><input type="text" data-field="comodoBibliotecaCusto"></td><td><input type="checkbox" data-field="comodoBibliotecaDesbloqueado"></td></tr>
+<tr><td>Arquivo dos Espíritos</td><td><input type="text" data-field="comodoArquivoEspiritosNpc"></td><td><input type="text" data-field="comodoArquivoEspiritosCusto"></td><td><input type="checkbox" data-field="comodoArquivoEspiritosDesbloqueado"></td></tr>
+</table>
 
-    <section>
-      <h3>⚔️ Aventureiros da Guilda</h3>
-      
-      <table>
-        <tr>
-          <th>Nome</th>
-          <th>Tipo</th>
-          <th>Especialidade</th>
-          <th>Tags</th>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
-    </section>
+<h4>🔗 Harmonias de Cômodos</h4>
+<p style="font-size:0.85rem; color:var(--ink-soft); margin-bottom:0.5rem;"><em>Disponíveis ao desbloquear dois ou mais cômodos. → <a href="progressao-oficio.html#harmonias">Harmonias</a></em></p>
+<table>
+<tr><th>Combinação</th><th>Ativa</th><th>Emergente</th><th>Especial (Ligação 8/8)</th><th>✓</th></tr>
+<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Pesquisa de Campo"</td><td>"Arqueologia Bélica"</td><td>"O Mapa do Coração"</td><td><input type="checkbox" data-field="harmonia1Confirmada"></td></tr>
+<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Comunhão Guerreira"</td><td>"Exorcismo Prático"</td><td></td><td><input type="checkbox" data-field="harmonia2Confirmada"></td></tr>
+<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Leitura de Almas"</td><td>"Cartografia das Almas"</td><td></td><td><input type="checkbox" data-field="harmonia3Confirmada"></td></tr>
+</table>
 
-    <section>
-      <h3>✨ Módulos Desbloqueados</h3>
-      
-      <table>
-        <tr>
-          <th>Módulo</th>
-          <th>NPC</th>
-          <th>Custo Pago</th>
-          <th>Desbloqueado?</th>
-        </tr>
-        <tr>
-          <td>Sala de Armas</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Biblioteca Arcana</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Arquivo dos Espíritos</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Oficina de Falsificação</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Altar Discreto</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Canto das Histórias</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Jardim Interno</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Laboratório de Magia</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Estufa Subterrânea</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Sala dos Mapas</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Forja Silenciosa</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Arquivo das Memórias</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Observatório Oculto</td>
-          <td></td>
-          <td></td>
-          <td>☐</td>
-        </tr>
-      </table>
-    </section>
+<hr class="section-break">
 
-    <section>
-      <h3>🔗 Sinergias Desbloqueadas</h3>
-      
-      <table>
-        <tr>
-          <th>Combinação</th>
-          <th>Sinergia Ativa</th>
-          <th>Sinergia Emergente</th>
-          <th>Desbloqueada?</th>
-        </tr>
-        <tr>
-          <td>Sala de Armas + Biblioteca Arcana</td>
-          <td>"Pesquisa de Campo"</td>
-          <td>"Arqueologia Bélica"</td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Sala de Armas + Arquivo dos Espíritos</td>
-          <td>"Comunhão Guerreira"</td>
-          <td>"Exorcismo Prático"</td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Biblioteca Arcana + Arquivo dos Espíritos</td>
-          <td>"Leitura de Almas"</td>
-          <td>"Cartografia das Almas"</td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Oficina de Falsificação + Forja Silenciosa</td>
-          <td>"Arte Perfeita"</td>
-          <td>"Ilusão Tangível"</td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Altar Discreto + Arquivo das Memórias</td>
-          <td>"Rituais Esquecidos"</td>
-          <td>"Memória Sagrada"</td>
-          <td>☐</td>
-        </tr>
-        <tr>
-          <td>Jardim Interno + Estufa Subterrânea</td>
-          <td>"Flora Arcana"</td>
-          <td>"Jardim dos Sonhos"</td>
-          <td>☐</td>
-        </tr>
-      </table>
+<h4>🌱 Progressão da Cidade e Confraria</h4>
+<div class="field"><span class="field-label">Fase Atual:</span><input type="text" class="field-line" data-field="progressaoFase"> (🌱 Inicial / 🌿 Crescimento / 🌳 Estabelecida / 🏛️ Lendária)</div>
+<div class="field"><span class="field-label">Trabalhadores:</span><input type="text" class="field-line" data-field="progressaoTrabalhadores"></div>
+<div class="field"><span class="field-label">Quebradores Regulares:</span><input type="text" class="field-line" data-field="progressaoQuebradoresRegulares"></div>
+<div class="field"><span class="field-label">NPCs Romanceáveis Chegados:</span><input type="text" class="field-line" data-field="progressaoNpcsChegados"></div>
+<div class="field"><span class="field-label">Próximo Sinal:</span><input type="text" class="field-line" data-field="progressaoProximoSinal"></div>
 
-      <h4>Fusão de Módulos</h4>
-      <p><strong>Fusão Ativa:</strong> _________________________________</p>
-      <p><strong>Bônus:</strong> _________________________________</p>
-    </section>
+<h4>🎉 Festivais e Eventos</h4>
+<div class="field"><span class="field-label">Próximo Festival:</span><input type="text" class="field-line" data-field="festivalProximo"></div>
+<div class="field"><span class="field-label">Último Evento Notável:</span><input type="text" class="field-line" data-field="festivalUltimoEvento"></div>
 
-    <section>
-      <h3>🌱 Progressão da Guilda e Cidade</h3>
-      
-      <p><strong>Fase Atual:</strong> ☐ 🌱 Inicial / ☐ 🌿 Crescimento / ☐ 🌳 Estabelecida / ☐ 🏛️ Lendária</p>
-      <p><strong>Trabalhadores:</strong> _________________________________</p>
-      <p><strong>Aventureiros Regulares:</strong> _________________________________</p>
-      <p><strong>NPCs Romanceáveis Chegados:</strong> _________________________________</p>
-      <p><strong>Bairros da Cidade:</strong> _________________________________</p>
-      <p><strong>Próximo Marco:</strong> _________________________________</p>
-    </section>
+</div>
 
-    <footer>
-      <p>❦ Ecos dos Bastidores ❦</p>
-      <p><em>Um jogo sobre o que resta depois que os heróis partem.</em></p>
-      <p>Próxima página: <a href="ficha-rastro.html">Ficha de Rastreamento →</a></p>
-    </footer>
-  </div>
+<div class="callout tip no-print">
+  <strong>Próximo passo:</strong> <a href="ficha-npcs.html">Ficha de NPCs →</a> para criar seus personagens, ou <a href="ficha-rastro.html">Ficha de Rastros →</a> para acompanhar o jogo.
+</div>
 
-  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+<footer>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Ferramentas — Ficha do Mundo</p>
+  <p><a href="ficha-npcs.html">← Ficha de NPCs</a> | <a href="ficha-rastro.html">Próxima: Ficha de Rastros →</a></p>
+</footer>
 
-  <script>
-    window.onscroll = function() {
-      const btn = document.querySelector('.back-to-top');
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btn.classList.add('visible');
-      } else {
-        btn.classList.remove('visible');
-      }
-    };
-  </script>
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="backtotop.js"></script>
+<script src="dado.js"></script>
+<script src="fichas-storage.js"></script>
+<script>
+function salvarFicha() {
+  var sheet = document.getElementById('sheet-mundo');
+  FichasStorage.saveFixed('mundo', sheet);
+  var status = document.getElementById('ficha-status');
+  status.textContent = 'Salvo às ' + new Date().toLocaleTimeString();
+}
+
+(function () {
+  var sheet = document.getElementById('sheet-mundo');
+  if (!FichasStorage.isBlankPrint()) {
+    FichasStorage.loadFixed('mundo', sheet);
+  }
+})();
+</script>
 </body>
 </html>

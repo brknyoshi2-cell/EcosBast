@@ -4,144 +4,128 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Moves: Tensão</title>
-<style>
-.move {
-  background: var(--parchment-dark);
-  border-left: 4px solid var(--gold);
-  padding: 1rem 1.2rem;
-  margin: 1rem 0;
-  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
-}
-.move h4 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: var(--accent);
-}
-.move .trigger {
-  font-style: italic;
-  color: var(--ink-soft);
-  margin-bottom: 0.5rem;
-}
-.move .attribute {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--parchment);
-  padding: 0.15rem 0.7rem;
-  border-radius: 3px;
-  font-size: 0.85rem;
-  font-variant: small-caps;
-  margin-bottom: 0.8rem;
-}
-.result {
-  margin: 0.4rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid transparent;
-}
-.result.success {
-  border-left-color: var(--success);
-}
-.result.partial {
-  border-left-color: var(--gold);
-}
-.result.failure {
-  border-left-color: var(--danger);
-}
-.result strong {
-  color: var(--accent);
-}
-.choice {
-  background: rgba(184, 134, 11, 0.08);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  margin: 0.2rem 0;
-  font-style: italic;
-}
-.choice strong {
-  color: var(--gold);
-}
-</style>
+<title>Retalhos da Contracena — Núcleo: Desafios</title>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="moves-oficio.html">Moves</a> &gt; <strong>Tensão</strong>
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>Desafios</strong>
 </div>
 
 <div class="container">
 
-<h2>As Sombras que Avançam — Moves de Tensão</h2>
-<p>Estes são os moves que lidam com os momentos de crise, segredos, riscos e a pressão que cresce nos Bastidores.</p>
+<h2>As Sombras que Avançam — Gestos de Desafios</h2>
+<p>Estes são os gestos que lidam com os momentos de crise, segredos, riscos e a pressão que cresce na Contracena.</p>
+
+<div class="callout rule">
+  <strong>⚖️ Lembrete da Regra de Ouro:</strong> Cacos não é fim de linha. Aceite a virada com estilo — ganhe +1 Retalho e deixe a história tomar outra direção. Ver <a href="sistema-resolucao.html">A Regra de Ouro</a>.
+</div>
+
+<details class="cartilha">
+<summary>📋 Índice dos Desafios</summary>
+<table>
+<tr><th>Gesto</th><th>Instrumento</th><th>Trigger</th></tr>
+<tr><td><a href="#enfrentar-uma-complicacao">Enfrentar uma Complicação</a></td><td>Instrumento relevante</td><td>Algo dá errado e você precisa reagir.</td></tr>
+<tr><td><a href="#manter-um-segredo">Manter um Segredo</a></td><td>PENA ou BRASA</td><td>Esconde algo de alguém, ou sente o peso de um segredo.</td></tr>
+<tr><td><a href="#arriscar-se-por-alguem">Arriscar-se por Alguém</a></td><td>BRASA</td><td>Faz algo perigoso ou imprudente para proteger alguém.</td></tr>
+<tr><td><a href="#pedir-adiantamento-a-confraria">Pedir Adiantamento à Confraria</a></td><td>PENA ou BRASA</td><td>Está em Débito Narrativo e precisa de ajuda para continuar.</td></tr>
+<tr><td><a href="#mudar-de-foco">Mudar de Foco</a></td><td>🕊️ sem rolagem</td><td>Após 3 Cacos seguidos, muda de atividade para respirar.</td></tr>
+<tr><td><a href="#marcar-a-passagem-do-tempo">Marcar a Passagem do Tempo</a></td><td>🕊️ sem rolagem</td><td>Um período significativo passa (semana, estação, mês).</td></tr>
+</table>
+</details>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<div class="move">
+<div class="move" id="enfrentar-uma-complicacao">
 <h4>ENFRENTAR UMA COMPLICAÇÃO</h4>
 <div class="trigger">Quando algo dá errado e você precisa reagir.</div>
-<span class="attribute">Capacidade relevante</span>
-<div class="result success"><strong>10+:</strong> Você lida com elegância. Situação estabilizada. +1 Eco.</div>
-<div class="result partial"><strong>7–9:</strong> Lida, mas <strong>escolha 1:</strong> (a) com custo (Recursos, tempo, relacionamento), (b) a complicação volta depois — você só adiou o problema, (c) você resolve, mas cria outra complicação menor.</div>
-<div class="result failure"><strong>6−:</strong> A complicação piora. Você perde controle. Relógio avança 2.</div>
+<span class="attribute">Instrumento relevante</span>
+<div class="result success"><strong>Inteiro:</strong> Você lida com elegância. Situação estabilizada. +1 Retalho.</div>
+<div class="result partial"><strong>Ouro:</strong> Lida, mas <strong>escolha 1:</strong> (a) com custo (Recursos, tempo, relacionamento), (b) a complicação volta depois — você só adiou o problema, (c) você resolve, mas cria outra complicação menor.</div>
+<div class="result failure"><strong>Cacos:</strong> A complicação piora. Você perde controle. Fio avança 2.</div>
 </div>
 
-<div class="move">
+<div class="move" id="manter-um-segredo">
 <h4>MANTER UM SEGREDO</h4>
-<div class="trigger">Quando você esconde algo de alguém — a Guilda, um NPC, um amor — ou sente o peso de um segredo.</div>
-<span class="attribute">MENTE ou CORAÇÃO</span>
-<div class="result success"><strong>10+:</strong> O segredo permanece seguro. +1 Eco.</div>
-<div class="result partial"><strong>7–9:</strong> <strong>Escolha 1:</strong> (a) quase foi descoberto — você precisa ter mais cuidado, (b) o peso emocional cobra (perde 1 Ato no próximo dia), (c) alguém começa a desconfiar — você sente que está sendo observado.</div>
-<div class="result failure"><strong>6−:</strong> Alguém descobre um pedaço, ou você é confrontado(a) indiretamente. Relógio avança 2.</div>
+<div class="trigger">Quando você esconde algo de alguém — a Confraria, um NPC, um amor — ou sente o peso de um segredo.</div>
+<span class="attribute">PENA ou BRASA</span>
+<div class="result success"><strong>Inteiro:</strong> O segredo permanece seguro. +1 Retalho.</div>
+<div class="result partial"><strong>Ouro:</strong> <strong>Escolha 1:</strong> (a) quase foi descoberto — você precisa ter mais cuidado, (b) o peso emocional cobra (perde 1 Fôlego no próximo dia), (c) alguém começa a desconfiar — você sente que está sendo observado.</div>
+<div class="result failure"><strong>Cacos:</strong> Alguém descobre um pedaço, ou você é confrontado(a) indiretamente. Fio avança 2.</div>
 </div>
 
-<div class="move">
+<div class="move" id="arriscar-se-por-alguem">
 <h4>ARRISCAR-SE POR ALGUÉM</h4>
 <div class="trigger">Quando você faz algo perigoso ou imprudente para proteger ou ajudar alguém.</div>
-<span class="attribute">CORAÇÃO</span>
-<div class="result success"><strong>10+:</strong> Você consegue. A pessoa fica impressionada. Relógio +2.</div>
-<div class="result partial"><strong>7–9:</strong> Você ajuda, mas <strong>escolha 1:</strong> (a) se machuca levemente (perde 1 Ato amanhã), (b) a pessoa fica preocupada em vez de grata, (c) gasta Recursos (1d3) para conseguir.</div>
-<div class="result failure"><strong>6−:</strong> O risco não vale a pena. Você se machuca seriamente, a pessoa não queria ajuda. Relógio avança 2.</div>
+<span class="attribute">BRASA</span>
+<div class="result success"><strong>Inteiro:</strong> Você consegue. A pessoa fica impressionada. Fio +2.</div>
+<div class="result partial"><strong>Ouro:</strong> Você ajuda, mas <strong>escolha 1:</strong> (a) se machuca levemente (perde 1 Fôlego amanhã), (b) a pessoa fica preocupada em vez de grata, (c) gasta Recursos (1d3) para conseguir.</div>
+<div class="result failure"><strong>Cacos:</strong> O risco não vale a pena. Você se machuca seriamente, a pessoa não queria ajuda. Fio avança 2.</div>
 </div>
 
-<div class="move">
-<h4>PEDIR ADIANTAMENTO À GUILDA</h4>
+<div class="move" id="pedir-adiantamento-a-confraria">
+<h4>PEDIR ADIANTAMENTO À CONFRARIA</h4>
 <div class="trigger">Quando você está em Débito Narrativo (Recursos zerados) e precisa de ajuda para continuar.</div>
-<span class="attribute">MENTE ou CORAÇÃO</span>
-<div class="result success"><strong>10+:</strong> A Guilda concede adiantamento. Ganha 3 Recursos. <em>[TENSÃO: Dívida com a Guilda]</em></div>
-<div class="result partial"><strong>7–9:</strong> Concede, mas <strong>escolha 1:</strong> (a) com condições humilhantes, (b) com trabalho extra (perde 1 Ato amanhã). Ganha 2 Recursos. <em>[TENSÃO]</em></div>
-<div class="result failure"><strong>6−:</strong> A Guilda recusa ou exige favor perigoso. Ganha 1 Recurso. <em>[TENSÃO] + [VÍNCULO−]</em></div>
+<span class="attribute">PENA ou BRASA</span>
+<div class="result success"><strong>Inteiro:</strong> A Confraria concede adiantamento. Ganha 3 Recursos. <em>[FIOS: Dívida com a Confraria]</em></div>
+<div class="result partial"><strong>Ouro:</strong> Concede, mas <strong>escolha 1:</strong> (a) com condições humilhantes, (b) com trabalho extra (perde 1 Fôlego amanhã). Ganha 2 Recursos. <em>[FIOS]</em></div>
+<div class="result failure"><strong>Cacos:</strong> A Confraria recusa ou exige favor perigoso. Ganha 1 Recurso. <em>[FIOS] + [VÍNCULO−]</em></div>
 </div>
 
-<div class="move">
+<div class="move sem-rolagem" id="mudar-de-foco">
 <h4>MUDAR DE FOCO</h4>
-<div class="trigger">Após 3 falhas (6−) seguidas. Você decide mudar de atividade para respirar. <strong>Limitado a 1x por capítulo.</strong></div>
-<span class="attribute">Custo: 1 Ato</span>
-<div class="result"><strong>Efeito:</strong> Escreve cena descrevendo mudança de atividade. Reseta a tensão (próxima rolagem não tem penalidade de falha em cadeia). Ganha 1 Eco. Opcionalmente, avança 1 Relógio Suave.</div>
-<div class="result"><strong>Prompt:</strong> <em>"Escreva sobre o momento em que você decidiu que era o suficiente. O que você fez? Para onde foi? O que deixou para trás?"</em></div>
+<div class="trigger">Após 3 Cacos seguidos. Você decide mudar de atividade para respirar. <strong>Limitado a 1x por capítulo.</strong></div>
+<span class="attribute">Custo: 1 Fôlego</span>
+<div class="result"><strong>Efeito:</strong> Escreve cena descrevendo mudança de atividade. Reseta a tensão (próxima rolagem não tem penalidade de falha em cadeia). Ganha 1 Retalho. Opcionalmente, avança 1 Fio Suave.</div>
+<div class="result"><strong>Convite:</strong> <em>"Escreva sobre o momento em que você decidiu que era o suficiente. O que você fez? Para onde foi? O que deixou para trás?"</em></div>
 </div>
 
-<div class="move">
+<div class="move sem-rolagem" id="marcar-a-passagem-do-tempo">
 <h4>MARCAR A PASSAGEM DO TEMPO</h4>
 <div class="trigger">Quando um período significativo passa (uma semana, uma estação, um mês).</div>
 <span class="attribute">Sem rolagem</span>
 <div class="result"><strong>Efeito:</strong> Role 1d6 para cada categoria e descreva como mudou:</div>
-<p><strong>Na cidade:</strong> 1. Mais agitada | 2. Mais quieta | 3. Festival se aproxima | 4. Clima mudou drasticamente | 5. Nova facção chegou | 6. Nada mudou (e é estranho)</p>
-<p><strong>Na Guilda:</strong> 1. Novos aventureiros | 2. Alguém importante saiu | 3. Mais rica/pobre | 4. Nova regra | 5. Tensão interna | 6. Tudo como sempre</p>
-<p><strong>Nos Bastidores:</strong> 1. Algo novo adicionado | 2. Algo sumiu | 3. Mais frio/quente/barulhento | 4. Encontrou algo esquecido | 5. Artefato antigo mudou comportamento | 6. Nada mudou</p>
+<p><strong>Na cidade:</strong> 1. Mais agitada | 2. Mais quieta | 3. Festival se aproxima | 4. Clima mudou drasticamente | 5. Novo Círculo chegou | 6. Nada mudou (e é estranho)</p>
+<p><strong>Na Confraria:</strong> 1. Novos Quebradores | 2. Alguém importante saiu | 3. Mais rica/pobre | 4. Nova regra | 5. Tensão interna | 6. Tudo como sempre</p>
+<p><strong>Na Contracena:</strong> 1. Algo novo adicionado | 2. Algo sumiu | 3. Mais frio/quente/barulhento | 4. Encontrou algo esquecido | 5. Artefato antigo mudou comportamento | 6. Nada mudou</p>
 <p><strong>Nos relacionamentos (1d6 por NPC romanceável):</strong> 1. Afastaram-se | 2. Aproximaram-se | 3. Algo mudou | 4. Sonhou com a pessoa | 5. Momento não resolvido | 6. Tudo como estava</p>
 </div>
 
 
 
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Quando os Cacos Caem — Desafios</h3>
+<p>Nos Gestos de Desafios, a complicação vem do custo que não estava no plano, da vulnerabilidade exposta, da dívida que ficou em aberto. Role 1d6 ou escolha o que ressoa com o momento:</p>
+
+<table>
+<tr><th>d6</th><th>Complicação</th></tr>
+<tr><td>1</td><td>Funcionou — mas custou algo que você não pode repor. O que foi? Você vai sentir falta?</td></tr>
+<tr><td>2</td><td>Alguém viu sua vulnerabilidade. Não disse nada. Isso foi pior do que se tivesse dito.</td></tr>
+<tr><td>3</td><td>Você conseguiu — mas agora deve algo a alguém. E eles vão cobrar no momento menos oportuno.</td></tr>
+<tr><td>4</td><td>Você passou pelo desafio. O problema é que o desafio também passou por você — e deixou marca.</td></tr>
+<tr><td>5</td><td>Havia uma escolha mais fácil. Você não a tomou. Não sabe ainda se foi certo.</td></tr>
+<tr><td>6</td><td>A crise passou — mas você percebeu, no meio dela, que estava com medo de algo que não era aquilo. O quê?</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<details class="cartilha">
+<summary>🏷️ As Marcas nesta Página</summary>
+<table>
+<tr><th>Marca</th><th>O Que Significa</th></tr>
+<tr><td><em>[VÍNCULO−]</em></td><td>Uma tensão ou dívida entre vocês dois ainda espera para ser resolvida.</td></tr>
+<tr><td><em>[FIOS]</em></td><td>O resultado toca um Fio em andamento — ou acende um novo, ainda por nomear.</td></tr>
+</table>
+<p>Referência completa: <a href="sistema-tags.html">Sistema de Marcas</a>.</p>
+</details>
+
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Moves — Tensão</p>
-  <p><a href="moves-base.html">← Base</a> | <a href="moves-amor.html">Próxima: Amor →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Gestos — Desafios</p>
+  <p><a href="moves-base.html">← Rotina</a> | <a href="moves-amor.html">Próxima: Corações →</a></p>
 </footer>
 
 </div>
@@ -149,7 +133,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

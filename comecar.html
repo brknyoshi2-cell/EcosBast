@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Retalhos da Contracena — Antes do Primeiro Café</title>
+<style>
+  .rotas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .rota-card {
+    background: var(--parchment-dark);
+    border: 2px solid var(--accent-light);
+    border-radius: 8px;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .rota-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 16px rgba(184, 134, 11, 0.15);
+  }
+
+  .rota-titulo {
+    font-size: 1.1rem;
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .rota-abertura {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    padding-left: 0.8rem;
+    border-left: 2px solid var(--gold);
+    margin: 0;
+  }
+
+  .rota-card ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .rota-card ul li {
+    margin: 0.35rem 0;
+    font-size: 0.93rem;
+  }
+
+  .rota-quando {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 0;
+  }
+
+  .rota-link {
+    display: inline-block;
+    margin-top: auto;
+    padding: 0.55rem 1.2rem;
+    background: var(--accent);
+    color: var(--parchment);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-variant: small-caps;
+    letter-spacing: 0.04em;
+    transition: background 0.2s;
+  }
+
+  .rota-link:hover {
+    background: var(--gold);
+    color: var(--parchment);
+  }
+
+  .convergencia {
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin: 0.5rem 0 2rem;
+  }
+
+  .leitura-preparatoria {
+    background: var(--parchment-dark);
+    border-left: 3px solid var(--accent-light);
+    padding: 1rem 1.4rem;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .leitura-preparatoria p {
+    margin: 0 0 0.6rem;
+    font-size: 0.93rem;
+  }
+
+  .leitura-preparatoria ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .leitura-preparatoria ul li {
+    margin: 0.3rem 0;
+    font-size: 0.93rem;
+  }
+
+  @media (max-width: 600px) {
+    .rotas-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <strong>Antes do Primeiro Café</strong>
+</div>
+
+<div class="container">
+
+<h2>Antes do Primeiro Café</h2>
+
+<div class="quote">
+  Um umbral, antes de qualquer regra.
+</div>
+
+<h3>O Que é Isto</h3>
+
+<p><strong>Retalhos da Contracena</strong> é um jogo solo — você joga sozinho, sem mestre, sem grupo. Você é jogador e narrador ao mesmo tempo. Dados e tabelas fazem perguntas; você responde com escolhas, com escrita, com invenção. É uma conversa consigo mesmo, mediada por regras gentis.</p>
+
+<p>Você não é o herói. Você é quem fica. Enquanto os aventureiros da Confraria saem para masmorras e dragões, você mora na <strong>Contracena</strong> — os bastidores, o espaço entre as prateleiras empoeiradas e as relíquias esquecidas. Seu trabalho é restaurar artefatos que carregam memória, preparar chá para quem volta machucado, construir vínculos lentos com pessoas que têm histórias maiores do que a sua. Isso é cozy-fantasy: o oposto da aventura épica.</p>
+
+<p>A história que você vai contar fala de artefatos com passado, de uma Confraria que envelhece, de uma cidade que muda sem pedir licença, de romances que nascem devagar e às vezes não chegam a lugar nenhum. Há um relógio silencioso chamado <strong>Entardecer</strong> que marca quando a história vai acabar — mas você não sabe quando isso é, até chegar perto.</p>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Do Que Você Precisa</h3>
+
+<ul>
+  <li><strong>Dois dados de seis faces</strong> (2d6). Ou um app de dados no celular — qualquer um serve.</li>
+  <li><strong>Onde anotar.</strong> Um caderno de papel, um bloco no computador, ou as fichas do jogo: <a href="ficha-prota.html">Ficha do Jogador</a>, <a href="ficha-mundo.html">Ficha do Mundo</a>, <a href="ficha-npcs.html">Ficha de NPCs</a>, <a href="ficha-rastro.html">Ficha de Rastros</a>.</li>
+  <li><strong>Uma hora ou duas na primeira sessão</strong> — para montar o mundo e começar o primeiro capítulo. Depois, sessões podem ser de vinte minutos ou de três horas. O jogo se adapta ao seu ritmo.</li>
+  <li><strong>Vontade de escrever</strong>, mesmo que só uma frase por cena. O jogo não exige prosa elaborada — mas prospera quando você dá sabor ao que acontece.</li>
+</ul>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Duas Rotas para Entrar</h3>
+
+<p>Há dois caminhos para começar. Eles chegam no mesmo lugar — o primeiro capítulo dos <a href="jornada-iniciante.html">Primeiros Dias</a>. O que muda é como você chega lá.</p>
+
+<div class="rotas-grid">
+
+  <div class="rota-card">
+    <p class="rota-titulo">Herdar a Contracena</p>
+    <p class="rota-abertura">O lugar já existe. A Confraria tem nome. A cidade tem ruas. Sua tarefa é dar continuidade.</p>
+    <ul>
+      <li>Mundo pré-pronto — Confraria, cidade e NPCs já esboçados</li>
+      <li>Sistemas explicados em uma linha, com links para aprofundamento</li>
+      <li>Cerca de 15 a 30 minutos até o primeiro capítulo</li>
+    </ul>
+    <p class="rota-quando">Escolha esta rota se você quer jogar hoje — se prefere descobrir o mundo jogando, não construindo. É também a rota certa se você não quer tomar muitas decisões antes de começar: quase tudo já vem pronto.</p>
+    <a href="quickstart.html" class="rota-link">Herdar a Contracena →</a>
+  </div>
+
+  <div class="rota-card">
+    <p class="rota-titulo">Tecer a Contracena</p>
+    <p class="rota-abertura">Um lugar vazio esperando. Você põe cada fio no lugar — a magia, a cidade, a Confraria, o silêncio da Contracena.</p>
+    <ul>
+      <li>Você constrói o mundo com tabelas, escolhas ou invenção livre</li>
+      <li>Cada sistema é explicado quando aparece pela primeira vez</li>
+      <li>Uma a duas horas de tecelagem antes do primeiro capítulo</li>
+    </ul>
+    <p class="rota-quando">Escolha esta rota se você quer que o mundo seja seu — se gosta de preparar o chá antes de bebê-lo.</p>
+    <a href="sessao0.html" class="rota-link">Tecer a Contracena →</a>
+  </div>
+
+</div>
+
+<p class="convergencia">Ambas chegam no mesmo lugar — o primeiro dia dos Primeiros Dias. Nenhuma é melhor. São ritmos.</p>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="leitura-preparatoria">
+  <p><strong>Quer respirar o jogo antes de escolher?</strong></p>
+  <ul>
+    <li><a href="manifesto.html">O Manifesto</a> — a filosofia por trás das regras.</li>
+    <li><a href="exemplos.html">Exemplos de Jogo</a> — três cenas curtas para sentir como isso se joga.</li>
+  </ul>
+</div>
+
+<footer>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p><em>O primeiro café ainda não foi feito. A Contracena espera.</em></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="backtotop.js"></script>
+<script src="dado.js"></script>
+</body>
+</html>

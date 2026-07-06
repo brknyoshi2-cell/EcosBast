@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Retalhos da Contracena — Quebradores: Ficha de Quebradores</title>
+<style>
+.sheet {
+  background: #fefcf7;
+  border: 2px solid var(--accent);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
+  page-break-inside: avoid;
+  border-radius: 6px;
+}
+.sheet h3 {
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.field {
+  display: flex;
+  align-items: baseline;
+  margin: 0.5rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.field-label {
+  font-weight: bold;
+  color: var(--accent);
+  min-width: 160px;
+  font-variant: small-caps;
+}
+.field-line {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+}
+.print-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  transition: background 0.2s;
+}
+.print-btn:hover {
+  background: var(--gold);
+}
+.section-divider {
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
+}
+.expedicao-bloco {
+  border: 1px solid var(--accent-light);
+  border-radius: 5px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  background: rgba(139, 90, 43, 0.04);
+}
+.expedicao-bloco h5 {
+  margin: 0 0 0.6rem 0;
+  color: var(--accent);
+  font-size: 1rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+.fase-bloco {
+  border: 2px solid var(--gold);
+  border-radius: 5px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  background: rgba(184, 134, 11, 0.06);
+}
+@media print {
+  .top-nav, .floating-controls, .back-to-top, .no-print, .print-btn, .ficha-controles { display: none !important; }
+  body { background: white !important; }
+  .sheet { box-shadow: none !important; border: 1px solid #ccc !important; }
+  .sheet input[type="text"] { border-bottom: 1px solid #999 !important; }
+}
+.ficha-controles {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5rem 0 1rem;
+}
+.save-btn {
+  display: inline-block;
+  background: var(--success);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: filter 0.2s;
+}
+.save-btn:hover { filter: brightness(1.1); }
+.ficha-status {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.sheet input[type="text"] {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+  width: 100%;
+  padding: 0;
+}
+.sheet input[type="text"]:focus {
+  outline: none;
+  border-bottom: 1px solid var(--gold);
+}
+#nome-salvo {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--parchment);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.5rem 0.7rem;
+  min-width: 240px;
+}
+.lista-quebradores {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+}
+.lista-quebradores li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--accent-light);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background: rgba(139, 90, 43, 0.04);
+}
+.lista-quebradores .print-btn {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  margin: 0;
+}
+@media print {
+  .ficha-controles { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="pilar-quebradores.html">Quebradores</a> &gt; <a href="pilar-quebradores-ferramentas.html">Ferramentas</a> &gt; <strong>Ficha de Quebradores</strong>
+</div>
+
+<div class="container">
+
+<div class="sheet" id="sheet-fase-confraria">
+<h3>🏛️ A Confraria — Estado Atual</h3>
+<p style="text-align: center; font-style: italic;">Este bloco é único (não é uma lista) — reflete o estado geral da Confraria neste momento da campanha. Veja as regras completas em <a href="sistema-progressao-mundo.html">A Vida da Cidade</a> e <a href="sistema-aventureiros.html">Sistema: Quebradores</a>.</p>
+
+<div class="ficha-controles no-print">
+  <button class="save-btn" onclick="salvarFase()">💾 Salvar</button>
+  <span class="ficha-status" id="fase-status"></span>
+</div>
+
+<div class="fase-bloco">
+  <div class="field"><span class="field-label">Fase da Confraria:</span><input type="text" class="field-line" data-field="faseAtual"> (🌱 Inicial / 🌿 Crescimento / 🌳 Estabelecida / 🏛️ Lendária)</div>
+  <div class="field"><span class="field-label">Grupos ativos:</span><input type="text" class="field-line" data-field="faseGruposAtivos" style="max-width: 80px; flex: none;"></div>
+  <div class="field"><span class="field-label">Frequência de artefatos:</span><input type="text" class="field-line" data-field="faseFrequencia"></div>
+  <div class="field"><span class="field-label">Dificuldade média atual:</span><input type="text" class="field-line" data-field="faseDificuldade"></div>
+</div>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="sheet" id="sheet-quebradores">
+<h3>🗡️ Ficha de Quebradores</h3>
+<div class="ficha-controles no-print">
+  <input type="text" id="nome-salvo" placeholder="Nome do Quebrador ou Grupo (pra identificar na lista)">
+  <button class="save-btn" onclick="salvarFicha()">💾 Salvar</button>
+  <button class="print-btn" onclick="novoQuebrador()">➕ Novo</button>
+  <button class="print-btn" onclick="window.print()">🖨 Imprimir (preenchida)</button>
+  <span class="ficha-status" id="ficha-status"></span>
+</div>
+<p style="text-align: center; font-style: italic;">Cada Quebrador ou grupo de Quebradores fica salvo como um item na lista abaixo.</p>
+
+<div id="lista-salvos" class="no-print"></div>
+
+<h4>Identidade</h4>
+<div class="field"><span class="field-label">Nome:</span><input type="text" class="field-line" data-field="qbNome"></div>
+<div class="field"><span class="field-label">Tamanho do grupo:</span><input type="text" class="field-line" data-field="qbTamanho" style="max-width: 100px; flex: none;"> (1 = solitário, 2+ = grupo)</div>
+<div class="field"><span class="field-label">Especialização:</span><input type="text" class="field-line" data-field="qbEspecializacao"> (Combate / Magia / Exploração)</div>
+<div class="field"><span class="field-label">Nível:</span><input type="text" class="field-line" data-field="qbNivel"> (Iniciante 1d6 / Experiente 2d6 / Veterano 3d6 / Lendário 4d6)</div>
+<div class="field"><span class="field-label">Marcas ativas:</span><input type="text" class="field-line" data-field="qbMarcas"> (ex: [GUERREIRO], [SÁBIO], [OCULTISTA])</div>
+
+<div class="section-divider">❦</div>
+
+<h4>Expedições Realizadas</h4>
+<p style="font-size:0.88rem; margin:0 0 0.7rem 0; color: var(--ink-soft);">Registre cada expedição de que este Quebrador (ou grupo) participou. A condição de retorno vem da rolagem de 2d6 + Modificadores (veja <a href="sistema-aventureiros.html">Sistema: Quebradores</a>).</p>
+
+<div class="expedicao-bloco">
+  <h5>Expedição 1</h5>
+  <div class="field"><span class="field-label">O que foi buscar:</span><input type="text" class="field-line" data-field="qbExp1Buscar"></div>
+  <div class="field"><span class="field-label">Condição de retorno:</span><input type="text" class="field-line" data-field="qbExp1Condicao"> (Inteiro / Ouro / Cacos)</div>
+  <div class="field"><span class="field-label">Artefato trazido:</span><input type="text" class="field-line" data-field="qbExp1Artefato"></div>
+  <div class="field"><span class="field-label">O que notei ao retornar:</span><input type="text" class="field-line" data-field="qbExp1Notei"></div>
+</div>
+
+<div class="expedicao-bloco">
+  <h5>Expedição 2</h5>
+  <div class="field"><span class="field-label">O que foi buscar:</span><input type="text" class="field-line" data-field="qbExp2Buscar"></div>
+  <div class="field"><span class="field-label">Condição de retorno:</span><input type="text" class="field-line" data-field="qbExp2Condicao"> (Inteiro / Ouro / Cacos)</div>
+  <div class="field"><span class="field-label">Artefato trazido:</span><input type="text" class="field-line" data-field="qbExp2Artefato"></div>
+  <div class="field"><span class="field-label">O que notei ao retornar:</span><input type="text" class="field-line" data-field="qbExp2Notei"></div>
+</div>
+
+<div class="expedicao-bloco">
+  <h5>Expedição 3</h5>
+  <div class="field"><span class="field-label">O que foi buscar:</span><input type="text" class="field-line" data-field="qbExp3Buscar"></div>
+  <div class="field"><span class="field-label">Condição de retorno:</span><input type="text" class="field-line" data-field="qbExp3Condicao"> (Inteiro / Ouro / Cacos)</div>
+  <div class="field"><span class="field-label">Artefato trazido:</span><input type="text" class="field-line" data-field="qbExp3Artefato"></div>
+  <div class="field"><span class="field-label">O que notei ao retornar:</span><input type="text" class="field-line" data-field="qbExp3Notei"></div>
+</div>
+
+<div class="section-divider">❦</div>
+
+<h4>O Que Ele Não Conta</h4>
+<p style="font-size:0.88rem; margin:0 0 0.4rem 0; color: var(--ink-soft);">A história que ele conta e a história que o corpo dele conta raramente são a mesma. Anote aqui o que você percebe, mas ele nunca diz em voz alta.</p>
+<div class="field"><span class="field-label">Notas:</span><input type="text" class="field-line" data-field="qbNotasNaoConta"></div>
+
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Volte para <a href="ficha-npcs.html">Ficha de NPCs →</a> ou vá para <a href="ficha-mundo.html">Ficha do Mundo →</a>.
+</div>
+
+<footer>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Ferramentas — Ficha de Quebradores</p>
+  <p><a href="ficha-npcs.html">← Ficha de NPCs</a> | <a href="ficha-mundo.html">Próxima: Ficha Mundo →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="backtotop.js"></script>
+<script src="dado.js"></script>
+<script src="fichas-storage.js"></script>
+<script>
+var TIPO_QUEBRADOR = 'quebrador';
+var sheetQuebradores = document.getElementById('sheet-quebradores');
+var sheetFase = document.getElementById('sheet-fase-confraria');
+var currentId = null;
+
+function renderLista() {
+  var lista = document.getElementById('lista-salvos');
+  var itens = FichasStorage.getList(TIPO_QUEBRADOR);
+  if (itens.length === 0) {
+    lista.innerHTML = '<p class="ficha-status">Nenhum Quebrador salvo ainda.</p>';
+    return;
+  }
+  itens.sort(function (a, b) {
+    return new Date(b.atualizado) - new Date(a.atualizado);
+  });
+  var html = '<ul class="lista-quebradores">';
+  itens.forEach(function (item) {
+    var dataFormatada = new Date(item.atualizado).toLocaleString();
+    html += '<li><strong>' + item.nome + '</strong><span class="ficha-status">' + dataFormatada + '</span>';
+    html += '<button class="print-btn" onclick="abrirQuebrador(\'' + item.id + '\')">Abrir</button>';
+    html += '<button class="print-btn" onclick="excluirQuebrador(\'' + item.id + '\')">Excluir</button></li>';
+  });
+  html += '</ul>';
+  lista.innerHTML = html;
+}
+
+function salvarFicha() {
+  if (!currentId) {
+    currentId = FichasStorage.newId();
+  }
+  var nomeDigitado = document.getElementById('nome-salvo').value;
+  FichasStorage.saveItem(TIPO_QUEBRADOR, currentId, nomeDigitado, sheetQuebradores);
+  var status = document.getElementById('ficha-status');
+  status.textContent = 'Salvo às ' + new Date().toLocaleTimeString();
+  renderLista();
+}
+
+function novoQuebrador() {
+  FichasStorage.clearFields(sheetQuebradores);
+  document.getElementById('nome-salvo').value = '';
+  currentId = FichasStorage.newId();
+  var status = document.getElementById('ficha-status');
+  status.textContent = '';
+}
+
+function abrirQuebrador(id) {
+  FichasStorage.loadItem(TIPO_QUEBRADOR, id, sheetQuebradores);
+  currentId = id;
+  var itens = FichasStorage.getList(TIPO_QUEBRADOR);
+  var item = itens.find(function (i) { return i.id === id; });
+  document.getElementById('nome-salvo').value = item ? item.nome : '';
+  var status = document.getElementById('ficha-status');
+  status.textContent = 'Aberto às ' + new Date().toLocaleTimeString();
+}
+
+function excluirQuebrador(id) {
+  if (!confirm('Excluir este Quebrador salvo? Essa ação não pode ser desfeita.')) return;
+  FichasStorage.deleteItem(TIPO_QUEBRADOR, id);
+  if (currentId === id) {
+    FichasStorage.clearFields(sheetQuebradores);
+    document.getElementById('nome-salvo').value = '';
+    currentId = null;
+    var status = document.getElementById('ficha-status');
+    status.textContent = '';
+  }
+  renderLista();
+}
+
+function salvarFase() {
+  FichasStorage.saveFixed('faseConfraria', sheetFase);
+  var status = document.getElementById('fase-status');
+  status.textContent = 'Salvo às ' + new Date().toLocaleTimeString();
+}
+
+(function () {
+  if (!FichasStorage.isBlankPrint()) {
+    renderLista();
+    FichasStorage.loadFixed('faseConfraria', sheetFase);
+  } else {
+    document.getElementById('lista-salvos').style.display = 'none';
+  }
+})();
+</script>
+</body>
+</html>

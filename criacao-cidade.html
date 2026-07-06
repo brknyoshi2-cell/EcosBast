@@ -3,30 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecos dos Bastidores — Criação: Cidade</title>
+  <title>Retalhos da Contracena — Confraria & Cidade: Criação da Cidade</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
   <div class="breadcrumbs no-print">
-    <a href="index.html">Início</a> > <a href="criacao-protagonista.html">Criação</a> > Cidade
+    <a href="index.html">Início</a> &gt; <a href="pilar-confraria.html">Confraria &amp; Cidade</a> &gt; <a href="pilar-confraria-ferramentas.html">Ferramentas</a> &gt; <strong>Criação da Cidade</strong>
   </div>
 
   <div class="container">
     <header>
       <h2>Onde as Histórias Acontecem — A Cidade</h2>
-      <p class="callout">A cidade é o palco externo dos Bastidores. É onde você encontra seus NPCs, onde os eventos acontecem, e onde a vida pulsa fora do subsolo.</p>
+      <p class="callout">A cidade é o palco externo da Contracena. É onde você encontra seus NPCs, onde os eventos acontecem, e onde a vida pulsa fora do subsolo.</p>
     </header>
 
     <section>
       <div class="callout rule">
         <h3>⚖️ Nota sobre Crescimento</h3>
-        <p>A cidade que você está criando agora é o núcleo inicial. Ela vai se expandir com o tempo — novos bairros, locais e moradores vão aparecer conforme a história avança. Veja <a href="sistema-progressao-mundo.html">Progressão do Mundo</a> para detalhes.</p>
+        <p>A cidade que você está criando agora é o núcleo inicial. Ela vai se expandir com o tempo — novos bairros, locais e moradores vão aparecer conforme a história avança. Veja <a href="sistema-progressao-mundo.html">A Vida da Cidade</a> para detalhes.</p>
       </div>
 
       <div class="callout tip">
@@ -101,93 +98,68 @@
         </tr>
       </table>
 
-      <h4>Para cada bairro, role 1d10 na tabela abaixo:</h4>
-      <table>
-        <tr>
-          <th>d10</th>
-          <th>Tipo de Bairro</th>
-        </tr>
-        <tr>
-          <td>1-3</td>
-          <td><strong>Bairro Único</strong> — role 1d3 na tabela específica da sua cidade (veja abaixo)</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td><strong>Distrito Comercial</strong> — lojas, mercadores, movimento constante</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td><strong>Bairro Residencial</strong> — casas, famílias, vida tranquila</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td><strong>Quartel dos Artesãos</strong> — oficinas, ferreiros, tecelões, fumaceiras</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td><strong>Bairro Antigo</strong> — construções velhas, ruas estreitas, história</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td><strong>Distrito dos Nobres</strong> — mansões, jardins murados, portões fechados</td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td><strong>Bairro Popular</strong> — vielas, tavernas, gente simples, vida dura</td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td><strong>Distrito Sagrado</strong> — templos, silêncio, incenso, peregrinos</td>
-        </tr>
-      </table>
+      <h4>Para cada bairro, role 2d20 na tabela dupla abaixo — uma rolagem para o Tipo, outra para a Atmosfera:</h4>
 
-      <h4>Atmosfera do bairro (role 1d10):</h4>
-      <table>
-        <tr>
-          <th>d10</th>
-          <th>Atmosfera</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Vibrante e barulhento</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Silencioso e melancólico</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Perigoso e tenso</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Acolhedor e familiar</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Místico e estranho</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>Abandonado e em ruínas</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>Rico e elegante</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>Pobre e apertado</td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td>Religioso e solene</td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td>Misterioso e fechado</td>
-        </tr>
-      </table>
+      <details class="tabela-colapsavel">
+      <summary class="pergunta">Expandir tabelas — Tipo + Atmosfera do Bairro</summary>
+      <div class="tabela-multipla" data-tabela-multipla>
+
+        <div data-tabela-multipla-col data-dado="d20" data-label="Tipo">
+          <p class="tabela-multipla-col-label">🎲¹ Tipo — função e estrutura</p>
+          <table>
+          <tr><th>#</th><th>Tipo de Bairro</th></tr>
+          <tr><td>1</td><td><strong>Bairro Único</strong> — role 1d3 na tabela específica da sua cidade (veja abaixo)</td></tr>
+          <tr><td>2</td><td><strong>Bairro Único</strong> — role 1d3 na tabela específica da sua cidade (veja abaixo)</td></tr>
+          <tr><td>3</td><td><strong>Bairro Único</strong> — role 1d3 na tabela específica da sua cidade (veja abaixo)</td></tr>
+          <tr><td>4</td><td><strong>Distrito Comercial</strong> — lojas, mercadores, movimento constante</td></tr>
+          <tr><td>5</td><td><strong>Bairro Residencial</strong> — casas, famílias, vida tranquila</td></tr>
+          <tr><td>6</td><td><strong>Quarteirão dos Artesãos</strong> — oficinas, ferreiros, tecelões, fumaceiras</td></tr>
+          <tr><td>7</td><td><strong>Bairro Antigo</strong> — construções velhas, ruas estreitas, história</td></tr>
+          <tr><td>8</td><td><strong>Distrito dos Nobres</strong> — mansões, jardins murados, portões fechados</td></tr>
+          <tr><td>9</td><td><strong>Bairro Popular</strong> — vielas, tavernas, gente simples, vida dura</td></tr>
+          <tr><td>10</td><td><strong>Distrito Sagrado</strong> — templos, silêncio, incenso, peregrinos</td></tr>
+          <tr><td>11</td><td><strong>Zona Portuária</strong> — armazéns, cordame, cheiro de sal e maré</td></tr>
+          <tr><td>12</td><td><strong>Distrito das Ruínas</strong> — pedras caídas, história soterrada sob os pés</td></tr>
+          <tr><td>13</td><td><strong>Bairro Universitário</strong> — torres de estudo, sinos, bibliotecas lotadas</td></tr>
+          <tr><td>14</td><td><strong>Bairro dos Contrabandistas</strong> — vielas escuras, portas que só abrem com senha</td></tr>
+          <tr><td>15</td><td><strong>Distrito das Fumaceiras</strong> — chaminés que nunca param, o céu ali tem cor própria</td></tr>
+          <tr><td>16</td><td><strong>Bairro Onde os Relógios Andam ao Contrário</strong> — aqui, ninguém se atrasa de propósito</td></tr>
+          <tr><td>17</td><td><strong>Rua que Muda de Nome Conforme a Estação</strong> — os moradores nunca concordam sobre onde ela começa</td></tr>
+          <tr><td>18</td><td><strong>Quarteirão Construído em Cima de uma Ponte</strong> — as casas balançam devagar quando passa alguém pesado</td></tr>
+          <tr><td>19</td><td><strong>Vila dos Nomes Esquecidos</strong> — ninguém lembra quem batizou as ruas, e por algum motivo ninguém pergunta</td></tr>
+          <tr><td>20</td><td><strong>Quarteirão que Só Existe à Noite</strong> — de dia é um terreno vazio; ao anoitecer, aparece inteiro</td></tr>
+          </table>
+        </div>
+
+        <div data-tabela-multipla-col data-dado="d20" data-label="Atmosfera">
+          <p class="tabela-multipla-col-label">🎲² Atmosfera — sensação e tom</p>
+          <table>
+          <tr><th>#</th><th>Atmosfera</th></tr>
+          <tr><td>1</td><td>Vibrante e barulhento</td></tr>
+          <tr><td>2</td><td>Silencioso e melancólico</td></tr>
+          <tr><td>3</td><td>Perigoso e tenso</td></tr>
+          <tr><td>4</td><td>Acolhedor e familiar</td></tr>
+          <tr><td>5</td><td>Místico e estranho</td></tr>
+          <tr><td>6</td><td>Abandonado e em ruínas</td></tr>
+          <tr><td>7</td><td>Rico e elegante</td></tr>
+          <tr><td>8</td><td>Pobre e apertado</td></tr>
+          <tr><td>9</td><td>Religioso e solene</td></tr>
+          <tr><td>10</td><td>Misterioso e fechado</td></tr>
+          <tr><td>11</td><td>Cheira a pão quente o dia inteiro, não importa a hora</td></tr>
+          <tr><td>12</td><td>Os gatos dormem nas soleiras, como se fossem donos das portas</td></tr>
+          <tr><td>13</td><td>Tem um sino que toca sozinho à meia-noite, e ninguém sabe onde fica</td></tr>
+          <tr><td>14</td><td>As roupas no varal nunca secam, mas ninguém reclama</td></tr>
+          <tr><td>15</td><td>Todo mundo conhece todo mundo — inclusive os segredos</td></tr>
+          <tr><td>16</td><td>Passos ecoam mais alto do que deveriam nas ruas vazias</td></tr>
+          <tr><td>17</td><td>Sempre tem alguém tocando um instrumento em algum lugar, baixinho</td></tr>
+          <tr><td>18</td><td>As velas nas janelas nunca se apagam, mesmo sem ninguém acender</td></tr>
+          <tr><td>19</td><td>O vento carrega conversas de outras ruas até você</td></tr>
+          <tr><td>20</td><td>As crianças brincam de um jogo que nenhum adulto lembra de ter ensinado</td></tr>
+          </table>
+        </div>
+
+      </div>
+      </details>
     </section>
 
     <section>
@@ -369,6 +341,10 @@
       <h4>Detalhe do local (role 1d6):</h4>
       <table>
         <tr>
+          <th>d6</th>
+          <th>Detalhe do Local</th>
+        </tr>
+        <tr>
           <td>1</td>
           <td>Dono marcante — uma personalidade inesquecível</td>
         </tr>
@@ -409,7 +385,7 @@
       <h4>🏛️ Ossun</h4>
       <ul>
         <li><strong>A Catedral Invertida</strong> — construída para baixo, nas ruínas</li>
-        <li><strong>O Mercado dos Eco</strong> — vozes do passado ainda negociam aqui</li>
+        <li><strong>O Mercado dos Ecos</strong> — vozes do passado ainda negociam aqui</li>
         <li><strong>A Biblioteca Submersa</strong> — livros que sobreviveram à catástrofe</li>
       </ul>
 
@@ -473,21 +449,21 @@
         </tr>
         <tr>
           <td>6</td>
-          <td><strong>Aniversário da Guilda</strong> — todos estão convidados.</td>
+          <td><strong>Aniversário da Confraria</strong> — todos estão convidados.</td>
         </tr>
       </table>
     </section>
 
     <section>
-      <h3>Reputação na Cidade</h3>
-      <p>Como a cidade vê o protagonista? Avança conforme você interage com NPCs da cidade, ajuda comerciantes, ou resolve problemas urbanos.</p>
+      <h3>Vínculos na Cidade</h3>
+      <p>Como a cidade vê o jogador? Avança conforme você interage com NPCs da cidade, ajuda comerciantes, ou resolve problemas urbanos.</p>
       
       <table>
         <tr>
           <th>Nível</th>
           <th>Nome</th>
           <th>Benefícios</th>
-          <th>Ticks</th>
+          <th>Pontos</th>
         </tr>
         <tr>
           <td>1</td>
@@ -530,7 +506,7 @@
     </section>
 
     <footer>
-      <p>❦ Ecos dos Bastidores ❦</p>
+      <p>❦ Retalhos da Contracena ❦</p>
       <p><em>Um jogo sobre o que resta depois que os heróis partem.</em></p>
       <p>Próxima página: <a href="criacao-racas.html">Criação: Raças →</a></p>
     </footer>
@@ -539,7 +515,8 @@
   <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
+<script src="dado-multiplo.js"></script>
 </body>
 </html>

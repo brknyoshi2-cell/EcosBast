@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Ficha do Protagonista</title>
+<title>Retalhos da Contracena — Núcleo: Ficha do Jogador</title>
 <style>
 .sheet {
   background: #fefcf7;
@@ -14,9 +14,6 @@
   box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
   page-break-inside: avoid;
   border-radius: 6px;
-}
-[data-theme="dark"] .sheet {
-  background: #2a2a2a;
 }
 .sheet h3 {
   text-align: center;
@@ -68,6 +65,36 @@
   border-bottom: 1px solid var(--ink-soft);
   height: 1.5rem;
 }
+.nv-optional-toggle {
+  display: inline-block;
+  background: none;
+  border: 1px dashed var(--accent);
+  color: var(--accent);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  margin: 0.5rem 0 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.nv-optional-toggle:hover {
+  background: var(--accent);
+  color: var(--parchment);
+}
+.nv-section {
+  display: none;
+  margin-top: 0.5rem;
+}
+.nv-section.visible {
+  display: block;
+}
+.nv-nota {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 0.8rem;
+}
 .print-btn {
   display: inline-block;
   background: var(--accent);
@@ -88,77 +115,157 @@
   .top-nav, .floating-controls, .back-to-top, .no-print, .print-btn { display: none !important; }
   body { background: white !important; }
   .sheet { box-shadow: none !important; border: 1px solid #ccc !important; }
+  .nv-section { display: block !important; }
+  .nv-optional-toggle { display: none !important; }
 }
 @media (max-width: 768px) {
   .field-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.ficha-controles {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5rem 0 1rem;
+}
+.save-btn {
+  display: inline-block;
+  background: var(--success);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: filter 0.2s;
+}
+.save-btn:hover { filter: brightness(1.1); }
+.ficha-status {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.sheet input[type="text"] {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+  width: 100%;
+  padding: 0;
+}
+.sheet input[type="text"]:focus {
+  outline: none;
+  border-bottom: 1px solid var(--gold);
+}
+.field-box input[type="text"] {
+  border: none;
+  border-bottom: 1px solid var(--ink-soft);
+  text-align: center;
+  height: 1.5rem;
+  min-width: unset;
+}
+table input[type="text"] {
+  border: none;
+  border-bottom: 1px dotted var(--ink-soft);
+  min-width: unset;
+}
+@media print {
+  .ficha-controles { display: none !important; }
+  .sheet input[type="text"], table input[type="text"] { border-bottom: 1px solid #999 !important; }
 }
 </style>
 </head>
 <body>
 
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
-
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="ficha-prota.html">Ferramentas</a> &gt; <strong>Ficha do Protagonista</strong>
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>Ficha do Jogador</strong>
 </div>
 
 <div class="container">
 
 <div class="sheet" id="sheet-prota">
-<h3>📋 Ficha do Protagonista</h3>
-<button class="print-btn no-print" onclick="window.print()">🖨 Imprimir</button>
-
-<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Background:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Relíquia Pessoal:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Maior Medo:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Hábito:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Lugar Favorito:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Fase da Jornada:</span><span class="field-line"></span> (🌅 I — Primeiros Dias / 🌿 II — Aprofundando / 🌳 II — Rumo ao Final)</div>
-
-<h4>Capacidades Inatas (NUNCA aumentam)</h4>
-<div class="field-grid">
-  <div class="field-box"><span class="label">MÃOS</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">OLHOS</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">CORAÇÃO</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">MENTE</span><div class="value"></div></div>
+<h3>📋 Ficha do Jogador</h3>
+<div class="ficha-controles no-print">
+  <button class="save-btn" onclick="salvarFicha()">💾 Salvar</button>
+  <button class="print-btn" onclick="window.print()">🖨 Imprimir (preenchida)</button>
+  <button class="print-btn" onclick="location.href='fichas-impressao.html#print-prota'">🖨 Imprimir em Branco</button>
+  <span class="ficha-status" id="ficha-status"></span>
 </div>
 
-<h4>Recursos e Progressão</h4>
+<div class="field"><span class="field-label">Nome:</span><input type="text" class="field-line" data-field="nome"></div>
+<div class="field"><span class="field-label">Aparência:</span><input type="text" class="field-line" data-field="aparencia"></div>
+<div class="field"><span class="field-label">Background:</span><input type="text" class="field-line" data-field="background"></div>
+<div class="field"><span class="field-label">Relíquia Pessoal:</span><input type="text" class="field-line" data-field="reliquia"></div>
+<div class="field"><span class="field-label">Maior Medo:</span><input type="text" class="field-line" data-field="medo"></div>
+<div class="field"><span class="field-label">Hábito:</span><input type="text" class="field-line" data-field="habito"></div>
+<div class="field"><span class="field-label">Lugar Favorito:</span><input type="text" class="field-line" data-field="lugarFavorito"></div>
+<div class="field"><span class="field-label">Fase dos Dias:</span><input type="text" class="field-line" data-field="faseDias"> (🌅 I — Primeiros Dias / 🌿 II — Aprofundando / 🌳 III — Rumo ao Entardecer)</div>
+
+<h4>Instrumentos (NUNCA aumentam)</h4>
 <div class="field-grid">
-  <div class="field-box"><span class="label">Ecos (máx 5)</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Recursos</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Ofício (Ticks)</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Reputação (Ticks)</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">AGULHA</span><div class="value"><input type="text" data-field="agulha"></div></div>
+  <div class="field-box"><span class="label">LENTE</span><div class="value"><input type="text" data-field="lente"></div></div>
+  <div class="field-box"><span class="label">BRASA</span><div class="value"><input type="text" data-field="brasa"></div></div>
+  <div class="field-box"><span class="label">PENA</span><div class="value"><input type="text" data-field="pena"></div></div>
 </div>
 
-<h4>Atos do Dia (máx 3)</h4>
+<h4>Progressão e Retalhos</h4>
 <div class="field-grid">
-  <div class="field-box"><span class="label">Manhã</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Tarde</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Noite</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Capítulo</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Retalhos (máx 5)</span><div class="value"><input type="text" data-field="retalhos"></div></div>
+  <div class="field-box"><span class="label">Curadoria (Pontos)</span><div class="value"><input type="text" data-field="curadoriaPontos"></div></div>
+  <div class="field-box"><span class="label">Vínculos Confraria</span><div class="value"><input type="text" data-field="vinculosConfraria"></div></div>
+  <div class="field-box"><span class="label">Vínculos Cidade</span><div class="value"><input type="text" data-field="vinculosCidade"></div></div>
+</div>
+<p class="nv-nota">No fim de cada capítulo, leve estes números às <a href="sistema-feedback.html">Ressonâncias →</a> e pergunte o que eles estão dizendo.</p>
+
+<h4>Estado dos Recursos</h4>
+<div class="field"><span class="field-label">Estado Atual:</span><input type="text" class="field-line" data-field="estadoRecursos"> (🟢 Abundância / 🔵 Suficiente / 🟡 Escasso / 🔴 Débito)</div>
+
+<h4>Fôlego do Dia (máx 3)</h4>
+<div class="field-grid">
+  <div class="field-box"><span class="label">Manhã</span><div class="value"><input type="text" data-field="folegoManha"></div></div>
+  <div class="field-box"><span class="label">Tarde</span><div class="value"><input type="text" data-field="folegoTarde"></div></div>
+  <div class="field-box"><span class="label">Noite</span><div class="value"><input type="text" data-field="folegoNoite"></div></div>
+  <div class="field-box"><span class="label">Capítulo</span><div class="value"><input type="text" data-field="folegoCapitulo"></div></div>
 </div>
 
-<h4>Tags Narrativas</h4>
+<h4>Curadoria — Nomes Verdadeiros Descobertos</h4>
+<p class="nv-nota">Opcional. Registre aqui os artefatos que passaram pela Fase Nomear. → <a href="moves-oficio.html#nome-verdadeiro">Como funciona o Nome Verdadeiro</a></p>
+<button class="nv-optional-toggle no-print" id="nv-toggle" onclick="toggleNV()">＋ Exibir / Ocultar</button>
+<div class="nv-section" id="nv-section">
 <table>
-<tr><th>Tag</th><th>Descrição</th><th>Usada?</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><th>Artefato</th><th>Nome Verdadeiro</th><th>Propriedade Única</th></tr>
+<tr><td><input type="text" data-field="nv1Artefato"></td><td><input type="text" data-field="nv1Nome"></td><td><input type="text" data-field="nv1Propriedade"></td></tr>
+<tr><td><input type="text" data-field="nv2Artefato"></td><td><input type="text" data-field="nv2Nome"></td><td><input type="text" data-field="nv2Propriedade"></td></tr>
+<tr><td><input type="text" data-field="nv3Artefato"></td><td><input type="text" data-field="nv3Nome"></td><td><input type="text" data-field="nv3Propriedade"></td></tr>
+<tr><td><input type="text" data-field="nv4Artefato"></td><td><input type="text" data-field="nv4Nome"></td><td><input type="text" data-field="nv4Propriedade"></td></tr>
+</table>
+</div>
+
+<h4>Marcas Narrativas</h4>
+<table>
+<tr><th>Marca</th><th>Descrição</th><th>Usada?</th></tr>
+<tr><td><input type="text" data-field="marca1Nome"></td><td><input type="text" data-field="marca1Desc"></td><td><input type="text" data-field="marca1Usada"></td></tr>
+<tr><td><input type="text" data-field="marca2Nome"></td><td><input type="text" data-field="marca2Desc"></td><td><input type="text" data-field="marca2Usada"></td></tr>
+<tr><td><input type="text" data-field="marca3Nome"></td><td><input type="text" data-field="marca3Desc"></td><td><input type="text" data-field="marca3Usada"></td></tr>
+<tr><td><input type="text" data-field="marca4Nome"></td><td><input type="text" data-field="marca4Desc"></td><td><input type="text" data-field="marca4Usada"></td></tr>
 </table>
 
-<h4>Conquistas Ativas (máx 3)</h4>
+<h4>Saberes Ativos (máx 5)</h4>
 <table>
-<tr><th>Conquista</th><th>Bônus (Perícia)</th><th>Ativo?</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><th>Saber</th><th>Bônus</th><th>Ativo?</th></tr>
+<tr><td><input type="text" data-field="mem1Nome"></td><td><input type="text" data-field="mem1Bonus"></td><td><input type="text" data-field="mem1Ativo"></td></tr>
+<tr><td><input type="text" data-field="mem2Nome"></td><td><input type="text" data-field="mem2Bonus"></td><td><input type="text" data-field="mem2Ativo"></td></tr>
+<tr><td><input type="text" data-field="mem3Nome"></td><td><input type="text" data-field="mem3Bonus"></td><td><input type="text" data-field="mem3Ativo"></td></tr>
+<tr><td><input type="text" data-field="mem4Nome"></td><td><input type="text" data-field="mem4Bonus"></td><td><input type="text" data-field="mem4Ativo"></td></tr>
+<tr><td><input type="text" data-field="mem5Nome"></td><td><input type="text" data-field="mem5Bonus"></td><td><input type="text" data-field="mem5Ativo"></td></tr>
 </table>
 </div>
 
@@ -167,9 +274,9 @@
 </div>
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Ferramentas — Ficha do Protagonista</p>
-  <p><a href="geradores-conteudo.html">← Gerar Conteúdo</a> | <a href="ficha-npcs.html">Próxima: Ficha NPCs →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Ferramentas — Ficha do Jogador</p>
+  <p><a href="index.html">← Início</a> | <a href="ficha-npcs.html">Próxima: Ficha NPCs →</a></p>
 </footer>
 
 </div>
@@ -177,7 +284,28 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
+<script src="fichas-storage.js"></script>
+<script>
+function toggleNV() {
+  var section = document.getElementById('nv-section');
+  section.classList.toggle('visible');
+}
+
+function salvarFicha() {
+  var sheet = document.getElementById('sheet-prota');
+  FichasStorage.saveFixed('prota', sheet);
+  var status = document.getElementById('ficha-status');
+  status.textContent = 'Salvo às ' + new Date().toLocaleTimeString();
+}
+
+(function () {
+  var sheet = document.getElementById('sheet-prota');
+  if (!FichasStorage.isBlankPrint()) {
+    FichasStorage.loadFixed('prota', sheet);
+  }
+})();
+</script>
 </body>
 </html>

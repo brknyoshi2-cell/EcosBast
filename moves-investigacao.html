@@ -4,125 +4,114 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Moves: Investigação</title>
-<style>
-.move {
-  background: var(--parchment-dark);
-  border-left: 4px solid var(--gold);
-  padding: 1rem 1.2rem;
-  margin: 1rem 0;
-  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
-}
-.move h4 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: var(--accent);
-}
-.move .trigger {
-  font-style: italic;
-  color: var(--ink-soft);
-  margin-bottom: 0.5rem;
-}
-.move .attribute {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--parchment);
-  padding: 0.15rem 0.7rem;
-  border-radius: 3px;
-  font-size: 0.85rem;
-  font-variant: small-caps;
-  margin-bottom: 0.8rem;
-}
-.result {
-  margin: 0.4rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid transparent;
-}
-.result.success {
-  border-left-color: var(--success);
-}
-.result.partial {
-  border-left-color: var(--gold);
-}
-.result.failure {
-  border-left-color: var(--danger);
-}
-.result strong {
-  color: var(--accent);
-}
-.choice {
-  background: rgba(184, 134, 11, 0.08);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  margin: 0.2rem 0;
-  font-style: italic;
-}
-.choice strong {
-  color: var(--gold);
-}
-</style>
+<title>Retalhos da Contracena — Núcleo: Descobertas</title>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="moves-oficio.html">Moves</a> &gt; <strong>Investigação</strong>
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>Descobertas</strong>
 </div>
 
 <div class="container">
 
-<h2>Os Caminhos da Cidade — Moves de Investigação</h2>
-<p>Estes são os moves que definem como o protagonista explora a cidade, descobre segredos e encontra o que está escondido.</p>
+<h2>Os Caminhos da Cidade — Gestos de Descobertas</h2>
+<p>Estes são os gestos que definem como o jogador explora a cidade, descobre segredos e encontra o que está escondido.</p>
+
+<div class="callout rule">
+  <strong>⚖️ Lembrete da Regra de Ouro:</strong> nem toda pista leva aonde você esperava — e um Caco na investigação é só a trilha mudando de direção. Aceite com estilo e ganhe +1 Retalho. Ver <a href="sistema-resolucao.html">A Regra de Ouro</a>.
+</div>
+
+<div class="callout rule">
+  <strong>🔍 Gesto transversal:</strong> Descobertas atravessa todos os Pilares — segredos de NPCs, mistérios urbanos, procedência de artefatos restaurados. O Fio de Mistério que ele alimenta é um Fio genérico do Núcleo: ver <a href="sistema-relogios.html">Fios e Nós</a> e <a href="sistema-misterios.html">Investigação Profunda</a>.
+</div>
+
+<details class="cartilha">
+<summary>📋 Índice das Descobertas</summary>
+<table>
+<tr><th>Gesto</th><th>Instrumento</th><th>Trigger</th></tr>
+<tr><td><a href="#explorar-um-bairro">Explorar um Bairro</a></td><td>LENTE</td><td>Caminha por um bairro, observa ou procura algo específico.</td></tr>
+<tr><td><a href="#visitar-um-local">Visitar um Local</a></td><td>AGULHA ou BRASA</td><td>Entra em um local notável (taverna, mercado, templo).</td></tr>
+<tr><td><a href="#visitar-npc-romanceavel-em-casa">Visitar NPC Romanceável em Casa</a></td><td>BRASA</td><td>Vai à residência de um NPC romanceável fora da Confraria.</td></tr>
+<tr><td><a href="#descobrir-um-segredo-da-cidade">Descobrir um Segredo da Cidade</a></td><td>LENTE ou PENA</td><td>Ouve um rumor ou percebe que há mais na cidade do que parece.</td></tr>
+</table>
+</details>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<div class="move">
+<div class="move" id="explorar-um-bairro">
 <h4>EXPLORAR UM BAIRRO</h4>
 <div class="trigger">Quando você caminha por um bairro, observa, ou procura algo específico.</div>
-<span class="attribute">OLHOS</span>
-<div class="result success"><strong>10+:</strong> Percebe algo interessante. +1 Eco. <em>[MISTÉRIO] + [DOMÉSTICO]</em></div>
-<div class="result partial"><strong>7–9:</strong> Percebe, mas <strong>escolha 1:</strong> (a) é sutil — você não tem certeza do que viu, (b) você chama atenção indesejada (alguém te observa), (c) o bairro está diferente do que você lembra — algo mudou.</div>
-<div class="result failure"><strong>6−:</strong> Você se perde, é reconhecido por alguém, ou vê algo perturbador. <em>[TENSÃO] + [VÍNCULO−]</em></div>
+<span class="attribute">LENTE</span>
+<div class="result success"><strong>Inteiro:</strong> Percebe algo interessante. +1 Retalho. <em>[MISTÉRIO] + [DOMÉSTICO]</em></div>
+<div class="result partial"><strong>Ouro:</strong> Percebe, mas <strong>escolha 1:</strong> (a) é sutil — você não tem certeza do que viu, (b) você chama atenção indesejada (alguém te observa), (c) o bairro está diferente do que você lembra — algo mudou.</div>
+<div class="result failure"><strong>Cacos:</strong> Você se perde, é reconhecido por alguém, ou vê algo perturbador. <em>[FIOS] + [VÍNCULO−]</em></div>
 </div>
 
-<div class="move">
+<div class="move" id="visitar-um-local">
 <h4>VISITAR UM LOCAL</h4>
 <div class="trigger">Quando você entra em um local notável (taverna, mercado, templo, etc.).</div>
-<span class="attribute">MÃOS ou CORAÇÃO</span>
-<div class="result success"><strong>10+:</strong> Bem recebido(a). Aprende algo útil. +1 Eco.</div>
-<div class="result partial"><strong>7–9:</strong> <strong>Escolha 1:</strong> (a) o local está cheio/vazio/diferente do esperado, (b) alguém te reconhece e isso é complicado, (c) você precisa gastar Recursos para obter o que quer (1d3).</div>
-<div class="result failure"><strong>6−:</strong> Expulso(a), algo roubado, ou ofende alguém.</div>
+<span class="attribute">AGULHA ou BRASA</span>
+<div class="result success"><strong>Inteiro:</strong> Bem recebido(a). Aprende algo útil. +1 Retalho.</div>
+<div class="result partial"><strong>Ouro:</strong> <strong>Escolha 1:</strong> (a) o local está cheio/vazio/diferente do esperado, (b) alguém te reconhece e isso é complicado, (c) você precisa gastar Recursos para obter o que quer (1d3).</div>
+<div class="result failure"><strong>Cacos:</strong> Expulso(a), algo roubado, ou ofende alguém.</div>
 </div>
 
-<div class="move">
+<div class="move" id="visitar-npc-romanceavel-em-casa">
 <h4>VISITAR NPC ROMANCEÁVEL EM CASA</h4>
-<div class="trigger">Quando você vai à residência de um NPC romanceável fora da Guilda.</div>
-<span class="attribute">CORAÇÃO</span>
-<div class="result success"><strong>10+:</strong> Visita bem-sucedida. Momento íntimo. Relógio +2. +1 Eco. <em>[DOMÉSTICO] + [VÍNCULO+]</em></div>
-<div class="result partial"><strong>7–9:</strong> <strong>Escolha 1:</strong> (a) o NPC está ocupado ou distraído — a visita é mais curta que o esperado (Relógio +1), (b) a residência revela algo inesperado sobre o NPC (Relógio +1, ganha Tag [MISTÉRIO]), (c) um vizinho ou familiar interfere (Relógio +1, ganha Tag [TENSÃO]).</div>
-<div class="result failure"><strong>6−:</strong> NPC não está, ou você é mal recebido(a). Relógio recua 1. <em>[VÍNCULO−] + [TENSÃO]</em></div>
+<div class="trigger">Quando você vai à residência de um NPC romanceável fora da Confraria.</div>
+<span class="attribute">BRASA</span>
+<div class="result success"><strong>Inteiro:</strong> Visita bem-sucedida. Momento íntimo. Fio +2. +1 Retalho. <em>[DOMÉSTICO] + [VÍNCULO+]</em></div>
+<div class="result partial"><strong>Ouro:</strong> <strong>Escolha 1:</strong> (a) o NPC está ocupado ou distraído — a visita é mais curta que o esperado (Fio +1), (b) a residência revela algo inesperado sobre o NPC (Fio +1, ganha Marca [MISTÉRIO]), (c) um vizinho ou familiar interfere (Fio +1, ganha Marca [FIOS]).</div>
+<div class="result failure"><strong>Cacos:</strong> NPC não está, ou você é mal recebido(a). Fio recua 1. <em>[VÍNCULO−] + [FIOS]</em></div>
 </div>
 
-<div class="move">
+<div class="move" id="descobrir-um-segredo-da-cidade">
 <h4>DESCOBRIR UM SEGREDO DA CIDADE</h4>
 <div class="trigger">Quando você ouve um rumor, vê algo estranho ou percebe que há mais na cidade do que parece.</div>
-<span class="attribute">OLHOS ou MENTE</span>
-<div class="result success"><strong>10+:</strong> Descobre algo importante. +1 Eco. Avança Relógio de mistério.</div>
-<div class="result partial"><strong>7–9:</strong> Descobre algo, mas <strong>escolha 1:</strong> (a) a informação é incompleta — você precisa de mais pistas, (b) é perturbador — você não tem certeza se queria saber, (c) você foi visto(a) ouvindo/observando — alguém sabe que você está investigando.</div>
-<div class="result failure"><strong>6−:</strong> Visto(a) ouvindo/observando. Alguém tenta te silenciar. Relógio avança 2.</div>
+<span class="attribute">LENTE ou PENA</span>
+<div class="result success"><strong>Inteiro:</strong> Descobre algo importante. +1 Retalho. Avança Fio de Mistério.</div>
+<div class="result partial"><strong>Ouro:</strong> Descobre algo, mas <strong>escolha 1:</strong> (a) a informação é incompleta — você precisa de mais pistas, (b) é perturbador — você não tem certeza se queria saber, (c) você foi visto(a) ouvindo/observando — alguém sabe que você está investigando.</div>
+<div class="result failure"><strong>Cacos:</strong> Visto(a) ouvindo/observando. Alguém tenta te silenciar. Fio avança 2.</div>
 </div>
 
 
 
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Quando os Cacos Caem — Descobertas</h3>
+<p>Nos Gestos de Descobertas, a complicação vem da pista que aponta para o lugar errado, da verdade que perturba, da atenção que você não queria despertar. Role 1d6 ou escolha o que ressoa com o momento:</p>
+
+<table>
+<tr><th>d6</th><th>Complicação</th></tr>
+<tr><td>1</td><td>Você encontrou o que procurava — e agora desejava não ter encontrado. O que fazer com isso?</td></tr>
+<tr><td>2</td><td>A pista aponta para alguém em quem você confia. Ainda confia?</td></tr>
+<tr><td>3</td><td>Alguém percebeu que você está investigando. Quem foi, e o que querem que você pare de ver?</td></tr>
+<tr><td>4</td><td>O rastro leva a um lugar que você reconhece. Você já esteve aqui — mas não se lembra quando.</td></tr>
+<tr><td>5</td><td>A descoberta é real, mas não há como provar. Você sabe. Ninguém mais vai acreditar.</td></tr>
+<tr><td>6</td><td>Havia mais de uma resposta. Você escolheu uma — e agora não sabe se foi a certa.</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<details class="cartilha">
+<summary>🏷️ As Marcas nesta Página</summary>
+<table>
+<tr><th>Marca</th><th>O Que Significa</th></tr>
+<tr><td><em>[VÍNCULO+]</em></td><td>Um laço se firma ou se aprofunda com alguém — ou um lugar — que passa a contar com você.</td></tr>
+<tr><td><em>[VÍNCULO−]</em></td><td>Uma tensão ou dívida entre vocês dois ainda espera para ser resolvida.</td></tr>
+<tr><td><em>[MISTÉRIO]</em></td><td>Uma pergunta que a história ainda não respondeu, e que te acompanha.</td></tr>
+<tr><td><em>[DOMÉSTICO]</em></td><td>O conforto de uma rotina que ancora o seu dia na Contracena.</td></tr>
+<tr><td><em>[FIOS]</em></td><td>O resultado toca um Fio em andamento — ou acende um novo, ainda por nomear.</td></tr>
+</table>
+<p>Referência completa: <a href="sistema-tags.html">Sistema de Marcas</a>.</p>
+</details>
+
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Moves — Investigação</p>
-  <p><a href="moves-sociais.html">← Sociais</a> | <a href="moves-base.html">Próxima: Base →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Gestos — Descobertas</p>
+  <p><a href="moves-sociais.html">← Conversas</a> | <a href="moves-base.html">Próxima: Rotina →</a></p>
 </footer>
 
 </div>
@@ -130,7 +119,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

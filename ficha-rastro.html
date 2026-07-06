@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Ficha de Rastreamento</title>
+<title>Retalhos da Contracena — Núcleo: Ficha de Rastros</title>
 <style>
 .sheet {
   background: #fefcf7;
@@ -14,9 +14,6 @@
   box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
   page-break-inside: avoid;
   border-radius: 6px;
-}
-[data-theme="dark"] .sheet {
-  background: #2a2a2a;
 }
 .sheet h3 {
   text-align: center;
@@ -92,177 +89,320 @@
 @media (max-width: 768px) {
   .field-grid { grid-template-columns: repeat(2, 1fr); }
 }
+.ficha-controles {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5rem 0 1rem;
+}
+.save-btn {
+  display: inline-block;
+  background: var(--success);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: filter 0.2s;
+}
+.save-btn:hover { filter: brightness(1.1); }
+.ficha-status {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.sheet input[type="text"] {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+  width: 100%;
+  padding: 0;
+}
+.sheet input[type="text"]:focus {
+  outline: none;
+  border-bottom: 1px solid var(--gold);
+}
+.field-box input[type="text"] {
+  border: none;
+  border-bottom: 1px solid var(--ink-soft);
+  text-align: center;
+  height: 1.5rem;
+  min-width: unset;
+}
+table input[type="text"] {
+  border: none;
+  border-bottom: 1px dotted var(--ink-soft);
+  min-width: unset;
+}
+#nome-salvo {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-soft);
+  min-width: 260px;
+  padding: 0.3rem 0;
+}
+#nome-salvo:focus {
+  outline: none;
+  border-bottom: 1px solid var(--gold);
+}
+.lista-salvos-title {
+  font-variant: small-caps;
+  color: var(--accent);
+  font-weight: bold;
+  margin: 1rem 0 0.5rem;
+}
+.lista-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background: var(--parchment);
+  flex-wrap: wrap;
+}
+.lista-item-info {
+  display: flex;
+  flex-direction: column;
+}
+.lista-item-nome {
+  font-weight: bold;
+  color: var(--ink);
+}
+.lista-item-data {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.lista-item-botoes {
+  display: flex;
+  gap: 0.4rem;
+}
+.lista-btn {
+  background: var(--accent);
+  color: var(--parchment);
+  border: none;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  transition: filter 0.2s;
+}
+.lista-btn:hover { filter: brightness(1.1); }
+.lista-btn.excluir { background: #a33; }
+.lista-vazio {
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+@media print {
+  .ficha-controles { display: none !important; }
+  #lista-salvos { display: none !important; }
+  .sheet input[type="text"], table input[type="text"] { border-bottom: 1px solid #999 !important; }
+}
 </style>
 </head>
 <body>
 
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
-
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="ficha-rastro.html">Ferramentas</a> &gt; <strong>Ficha de Rastreamento</strong>
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>Ficha de Rastros</strong>
 </div>
 
 <div class="container">
 
 <div class="sheet" id="sheet-rastro">
-<h3>📋 Ficha de Rastreamento</h3>
-<button class="print-btn no-print" onclick="window.print()">🖨 Imprimir</button>
-<p style="text-align: center; font-style: italic;">Combina Relógios, Tags, Ticks, Recursos, Artefatos, Conquistas e Aventureiros</p>
+<h3>📋 Ficha de Rastros</h3>
+<div class="ficha-controles no-print">
+  <input type="text" id="nome-salvo" placeholder="Nome deste Rastro (pra identificar na lista)">
+  <button class="save-btn" onclick="salvarFicha()">💾 Salvar</button>
+  <button class="print-btn" onclick="novaFicha()">➕ Novo</button>
+  <button class="print-btn" onclick="window.print()">🖨 Imprimir (preenchida)</button>
+  <button class="print-btn" onclick="location.href='fichas-impressao.html#print-rastro'">🖨 Imprimir em Branco</button>
+  <span class="ficha-status" id="ficha-status"></span>
+</div>
+<p style="text-align: center; font-style: italic;">Combina Fios, Marcas, Pontos, Recursos, Artefatos, Saberes e Quebradores</p>
 
-<div class="field"><span class="field-label">Modo de Jogo:</span><span class="field-line"></span> (🕊️ Livre / 🌿 Cozy / 📖 Narrativo / ⚔️ Épico / 🏃 Speedrun)</div>
+<div class="field"><span class="field-label">Clima:</span><input type="text" class="field-line" data-field="clima"> (🕊️ Brisa / 🌿 Ameno / 📖 Neblina / ⚔️ Tempestade / 🏃 Vendaval)</div>
 
-<h4>🧭 Jornada do Jogador</h4>
-<div class="field"><span class="field-label">Fase Atual:</span><span class="field-line"></span> (🌅 I — Primeiros Dias / 🌿 II — Aprofundando / 🌳 II — Rumo ao Final)</div>
-<p style="font-size: 0.9rem;"><em>Marque os Marcos conforme completa — 5+ Marcos indicam que você pode avançar de fase (veja <a href="jornada-iniciante.html">Jornada I</a> e <a href="jornada-avancada.html">Jornada II</a>).</em></p>
+<h4>🧭 Os Dias</h4>
+<div class="field"><span class="field-label">Fase Atual:</span><input type="text" class="field-line" data-field="diasFaseAtual"> (🌅 I — Primeiros Dias / 🌿 II — Aprofundando / 🌳 III — Rumo ao Entardecer)</div>
+<p style="font-size: 0.9rem;"><em>Marque os Sinais conforme completa — 5+ Sinais indicam que você pode avançar de fase (veja <a href="jornada-iniciante.html">Os Dias I</a> e <a href="jornada-avancada.html">Os Dias II</a>).</em></p>
 <table>
-<tr><th>Fase</th><th>Marcos Completados (☐☐☐☐☐☐☐☐)</th><th>Avançou no Capítulo</th></tr>
-<tr><td>🌅 Primeiros Dias (Cap. 1–3)</td><td></td><td></td></tr>
-<tr><td>🌿 Aprofundando (Cap. 4–8)</td><td></td><td></td></tr>
-<tr><td>🌳 Rumo ao Final (Cap. 9+)</td><td></td><td></td></tr>
+<tr><th>Fase</th><th>Sinais Completados (☐☐☐☐☐☐☐☐)</th><th>Avançou no Capítulo</th></tr>
+<tr><td>🌅 Primeiros Dias (Cap. 1–3)</td><td><input type="text" data-field="diasSinaisPrimeiros"></td><td><input type="text" data-field="diasCapPrimeiros"></td></tr>
+<tr><td>🌿 Aprofundando (Cap. 4–8)</td><td><input type="text" data-field="diasSinaisAprofundando"></td><td><input type="text" data-field="diasCapAprofundando"></td></tr>
+<tr><td>🌳 Rumo ao Entardecer (Cap. 9+)</td><td><input type="text" data-field="diasSinaisEntardecer"></td><td><input type="text" data-field="diasCapEntardecer"></td></tr>
 </table>
 
-<h4>Relógios de Romance (10 seg. cada)</h4>
+<h4>Fios de Romance (10 nós cada)</h4>
 <table>
-<tr><th>NPC</th><th>Segmentos</th><th>Fase</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><th>NPC</th><th>Nós</th><th>Fase</th></tr>
+<tr><td><input type="text" data-field="romance1Npc"></td><td><input type="text" data-field="romance1Nos"></td><td><input type="text" data-field="romance1Fase"></td></tr>
+<tr><td><input type="text" data-field="romance2Npc"></td><td><input type="text" data-field="romance2Nos"></td><td><input type="text" data-field="romance2Fase"></td></tr>
+<tr><td><input type="text" data-field="romance3Npc"></td><td><input type="text" data-field="romance3Nos"></td><td><input type="text" data-field="romance3Fase"></td></tr>
 </table>
 
-<h4>Relógios de Ligação (8 seg.)</h4>
+<h4>Fios de Ligação (8 nós)</h4>
 <table>
-<tr><th>Par</th><th>Segmentos</th><th>Estado</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><th>Par</th><th>Nós</th><th>Estado</th></tr>
+<tr><td><input type="text" data-field="ligacao1Par"></td><td><input type="text" data-field="ligacao1Nos"></td><td><input type="text" data-field="ligacao1Estado"></td></tr>
+<tr><td><input type="text" data-field="ligacao2Par"></td><td><input type="text" data-field="ligacao2Nos"></td><td><input type="text" data-field="ligacao2Estado"></td></tr>
+<tr><td><input type="text" data-field="ligacao3Par"></td><td><input type="text" data-field="ligacao3Nos"></td><td><input type="text" data-field="ligacao3Estado"></td></tr>
 </table>
 
-<h4>Relógios de Tensão</h4>
+<h4>Fios de Tensão</h4>
 <table>
 <tr><th>Nome</th><th>Máx</th><th>Atual</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><td><input type="text" data-field="tensao1Nome"></td><td><input type="text" data-field="tensao1Max"></td><td><input type="text" data-field="tensao1Atual"></td></tr>
+<tr><td><input type="text" data-field="tensao2Nome"></td><td><input type="text" data-field="tensao2Max"></td><td><input type="text" data-field="tensao2Atual"></td></tr>
 </table>
 
-<h4>Relógios de Mistério</h4>
+<h4>Fios de Mistério</h4>
 <table>
 <tr><th>Nome</th><th>Máx</th><th>Atual</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><td><input type="text" data-field="misterio1Nome"></td><td><input type="text" data-field="misterio1Max"></td><td><input type="text" data-field="misterio1Atual"></td></tr>
+<tr><td><input type="text" data-field="misterio2Nome"></td><td><input type="text" data-field="misterio2Max"></td><td><input type="text" data-field="misterio2Atual"></td></tr>
 </table>
 
-<h4>Evento Final (8 seg.)</h4>
-<div class="field"><span class="field-label">Evento:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Segmentos:</span><span class="field-line"></span> / 8</div>
+<h4>O Entardecer (8 nós)</h4>
+<div class="field"><span class="field-label">Evento:</span><input type="text" class="field-line" data-field="entardecerEvento"></div>
+<div class="field"><span class="field-label">Nós:</span><input type="text" class="field-line" data-field="entardecerNos"> / 8</div>
 
-<h4>🔒 Câmara Selada (6 seg.)</h4>
-<div class="field"><span class="field-label">Segmentos:</span><span class="field-line"></span> / 6</div>
-<div class="field"><span class="field-label">Violação da Regra? (ignora limite):</span><span class="field-line"></span></div>
+<h4>🔒 Relicário Selado (6 nós)</h4>
+<div class="field"><span class="field-label">Nós:</span><input type="text" class="field-line" data-field="relicarioNos"> / 6</div>
+<div class="field"><span class="field-label">Violação da Regra? (ignora limite):</span><input type="text" class="field-line" data-field="relicarioViolacao"></div>
 
-<h4>Progressão (Ticks)</h4>
+<h4>Progressão (Pontos)</h4>
 <div class="field-grid">
-  <div class="field-box"><span class="label">Ofício</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Reputação Guilda</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Reputação Cidade</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Capítulo Atual</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Curadoria</span><div class="value"><input type="text" data-field="progCuradoria"></div></div>
+  <div class="field-box"><span class="label">Vínculos Confraria</span><div class="value"><input type="text" data-field="progVinculosConfraria"></div></div>
+  <div class="field-box"><span class="label">Vínculos Cidade</span><div class="value"><input type="text" data-field="progVinculosCidade"></div></div>
+  <div class="field-box"><span class="label">Capítulo Atual</span><div class="value"><input type="text" data-field="progCapituloAtual"></div></div>
 </div>
 
-<h4>Recursos e Ecos</h4>
+<h4>Recursos e Retalhos</h4>
 <div class="field-grid">
-  <div class="field-box"><span class="label">Recursos</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Ecos</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Atos Hoje</span><div class="value"></div></div>
-  <div class="field-box"><span class="label">Falhas Seguidas</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Recursos</span><div class="value"><input type="text" data-field="recRecursos"></div></div>
+  <div class="field-box"><span class="label">Retalhos</span><div class="value"><input type="text" data-field="recRetalhos"></div></div>
+  <div class="field-box"><span class="label">Fôlego Hoje</span><div class="value"><input type="text" data-field="recFolegoHoje"></div></div>
+  <div class="field-box"><span class="label">Cacos Seguidos</span><div class="value"><input type="text" data-field="recCacosSeguidos"></div></div>
 </div>
 
-<h4>Tags Ativas</h4>
+<h4>Marcas Ativas</h4>
 <table>
-<tr><th>Tag</th><th>Descrição</th><th>Usada?</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><th>Marca</th><th>Descrição</th><th>Usada?</th></tr>
+<tr><td><input type="text" data-field="marca1Nome"></td><td><input type="text" data-field="marca1Desc"></td><td><input type="text" data-field="marca1Usada"></td></tr>
+<tr><td><input type="text" data-field="marca2Nome"></td><td><input type="text" data-field="marca2Desc"></td><td><input type="text" data-field="marca2Usada"></td></tr>
+<tr><td><input type="text" data-field="marca3Nome"></td><td><input type="text" data-field="marca3Desc"></td><td><input type="text" data-field="marca3Usada"></td></tr>
+<tr><td><input type="text" data-field="marca4Nome"></td><td><input type="text" data-field="marca4Desc"></td><td><input type="text" data-field="marca4Usada"></td></tr>
 </table>
 
 <h4>✨ Artefatos de Estimação (máx 3)</h4>
 <table>
 <tr><th>Nome</th><th>Função</th><th>Bônus (+1 em)</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><td><input type="text" data-field="artEstim1Nome"></td><td><input type="text" data-field="artEstim1Funcao"></td><td><input type="text" data-field="artEstim1Bonus"></td></tr>
+<tr><td><input type="text" data-field="artEstim2Nome"></td><td><input type="text" data-field="artEstim2Funcao"></td><td><input type="text" data-field="artEstim2Bonus"></td></tr>
+<tr><td><input type="text" data-field="artEstim3Nome"></td><td><input type="text" data-field="artEstim3Funcao"></td><td><input type="text" data-field="artEstim3Bonus"></td></tr>
 </table>
 
 <h4>Artefatos em Restauração (máx 3)</h4>
 <table>
 <tr><th>Nome</th><th>Nível</th><th>Recursos Gastos</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><td><input type="text" data-field="artRestau1Nome"></td><td><input type="text" data-field="artRestau1Nivel"></td><td><input type="text" data-field="artRestau1Recursos"></td></tr>
+<tr><td><input type="text" data-field="artRestau2Nome"></td><td><input type="text" data-field="artRestau2Nivel"></td><td><input type="text" data-field="artRestau2Recursos"></td></tr>
+<tr><td><input type="text" data-field="artRestau3Nome"></td><td><input type="text" data-field="artRestau3Nivel"></td><td><input type="text" data-field="artRestau3Recursos"></td></tr>
 </table>
 
-<h4>✨ Sinergias de Módulos Ativas</h4>
-<p><em>Gaste 1 Eco para ativar. Cada uma pode ser usada 1x por capítulo.</em></p>
+<h4>✨ Harmonias de Cômodos Ativas</h4>
+<p><em>Gaste 1 Retalho para ativar. Cada uma pode ser usada 1x por capítulo.</em></p>
 <table>
-<tr><th>Combinação</th><th>Sinergia Ativa</th><th>Efeito</th><th>Usada?</th></tr>
-<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Pesquisa de Campo"</td><td>Estude artefato sem gastar Ato</td><td>☐</td></tr>
-<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Comunhão Guerreira"</td><td>+2 em rolagem com artefato de conflito</td><td>☐</td></tr>
-<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Leitura de Almas"</td><td>Descubra segredo sem rolagem</td><td>☐</td></tr>
+<tr><th>Combinação</th><th>Harmonia Ativa</th><th>Efeito</th><th>Usada?</th></tr>
+<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Pesquisa de Campo"</td><td>Estude artefato sem gastar Fôlego</td><td><input type="text" data-field="harmonia1Usada"></td></tr>
+<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Comunhão Guerreira"</td><td>+2 em rolagem com artefato de conflito</td><td><input type="text" data-field="harmonia2Usada"></td></tr>
+<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Leitura de Almas"</td><td>Descubra segredo sem rolagem</td><td><input type="text" data-field="harmonia3Usada"></td></tr>
 </table>
 
-<h4>✨ Sinergias Emergentes (Automáticas)</h4>
+<h4>✨ Harmonias Emergentes (Automáticas)</h4>
 <table>
-<tr><th>Combinação</th><th>Sinergia Emergente</th><th>Efeito</th></tr>
-<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Arqueologia Bélica"</td><td>+1 Eco ao estudar artefatos de guerra</td></tr>
+<tr><th>Combinação</th><th>Harmonia Emergente</th><th>Efeito</th></tr>
+<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Arqueologia Bélica"</td><td>+1 Retalho ao estudar artefatos de guerra</td></tr>
 <tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Exorcismo Prático"</td><td>−1 Recurso ao restaurar artefato amaldiçoado</td></tr>
 <tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Cartografia das Almas"</td><td>Pista sobre NPC ao decifrar enigma</td></tr>
 </table>
 
-<h4>🏆 Conquistas Ativas (máx 3)</h4>
+<h4>🏆 Saberes Ativos (máx 5)</h4>
 <table>
-<tr><th>Conquista</th><th>Perícia com Bônus</th><th>Ativo?</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><th>Saber</th><th>Bônus</th><th>Ativo?</th></tr>
+<tr><td><input type="text" data-field="mem1Nome"></td><td><input type="text" data-field="mem1Bonus"></td><td><input type="text" data-field="mem1Ativo"></td></tr>
+<tr><td><input type="text" data-field="mem2Nome"></td><td><input type="text" data-field="mem2Bonus"></td><td><input type="text" data-field="mem2Ativo"></td></tr>
+<tr><td><input type="text" data-field="mem3Nome"></td><td><input type="text" data-field="mem3Bonus"></td><td><input type="text" data-field="mem3Ativo"></td></tr>
+<tr><td><input type="text" data-field="mem4Nome"></td><td><input type="text" data-field="mem4Bonus"></td><td><input type="text" data-field="mem4Ativo"></td></tr>
+<tr><td><input type="text" data-field="mem5Nome"></td><td><input type="text" data-field="mem5Bonus"></td><td><input type="text" data-field="mem5Ativo"></td></tr>
 </table>
 
-<h4>💔 Tags de Fim de Relacionamento</h4>
+<h4>💔 Marcas de Fim de Relacionamento</h4>
 <table>
-<tr><th>NPC</th><th>Tag</th><th>Bônus</th></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><th>NPC</th><th>Marca</th><th>Bônus</th></tr>
+<tr><td><input type="text" data-field="fimRel1Npc"></td><td><input type="text" data-field="fimRel1Marca"></td><td><input type="text" data-field="fimRel1Bonus"></td></tr>
+<tr><td><input type="text" data-field="fimRel2Npc"></td><td><input type="text" data-field="fimRel2Marca"></td><td><input type="text" data-field="fimRel2Bonus"></td></tr>
+<tr><td><input type="text" data-field="fimRel3Npc"></td><td><input type="text" data-field="fimRel3Marca"></td><td><input type="text" data-field="fimRel3Bonus"></td></tr>
 </table>
 
-<h4>⚔️ Aventureiros e Expedições</h4>
+<h4>⚔️ Quebradores e Expedições</h4>
 <table>
 <tr><th>Nome</th><th>Tipo</th><th>Status</th><th>Última Expedição</th></tr>
-<tr><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td><input type="text" data-field="quebrador1Nome"></td><td><input type="text" data-field="quebrador1Tipo"></td><td><input type="text" data-field="quebrador1Status"></td><td><input type="text" data-field="quebrador1Ultima"></td></tr>
+<tr><td><input type="text" data-field="quebrador2Nome"></td><td><input type="text" data-field="quebrador2Tipo"></td><td><input type="text" data-field="quebrador2Status"></td><td><input type="text" data-field="quebrador2Ultima"></td></tr>
+<tr><td><input type="text" data-field="quebrador3Nome"></td><td><input type="text" data-field="quebrador3Tipo"></td><td><input type="text" data-field="quebrador3Status"></td><td><input type="text" data-field="quebrador3Ultima"></td></tr>
+</table>
+
+<h4>📦 Encomendas Ativas</h4>
+<p style="font-size: 0.9rem;"><em>Até 4 encomendas simultâneas. Veja <a href="sistema-encomendas.html">Sistema: Encomendas</a> para as regras completas de Chegada, Fio de Encomenda e Cobrança.</em></p>
+<table>
+<tr><th>Cliente</th><th>Quem Trouxe</th><th>Fio — Nós Atual</th><th>Fio — Nós Máx</th><th>O Que Quer</th></tr>
+<tr><td><input type="text" data-field="encomenda1Cliente"></td><td><input type="text" data-field="encomenda1QuemTrouxe"></td><td><input type="text" data-field="encomenda1NosAtual"></td><td><input type="text" data-field="encomenda1NosMax"></td><td><input type="text" data-field="encomenda1OQuer"></td></tr>
+<tr><td><input type="text" data-field="encomenda2Cliente"></td><td><input type="text" data-field="encomenda2QuemTrouxe"></td><td><input type="text" data-field="encomenda2NosAtual"></td><td><input type="text" data-field="encomenda2NosMax"></td><td><input type="text" data-field="encomenda2OQuer"></td></tr>
+<tr><td><input type="text" data-field="encomenda3Cliente"></td><td><input type="text" data-field="encomenda3QuemTrouxe"></td><td><input type="text" data-field="encomenda3NosAtual"></td><td><input type="text" data-field="encomenda3NosMax"></td><td><input type="text" data-field="encomenda3OQuer"></td></tr>
+<tr><td><input type="text" data-field="encomenda4Cliente"></td><td><input type="text" data-field="encomenda4QuemTrouxe"></td><td><input type="text" data-field="encomenda4NosAtual"></td><td><input type="text" data-field="encomenda4NosMax"></td><td><input type="text" data-field="encomenda4OQuer"></td></tr>
 </table>
 
 <h4>Expedições em Andamento</h4>
+<p style="font-size: 0.9rem;"><em>Registro passivo — você não organiza essas expedições, só percebe quando alguém sai e o que se sabe até agora.</em></p>
 <table>
-<tr><th>Destino</th><th>Nível</th><th>Aventureiros</th><th>Dias Restantes</th></tr>
-<tr><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td></tr>
+<tr><th>Quebrador</th><th>Foi Para Onde (sabe-se lá)</th><th>Última Notícia</th></tr>
+<tr><td><input type="text" data-field="expedicao1Quebrador"></td><td><input type="text" data-field="expedicao1Destino"></td><td><input type="text" data-field="expedicao1Noticia"></td></tr>
+<tr><td><input type="text" data-field="expedicao2Quebrador"></td><td><input type="text" data-field="expedicao2Destino"></td><td><input type="text" data-field="expedicao2Noticia"></td></tr>
 </table>
 
-<h4>🌱 Progressão do Mundo</h4>
-<div class="field"><span class="field-label">Fase Atual:</span><span class="field-line"></span> (🌱 Inicial / 🌿 Crescimento / 🌳 Estabelecida / 🏛️ Lendária)</div>
-<div class="field"><span class="field-label">Capítulos na Fase Atual:</span><span class="field-line"></span></div>
+<h4>🌱 A Vida da Cidade</h4>
+<div class="field"><span class="field-label">Fase Atual:</span><input type="text" class="field-line" data-field="cidadeFaseAtual"> (🌱 Inicial / 🌿 Crescimento / 🌳 Estabelecida / 🏛️ Lendária)</div>
+<div class="field"><span class="field-label">Capítulos na Fase Atual:</span><input type="text" class="field-line" data-field="cidadeCapitulosFase"></div>
 <table>
-<tr><th>Trabalhadores</th><th>Aventureiros Regulares</th><th>Bairros</th><th>Romanceáveis</th></tr>
-<tr><td></td><td></td><td></td><td></td></tr>
+<tr><th>Trabalhadores</th><th>Quebradores Regulares</th><th>Bairros</th><th>Romanceáveis</th></tr>
+<tr><td><input type="text" data-field="cidadeTrabalhadores"></td><td><input type="text" data-field="cidadeQuebradoresRegulares"></td><td><input type="text" data-field="cidadeBairros"></td><td><input type="text" data-field="cidadeRomanceaveis"></td></tr>
 </table>
 
 <h4>🎉 Festivais Sazonais</h4>
-<div class="field"><span class="field-label">Próximo Festival:</span><span class="field-line"></span></div>
-<div class="field"><span class="field-label">Capítulo do Último:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Próximo Festival:</span><input type="text" class="field-line" data-field="festivalProximo"></div>
+<div class="field"><span class="field-label">Capítulo do Último:</span><input type="text" class="field-line" data-field="festivalUltimoCapitulo"></div>
+
+<div id="lista-salvos" class="no-print"></div>
 </div>
 
 <div class="callout tip">
@@ -270,8 +410,8 @@
 </div>
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Ferramentas — Ficha de Rastreamento</p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Ferramentas — Ficha de Rastros</p>
   <p><a href="ficha-mundo.html">← Ficha Mundo</a> | <a href="index.html">Início →</a></p>
 </footer>
 
@@ -280,7 +420,117 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
+<script src="fichas-storage.js"></script>
+<script>
+var currentId = null;
+
+function renderLista() {
+  var lista = document.getElementById('lista-salvos');
+  lista.innerHTML = '';
+  var titulo = document.createElement('p');
+  titulo.className = 'lista-salvos-title';
+  titulo.textContent = 'Rastros Salvos';
+  lista.appendChild(titulo);
+
+  var itens = FichasStorage.getList('rastro');
+  if (itens.length === 0) {
+    var vazio = document.createElement('p');
+    vazio.className = 'lista-vazio';
+    vazio.textContent = 'Nenhum Rastro salvo ainda.';
+    lista.appendChild(vazio);
+    return;
+  }
+
+  itens.sort(function (a, b) {
+    return new Date(b.atualizado) - new Date(a.atualizado);
+  });
+
+  itens.forEach(function (item) {
+    var linha = document.createElement('div');
+    linha.className = 'lista-item';
+
+    var info = document.createElement('div');
+    info.className = 'lista-item-info';
+    var nomeSpan = document.createElement('span');
+    nomeSpan.className = 'lista-item-nome';
+    nomeSpan.textContent = item.nome;
+    var dataSpan = document.createElement('span');
+    dataSpan.className = 'lista-item-data';
+    dataSpan.textContent = new Date(item.atualizado).toLocaleString();
+    info.appendChild(nomeSpan);
+    info.appendChild(dataSpan);
+
+    var botoes = document.createElement('div');
+    botoes.className = 'lista-item-botoes';
+    var abrirBtn = document.createElement('button');
+    abrirBtn.className = 'lista-btn';
+    abrirBtn.textContent = 'Abrir';
+    abrirBtn.onclick = function () { abrirFicha(item.id); };
+    var excluirBtn = document.createElement('button');
+    excluirBtn.className = 'lista-btn excluir';
+    excluirBtn.textContent = 'Excluir';
+    excluirBtn.onclick = function () { excluirFicha(item.id); };
+    botoes.appendChild(abrirBtn);
+    botoes.appendChild(excluirBtn);
+
+    linha.appendChild(info);
+    linha.appendChild(botoes);
+    lista.appendChild(linha);
+  });
+}
+
+function salvarFicha() {
+  var sheet = document.getElementById('sheet-rastro');
+  var nomeInput = document.getElementById('nome-salvo');
+  FichasStorage.saveItem('rastro', currentId, nomeInput.value, sheet);
+  renderLista();
+  var status = document.getElementById('ficha-status');
+  status.textContent = 'Salvo às ' + new Date().toLocaleTimeString();
+}
+
+function novaFicha() {
+  var sheet = document.getElementById('sheet-rastro');
+  FichasStorage.clearFields(sheet);
+  document.getElementById('nome-salvo').value = '';
+  currentId = FichasStorage.newId();
+  var status = document.getElementById('ficha-status');
+  status.textContent = '';
+}
+
+function abrirFicha(id) {
+  var sheet = document.getElementById('sheet-rastro');
+  FichasStorage.loadItem('rastro', id, sheet);
+  currentId = id;
+  var itens = FichasStorage.getList('rastro');
+  var item = itens.find(function (i) { return i.id === id; });
+  document.getElementById('nome-salvo').value = item ? item.nome : '';
+  var status = document.getElementById('ficha-status');
+  status.textContent = 'Aberto';
+}
+
+function excluirFicha(id) {
+  if (!confirm('Excluir este Rastro salvo?')) return;
+  FichasStorage.deleteItem('rastro', id);
+  if (currentId === id) {
+    var sheet = document.getElementById('sheet-rastro');
+    FichasStorage.clearFields(sheet);
+    document.getElementById('nome-salvo').value = '';
+    currentId = FichasStorage.newId();
+  }
+  renderLista();
+}
+
+(function () {
+  if (FichasStorage.isBlankPrint()) {
+    document.getElementById('lista-salvos').style.display = 'none';
+    currentId = FichasStorage.newId();
+  } else {
+    currentId = FichasStorage.newId();
+    renderLista();
+  }
+})();
+</script>
 </body>
 </html>

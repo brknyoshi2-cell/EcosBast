@@ -4,122 +4,96 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Moves: Amor</title>
-<style>
-.move {
-  background: var(--parchment-dark);
-  border-left: 4px solid var(--gold);
-  padding: 1rem 1.2rem;
-  margin: 1rem 0;
-  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
-}
-.move h4 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: var(--accent);
-}
-.move .trigger {
-  font-style: italic;
-  color: var(--ink-soft);
-  margin-bottom: 0.5rem;
-}
-.move .attribute {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--parchment);
-  padding: 0.15rem 0.7rem;
-  border-radius: 3px;
-  font-size: 0.85rem;
-  font-variant: small-caps;
-  margin-bottom: 0.8rem;
-}
-.result {
-  margin: 0.4rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid transparent;
-}
-.result.success {
-  border-left-color: var(--success);
-}
-.result.partial {
-  border-left-color: var(--gold);
-}
-.result.failure {
-  border-left-color: var(--danger);
-}
-.result strong {
-  color: var(--accent);
-}
-.choice {
-  background: rgba(184, 134, 11, 0.08);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  margin: 0.2rem 0;
-  font-style: italic;
-}
-.choice strong {
-  color: var(--gold);
-}
-.callout.critical {
-  background: rgba(122, 46, 46, 0.08);
-  border: 2px solid var(--danger);
-  padding: 1.2rem 1.5rem;
-  margin: 2rem 0;
-}
-.callout.critical::before {
-  content: "💔 ";
-  font-style: normal;
-  font-size: 1.2rem;
-}
-.callout.romance {
-  background: rgba(184, 92, 138, 0.08);
-  border: 2px solid var(--romance);
-  padding: 1.2rem 1.5rem;
-  margin: 2rem 0;
-}
-.callout.romance::before {
-  content: "💕 ";
-  font-style: normal;
-  font-size: 1.2rem;
-}
-</style>
+<title>Retalhos da Contracena — Romance: Corações</title>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="moves-oficio.html">Moves</a> &gt; <strong>Amor</strong>
+  <a href="index.html">Início</a> &gt; <a href="pilar-romance.html">Romance</a> &gt; <a href="pilar-romance-gestos.html">Gestos</a> &gt; <strong>Corações</strong>
 </div>
 
 <div class="container">
 
-<h2>💕 Corações Partidos e Encontrados — Moves de Amor</h2>
-<p>Estes são os moves que lidam com o coração — o amor que floresce, o amor que se desfaz, e os momentos que ficam para sempre.</p>
+<h2>💕 Corações Partidos e Encontrados — Gestos de Corações</h2>
+<p>Estes são os gestos que lidam com o coração — o amor que floresce, o amor que se desfaz, e os momentos que ficam para sempre.</p>
+
+<div class="callout rule">
+  <strong>⚖️ Lembrete da Regra de Ouro:</strong> um Caco no coração dói, mas não é o fim da história entre vocês. Aceite a virada com estilo e ganhe +1 Retalho. Ver <a href="sistema-resolucao.html">A Regra de Ouro</a>.
+</div>
+
+<details class="cartilha">
+<summary>📋 Índice dos Corações</summary>
+<table>
+<tr><th>Gesto</th><th>Instrumento</th><th>Trigger</th></tr>
+<tr><td><a href="#dar-um-presente">Dar um Presente</a></td><td>AGULHA</td><td>Encontra ou cria algo que faz pensar em um NPC específico.</td></tr>
+<tr><td><a href="#abrir-se">Abrir-se</a></td><td>BRASA</td><td>Revela algo verdadeiro e vulnerável sobre si na presença de um NPC.</td></tr>
+<tr><td><a href="#estar-junto">Estar Junto</a></td><td>PENA</td><td>Partilha tempo sem propósito definido com um NPC.</td></tr>
+<tr><td><a href="#momento-de-climax-emocional">Momento de Clímax Emocional</a></td><td>🕊️ sem rolagem</td><td>Um Fio de Romance atravessa um Nó de Resistência (3, 5 ou 7).</td></tr>
+<tr><td><a href="#quando-o-amor-acaba">Quando o Amor Acaba</a></td><td>BRASA</td><td>Um Fio de Romance estagna em 6/10 ou regride sem reconciliação.</td></tr>
+<tr><td><a href="#fim-antecipado">Fim Antecipado</a></td><td>BRASA</td><td>Termina um relacionamento antes de chegar a 6/10.</td></tr>
+</table>
+</details>
 
 <div class="callout tip">
-  <strong>Dica:</strong> O amor não é uma linha reta. Às vezes estagna. Às vezes regrede. E tudo bem. O jogo abraça a dor tanto quanto a alegria.
+  <strong>O que faz o Fio de Romance avançar:</strong> não são ações mecânicas, nem presentes, nem quantidade de interações. O Fio avança por <strong>momentos de vulnerabilidade compartilhada</strong> — quando algo genuíno passa entre você e o outro. Confessar um medo. Mostrar uma cicatriz que você normalmente esconde. Pedir ajuda com algo que normalmente faria sozinho. Rir junto de algo bobo. Ficar em silêncio confortável. O jogador descreve o momento e decide se foi genuíno o suficiente para avançar o Fio.
+</div>
+
+<div class="callout rule">
+  <strong>⚖️ Sobre Presentes:</strong> dar um presente não avança o Fio diretamente. O presente cria uma <em>oportunidade de cena</em> — você entrega, descreve a reação do NPC, e o momento entre vocês. Se essa cena incluir vulnerabilidade compartilhada (você mostra algo de si, o NPC reage com algo genuíno), o Fio avança. Se for só uma troca material, não avança — mas você ganha <strong>+1 Retalho</strong> pela intenção de cuidado. Em conto de fada, o que o presente significa sempre importa mais do que o que ele custa. O tier do presente (Pequeno, Médio, Grande, Personalizado) e o que ele custa às suas prateleiras seguem a tabela em <a href="sistema-ecos-recursos.html">Retalhos & Recursos</a> — mas o que o presente <em>faz</em> no relacionamento vem sempre desta cena, nunca do tier em si.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Gestos de Corações</h3>
+
+<div class="move" id="dar-um-presente">
+  <h4>🎁 Dar um Presente</h4>
+  <p class="trigger">Quando você encontra ou cria algo que faz pensar em um NPC específico, e decide entregá-lo.</p>
+  <span class="attribute">AGULHA</span>
+  <p>Role 2d6 + AGULHA. O presente em si não avança o Fio — o que importa é a <em>cena que o presente abre</em>.</p>
+  <div class="result success"><strong>Inteiro:</strong> A entrega cria um momento real entre vocês. Você pode escrever a cena — se ela incluir vulnerabilidade compartilhada, o Fio de Romance avança 1. Ganha +1 Retalho de qualquer forma pela intenção.</div>
+  <div class="result partial"><strong>Ouro:</strong> O presente é bem recebido, mas o momento não aprofunda. Ganha +1 Retalho. <strong>Escolha 1:</strong> (a) o NPC fica levemente constrangido — algo no presente tocou perto demais, (b) você percebe que não sabe tanto sobre o NPC quanto pensava, (c) o presente chega em hora errada — o NPC está ocupado com algo que você não conhece.</div>
+  <div class="result failure"><strong>Cacos:</strong> O presente revela um mal-entendido. O NPC não reage como você esperava. Não há avanço de Fio. Escreva o que esse descompasso diz sobre a distância que ainda existe entre vocês.</div>
+</div>
+
+<div class="move" id="abrir-se">
+  <h4>🫀 Abrir-se</h4>
+  <p class="trigger">Quando você revela algo verdadeiro sobre si mesmo — um medo, uma cicatriz, uma coisa que normalmente guardaria — na presença de um NPC.</p>
+  <span class="attribute">BRASA</span>
+  <p>Este é o gesto central do romance. Abrir-se não é contar um segredo: é mostrar algo que te deixa vulnerável. Pode ser sobre qualquer coisa — não precisa ser sobre o NPC, não precisa ser romanticamente intencionado. O amor cresce no espaço entre duas pessoas que decidiram ser reais uma com a outra.</p>
+  <div class="result success"><strong>Inteiro:</strong> O NPC recebe o que você mostrou. Algo muda entre vocês — uma barreira que você nem sabia que existia se dissolve. O Fio de Romance avança 1. Ganha +1 Retalho.</div>
+  <div class="result partial"><strong>Ouro:</strong> O NPC recebe, mas com hesitação — ele(a) não sabe como responder ao que você mostrou. O Fio não avança agora. <strong>Escolha 1:</strong> (a) o NPC se fecha um pouco — precisa de tempo para processar, (b) o NPC tenta responder com algo próprio mas não consegue — você vê o esforço, (c) o momento fica suspenso — há algo não resolvido que vai precisar de mais uma cena.</div>
+  <div class="result failure"><strong>Cacos:</strong> A abertura chegou cedo demais, ou ao NPC errado, ou na hora errada. O Fio não avança e recua 1. Ganha Marca [MEMÓRIA: O Momento em que Regredi]. Escreva o que esse recuo ensina sobre o ritmo do outro.</div>
+  <p><strong>Convite de Escrita:</strong> <em>"O que você mostrou? Por que agora, por que para esse NPC? O que você esperava que acontecesse — e o que aconteceu de verdade?"</em></p>
+</div>
+
+<div class="move" id="estar-junto">
+  <h4>☕ Estar Junto</h4>
+  <p class="trigger">Quando você e um NPC partilham tempo sem propósito definido — uma refeição, uma caminhada, silêncio ao lado do outro enquanto trabalham.</p>
+  <span class="attribute">PENA</span>
+  <p>Nem todo momento significativo é dramático. Às vezes o amor cresce nos interstícios — na segunda xícara de chá, no jeito que o outro organiza as ferramentas, no silêncio que não precisa ser preenchido.</p>
+  <div class="result success"><strong>Inteiro:</strong> O tempo junto revela algo — sobre o NPC, sobre você, ou sobre o que há entre vocês. Escreva o que você observou. Se o que revelou tocar uma Faceta da Árvore da Intimidade, desbloqueia-a. Ganha +1 Retalho.</div>
+  <div class="result partial"><strong>Ouro:</strong> O tempo foi bom, mas superficial. Ganha +1 Retalho. <strong>Escolha 1:</strong> (a) algo interrompe antes do momento aprofundar, (b) você percebe que está mais à vontade com o NPC do que ele(a) está com você, (c) o NPC revela algo pequeno — não uma Faceta, mas um fragmento que você anota.</div>
+  <div class="result failure"><strong>Cacos:</strong> O tempo junto revela uma tensão que vocês não tinham nomeado. O momento não conecta — ou conecta na direção errada. Escreva o que a presença do outro revelou que você não queria ver.</div>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
 <h3>✨ Clímax Emocional</h3>
 
-<div class="callout celestial">
-  <h3>✨ MOVE: MOMENTO DE CLÍMAX EMOCIONAL</h3>
-  <p><strong>Gatilho:</strong> Quando um Relógio de Romance atinge <strong>6/10</strong>, <strong>8/10</strong> ou <strong>10/10</strong>.</p>
-  <p><strong>Custo:</strong> 2 Ecos</p>
-  <p><strong>Efeito:</strong> Você força uma <strong>Cena de Virada</strong> — um momento especial sem rolagem, apenas escrito. Você ganha <strong>3 Ecos de volta</strong> e uma <strong>Tag Permanente</strong> que dá <strong>+2</strong> em rolagens relacionadas.</p>
-  <p><strong>Exemplos de Tags Permanentes:</strong></p>
+<div class="callout celestial" id="momento-de-climax-emocional">
+  <h3>✨ GESTO: MOMENTO DE CLÍMAX EMOCIONAL</h3>
+  <p><strong>Gatilho:</strong> Quando um Fio de Romance atravessa um Nó de Resistência (3, 5 ou 7) e o jogador escreve a cena que resolve a tensão do Nó.</p>
+  <p><strong>Custo:</strong> 2 Retalhos</p>
+  <p><strong>Efeito:</strong> Você força uma <strong>Cena de Virada</strong> — um momento especial sem rolagem, apenas escrito. Você ganha <strong>3 Retalhos de volta</strong> e uma <strong>Marca Permanente</strong> que carrega a memória do que foi atravessado.</p>
+  <p><strong>Exemplos de Marcas Permanentes:</strong></p>
   <ul>
-    <li><em>"Memória do Primeiro Beijo"</em> (+2 em CORAÇÃO com este NPC)</li>
-    <li><em>"A Noite da Confissão"</em> (+2 em vulnerabilidade)</li>
-    <li><em>"O Pedido"</em> (+2 em Celebrar o Amor)</li>
-    <li><em>"A Promessa"</em> (+2 em Arriscar-se por Alguém)</li>
+    <li><em>"A Noite em que Ficamos em Silêncio"</em> (+2 em BRASA com este NPC)</li>
+    <li><em>"O Que Eu Mostrei"</em> (+2 em rolagens de vulnerabilidade)</li>
+    <li><em>"Quando Ele(a) Me Viu de Verdade"</em> (+2 em Abrir-se)</li>
+    <li><em>"A Promessa Pequena"</em> (+2 em Arriscar-se por Alguém)</li>
   </ul>
 </div>
 
@@ -127,38 +101,38 @@
 
 <h3>💔 Quando o Amor Acaba (6/10+)</h3>
 
-<div class="callout critical">
-  <h3>💔 MOVE: QUANDO O AMOR ACABA</h3>
-  <p><strong>Gatilho:</strong> Quando um Relógio de Romance estagna em 6/10 ou regrede permanentemente (não há reconciliação possível).</p>
-  <p><strong>Capacidade:</strong> CORAÇÃO</p>
-  <div class="result success"><strong>10+:</strong> Você aceita com graça. Ganha tag <em>[ECO: Cicatriz do Amor]</em>. +2 Ecos. O NPC continua presente como amigo.</div>
-  <div class="result partial"><strong>7–9:</strong> Você aceita, mas com dor. <strong>Escolha 1:</strong> (a) o NPC se afasta temporariamente, (b) você precisa de um tempo sozinho(a) (perde 1 Ato amanhã), (c) o término revela algo sobre você mesmo(a) (ganha Tag [ECO: Autoconhecimento]). Ganha tag <em>[ECO: Cicatriz do Amor]</em>. +1 Eco.</div>
-  <div class="result failure"><strong>6−:</strong> Você não aceita. Relógio de Tensão avança 2. Ganha tag <em>[VÍNCULO−]</em>. O NPC parte ou se torna hostil.</div>
-  <p><strong>Prompt de Escrita:</strong> <em>"Escreva sobre o que você não disse, mas gostaria. O que ficou preso na garganta? O que você gostaria que ele soubesse? O que você nunca vai contar?"</em></p>
+<div class="callout critical" id="quando-o-amor-acaba">
+  <h3>💔 GESTO: QUANDO O AMOR ACABA</h3>
+  <p><strong>Gatilho:</strong> Quando um Fio de Romance estagna em 6/10 ou regride permanentemente (não há reconciliação possível).</p>
+  <p><strong>Instrumento:</strong> BRASA</p>
+  <div class="result success"><strong>Inteiro:</strong> Você aceita com graça. Ganha Marca <em>[MEMÓRIA: Cicatriz do Amor]</em>. +2 Retalhos. O NPC continua presente como amigo.</div>
+  <div class="result partial"><strong>Ouro:</strong> Você aceita, mas com dor. <strong>Escolha 1:</strong> (a) o NPC se afasta temporariamente, (b) você precisa de um tempo sozinho(a) (perde 1 Fôlego amanhã), (c) o término revela algo sobre você mesmo(a) (ganha Marca [MEMÓRIA: Autoconhecimento]). Ganha Marca <em>[MEMÓRIA: Cicatriz do Amor]</em>. +1 Retalho.</div>
+  <div class="result failure"><strong>Cacos:</strong> Você não aceita. Fio de Tensão avança 2. Ganha Marca <em>[VÍNCULO−]</em>. O NPC parte ou se torna hostil.</div>
+  <p><strong>Convite de Escrita:</strong> <em>"Escreva sobre o que você não disse, mas gostaria. O que ficou preso na garganta? O que você gostaria que ele soubesse? O que você nunca vai contar?"</em></p>
 </div>
 
-<h4>Cicatrizes Emocionais (6/10+)</h4>
-<p>Relógios que não completam (estagnam em 6/10 ou regredem) deixam tag <span style="background: var(--gold); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">ECO: Cicatriz do Amor</span>:</p>
+<h4>Histórias Emocionais (6/10+)</h4>
+<p>Fios que não completam (estagnam em 6/10 ou regredem) deixam Marca <span style="background: var(--gold); color: var(--parchment); padding: 0.1rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-variant: small-caps;">MEMÓRIA: Cicatriz do Amor</span>:</p>
 <ul>
-  <li><strong>+1</strong> em rolagens de CORAÇÃO sobre vulnerabilidade</li>
-  <li><strong>−1</strong> em rolagens de SEDUZIR com novos NPCs</li>
+  <li><strong>+1</strong> em rolagens de BRASA sobre vulnerabilidade</li>
+  <li><strong>−1</strong> em rolagens de BRASA com novos NPCs (o coração ainda está aprendendo)</li>
 </ul>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
 <h3>💔 Fim Antecipado (0/10)</h3>
 
-<div class="callout critical">
-  <h3>💔 MOVE: FIM ANTECIPADO</h3>
+<div class="callout critical" id="fim-antecipado">
+  <h3>💔 GESTO: FIM ANTECIPADO</h3>
   <p><strong>Gatilho:</strong> Quando você termina um relacionamento <strong>antes</strong> de chegar a 6/10 (em 0/10, por exemplo).</p>
-  <p><strong>Capacidade:</strong> CORAÇÃO</p>
-  <div class="result success"><strong>10+:</strong> Você termina com clareza e respeito. Ganha tag <em>[ECO: Fim Antecipado]</em>. +2 Ecos. O NPC entende e permanece como conhecido.</div>
-  <div class="result partial"><strong>7–9:</strong> Você termina, mas com dúvidas. <strong>Escolha 1:</strong> (a) o NPC fica magoado — você precisa se desculpar depois, (b) você se sente culpado(a) (perde 1 Ato amanhã), (c) o término revela algo que você não esperava. Ganha tag <em>[ECO: Fim Antecipado]</em>. +1 Eco.</div>
-  <div class="result failure"><strong>6−:</strong> O término é doloroso e confuso. Relógio de Tensão avança 1. Ganha tag <em>[VÍNCULO−]</em>.</div>
-  <p><strong>Efeito da Tag [ECO: Fim Antecipado]:</strong></p>
+  <p><strong>Instrumento:</strong> BRASA</p>
+  <div class="result success"><strong>Inteiro:</strong> Você termina com clareza e respeito. Ganha Marca <em>[MEMÓRIA: Fim Antecipado]</em>. +2 Retalhos. O NPC entende e permanece como conhecido.</div>
+  <div class="result partial"><strong>Ouro:</strong> Você termina, mas com dúvidas. <strong>Escolha 1:</strong> (a) o NPC fica magoado — você precisa se desculpar depois, (b) você se sente culpado(a) (perde 1 Fôlego amanhã), (c) o término revela algo que você não esperava. Ganha Marca <em>[MEMÓRIA: Fim Antecipado]</em>. +1 Retalho.</div>
+  <div class="result failure"><strong>Cacos:</strong> O término é doloroso e confuso. Fio de Tensão avança 1. Ganha Marca <em>[VÍNCULO−]</em>.</div>
+  <p><strong>Efeito da Marca [MEMÓRIA: Fim Antecipado]:</strong></p>
   <ul>
-    <li><strong>+1</strong> em rolagens de CORAÇÃO sobre superação</li>
-    <li><strong>+1</strong> em rolagens de MENTE para reconhecer padrões em relacionamentos</li>
+    <li><strong>+1</strong> em rolagens de BRASA sobre superação</li>
+    <li><strong>+1</strong> em rolagens de PENA para reconhecer padrões em relacionamentos</li>
   </ul>
   <p><em>"Alguns amores nunca chegam a começar. E isso também é uma história."</em></p>
 </div>
@@ -167,7 +141,7 @@
 
 <h3>Tabela de Fins Melancólicos (d10)</h3>
 
-<p>Quando usar os moves de amor, role 1d10 ou escolha:</p>
+<p>Quando usar os gestos de amor, role 1d10 ou escolha:</p>
 
 <ol>
   <li>Vocês se tornam amigos distantes — se veem na cidade, mas não conversam mais.</li>
@@ -176,18 +150,43 @@
   <li>Um segredo vem à tona e quebra a confiança — não há reconciliação possível.</li>
   <li>Vocês percebem que amam pessoas diferentes — e escolhem ser honestos.</li>
   <li>A vida acontece — não há drama, só o tempo passando e o amor esfriando.</li>
-  <li>Um de vocês escolhe a Guilda sobre o amor — e o outro aceita.</li>
+  <li>Um de vocês escolhe a Confraria sobre o amor — e o outro aceita.</li>
   <li>Vocês percebem que o relacionamento era uma fuga — e voltam para a realidade.</li>
   <li>Um de vocês parte para uma expedição — e não volta.</li>
   <li>Vocês percebem que o amor acabou — e escolhem terminar com dignidade.</li>
 </ol>
 
+<div class="section-divider">❦ ❦ ❦</div>
 
+<h3>Quando os Cacos Caem — Corações</h3>
+<p>Nos Gestos de Corações, a complicação vem do timing errado, da vulnerabilidade que assustou, do que você viu no outro e prefereria não ter visto. Role 1d6 ou escolha o que ressoa com o momento:</p>
+
+<table>
+<tr><th>d6</th><th>Complicação</th></tr>
+<tr><td>1</td><td>Você se abriu — e o silêncio do outro durou um segundo a mais do que deveria. O que esse segundo disse?</td></tr>
+<tr><td>2</td><td>O momento era perfeito. E por isso assustou. Quem recuou primeiro — você ou o outro?</td></tr>
+<tr><td>3</td><td>Você percebeu algo sobre o outro que preferia não ter visto. Ainda prefere não ter visto?</td></tr>
+<tr><td>4</td><td>Você disse a coisa certa — mas com a voz errada. A pessoa ouviu as palavras, não o que havia por baixo.</td></tr>
+<tr><td>5</td><td>O gesto foi bonito. O problema é que não foi para a pessoa certa. Você sabe disso agora.</td></tr>
+<tr><td>6</td><td>A proximidade revelou algo em você — não no outro. O que você descobriu que não estava pronto para descobrir?</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<details class="cartilha">
+<summary>🏷️ As Marcas nesta Página</summary>
+<table>
+<tr><th>Marca</th><th>O Que Significa</th></tr>
+<tr><td><em>[MEMÓRIA: ...]</em></td><td>Um momento que marcou você e ficou registrado, pronto para ser revisitado.</td></tr>
+<tr><td><em>[VÍNCULO−]</em></td><td>Uma tensão ou dívida entre vocês dois ainda espera para ser resolvida.</td></tr>
+</table>
+<p>Referência completa: <a href="sistema-tags.html">Sistema de Marcas</a>.</p>
+</details>
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Moves — Amor</p>
-  <p><a href="moves-tensao.html">← Tensão</a> | <a href="progressao-oficio.html">Próxima: Progressão →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Gestos — Corações</p>
+  <p><a href="moves-tensao.html">← Desafios</a> | <a href="progressao-oficio.html">Próxima: Progressão →</a></p>
 </footer>
 
 </div>
@@ -195,7 +194,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

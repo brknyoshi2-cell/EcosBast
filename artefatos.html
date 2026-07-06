@@ -4,52 +4,318 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Artefatos e Maravilhas</title>
+<title>Retalhos da Contracena — Curadoria: Artefatos</title>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <strong>Artefatos e Maravilhas</strong>
+  <a href="index.html">Início</a> &gt; <a href="pilar-curadoria.html">Curadoria</a> &gt; <a href="pilar-curadoria-ferramentas.html">Ferramentas</a> &gt; <strong>Artefatos e Maravilhas</strong>
 </div>
 
 <div class="container">
 
-<h2>As Relíquias dos Bastidores — Artefatos e Maravilhas</h2>
-<p>Os artefatos são o coração dos Bastidores. Cada um carrega uma história, um defeito, e um desejo próprio. Eles não são apenas objetos — são personagens silenciosos que esperam para serem compreendidos.</p>
+<h2>As Relíquias da Contracena — Artefatos e Maravilhas</h2>
+<p>Os artefatos são o coração da Contracena. Cada um carrega uma história, um defeito, e um desejo próprio. Eles não são apenas objetos — são personagens silenciosos que esperam para serem compreendidos.</p>
 
-
-
-<!-- GERADOR DE ARTEFATOS -->
-<div class="generator-section">
-<h3>🎲 Gerador de Artefatos</h3>
-<div class="generator-controls">
-  <button class="generator-btn" onclick="generateWithLoading('artifactOutput', () => renderArtifact(generateArtifact()))">✨ Gerar Artefato</button>
-  <button class="generator-btn" onclick="generateWithLoading('artifactOutput', () => renderWonder(generateWonder()))">🌟 Gerar Maravilha Cotidiana</button>
-</div>
-<div class="generator-output" id="artifactOutput">
-  <div class="loading-spinner" id="spinner-artifactOutput">
-    <div class="spinner"></div>
-    <div class="loading-text">Invocando artefato...</div>
-  </div>
-  <p style="text-align: center; color: var(--ink-soft); font-style: italic;">Clique em um botão para gerar</p>
-</div>
+<div class="nome-verdadeiro-box">
+  <h3>O Nome Verdadeiro dos Artefatos</h3>
+  <p>Todo artefato Raro ou Lendário gerado nesta página inclui uma <strong>Semente de Tema</strong> — a faísca para as três <strong>Pistas do Nome</strong> que você descobre na <strong>Fase Ouvir</strong> da Curadoria — e uma <strong>sugestão pronta</strong> de Nome Verdadeiro, caso prefira um atalho.</p>
+  <p>Use a semente e as pistas como material narrativo durante o reparo. Se o nome que você declarar na Fase Nomear capturar a essência do artefato, ele ganha uma propriedade única permanente. O Nome Verdadeiro sugerido aqui é só isso — sugestão. O seu pode ser diferente, e isso é parte da Curadoria.</p>
+  <p>→ <a href="moves-oficio.html#nome-verdadeiro">Como funciona o sistema completo: Gestos de Curadoria — O Nome Verdadeiro</a></p>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Tabela de Defeitos Mágicos (d10)</h3>
-<p>Todo artefato tem um defeito. Role 1d10 ou escolha:</p>
+<div class="generator-section">
+<h3>🎲 Gerador de Artefatos e Maravilhas</h3>
+<p class="gen-hint">Um atalho, não uma obrigação — a <strong>Regra de Ouro das Tabelas</strong> vale aqui: aceite, adapte ou ignore.</p>
+<div class="generator-controls">
+  <button class="generator-btn" data-generate="artefato">✨ Gerar Artefato</button>
+  <button class="generator-btn" data-generate="maravilha">🌟 Gerar Maravilha Cotidiana</button>
+</div>
+<div class="generator-output" data-output="artefato">
+  <p class="gen-placeholder">Clique em um botão para gerar</p>
+</div>
+<div class="generator-output" data-output="maravilha">
+  <p class="gen-placeholder">Clique em um botão para gerar</p>
+</div>
+</div>
+
+<details class="gen-saved-panel" data-saved-panel data-saved-filter="artefato,maravilha">
+  <summary>📜 Guardados</summary>
+</details>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Como um Artefato é Feito — Camadas e Raridade</h3>
+<p>Em vez de sortear uma frase pronta, cada artefato nasce de rolagens independentes em camadas — a Forma, o Efeito, o Preço, o Temperamento. A <strong>Raridade</strong> não muda a mecânica: ela decide <em>quantas camadas</em> entram em jogo.</p>
+
 <table>
-<tr><th>d10</th><th>Defeito Mágico</th></tr>
+<tr><th>Camada</th><th>Comum</th><th>Raro</th><th>Lendário</th></tr>
+<tr><td>Forma + Material</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td>Efeito Central</td><td>escala utilitária</td><td>escala específica</td><td>escala de alcance/peso</td></tr>
+<tr><td>Preço (custo de usar)</td><td>— (raramente leve)</td><td>Preço Leve</td><td>Preço Pesado</td></tr>
+<tr><td>Temperamento / Defeito</td><td>apenas um dos dois</td><td>ambos</td><td>ambos</td></tr>
+<tr><td>Ironia (opcional)</td><td>rolável</td><td>rolável</td><td>rolável (rara de propósito)</td></tr>
+<tr><td>Semente de Tema + Nome Verdadeiro</td><td>—</td><td>✅</td><td>✅ (ligue a um Fio ou NPC)</td></tr>
+</table>
+
+<div class="callout rule">
+  <strong>Regra:</strong> um artefato <strong>Comum</strong> não carrega a trilha de Nome Verdadeiro — ele é útil e tem caráter, mas não pede uma Curadoria funda. Só Artefatos <strong>Raros</strong> e <strong>Lendários</strong> guardam Nome Verdadeiro em potencial. Isso preserva o Nome Verdadeiro como algo que se busca quando o artefato <em>merece mais</em>, não como uma etiqueta automática.
+</div>
+
+<div class="callout tip">
+  <strong>Montando à mão (sem o gerador):</strong> role 3d50 na tabela abaixo — Forma + Substância + Qualidade — para compor o nome do artefato (ex.: <em>Espada de Ferro Partido</em>, <em>Cálice de Areia Estelar</em>). Role Efeito Central (d12) e leia a coluna correspondente à Raridade escolhida. Se for Raro ou Lendário, role também Preço, Temperamento e Defeito, e cruze as duas mesas de Tema para achar a semente do Nome Verdadeiro.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Tabela: Forma + Substância + Qualidade (3d50)</h3>
+<p>Role os três dados de uma vez — cada resultado em sua coluna. O nome do artefato é a combinação: <em>[Forma] de [Substância] [Qualidade]</em>. Adapte a gramática e o gênero conforme o resultado pedir.</p>
+
+<details class="tabela-colapsavel"><summary class="pergunta">Expandir tabelas — Forma + Substância + Qualidade</summary>
+<div class="tabela-multipla" data-tabela-multipla>
+
+  <div data-tabela-multipla-col data-dado="d50" data-label="Forma">
+    <p class="tabela-multipla-col-label">🎲¹ Forma — o objeto físico base</p>
+    <table>
+    <tr><th>#</th><th>Forma</th></tr>
+    <tr><td>1</td><td>Anel</td></tr>
+    <tr><td>2</td><td>Capa</td></tr>
+    <tr><td>3</td><td>Diário</td></tr>
+    <tr><td>4</td><td>Espelho de Mão</td></tr>
+    <tr><td>5</td><td>Leque</td></tr>
+    <tr><td>6</td><td>Luva</td></tr>
+    <tr><td>7</td><td>Dedal</td></tr>
+    <tr><td>8</td><td>Novelo de Linha</td></tr>
+    <tr><td>9</td><td>Tesoura de Bordado</td></tr>
+    <tr><td>10</td><td>Caixinha de Música</td></tr>
+    <tr><td>11</td><td>Lamparina</td></tr>
+    <tr><td>12</td><td>Cachimbo</td></tr>
+    <tr><td>13</td><td>Colar</td></tr>
+    <tr><td>14</td><td>Escova de Cabelo</td></tr>
+    <tr><td>15</td><td>Vela</td></tr>
+    <tr><td>16</td><td>Bússola</td></tr>
+    <tr><td>17</td><td>Chave sem Fechadura</td></tr>
+    <tr><td>18</td><td>Âncora em Miniatura</td></tr>
+    <tr><td>19</td><td>Campainha de Mesa</td></tr>
+    <tr><td>20</td><td>Taça</td></tr>
+    <tr><td>21</td><td>Espada Curta</td></tr>
+    <tr><td>22</td><td>Adaga</td></tr>
+    <tr><td>23</td><td>Lança</td></tr>
+    <tr><td>24</td><td>Arco</td></tr>
+    <tr><td>25</td><td>Escudo</td></tr>
+    <tr><td>26</td><td>Elmo</td></tr>
+    <tr><td>27</td><td>Armadura de Peito</td></tr>
+    <tr><td>28</td><td>Besta de Mão</td></tr>
+    <tr><td>29</td><td>Martelo de Guerra</td></tr>
+    <tr><td>30</td><td>Machado</td></tr>
+    <tr><td>31</td><td>Bestiário</td></tr>
+    <tr><td>32</td><td>Ampulheta</td></tr>
+    <tr><td>33</td><td>Atlas</td></tr>
+    <tr><td>34</td><td>Pergaminho Selado</td></tr>
+    <tr><td>35</td><td>Lupa</td></tr>
+    <tr><td>36</td><td>Moeda Antiga</td></tr>
+    <tr><td>37</td><td>Caderno de Rascunhos</td></tr>
+    <tr><td>38</td><td>Sinete</td></tr>
+    <tr><td>39</td><td>Balança de Mercador</td></tr>
+    <tr><td>40</td><td>Régua de Carpinteiro</td></tr>
+    <tr><td>41</td><td>Lanterna de Rua</td></tr>
+    <tr><td>42</td><td>Ferraduras</td></tr>
+    <tr><td>43</td><td>Forcado</td></tr>
+    <tr><td>44</td><td>Chave de Celeiro</td></tr>
+    <tr><td>45</td><td>Colher de Estalagem</td></tr>
+    <tr><td>46</td><td>Sino de Porta</td></tr>
+    <tr><td>47</td><td>Baú de Viagem</td></tr>
+    <tr><td>48</td><td>Tesoura de Barbeiro</td></tr>
+    <tr><td>49</td><td>Manto de Juiz</td></tr>
+    <tr><td>50</td><td>Flauta</td></tr>
+    </table>
+  </div>
+
+  <div data-tabela-multipla-col data-dado="d50" data-label="Substância">
+    <p class="tabela-multipla-col-label">🎲² Substância — o material</p>
+    <table>
+    <tr><th>#</th><th>Substância</th></tr>
+    <tr><td>1</td><td>de Areia</td></tr>
+    <tr><td>2</td><td>de Prata</td></tr>
+    <tr><td>3</td><td>de Osso</td></tr>
+    <tr><td>4</td><td>de Tinta</td></tr>
+    <tr><td>5</td><td>de Vidro</td></tr>
+    <tr><td>6</td><td>de Cinzas</td></tr>
+    <tr><td>7</td><td>de Fio</td></tr>
+    <tr><td>8</td><td>de Sal</td></tr>
+    <tr><td>9</td><td>de Lua</td></tr>
+    <tr><td>10</td><td>de Poeira</td></tr>
+    <tr><td>11</td><td>de Renda</td></tr>
+    <tr><td>12</td><td>de Cera</td></tr>
+    <tr><td>13</td><td>de Névoa</td></tr>
+    <tr><td>14</td><td>de Couro</td></tr>
+    <tr><td>15</td><td>de Ferro</td></tr>
+    <tr><td>16</td><td>de Âmbar</td></tr>
+    <tr><td>17</td><td>de Fogo</td></tr>
+    <tr><td>18</td><td>de Seda</td></tr>
+    <tr><td>19</td><td>de Cristal</td></tr>
+    <tr><td>20</td><td>de Madeira</td></tr>
+    <tr><td>21</td><td>de Cobre</td></tr>
+    <tr><td>22</td><td>de Ouro</td></tr>
+    <tr><td>23</td><td>de Pedra</td></tr>
+    <tr><td>24</td><td>de Bronze</td></tr>
+    <tr><td>25</td><td>de Marfim</td></tr>
+    <tr><td>26</td><td>de Barro</td></tr>
+    <tr><td>27</td><td>de Fumaça</td></tr>
+    <tr><td>28</td><td>de Musgo</td></tr>
+    <tr><td>29</td><td>de Espinho</td></tr>
+    <tr><td>30</td><td>de Vento</td></tr>
+    <tr><td>31</td><td>de Gelo</td></tr>
+    <tr><td>32</td><td>de Obsidiana</td></tr>
+    <tr><td>33</td><td>de Âmago</td></tr>
+    <tr><td>34</td><td>de Linho</td></tr>
+    <tr><td>35</td><td>de Chumbo</td></tr>
+    <tr><td>36</td><td>de Água</td></tr>
+    <tr><td>37</td><td>de Folha</td></tr>
+    <tr><td>38</td><td>de Lã</td></tr>
+    <tr><td>39</td><td>de Resina</td></tr>
+    <tr><td>40</td><td>de Chifre</td></tr>
+    <tr><td>41</td><td>de Ébano</td></tr>
+    <tr><td>42</td><td>de Pérola</td></tr>
+    <tr><td>43</td><td>de Carvão</td></tr>
+    <tr><td>44</td><td>de Sangue</td></tr>
+    <tr><td>45</td><td>de Coral</td></tr>
+    <tr><td>46</td><td>de Palha</td></tr>
+    <tr><td>47</td><td>de Argila</td></tr>
+    <tr><td>48</td><td>de Escória</td></tr>
+    <tr><td>49</td><td>de Mármore</td></tr>
+    <tr><td>50</td><td>de Veludo</td></tr>
+    </table>
+  </div>
+
+  <div data-tabela-multipla-col data-dado="d50" data-label="Qualidade">
+    <p class="tabela-multipla-col-label">🎲³ Qualidade — o adjetivo poético</p>
+    <table>
+    <tr><th>#</th><th>Qualidade</th></tr>
+    <tr><td>1</td><td>Estelar</td></tr>
+    <tr><td>2</td><td>Líquido/a</td></tr>
+    <tr><td>3</td><td>Antigo/a</td></tr>
+    <tr><td>4</td><td>Invisível</td></tr>
+    <tr><td>5</td><td>Fumê</td></tr>
+    <tr><td>6</td><td>Dourado/a</td></tr>
+    <tr><td>7</td><td>Partido/a</td></tr>
+    <tr><td>8</td><td>Silencioso/a</td></tr>
+    <tr><td>9</td><td>Cheio/a</td></tr>
+    <tr><td>10</td><td>Desfiado/a</td></tr>
+    <tr><td>11</td><td>Negro/a</td></tr>
+    <tr><td>12</td><td>Petrificado/a</td></tr>
+    <tr><td>13</td><td>Sonâmbulo/a</td></tr>
+    <tr><td>14</td><td>Sussurrante</td></tr>
+    <tr><td>15</td><td>Esquecido/a</td></tr>
+    <tr><td>16</td><td>Encantado/a</td></tr>
+    <tr><td>17</td><td>Vivo/a</td></tr>
+    <tr><td>18</td><td>Ardente</td></tr>
+    <tr><td>19</td><td>Selado/a</td></tr>
+    <tr><td>20</td><td>Eterno/a</td></tr>
+    <tr><td>21</td><td>Sombrio/a</td></tr>
+    <tr><td>22</td><td>Faminto/a</td></tr>
+    <tr><td>23</td><td>Frio/a</td></tr>
+    <tr><td>24</td><td>Desperto/a</td></tr>
+    <tr><td>25</td><td>Adormecido/a</td></tr>
+    <tr><td>26</td><td>Sangrento/a</td></tr>
+    <tr><td>27</td><td>Perdido/a</td></tr>
+    <tr><td>28</td><td>Reluzente</td></tr>
+    <tr><td>29</td><td>Oco/a</td></tr>
+    <tr><td>30</td><td>Trêmulo/a</td></tr>
+    <tr><td>31</td><td>Vetusto/a</td></tr>
+    <tr><td>32</td><td>Maldito/a</td></tr>
+    <tr><td>33</td><td>Furtivo/a</td></tr>
+    <tr><td>34</td><td>Lunar</td></tr>
+    <tr><td>35</td><td>Úmido/a</td></tr>
+    <tr><td>36</td><td>Ressoante</td></tr>
+    <tr><td>37</td><td>Venenoso/a</td></tr>
+    <tr><td>38</td><td>Vigilante</td></tr>
+    <tr><td>39</td><td>Cansado/a</td></tr>
+    <tr><td>40</td><td>Invertido/a</td></tr>
+    <tr><td>41</td><td>Rachado/a</td></tr>
+    <tr><td>42</td><td>Glorioso/a</td></tr>
+    <tr><td>43</td><td>Amargo/a</td></tr>
+    <tr><td>44</td><td>Nobre</td></tr>
+    <tr><td>45</td><td>Roto/a</td></tr>
+    <tr><td>46</td><td>Fiel</td></tr>
+    <tr><td>47</td><td>Devorado/a</td></tr>
+    <tr><td>48</td><td>Perpétuo/a</td></tr>
+    <tr><td>49</td><td>Saudoso/a</td></tr>
+    <tr><td>50</td><td>Estilhaçado/a</td></tr>
+    </table>
+  </div>
+
+</div>
+</details>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Tabela: Efeito Central (d12)</h3>
+<p>O que o artefato faz — a mesma raiz poética, em três intensidades. Role 1d12 para a raiz, depois leia a coluna da Raridade escolhida:</p>
+<details class="tabela-colapsavel"><summary class="pergunta">Role 1d12 — Efeito Central:</summary>
+<table>
+<tr><th>d12</th><th>Efeito Central</th><th>Comum</th><th>Raro</th><th>Lendário</th></tr>
+<tr><td>1</td><td>Revela o que foi escondido de propósito</td><td>Acha pequenos objetos perdidos dentro da Contracena.</td><td>Revela um segredo que alguém vivo guarda a sete chaves.</td><td>Revela algo que uma cidade inteira escolheu esquecer.</td></tr>
+<tr><td>2</td><td>Preserva o que deveria se deteriorar</td><td>Mantém flores e comida frescas por mais um dia.</td><td>Impede que um ferimento ou uma mágoa piore, por uma semana.</td><td>Suspende o tempo sobre uma pessoa ou lugar, por uma estação inteira.</td></tr>
+<tr><td>3</td><td>Aponta para o que foi perdido</td><td>Indica a direção de um objeto perdido na cidade.</td><td>Indica a direção de uma pessoa que sumiu.</td><td>Indica a direção de algo que o próprio usuário perdeu de si mesmo.</td></tr>
+<tr><td>4</td><td>Devolve, por um instante, uma sensação que já passou</td><td>O cheiro de uma refeição de infância.</td><td>O som exato da voz de alguém que partiu.</td><td>Um dia inteiro revivido como memória, do início ao fim.</td></tr>
+<tr><td>5</td><td>Conforta quem sente falta de alguém</td><td>Aquece as mãos de quem está com saudade.</td><td>Por uma noite, alivia por completo o peso da saudade.</td><td>Permite uma despedida simbólica com quem se foi — sentida como real.</td></tr>
+<tr><td>6</td><td>Traduz o que não pode mais ser dito</td><td>Traduz idiomas que já não são falados por ninguém.</td><td>Traduz a intenção verdadeira por trás de uma mentira.</td><td>Traduz os últimos pensamentos de alguém que já morreu.</td></tr>
+<tr><td>7</td><td>Guarda o som ou a imagem de uma despedida</td><td>Grava uma frase, para ser ouvida uma única vez.</td><td>Grava uma cena inteira, revivida quantas vezes o dono quiser.</td><td>Grava a despedida antes mesmo dela acontecer — um aviso.</td></tr>
+<tr><td>8</td><td>Mostra o rosto de quem se ama</td><td>Mostra quem está pensando em você, uma vez ao dia.</td><td>Mostra se essa pessoa está bem, sem entrar em detalhes.</td><td>Permite trocar uma única frase com essa pessoa, não importa a distância.</td></tr>
+<tr><td>9</td><td>Cura um ferimento físico</td><td>Cura arranhões e contusões leves.</td><td>Cura um ferimento sério, mas exige repouso depois.</td><td>Cura qualquer coisa — uma única vez em toda a vida do artefato.</td></tr>
+<tr><td>10</td><td>Reverte um pequeno intervalo de tempo</td><td>Desfaz os últimos cinco minutos de uma ação (não de uma conversa).</td><td>Reverte dez minutos dentro de um cômodo inteiro.</td><td>Reverte um dia inteiro — mas só uma vez, e o artefato se quebra depois.</td></tr>
+<tr><td>11</td><td>Ilumina apenas o que foi esquecido de propósito</td><td>Ilumina objetos escondidos numa gaveta ou baú.</td><td>Ilumina memórias reprimidas de quem segura a luz.</td><td>Ilumina segredos que uma família inteira jurou nunca revelar.</td></tr>
+<tr><td>12</td><td>Reproduz uma canção que ninguém mais consegue lembrar</td><td>Toca uma canção de ninar qualquer, à escolha de quem usa.</td><td>Toca uma canção específica que uma pessoa amada costumava cantar.</td><td>Toca a última canção que existiu antes de um povo desaparecer.</td></tr>
+</table></details>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Tabela: Preço (o custo de usar o Efeito Central)</h3>
+<p>Artefatos Raros pagam um Preço Leve; Lendários, um Preço Pesado. O Preço é diferente do Defeito: ele só cobra quando o artefato é <em>usado</em>, não o tempo todo.</p>
+
+<h4>Preço Leve (d6) — Raros</h4>
+<details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Preço Leve (Raros):</summary>
+<table>
+<tr><th>d6</th><th>Preço Leve</th></tr>
+<tr><td>1</td><td>Custa 1 Recurso a cada uso.</td></tr>
+<tr><td>2</td><td>Só funciona uma vez por dia.</td></tr>
+<tr><td>3</td><td>Deixa quem usa levemente cansado(a) por algumas horas.</td></tr>
+<tr><td>4</td><td>Só funciona em silêncio absoluto ao redor.</td></tr>
+<tr><td>5</td><td>Esquenta de forma desconfortável nas mãos ao ser usado.</td></tr>
+<tr><td>6</td><td>Funciona apenas pela metade se usado com pressa ou raiva.</td></tr>
+</table></details>
+
+<h4>Preço Pesado (d10) — Lendários</h4>
+<details class="tabela-colapsavel"><summary class="pergunta">Role 1d10 — Preço Pesado (Lendários):</summary>
+<table>
+<tr><th>d10</th><th>Preço Pesado</th></tr>
+<tr><td>1</td><td>Envelhece o usuário em uma pequena medida a cada uso.</td></tr>
+<tr><td>2</td><td>Custa uma lembrança pequena e específica, escolhida por quem usa.</td></tr>
+<tr><td>3</td><td>Deixa uma marca física temporária — uma mancha, um calafrio, um fio de cabelo branco.</td></tr>
+<tr><td>4</td><td>Atrai a atenção de algo que não deveria notar a Contracena.</td></tr>
+<tr><td>5</td><td>Exige que o usuário confesse algo verdadeiro em voz alta antes de funcionar.</td></tr>
+<tr><td>6</td><td>Funciona perfeitamente para outra pessoa — nunca para quem o possui.</td></tr>
+<tr><td>7</td><td>Rouba uma noite de sono inteira, sentida só uma semana depois.</td></tr>
+<tr><td>8</td><td>Deixa o usuário incapaz de mentir por um dia inteiro.</td></tr>
+<tr><td>9</td><td>Cada uso aproxima o artefato um pouco mais de se desfazer para sempre.</td></tr>
+<tr><td>10</td><td>Exige que quem usa abra mão, por uma cena, de algo que mais quer.</td></tr>
+</table></details>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Tabela de Defeitos Mágicos — Marca Passiva (d12)</h3>
+<p>O Defeito é diferente do Preço: existe mesmo quando o artefato está parado — é hábito, não tarifa. Role 1d12 ou escolha:</p>
+<details class="tabela-colapsavel"><summary class="pergunta">Role 1d12 — Defeito Mágico:</summary>
+<table>
+<tr><th>d12</th><th>Defeito Mágico</th></tr>
 <tr><td>1</td><td>Sussurra à noite em uma língua que ninguém entende.</td></tr>
 <tr><td>2</td><td>Drena energia vital de quem o toca por muito tempo (causa fadiga).</td></tr>
-<tr><td>3</td><td>Muda de lugar dentro dos Bastidores quando ninguém está olhando.</td></tr>
+<tr><td>3</td><td>Muda de lugar dentro da Contracena quando ninguém está olhando.</td></tr>
 <tr><td>4</td><td>Reage violentamente a mentiras (esquenta, treme, ou emite luz).</td></tr>
 <tr><td>5</td><td>Mostra memórias do dono anterior para quem o segura.</td></tr>
 <tr><td>6</td><td>Atrai criaturas mágicas pequenas e inofensivas (mariposas de luz, ratos de sombra).</td></tr>
@@ -57,12 +323,15 @@
 <tr><td>8</td><td>Tem uma personalidade teimosa e recusa funcionar se não for "pedido com educação".</td></tr>
 <tr><td>9</td><td>Causa alucinações leves em quem o usa por mais de uma hora.</td></tr>
 <tr><td>10</td><td>Está lentamente se desintegrando — resta pouco tempo antes que suma para sempre.</td></tr>
-</table>
+<tr><td>11</td><td>Só funciona se alguém contar uma mentira gentil por perto.</td></tr>
+<tr><td>12</td><td>Esquece seu próprio propósito por uma hora após o pôr do sol.</td></tr>
+</table></details>
 
-<h3>Tabela: O que o Artefato Pede (d10)</h3>
-<p>Artefatos têm necessidades. Role 1d10 para descobrir o que este exige para funcionar bem:</p>
+<h3>Tabela: O que o Artefato Pede (d12)</h3>
+<p>Artefatos têm necessidades. Role 1d12 para descobrir o que este exige para funcionar bem:</p>
+<details class="tabela-colapsavel"><summary class="pergunta">Role 1d12 — O que o Artefato Pede:</summary>
 <table>
-<tr><th>d10</th><th>O que o Artefato Pede</th></tr>
+<tr><th>d12</th><th>O que o Artefato Pede</th></tr>
 <tr><td>1</td><td>Para ser polido com óleo de lavanda toda semana.</td></tr>
 <tr><td>2</td><td>Para ouvir música (cantarolar funciona) antes de ser usado.</td></tr>
 <tr><td>3</td><td>Silêncio absoluto. Não funciona se houver barulho por perto.</td></tr>
@@ -73,12 +342,64 @@
 <tr><td>8</td><td>Que alguém conte uma história verdadeira para ele antes de dormir.</td></tr>
 <tr><td>9</td><td>Para ser envolto em seda vermelha quando não estiver em uso.</td></tr>
 <tr><td>10</td><td>Nada. Ele é perfeitamente autossuficiente — e isso é assustador.</td></tr>
-</table>
+<tr><td>11</td><td>Que seja apresentado a um visitante novo toda lua cheia.</td></tr>
+<tr><td>12</td><td>Companhia silenciosa por uma hora ao entardecer.</td></tr>
+</table></details>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3 id="tema-historia">Semente de Tema — o Oráculo do Nome Verdadeiro (Raros e Lendários)</h3>
+<p>Cruze as duas mesas abaixo para achar a faísca do Nome Verdadeiro — não a resposta pronta. O resultado é munição para as 3 pistas que você escreve na Fase Ouvir da Curadoria (ver <a href="moves-oficio.html#nome-verdadeiro">Gestos de Curadoria</a>).</p>
+
+<h4>Tema A — o que foi tocado (d6)</h4>
+<details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Tema A (o que foi tocado):</summary>
+<table>
+<tr><th>d6</th><th>Tema A</th></tr>
+<tr><td>1</td><td>Perda</td></tr>
+<tr><td>2</td><td>Promessa</td></tr>
+<tr><td>3</td><td>Segredo</td></tr>
+<tr><td>4</td><td>Proteção</td></tr>
+<tr><td>5</td><td>Culpa</td></tr>
+<tr><td>6</td><td>Despedida</td></tr>
+</table></details>
+
+<h4>Tema B — o gesto que ficou (d6)</h4>
+<details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Tema B (o gesto que ficou):</summary>
+<table>
+<tr><th>d6</th><th>Tema B</th></tr>
+<tr><td>1</td><td>Substituição</td></tr>
+<tr><td>2</td><td>Silêncio</td></tr>
+<tr><td>3</td><td>Repetição</td></tr>
+<tr><td>4</td><td>Sacrifício</td></tr>
+<tr><td>5</td><td>Espera</td></tr>
+<tr><td>6</td><td>Negação</td></tr>
+</table></details>
+
+<div class="callout example">
+  <strong>📖 Exemplo:</strong> você rola Culpa (Tema A) + Repetição (Tema B). A faísca: algo que se repete porque ninguém nunca perdoou o próprio erro. Suas 3 pistas na Fase Ouvir podem seguir esse fio — uma marca que reaparece, um gesto que o artefato repete sozinho, uma inscrição que se refaz sempre que é apagada. O Nome Verdadeiro que você declarar deve nascer dessas pistas, não da faísca em si.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3 id="ironia">Ironia — Tag Opcional (d6)</h3>
+<p>Nem todo artefato leva a sério a própria magia. A Ironia é uma marca opcional que qualquer artefato — Comum, Raro ou Lendário — pode carregar: o efeito central funciona, mas de um jeito torto. Role 1d6 quando quiser aplicá-la, ou deixe o gerador decidir por sorte (cerca de 1 em 5):</p>
+<details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Padrão de Ironia:</summary>
+<table>
+<tr><th>d6</th><th>Padrão de Ironia</th></tr>
+<tr><td>1</td><td>Funciona perfeitamente — mas só na direção oposta à esperada.</td></tr>
+<tr><td>2</td><td>Cumpre a função por completo, só que para a pessoa errada — nunca para quem o usa.</td></tr>
+<tr><td>3</td><td>Faz exatamente o que promete, mas de um jeito tão discreto que ninguém percebe a mágica.</td></tr>
+<tr><td>4</td><td>O efeito é real e forte, mas vem sempre acompanhado de um efeito colateral ridículo e inofensivo.</td></tr>
+<tr><td>5</td><td>Só funciona em circunstâncias tão específicas e triviais que quase nunca vale o esforço.</td></tr>
+<tr><td>6</td><td>Faz o oposto exato do que o dono pede — mas sempre o que o dono precisava, sem saber.</td></tr>
+</table></details>
+<p class="gen-hint">Aplique o padrão sobre a Forma e o Efeito Central já sorteados — é assim que a Espada que Brilha vira lanterna, não arma.</p>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
 <h3 id="maravilhas-cotidianas">Tabela de Maravilhas Cotidianas (d10)</h3>
-<p>A magia permeia o dia a dia nos Bastidores. Quando tirar 10+ em "Preparar Café/Chá" ou "Limpar os Bastidores", role 1d10:</p>
+<p>A magia permeia o dia a dia na Contracena. Quando tirar 10+ em Limpar a Contracena, role 1d10:</p>
+<details class="tabela-colapsavel"><summary class="pergunta">Role 1d10 — Maravilha Cotidiana:</summary>
 <table>
 <tr><th>d10</th><th>Maravilha Cotidiana</th></tr>
 <tr><td>1</td><td>A poeira forma constelações se não for varrida por 24h.</td></tr>
@@ -91,28 +412,56 @@
 <tr><td>8</td><td>As velas dos candelabros acendem sozinhas ao entardecer.</td></tr>
 <tr><td>9</td><td>Um gato fantasma (invisível, mas audível) dorme em cima dos artefatos perigosos.</td></tr>
 <tr><td>10</td><td>Os degraus da escada contam seus passos em voz baixa e melodiosa.</td></tr>
-</table>
+</table></details>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3 id="nao-tradicionais">Artefatos Não-Tradicionais (d10)</h3>
-<p>Estes artefatos não fazem o que você espera — e isso é parte da graça.</p>
+<h3>📖 Artefatos com História (d10)</h3>
+
+<p>Quando você restaura um artefato, role 1d10 para descobrir sua história — cada artefato tem uma história que você pode descobrir.</p>
+
+<details class="tabela-colapsavel"><summary class="pergunta">Role 1d10 — Artefato com História:</summary>
+<table>
+<tr><th>d10</th><th>Artefato</th><th>História</th></tr>
+<tr><td>1</td><td><strong>O Fio que Anda para Trás</strong></td><td><em>"Criado por um relojoeiro que perdeu seu filho. Ele queria voltar no tempo. O relógio anda para trás como um lembrete do que ele não pode mudar."</em></td></tr>
+<tr><td>2</td><td><strong>A Chave de Cristal Fumê</strong></td><td><em>"Esta chave não abre portas — ela abre memórias. Foi usada por um rei para esquecer seu passado."</em></td></tr>
+<tr><td>3</td><td><strong>A Pena de Fênix Adormecida</strong></td><td><em>"Uma pena que nunca queima. Dizem que a fênix que a perdeu está esperando para despertar."</em></td></tr>
+<tr><td>4</td><td><strong>O Mapa de Tinta Viva</strong></td><td><em>"O mapa se redesenha sozinho. Ele mostra não onde você está, mas onde você deveria estar."</em></td></tr>
+<tr><td>5</td><td><strong>O Fio de Bolso sem Ponteiros</strong></td><td><em>"Este relógio não marca horas. Ele marca momentos — os momentos que você nunca esquece."</em></td></tr>
+<tr><td>6</td><td><strong>A Taça que Nunca Esvazia</strong></td><td><em>"Criada por um druida para um rei moribundo. A taça cura, mas o rei nunca mais sentiu o gosto de vinho."</em></td></tr>
+<tr><td>7</td><td><strong>O Anel das Memórias Alheias</strong></td><td><em>"Vendido como experiência imersiva em Marrath. O último dono esqueceu o nome da própria mãe."</em></td></tr>
+<tr><td>8</td><td><strong>A Espada que Brilha</strong></td><td><em>"Uma espada que deveria cortar qualquer coisa. Ela foi criada por um ferreiro que queria iluminar o caminho de seu filho. Funciona melhor como lanterna."</em></td></tr>
+<tr><td>9</td><td><strong>O Amuleto Barulhento</strong></td><td><em>"Um amuleto que deveria proteger contra maldições. Ele avisa de perigos... com um barulho tão alto que o perigo já te encontrou."</em></td></tr>
+<tr><td>10</td><td><strong>A Poção Amarga</strong></td><td><em>"Uma poção que cura, mas o sabor é tão ruim que você prefere ficar ferido. Criada por um alquimista que odiava seus pacientes."</em></td></tr>
+</table></details>
+
+<div class="callout rule">
+  <strong>Regra:</strong> Quando você restaura um artefato, role 1d10 para descobrir sua história. Ganhe <strong>+1 Retalho</strong> por escrever sobre ela.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Galeria de Exemplos — Inspiração para Nomes Verdadeiros e Ironias</h3>
+<p>O que vem a seguir <strong>não é gerado</strong> — são exemplos escritos à mão, guardados aqui como referência de tom e profundidade. Use-os para calibrar suas próprias criações com o gerador e as tabelas acima, ou role diretamente sobre eles quando quiser um artefato pronto e já testado pelo tom do jogo.</p>
+
+<h4>Exemplos de Ironia em Ação</h4>
+<p>Estes artefatos não fazem o que você espera — e isso é parte da graça. Cada um é um exemplo concreto do padrão de Ironia aplicado a uma Forma e um Efeito específicos.</p>
 
 <table>
-<tr><th>d10</th><th>Artefato</th><th>O que parece fazer</th><th>O que realmente faz</th></tr>
-<tr><td>1</td><td><strong>A Espada que Brilha</strong></td><td>Uma espada lendária que deveria cortar qualquer coisa</td><td>Ela brilha intensamente... mas só para iluminar salas escuras. É uma lanterna glorificada.</td></tr>
-<tr><td>2</td><td><strong>O Amuleto Barulhento</strong></td><td>Um amuleto que deveria proteger contra maldições</td><td>Ele avisa quando há perigo... fazendo um barulho tão alto que o perigo já te encontrou.</td></tr>
-<tr><td>3</td><td><strong>A Poção Amarga</strong></td><td>Uma poção que deveria curar ferimentos</td><td>Ela cura, mas o sabor é tão ruim que você prefere ficar ferido(a).</td></tr>
-<tr><td>4</td><td><strong>O Mapa da Taverna</strong></td><td>Um mapa do tesouro que mostra o caminho para riquezas</td><td>Mostra o caminho... para a taverna mais próxima.</td></tr>
-<tr><td>5</td><td><strong>O Anel Silencioso</strong></td><td>Um anel que deveria tornar você invisível</td><td>Torna você invisível... mas também inaudível. Você não pode falar.</td></tr>
-<tr><td>6</td><td><strong>A Capa que Anda para Trás</strong></td><td>Uma capa que deveria dar velocidade</td><td>Faz você andar rápido... mas só para trás.</td></tr>
-<tr><td>7</td><td><strong>A Varinha de Virar Pão</strong></td><td>Uma varinha que deveria conjurar magia poderosa</td><td>Transforma qualquer coisa em pão. Pão é sempre útil.</td></tr>
-<tr><td>8</td><td><strong>O Espelho da Verdade</strong></td><td>Um espelho que deveria mostrar a verdade</td><td>Mostra você... mas sempre com uma expressão engraçada.</td></tr>
-<tr><td>9</td><td><strong>O Livro que Lê Você</strong></td><td>Um livro que deveria contar histórias</td><td>Ele lê você — suas expressões, seus pensamentos — e comenta sobre eles.</td></tr>
-<tr><td>10</td><td><strong>A Pedra da Sorte</strong></td><td>Uma pedra que deveria trazer boa sorte</td><td>Ela traz sorte... mas apenas para outras pessoas. Não para você.</td></tr>
+<tr><th>Artefato</th><th>O que parece fazer</th><th>O que realmente faz</th></tr>
+<tr><td><strong>A Espada que Brilha</strong></td><td>Uma espada lendária que deveria cortar qualquer coisa</td><td>Ela brilha intensamente... mas só para iluminar salas escuras. É uma lanterna glorificada.</td></tr>
+<tr><td><strong>O Amuleto Barulhento</strong></td><td>Um amuleto que deveria proteger contra maldições</td><td>Ele avisa quando há perigo... fazendo um barulho tão alto que o perigo já te encontrou.</td></tr>
+<tr><td><strong>A Poção Amarga</strong></td><td>Uma poção que deveria curar ferimentos</td><td>Ela cura, mas o sabor é tão ruim que você prefere ficar ferido(a).</td></tr>
+<tr><td><strong>O Mapa da Taverna</strong></td><td>Um mapa do tesouro que mostra o caminho para riquezas</td><td>Mostra o caminho... para a taverna mais próxima.</td></tr>
+<tr><td><strong>O Anel Silencioso</strong></td><td>Um anel que deveria tornar você invisível</td><td>Torna você invisível... mas também inaudível. Você não pode falar.</td></tr>
+<tr><td><strong>A Capa que Anda para Trás</strong></td><td>Uma capa que deveria dar velocidade</td><td>Faz você andar rápido... mas só para trás.</td></tr>
+<tr><td><strong>A Varinha de Virar Pão</strong></td><td>Uma varinha que deveria conjurar magia poderosa</td><td>Transforma qualquer coisa em pão. Pão é sempre útil.</td></tr>
+<tr><td><strong>O Espelho da Verdade</strong></td><td>Um espelho que deveria mostrar a verdade</td><td>Mostra você... mas sempre com uma expressão engraçada.</td></tr>
+<tr><td><strong>O Livro que Lê Você</strong></td><td>Um livro que deveria contar histórias</td><td>Ele lê você — suas expressões, seus pensamentos — e comenta sobre eles.</td></tr>
+<tr><td><strong>A Pedra da Sorte</strong></td><td>Uma pedra que deveria trazer boa sorte</td><td>Ela traz sorte... mas apenas para outras pessoas. Não para você.</td></tr>
 </table>
 
-<div class="callout example">
+<div class="callout example" style="margin-top: 1.5rem">
   <h3>📖 Exemplo de Uso</h3>
   <p><strong>Jogador:</strong> "Quero usar a Espada que Brilha para cortar uma corda."</p>
   <p><strong>Sistema:</strong> "Ela brilha intensamente... mas não corta a corda. Agora a sala está iluminada, e você pode ver a corda que você não consegue cortar."</p>
@@ -120,36 +469,13 @@
   <p><strong>Sistema:</strong> "Você encontra uma faca. Ela é muito mais útil que a espada. Você se pergunta por que trouxe a espada."</p>
 </div>
 
-<div class="section-divider">❦ ❦ ❦</div>
+<div class="section-divider" style="margin: 2.5rem 0 1.5rem">· · ·</div>
 
-<h3>📖 Artefatos com Lore (d10)</h3>
-
-<p>Quando você restaura um artefato, role 1d10 para descobrir sua história — cada artefato tem uma lore que você pode descobrir.</p>
+<h4>Exemplos de Nome Verdadeiro Completo</h4>
+<p>Artefatos raros que carregam histórias completas, com as três Pistas e o Nome Verdadeiro já escritos. Use como estão ou como referência de profundidade para os seus próprios Raros e Lendários gerados pelas tabelas.</p>
 
 <table>
-<tr><th>d10</th><th>Artefato</th><th>Lore</th></tr>
-<tr><td>1</td><td><strong>O Relógio que Anda para Trás</strong></td><td><em>"Criado por um relojoeiro que perdeu seu filho. Ele queria voltar no tempo. O relógio anda para trás como um lembrete do que ele não pode mudar."</em></td></tr>
-<tr><td>2</td><td><strong>A Chave de Cristal Fumê</strong></td><td><em>"Esta chave não abre portas — ela abre memórias. Foi usada por um rei para esquecer seu passado."</em></td></tr>
-<tr><td>3</td><td><strong>A Pena de Fênix Adormecida</strong></td><td><em>"Uma pena que nunca queima. Dizem que a fênix que a perdeu está esperando para despertar."</em></td></tr>
-<tr><td>4</td><td><strong>O Mapa de Tinta Viva</strong></td><td><em>"O mapa se redesenha sozinho. Ele mostra não onde você está, mas onde você deveria estar."</em></td></tr>
-<tr><td>5</td><td><strong>O Relógio de Bolso sem Ponteiros</strong></td><td><em>"Este relógio não marca horas. Ele marca momentos — os momentos que você nunca esquece."</em></td></tr>
-<tr><td>6</td><td><strong>A Taça que Nunca Esvazia</strong></td><td><em>"Criada por um druida para um rei moribundo. A taça cura, mas o rei nunca mais sentiu o gosto de vinho."</em></td></tr>
-<tr><td>7</td><td><strong>O Anel das Memórias Alheias</strong></td><td><em>"Vendido como experiência imersiva em Marrath. O último dono esqueceu o nome da própria mãe."</em></td></tr>
-<tr><td>8</td><td><strong>A Espada que Brilha</strong></td><td><em>"Uma espada que deveria cortar qualquer coisa. Ela foi criada por um ferreiro que queria iluminar o caminho de seu filho. Funciona melhor como lanterna."</em></td></tr>
-<tr><td>9</td><td><strong>O Amuleto Barulhento</strong></td><td><em>"Um amuleto que deveria proteger contra maldições. Ele avisa de perigos... com um barulho tão alto que o perigo já te encontrou."</em></td></tr>
-<tr><td>10</td><td><strong>A Poção Amarga</strong></td><td><em>"Uma poção que cura, mas o sabor é tão ruim que você prefere ficar ferido. Criada por um alquimista que odiava seus pacientes."</em></td></tr>
-</table>
-
-<div class="callout rule">
-  <strong>Regra:</strong> Quando você restaura um artefato, role 1d10 para descobrir sua lore. Ganhe <strong>+1 Eco</strong> por escrever sobre ela.
-</div>
-
-<div class="section-divider">❦ ❦ ❦</div>
-
-<h3>Artefatos Lendários (com Lore Curta)</h3>
-<p>Artefatos raros que carregam histórias completas. Use como ganchos principais de campanha:</p>
-<table>
-<tr><th>Nome</th><th>Origem</th><th>Função</th><th>Defeito</th><th>Lore (1 parágrafo)</th></tr>
+<tr><th>Nome</th><th>Origem</th><th>Função</th><th>Defeito</th><th>História</th></tr>
 <tr>
   <td><strong>A Ampulheta de Areia Estelar</strong></td>
   <td>Império Caído de Ossun</td>
@@ -157,13 +483,53 @@
   <td>Cada uso envelhece o usuário 1 ano.</td>
   <td>Criada pelo último Cronomante de Ossun para salvar sua filha de uma doença. Ele a usou 7 vezes. Ele morreu de velhice aos 24 anos. A filha sobreviveu, mas nunca soube o que ele fez.</td>
 </tr>
+</table>
+<div class="pistas-container">
+  <p><strong>Pistas do Nome</strong> <em style="font-size:0.85rem; color:var(--ink-soft)">(revelar uma a uma na Fase Ouvir)</em></p>
+  <div class="pista-item"><span class="pista-num">1</span><span class="pista-texto">A areia dentro dela não cai em direção ao chão — ela cai na direção de quem a segurou pela última vez com amor.</span></div>
+  <div class="pista-item"><span class="pista-num">2</span><span class="pista-texto">Ao examiná-la de perto, você vê que as marcas no vidro são riscos feitos por uma mão pequena — uma criança que tentou abrir o fundo.</span></div>
+  <div class="pista-item"><span class="pista-num">3</span><span class="pista-texto">Quando você a segura no silêncio da noite, sente um calor leve e breve no centro — como o pulso de alguém vivo, mas muito distante.</span></div>
+</div>
+<div class="nome-oculto-wrapper">
+  <button class="nome-oculto-toggle" onclick="revelarNome(this)">🔒 Revelar Nome Verdadeiro</button>
+  <div class="nome-oculto-reveal">
+    <div class="nome-label">Nome Verdadeiro</div>
+    <div class="nome-valor">A Dívida que Ninguém Cobra</div>
+    <div class="nome-propriedade">Propriedade: uma vez por estação, quem a usa pode escolher não envelhecer — mas deve escrever o nome de alguém que amou e perdeu no diário da Contracena.</div>
+  </div>
+</div>
+
+<div class="section-divider" style="margin: 2rem 0 1.5rem">· · ·</div>
+
+<table>
+<tr><th>Nome</th><th>Origem</th><th>Função</th><th>Defeito</th><th>História</th></tr>
 <tr>
   <td><strong>O Espelho de Prata Líquida</strong></td>
-  <td>Guilda dos Navegantes de Vaelstrom</td>
+  <td>Confraria dos Navegantes de Vaelstrom</td>
   <td>Mostra o rosto da pessoa que o usuário mais ama.</td>
   <td>Nunca mostra o rosto do próprio usuário.</td>
   <td>Usado por capitães para navegar pela saudade. Dizem que um capitão olhou para ele por 3 dias seguidos e morreu de sede, sorrindo.</td>
 </tr>
+</table>
+<div class="pistas-container">
+  <p><strong>Pistas do Nome</strong> <em style="font-size:0.85rem; color:var(--ink-soft)">(revelar uma a uma na Fase Ouvir)</em></p>
+  <div class="pista-item"><span class="pista-num">1</span><span class="pista-texto">A prata no verso tem ondulações — não de fabricação, mas de algo que escorreu por dentro e nunca secou completamente.</span></div>
+  <div class="pista-item"><span class="pista-num">2</span><span class="pista-texto">O rosto que aparece no espelho sempre tem os olhos abertos, mesmo quando a pessoa real dorme. Como se o amor fosse incapaz de descansar.</span></div>
+  <div class="pista-item"><span class="pista-num">3</span><span class="pista-texto">Há uma inscrição apagada na moldura. Com paciência, você lê: "para que nenhum mar seja grande demais."</span></div>
+</div>
+<div class="nome-oculto-wrapper">
+  <button class="nome-oculto-toggle" onclick="revelarNome(this)">🔒 Revelar Nome Verdadeiro</button>
+  <div class="nome-oculto-reveal">
+    <div class="nome-label">Nome Verdadeiro</div>
+    <div class="nome-valor">O Mar Entre Nós</div>
+    <div class="nome-propriedade">Propriedade: quem olha para ele antes de dormir acorda sabendo se a pessoa amada está bem — sem detalhes, apenas uma certeza ou um aperto no peito.</div>
+  </div>
+</div>
+
+<div class="section-divider" style="margin: 2rem 0 1.5rem">· · ·</div>
+
+<table>
+<tr><th>Nome</th><th>Origem</th><th>Função</th><th>Defeito</th><th>História</th></tr>
 <tr>
   <td><strong>A Bússola de Ossos</strong></td>
   <td>Tribos Nômades de Dusthaven</td>
@@ -171,13 +537,53 @@
   <td>Nunca aponta para o norte. Sempre treme.</td>
   <td>Feita com os ossos de um ancestral. Os nômades a usam para encontrar cemitérios perdidos. Um dia, ela apontou para o próprio usuário.</td>
 </tr>
+</table>
+<div class="pistas-container">
+  <p><strong>Pistas do Nome</strong> <em style="font-size:0.85rem; color:var(--ink-soft)">(revelar uma a uma na Fase Ouvir)</em></p>
+  <div class="pista-item"><span class="pista-num">1</span><span class="pista-texto">Os ossos são pequenos demais para serem de um adulto. Foram polidos com cuidado, um a um — trabalho de quem tinha tempo e precisava de algo para fazer enquanto chorava.</span></div>
+  <div class="pista-item"><span class="pista-num">2</span><span class="pista-texto">Quando você a fecha na palma da mão, ela para de tremer por alguns segundos — como se estivesse ouvindo.</span></div>
+  <div class="pista-item"><span class="pista-num">3</span><span class="pista-texto">No fundo da cápsula, sob a agulha, há uma palavra gravada em língua nômade. Você não conhece todas as letras, mas reconhece o sufixo: significa "que voltou".</span></div>
+</div>
+<div class="nome-oculto-wrapper">
+  <button class="nome-oculto-toggle" onclick="revelarNome(this)">🔒 Revelar Nome Verdadeiro</button>
+  <div class="nome-oculto-reveal">
+    <div class="nome-label">Nome Verdadeiro</div>
+    <div class="nome-valor">O Que Ficou de Mim em Você</div>
+    <div class="nome-propriedade">Propriedade: uma vez, o usuário pode perguntar à bússola não o que perdeu, mas onde isso ainda existe — e ela aponta para uma pessoa viva.</div>
+  </div>
+</div>
+
+<div class="section-divider" style="margin: 2rem 0 1.5rem">· · ·</div>
+
+<table>
+<tr><th>Nome</th><th>Origem</th><th>Função</th><th>Defeito</th><th>História</th></tr>
 <tr>
   <td><strong>O Diário de Tinta Invisível</strong></td>
   <td>Universidade de Thys</td>
   <td>Revela segredos de quem o toca, escritos em suas páginas.</td>
   <td>Os segredos são sempre verdades dolorosas.</td>
-  <td>Escrito por um professor que queria que seus alunos conhecessem a verdade sobre si mesmos. Ele foi expulso. O diário foi trancado nos Bastidores.</td>
+  <td>Escrito por um professor que queria que seus alunos conhecessem a verdade sobre si mesmos. Ele foi expulso. O diário foi trancado na Contracena.</td>
 </tr>
+</table>
+<div class="pistas-container">
+  <p><strong>Pistas do Nome</strong> <em style="font-size:0.85rem; color:var(--ink-soft)">(revelar uma a uma na Fase Ouvir)</em></p>
+  <div class="pista-item"><span class="pista-num">1</span><span class="pista-texto">As páginas em branco têm textura diferente das escritas — mais frias, como se estivessem esperando. O papel absorve o calor da palma antes de revelar qualquer coisa.</span></div>
+  <div class="pista-item"><span class="pista-num">2</span><span class="pista-texto">Na última página com texto, a letra muda no meio de uma frase — fica menor, apressada. A frase termina: "...mas eles precisam saber, mesmo que doa."</span></div>
+  <div class="pista-item"><span class="pista-num">3</span><span class="pista-texto">Quando você o mantém fechado por um longo tempo e o abre de repente, a tinta aparece por um instante antes de desaparecer — como se o diário tentasse mostrar algo que não foi pedido.</span></div>
+</div>
+<div class="nome-oculto-wrapper">
+  <button class="nome-oculto-toggle" onclick="revelarNome(this)">🔒 Revelar Nome Verdadeiro</button>
+  <div class="nome-oculto-reveal">
+    <div class="nome-label">Nome Verdadeiro</div>
+    <div class="nome-valor">O Espelho que Você Evitou</div>
+    <div class="nome-propriedade">Propriedade: uma vez por estação, o usuário pode escrever uma pergunta sobre si mesmo e o diário responde com uma verdade — não necessariamente a que foi perguntada.</div>
+  </div>
+</div>
+
+<div class="section-divider" style="margin: 2rem 0 1.5rem">· · ·</div>
+
+<table>
+<tr><th>Nome</th><th>Origem</th><th>Função</th><th>Defeito</th><th>História</th></tr>
 <tr>
   <td><strong>A Taça que Nunca Esvazia</strong></td>
   <td>Reino Perdido de Kelfen</td>
@@ -185,24 +591,59 @@
   <td>O líquido muda de sabor e cor a cada uso, e nunca é o que o usuário quer beber.</td>
   <td>Presente de um druida para um rei moribundo. O rei bebeu por 40 anos. Ele nunca mais sentiu o gosto de vinho.</td>
 </tr>
+</table>
+<div class="pistas-container">
+  <p><strong>Pistas do Nome</strong> <em style="font-size:0.85rem; color:var(--ink-soft)">(revelar uma a uma na Fase Ouvir)</em></p>
+  <div class="pista-item"><span class="pista-num">1</span><span class="pista-texto">O interior da taça tem uma leve mancha dourada no fundo que não sai com nenhum solvente — como se fosse parte do material, não uma impureza.</span></div>
+  <div class="pista-item"><span class="pista-num">2</span><span class="pista-texto">O líquido que aparece é sempre na temperatura certa para quem o recebe — nunca muito quente, nunca frio. Como algo preparado com atenção.</span></div>
+  <div class="pista-item"><span class="pista-num">3</span><span class="pista-texto">Gravado na base, em letras minúsculas: "que ele nunca mais precise de mim." — a caligrafia é antiga, e há uma leve pressão a mais nas últimas palavras, como se a mão tivesse hesitado.</span></div>
+</div>
+<div class="nome-oculto-wrapper">
+  <button class="nome-oculto-toggle" onclick="revelarNome(this)">🔒 Revelar Nome Verdadeiro</button>
+  <div class="nome-oculto-reveal">
+    <div class="nome-label">Nome Verdadeiro</div>
+    <div class="nome-valor">O Cuidado que Não Pergunta</div>
+    <div class="nome-propriedade">Propriedade: quando oferecida a outra pessoa (não usada pelo próprio jogador), a cura é completa e sem efeitos colaterais — o líquido assume exatamente o sabor preferido de quem bebe.</div>
+  </div>
+</div>
+
+<div class="section-divider" style="margin: 2rem 0 1.5rem">· · ·</div>
+
+<table>
+<tr><th>Nome</th><th>Origem</th><th>Função</th><th>Defeito</th><th>História</th></tr>
 <tr>
   <td><strong>O Anel das Memórias Alheias</strong></td>
   <td>Mercado Negro de Marrath</td>
   <td>Permite viver uma memória de quem o usou anteriormente.</td>
   <td>O usuário esquece uma memória própria para cada memória vivida.</td>
-  <td>Vendido como "experiência imersiva" em Marrath. O último dono esqueceu o nome da própria mãe. O anel foi confiscado pela Guilda.</td>
+  <td>Vendido como "experiência imersiva" em Marrath. O último dono esqueceu o nome da própria mãe. O anel foi confiscado pela Confraria.</td>
 </tr>
 </table>
+<div class="pistas-container">
+  <p><strong>Pistas do Nome</strong> <em style="font-size:0.85rem; color:var(--ink-soft)">(revelar uma a uma na Fase Ouvir)</em></p>
+  <div class="pista-item"><span class="pista-num">1</span><span class="pista-texto">O interior do anel tem arranhões irregulares — não de uso, mas feitos de dentro para fora. Como se alguém tentasse sair.</span></div>
+  <div class="pista-item"><span class="pista-num">2</span><span class="pista-texto">Ao segurar o anel por mais de alguns minutos, você sente uma presença difusa — não hostil, apenas... cheia. Como um quarto com muita gente em silêncio.</span></div>
+  <div class="pista-item"><span class="pista-num">3</span><span class="pista-texto">A última memória armazenada é curta: uma criança no colo de alguém, o cheiro de pão, e uma sensação de segurança absoluta. Ela não pertence a nenhum dos donos registrados.</span></div>
+</div>
+<div class="nome-oculto-wrapper">
+  <button class="nome-oculto-toggle" onclick="revelarNome(this)">🔒 Revelar Nome Verdadeiro</button>
+  <div class="nome-oculto-reveal">
+    <div class="nome-label">Nome Verdadeiro</div>
+    <div class="nome-valor">O Que Sobra Quando Tudo Vai</div>
+    <div class="nome-propriedade">Propriedade: o usuário pode escolher depositar uma memória própria no anel em vez de receber uma — preservando-a para sempre, mesmo que a esqueça. A memória pode ser recuperada uma única vez.</div>
+  </div>
+</div>
 
-<div class="callout example">
+<div class="callout example" style="margin-top: 2rem">
   <h3>📖 Exemplo de Uso em Jogo</h3>
   <p><strong>Jogador:</strong> "Quero restaurar a Ampulheta de Areia Estelar que o Explorador trouxe."</p>
-  <p><strong>Mestre (ou sistema):</strong> "Role Restaurar uma Relíquia. Se tirar 10+, você descobre a lore completa e o defeito. Se tirar 7-9, você restaura, mas a areia começa a vazar. Se tirar 6-, a ampulheta ativa o defeito e você envelhece 1 ano instantaneamente."</p>
+  <p><strong>Sistema:</strong> "Você inicia a Fase Ouvir. Role 2d6 + LENTE ou BRASA. Com Inteiro, recebe a primeira pista limpa; com Ouro, a pista chega com uma complicação; com Cacos, algo perturbador acontece antes de você entender o que viu."</p>
+  <p><strong>Após 3 pistas:</strong> "Você passa para a Fase Moldar — role Restaurar uma Relíquia com AGULHA. Se o reparo for bem-sucedido, você está pronto para a Fase Nomear. Declare o Nome em voz alta. Se capturar a essência do artefato, registre a propriedade única na ficha."</p>
 </div>
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Página anterior: <a href="rapido.html">← Referência Rápida</a> | Próxima página: <a href="lore.html">Lore →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Página anterior: <a href="rapido.html">← Referência Rápida</a> | Próxima página: <a href="lore.html">Atmosfera →</a></p>
 </footer>
 
 </div>
@@ -210,101 +651,11 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
+<script src="dado-multiplo.js"></script>
 
-<script>
-// TEMA
-const themeToggle = document.getElementById('themeToggle');
-const savedTheme = localStorage.getItem('theme') || 'light';
-if (savedTheme === 'dark') { document.body.setAttribute('data-theme', 'dark'); themeToggle.textContent = '☀️ Tema Claro'; }
-themeToggle.addEventListener('click', () => {
-  const current = document.body.getAttribute('data-theme');
-  if (current === 'dark') { document.body.removeAttribute('data-theme'); themeToggle.textContent = '🌙 Tema Escuro'; localStorage.setItem('theme', 'light'); }
-  else { document.body.setAttribute('data-theme', 'dark'); themeToggle.textContent = '☀️ Tema Claro'; localStorage.setItem('theme', 'dark'); }
-});
-
-// LOADING STATE NOS GERADORES
-function generateWithLoading(outputId, generatorFn) {
-  const output = document.getElementById(outputId);
-  const spinner = document.getElementById('spinner-' + outputId);
-  output.querySelectorAll(':not(.loading-spinner)').forEach(el => el.style.display = 'none');
-  spinner.classList.add('active');
-  const buttons = output.parentElement.querySelectorAll('.generator-btn');
-  buttons.forEach(btn => btn.disabled = true);
-  setTimeout(() => {
-    spinner.classList.remove('active');
-    generatorFn();
-    buttons.forEach(btn => btn.disabled = false);
-  }, 300);
-}
-
-// GERADORES
-function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
-
-function generateArtifact() {
-  const nomes = ['Ampulheta de Areia Estelar','Espelho de Prata Líquida','Bússola de Ossos','Diário de Tinta Invisível','Taça que Nunca Esvazia','Anel das Memórias Alheias','Chave de Cristal Fumê','Pena de Fênix Adormecida','Mapa de Tinta Viva','Relógio de Bolso sem Ponteiros'];
-  const origens = ['Império Caído de Ossun','Guilda dos Navegantes de Vaelstrom','Tribos Nômades de Dusthaven','Universidade de Thys','Reino Perdido de Kelfen','Mercado Negro de Marrath'];
-  const funcoes = ['Reverte o tempo em 10 minutos','Mostra o rosto de quem o usuário mais ama','Aponta para o que o usuário mais perdeu','Revela segredos de quem o toca','Cura ferimentos físicos','Permite viver memórias alheias'];
-  const defeitos = ['Sussurra à noite em língua desconhecida','Drena energia vital (causa fadiga)','Muda de lugar quando ninguém olha','Reage violentamente a mentiras','Mostra memórias do dono anterior','Atrai criaturas mágicas pequenas'];
-  const pedidos = ['Ser polido com óleo de lavanda','Ouvir música antes de ser usado','Silêncio absoluto para funcionar','Ser guardado perto de água corrente','Que o usuário diga seu nome verdadeiro','Uma gota de sangue ou lágrima por mês'];
-  const niveis = ['Comum (1d3 Recursos)','Incomum (1d4 Recursos)','Raro (1d6 Recursos)','Épico (1d8 Recursos)','Lendário (1d10 Recursos)'];
-  
-  const nome = pick(nomes);
-  const origem = pick(origens);
-  const funcao = pick(funcoes);
-  const defeito = pick(defeitos);
-  const pedido = pick(pedidos);
-  const nivel = pick(niveis);
-  
-  return { nome, origem, funcao, defeito, pedido, nivel };
-}
-
-function generateWonder() {
-  const maravilhas = [
-    'A poeira forma constelações se não for varrida por 24h.',
-    'O chá muda de sabor conforme o humor de quem bebe.',
-    'As sombras imitam movimentos com 2 segundos de atraso.',
-    'A vassoura varre sozinha por 1 hora se pedir com educação.',
-    'A xícara de café nunca esfria.',
-    'O espelho do corredor reflete o clima de amanhã.',
-    'Os livros sussurram uns com os outros quando ninguém olha.',
-    'As velas acendem sozinhas ao entardecer.',
-    'Um gato fantasma dorme em cima dos artefatos perigosos.',
-    'Os degraus contam seus passos em voz baixa e melodiosa.'
-  ];
-  return pick(maravilhas);
-}
-
-function renderArtifact(art) {
-  document.getElementById('artifactOutput').innerHTML = `
-    <h4>✨ ${art.nome}</h4>
-    <div class="gen-field"><strong>Nível:</strong> ${art.nivel}</div>
-    <div class="gen-field"><strong>Origem:</strong> ${art.origem}</div>
-    <div class="gen-field"><strong>Função:</strong> ${art.funcao}</div>
-    <div class="gen-field"><strong>Defeito Mágico:</strong> ${art.defeito}</div>
-    <div class="gen-field"><strong>O que Pede:</strong> ${art.pedido}</div>
-    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Use este artefato em uma cena de restauração ou como gancho de mistério.</p>
-  `;
-}
-
-function renderWonder(wonder) {
-  document.getElementById('artifactOutput').innerHTML = `
-    <h4>🌟 Maravilha Cotidiana</h4>
-    <div class="gen-field">${wonder}</div>
-    <p style="margin-top:1.5rem; font-style:italic; color: var(--ink-soft);">Incorpore esta maravilha na próxima cena de rotina nos Bastidores.</p>
-  `;
-}
-
-// VOLTAR AO TOPO
-const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 500) { backToTop.classList.add('visible'); }
-  else { backToTop.classList.remove('visible'); }
-});
-backToTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
+<script src="geradores.js"></script>
+<script src="gen-artefatos.js"></script>
 </body>
 </html>

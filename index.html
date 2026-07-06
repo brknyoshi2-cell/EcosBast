@@ -3,33 +3,450 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecos dos Bastidores — Início</title>
+  <title>Retalhos da Contracena — Início</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .portas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .porta-card {
+      background: var(--parchment-dark);
+      border: 2px solid var(--accent-light);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .porta-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 16px rgba(184, 134, 11, 0.15);
+    }
+
+    .porta-card .porta-titulo {
+      font-size: 1.1rem;
+      font-variant: small-caps;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+    }
+
+    .porta-card .porta-persona {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .porta-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .porta-card ul li {
+      margin: 0.35rem 0;
+      font-size: 0.95rem;
+    }
+
+    .porta-card ul li a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent-light);
+    }
+
+    .porta-card ul li a:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    .porta-5-grupos {
+      margin-top: 0.5rem;
+    }
+
+    .porta-5-grupo {
+      margin-bottom: 0.8rem;
+    }
+
+    .porta-5-grupo .grupo-label {
+      font-size: 0.8rem;
+      font-weight: bold;
+      font-variant: small-caps;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.2rem;
+    }
+
+    .porta-5-grupo ul {
+      margin: 0;
+    }
+
+    .cor-essencial { color: var(--danger); }
+    .cor-recomendado { color: var(--gold); }
+    .cor-avancado { color: var(--success); }
+
+    .ferramentas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.8rem;
+      margin: 1rem 0 2rem;
+    }
+
+    .ferramenta-link {
+      display: block;
+      background: var(--parchment-dark);
+      border: 1px solid var(--accent-light);
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .ferramenta-link:hover {
+      background: var(--accent);
+      color: var(--parchment);
+      border-color: var(--accent);
+    }
+
+    .nucleo-box {
+      background: rgba(184, 134, 11, 0.15);
+      border: 3px solid var(--gold);
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .nucleo-box::before {
+      content: "✨ ";
+      font-style: normal;
+      font-size: 1.5rem;
+    }
+
+    .nucleo-box h3 {
+      display: inline;
+      margin: 0;
+    }
+
+    .nucleo-box .nucleo-body {
+      margin-top: 0.8rem;
+    }
+
+    .nucleo-resultado {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.8rem;
+    }
+
+    .nucleo-resultado .resultado-item {
+      flex: 1;
+      min-width: 160px;
+      background: var(--parchment);
+      border: 1px solid var(--accent-light);
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .resultado-item strong {
+      display: block;
+      color: var(--accent);
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .entrada-card {
+      background: rgba(184, 134, 11, 0.08);
+      border: 2px solid var(--gold);
+      border-radius: 10px;
+      padding: 2rem 2rem 1.5rem;
+      margin: 2rem 0 1rem;
+      text-align: center;
+    }
+
+    .entrada-card .entrada-titulo {
+      font-size: 1.4rem;
+      font-variant: small-caps;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .entrada-card .entrada-convite {
+      font-style: italic;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .entrada-card .entrada-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--parchment);
+      text-decoration: none;
+      padding: 0.6rem 1.6rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-variant: small-caps;
+      letter-spacing: 0.05em;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    .entrada-card .entrada-cta:hover {
+      background: var(--gold);
+      box-shadow: 0 3px 12px rgba(184, 134, 11, 0.3);
+    }
+
+    .entrada-atalhos {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    .entrada-atalhos a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent-light);
+    }
+
+    .entrada-atalhos a:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .portas-grid {
+        grid-template-columns: 1fr;
+      }
+      .nucleo-resultado {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
-
-<nav class="top-nav no-print" id="nav-container"></nav>
+  <nav class="top-nav no-print" id="nav-container"></nav>
 
   <div class="container">
     <header class="hero">
-      <h1>Ecos dos Bastidores</h1>
-      <p class="subtitle">Um jogo de cozy fantasy, romance e bastidores</p>
+      <h1>Retalhos da Contracena</h1>
+      <p class="subtitle">Um solo RPG de cozy fantasy, romance e curadoria</p>
       <p class="flavor">
-        O mundo épico acontece lá fora. Heróis retornam com espadas quebradas, amuletos sussurrantes e cicatrizes que não cicatrizam. Alguém precisa limpar tudo isso. Alguém precisa catalogar, consertar, compreender. Alguém precisa ouvir — sem julgar — as histórias que ninguém mais quer ouvir.<br><br>
-        Esse alguém é você. E você mora aqui.
+        O mundo épico acontece lá fora. Quebradores retornam com espadas lascadas, amuletos sussurrantes e cicatrizes que não fecham. Alguém precisa limpar tudo isso. Alguém precisa catalogar, restaurar, compreender. Alguém precisa ouvir — sem julgar — as histórias que ninguém mais quer ouvir.<br><br>
+        Esse alguém é você. E você mora aqui, na Contracena.
       </p>
     </header>
 
     <section>
-      <h2>🕊️ Liberdade Total</h2>
+      <div class="callout warning">
+        <h3>💭 Aviso de Conteúdo</h3>
+        <p>Este é um jogo cozy — mas não raso. Como sistemas opcionais, ele inclui término de relacionamento, luto e, dependendo do <a href="sistema-modos.html">Clima</a> escolhido, a possibilidade de morte de personagens. Nada disso é obrigatório: o Clima Ameno desliga a morte por completo e garante finais felizes; qualquer Clima permite ignorar essas mecânicas inteiramente.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="nucleo-box">
+        <h3>O Essencial — Núcleo Mínimo Jogável</h3>
+        <div class="nucleo-body">
+          <p>Quando o resultado de uma ação for incerto, role <strong>2d6 + o Instrumento</strong> mais próximo (AGULHA, LENTE, BRASA ou PENA).</p>
+          <div class="nucleo-resultado">
+            <div class="resultado-item">
+              <strong>10+ — Inteiro</strong>
+              Algo bom acontece. +1 Retalho.
+            </div>
+            <div class="resultado-item">
+              <strong>7–9 — Cicatrizes de Ouro</strong>
+              Você consegue, mas com um custo ou complicação.
+            </div>
+            <div class="resultado-item">
+              <strong>6− — Cacos</strong>
+              Uma virada na história. Nunca é fim de linha. Aceite com estilo e ganhe +1 Retalho.
+            </div>
+          </div>
+          <p style="margin-top: 1rem;">É só isso. Todo o resto — Fôlego, Fios, Marcas, Climas, Círculos, O Que Fica — é módulo opcional. Ligue o que quiser, quando quiser.</p>
+          <p><a href="rapido.html">📋 Ver a Referência Rápida completa →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Comece Por Aqui</h2>
+
+      <div class="entrada-card">
+        <div class="entrada-titulo">☕ Antes do Primeiro Café</div>
+        <div class="entrada-convite">Antes de qualquer regra, respire. Escolha sua rota.</div>
+        <a href="comecar.html" class="entrada-cta">Entrar →</a>
+        <div class="entrada-atalhos">
+          <span>Já sei o que quero:</span>
+          <a href="quickstart.html">🏛️ Herdar a Contracena</a>
+          <a href="sessao0.html">🧵 Tecer a Contracena</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Explore por Pilar</h2>
+      <p>Antes de folhear tudo, escolha por onde a sua história vive. O jogo se organiza em torno de um <strong>Núcleo</strong> comum e de cinco <strong>Pilares</strong> temáticos — cada Pilar ecoa um dos Cantos de O Que Fica. Entre por onde te chama.</p>
+
+      <div class="portas-grid">
+
+        <div class="porta-card">
+          <div class="porta-titulo"><a href="nucleo.html">⚙️ Núcleo</a></div>
+          <div class="porta-persona">O chão que sustenta tudo o mais.</div>
+          <p style="margin: 0;">O motor de dados, os Fios, as Marcas, os Climas e as peças que atravessam todos os Pilares. Se você só for ler uma coisa, comece aqui.</p>
+        </div>
+
+        <div class="porta-card">
+          <div class="porta-titulo"><a href="pilar-curadoria.html">📚 Curadoria</a></div>
+          <div class="porta-persona">A Estante — Sabedoria.</div>
+          <p style="margin: 0;">Restaurar o que os Quebradores trazem: ouvir o objeto, entender sua história, devolvê-lo inteiro. O ofício paciente das suas mãos.</p>
+        </div>
+
+        <div class="porta-card">
+          <div class="porta-titulo"><a href="pilar-confraria.html">🚪 Confraria &amp; Cidade</a></div>
+          <div class="porta-persona">A Soleira da Porta — Comunidade.</div>
+          <p style="margin: 0;">A guilda que bate à sua porta e a cidade que respira ao redor. Vínculos, Círculos e a lenta transformação do lugar onde você mora.</p>
+        </div>
+
+        <div class="porta-card">
+          <div class="porta-titulo"><a href="pilar-romance.html">🔥 Romance</a></div>
+          <div class="porta-persona">A Lareira — Amor.</div>
+          <p style="margin: 0;">As pessoas por quem você fica. Corações, Rotas de Romance e a coragem tranquila de deixar alguém se aproximar.</p>
+        </div>
+
+        <div class="porta-card">
+          <div class="porta-titulo"><a href="pilar-quebradores.html">🪟 Quebradores</a></div>
+          <div class="porta-persona">A Janela — Glória.</div>
+          <p style="margin: 0;">A aventura que acontece longe de você e volta pela porta. Você não empunha a espada — você vive a espera, o retorno e o que ele deixa.</p>
+        </div>
+
+        <div class="porta-card">
+          <div class="porta-titulo"><a href="pilar-ninho.html">🪣 O Ninho</a></div>
+          <div class="porta-persona">O Porão — Criatividade.</div>
+          <p style="margin: 0;">Tudo o que nasce das suas mãos: o espaço que você decora, a Moldagem que você inventa, a escrita que revela. O canto mais seu.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>O Índice Completo</h2>
+      <p>Para quem quer explorar tudo, aqui estão os sistemas organizados por camada.</p>
+
+      <div class="porta-card" style="margin-top: 1.5rem;">
+        <div class="porta-5-grupos">
+
+          <div class="porta-5-grupo">
+            <div class="grupo-label cor-essencial">🔴 Mecânicas Centrais</div>
+            <ul>
+              <li><a href="sistema-resolucao.html">Resolução</a> — 2d6 + Instrumento</li>
+              <li><a href="sistema-atos.html">Fôlego</a> — Energia e tempo</li>
+              <li><a href="sistema-ecos-recursos.html">Retalhos &amp; Recursos</a> — Moeda e materiais</li>
+              <li><a href="sistema-relogios.html">Fios</a> — Tensão e progresso</li>
+              <li><a href="sistema-tags.html">Marcas</a> — [MEMÓRIA:] e modificadores</li>
+            </ul>
+          </div>
+
+          <div class="porta-5-grupo">
+            <div class="grupo-label cor-essencial">🔴 Gestos</div>
+            <ul>
+              <li><a href="moves-oficio.html">Curadoria</a> — Restauração de artefatos</li>
+              <li><a href="moves-sociais.html">Conversas</a> — Interações com NPCs</li>
+              <li><a href="moves-investigacao.html">Descobertas</a> — Investigação e mistérios</li>
+              <li><a href="moves-base.html">Rotina</a> — A Contracena, descanso, cotidiano</li>
+              <li><a href="moves-tensao.html">Desafios</a> — Risco e confronto</li>
+              <li><a href="moves-amor.html">Corações</a> — Romance e vínculos</li>
+            </ul>
+          </div>
+
+          <div class="porta-5-grupo">
+            <div class="grupo-label cor-recomendado">🟡 Progressão</div>
+            <ul>
+              <li><a href="progressao-oficio.html">Curadoria + Cômodos</a> — Nível de Curadoria e Cômodos da Contracena</li>
+              <li><a href="progressao-reputacao.html">Vínculos</a> — Vínculos e Círculos</li>
+              <li><a href="sistema-rotas-romance.html">Rotas de Romance</a> — Fios de Romance</li>
+              <li><a href="progressao-relacionamentos.html">Relacionamentos</a> — Profundidade e histórias</li>
+              <li><a href="progressao-oficio.html#harmonias">Harmonias</a> — Harmonias e Encontros</li>
+              <li><a href="progressao-conquistas.html">Saberes</a> — Saberes Adquiridos e Conquistas</li>
+              <li><a href="progressao-consequencias.html">Rastros</a> — Consequências e Histórias</li>
+              <li><a href="progressao-economia.html">Trocas</a> — Economia e comércio</li>
+            </ul>
+          </div>
+
+          <div class="porta-5-grupo">
+            <div class="grupo-label cor-avancado">🟢 Sistemas Avançados</div>
+            <ul>
+              <li><a href="sistema-decoracao.html">O Ninho</a> — O Ninho</li>
+              <li><a href="sistema-crafting.html">Moldagem</a> — Criação de itens</li>
+              <li><a href="sistema-aventureiros.html">Quebradores</a> — Os aventureiros da Confraria</li>
+              <li><a href="sistema-encomendas.html">Encomendas</a> — O Fio da Encomenda e a Cobrança</li>
+              <li><a href="sistema-faccoes.html">Círculos</a> — Círculos e alianças</li>
+              <li><a href="sistema-misterios.html">Mistérios</a> — Investigação profunda</li>
+              <li><a href="sistema-escrita-epifania.html">Escrita &amp; Revelação</a> — Epifania narrativa</li>
+              <li><a href="sistema-modos.html">Climas</a> — Brisa, Ameno, Neblina, Tempestade, Vendaval</li>
+              <li><a href="sistema-loop.html">A Estação</a> — Loop narrativo</li>
+              <li><a href="sistema-progressao-mundo.html">A Vida da Cidade</a> — Progressão do mundo</li>
+              <li><a href="sistema-bastidores-exploracao.html">Explorar a Contracena</a> — Expedições e segredos</li>
+              <li><a href="sistema-feedback.html">Ressonâncias</a> — Reflexão e feedback</li>
+              <li><a href="sistema-estatisticas.html">Registros</a> — Estatísticas de campanha</li>
+            </ul>
+          </div>
+
+          <div class="porta-5-grupo">
+            <div class="grupo-label cor-recomendado">🟡 O Que Fica</div>
+            <ul>
+              <li><a href="sistema-legado.html">Os 5 Cantos</a> — A Lareira, A Janela, A Estante, A Soleira da Porta, O Porão</li>
+              <li><a href="sistema-evento-final.html">O Entardecer</a> — O Fio do Entardecer, o fim da Estação</li>
+              <li><a href="finais.html">Amanhecer de Novo</a> — Amanhecer de Novo e o que fica</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Ferramentas</h2>
+      <div class="ferramentas-grid">
+        <a href="rapido.html" class="ferramenta-link">📋 Referência Rápida</a>
+        <a href="ficha-prota.html" class="ferramenta-link">🪡 Ficha do Jogador</a>
+        <a href="ficha-npcs.html" class="ferramenta-link">💕 Ficha de NPCs</a>
+        <a href="ficha-mundo.html" class="ferramenta-link">🌍 Ficha do Mundo</a>
+        <a href="ficha-rastro.html" class="ferramenta-link">📜 Ficha de Rastros</a>
+        <a href="ficha-album.html" class="ferramenta-link">📖 Álbum de Nomes</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Referências</h2>
+      <div class="ferramentas-grid">
+        <a href="geradores.html" class="ferramenta-link">🎲 Geradores — um atalho para as noites sem inspiração</a>
+        <a href="artefatos.html" class="ferramenta-link">🔮 Artefatos</a>
+        <a href="lore.html" class="ferramenta-link">🌫️ Atmosfera</a>
+        <a href="conteudo-expansivo.html" class="ferramenta-link">🌍 Conteúdo de Encerramento</a>
+        <a href="prompts-escrita.html" class="ferramenta-link">🪶 Convites de Escrita</a>
+        <a href="manifesto.html" class="ferramenta-link">✦ Manifesto</a>
+        <a href="exemplos.html" class="ferramenta-link">📖 Exemplos de Jogo</a>
+        <a href="playtesters.html" class="ferramenta-link">🎭 Playtesters</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Liberdade Total</h2>
       <p>Este jogo não tem uma "maneira certa" de jogar. Você pode:</p>
       <ul>
-        <li>Focar apenas em romance e ignorar expedições e artefatos</li>
+        <li>Focar apenas em romance e ignorar Curadoria e artefatos</li>
         <li>Focar apenas em restauração e ignorar relacionamentos</li>
-        <li>Focar apenas em explorar a cidade e ignorar a Guilda</li>
+        <li>Focar apenas em explorar a cidade e ignorar a Confraria</li>
         <li>Focar apenas em escrever histórias e ignorar regras</li>
         <li>Ignorar tudo que não te interessa e fazer o que quiser</li>
       </ul>
@@ -38,301 +455,38 @@
     </section>
 
     <section>
-      <div class="callout warning">
-        <h3>💭 Aviso de Conteúdo</h3>
-        <p>Este é um jogo cozy — mas não raso. Como sistemas opcionais, ele inclui término de relacionamento, luto e, dependendo do <a href="sistema-modos.html">Modo de Jogo</a> escolhido, a possibilidade de morte de personagens. Nada disso é obrigatório: o Modo Cozy desliga a morte por completo e garante finais felizes; qualquer modo permite ignorar essas mecânicas inteiramente.</p>
-      </div>
+      <h2>O Que Fica</h2>
+      <p>Toda história deixa algo. No final da sua campanha, você pode calcular o que ficou na Contracena — se quiser. É opcional.</p>
+      <p>O Que Fica é composto por Os 5 Cantos — mas você só precisa usar os que te interessam:</p>
+      <ul>
+        <li>🔥 <strong>A Lareira</strong> — Amor. Relacionamentos construídos.</li>
+        <li>🪟 <strong>A Janela</strong> — Glória. Aventuras e expedições.</li>
+        <li>📚 <strong>A Estante</strong> — Sabedoria. Conhecimento e restauração.</li>
+        <li>🚪 <strong>A Soleira da Porta</strong> — Comunidade. Crescimento da Confraria e da cidade.</li>
+        <li>🪣 <strong>O Porão</strong> — Criatividade. Moldagens significativas, cenas de Revelação e conjuntos completos do Ninho.</li>
+      </ul>
+      <p>Quanto maior o Que Fica, mais sua história viverá — e no Amanhecer de Novo, você carregará esse legado para a próxima Estação.</p>
+      <p><a href="sistema-legado.html">📜 O Que Fica — sistema completo →</a></p>
     </section>
 
     <section>
-      <h2>I. Filosofia do Jogo</h2>
-      <p><strong>Ecos dos Bastidores</strong> é um jogo sobre:</p>
-      <ul>
-        <li><strong>Magia no cotidiano</strong> — não épico, mas encantador. A poeira que forma constelações, o chá que muda de sabor, as sombras que imitam com atraso.</li>
-        <li><strong>Relacionamentos reais</strong> — não fantasia romântica, mas momentos pequenos e verdadeiros. Fazer café juntos, dividir um cobertor, o silêncio confortável.</li>
-        <li><strong>Diversidade orgânica</strong> — NPCs queer existem naturalmente, não como categoria. O mundo é diverso porque a vida é diversa.</li>
-        <li><strong>Humor e leveza</strong> — mesmo em tensão, há espaço para riso. O jogo abraça a dor, mas também a alegria.</li>
-        <li><strong>Vulnerabilidade e cuidado</strong> — o jogo apoia momentos de cura, aceitação, found family.</li>
-        <li><strong>Sua liberdade</strong> — você decide o que é importante. Não há "certo" ou "errado".</li>
-      </ul>
-
-      <h3>O que o jogo NÃO é:</h3>
-      <ul>
-        <li>Não é sobre combate ou aventura épica</li>
-        <li>Não é sobre worldbuilding denso ou lore complexa</li>
-        <li>Não é sobre mecânicas complexas ou otimização</li>
-        <li>Não é sobre "ganhar" ou "completar" o jogo</li>
-        <li>Não é sobre seguir regras rígidas</li>
-      </ul>
-
-      <h3>O que o jogo É:</h3>
-      <ul>
-        <li>É sobre o que resta depois que os heróis partem</li>
-        <li>É sobre o silêncio entre as prateleiras</li>
-        <li>É sobre o café compartilhado às cinco da manhã</li>
-        <li>É sobre as histórias que ninguém conta — até agora</li>
-        <li>É sobre você — o que você quer explorar, o que te traz alegria</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>II. Como Jogar — Do Seu Jeito</h2>
-
-      <div class="callout celestial">
-        <h3>🎯 O Essencial — Núcleo Mínimo Jogável</h3>
-        <p>Se você não quiser ler mais nada além desta caixa, isto já é suficiente para jogar:</p>
-        <p>Quando o resultado de uma ação for incerto, role <strong>2d6 + a Capacidade Inata</strong> mais próxima (MÃOS, OLHOS, CORAÇÃO ou MENTE).</p>
-        <ul>
-          <li><strong>10+</strong> — Sucesso total. Algo bom acontece. +1 Eco.</li>
-          <li><strong>7–9</strong> — Sucesso parcial. Você consegue, mas com um custo.</li>
-          <li><strong>6−</strong> — Complicação. Nunca é fim de linha — é uma virada na história. Aceite com estilo e ganhe +1 Eco.</li>
-        </ul>
-        <p>É só isso. Todo o resto deste jogo — Atos, Recursos, Tags, Relógios, Modos de Jogo, Facções, Legado — é módulo opcional. Ligue o que quiser, quando quiser, na ordem que quiser.</p>
-        <p><a href="rapido.html">📋 Ver a Referência Rápida completa →</a></p>
-      </div>
-
-      <p>Não há uma maneira certa. Além do essencial acima, aqui está um resumo mais completo do que você pode fazer — mas você decide o que usar:</p>
-      <ul>
-        <li>Crie seu protagonista, alguns NPCs, a Guilda e a cidade. Ou use o <a href="quickstart.html">Quick Start Pack</a> para começar em 15 minutos.</li>
-        <li>Decida o que te interessa: romance? restauração? exploração? escrita? só um desses, ou todos?</li>
-        <li>Use as regras que te ajudam — e ignore as que não te ajudam.</li>
-        <li>Avance a história no seu próprio ritmo. Não há pressa.</li>
-        <li>No final, calcule seu <a href="sistema-legado.html">Legado</a> — o que você deixou nos Bastidores.</li>
-      </ul>
-      <p>Lembre-se: <strong>As regras são sugestões.</strong> Você pode mudá-las, ignorá-las ou criar as suas próprias. O jogo é seu.</p>
-
-      <div class="callout">
-        <strong>Nota importante:</strong> O jogo inclui mecânica para quando o amor acaba. Nem todo Relógio chega a 10/10. Às vezes estagna em 6/10. Às vezes regrede. E tudo bem. O fim não é falha — é parte da vida. Veja o move "Quando o Amor Acaba" em <a href="moves-amor.html">Moves: Amor</a>. Mas se você não quiser essa mecânica, ignore-a.
-      </div>
-    </section>
-
-    <section>
-      <h2>III. Guia do Jogador — Escolha o que te Interessa</h2>
-      <h3>Navegação entre Páginas</h3>
-      <p>Use o que te interessa. Ignore o resto.</p>
-
-      <h3>📖 Introdução</h3>
-      <ul>
-        <li><a href="index.html">Início</a> — Esta página</li>
-        <li><a href="quickstart.html">Quick Start Pack</a> — Comece em 15 minutos (tudo pré-pronto)</li>
-        <li><a href="sessao0.html">Sessão 0 — Criação do Mundo</a> — Crie seu próprio mundo do zero</li>
-        <li><a href="jornada-iniciante.html">Jornada I — Primeiros Dias</a> — Capítulos 1 a 3</li>
-        <li><a href="jornada-avancada.html">Jornada II — Aprofundando e o Fim</a> — Capítulos 4+</li>
-      </ul>
-
-      <h3>🎭 Criação (opcional — você pode pular e começar direto)</h3>
-      <ul>
-        <li><a href="sessao0.html">Sessão 0 — Criação do Mundo</a> — Guia passo a passo, do macro ao micro</li>
-        <li><a href="criacao-protagonista.html">Protagonista</a> — Quem você é</li>
-        <li><a href="criacao-npcs.html">NPCs Romanceáveis</a> — Se quiser romance</li>
-        <li><a href="criacao-guilda.html">Guilda</a> — O lar dos perdidos (inclui a Lenda de Fundação)</li>
-        <li><a href="criacao-bastidores.html">Bastidores</a> — O silêncio entre as prateleiras</li>
-        <li><a href="criacao-cidade.html">Cidade</a> — Onde as histórias acontecem</li>
-        <li><a href="criacao-racas.html">Raças</a> — Raças e culturas do mundo</li>
-      </ul>
-
-      <h3>⚙️ Sistema (use apenas o que te ajuda)</h3>
-      <ul>
-        <li><a href="sistema-resolucao.html">Resolução</a> — 2d6 + Capacidade (se quiser rolar dados)</li>
-        <li><a href="sistema-atos.html">Atos</a> — Energia e tempo (se quiser limite)</li>
-        <li><a href="sistema-ecos-recursos.html">Ecos & Recursos</a> — Moedas (se quiser economia)</li>
-        <li><a href="sistema-tags.html">Tags</a> — Marcas da história</li>
-        <li><a href="sistema-relogios.html">Relógios</a> — A tensão que avança</li>
-        <li><a href="sistema-evento-final.html">Evento Final</a> — O fim da história</li>
-        <li><a href="sistema-camara.html">Câmara</a> — O segredo dos Bastidores</li>
-        <li><a href="sistema-escrita-epifania.html">Escrita</a> — A pena do escritor</li>
-        <li><a href="sistema-loop.html">Loop</a> — O ciclo narrativo</li>
-        <li><a href="sistema-aventureiros.html">Aventureiros</a> — Se quiser expedições</li>
-        <li><a href="sistema-modos.html">Modos de Jogo</a> — Escolha sua vibe</li>
-        <li><a href="sistema-decoracao.html">Decoração</a> — Se quiser personalizar</li>
-        <li><a href="sistema-crafting.html">Crafting</a> — Se quiser criar</li>
-        <li><a href="sistema-misterios.html">Mistérios</a> — Se quiser investigar</li>
-        <li><a href="sistema-rotas-romance.html">Rotas de Romance</a> — Se quiser romance</li>
-        <li><a href="sistema-faccoes.html">Facções</a> — Se quiser política</li>
-        <li><a href="sistema-estatisticas.html">Estatísticas</a> — Se quiser números</li>
-        <li><a href="sistema-feedback.html">Feedback</a> — Se quiser ver progresso</li>
-        <li><a href="sistema-bastidores-exploracao.html">Explorar Bastidores</a> — Se quiser segredos</li>
-        <li><a href="sistema-legado.html">Legado</a> — O que fica</li>
-      </ul>
-
-      <h3>🎲 Moves (sugestões de ações)</h3>
-      <ul>
-        <li><a href="moves-oficio.html">Ofício</a> — Restaurar artefatos</li>
-        <li><a href="moves-sociais.html">Sociais</a> — Conversar e conectar</li>
-        <li><a href="moves-investigacao.html">Investigação</a> — Explorar e descobrir</li>
-        <li><a href="moves-base.html">Base</a> — Rotina e descanso</li>
-        <li><a href="moves-tensao.html">Tensão</a> — Desafios e crises</li>
-        <li><a href="moves-amor.html">Amor</a> — Corações partidos e encontrados</li>
-      </ul>
-
-      <h3>📈 Progressão (se quiser crescimento)</h3>
-      <ul>
-        <li><a href="progressao-oficio.html">Ofício</a> — Níveis e Ticks</li>
-        <li><a href="progressao-reputacao.html">Reputação</a> — Guilda e Cidade</li>
-        <li><a href="progressao-oficina.html">Oficina</a> — Módulos, Sinergias, Fusões</li>
-        <li><a href="progressao-relacionamentos.html">Relacionamentos</a> — Marcos e Poliamor</li>
-        <li><a href="progressao-economia.html">Economia</a> — Recursos e presentes</li>
-        <li><a href="progressao-conquistas.html">Conquistas</a> — Perícias adquiridas</li>
-        <li><a href="progressao-consequencias.html">Consequências</a> — Tensão e cicatrizes</li>
-        <li><a href="sinergias.html">Sinergias</a> — Combinações de módulos</li>
-        <li><a href="sistema-progressao-mundo.html">Progressão do Mundo</a> — A cidade crescendo</li>
-      </ul>
-
-      <h3>🌅 Finais</h3>
-      <ul>
-        <li><a href="finais.html">Finais</a> — Evento Final, Epílogo, New Game+</li>
-      </ul>
-
-      <h3>🛠️ Ferramentas</h3>
-      <ul>
-        <li><a href="geradores-npcs.html">Gerar NPCs</a> — Aleatórios ou inspiração</li>
-        <li><a href="geradores-conteudo.html">Gerar Conteúdo</a> — Artefatos, eventos, momentos</li>
-        <li><a href="ficha-prota.html">Ficha do Protagonista</a> — Imprimível</li>
-        <li><a href="ficha-npcs.html">Ficha de NPCs</a> — Imprimível</li>
-        <li><a href="ficha-mundo.html">Ficha do Mundo</a> — Imprimível</li>
-        <li><a href="ficha-rastro.html">Ficha de Rastreamento</a> — Imprimível</li>
-      </ul>
-
-      <h3>📚 Referências</h3>
-      <ul>
-        <li><a href="rapido.html">Referência Rápida</a> — Todas as tabelas em uma página</li>
-        <li><a href="artefatos.html">Artefatos</a> — Relíquias e Maravilhas</li>
-        <li><a href="lore.html">Lore</a> — Atmosfera do mundo</li>
-        <li><a href="conteudo-expansivo.html">Conteúdo Expansivo</a> — Mais cidades, bairros, NPCs</li>
-        <li><a href="prompts-escrita.html">Prompts de Escrita</a> — Inspiração narrativa</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>IV. O Legado dos Bastidores</h2>
-      <h3>📜 O Que Fica</h3>
-      <p>Toda história deixa um legado. No final da sua campanha, você pode calcular o Legado que deixou nos Bastidores — se quiser. É opcional.</p>
-      <p>Seu Legado é composto por 5 pilares — mas você só precisa usar os que te interessam:</p>
-      <ul>
-        <li>❤️ <strong>Amor</strong> — Relacionamentos construídos</li>
-        <li>⚔️ <strong>Glória</strong> — Aventuras e expedições</li>
-        <li>📚 <strong>Sabedoria</strong> — Conhecimento e restauração</li>
-        <li>🏛️ <strong>Comunidade</strong> — Crescimento da Guilda e cidade</li>
-        <li>🪶 <strong>Criatividade</strong> — Escrita e decoração</li>
-      </ul>
-      <p>Quanto maior seu Legado, mais sua história viverá — e no New Game+, você carregará esse legado para a próxima campanha. Mas se você não quiser calcular Legado, não calcule.</p>
-      <p><a href="sistema-legado.html">📜 Calcule seu Legado (se quiser) →</a></p>
-    </section>
-
-    <section>
-      <h2>V. Sobre os Playtesters</h2>
-      <details class="collapsible">
-        <summary class="collapsible-title">🔽 Clique para expandir: Conheça os 17 Playtesters</summary>
-        <div class="collapsible-content">
-          <div class="disclaimer">
-            <strong>⚠️ Aviso:</strong> Todos os playtesters listados abaixo são fictícios. Eles foram criados para simular diferentes perfis de jogadores e testar o sistema de múltiplas perspectivas. Tanto os personagens quanto o código deste jogo foram gerados com assistência do modelo de inteligência artificial Qwen3.7 (da Alibaba Cloud), em conversação iterativa com o designer do jogo.
-          </div>
-
-          <h3>Os 17 Playtesters</h3>
-          <div class="playtester-grid">
-            <div class="playtester-card">
-              <strong>1. Rafael "Rafa" Mendes</strong>
-              <em>O Mecânico</em>
-              Joga RPG desde 2008. Fã de Pathfinder e GURPS. Adora otimizar builds e rastrear números. Jogou 3 campanhas completas de D&D 5e.
-            </div>
-            <div class="playtester-card">
-              <strong>2. Beatriz "Bia" Santos</strong>
-              <em>A Narrativa</em>
-              Primeira vez em RPG de mesa. Vem de jogos de aventura solo como Stardew Valley e Disco Elysium. Foca em história e emoção.
-            </div>
-            <div class="playtester-card">
-              <strong>3. Carlos Eduardo Lima</strong>
-              <em>O Worldbuilder → Editor de Fantasia</em>
-              Mestre de D&D há 10 anos. Criou 4 mundos próprios. Fã de Tolkien e Brandon Sanderson. Agora trabalha como editor de livros e histórias de fantasia.
-            </div>
-            <div class="playtester-card">
-              <strong>4. Marina Oliveira</strong>
-              <em>A Sobrevivente</em>
-              Jogou apenas uma campanha curta de D&D. Foca em não morrer e completar objetivos. Gosta de jogos com progressão clara.
-            </div>
-            <div class="playtester-card">
-              <strong>5. Lucas Ferreira</strong>
-              <em>O Romântico</em>
-              Fã de jogos de relacionamento como Hatoful Boyfriend e Mystic Messenger. Jogou 7 campanhas focadas em romance. Testou todas as combinações de poliamor.
-            </div>
-            <div class="playtester-card">
-              <strong>6. Juliana Costa</strong>
-              <em>A Exploradora Urbana</em>
-              Fã de The Witcher 3 e Red Dead Redemption 2. Adora explorar cidades e conversar com NPCs secundários. Ignora missões principais.
-            </div>
-            <div class="playtester-card">
-              <strong>7. Pedro Henrique Alves</strong>
-              <em>O Detetive</em>
-              Fã de Disco Elysium e Return of the Obra Dinn. Foca 100% em resolver mistérios. Ignora romance completamente.
-            </div>
-            <div class="playtester-card">
-              <strong>8. Ana Clara Souza</strong>
-              <em>A Caseira</em>
-              Fã de Animal Crossing e Stardew Valley. Nunca saiu dos Bastidores em suas campanhas. Adora decoração e rotina.
-            </div>
-            <div class="playtester-card">
-              <strong>9. Gabriel Rodrigues</strong>
-              <em>O Restaurador</em>
-              Engenheiro mecânico na vida real. Foca exclusivamente em restaurar artefatos. Criou planilha de tracking de restaurações.
-            </div>
-            <div class="playtester-card">
-              <strong>10. Fernanda Lima</strong>
-              <em>A Speedrunner</em>
-              Fã de completar jogos o mais rápido possível. Terminou a campanha em 3 capítulos. Testou o Modo Acelerador exaustivamente.
-            </div>
-            <div class="playtester-card">
-              <strong>11. Thiago Barbosa</strong>
-              <em>O Épico</em>
-              Fã de D&D, Senhor dos Anéis e Wheel of Time. Começou a ler Brandon Sanderson durante o playtest. Quer lore profunda e ameaças cósmicas.
-            </div>
-            <div class="playtester-card">
-              <strong>12. Camila Rocha</strong>
-              <em>A Romântica Queer → Web Designer</em>
-              Fã de todos os livros de TJ Klune. Jogou campanhas focadas em diversidade, humor e momentos fofos. Trouxe feedback técnico sobre UX/UI.
-            </div>
-            <div class="playtester-card">
-              <strong>13. Luca Ferreira</strong>
-              <em>O Descobridor</em>
-              Jogador casual de Pokémon. Descobriu o r/Solo_Roleplaying e testou vários jogos antes de encontrar este. Adora a vibe cozy e os prompts de escrita.
-            </div>
-            <div class="playtester-card">
-              <strong>14. Henrique "Rike" Almeida</strong>
-              <em>O Fã de Digimon</em>
-              Namorado do Luca. Fã de Digimon e JRPGs narrativos (Persona, Trails). Adora o conceito de parceiros que evoluem juntos.
-            </div>
-            <div class="playtester-card">
-              <strong>15. Pedro "Pepe" Castro</strong>
-              <em>O Competitivo</em>
-              Ex-namorado do Luca, ainda melhor amigo. Joga Pokémon VGC competitivo há 8 anos. Extremamente analítico.
-            </div>
-            <div class="playtester-card">
-              <strong>16. Thiago "Thiagão" Moreira</strong>
-              <em>O Game Designer</em>
-              Amigo do Luca. Game designer indie de jogos co-op de tabuleiro (2 publicados no Kickstarter). Fã de Monster Hunter e Spiritfarer.
-            </div>
-          </div>
-
-          <div class="note">
-            <strong>Nota especial:</strong> Os playtesters 5 (Lucas Ferreira) e 12 (Camila Rocha) namoraram durante 3 semanas de playtest. Terminaram antes da rodada final, mas continuaram participando. O feedback do Lucas sobre "mecânica para quando o amor acaba" veio diretamente dessa experiência.
-          </div>
-        </div>
-      </details>
+      <h2>Sobre</h2>
+      <p>Tanto o código quanto o conteúdo deste jogo foram gerados com assistência de inteligência artificial, em conversação iterativa com o designer do jogo — incluindo os playtesters fictícios usados para simular diferentes perfis de jogadores. Conheça todos eles na <a href="playtesters.html">página de Playtesters →</a></p>
     </section>
 
     <footer>
-      <p>❦ Ecos dos Bastidores ❦</p>
-      <p><em>Um jogo sobre o que resta depois que os heróis partem.</em></p>
-      <p><em>Sobre o silêncio entre as prateleiras. Sobre o café compartilhado às cinco da manhã.</em></p>
+      <p>❦ Retalhos da Contracena ❦</p>
+      <p><em>Um jogo sobre o que resta depois que os Quebradores partem.</em></p>
+      <p><em>Sobre o silêncio entre as prateleiras. Sobre o chá compartilhado às cinco da manhã.</em></p>
       <p><em>Sobre as histórias que ninguém conta — até agora.</em></p>
       <p><em>Sobre você — do seu jeito.</em></p>
-      <p>Próxima página: <a href="quickstart.html">Quick Start Pack →</a></p>
     </footer>
   </div>
 
   <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
-<script src="menu.js"></script>
-<script src="theme.js"></script>
-<script src="backtotop.js"></script>
+  <script src="menu.js"></script>
+  <script src="backtotop.js"></script>
+  <script src="dado.js"></script>
 </body>
 </html>

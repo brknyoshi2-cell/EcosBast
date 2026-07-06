@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Retalhos da Contracena — Núcleo: Fichas para Impressão</title>
+<style>
+.print-page {
+  page-break-after: always;
+  margin-bottom: 3rem;
+}
+.print-page:last-child {
+  page-break-after: auto;
+}
+.sheet-print {
+  background: #fefcf7;
+  border: 2px solid var(--accent);
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
+}
+.sheet-print h3 {
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+.sheet-print h4 {
+  color: var(--accent);
+  margin: 1.2rem 0 0.4rem;
+  font-size: 0.95rem;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+}
+.field {
+  display: flex;
+  align-items: baseline;
+  margin: 0.5rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.field-label {
+  font-weight: bold;
+  color: var(--accent);
+  min-width: 160px;
+  font-variant: small-caps;
+}
+.field-line {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+}
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+.field-box {
+  border: 1px solid var(--accent);
+  padding: 0.5rem;
+  text-align: center;
+  background: var(--parchment);
+  border-radius: 4px;
+}
+.field-box .label {
+  font-variant: small-caps;
+  color: var(--accent);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+}
+.field-box .value {
+  border-bottom: 1px solid var(--ink-soft);
+  height: 1.5rem;
+}
+.section-break {
+  border: none;
+  border-top: 1px dashed var(--accent-light);
+  margin: 1.4rem 0;
+}
+.section-divider {
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
+}
+table td.cell-blank {
+  border-bottom: 1px dotted var(--ink-soft);
+  min-height: 1.4rem;
+  height: 1.4rem;
+}
+.checkbox-print {
+  font-size: 1.05rem;
+  margin-right: 0.3rem;
+}
+.arvore-bloco {
+  border: 1px solid var(--accent-light);
+  border-radius: 5px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  background: rgba(139, 90, 43, 0.04);
+}
+.arvore-bloco h5 {
+  margin: 0 0 0.6rem 0;
+  color: var(--accent);
+  font-size: 1rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+.arvore-bloco p.hint {
+  font-size: 0.88rem;
+  margin: 0 0 0.4rem 0;
+  color: var(--ink-soft);
+}
+.faceta-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0.45rem 0;
+  flex-wrap: wrap;
+}
+.faceta-nome {
+  font-weight: bold;
+  color: var(--ink);
+  font-size: 0.92rem;
+  min-width: 105px;
+  flex-shrink: 0;
+}
+.faceta-line {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.4rem;
+  min-width: 120px;
+}
+.fruto-bloco {
+  border: 2px solid var(--romance, #b85c8a);
+  border-radius: 5px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  background: rgba(184, 92, 138, 0.05);
+}
+.fruto-bloco h5 {
+  margin: 0 0 0.6rem 0;
+  color: var(--romance, #b85c8a);
+  font-size: 1rem;
+  font-variant: small-caps;
+}
+.fruto-status {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+.estado-fio {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+.canto-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 1.6rem 0 0.2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--accent-light);
+}
+.canto-titulo {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--accent);
+  font-variant: small-caps;
+}
+.canto-subtitulo {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.pagina-album {
+  border: 1px solid var(--parchment-dark);
+  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  margin: 0.7rem 0;
+  background: var(--parchment);
+  page-break-inside: avoid;
+}
+.pagina-num {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 0.4rem;
+}
+.pagina-campo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0.35rem 0;
+}
+.pagina-label {
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-variant: small-caps;
+  font-weight: bold;
+  min-width: 150px;
+  flex-shrink: 0;
+}
+.pagina-linha {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.3rem;
+  min-width: 100px;
+}
+.pagina-eco {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+}
+.pagina-eco-label {
+  color: var(--gold);
+  font-variant: small-caps;
+  font-weight: bold;
+  min-width: 150px;
+  flex-shrink: 0;
+}
+.pagina-eco-linha {
+  flex: 1;
+  border-bottom: 1px dotted var(--gold);
+  min-height: 1.2rem;
+}
+.album-total {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: var(--parchment-dark);
+  border-radius: 6px;
+  border-left: 4px solid var(--gold);
+}
+.album-total h4 {
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+  font-variant: small-caps;
+}
+.total-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px dotted var(--ink-soft);
+  gap: 0.6rem;
+}
+.total-linha:last-child { border-bottom: none; }
+.total-input-line {
+  border-bottom: 1px solid var(--ink-soft);
+  min-width: 140px;
+  flex-shrink: 0;
+}
+.nome-si-mesmo {
+  margin-top: 1.4rem;
+  padding: 1rem 1.2rem;
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  background: rgba(184, 134, 11, 0.05);
+}
+.nome-si-mesmo h4 {
+  color: var(--gold);
+  font-variant: small-caps;
+  margin-bottom: 0.5rem;
+}
+.print-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0 2rem;
+}
+.print-index a {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.print-index a:hover { background: var(--gold); }
+.print-btn-top {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.6rem 1.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  transition: background 0.2s;
+}
+.print-btn-top:hover { background: var(--gold); }
+.print-btn-ficha {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+  transition: background 0.2s;
+}
+.print-btn-ficha:hover { background: var(--gold); }
+@media (max-width: 768px) {
+  .field-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media print {
+  .top-nav, .floating-controls, .back-to-top, .no-print, .print-index, .print-btn-top, .print-btn-ficha { display: none !important; }
+  body { background: white !important; }
+  .sheet-print { box-shadow: none !important; border: 1px solid #ccc !important; }
+  .print-page { margin-bottom: 0; }
+  body[data-print-only] .print-page { display: none !important; }
+  body[data-print-only="prota"] #wrap-prota { display: block !important; }
+  body[data-print-only="mundo"] #wrap-mundo { display: block !important; }
+  body[data-print-only="npcs"] #wrap-npcs { display: block !important; }
+  body[data-print-only="quebradores"] #wrap-quebradores { display: block !important; }
+  body[data-print-only="ninho"] #wrap-ninho { display: block !important; }
+  body[data-print-only="moldagem"] #wrap-moldagem { display: block !important; }
+  body[data-print-only="rastro"] #wrap-rastro { display: block !important; }
+  body[data-print-only="album"] #wrap-album { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="floating-controls no-print">
+  <button class="control-btn" onclick="window.print()">🖨 Imprimir</button>
+</div>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>Fichas para Impressão</strong>
+</div>
+
+<div class="container">
+
+<h2>📄 Fichas para Impressão</h2>
+<div class="callout tip no-print">
+  <strong>Pra que serve esta página:</strong> aqui estão versões em branco e não preenchíveis de todas as fichas do jogo. Use o botão <strong>🖨 Imprimir</strong> no canto para imprimir tudo de uma vez, ou o botão <strong>🖨 Imprimir só esta ficha</strong> dentro de cada ficha pra imprimir só aquela. Pra preencher e salvar digitalmente, use as fichas interativas — cada uma tem seus próprios botões de salvar e imprimir preenchida.
+</div>
+
+<div class="print-index no-print">
+  <a href="#print-prota">Ficha do Jogador</a>
+  <a href="#print-mundo">Ficha do Mundo</a>
+  <a href="#print-npcs">Ficha de NPCs</a>
+  <a href="#print-quebradores">Ficha de Quebradores</a>
+  <a href="#print-ninho">Ficha do Ninho</a>
+  <a href="#print-moldagem">Log de Moldagem</a>
+  <a href="#print-rastro">Ficha de Rastros</a>
+  <a href="#print-album">Álbum de Nomes Verdadeiros</a>
+</div>
+
+<div class="print-page" id="wrap-prota">
+<div class="sheet-print" id="print-prota">
+<h3>📋 Ficha do Jogador</h3>
+<button class="print-btn-ficha no-print" onclick="imprimirFicha('prota')">🖨 Imprimir só esta ficha</button>
+
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Aparência:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Background:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Relíquia Pessoal:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Maior Medo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Hábito:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Lugar Favorito:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Fase dos Dias:</span><span class="field-line"></span> (🌅 I — Primeiros Dias / 🌿 II — Aprofundando / 🌳 III — Rumo ao Entardecer)</div>
+
+<h4>Instrumentos (NUNCA aumentam)</h4>
+<div class="field-grid">
+  <div class="field-box"><span class="label">AGULHA</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">LENTE</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">BRASA</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">PENA</span><div class="value"></div></div>
+</div>
+
+<h4>Progressão e Retalhos</h4>
+<div class="field-grid">
+  <div class="field-box"><span class="label">Retalhos (máx 5)</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Curadoria (Pontos)</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Vínculos Confraria</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Vínculos Cidade</span><div class="value"></div></div>
+</div>
+
+<h4>Estado dos Recursos</h4>
+<div class="field"><span class="field-label">Estado Atual:</span><span class="field-line"></span> (🟢 Abundância / 🔵 Suficiente / 🟡 Escasso / 🔴 Débito)</div>
+
+<h4>Fôlego do Dia (máx 3)</h4>
+<div class="field-grid">
+  <div class="field-box"><span class="label">Manhã</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Tarde</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Noite</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Capítulo</span><div class="value"></div></div>
+</div>
+
+<h4>Curadoria — Nomes Verdadeiros Descobertos</h4>
+<p style="font-size:0.8rem; color:var(--ink-soft); font-style:italic; margin-bottom:0.8rem;">Opcional. Registre aqui os artefatos que passaram pela Fase Nomear.</p>
+<table>
+<tr><th>Artefato</th><th>Nome Verdadeiro</th><th>Propriedade Única</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>Marcas Narrativas</h4>
+<table>
+<tr><th>Marca</th><th>Descrição</th><th>Usada?</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>Saberes Ativos (máx 5)</h4>
+<table>
+<tr><th>Saber</th><th>Bônus</th><th>Ativo?</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+</div>
+</div>
+
+<div class="print-page" id="wrap-mundo">
+<div class="sheet-print" id="print-mundo">
+<h3>🌍 Ficha do Mundo</h3>
+<button class="print-btn-ficha no-print" onclick="imprimirFicha('mundo')">🖨 Imprimir só esta ficha</button>
+
+<h4>🌍 O Mundo</h4>
+<div class="field"><span class="field-label">Como a magia aparece:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">De onde vem / limites:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Conflito central:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Tom geral:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">O que são os artefatos:</span><span class="field-line"></span></div>
+
+<hr class="section-break">
+
+<h4>👥 Presenças Culturais</h4>
+<table>
+<tr><th>Nome</th><th>Como aparecem no cotidiano</th><th>Relação com magia</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<hr class="section-break">
+
+<h4>🏙️ A Cidade</h4>
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Caráter / tom:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Cheiro característico:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Economia:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Governo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Tensão atual:</span><span class="field-line"></span></div>
+
+<h4>Bairros</h4>
+<table>
+<tr><th>Nome</th><th>Atmosfera</th><th>Locais Notáveis</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<hr class="section-break">
+
+<h4>🏛️ A Confraria</h4>
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Estrutura:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Conflito recente:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">🔒 Regra Inquebrável:</span><span class="field-line"></span></div>
+
+<h4>O Mestre da Confraria</h4>
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Tipo / traço marcante:</span><span class="field-line"></span></div>
+
+<h4>A Lenda de Fundação</h4>
+<div class="field"><span class="field-label">O que os comuns acham:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">O que realmente aconteceu:</span><span class="field-line"></span></div>
+
+<hr class="section-break">
+
+<h4>🏚️ A Contracena — As 5 Zonas</h4>
+<table>
+<tr><th>Zona</th><th>Detalhe / primeiro detalhe vivo</th></tr>
+<tr><td><strong>Oficina</strong></td><td class="cell-blank"></td></tr>
+<tr><td><strong>Armazém</strong></td><td class="cell-blank"></td></tr>
+<tr><td><strong>Arquivo</strong></td><td class="cell-blank"></td></tr>
+<tr><td><strong>Aposentos</strong></td><td class="cell-blank"></td></tr>
+<tr><td><strong>Relicário Selado</strong></td><td class="cell-blank"></td></tr>
+</table>
+<div class="field"><span class="field-label">Presença:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Som mais comum:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Zona que mais evita:</span><span class="field-line"></span></div>
+
+<h4>Zonas Lendárias (desbloqueadas na Fase Lendária)</h4>
+<table>
+<tr><th>Zona</th><th>Desbloqueada?</th><th>Detalhe</th></tr>
+<tr><td>Salão de Festas</td><td>☐</td><td class="cell-blank"></td></tr>
+<tr><td>Salão do Mestre</td><td>☐</td><td class="cell-blank"></td></tr>
+</table>
+
+<hr class="section-break">
+
+<h4>🧍 O Jogador</h4>
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Aparência marcante:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Por que é Restaurador(a)?</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Background:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Relíquia Pessoal:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Medo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Hábito:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Lugar Favorito:</span><span class="field-line"></span></div>
+
+<h4>Instrumentos</h4>
+<table>
+<tr><th>AGULHA</th><th>LENTE</th><th>BRASA</th><th>PENA</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<hr class="section-break">
+
+<h4>🤝 NPC de Conexão (não romanceável)</h4>
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Tipo de conexão:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">O que sabe sobre você:</span><span class="field-line"></span></div>
+
+<hr class="section-break">
+
+<h4>⚔️ Quebradores</h4>
+<table>
+<tr><th>Nome</th><th>Tipo</th><th>Especialidade</th><th>Status</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<hr class="section-break">
+
+<h4>✨ Cômodos Desbloqueados</h4>
+<table>
+<tr><th>Cômodo</th><th>NPC</th><th>Custo Pago</th><th>✓</th></tr>
+<tr><td>Sala de Armas</td><td class="cell-blank"></td><td class="cell-blank"></td><td>☐</td></tr>
+<tr><td>Biblioteca Arcana</td><td class="cell-blank"></td><td class="cell-blank"></td><td>☐</td></tr>
+<tr><td>Arquivo dos Espíritos</td><td class="cell-blank"></td><td class="cell-blank"></td><td>☐</td></tr>
+</table>
+
+<h4>🔗 Harmonias de Cômodos</h4>
+<table>
+<tr><th>Combinação</th><th>Ativa</th><th>Emergente</th><th>Especial (Ligação 8/8)</th><th>✓</th></tr>
+<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Pesquisa de Campo"</td><td>"Arqueologia Bélica"</td><td>"O Mapa do Coração"</td><td>☐</td></tr>
+<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Comunhão Guerreira"</td><td>"Exorcismo Prático"</td><td></td><td>☐</td></tr>
+<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Leitura de Almas"</td><td>"Cartografia das Almas"</td><td></td><td>☐</td></tr>
+</table>
+
+<hr class="section-break">
+
+<h4>🌱 Progressão da Cidade e Confraria</h4>
+<div class="field"><span class="field-label">Fase Atual:</span><span class="field-line"></span> (🌱 Inicial / 🌿 Crescimento / 🌳 Estabelecida / 🏛️ Lendária)</div>
+<div class="field"><span class="field-label">Trabalhadores:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Quebradores Regulares:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">NPCs Romanceáveis Chegados:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Próximo Sinal:</span><span class="field-line"></span></div>
+
+<h4>🎉 Festivais e Eventos</h4>
+<div class="field"><span class="field-label">Próximo Festival:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Último Evento Notável:</span><span class="field-line"></span></div>
+
+</div>
+</div>
+
+<div class="print-page" id="wrap-npcs">
+<div class="sheet-print" id="print-npcs">
+<h3>📋 Ficha de NPCs</h3>
+<button class="print-btn-ficha no-print" onclick="imprimirFicha('npcs')">🖨 Imprimir só esta ficha</button>
+<p style="text-align:center; font-style:italic; font-size:0.85rem; color:var(--ink-soft);">Imprima uma cópia desta página para cada NPC.</p>
+
+<h4>NPC Romanceável</h4>
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Arquétipo:</span><span class="field-line"></span> (Explorador / Colega / Forasteiro)</div>
+<div class="field"><span class="field-label">Classe/Profissão:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Cômodo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Adjetivo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Traço Físico:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Vestimenta:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Desejo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Medo:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Residência:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Local Favorito:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Vínculo Inicial:</span><span class="field-line"></span></div>
+
+<h4>😄 Piadas Internas (opcional)</h4>
+<div class="field"><span class="field-label">Piada que o NPC conta:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Piada que o NPC não entende:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Coisa que o NPC acha engraçada:</span><span class="field-line"></span></div>
+
+<h4>Fio de Romance ("Coração", 10 nós)</h4>
+<div class="estado-fio">
+  <span>☐ Conhecimento (0–3)</span>
+  <span>☐ Amizade (4–6)</span>
+  <span>☐ Romance (7–8)</span>
+  <span>☐ Compromisso (9–10)</span>
+</div>
+<div class="field"><span class="field-label">Nós:</span><span class="field-line" style="max-width:80px; flex:none;"></span> / 10</div>
+
+<h4>Sinais Visuais de Evolução</h4>
+<div class="field"><span class="field-label">Item 1 (4–6 nós):</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Item 2 (7–8 nós):</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Item 3 (9–10 nós):</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Marca Permanente:</span><span class="field-line"></span></div>
+
+<div class="section-divider">🌱</div>
+
+<h4>Árvore da Intimidade</h4>
+
+<div class="arvore-bloco">
+  <h5>🌱 Semente — O Nome Comum</h5>
+  <p class="hint">Desbloqueada automaticamente no primeiro encontro.</p>
+  <div class="field"><span class="field-label">Nome Comum:</span><span class="field-line"></span></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🪵 Raízes — Contexto e Origem</h5>
+  <p class="hint">De onde veio. Fragmentos de história revelados em 1–2 interações.</p>
+  <div class="field"><span class="field-label">Origem:</span><span class="field-line"></span></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🌳 Tronco — A Essência Observável</h5>
+  <p class="hint">Como age no mundo. Hábitos, postura, o que defende sem precisar falar.</p>
+  <div class="field"><span class="field-label">Essência:</span><span class="field-line"></span></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🌿 Galhos — As 5 Facetas</h5>
+  <p class="hint">Marque a Faceta quando revelada. Anote o que <em>aquele NPC</em> mostrou.</p>
+  <div class="faceta-row"><span class="checkbox-print">☐</span><span class="faceta-nome">🔨 O Ofício</span><span class="faceta-line"></span></div>
+  <div class="faceta-row"><span class="checkbox-print">☐</span><span class="faceta-nome">🩹 A Ferida</span><span class="faceta-line"></span></div>
+  <div class="faceta-row"><span class="checkbox-print">☐</span><span class="faceta-nome">✨ O Sonho</span><span class="faceta-line"></span></div>
+  <div class="faceta-row"><span class="checkbox-print">☐</span><span class="faceta-nome">🗝️ O Segredo</span><span class="faceta-line"></span></div>
+  <div class="faceta-row"><span class="checkbox-print">☐</span><span class="faceta-nome">☀️ A Alegria</span><span class="faceta-line"></span></div>
+</div>
+
+<div class="fruto-bloco">
+  <h5>🍎 Fruto — O Nome Verdadeiro</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.6rem 0; color:var(--ink-soft);">Surge quando todas as 5 Facetas estão reveladas.</p>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><span class="field-line"></span></div>
+  <div class="fruto-status">
+    <span><span class="field-label">Fruto invocado?</span> ☐</span>
+    <span>Quando / como: <span class="field-line" style="display:inline-block; min-width:180px;"></span></span>
+  </div>
+</div>
+
+<div class="section-divider">❦</div>
+
+<h4>NPC Não-Romanceável</h4>
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Tipo:</span><span class="field-line"></span> (Cidade / Trabalhador / Cliente)</div>
+<div class="field"><span class="field-label">Profissão/Papel:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Bairro/Local:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Traço Marcante:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Personalidade:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Segredo Pequeno:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Relação com a Confraria:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Com o Jogador:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">O que Quer:</span><span class="field-line"></span></div>
+
+<div class="section-divider">🌱</div>
+
+<h4>Árvore da Intimidade</h4>
+
+<div class="arvore-bloco">
+  <h5>🌱 Semente — O Nome Comum</h5>
+  <p class="hint">Desbloqueada automaticamente no primeiro encontro.</p>
+  <div class="field"><span class="field-label">Nome Comum:</span><span class="field-line"></span></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🪵 Raízes — Contexto e Origem</h5>
+  <p class="hint">De onde veio. Fragmentos de história revelados em 1–2 interações.</p>
+  <div class="field"><span class="field-label">Origem:</span><span class="field-line"></span></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🌳 Tronco — A Essência Observável</h5>
+  <p class="hint">Como age no mundo. Hábitos, postura, o que defende sem precisar falar.</p>
+  <div class="field"><span class="field-label">Essência:</span><span class="field-line"></span></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>🌿 Galhos — As 5 Facetas</h5>
+  <p class="hint">Marque a Faceta quando revelada. Anote o que <em>aquele NPC</em> mostrou.</p>
+  <div class="faceta-row"><span class="checkbox-print">☐</span><span class="faceta-nome">🔨 O Ofício</span><span class="faceta-line"></span></div>
+  <div class="faceta-row"><span class="checkbox-print">☐</span><span class="faceta-nome">🩹 A Ferida</span><span class="faceta-line"></span></div>
+  <div class="faceta-row"><span class="checkbox-print">☐</span><span class="faceta-nome">✨ O Sonho</span><span class="faceta-line"></span></div>
+  <div class="faceta-row"><span class="checkbox-print">☐</span><span class="faceta-nome">🗝️ O Segredo</span><span class="faceta-line"></span></div>
+  <div class="faceta-row"><span class="checkbox-print">☐</span><span class="faceta-nome">☀️ A Alegria</span><span class="faceta-line"></span></div>
+</div>
+
+<div class="fruto-bloco">
+  <h5>🍎 Fruto — O Nome Verdadeiro</h5>
+  <p style="font-size:0.88rem; margin:0 0 0.6rem 0; color:var(--ink-soft);">Surge quando todas as 5 Facetas estão reveladas.</p>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><span class="field-line"></span></div>
+  <div class="fruto-status">
+    <span><span class="field-label">Fruto invocado?</span> ☐</span>
+    <span>Quando / como: <span class="field-line" style="display:inline-block; min-width:180px;"></span></span>
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="print-page" id="wrap-quebradores">
+<div class="sheet-print" id="print-quebradores">
+<h3>🗡️ Ficha de Quebradores</h3>
+<button class="print-btn-ficha no-print" onclick="imprimirFicha('quebradores')">🖨 Imprimir só esta ficha</button>
+<p style="text-align:center; font-style:italic; font-size:0.85rem; color:var(--ink-soft);">O bloco da Confraria é único — preencha uma vez. Imprima uma cópia da ficha abaixo dele para cada Quebrador ou grupo de Quebradores.</p>
+
+<h4>🏛️ A Confraria — Estado Atual</h4>
+<div class="arvore-bloco">
+  <p class="hint">Bloco único, não é uma lista — reflete o estado geral da Confraria neste momento da campanha.</p>
+  <div class="field"><span class="field-label">Fase da Confraria:</span><span class="field-line"></span> (🌱 Inicial / 🌿 Crescimento / 🌳 Estabelecida / 🏛️ Lendária)</div>
+  <div class="field"><span class="field-label">Grupos ativos:</span><span class="field-line" style="max-width:80px; flex:none;"></span></div>
+  <div class="field"><span class="field-label">Frequência de artefatos:</span><span class="field-line"></span></div>
+  <div class="field"><span class="field-label">Dificuldade média atual:</span><span class="field-line"></span></div>
+</div>
+
+<div class="section-divider">❦</div>
+
+<h4>Identidade</h4>
+<div class="field"><span class="field-label">Nome:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Tamanho do grupo:</span><span class="field-line" style="max-width:100px; flex:none;"></span> (1 = solitário, 2+ = grupo)</div>
+<div class="field"><span class="field-label">Especialização:</span><span class="field-line"></span> (Combate / Magia / Exploração)</div>
+<div class="field"><span class="field-label">Nível:</span><span class="field-line"></span> (Iniciante 1d6 / Experiente 2d6 / Veterano 3d6 / Lendário 4d6)</div>
+<div class="field"><span class="field-label">Marcas ativas:</span><span class="field-line"></span> (ex: [GUERREIRO], [SÁBIO], [OCULTISTA])</div>
+
+<div class="section-divider">❦</div>
+
+<h4>Expedições Realizadas</h4>
+<p class="hint">A condição de retorno vem da rolagem de 2d6 + Modificadores (veja Sistema: Quebradores).</p>
+
+<div class="arvore-bloco">
+  <h5>Expedição 1</h5>
+  <div class="field"><span class="field-label">O que foi buscar:</span><span class="field-line"></span></div>
+  <div class="field"><span class="field-label">Condição de retorno:</span><span class="field-line"></span> (Inteiro / Ouro / Cacos)</div>
+  <div class="field"><span class="field-label">Artefato trazido:</span><span class="field-line"></span></div>
+  <div class="field"><span class="field-label">O que notei ao retornar:</span><span class="field-line"></span></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>Expedição 2</h5>
+  <div class="field"><span class="field-label">O que foi buscar:</span><span class="field-line"></span></div>
+  <div class="field"><span class="field-label">Condição de retorno:</span><span class="field-line"></span> (Inteiro / Ouro / Cacos)</div>
+  <div class="field"><span class="field-label">Artefato trazido:</span><span class="field-line"></span></div>
+  <div class="field"><span class="field-label">O que notei ao retornar:</span><span class="field-line"></span></div>
+</div>
+
+<div class="arvore-bloco">
+  <h5>Expedição 3</h5>
+  <div class="field"><span class="field-label">O que foi buscar:</span><span class="field-line"></span></div>
+  <div class="field"><span class="field-label">Condição de retorno:</span><span class="field-line"></span> (Inteiro / Ouro / Cacos)</div>
+  <div class="field"><span class="field-label">Artefato trazido:</span><span class="field-line"></span></div>
+  <div class="field"><span class="field-label">O que notei ao retornar:</span><span class="field-line"></span></div>
+</div>
+
+<div class="section-divider">❦</div>
+
+<h4>O Que Ele Não Conta</h4>
+<p class="hint">A história que ele conta e a história que o corpo dele conta raramente são a mesma.</p>
+<div class="field"><span class="field-label">Notas:</span><span class="field-line"></span></div>
+
+</div>
+</div>
+
+<div class="print-page" id="wrap-ninho">
+<div class="sheet-print" id="print-ninho">
+<h3>🪴 Ficha do Ninho</h3>
+<button class="print-btn-ficha no-print" onclick="imprimirFicha('ninho')">🖨 Imprimir só esta ficha</button>
+<p style="text-align:center; font-style:italic; font-size:0.85rem; color:var(--ink-soft);">Imprima uma cópia da seção de Item para cada item guardado. O resumo de categorias e os Conjuntos são blocos únicos — preencha um de cada.</p>
+
+<h4>Resumo de Categorias (contagem manual)</h4>
+<p class="hint">Na versão preenchível esse resumo é calculado sozinho a partir dos itens salvos. Aqui, conte à mão: 3 itens da mesma categoria ativam o bônus dela (veja Sistema: O Ninho).</p>
+<div class="arvore-bloco">
+  <div class="field"><span class="field-label">Móveis:</span><span class="field-line" style="max-width:60px; flex:none;"></span> / 3 — bônus ativo? ☐</div>
+  <div class="field"><span class="field-label">Iluminação:</span><span class="field-line" style="max-width:60px; flex:none;"></span> / 3 — bônus ativo? ☐</div>
+  <div class="field"><span class="field-label">Plantas:</span><span class="field-line" style="max-width:60px; flex:none;"></span> / 3 — bônus ativo? ☐</div>
+  <div class="field"><span class="field-label">Arte:</span><span class="field-line" style="max-width:60px; flex:none;"></span> / 3 — bônus ativo? ☐</div>
+  <div class="field"><span class="field-label">Têxtil:</span><span class="field-line" style="max-width:60px; flex:none;"></span> / 3 — bônus ativo? ☐</div>
+  <div class="field"><span class="field-label">Coleções:</span><span class="field-line" style="max-width:60px; flex:none;"></span> / 3 — bônus ativo? ☐</div>
+</div>
+
+<div class="section-divider">❦</div>
+
+<h4>Item</h4>
+<div class="field"><span class="field-label">Nome do item:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Categoria:</span><span class="field-line"></span> (Móveis / Iluminação / Plantas / Arte / Têxtil / Coleções)</div>
+<div class="field"><span class="field-label">Descrição / história:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Levado em expedição?</span><span class="field-line"></span> (qual expedição, e o bônus que deu)</div>
+
+<div class="section-divider">❦</div>
+
+<h4>📜 Conjuntos Completos — Canto do Porão</h4>
+<p class="hint">Bloco único. Quando uma categoria acima chegar a 3 itens, declare o Nome Verdadeiro daquele conjunto — uma das três vias do Canto do Porão.</p>
+
+<div class="arvore-bloco">
+  <h5>Móveis</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><span class="field-line"></span></div>
+</div>
+<div class="arvore-bloco">
+  <h5>Iluminação</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><span class="field-line"></span></div>
+</div>
+<div class="arvore-bloco">
+  <h5>Plantas</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><span class="field-line"></span></div>
+</div>
+<div class="arvore-bloco">
+  <h5>Arte</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><span class="field-line"></span></div>
+</div>
+<div class="arvore-bloco">
+  <h5>Têxtil</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><span class="field-line"></span></div>
+</div>
+<div class="arvore-bloco">
+  <h5>Coleções</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><span class="field-line"></span></div>
+</div>
+
+</div>
+</div>
+
+<div class="print-page" id="wrap-moldagem">
+<div class="sheet-print" id="print-moldagem">
+<h3>🔨 Log de Moldagem</h3>
+<button class="print-btn-ficha no-print" onclick="imprimirFicha('moldagem')">🖨 Imprimir só esta ficha</button>
+<p style="text-align:center; font-style:italic; font-size:0.85rem; color:var(--ink-soft);">Imprima uma cópia da seção de Criação para cada registro de Moldagem. A Trilha é um bloco único — some os marcos à mão.</p>
+
+<h4>Trilha de Moldagem (contagem manual)</h4>
+<p class="hint">Na versão preenchível esse total é calculado sozinho a partir dos registros salvos. Aqui, conte à mão: cada criação com evidência de intenção (nova natureza / nomeada / feita para alguém) marca 1 — veja as três evidências em Sistema: Moldagem.</p>
+<div class="arvore-bloco">
+  <div class="field"><span class="field-label">Marcos de intenção:</span><span class="field-line" style="max-width:60px; flex:none;"></span></div>
+  <div class="field"><span class="field-label">Nível atual:</span><span class="field-line"></span></div>
+</div>
+<div class="field-grid">
+  <div class="field-box"><span class="label">Aprendiz</span><div class="value">0</div></div>
+  <div class="field-box"><span class="label">Artesão</span><div class="value">2</div></div>
+  <div class="field-box"><span class="label">Mestre Restaurador</span><div class="value">4</div></div>
+  <div class="field-box"><span class="label">Sábio das Relíquias</span><div class="value">7</div></div>
+</div>
+<p class="hint" style="text-align:center;">Lenda Viva: 10 marcos.</p>
+
+<div class="section-divider">❦</div>
+
+<h4>Criação</h4>
+<div class="field"><span class="field-label">Nome da criação:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Natureza:</span><span class="field-line"></span> (madeira / metal / têxtil-couro / essência-gema — ou ferramenta / mobília / proteção / artefato)</div>
+<div class="field"><span class="field-label">Evidência de intenção:</span><span class="field-line"></span> (nova natureza / nomeada / feita para alguém / nenhuma)</div>
+<div class="field"><span class="field-label">NPC / Nome Verdadeiro:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Descrição / história:</span><span class="field-line"></span></div>
+
+</div>
+</div>
+
+<div class="print-page" id="wrap-rastro">
+<div class="sheet-print" id="print-rastro">
+<h3>📋 Ficha de Rastros</h3>
+<button class="print-btn-ficha no-print" onclick="imprimirFicha('rastro')">🖨 Imprimir só esta ficha</button>
+<p style="text-align:center; font-style:italic; font-size:0.85rem; color:var(--ink-soft);">Combina Fios, Marcas, Pontos, Recursos, Artefatos, Saberes e Quebradores</p>
+
+<div class="field"><span class="field-label">Clima:</span><span class="field-line"></span> (🕊️ Brisa / 🌿 Ameno / 📖 Neblina / ⚔️ Tempestade / 🏃 Vendaval)</div>
+
+<h4>🧭 Os Dias</h4>
+<div class="field"><span class="field-label">Fase Atual:</span><span class="field-line"></span> (🌅 I — Primeiros Dias / 🌿 II — Aprofundando / 🌳 III — Rumo ao Entardecer)</div>
+<table>
+<tr><th>Fase</th><th>Sinais Completados (☐☐☐☐☐☐☐☐)</th><th>Avançou no Capítulo</th></tr>
+<tr><td>🌅 Primeiros Dias (Cap. 1–3)</td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td>🌿 Aprofundando (Cap. 4–8)</td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td>🌳 Rumo ao Entardecer (Cap. 9+)</td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>Fios de Romance (10 nós cada)</h4>
+<table>
+<tr><th>NPC</th><th>Nós</th><th>Fase</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>Fios de Ligação (8 nós)</h4>
+<table>
+<tr><th>Par</th><th>Nós</th><th>Estado</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>Fios de Tensão</h4>
+<table>
+<tr><th>Nome</th><th>Máx</th><th>Atual</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>Fios de Mistério</h4>
+<table>
+<tr><th>Nome</th><th>Máx</th><th>Atual</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>O Entardecer (8 nós)</h4>
+<div class="field"><span class="field-label">Evento:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Nós:</span><span class="field-line"></span> / 8</div>
+
+<h4>🔒 Relicário Selado (6 nós)</h4>
+<div class="field"><span class="field-label">Nós:</span><span class="field-line"></span> / 6</div>
+<div class="field"><span class="field-label">Violação da Regra? (ignora limite):</span><span class="field-line"></span></div>
+
+<h4>Progressão (Pontos)</h4>
+<div class="field-grid">
+  <div class="field-box"><span class="label">Curadoria</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Vínculos Confraria</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Vínculos Cidade</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Capítulo Atual</span><div class="value"></div></div>
+</div>
+
+<h4>Recursos e Retalhos</h4>
+<div class="field-grid">
+  <div class="field-box"><span class="label">Recursos</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Retalhos</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Fôlego Hoje</span><div class="value"></div></div>
+  <div class="field-box"><span class="label">Cacos Seguidos</span><div class="value"></div></div>
+</div>
+
+<h4>Marcas Ativas</h4>
+<table>
+<tr><th>Marca</th><th>Descrição</th><th>Usada?</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>✨ Artefatos de Estimação (máx 3)</h4>
+<table>
+<tr><th>Nome</th><th>Função</th><th>Bônus (+1 em)</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>Artefatos em Restauração (máx 3)</h4>
+<table>
+<tr><th>Nome</th><th>Nível</th><th>Recursos Gastos</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>✨ Harmonias de Cômodos Ativas</h4>
+<p><em>Gaste 1 Retalho para ativar. Cada uma pode ser usada 1x por capítulo.</em></p>
+<table>
+<tr><th>Combinação</th><th>Harmonia Ativa</th><th>Efeito</th><th>Usada?</th></tr>
+<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Pesquisa de Campo"</td><td>Estude artefato sem gastar Fôlego</td><td class="cell-blank"></td></tr>
+<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Comunhão Guerreira"</td><td>+2 em rolagem com artefato de conflito</td><td class="cell-blank"></td></tr>
+<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Leitura de Almas"</td><td>Descubra segredo sem rolagem</td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>✨ Harmonias Emergentes (Automáticas)</h4>
+<table>
+<tr><th>Combinação</th><th>Harmonia Emergente</th><th>Efeito</th></tr>
+<tr><td>Sala de Armas + Biblioteca Arcana</td><td>"Arqueologia Bélica"</td><td>+1 Retalho ao estudar artefatos de guerra</td></tr>
+<tr><td>Sala de Armas + Arquivo dos Espíritos</td><td>"Exorcismo Prático"</td><td>−1 Recurso ao restaurar artefato amaldiçoado</td></tr>
+<tr><td>Biblioteca Arcana + Arquivo dos Espíritos</td><td>"Cartografia das Almas"</td><td>Pista sobre NPC ao decifrar enigma</td></tr>
+</table>
+
+<h4>🏆 Saberes Ativos (máx 5)</h4>
+<table>
+<tr><th>Saber</th><th>Bônus</th><th>Ativo?</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>💔 Marcas de Fim de Relacionamento</h4>
+<table>
+<tr><th>NPC</th><th>Marca</th><th>Bônus</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>⚔️ Quebradores e Expedições</h4>
+<table>
+<tr><th>Nome</th><th>Tipo</th><th>Status</th><th>Última Expedição</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>Expedições em Andamento</h4>
+<table>
+<tr><th>Destino</th><th>Nível</th><th>Quebradores</th><th>Dias Restantes</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>🌱 A Vida da Cidade</h4>
+<div class="field"><span class="field-label">Fase Atual:</span><span class="field-line"></span> (🌱 Inicial / 🌿 Crescimento / 🌳 Estabelecida / 🏛️ Lendária)</div>
+<div class="field"><span class="field-label">Capítulos na Fase Atual:</span><span class="field-line"></span></div>
+<table>
+<tr><th>Trabalhadores</th><th>Quebradores Regulares</th><th>Bairros</th><th>Romanceáveis</th></tr>
+<tr><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td><td class="cell-blank"></td></tr>
+</table>
+
+<h4>🎉 Festivais Sazonais</h4>
+<div class="field"><span class="field-label">Próximo Festival:</span><span class="field-line"></span></div>
+<div class="field"><span class="field-label">Capítulo do Último:</span><span class="field-line"></span></div>
+
+</div>
+</div>
+
+<div class="print-page" id="wrap-album">
+<div class="sheet-print" id="print-album">
+<h3>📖 Álbum de Nomes Verdadeiros</h3>
+<button class="print-btn-ficha no-print" onclick="imprimirFicha('album')">🖨 Imprimir só esta ficha</button>
+
+<div class="canto-header">
+  <span class="canto-titulo">🔥 A Lareira</span>
+  <span class="canto-subtitulo">— Nomes de NPCs (revelados ao completar as 5 Facetas)</span>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 1</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">NPC:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 2</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">NPC:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 3</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">NPC:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="canto-header">
+  <span class="canto-titulo">💕 Resumo de Rota de Romance</span>
+  <span class="canto-subtitulo">— opcional, preencha ao completar uma Rota (Fio 10/10)</span>
+</div>
+
+<div class="pagina-album" style="border-left: 3px solid var(--romance);">
+  <div class="pagina-num">Rota Completa</div>
+  <div class="pagina-campo"><span class="pagina-label">NPC:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Fio Final:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Marcas da Rota:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Final Escolhido:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Uma frase que resume tudo:</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="canto-header">
+  <span class="canto-titulo">🪟 A Janela</span>
+  <span class="canto-subtitulo">— Nomes de Lugares (locais da cidade e do mundo)</span>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 1</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Lugar:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 2</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Lugar:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="canto-header">
+  <span class="canto-titulo">📚 A Estante</span>
+  <span class="canto-subtitulo">— Nomes de Artefatos (revelados na Fase Nomear)</span>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 1</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Artefato:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Propriedade Única:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 2</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Artefato:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Propriedade Única:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 3</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Artefato:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Propriedade Única:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 4</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Artefato:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Propriedade Única:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="canto-header">
+  <span class="canto-titulo">🚪 A Soleira da Porta</span>
+  <span class="canto-subtitulo">— Nomes de Comunidades (grupos que você formou ou nomeou)</span>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 1</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Comunidade:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 2</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Comunidade:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">Como foi descoberto:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="canto-header">
+  <span class="canto-titulo">🪣 O Porão</span>
+  <span class="canto-subtitulo">— Nomes de Criações (Moldagens significativas)</span>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 1</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">O que foi criado:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">O que se tornou:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="pagina-album">
+  <div class="pagina-num">Página 2</div>
+  <div class="pagina-campo"><span class="pagina-label">O Nome Verdadeiro:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">O que foi criado:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo"><span class="pagina-label">O que se tornou:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-eco"><span class="pagina-eco-label">✦ Palavra-eco (opcional):</span><span class="pagina-eco-linha"></span></div>
+</div>
+
+<div class="album-total">
+  <h4>📊 Total de Páginas — O Que Fica</h4>
+  <div class="total-linha"><span>🔥 A Lareira (NPCs)</span><span class="total-input-line"></span></div>
+  <div class="total-linha"><span>🪟 A Janela (Lugares)</span><span class="total-input-line"></span></div>
+  <div class="total-linha"><span>📚 A Estante (Artefatos)</span><span class="total-input-line"></span></div>
+  <div class="total-linha"><span>🚪 A Soleira da Porta (Comunidades)</span><span class="total-input-line"></span></div>
+  <div class="total-linha"><span>🪣 O Porão (Criações)</span><span class="total-input-line"></span></div>
+  <div class="total-linha" style="font-weight:bold; border-top:2px solid var(--gold); padding-top:0.3rem; margin-top:0.2rem;"><span>Total</span><span class="total-input-line"></span></div>
+  <div class="total-linha"><span>Nível do Que Fica</span><span class="total-input-line"></span></div>
+</div>
+
+<div class="nome-si-mesmo">
+  <h4>✦ O Nome de Si Mesmo</h4>
+  <p style="font-size:0.85rem; color:var(--ink-soft); margin-bottom:0.8rem;"><em>Declarado no Entardecer (Fio 8/8). Não o nome que seus pais deram — o que a jornada revelou. Eleva o nível do Que Fica em +1.</em></p>
+  <div class="pagina-campo"><span class="pagina-label">O Nome:</span><span class="pagina-linha"></span></div>
+  <div class="pagina-campo" style="margin-top:0.4rem;"><span class="pagina-label">Declarado no Capítulo:</span><span class="pagina-linha"></span></div>
+</div>
+
+<div class="callout tip no-print" style="margin-top:1.5rem;">
+  <strong>Precisa de mais páginas?</strong> Imprima esta seção quantas vezes precisar — não há limite canônico por Canto, nem para o Resumo de Rota de Romance.
+</div>
+
+</div>
+</div>
+
+<footer>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Ferramentas — Fichas para Impressão</p>
+  <p><a href="ficha-prota.html">← Ficha do Jogador (preenchível)</a> | <a href="index.html">Início →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="backtotop.js"></script>
+<script>
+function imprimirFicha(alvo) {
+  document.body.setAttribute('data-print-only', alvo);
+  window.print();
+}
+window.addEventListener('afterprint', function () {
+  document.body.removeAttribute('data-print-only');
+});
+</script>
+</body>
+</html>

@@ -4,143 +4,130 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Moves: Sociais</title>
-<style>
-.move {
-  background: var(--parchment-dark);
-  border-left: 4px solid var(--gold);
-  padding: 1rem 1.2rem;
-  margin: 1rem 0;
-  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
-}
-.move h4 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: var(--accent);
-}
-.move .trigger {
-  font-style: italic;
-  color: var(--ink-soft);
-  margin-bottom: 0.5rem;
-}
-.move .attribute {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--parchment);
-  padding: 0.15rem 0.7rem;
-  border-radius: 3px;
-  font-size: 0.85rem;
-  font-variant: small-caps;
-  margin-bottom: 0.8rem;
-}
-.result {
-  margin: 0.4rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid transparent;
-}
-.result.success {
-  border-left-color: var(--success);
-}
-.result.partial {
-  border-left-color: var(--gold);
-}
-.result.failure {
-  border-left-color: var(--danger);
-}
-.result strong {
-  color: var(--accent);
-}
-.choice {
-  background: rgba(184, 134, 11, 0.08);
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  margin: 0.2rem 0;
-  font-style: italic;
-}
-.choice strong {
-  color: var(--gold);
-}
-</style>
+<title>Retalhos da Contracena — Confraria & Cidade: Conversas</title>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="moves-oficio.html">Moves</a> &gt; <strong>Sociais</strong>
+  <a href="index.html">Início</a> &gt; <a href="pilar-confraria.html">Confraria &amp; Cidade</a> &gt; <a href="pilar-confraria-gestos.html">Gestos</a> &gt; <strong>Conversas</strong>
 </div>
 
 <div class="container">
 
-<h2>Os Laços do Coração — Moves Sociais</h2>
-<p>Estes são os moves que definem as conexões do protagonista com as pessoas ao seu redor. São ações de coração e vulnerabilidade — o que você <em>sente</em> e <em>compartilha</em>.</p>
+<h2>Os Laços do Coração — Gestos de Conversas</h2>
+<p>Estes são os gestos que definem as conexões do jogador com as pessoas ao seu redor. São ações de coração e vulnerabilidade — o que você <em>sente</em> e <em>compartilha</em>.</p>
+
+<div class="callout rule">
+  <strong>⚖️ Lembrete da Regra de Ouro:</strong> uma conversa que dá errado não é fim de linha — é a história virando de direção. Aceite o Caco com estilo e ganhe +1 Retalho. Ver <a href="sistema-resolucao.html">A Regra de Ouro</a>.
+</div>
+
+<details class="cartilha">
+<summary>📋 Índice das Conversas</summary>
+<table>
+<tr><th>Gesto</th><th>Instrumento</th><th>Trigger</th></tr>
+<tr><td><a href="#conversar-profundamente">Conversar Profundamente</a></td><td>BRASA</td><td>Tem uma conversa significativa com um NPC.</td></tr>
+<tr><td><a href="#consolar-ou-acolher">Consolar ou Acolher</a></td><td>BRASA</td><td>Alguém está ferido, triste ou em perigo emocional.</td></tr>
+<tr><td><a href="#cuidar-de-alguem">Cuidar de Alguém</a></td><td>AGULHA ou BRASA</td><td>Faz algo prático para ajudar alguém.</td></tr>
+<tr><td><a href="#negociar-ou-persuadir">Negociar ou Persuadir</a></td><td>PENA ou BRASA</td><td>Tenta convencer alguém ou obter um favor.</td></tr>
+<tr><td><a href="#seduzir-ou-encantar">Seduzir ou Encantar</a></td><td>BRASA</td><td>Flerta, cria tensão romântica ou encanta alguém.</td></tr>
+<tr><td><a href="#celebrar-o-amor">Celebrar o Amor</a></td><td>BRASA</td><td>Organiza uma festa ou celebra um marco do relacionamento.</td></tr>
+</table>
+</details>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<div class="move">
+<div class="move" id="conversar-profundamente">
 <h4>CONVERSAR PROFUNDAMENTE</h4>
-<div class="trigger">Quando você tem uma conversa significativa com um NPC (na Guilda ou na cidade). Bônus se for no local favorito do NPC.</div>
-<span class="attribute">CORAÇÃO</span>
-<div class="result success"><strong>10+:</strong> A conversa flui. Você aprende algo importante. Relógio +1. +1 Eco. <em>[VÍNCULO+] + [DOMÉSTICO]</em></div>
-<div class="result partial"><strong>7–9:</strong> A conversa é boa, mas <strong>escolha 1:</strong> (a) o NPC desvia de um tópico importante — você sente que há algo escondido, (b) você se expõe demais e se sente vulnerável (ganha Tag [ECO]), (c) a conversa termina abruptamente — algo aconteceu. Avance o Relógio OU aprenda o segredo.</div>
-<div class="result failure"><strong>6−:</strong> O NPC se fecha. Vocês discutem. Relógio recua 1. <em>[VÍNCULO−] + [TENSÃO]</em></div>
+<div class="trigger">Quando você tem uma conversa significativa com um NPC (na Confraria ou na cidade). Bônus se for no local favorito do NPC.</div>
+<span class="attribute">BRASA</span>
+<div class="result success"><strong>Inteiro:</strong> A conversa flui. Você aprende algo importante. Fio +1. +1 Retalho. <em>[VÍNCULO+] + [DOMÉSTICO]</em></div>
+<div class="result partial"><strong>Ouro:</strong> A conversa é boa, mas <strong>escolha 1:</strong> (a) o NPC desvia de um tópico importante — você sente que há algo escondido, (b) você se expõe demais e se sente vulnerável (ganha Marca [MEMÓRIA]), (c) a conversa termina abruptamente — algo aconteceu. Avance o Fio OU aprenda o segredo.</div>
+<div class="result failure"><strong>Cacos:</strong> O NPC se fecha. Vocês discutem. Fio recua 1. <em>[VÍNCULO−] + [FIOS]</em></div>
 </div>
 
-<div class="move">
+<div class="move" id="consolar-ou-acolher">
 <h4>CONSOLAR OU ACOLHER</h4>
 <div class="trigger">Quando alguém está ferido, triste ou em perigo emocional, e você tenta ajudar.</div>
-<span class="attribute">CORAÇÃO</span>
-<div class="result success"><strong>10+:</strong> Conforto real. A pessoa confia mais. Relógio +1.</div>
-<div class="result partial"><strong>7–9:</strong> Ajuda, mas <strong>escolha 1:</strong> (a) a pessoa não se abre completamente — você sente que há mais, (b) você se envolve emocionalmente demais (ganha Tag [ECO]), (c) o momento é interrompido por algo externo.</div>
-<div class="result failure"><strong>6−:</strong> Seu conforto não funciona — ou piora as coisas. A pessoa se afasta.</div>
+<span class="attribute">BRASA</span>
+<div class="result success"><strong>Inteiro:</strong> Conforto real. A pessoa confia mais. Fio +1.</div>
+<div class="result partial"><strong>Ouro:</strong> Ajuda, mas <strong>escolha 1:</strong> (a) a pessoa não se abre completamente — você sente que há mais, (b) você se envolve emocionalmente demais (ganha Marca [MEMÓRIA]), (c) o momento é interrompido por algo externo.</div>
+<div class="result failure"><strong>Cacos:</strong> Seu conforto não funciona — ou piora as coisas. A pessoa se afasta.</div>
 </div>
 
-<div class="move">
+<div class="move" id="cuidar-de-alguem">
 <h4>CUIDAR DE ALGUÉM</h4>
 <div class="trigger">Quando você faz algo prático para ajudar alguém: faz sopa, cuida quando doente, ouve sem julgar, ajuda com tarefa difícil.</div>
-<span class="attribute">MÃOS ou CORAÇÃO</span>
-<div class="result success"><strong>10+:</strong> A pessoa se sente cuidada. Relógio +1. +1 Eco. <em>[DOMÉSTICO] + [VÍNCULO+]</em></div>
-<div class="result partial"><strong>7–9:</strong> Ajuda, mas <strong>escolha 1:</strong> (a) a pessoa se sente invadida — você foi intenso demais, (b) você se cansa demais (perde 1 Ato no próximo dia), (c) você fez algo errado sem perceber — precisa consertar depois.</div>
-<div class="result failure"><strong>6−:</strong> A pessoa rejeita a ajuda, ou você faz algo errado. Relógio recua 1. <em>[VÍNCULO−]</em></div>
+<span class="attribute">AGULHA ou BRASA</span>
+<div class="result success"><strong>Inteiro:</strong> A pessoa se sente cuidada. Fio +1. +1 Retalho. <em>[DOMÉSTICO] + [VÍNCULO+]</em></div>
+<div class="result partial"><strong>Ouro:</strong> Ajuda, mas <strong>escolha 1:</strong> (a) a pessoa se sente invadida — você foi intenso demais, (b) você se cansa demais (perde 1 Fôlego no próximo dia), (c) você fez algo errado sem perceber — precisa consertar depois.</div>
+<div class="result failure"><strong>Cacos:</strong> A pessoa rejeita a ajuda, ou você faz algo errado. Fio recua 1. <em>[VÍNCULO−]</em></div>
 </div>
 
-<div class="move">
+<div class="move" id="negociar-ou-persuadir">
 <h4>NEGOCIAR OU PERSUADIR</h4>
 <div class="trigger">Quando você tenta convencer alguém, obter um favor ou mudar uma decisão.</div>
-<span class="attribute">MENTE ou CORAÇÃO</span>
-<div class="result success"><strong>10+:</strong> A pessoa concorda. +1 Eco.</div>
-<div class="result partial"><strong>7–9:</strong> Concorda, mas <strong>escolha 1:</strong> (a) com uma condição que você não esperava, (b) relutantemente — você sente que ela não está feliz com isso, (c) você precisa oferecer algo em troca (1 Recurso ou um favor).</div>
-<div class="result failure"><strong>6−:</strong> A pessoa se ofende, você perde credibilidade, a situação piora.</div>
+<span class="attribute">PENA ou BRASA</span>
+<div class="result success"><strong>Inteiro:</strong> A pessoa concorda. +1 Retalho.</div>
+<div class="result partial"><strong>Ouro:</strong> Concorda, mas <strong>escolha 1:</strong> (a) com uma condição que você não esperava, (b) relutantemente — você sente que ela não está feliz com isso, (c) você precisa oferecer algo em troca (1 Recurso ou um favor).</div>
+<div class="result failure"><strong>Cacos:</strong> A pessoa se ofende, você perde credibilidade, a situação piora.</div>
 </div>
 
-<div class="move">
+<div class="move" id="seduzir-ou-encantar">
 <h4>SEDUZIR OU ENCANTAR</h4>
 <div class="trigger">Quando você flerta, cria tensão romântica ou tenta encantar alguém.</div>
-<span class="attribute">CORAÇÃO</span>
-<div class="result success"><strong>10+:</strong> A pessoa fica encantada. Relógio +2. Oportunidade de intimidade.</div>
-<div class="result partial"><strong>7–9:</strong> Há faísca, mas <strong>escolha 1:</strong> (a) a pessoa hesita — você precisa ser mais paciente, (b) o momento é interrompido por algo externo, (c) você precisa escolher: intensidade OU segurança. Se escolher intensidade, Relógio +2 mas ganha Tag [TENSÃO]. Se escolher segurança, Relógio +1.</div>
-<div class="result failure"><strong>6−:</strong> A pessoa se sente desconfortável, ou você revela vulnerabilidade demais. Relógio recua 1.</div>
+<span class="attribute">BRASA</span>
+<div class="result success"><strong>Inteiro:</strong> A pessoa fica encantada. Fio +2. Oportunidade de intimidade.</div>
+<div class="result partial"><strong>Ouro:</strong> Há faísca, mas <strong>escolha 1:</strong> (a) a pessoa hesita — você precisa ser mais paciente, (b) o momento é interrompido por algo externo, (c) você precisa escolher: intensidade OU segurança. Se escolher intensidade, Fio +2 mas ganha Marca [FIOS]. Se escolher segurança, Fio +1.</div>
+<div class="result failure"><strong>Cacos:</strong> A pessoa se sente desconfortável, ou você revela vulnerabilidade demais. Fio recua 1.</div>
 </div>
 
-<div class="move">
+<div class="move" id="celebrar-o-amor">
 <h4>CELEBRAR O AMOR</h4>
-<div class="trigger">Quando você organiza uma festa, faz uma declaração pública, ou celebra um marco no relacionamento (aniversário, conquista, casamento).</div>
-<span class="attribute">CORAÇÃO</span>
-<div class="result success"><strong>10+:</strong> Celebração perfeita. Relógio +2. +1 Eco. <em>[DOMÉSTICO] + [VÍNCULO+]</em>. Todos os NPCs presentes ganham +1 no Relógio de Ligação.</div>
-<div class="result partial"><strong>7–9:</strong> Celebração boa, mas <strong>escolha 1:</strong> (a) algo dá errado (convidado problemático, chuva, NPC ausente), (b) um segredo é revelado durante a festa, (c) alguém se sente excluído — Relógio de Ligação recua 1. Relógio +1. <em>[TENSÃO]</em></div>
-<div class="result failure"><strong>6−:</strong> Celebração desastrosa. Alguém se ofende, segredo é revelado, ou NPC parte. Relógio recua 1. <em>[VÍNCULO−] + [TENSÃO]</em></div>
+<div class="trigger">Quando você organiza uma festa, faz uma declaração pública, ou celebra um marco no relacionamento (aniversário, memória, casamento).</div>
+<span class="attribute">BRASA</span>
+<div class="result success"><strong>Inteiro:</strong> Celebração perfeita. Fio +2. +1 Retalho. <em>[DOMÉSTICO] + [VÍNCULO+]</em>. Todos os NPCs presentes ganham +1 no Fio de Ligação.</div>
+<div class="result partial"><strong>Ouro:</strong> Celebração boa, mas <strong>escolha 1:</strong> (a) algo dá errado (convidado problemático, chuva, NPC ausente), (b) um segredo é revelado durante a festa, (c) alguém se sente excluído — Fio de Ligação recua 1. Fio +1. <em>[FIOS]</em></div>
+<div class="result failure"><strong>Cacos:</strong> Celebração desastrosa. Alguém se ofende, segredo é revelado, ou NPC parte. Fio recua 1. <em>[VÍNCULO−] + [FIOS]</em></div>
 </div>
 
 
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Quando os Cacos Caem — Conversas</h3>
+<p>Nos Gestos de Conversas, a complicação vem das palavras que saíram erradas, do silêncio que pesou demais, da verdade que chegou na hora errada. Role 1d6 ou escolha o que ressoa com o momento:</p>
+
+<table>
+<tr><th>d6</th><th>Complicação</th></tr>
+<tr><td>1</td><td>Você disse algo verdadeiro, mas na hora errada. A pessoa ouviu — e agora não sabe o que fazer com isso.</td></tr>
+<tr><td>2</td><td>O silêncio entre vocês disse mais do que as palavras. O que cada um fingiu não ter ouvido?</td></tr>
+<tr><td>3</td><td>Alguém ouviu — e não deveria ter ouvido. Quem foi, e o que farão com o que sabem?</td></tr>
+<tr><td>4</td><td>A conversa terminou bem, mas você sente que não foi você quem falou. De onde veio aquilo?</td></tr>
+<tr><td>5</td><td>Você percebeu, no meio da frase, que estava dizendo o que a pessoa queria ouvir — não o que você acreditava.</td></tr>
+<tr><td>6</td><td>A pessoa respondeu exatamente o que você esperava. E isso foi mais perturbador do que qualquer surpresa.</td></tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<details class="cartilha">
+<summary>🏷️ As Marcas nesta Página</summary>
+<table>
+<tr><th>Marca</th><th>O Que Significa</th></tr>
+<tr><td><em>[VÍNCULO+]</em></td><td>Um laço se firma ou se aprofunda com alguém — ou um lugar — que passa a contar com você.</td></tr>
+<tr><td><em>[VÍNCULO−]</em></td><td>Uma tensão ou dívida entre vocês dois ainda espera para ser resolvida.</td></tr>
+<tr><td><em>[DOMÉSTICO]</em></td><td>O conforto de uma rotina que ancora o seu dia na Contracena.</td></tr>
+<tr><td><em>[MEMÓRIA]</em></td><td>Um momento que marcou você e ficou registrado, pronto para ser revisitado.</td></tr>
+<tr><td><em>[FIOS]</em></td><td>O resultado toca um Fio em andamento — ou acende um novo, ainda por nomear.</td></tr>
+</table>
+<p>Referência completa: <a href="sistema-tags.html">Sistema de Marcas</a>.</p>
+</details>
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Moves — Sociais</p>
-  <p><a href="moves-oficio.html">← Ofício</a> | <a href="moves-investigacao.html">Próxima: Investigação →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Gestos — Conversas</p>
+  <p><a href="moves-oficio.html">← Curadoria</a> | <a href="moves-investigacao.html">Próxima: Descobertas →</a></p>
 </footer>
 
 </div>
@@ -148,7 +135,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Retalhos da Contracena — O Ninho: Ficha do Ninho</title>
+<style>
+.sheet {
+  background: #fefcf7;
+  border: 2px solid var(--accent);
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(43, 29, 14, 0.15);
+  page-break-inside: avoid;
+  border-radius: 6px;
+}
+.sheet h3 {
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.field {
+  display: flex;
+  align-items: baseline;
+  margin: 0.5rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.field-label {
+  font-weight: bold;
+  color: var(--accent);
+  min-width: 160px;
+  font-variant: small-caps;
+}
+.field-line {
+  flex: 1;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+}
+.print-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  transition: background 0.2s;
+}
+.print-btn:hover {
+  background: var(--gold);
+}
+.section-divider {
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
+}
+.categoria-resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.7rem;
+  margin: 1rem 0;
+}
+.categoria-card {
+  border: 1px solid var(--accent-light);
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  background: rgba(139, 90, 43, 0.04);
+  text-align: center;
+}
+.categoria-card.bonus-ativo {
+  border: 2px solid var(--gold);
+  background: rgba(184, 134, 11, 0.1);
+}
+.categoria-card .cat-nome {
+  font-weight: bold;
+  color: var(--accent);
+  font-variant: small-caps;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.categoria-card .cat-contagem {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.categoria-card .cat-bonus-tag {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--gold);
+  margin-top: 0.2rem;
+}
+.conjunto-bloco {
+  border: 2px solid var(--gold);
+  border-radius: 5px;
+  padding: 1rem 1.2rem;
+  margin: 0.8rem 0;
+  background: rgba(184, 134, 11, 0.06);
+}
+.conjunto-bloco h5 {
+  margin: 0 0 0.5rem 0;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-variant: small-caps;
+}
+@media print {
+  .top-nav, .floating-controls, .back-to-top, .no-print, .print-btn, .ficha-controles { display: none !important; }
+  body { background: white !important; }
+  .sheet { box-shadow: none !important; border: 1px solid #ccc !important; }
+  .sheet input[type="text"] { border-bottom: 1px solid #999 !important; }
+}
+.ficha-controles {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5rem 0 1rem;
+}
+.save-btn {
+  display: inline-block;
+  background: var(--success);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: filter 0.2s;
+}
+.save-btn:hover { filter: brightness(1.1); }
+.ficha-status {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.sheet input[type="text"] {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-soft);
+  min-height: 1.5rem;
+  min-width: 150px;
+  width: 100%;
+  padding: 0;
+}
+.sheet input[type="text"]:focus {
+  outline: none;
+  border-bottom: 1px solid var(--gold);
+}
+#nome-salvo {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--parchment);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.5rem 0.7rem;
+  min-width: 240px;
+}
+.lista-ninho {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+}
+.lista-ninho li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--accent-light);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background: rgba(139, 90, 43, 0.04);
+}
+.lista-ninho .print-btn {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  margin: 0;
+}
+@media print {
+  .ficha-controles { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav no-print" id="nav-container"></nav>
+
+<div class="breadcrumbs no-print">
+  <a href="index.html">Início</a> &gt; <a href="pilar-ninho.html">O Ninho</a> &gt; <a href="pilar-ninho-ferramentas.html">Ferramentas</a> &gt; <strong>Ficha do Ninho</strong>
+</div>
+
+<div class="container">
+
+<div class="sheet" id="sheet-resumo-categorias">
+<h3>🪴 O Ninho — Resumo de Categorias</h3>
+<p style="text-align: center; font-style: italic;">Atualizado automaticamente a partir dos itens salvos abaixo. 3 itens da mesma categoria ativam o bônus dela (veja <a href="sistema-decoracao.html">Sistema: O Ninho</a>).</p>
+<div class="categoria-resumo no-print" id="categoria-resumo"></div>
+<p class="ficha-status no-print" style="text-align:center;">Este resumo só aparece na tela (não conta como campo salvável) — ele é recalculado toda vez que a página carrega ou um item é salvo/excluído.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="sheet" id="sheet-ninho">
+<h3>🪴 Ficha do Ninho — Itens</h3>
+<div class="ficha-controles no-print">
+  <input type="text" id="nome-salvo" placeholder="Nome do item (pra identificar na lista)">
+  <button class="save-btn" onclick="salvarFicha()">💾 Salvar</button>
+  <button class="print-btn" onclick="novoItem()">➕ Novo</button>
+  <button class="print-btn" onclick="window.print()">🖨 Imprimir (preenchida)</button>
+  <span class="ficha-status" id="ficha-status"></span>
+</div>
+<p style="text-align: center; font-style: italic;">Cada item do Ninho fica salvo como um item na lista abaixo.</p>
+
+<div id="lista-salvos" class="no-print"></div>
+
+<h4>Item</h4>
+<div class="field"><span class="field-label">Nome do item:</span><input type="text" class="field-line" data-field="ninhoNome"></div>
+<div class="field"><span class="field-label">Categoria:</span><input type="text" class="field-line" data-field="ninhoCategoria"> (Móveis / Iluminação / Plantas / Arte / Têxtil / Coleções)</div>
+<div class="field"><span class="field-label">Descrição / história:</span><input type="text" class="field-line" data-field="ninhoDescricao"></div>
+<div class="field"><span class="field-label">Levado em expedição?</span><input type="text" class="field-line" data-field="ninhoExpedicao"> (qual expedição, e o bônus que deu)</div>
+
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="sheet" id="sheet-conjuntos-porao">
+<h3>📜 Conjuntos Completos — Canto do Porão</h3>
+<p style="text-align: center; font-style: italic;">Bloco único (não é lista). Quando uma categoria acima chegar a 3 itens, você pode declarar o Nome Verdadeiro daquele conjunto aqui — uma das três vias do Canto do Porão (veja <a href="sistema-legado.html">O Que Fica</a>).</p>
+
+<div class="ficha-controles no-print">
+  <button class="save-btn" onclick="salvarConjuntos()">💾 Salvar</button>
+  <span class="ficha-status" id="conjuntos-status"></span>
+</div>
+
+<div class="conjunto-bloco">
+  <h5>Móveis</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><input type="text" class="field-line" data-field="conjMoveisNome"></div>
+</div>
+<div class="conjunto-bloco">
+  <h5>Iluminação</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><input type="text" class="field-line" data-field="conjIluminacaoNome"></div>
+</div>
+<div class="conjunto-bloco">
+  <h5>Plantas</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><input type="text" class="field-line" data-field="conjPlantasNome"></div>
+</div>
+<div class="conjunto-bloco">
+  <h5>Arte</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><input type="text" class="field-line" data-field="conjArteNome"></div>
+</div>
+<div class="conjunto-bloco">
+  <h5>Têxtil</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><input type="text" class="field-line" data-field="conjTextilNome"></div>
+</div>
+<div class="conjunto-bloco">
+  <h5>Coleções</h5>
+  <div class="field"><span class="field-label">Nome Verdadeiro:</span><input type="text" class="field-line" data-field="conjColecoesNome"></div>
+</div>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="sheet" id="sheet-trilha-moldagem">
+<h3>🔨 Trilha de Moldagem</h3>
+<p style="text-align: center; font-style: italic;">Atualizado automaticamente a partir dos registros de Moldagem salvos abaixo. Sobe por <strong>marcos de intenção</strong> — veja <a href="sistema-crafting.html">Sistema: Moldagem</a>.</p>
+<div class="categoria-resumo no-print" id="trilha-moldagem-resumo"></div>
+<p class="ficha-status no-print" style="text-align:center;">Este resumo só aparece na tela (não conta como campo salvável) — ele é recalculado toda vez que a página carrega ou um registro é salvo/excluído.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="sheet" id="sheet-moldagem">
+<h3>🔨 Log de Moldagem</h3>
+<div class="ficha-controles no-print">
+  <input type="text" id="nome-salvo-moldagem" placeholder="Nome da criação (pra identificar na lista)">
+  <button class="save-btn" onclick="salvarFichaMoldagem()">💾 Salvar</button>
+  <button class="print-btn" onclick="novoItemMoldagem()">➕ Novo</button>
+  <button class="print-btn" onclick="window.print()">🖨 Imprimir (preenchida)</button>
+  <span class="ficha-status" id="ficha-status-moldagem"></span>
+</div>
+<p style="text-align: center; font-style: italic;">Cada criação moldada fica salva como um registro na lista abaixo. Nem toda criação marca a trilha — só marca quando carrega intenção (veja as três evidências no Sistema de Moldagem).</p>
+
+<div id="lista-salvos-moldagem" class="no-print"></div>
+
+<h4>Criação</h4>
+<div class="field"><span class="field-label">Nome da criação:</span><input type="text" class="field-line" data-field="moldagemNome"></div>
+<div class="field"><span class="field-label">Natureza:</span><input type="text" class="field-line" data-field="moldagemNatureza"> (madeira / metal / têxtil-couro / essência-gema — ou ferramenta / mobília / proteção / artefato)</div>
+<div class="field">
+  <span class="field-label">Evidência de intenção:</span>
+  <select class="field-line" data-field="moldagemEvidencia">
+    <option value="">— selecione —</option>
+    <option value="nova natureza">Nova natureza</option>
+    <option value="nomeada">Nomeada (Nome Verdadeiro)</option>
+    <option value="feita para alguém">Feita para alguém (NPC)</option>
+    <option value="nenhuma">Nenhuma (não marca)</option>
+  </select>
+</div>
+<div class="field"><span class="field-label">NPC / Nome Verdadeiro:</span><input type="text" class="field-line" data-field="moldagemVinculo"> (preencha se a evidência for "nomeada" ou "feita para alguém")</div>
+<div class="field"><span class="field-label">Descrição / história:</span><input type="text" class="field-line" data-field="moldagemDescricao"></div>
+
+</div>
+
+<div class="callout tip">
+  <strong>Próximo passo:</strong> Volte para <a href="ficha-npcs.html">Ficha de NPCs →</a> ou vá para <a href="ficha-mundo.html">Ficha do Mundo →</a>.
+</div>
+
+<footer>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Ferramentas — Ficha do Ninho</p>
+  <p><a href="ficha-quebradores.html">← Ficha de Quebradores</a> | <a href="ficha-mundo.html">Próxima: Ficha Mundo →</a></p>
+</footer>
+
+</div>
+
+<button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
+
+<script src="menu.js"></script>
+<script src="backtotop.js"></script>
+<script src="dado.js"></script>
+<script src="fichas-storage.js"></script>
+<script>
+var TIPO_NINHO = 'ninho';
+var sheetNinho = document.getElementById('sheet-ninho');
+var sheetConjuntos = document.getElementById('sheet-conjuntos-porao');
+var currentId = null;
+
+var CATEGORIAS = ['Móveis', 'Iluminação', 'Plantas', 'Arte', 'Têxtil', 'Coleções'];
+
+function normalizarCategoria(texto) {
+  return (texto || '').trim().toLowerCase();
+}
+
+function renderResumoCategorias() {
+  var itens = FichasStorage.getList(TIPO_NINHO);
+  var contagem = {};
+  CATEGORIAS.forEach(function (cat) { contagem[normalizarCategoria(cat)] = 0; });
+
+  itens.forEach(function (item) {
+    var raw = localStorage.getItem('retalhos-contracena:item:' + TIPO_NINHO + ':' + item.id);
+    if (!raw) return;
+    var dados = JSON.parse(raw);
+    var catNormalizada = normalizarCategoria(dados.ninhoCategoria);
+    if (catNormalizada) {
+      contagem[catNormalizada] = (contagem[catNormalizada] || 0) + 1;
+    }
+  });
+
+  var html = '';
+  CATEGORIAS.forEach(function (cat) {
+    var n = contagem[normalizarCategoria(cat)] || 0;
+    var bonusAtivo = n >= 3;
+    html += '<div class="categoria-card' + (bonusAtivo ? ' bonus-ativo' : '') + '">';
+    html += '<span class="cat-nome">' + cat + '</span>';
+    html += '<span class="cat-contagem">' + n + '</span>';
+    if (bonusAtivo) {
+      html += '<span class="cat-bonus-tag">✨ Bônus ativo</span>';
+    } else {
+      html += '<span class="cat-bonus-tag">faltam ' + (3 - n) + '</span>';
+    }
+    html += '</div>';
+  });
+
+  document.getElementById('categoria-resumo').innerHTML = html;
+}
+
+function renderLista() {
+  var lista = document.getElementById('lista-salvos');
+  var itens = FichasStorage.getList(TIPO_NINHO);
+  if (itens.length === 0) {
+    lista.innerHTML = '<p class="ficha-status">Nenhum item do Ninho salvo ainda.</p>';
+    renderResumoCategorias();
+    return;
+  }
+  itens.sort(function (a, b) {
+    return new Date(b.atualizado) - new Date(a.atualizado);
+  });
+  var html = '<ul class="lista-ninho">';
+  itens.forEach(function (item) {
+    var dataFormatada = new Date(item.atualizado).toLocaleString();
+    html += '<li><strong>' + item.nome + '</strong><span class="ficha-status">' + dataFormatada + '</span>';
+    html += '<button class="print-btn" onclick="abrirItem(\'' + item.id + '\')">Abrir</button>';
+    html += '<button class="print-btn" onclick="excluirItem(\'' + item.id + '\')">Excluir</button></li>';
+  });
+  html += '</ul>';
+  lista.innerHTML = html;
+  renderResumoCategorias();
+}
+
+function salvarFicha() {
+  if (!currentId) {
+    currentId = FichasStorage.newId();
+  }
+  var nomeDigitado = document.getElementById('nome-salvo').value;
+  FichasStorage.saveItem(TIPO_NINHO, currentId, nomeDigitado, sheetNinho);
+  var status = document.getElementById('ficha-status');
+  status.textContent = 'Salvo às ' + new Date().toLocaleTimeString();
+  renderLista();
+}
+
+function novoItem() {
+  FichasStorage.clearFields(sheetNinho);
+  document.getElementById('nome-salvo').value = '';
+  currentId = FichasStorage.newId();
+  var status = document.getElementById('ficha-status');
+  status.textContent = '';
+}
+
+function abrirItem(id) {
+  FichasStorage.loadItem(TIPO_NINHO, id, sheetNinho);
+  currentId = id;
+  var itens = FichasStorage.getList(TIPO_NINHO);
+  var item = itens.find(function (i) { return i.id === id; });
+  document.getElementById('nome-salvo').value = item ? item.nome : '';
+  var status = document.getElementById('ficha-status');
+  status.textContent = 'Aberto às ' + new Date().toLocaleTimeString();
+}
+
+function excluirItem(id) {
+  if (!confirm('Excluir este item do Ninho? Essa ação não pode ser desfeita.')) return;
+  FichasStorage.deleteItem(TIPO_NINHO, id);
+  if (currentId === id) {
+    FichasStorage.clearFields(sheetNinho);
+    document.getElementById('nome-salvo').value = '';
+    currentId = null;
+    var status = document.getElementById('ficha-status');
+    status.textContent = '';
+  }
+  renderLista();
+}
+
+function salvarConjuntos() {
+  FichasStorage.saveFixed('conjuntosPorao', sheetConjuntos);
+  var status = document.getElementById('conjuntos-status');
+  status.textContent = 'Salvo às ' + new Date().toLocaleTimeString();
+}
+
+// ---- Trilha de Moldagem (bloco novo e paralelo à lista 'ninho' acima) ----
+
+var TIPO_MOLDAGEM = 'moldagem';
+var sheetMoldagem = document.getElementById('sheet-moldagem');
+var currentIdMoldagem = null;
+
+// Limiares da Trilha de Moldagem — fonte única aqui, espelha sistema-crafting.html.
+// Se recalibrar os marcos lá, ajuste só este array.
+var LIMIARES_MOLDAGEM = [
+  { nivel: 1, nome: 'Aprendiz', marcos: 0 },
+  { nivel: 2, nome: 'Artesão', marcos: 2 },
+  { nivel: 3, nome: 'Mestre Restaurador', marcos: 4 },
+  { nivel: 4, nome: 'Sábio das Relíquias', marcos: 7 },
+  { nivel: 5, nome: 'Lenda Viva', marcos: 10 }
+];
+
+function contarMarcosMoldagem() {
+  var itens = FichasStorage.getList(TIPO_MOLDAGEM);
+  var marcos = 0;
+  itens.forEach(function (item) {
+    var raw = localStorage.getItem('retalhos-contracena:item:' + TIPO_MOLDAGEM + ':' + item.id);
+    if (!raw) return;
+    var dados = JSON.parse(raw);
+    var evidencia = (dados.moldagemEvidencia || '').trim().toLowerCase();
+    // Cada registro conta no máximo 1 marco, mesmo se a evidência sugerir mais de uma via.
+    if (evidencia && evidencia !== 'nenhuma') {
+      marcos += 1;
+    }
+  });
+  return marcos;
+}
+
+function renderTrilhaMoldagem() {
+  var marcos = contarMarcosMoldagem();
+  var nivelAtual = LIMIARES_MOLDAGEM[0];
+  var proximoNivel = null;
+
+  for (var i = 0; i < LIMIARES_MOLDAGEM.length; i++) {
+    if (marcos >= LIMIARES_MOLDAGEM[i].marcos) {
+      nivelAtual = LIMIARES_MOLDAGEM[i];
+      proximoNivel = LIMIARES_MOLDAGEM[i + 1] || null;
+    }
+  }
+
+  var html = '';
+  html += '<div class="categoria-card bonus-ativo">';
+  html += '<span class="cat-nome">Marcos de intenção</span>';
+  html += '<span class="cat-contagem">' + marcos + '</span>';
+  html += '</div>';
+  html += '<div class="categoria-card bonus-ativo">';
+  html += '<span class="cat-nome">Nível atual</span>';
+  html += '<span class="cat-contagem" style="font-size:1.05rem;">' + nivelAtual.nivel + ' — ' + nivelAtual.nome + '</span>';
+  html += '</div>';
+  html += '<div class="categoria-card">';
+  html += '<span class="cat-nome">Próximo nível</span>';
+  if (proximoNivel) {
+    html += '<span class="cat-contagem" style="font-size:1.05rem;">' + proximoNivel.nome + '</span>';
+    html += '<span class="cat-bonus-tag">faltam ' + (proximoNivel.marcos - marcos) + '</span>';
+  } else {
+    html += '<span class="cat-contagem" style="font-size:1.05rem;">—</span>';
+    html += '<span class="cat-bonus-tag">✨ nível máximo</span>';
+  }
+  html += '</div>';
+
+  document.getElementById('trilha-moldagem-resumo').innerHTML = html;
+}
+
+function renderListaMoldagem() {
+  var lista = document.getElementById('lista-salvos-moldagem');
+  var itens = FichasStorage.getList(TIPO_MOLDAGEM);
+  if (itens.length === 0) {
+    lista.innerHTML = '<p class="ficha-status">Nenhuma criação de Moldagem salva ainda.</p>';
+    renderTrilhaMoldagem();
+    return;
+  }
+  itens.sort(function (a, b) {
+    return new Date(b.atualizado) - new Date(a.atualizado);
+  });
+  var html = '<ul class="lista-ninho">';
+  itens.forEach(function (item) {
+    var dataFormatada = new Date(item.atualizado).toLocaleString();
+    html += '<li><strong>' + item.nome + '</strong><span class="ficha-status">' + dataFormatada + '</span>';
+    html += '<button class="print-btn" onclick="abrirItemMoldagem(\'' + item.id + '\')">Abrir</button>';
+    html += '<button class="print-btn" onclick="excluirItemMoldagem(\'' + item.id + '\')">Excluir</button></li>';
+  });
+  html += '</ul>';
+  lista.innerHTML = html;
+  renderTrilhaMoldagem();
+}
+
+function salvarFichaMoldagem() {
+  if (!currentIdMoldagem) {
+    currentIdMoldagem = FichasStorage.newId();
+  }
+  var nomeDigitado = document.getElementById('nome-salvo-moldagem').value;
+  FichasStorage.saveItem(TIPO_MOLDAGEM, currentIdMoldagem, nomeDigitado, sheetMoldagem);
+  var status = document.getElementById('ficha-status-moldagem');
+  status.textContent = 'Salvo às ' + new Date().toLocaleTimeString();
+  renderListaMoldagem();
+}
+
+function novoItemMoldagem() {
+  FichasStorage.clearFields(sheetMoldagem);
+  document.getElementById('nome-salvo-moldagem').value = '';
+  currentIdMoldagem = FichasStorage.newId();
+  var status = document.getElementById('ficha-status-moldagem');
+  status.textContent = '';
+}
+
+function abrirItemMoldagem(id) {
+  FichasStorage.loadItem(TIPO_MOLDAGEM, id, sheetMoldagem);
+  currentIdMoldagem = id;
+  var itens = FichasStorage.getList(TIPO_MOLDAGEM);
+  var item = itens.find(function (i) { return i.id === id; });
+  document.getElementById('nome-salvo-moldagem').value = item ? item.nome : '';
+  var status = document.getElementById('ficha-status-moldagem');
+  status.textContent = 'Aberto às ' + new Date().toLocaleTimeString();
+}
+
+function excluirItemMoldagem(id) {
+  if (!confirm('Excluir este registro de Moldagem? Essa ação não pode ser desfeita.')) return;
+  FichasStorage.deleteItem(TIPO_MOLDAGEM, id);
+  if (currentIdMoldagem === id) {
+    FichasStorage.clearFields(sheetMoldagem);
+    document.getElementById('nome-salvo-moldagem').value = '';
+    currentIdMoldagem = null;
+    var status = document.getElementById('ficha-status-moldagem');
+    status.textContent = '';
+  }
+  renderListaMoldagem();
+}
+
+(function () {
+  if (!FichasStorage.isBlankPrint()) {
+    renderLista();
+    renderListaMoldagem();
+    FichasStorage.loadFixed('conjuntosPorao', sheetConjuntos);
+  } else {
+    document.getElementById('lista-salvos').style.display = 'none';
+    document.getElementById('lista-salvos-moldagem').style.display = 'none';
+  }
+})();
+</script>
+</body>
+</html>
