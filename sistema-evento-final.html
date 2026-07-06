@@ -4,85 +4,318 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Sistema: Evento Final</title>
+<title>Retalhos da Contracena — Núcleo: O Entardecer</title>
+<style>
+.entardecer-barra {
+  display: flex;
+  gap: 0.4rem;
+  margin: 1.5rem 0 0.5rem;
+  flex-wrap: wrap;
+}
+.entardecer-no {
+  flex: 1 1 calc(12.5% - 0.4rem);
+  min-width: 60px;
+  padding: 0.7rem 0.3rem 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.72rem;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  border: 2px solid var(--parchment-dark);
+  background: var(--parchment-dark);
+  color: var(--ink-soft);
+  transition: background 0.2s;
+}
+.entardecer-no .no-num {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--ink-soft);
+}
+.entardecer-no.faixa-longiquo {
+  border-color: #7a9b6a;
+  background: rgba(122, 155, 106, 0.12);
+}
+.entardecer-no.faixa-longiquo .no-num { color: #5a7a4a; }
+.entardecer-no.faixa-pressentimento {
+  border-color: var(--gold);
+  background: rgba(184, 134, 11, 0.12);
+}
+.entardecer-no.faixa-pressentimento .no-num { color: var(--gold); }
+.entardecer-no.faixa-sombras {
+  border-color: var(--accent);
+  background: rgba(139, 69, 19, 0.12);
+}
+.entardecer-no.faixa-sombras .no-num { color: var(--accent); }
+.entardecer-no.faixa-iminencia {
+  border-color: var(--danger);
+  background: rgba(122, 46, 46, 0.14);
+}
+.entardecer-no.faixa-iminencia .no-num { color: var(--danger); }
+
+.entardecer-legenda {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 0.4rem 0 1.5rem;
+  font-size: 0.8rem;
+}
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.legenda-cor {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: inline-block;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.legenda-cor.longiquo   { background: rgba(122, 155, 106, 0.5); border-color: #7a9b6a; }
+.legenda-cor.pressentimento { background: rgba(184, 134, 11, 0.4); border-color: var(--gold); }
+.legenda-cor.sombras    { background: rgba(139, 69, 19, 0.35); border-color: var(--accent); }
+.legenda-cor.iminencia  { background: rgba(122, 46, 46, 0.35); border-color: var(--danger); }
+
+.faixa-bloco {
+  border-left: 4px solid var(--parchment-dark);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  background: var(--parchment-dark);
+  border-radius: 0 5px 5px 0;
+}
+.faixa-bloco.longiquo   { border-color: #7a9b6a; }
+.faixa-bloco.pressentimento { border-color: var(--gold); }
+.faixa-bloco.sombras    { border-color: var(--accent); }
+.faixa-bloco.iminencia  { border-color: var(--danger); }
+
+.faixa-bloco h4 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+.faixa-bloco.longiquo h4   { color: #5a7a4a; }
+.faixa-bloco.pressentimento h4 { color: var(--gold); }
+.faixa-bloco.sombras h4    { color: var(--accent); }
+.faixa-bloco.iminencia h4  { color: var(--danger); }
+
+.faixa-sinais {
+  font-size: 0.9rem;
+  margin: 0.4rem 0;
+  padding-left: 1.2rem;
+}
+.faixa-sinais li {
+  margin: 0.25rem 0;
+}
+.pergunta-entardecer {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: 0.8rem;
+  font-size: 0.92rem;
+  border-top: 1px dashed var(--parchment-dark);
+  padding-top: 0.6rem;
+}
+.ritual-checklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.8rem 0;
+}
+.ritual-checklist li {
+  padding: 0.4rem 0.6rem;
+  margin: 0.3rem 0;
+  border: 1px dashed var(--gold);
+  border-radius: 4px;
+  background: var(--parchment);
+  font-size: 0.92rem;
+}
+.ritual-checklist li::before {
+  content: "◇ ";
+  color: var(--gold);
+}
+</style>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="sistema-resolucao.html">Sistema</a> &gt; <strong>Evento Final</strong>
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>O Entardecer</strong>
 </div>
 
 <div class="container">
 
 <div class="tier-badge avancado">🔵 Avançado <span class="tier-desc">— camada opcional, adicione quando quiser mais profundidade</span></div>
 
-<h2>O Fim da História — O Evento Final</h2>
-<p>O Evento Final é o destino da sua campanha. É o que vai acontecer quando o Relógio do Evento Final atingir 8/8. Você define o evento no início do jogo, e ele guia a narrativa até o fim.</p>
+<h2>O Fim da História — O Entardecer <em>(análogo a: Fim de Campanha / Ato Final)</em></h2>
+<p>O Entardecer é o destino da sua campanha. É o que vai acontecer quando o Fio do Entardecer atingir 8/8. Você define o evento no início do jogo, e ele guia a narrativa até o fim.</p>
 
 <div class="callout tip">
-  <strong>Dica:</strong> O Evento Final não é uma "derrota" ou "vitória" — é uma conclusão. Pode ser agridoce, melancólica, ou profundamente satisfatória.
+  <strong>Dica:</strong> O Entardecer não é uma "derrota" ou "vitória" — é uma conclusão. Pode ser agridoce, melancólica, ou profundamente satisfatória.
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Escolhendo o Evento Final (role 1d10)</h3>
+<h3>O Arco do Entardecer — Onde Você Está</h3>
+
+<p>O Fio do Entardecer tem 8 nós. Cada faixa tem um nome e um sabor narrativo próprio — para que você saiba, a qualquer momento, não só onde está mecanicamente, mas o que isso significa emocionalmente.</p>
+
+<div class="entardecer-barra" aria-label="Barra visual do Fio do Entardecer">
+  <div class="entardecer-no faixa-longiquo">
+    <span class="no-num">1</span>Longínquo
+  </div>
+  <div class="entardecer-no faixa-longiquo">
+    <span class="no-num">2</span>Longínquo
+  </div>
+  <div class="entardecer-no faixa-pressentimento">
+    <span class="no-num">3</span>Pressentimento
+  </div>
+  <div class="entardecer-no faixa-pressentimento">
+    <span class="no-num">4</span>Pressentimento
+  </div>
+  <div class="entardecer-no faixa-sombras">
+    <span class="no-num">5</span>Sombras Longas
+  </div>
+  <div class="entardecer-no faixa-sombras">
+    <span class="no-num">6</span>Sombras Longas
+  </div>
+  <div class="entardecer-no faixa-iminencia">
+    <span class="no-num">7</span>Iminência
+  </div>
+  <div class="entardecer-no faixa-iminencia">
+    <span class="no-num">8</span>Iminência
+  </div>
+</div>
+
+<div class="entardecer-legenda">
+  <div class="legenda-item"><span class="legenda-cor longiquo"></span> 1–2 Longínquo</div>
+  <div class="legenda-item"><span class="legenda-cor pressentimento"></span> 3–4 Pressentimento</div>
+  <div class="legenda-item"><span class="legenda-cor sombras"></span> 5–6 Sombras Longas</div>
+  <div class="legenda-item"><span class="legenda-cor iminencia"></span> 7–8 Iminência</div>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Sinais do Mundo por Faixa</h3>
+
+<p>A cada faixa, o mundo ao redor reflete o que se aproxima. Use estes sinais como material narrativo — você pode nomeá-los, descrevê-los em diário ou apenas deixá-los colorir suas cenas.</p>
+
+<div class="faixa-bloco longiquo">
+  <h4>🌿 1–2 nós — Longínquo</h4>
+  <p>O Entardecer existe, mas está tão distante que mal se sente. A vida tem textura de rotina.</p>
+  <ul class="faixa-sinais">
+    <li>Os aventureiros voltam com histórias de lugares que parecem eternos.</li>
+    <li>Os artefatos que chegam têm memórias tranquilas — objetos de casas, de festas, de amor comum.</li>
+    <li>A cidade tem o barulho normal de quem não imagina mudança.</li>
+    <li>Você mesmo ainda não pensa muito no evento que virá.</li>
+  </ul>
+  <p class="pergunta-entardecer">Pergunta do Entardecer: <em>O que você está construindo aqui que quer que dure?</em></p>
+</div>
+
+<div class="faixa-bloco pressentimento">
+  <h4>🍂 3–4 nós — Pressentimento</h4>
+  <p>Algo muda imperceptivelmente. Um fio solto que você ainda não sabe puxar.</p>
+  <ul class="faixa-sinais">
+    <li>Um NPC próximo menciona algo de passagem — uma decisão que ainda não tomou, uma despedida que adia.</li>
+    <li>Você começa a notar que os artefatos que chegam têm histórias de separação.</li>
+    <li>Um lugar da cidade que você frequentava parece diferente sem motivo claro.</li>
+    <li>Pequenas coisas somem: um hábito, um rosto no mercado, uma luz acesa à noite.</li>
+  </ul>
+  <p class="pergunta-entardecer">Pergunta do Entardecer: <em>O que na sua vida hoje não estará mais quando o fim chegar?</em></p>
+</div>
+
+<div class="faixa-bloco sombras">
+  <h4>🌅 5–6 nós — Sombras Longas</h4>
+  <p>O evento que virá começa a tocar o presente. Não de forma dramática — mas de forma que você não consegue ignorar.</p>
+  <ul class="faixa-sinais">
+    <li>Os aventureiros voltam mais cansados, ou não voltam tão logo quanto antes.</li>
+    <li>Os NPCs fazem escolhas que parecem preparação — mesmo sem nomear o quê.</li>
+    <li>Artefatos chegam com histórias de luto, de fim de ciclos, de coisas que valeram a pena.</li>
+    <li>A cidade tem um tom diferente na hora do crepúsculo — mais quieta, mais presente.</li>
+  </ul>
+  <p class="pergunta-entardecer">Pergunta do Entardecer: <em>Com quem você quer estar quando isso acontecer? Já disse isso a eles?</em></p>
+</div>
+
+<div class="faixa-bloco iminencia">
+  <h4>🕯️ 7–8 nós — Iminência</h4>
+  <p>O fim está aqui. Ele não chegou de surpresa — você o viu se aproximar. Agora é sobre o que você escolhe fazer com o tempo que ainda tem.</p>
+  <ul class="faixa-sinais">
+    <li>O evento começa a se manifestar concretamente: rumores viram fatos, sinais viram certezas.</li>
+    <li>Os NPCs sabem ou intuem. Alguns se aproximam; outros se afastam.</li>
+    <li>Os artefatos que chegam têm um peso diferente — como se soubessem que são os últimos.</li>
+    <li>A Contracena em si parece guardar a memória de tudo que aconteceu ali.</li>
+  </ul>
+  <p class="pergunta-entardecer">Pergunta do Entardecer: <em>O que você quer que reste — de você, do que fez, de quem amou?</em></p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Ritual de Fim de Capítulo</h3>
+
+<p>Ao fechar um capítulo, olhe o Fio do Entardecer. Não é uma obrigação — é um convite. Um momento breve para deixar o progresso mecânico virar algo sentido.</p>
+
+<div class="callout rule">
+  <strong>⚖️ O Convite:</strong>
+  <ul class="ritual-checklist">
+    <li>Marque os nós do capítulo no Fio do Entardecer.</li>
+    <li>Leia o nome da faixa atual — Longínquo, Pressentimento, Sombras Longas ou Iminência.</li>
+    <li>Escreva uma frase: <em>"O que mudou hoje que aproxima o fim?"</em></li>
+  </ul>
+  <p>A frase não precisa ser dramática. Pode ser pequena: <em>"Hoje percebi que Maren está começando a guardar coisas."</em> Isso é o suficiente.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Escolhendo O Entardecer (role 1d10)</h3>
 
 <table>
 <tr><th>d10</th><th>Evento</th><th>Esqueleto Narrativo</th></tr>
-<tr><td>1</td><td><strong>A Guilda Fecha</strong></td><td>A Guilda é dissolvida. O que você faz com o subsolo? Com os artefatos? Com os NPCs?</td></tr>
+<tr><td>1</td><td><strong>A Confraria Fecha</strong></td><td>A Confraria é dissolvida. O que você faz com o subsolo? Com os artefatos? Com os NPCs?</td></tr>
 <tr><td>2</td><td><strong>O Mestre Desaparece</strong></td><td>O Mestre some. Você assume? Procura? Descobre a verdade?</td></tr>
 <tr><td>3</td><td><strong>A Cidade em Crise</strong></td><td>Invasão, praga, desastre. Como você ajuda? O que sacrifica?</td></tr>
 <tr><td>4</td><td><strong>O Artefato Desperta</strong></td><td>Um artefato lendário desperta. Você o destrói? Controla? Foge com ele?</td></tr>
 <tr><td>5</td><td><strong>Um NPC Parte</strong></td><td>Um NPC decide partir. Você vai com ele? Deixa ir? Tenta convencer?</td></tr>
-<tr><td>6</td><td><strong>O Segredo Vem à Tona</strong></td><td>Um segredo dos Bastidores é revelado. Como você lida com a exposição?</td></tr>
+<tr><td>6</td><td><strong>O Segredo Vem à Tona</strong></td><td>Um segredo da Contracena é revelado. Como você lida com a exposição?</td></tr>
 <tr><td>7</td><td><strong>A Cidade é Evacuada</strong></td><td>A cidade deve ser evacuada. Você vai? Fica? Para onde leva os artefatos?</td></tr>
-<tr><td>8</td><td><strong>Um NPC Morre</strong></td><td>Um NPC importante morre. Como você lida com a perda? O que faz com o legado?</td></tr>
-<tr><td>9</td><td><strong>Os Bastidores Mudam</strong></td><td>Os Bastidores se transformam. Como você se adapta? O que descobre?</td></tr>
-<tr><td>10</td><td><strong>Você é Chamado(a) para Fora</strong></td><td>Você é chamado(a) para uma missão. Você vai? O que deixa para trás?</td></tr>
+<tr><td>8</td><td><strong>Um NPC Morre</strong></td><td>Um NPC importante morre. Como você lida com a perda? O que faz com o que fica?</td></tr>
+<tr><td>9</td><td><strong>A Contracena Muda</strong></td><td>A Contracena se transforma. Como você se adapta? O que descobre?</td></tr>
+<tr><td>10</td><td><strong>Você é Chamado(a) para Fora</strong></td><td>Você é chamado(a) para um chamado. Você vai? O que deixa para trás?</td></tr>
 </table>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Modos do Evento Final</h3>
+<h3>Climas do Entardecer</h3>
 
 <div class="callout rule">
-  <h3>⚖️ Ritmo do Relógio do Evento Final</h3>
-  <p>Por padrão, o Relógio do Evento Final tem pressão automática de <strong>+1 segmento a cada 3 capítulos</strong>. Se você quiser uma campanha mais curta e com mais pressão (+1 segmento por capítulo), use o <a href="sistema-modos.html">Modo Speedrun</a> — ele já cobre esse ritmo acelerado, junto com o resto dos ajustes de duração e atalhos.</p>
-  <p><strong>Respiração:</strong> Em qualquer modo, você pode gastar 1 Eco para reduzir o Relógio em 1 segmento (limite: não abaixo de 4/8).</p>
+  <h3>⚖️ Ritmo do Fio do Entardecer</h3>
+  <p>Por padrão, o Fio do Entardecer tem pressão automática de <strong>+1 nó a cada 3 capítulos</strong>. Se você quiser uma campanha mais curta e com mais pressão (+1 nó por capítulo), use o <a href="sistema-modos.html">Clima Vendaval</a> — ele já cobre esse ritmo acelerado, junto com o resto dos ajustes de duração e atalhos.</p>
+  <p><strong>Respiração:</strong> Em qualquer clima, você pode gastar 1 Retalho para reduzir o Fio em 1 nó (limite: não abaixo de 4/8).</p>
 </div>
 
 <h3>Gatilhos de Avanço (escolha 3–5 no início)</h3>
 
 <ol>
-  <li>Relógio de Tensão atinge 6+ segmentos → avança 1</li>
-  <li>Relógio de Romance atinge 6/10 ou 9–10/10 → avança 1</li>
+  <li>Fio de Tensão atinge 6+ nós → avança 1</li>
+  <li>Fio de Romance atinge 6/10 ou 9–10/10 → avança 1</li>
   <li>Mistério resolvido → avança 1</li>
   <li>"Marcar Passagem do Tempo" com descrição rica → avança 1</li>
-  <li>6− em move crítico → avança 1</li>
+  <li>Cacos (6−) em gesto crítico → avança 1</li>
   <li>NPC da cidade revela segredo → avança 1</li>
-  <li>Protagonista visita local perigoso → avança 1</li>
+  <li>Jogador visita local perigoso → avança 1</li>
   <li>Escolha personalizada</li>
 </ol>
 
-<h3>Marcos do Relógio</h3>
+<h3>Sinais do Fio</h3>
 
 <ul>
   <li><strong>4/8:</strong> o evento começa a se manifestar (sinais, rumores)</li>
-  <li><strong>6/8:</strong> o evento se intensifica (consequências visíveis)</li>
+  <li><strong>6/8:</strong> o evento se intensifica (rastros visíveis)</li>
   <li><strong>8/8:</strong> o evento acontece — <em>fim do jogo principal</em></li>
 </ul>
 
-
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Sistema — Evento Final</p>
-  <p><a href="sistema-relogios.html">← Relógios</a> | <a href="sistema-camara.html">Próxima: Câmara →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Sistema — O Entardecer</p>
+  <p><a href="sistema-relogios.html">← Fios</a> | <a href="sistema-camara.html">Próxima: Relicário →</a></p>
 </footer>
 
 </div>
@@ -90,7 +323,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

@@ -4,54 +4,244 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Progressão: Relacionamentos</title>
+<title>Retalhos da Contracena — Romance: Relacionamentos</title>
+<style>
+.arvore-zona {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--soft);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+.arvore-zona h4 {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+.arvore-zona .zona-label {
+  display: inline-block;
+  background: var(--soft);
+  color: var(--parchment);
+  padding: 0.1rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  font-variant: small-caps;
+  margin-bottom: 0.5rem;
+  font-style: normal;
+}
+.faceta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+.faceta-card {
+  background: var(--parchment-dark);
+  border: 1px solid var(--accent-light);
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+}
+.faceta-card strong {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+.faceta-card em {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+.fruto-box {
+  background: rgba(184, 92, 138, 0.08);
+  border: 2px solid var(--romance);
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.fruto-box h4 {
+  color: var(--romance);
+  margin-top: 0;
+}
+.nos-tensos-box {
+  background: rgba(122, 46, 46, 0.07);
+  border: 2px solid var(--danger);
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.nos-tensos-box h4 {
+  color: var(--danger);
+  margin-top: 0;
+}
+</style>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="progressao-oficio.html">Progressão</a> &gt; <strong>Relacionamentos</strong>
+  <a href="index.html">Início</a> &gt; <a href="pilar-romance.html">Romance</a> &gt; <a href="pilar-romance-raizes.html">Raízes</a> &gt; <strong>Relacionamentos</strong>
 </div>
 
 <div class="container">
 
-<h2>Marcos Visuais e Poliamor — A Evolução dos Laços</h2>
-<p>Os relacionamentos no jogo não são apenas números em um Relógio — eles têm <strong>marcos visuais</strong> que aparecem nos seus aposentos, e podem evoluir para formas mais complexas como o <strong>poliamor</strong>.</p>
+<h2>Raízes e Frutos — A Evolução dos Laços</h2>
+<p>Relacionamentos no jogo têm duas camadas que coexistem. O <strong>Fio de Romance</strong> — com seus nós e sinais visuais — existe para NPCs romanceáveis e mede a proximidade afetiva ao longo do tempo. A <strong>Árvore da Intimidade</strong> existe para todos os NPCs importantes: romanceáveis ou não. Ela é a camada narrativa, o mapa do que você conhece sobre uma pessoa.</p>
+<p>As duas camadas crescem juntas, mas em ritmos próprios. Um Fio pode estar cheio e a Árvore ainda ter galhos secos. Uma Árvore pode estar florida antes do romance florescer.</p>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Marcos Visuais de Evolução</h3>
+<h2>A Árvore da Intimidade</h2>
+<p>Para cada NPC importante na sua vida — companheiro de trabalho, rival, aliado, amor — existe uma Árvore. Ela cresce à medida que você aprende quem essa pessoa realmente é. Não é uma árvore que você planta: é uma árvore que você <em>descobre</em>, já existente, enterrada debaixo de quem o NPC parece ser.</p>
 
-<p>Cada fase do Relógio de Romance desbloqueia um <strong>item físico</strong> que aparece nos seus aposentos, tornando a progressão tangível e emocional.</p>
+<div class="callout tip">
+  Registre a Árvore da Intimidade de cada NPC na <a href="ficha-npcs.html">Ficha de NPC</a>. Anote as facetas à medida que são reveladas, com uma frase curta de sabor para cada uma.
+</div>
 
-<h4>Fase 1: Conhecimento (0–3 segmentos)</h4>
+<h3>As 5 Zonas de Crescimento</h3>
+
+<div class="arvore-zona">
+  <span class="zona-label">Zona 1</span>
+  <h4>🌱 Semente — O Nome Comum</h4>
+  <p>O que todos sabem. Como o NPC se apresenta ao mundo: nome, ofício, aparência. Desbloqueado automaticamente no primeiro encontro, sem rolagem.</p>
+</div>
+
+<div class="arvore-zona">
+  <span class="zona-label">Zona 2</span>
+  <h4>🪵 Raízes — Contexto e Origem</h4>
+  <p>De onde veio essa pessoa. Fragmentos de história: de que cidade, de que família, de que ruína. Emerge naturalmente em 1–2 interações. Não exige rolagem — basta atenção e conversa.</p>
+</div>
+
+<div class="arvore-zona">
+  <span class="zona-label">Zona 3</span>
+  <h4>🌳 Tronco — A Essência Observável</h4>
+  <p>Como o NPC age no mundo: seus hábitos, sua postura diante do trabalho e do perigo, o que defende sem precisar falar. Revelado ao longo de 2–3 interações significativas. Pode exigir uma rolagem de <strong>LENTE</strong> para nomear o que você observou.</p>
+</div>
+
+<div class="arvore-zona">
+  <span class="zona-label">Zona 4</span>
+  <h4>🌿 Galhos — As 5 Facetas</h4>
+  <p>O núcleo da Árvore. Cinco dimensões profundas, cada uma um galho que pode ou não ter folhas. Desbloqueáveis ao longo de toda a campanha, sem ordem obrigatória.</p>
+</div>
+
+<div class="arvore-zona">
+  <span class="zona-label">Zona 5</span>
+  <h4>🍎 Fruto — O Nome Verdadeiro</h4>
+  <p>Surge apenas quando todas as 5 Facetas têm folhas. O jogador declara o Nome Verdadeiro do NPC — não o nome de batismo, mas o nome que captura quem essa pessoa é de verdade. Uma palavra, uma frase curta, uma imagem. É o fruto de tudo que você aprendeu.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>As 5 Facetas — Os Galhos</h3>
+<p>Cada Faceta é uma dimensão que o NPC esconde, não por maldade, mas porque intimidade verdadeira demora. Quando uma Faceta é revelada, anote na ficha com uma frase de sabor: não o que o sistema diz, mas o que <em>aquele NPC</em> mostrou.</p>
+
+<div class="faceta-grid">
+  <div class="faceta-card">
+    <strong>🔨 O Ofício</strong>
+    <em>A paixão ou o trabalho que define essa pessoa. O que ela faz quando ninguém está olhando. O que a faz perder a noção do tempo.</em>
+  </div>
+  <div class="faceta-card">
+    <strong>🩹 A Ferida</strong>
+    <em>O que machucou. Não precisa ser um trauma dramático — pode ser uma perda pequena que ficou grande. O que ainda dói quando alguém toca sem querer.</em>
+  </div>
+  <div class="faceta-card">
+    <strong>✨ O Sonho</strong>
+    <em>O desejo secreto. O que essa pessoa quer e não admite querer. O futuro que ela imagina quando ninguém está vendo.</em>
+  </div>
+  <div class="faceta-card">
+    <strong>🗝️ O Segredo</strong>
+    <em>O que esconde. Não necessariamente algo vergonhoso — às vezes é algo precioso demais para mostrar. Algo que só existe quando há confiança real.</em>
+  </div>
+  <div class="faceta-card">
+    <strong>☀️ A Alegria</strong>
+    <em>O que faz essa pessoa brilhar. O momento em que ela se esquece de ser cuidadosa. O que a faz rir de verdade, sem reservas.</em>
+  </div>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Como Desbloquear Facetas</h3>
+<p>Facetas não têm um gatilho único. O jogo oferece três caminhos — e qualquer um é válido.</p>
+
+<div class="callout rule">
+  <h4>Via Gesto — Conversas ou Descobertas</h4>
+  <p>Use um Gesto de <a href="moves-sociais.html">Conversas</a> (como <strong>Conversar Profundamente</strong> ou <strong>Consolar ou Acolher</strong>) ou de <a href="moves-investigacao.html">Descobertas</a>. Role <strong>2d6 + BRASA</strong> (para abertura emocional) ou <strong>2d6 + LENTE</strong> (para observação e leitura).</p>
+  <ul>
+    <li><strong>Inteiro:</strong> Você escolhe qual Faceta é revelada, ou o NPC a revela completamente.</li>
+    <li><strong>Ouro:</strong> Uma Faceta começa a emergir, mas incompleta — você anota o fragmento e precisa de mais uma interação para completar.</li>
+    <li><strong>Cacos:</strong> O NPC fecha. Nenhuma Faceta avança, e o Fio pode recuar 1.</li>
+  </ul>
+</div>
+
+<div class="callout tip">
+  <h4>Revelação Natural — Sem Rolagem</h4>
+  <p>Às vezes uma Faceta simplesmente aparece na narrativa: o NPC age de um jeito inesperado, revela algo sem perceber, ou o momento certo acontece. Quando isso ocorrer, anote a Faceta sem rolagem. A narrativa tem precedência sobre a mecânica.</p>
+  <p>Uma fonte válida de Revelação Natural é a <strong>pista cruzada de artefato</strong>: durante a Fase Ouvir do Nome Verdadeiro de um artefato, se uma pista apontar claramente para um NPC, o jogador pode declarar que ela pertence àquela pessoa. Quando isso acontecer, a Faceta mais relevante ainda não desbloqueada desse NPC é revelada automaticamente — sem rolagem, sem custo adicional. <em>Exemplo: ao ouvir um medalhão de campanha, você descobre que ele foi partido em dois e metade dada a alguém amado antes da partida. Você reconhece a história de Mira. A Faceta "A Ferida" dela se revela: a pessoa que ficou, esperando, e que nunca voltou.</em></p>
+</div>
+
+<div class="callout celestial">
+  <h4>Crise Compartilhada — Revelação Automática</h4>
+  <p>Quando você e o NPC enfrentam juntos algo difícil — perigo real, perda, decisão impossível — uma Faceta relevante é revelada automaticamente, sem rolagem e sem custo. Crises criam intimidade que anos de conversa não conseguem.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="fruto-box">
+  <h4>🍎 O Fruto — O Nome Verdadeiro</h4>
+  <p>Quando as 5 Facetas estão reveladas, o jogador declara o <strong>Nome Verdadeiro</strong> do NPC. Não é um nome que o sistema gera — é o nome que <em>você</em> encontrou. Baseado no que aprendeu. Uma palavra que captura quem essa pessoa é debaixo de tudo que ela mostra ao mundo.</p>
+  <p><em>Exemplo: um NPC cujo Ofício é restaurar, cuja Ferida é ter sido abandonado, cujo Sonho é voltar para casa — talvez seu Nome Verdadeiro seja "O Que Não Soltou". Ou simplesmente "Lar". Você decide.</em></p>
+  <p><strong>O Poder do Nome:</strong> Uma vez por campanha, você pode invocar o Nome Verdadeiro de um NPC. Quando o faz, o NPC entende — sem explicação — o que você está pedindo, e diz sim. Qualquer coisa. O Nome carrega todo o peso do que vocês construíram juntos.</p>
+  <p><strong>O Preço:</strong> Invocar o Nome queima o fruto. A Árvore não perde suas folhas — o que vocês viveram não desaparece — mas o fruto não volta a nascer. O Nome Verdadeiro pode ser dito uma única vez.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>A Trama — Raízes Subterrâneas</h2>
+
+<p>As Árvores de NPCs diferentes não existem isoladas. Elas estão conectadas por raízes que você não vê — histórias que aconteceram antes de você chegar, segredos compartilhados, amores antigos, dívidas esquecidas. Quando você aprende algo sobre um NPC, às vezes esse algo toca outro NPC de um jeito que nenhum dos dois esperava.</p>
+<p>Chame isso de <strong>a Trama</strong>: a rede viva de conexões entre as pessoas ao seu redor. Não há mecânica para isso — só a sugestão de que o mundo respirava antes de você chegar, e continua respirando enquanto você trabalha na Contracena. Preste atenção. As raízes aparecem quando você menos espera.</p>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="nos-tensos-box">
+  <h4>⚡ Nós Tensos — Quando Dois NPCs se Odeiam</h4>
+  <p>Quando dois NPCs que você conhece têm uma relação de hostilidade real entre si — não uma discordância, mas ódio, mágoa profunda ou rivalidade que não cede — um <strong>Fio de Tensão</strong> é criado automaticamente entre eles. Não é um Fio que você controla: ele existe independente de você.</p>
+  <p><strong>O que isso significa na prática:</strong> enquanto o Fio de Tensão existir, estar com ambos ao mesmo tempo custa 1 Fôlego adicional. Cenas que envolvem os dois juntos têm sempre um risco narrativo embutido.</p>
+  <p><strong>Como resolver:</strong> o Fio de Tensão entre NPCs exige que você <strong>medeie</strong> (gaste 2 Fôlegos, role um Gesto de Conversas com os dois) ou <strong>escolha um lado</strong> (o Fio com o NPC preterido recua 2 nós). Não há neutralidade permanente: um Fio de Tensão não resolvido avança sozinho, à taxa de 1 nó por Estação.</p>
+  <p><strong>Se o Fio atingir 8/8:</strong> algo irrompe. Uma crise pública, uma separação, uma violência pequena que muda tudo. O narrador (você) decide a forma — mas o Fio decide que <em>algo</em> acontece.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>Sinais Visuais de Evolução — Fio de Romance</h2>
+<p>O sistema de fases a seguir aplica-se exclusivamente a <strong>NPCs romanceáveis</strong>. Cada fase do Fio de Romance desbloqueia um <strong>item físico</strong> nos seus aposentos, tornando a progressão tangível e emocional. A Árvore da Intimidade coexiste com essas fases — um NPC pode estar na Fase 2 do Fio e ter três Facetas reveladas. Ou nenhuma.</p>
+
+<p>O que move o Fio de uma fase para outra são os <strong>momentos de vulnerabilidade compartilhada</strong> — não ações específicas, não presentes, não quantidade de interações. A profundidade de uma cena vale mais do que a frequência delas.</p>
+
+<h4>Fase 1: Conhecimento (0–3 nós)</h4>
 <ul>
   <li><strong>Nenhum item ainda.</strong> O NPC é apenas uma presença distante.</li>
+  <li>O tipo de momento que avança o Fio aqui: perceber algo sobre o NPC que ele(a) não mostrou intencionalmente.</li>
 </ul>
 
-<h4>Fase 2: Amizade Profunda (4–6 segmentos)</h4>
+<h4>Fase 2: Amizade Profunda (4–6 nós)</h4>
 <ul>
   <li><strong>1 item pessoal do NPC</strong> aparece nos seus aposentos (ex.: um livro emprestado, uma flor seca, uma carta).</li>
-  <li>Você pode visitar a casa do NPC na cidade sem gastar 2 Atos (apenas 1 Ato).</li>
+  <li>Você pode visitar a casa do NPC na cidade gastando apenas 1 Fôlego.</li>
+  <li>O tipo de momento que avança o Fio aqui: o NPC ou você mostrando algo que normalmente guardaria. Pedir ajuda. Admitir uma fraqueza.</li>
 </ul>
 
-<h4>Fase 3: Romance (7–8 segmentos)</h4>
+<h4>Fase 3: Romance (7–8 nós)</h4>
 <ul>
   <li><strong>2 itens pessoais do NPC</strong> aparecem nos seus aposentos.</li>
-  <li>Você ganha uma <strong>Tag Permanente</strong> relacionada ao NPC (ex.: "O Cheiro Dele(a)", "A Música Que Nos Une").</li>
-  <li>A Tag dá +1 em rolagens de CORAÇÃO com este NPC.</li>
+  <li>Você ganha uma <strong>Marca Permanente</strong> relacionada ao NPC (ex.: "O Cheiro Dele(a)", "A Música Que Nos Une").</li>
+  <li>A Marca dá +1 em rolagens de BRASA com este NPC.</li>
+  <li>O tipo de momento que avança o Fio aqui: rir juntos sem motivo. Ficar em silêncio que não precisa ser preenchido. Estar presente quando o outro está quebrando.</li>
 </ul>
 
-<h4>Fase 4: Compromisso (9–10 segmentos)</h4>
+<h4>Fase 4: Compromisso (9–10 nós)</h4>
 <ul>
   <li><strong>3 itens pessoais do NPC</strong> aparecem nos seus aposentos.</li>
-  <li>O NPC <strong>mora com você</strong> nos Bastidores (módulo desbloqueado).</li>
-  <li>Você ganha +1 Ato permanente por dia (o NPC ajuda na rotina).</li>
+  <li>O NPC <strong>mora com você</strong> na Contracena (cômodo desbloqueado).</li>
+  <li>Você ganha +1 Fôlego permanente por dia.</li>
+  <li>O tipo de momento que avança o Fio aqui: uma escolha feita em voz alta. Uma promessa pequena cumprida. O futuro falado, não apenas sentido.</li>
 </ul>
 
 <p><em>"Os objetos contam a história. Um livro emprestado vira um livro presenteado. Uma flor seca vira um buquê fresco toda semana. E de repente, os aposentos não são mais só seus."</em></p>
@@ -60,52 +250,86 @@
 
 <h3>Casa do NPC (Amizade Perfeita em 6/10)</h3>
 
-<p>Se o Relógio parar em 6/10, você desbloqueia acesso à <strong>casa do NPC</strong> na cidade.</p>
+<p>Se o Fio parar em 6/10, você desbloqueia acesso à <strong>casa do NPC</strong> na cidade.</p>
 
 <table>
 <tr><th>Arquétipo</th><th>Espaço Exclusivo</th><th>Ações Especiais</th></tr>
 <tr><td>Explorador</td><td><strong>Sala de Troféus</strong></td><td>Estudar artefatos raros (+1); descobrir segredos da cidade.</td></tr>
-<tr><td>Colega</td><td><strong>Biblioteca Pessoal</strong></td><td>Estudar magia (+1 MENTE); decifrar enigmas complexos.</td></tr>
+<tr><td>Colega</td><td><strong>Biblioteca Pessoal</strong></td><td>Estudar magia (+1 PENA); decifrar enigmas complexos.</td></tr>
 <tr><td>Forasteiro</td><td><strong>Cofre Secreto</strong></td><td>Acessar artefatos proibidos; descobrir segredos perigosos.</td></tr>
 </table>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Poliamor — Vínculo Aberto e Módulo Conjunto</h3>
+<h3>Poliamor — Vínculo Aberto e Cômodo Conjunto</h3>
 
 <div class="callout rule">
   <h4>Vínculo Aberto (Poliamor sem Coabitação)</h4>
-  <p>Nem todo amor precisa morar junto. O <strong>Vínculo Aberto</strong> permite namorar múltiplos NPCs sem precisar maximizar todos os Relógios de Ligação.</p>
+  <p>Nem todo amor precisa morar junto. O <strong>Vínculo Aberto</strong> permite namorar múltiplos NPCs sem precisar maximizar todos os Fios de Ligação.</p>
   <ul>
-    <li><strong>Requisitos:</strong> Relógio de Romance em <strong>7–8/10</strong> (Romance) com o NPC + Relógio de Ligação com os outros NPCs em pelo menos <strong>4/8</strong> (Respeito Mútuo).</li>
-    <li><strong>Benefícios:</strong> O NPC mantém sua casa na cidade, mas vocês namoram abertamente. Você pode visitar a casa dele sem gastar 2 Atos (apenas 1 Ato).</li>
-    <li><strong>Custo:</strong> Nenhum recurso, apenas uma cena de "Acordo de Corações" (gastar 1 Eco).</li>
+    <li><strong>Requisitos:</strong> Fio de Romance em <strong>7–8/10</strong> (Romance) com o NPC + Fio de Ligação com os outros NPCs em pelo menos <strong>4/8</strong> (Respeito Mútuo).</li>
+    <li><strong>Benefícios:</strong> O NPC mantém sua casa na cidade, mas vocês namoram abertamente. Você pode visitar a casa dele gastando apenas 1 Fôlego.</li>
+    <li><strong>Custo:</strong> Apenas uma cena de "Acordo de Corações" (gastar 1 Retalho).</li>
   </ul>
 </div>
 
 <div class="callout romance">
-  <h4>Módulo Conjunto (Poliamor Completo)</h4>
-  <p>Para desbloquear o <strong>Módulo Conjunto</strong> (todos morando juntos na oficina), use a <strong>Conversa de Alinhamento</strong>:</p>
+  <h4>Cômodo Conjunto (Poliamor Completo)</h4>
+  <p>Para desbloquear o <strong>Cômodo Conjunto</strong> (todos morando juntos), use a <strong>Conversa de Alinhamento</strong>:</p>
   <ol>
-    <li><strong>Requisito de Vínculo:</strong> Tenha Relógio de Romance em <strong>9–10/10</strong> com todos os NPCs envolvidos.</li>
-    <li><strong>A Conversa de Alinhamento:</strong> Gaste <strong>1 Eco</strong> e <strong>1 Ato</strong> para forçar uma cena onde todos conversam sobre o relacionamento. Role <strong>2d6 + CORAÇÃO</strong>.</li>
-    <li><strong>Resultado:</strong> 
+    <li><strong>Requisito de Vínculo:</strong> Fio de Romance em <strong>9–10/10</strong> com todos os NPCs envolvidos.</li>
+    <li><strong>A Conversa de Alinhamento:</strong> Gaste <strong>1 Retalho</strong> e <strong>1 Fôlego</strong> para forçar uma cena onde todos conversam sobre o relacionamento. Role <strong>2d6 + BRASA</strong>.</li>
+    <li><strong>Resultado:</strong>
       <ul>
-        <li><strong>10+:</strong> Todos concordam. O Relógio de Ligação entre eles preenche automaticamente até 8/8. Módulo Conjunto desbloqueado.</li>
-        <li><strong>7–9:</strong> Concordam, mas com uma condição ou ciúme residual. Módulo desbloqueado, mas um Relógio de Tensão suave avança 2 segmentos.</li>
-        <li><strong>6−:</strong> Alguém desiste. O poliamor não acontece agora. Você recupera o Eco gasto.</li>
+        <li><strong>Inteiro:</strong> Todos concordam. O Fio de Ligação entre eles preenche automaticamente até 8/8. Cômodo Conjunto desbloqueado.</li>
+        <li><strong>Ouro:</strong> Concordam, mas com uma condição ou ciúme residual. Cômodo desbloqueado, mas um Fio de Tensão suave avança 2 nós.</li>
+        <li><strong>Cacos:</strong> Alguém desiste. O poliamor não acontece agora. Você recupera o Retalho gasto.</li>
       </ul>
     </li>
   </ol>
-  <p><strong>Custo do Módulo Conjunto:</strong> 10 Recursos (reduzido de 15) + Cena de Desbloqueio.</p>
-  <p><strong>Benefício:</strong> +1 Ato permanente por dia (os NPCs ajudam na rotina).</p>
+  <p><strong>Benefício:</strong> +1 Fôlego permanente por dia.</p>
 </div>
 
 
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2 id="ecos-ausente">O Que Chega em Silêncio</h2>
+
+<p>Às vezes um capítulo inteiro passa e você não visita um NPC. Não por descuido — às vezes a vida simplesmente leva para outro lado. Mas a vida deles continua girando enquanto você está de costas. Este é um convite pequeno para deixar essa vida aparecer.</p>
+
+<div class="callout rule">
+  <h4>O Gesto (opcional)</h4>
+  <p>No fim de cada capítulo, para cada NPC com Fio de Romance em pelo menos <strong>3/10</strong> que você <em>não</em> visitou naquele capítulo, você pode rolar <strong>1d6</strong> e ver o que chega até você.</p>
+  <ul>
+    <li>Role no máximo uma vez por NPC por capítulo.</li>
+    <li>Se o Fio estiver em 0 ou 1/10, não role — não há laço suficiente para que algo chegue.</li>
+    <li>Se rolar e o resultado não ressoar, narre do seu jeito ou ignore. É um convite, não uma ordem.</li>
+  </ul>
+</div>
+
+<div class="callout">
+  <h4>🎲 O Que Chega em Silêncio (1d6)</h4>
+  <table>
+    <tr><th>1d6</th><th>O que chega</th></tr>
+    <tr><td><strong>1</strong></td><td><strong>Ele te procura.</strong> No próximo capítulo, ele aparece na Contracena sem aviso. Uma cena curta, sem agenda — só presença.</td></tr>
+    <tr><td><strong>2</strong></td><td><strong>Um bilhete chega.</strong> Você não o vê, mas encontra algo — um recado, um objeto pequeno, uma pista de que ele pensou em você. Descreva a cena e ganhe +1 Retalho.</td></tr>
+    <tr><td><strong>3</strong></td><td><strong>Alguém menciona ele.</strong> Um rumor, uma conversa casual, um NPC secundário fala o nome dele de passagem. Você ouve sem procurar.</td></tr>
+    <tr><td><strong>4</strong></td><td><strong>Você o vê de longe.</strong> Na cidade, atravessando uma rua, saindo de algum lugar. Nenhuma interação — só o reconhecimento de que ele existe quando você não está olhando.</td></tr>
+    <tr><td><strong>5</strong></td><td><strong>Silêncio.</strong> Nada acontece. O Fio de Romance não recua — o silêncio às vezes é só silêncio, não distância.</td></tr>
+    <tr><td><strong>6</strong></td><td><strong>Ele está pensando em você.</strong> Aparece com algo pequeno — comida, uma pergunta, um cuidado discreto. Cena de reencontro no próximo capítulo. +1 nó no Fio de Romance.</td></tr>
+  </table>
+</div>
+
+<div class="callout tip">
+  <p>A intenção não é adicionar carga — é lembrar que o mundo continua girando enquanto você trabalha. Esses ecos são pequenos, cotidianos, sem drama. Um bilhete embaixo da porta. Um nome ouvido por acaso. O cheiro de comida que você reconhece. O tamanho certo de um afeto que não precisa de cena para existir.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>❦ Retalhos da Contracena ❦</p>
   <p>Progressão — Relacionamentos</p>
-  <p><a href="progressao-oficina.html">← Oficina</a> | <a href="progressao-economia.html">Próxima: Economia →</a></p>
+  <p><a href="progressao-oficio.html">← Cômodos</a> | <a href="progressao-economia.html">Próxima: Trocas →</a></p>
 </footer>
 
 </div>
@@ -113,7 +337,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

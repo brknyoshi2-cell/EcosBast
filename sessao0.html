@@ -4,825 +4,996 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Sessão 0: Criação do Mundo</title>
+<title>Retalhos da Contracena — Tecer a Contracena</title>
+<style>
+details.cartilha {
+  background: var(--callout-tip-bg, #f0f7f0);
+  border-left: 3px solid var(--accent, #6a9a6a);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0 1rem;
+}
+details.cartilha summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent-dark, #4a7a4a);
+  list-style: none;
+  padding: 0.1rem 0;
+}
+details.cartilha summary::-webkit-details-marker { display: none; }
+details.cartilha[open] summary { margin-bottom: 0.5rem; }
+details.cartilha p { margin: 0.3rem 0; font-size: 0.97em; line-height: 1.6; }
+details.cartilha p:last-child { margin-top: 0.5rem; font-style: italic; font-size: 0.92em; }
+</style>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="sessao0.html">Jornada do Jogador</a> &gt; <strong>Sessão 0 — Criação do Mundo</strong>
+  <a href="index.html">Início</a> &gt; <a href="comecar.html">Antes do Primeiro Café</a> &gt; <strong>Tecer a Contracena</strong>
 </div>
 
 <div class="container">
-    <header>
-      <h2>Sessão 0 — Criação do Mundo</h2>
-      <p><em>"Antes de restaurar relíquias, você precisa saber que mundo as forjou."</em></p>
-    </header>
+  <header>
+    <h2>Tecer a Contracena</h2>
+    <p><em>"O lugar espera. Você põe cada fio no lugar."</em></p>
+  </header>
 
-    <section>
-      <h3>Como Usar Esta Página</h3>
-      <p>Esta página organiza a ordem de criação do mínimo viável para começar a jogar. Siga os passos na ordem — do macro para o micro. Cada passo leva ao arquivo correspondente.</p>
-      
-      <p>Siga os passos em ordem — Mundo → Cidade → Guilda → Bastidores → Protagonista → NPC de Conexão. Cada passo leva ao arquivo correspondente.</p>
+  <section>
+    <p>Esta é a rota meditativa. Você vai criar o mundo do zero — do macro ao micro — seguindo um fluxo de perguntas e tabelas que constroem sua Contracena camada por camada. Espere entre uma e duas horas antes de começar o primeiro capítulo. Não porque é obrigação, mas porque esta parte já é o jogo.</p>
 
-      <div class="callout rule">
-        <strong>🎲 A Regra de Ouro das Tabelas — vale para <em>todas</em> as tabelas do jogo:</strong> Role o dado e aceite a surpresa. Ou leia as opções e escolha a que mais combina. Ou invente algo que não está na lista. A narrativa dita — o dado serve a ela, nunca o contrário.
-        <br><br>
-        <strong>📍 O que fica aqui:</strong> tabelas roladas <em>uma única vez</em> (magia, tom, lenda da Guilda, Regra Inquebrável, sua relação com artefatos). O que você <em>volta a rolar durante o jogo</em> (bairros, eventos da cidade, novos artefatos) mora nos arquivos de destino — a Sessão 0 só aponta para eles.
-      </div>
-    </section>
+    <p>A ordem é sempre: Mundo → Cidade → Confraria → Contracena → Jogador → NPCs → Fios iniciais → Clima → Estação. Ao final, você desemboca em <a href="jornada-iniciante.html">Os Primeiros Dias</a>.</p>
 
-    <section>
-      <h2>Passo 1 — O Mundo</h2>
-      <p>Antes de tudo, defina o palco geral. Que tipo de mundo é esse? Como a magia funciona? Quais são os conflitos? Quem habita esse mundo? E o que são os artefatos?</p>
-      
-      <h3>1.1 — A Natureza da Magia</h3>
-      <p>A magia é o coração da fantasia. Como ela se manifesta no cotidiano?</p>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como a magia aparece no dia a dia:</summary>
-      <table>
-        <tr><th>d6</th><th>Manifestação</th></tr>
-        <tr><td>1</td><td><strong>Rara e perigosa</strong> — poucos sabem usá-la, todos temem</td></tr>
-        <tr><td>2</td><td><strong>Comum e banal</strong> — como eletricidade, usada para tudo</td></tr>
-        <tr><td>3</td><td><strong>Selvagem e imprevisível</strong> — ninguém controla de verdade</td></tr>
-        <tr><td>4</td><td><strong>Divina</strong> — vem dos deuses, exige fé e rituais</td></tr>
-        <tr><td>5</td><td><strong>Hereditária</strong> — só certas famílias/linhagens têm acesso</td></tr>
-        <tr><td>6</td><td><strong>Morta ou moribunda</strong> — ecos de algo que já foi maior</td></tr>
-      </table></details>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como as pessoas comuns veem a magia:</summary>
-      <table>
-        <tr><th>d6</th><th>Percepção</th></tr>
-        <tr><td>1</td><td>Com medo e superstição</td></tr>
-        <tr><td>2</td><td>Com naturalidade — é parte da vida</td></tr>
-        <tr><td>3</td><td>Com reverência — é sagrada</td></tr>
-        <tr><td>4</td><td>Com desconfiança — "quem usa magia esconde algo"</td></tr>
-        <tr><td>5</td><td>Com curiosidade — querem aprender mais</td></tr>
-        <tr><td>6</td><td>Com indiferença — "magia? ah, isso"</td></tr>
-      </table></details>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — De onde vem a magia:</summary>
-      <table>
-        <tr><th>d6</th><th>Origem</th></tr>
-        <tr><td>1</td><td>Dos deuses — exige fé, rituais, juramentos</td></tr>
-        <tr><td>2</td><td>Da natureza — rios, árvores, pedras, estações</td></tr>
-        <tr><td>3</td><td>Do sangue — linhagens antigas, herança familiar</td></tr>
-        <tr><td>4</td><td>Do estudo — livros, fórmulas, anos de aprendizado</td></tr>
-        <tr><td>5</td><td>De entidades — pactos com seres de outros planos</td></tr>
-        <tr><td>6</td><td>Ninguém sabe — simplesmente existe, como o ar</td></tr>
-      </table></details>
+    <div class="callout tip">
+      <strong>✨ O pré-game é jogo.</strong> Criar o mundo não é preparação chata antes da diversão de verdade. É a primeira sessão da sua Estação. A Contracena começa a existir agora, no ato de escrever quem a habita, de nomear o Mestre, de imaginar que cheiro tem a Oficina. Trate cada resposta como uma cena que já aconteceu.
+    </div>
+  </section>
 
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual o limite da magia:</summary>
-      <table>
-        <tr><th>d6</th><th>Limite</th></tr>
-        <tr><td>1</td><td>Não pode trazer os mortos de volta</td></tr>
-        <tr><td>2</td><td>Não pode alterar o livre-arbítrio</td></tr>
-        <tr><td>3</td><td>Não pode criar algo do nada — sempre exige um preço</td></tr>
-        <tr><td>4</td><td>Não pode parar o tempo</td></tr>
-        <tr><td>5</td><td>Não pode curar certas feridas — só mascará-las</td></tr>
-        <tr><td>6</td><td>Não tem limite claro — e isso assusta todo mundo</td></tr>
-      </table></details>
+  <section>
+    <h3>Como Usar Este Guia</h3>
 
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Quem pode usá-la:</summary>
-      <table>
-        <tr><th>d6</th><th>Acesso</th></tr>
-        <tr><td>1</td><td>Todos — mas poucos têm talento</td></tr>
-        <tr><td>2</td><td>Só os treinados — escolas, mestres, apprentices</td></tr>
-        <tr><td>3</td><td>Só certas linhagens — sangue decide</td></tr>
-        <tr><td>4</td><td>Só os escolhidos — deuses, entidades, destino</td></tr>
-        <tr><td>5</td><td>Só os desesperados — o preço é alto demais para curiosos</td></tr>
-        <tr><td>6</td><td>Qualquer um — mas ninguém sabe como ensinar</td></tr>
-      </table></details>
+    <h4>Os dados (2d6)</h4>
+    <p>Quando um gesto pede rolagem, use dois dados de seis faces e some os resultados. 10 ou mais é Inteiro (sucesso total). 7 a 9 é Cicatrizes de Ouro (sucesso com custo). 6 ou menos é Cacos (complicação que abre nova direção). Para criar o mundo, a maioria das tabelas usa 1d6.</p>
 
-      <div class="callout example">
-        <strong>✨ A magia do cotidiano (defina o tom, não role):</strong> Grande magia acontece <em>lá fora</em>. Aqui, ela é pequena e encantadora: a poeira forma constelações quando ninguém varre, o chá muda de sabor conforme o humor de quem bebe, as sombras imitam com dois segundos de atraso. Escolha (ou invente) <strong>uma</strong> maravilha assim que seja a marca do <em>seu</em> mundo — ela vai reaparecer em cenas tranquilas o jogo inteiro. Precisa de mais? O <a href="geradores-conteudo.html">Gerador de Conteúdo</a> tem uma tabela de <strong>Maravilhas Cotidianas</strong> para rolar sempre que quiser uma nova.
-      </div>
+    <h4>As tabelas — a Regra de Ouro</h4>
+    <div class="callout rule">
+      <strong>🎲 A Regra de Ouro das Tabelas</strong> — vale para todas as tabelas do jogo: role o dado e aceite a surpresa. Ou leia as opções e escolha a que mais combina. Ou invente algo que não está na lista. A narrativa dita — o dado serve a ela, nunca o contrário.
+    </div>
 
-      <h3>1.2 — A Natureza dos Artefatos</h3>
-      <p>Artefatos são o coração do jogo — são o que os aventureiros trazem, o que você restaura, o que guarda nos Bastidores. O que eles são nesse mundo?</p>
+    <h4>Onde anotar</h4>
+    <p>O jogo tem fichas para preencher no navegador: <a href="ficha-mundo.html">Ficha do Mundo</a>, <a href="ficha-prota.html">Ficha do Jogador</a>, <a href="ficha-npcs.html">Ficha de NPCs</a> e <a href="ficha-rastro.html">Ficha de Rastros</a>. Caderno de papel ou bloco de notas funcionam tão bem — use o que for mais natural para você.</p>
 
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — De onde vêm os artefatos:</summary>
-      <table>
-        <tr><th>d6</th><th>Origem</th></tr>
-        <tr><td>1</td><td><strong>Ecos de deuses mortos</strong> — cada artefato é um fragmento de algo divino que se foi</td></tr>
-        <tr><td>2</td><td><strong>Lágrimas do mundo</strong> — o mundo chora quando algo importante morre, e essas lágrimas se cristalizam</td></tr>
-        <tr><td>3</td><td><strong>Sonhos materializados</strong> — quando alguém sonha forte demais, o sonho vira objeto</td></tr>
-        <tr><td>4</td><td><strong>Erros da magia</strong> — quando um feitiço dá errado, o resíduo se solidifica</td></tr>
-        <tr><td>5</td><td><strong>Memórias que não querem ser esquecidas</strong> — pessoas que morrem com algo importante não dito deixam artefatos</td></tr>
-        <tr><td>6</td><td><strong>Ninguém sabe</strong> — aparecem, ponto. E melhor não questionar</td></tr>
-      </table></details>
+    <h4>Geradores automáticos</h4>
+    <p>Se em algum passo você quiser acelerar um elemento específico sem sair da rota Tecer, existem geradores disponíveis como atalho pontual. Eles não substituem a criação — são uma opção quando o dado não inspira.</p>
 
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como o mundo está lidando com artefatos agora:</summary>
-      <table>
-        <tr><th>d6</th><th>Estado</th></tr>
-        <tr><td>1</td><td><strong>Estão morrendo</strong> — cada vez menos aparecem, os antigos estão perdendo poder</td></tr>
-        <tr><td>2</td><td><strong>Estão proliferando</strong> — nunca houve tantos, e ninguém sabe por quê</td></tr>
-        <tr><td>3</td><td><strong>Estão mudando</strong> — artefatos antigos estão se comportando de forma estranha</td></tr>
-        <tr><td>4</td><td><strong>Estão estáveis</strong> — sempre apareceram, sempre aparecerão</td></tr>
-        <tr><td>5</td><td><strong>Estão ficando perigosos</strong> — algo neles está mais agressivo ultimamente</td></tr>
-        <tr><td>6</td><td><strong>Estão ficando... conscientes?</strong> — alguns parecem estar acordando</td></tr>
-      </table></details>
+    <h4>Os cartões-cartilha</h4>
+    <p>Ao longo desta rota, sempre que um sistema do jogo aparecer pela primeira vez, você verá um pequeno cartão expansível como este abaixo. Ele traz o essencial em três a cinco linhas — só o suficiente para continuar tecendo. Você não precisa dominar nada agora; os sistemas se revelam conforme você joga.</p>
 
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que as pessoas comuns sabem sobre artefatos:</summary>
-      <table>
-        <tr><th>d6</th><th>Conhecimento</th></tr>
-        <tr><td>1</td><td><strong>Superstição total</strong> — "não toque, não olhe, não fale sobre"</td></tr>
-        <tr><td>2</td><td><strong>Ciência rudimentar</strong> — há estudiosos, mas a maioria acha que é bobagem</td></tr>
-        <tr><td>3</td><td><strong>Comércio banal</strong> — são mercadoria, como qualquer outra coisa</td></tr>
-        <tr><td>4</td><td><strong>Medo reverente</strong> — são sagrados, perigosos, e ninguém mexe sem ritual</td></tr>
-        <tr><td>5</td><td><strong>Indiferença</strong> — "ah, isso? já vi pior"</td></tr>
-        <tr><td>6</td><td><strong>Ignorância perigosa</strong> — as pessoas usam sem saber o que fazem</td></tr>
-      </table></details>
+    <details class="cartilha">
+      <summary>⚙️ Exemplo de cartão-cartilha — como funciona</summary>
+      <p>Os cartões estão fechados por padrão. Clique para abrir quando quiser. Cada um termina com o link para a página canônica, onde vivem as regras completas.</p>
+      <p><em>Regras completas → [página do sistema]</em></p>
+    </details>
+  </section>
 
-      <h3>1.3 — O Conflito do Mundo</h3>
-      <p>Toda história tem tensão. Qual é o conflito central que define a era atual?</p>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O grande conflito:</summary>
-      <table>
-        <tr><th>d6</th><th>Conflito</th></tr>
-        <tr><td>1</td><td><strong>Pós-catástrofe</strong> — o mundo está se reconstruindo de algo terrível</td></tr>
-        <tr><td>2</td><td><strong>Guerra fria</strong> — tensões entre reinos/facções, mas sem conflito aberto</td></tr>
-        <tr><td>3</td><td><strong>Decadência lenta</strong> — o mundo está morrendo, ninguém sabe como parar</td></tr>
-        <tr><td>4</td><td><strong>Expansão</strong> — novas fronteiras, descobertas, otimismo</td></tr>
-        <tr><td>5</td><td><strong>Isolamento</strong> — cada cidade/reino cuida de si, desconfiança geral</td></tr>
-        <tr><td>6</td><td><strong>Equilíbrio frágil</strong> — paz recente, todos sabem que pode acabar</td></tr>
-      </table></details>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Quando foi a última grande guerra:</summary>
-      <table>
-        <tr><th>d6</th><th>Quando</th></tr>
-        <tr><td>1</td><td>Há uma geração — os avós ainda contam histórias</td></tr>
-        <tr><td>2</td><td>Há séculos — virou lenda, poucos acreditam que foi real</td></tr>
-        <tr><td>3</td><td>Está acontecendo agora — em outra região, mas chega aqui</td></tr>
-        <tr><td>4</td><td>Há 10 anos — ainda há cicatrizes visíveis</td></tr>
-        <tr><td>5</td><td>Nunca houve — este mundo nunca conheceu guerra aberta</td></tr>
-        <tr><td>6</td><td>Ninguém sabe ao certo — os registros foram perdidos</td></tr>
-      </table></details>
+  <div class="section-divider">❦ ❦ ❦</div>
 
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Quem são os "heróis" do mundo:</summary>
-      <table>
-        <tr><th>d6</th><th>Heróis</th></tr>
-        <tr><td>1</td><td>Aventureiros de guilda — mercenários organizados</td></tr>
-        <tr><td>2</td><td>Cavaleiros reais — juramentados a um trono</td></tr>
-        <tr><td>3</td><td>Magos errantes — sábios solitários que ajudam quando podem</td></tr>
-        <tr><td>4</td><td>Camponeses armados — quando a ameaça chega, todos lutam</td></tr>
-        <tr><td>5</td><td>Paladinos sagrados — guerreiros de uma fé</td></tr>
-        <tr><td>6</td><td>Ninguém em especial — cada um cuida de si</td></tr>
-      </table></details>
+  <section>
+    <h2>Passo 1 — O Mundo</h2>
+    <p>Antes de tudo, defina o palco geral. Que tipo de mundo é esse? Como a magia funciona? Quais são os conflitos? Quem habita esse mundo? E o que são os artefatos?</p>
 
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que os comuns pensam sobre aventureiros:</summary>
-      <table>
-        <tr><th>d6</th><th>Percepção</th></tr>
-        <tr><td>1</td><td>Admiração — são celebridades, ídolos</td></tr>
-        <tr><td>2</td><td>Medo — "gente que atrai problemas"</td></tr>
-        <tr><td>3</td><td>Indiferença — "que façam seu trabalho longe daqui"</td></tr>
-        <tr><td>4</td><td>Desconfiança — "ninguém volta igual"</td></tr>
-        <tr><td>5</td><td>Compaixão — "coitados, carregam tanto peso"</td></tr>
-        <tr><td>6</td><td>Respeito pragmático — "alguém tem que fazer"</td></tr>
-      </table></details>
+    <h3>1.1 — A Natureza da Magia</h3>
+    <p>A magia é o coração da fantasia. Como ela se manifesta no cotidiano?</p>
 
-      <p><em>Lembre: neste jogo, os aventureiros são quem bate na sua porta com relíquias quebradas. Muitos não querem ser heróis — há quem caçe tesouro para abrir uma padaria, há quem tenha pavor de monstros e vá mesmo assim. O "herói" que a cidade admira pode ser, de perto, alguém cansado que só queria voltar para casa. Role um em <a href="geradores-npcs.html">Gerador de NPCs</a> quando chegarem.</em></p>
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como a magia aparece no dia a dia:</summary>
+    <table>
+      <tr><th>d6</th><th>Manifestação</th></tr>
+      <tr><td>1</td><td><strong>Rara e perigosa</strong> — poucos sabem usá-la, todos temem</td></tr>
+      <tr><td>2</td><td><strong>Comum e banal</strong> — como eletricidade, usada para tudo</td></tr>
+      <tr><td>3</td><td><strong>Selvagem e imprevisível</strong> — ninguém controla de verdade</td></tr>
+      <tr><td>4</td><td><strong>Divina</strong> — vem dos deuses, exige fé e rituais</td></tr>
+      <tr><td>5</td><td><strong>Hereditária</strong> — só certas famílias/linhagens têm acesso</td></tr>
+      <tr><td>6</td><td><strong>Morta ou moribunda</strong> — ecos de algo que já foi maior</td></tr>
+    </table></details>
 
-      <h3>1.4 — As Presenças Culturais (Raças)</h3>
-      <p>Agora defina quem habita esse mundo. Não são "raças jogáveis" com bônus mecânicos — são povos, culturas, presenças orgânicas.</p>
-      
-      <h4>Quantas presenças culturais existem?</h4>
-      <p>Recomendado: <strong>3 a 5</strong>. Mais que isso fica difícil de gerenciar. Menos que isso, o mundo parece vazio.</p>
-      
-      <h4>Para cada presença, responda:</h4>
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como as pessoas comuns veem a magia:</summary>
+    <table>
+      <tr><th>d6</th><th>Percepção</th></tr>
+      <tr><td>1</td><td>Com medo e superstição</td></tr>
+      <tr><td>2</td><td>Com naturalidade — é parte da vida</td></tr>
+      <tr><td>3</td><td>Com reverência — é sagrada</td></tr>
+      <tr><td>4</td><td>Com desconfiança — "quem usa magia esconde algo"</td></tr>
+      <tr><td>5</td><td>Com curiosidade — querem aprender mais</td></tr>
+      <tr><td>6</td><td>Com indiferença — "magia? ah, isso"</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — De onde vem a magia:</summary>
+    <table>
+      <tr><th>d6</th><th>Origem</th></tr>
+      <tr><td>1</td><td>Dos deuses — exige fé, rituais, juramentos</td></tr>
+      <tr><td>2</td><td>Da natureza — rios, árvores, pedras, estações</td></tr>
+      <tr><td>3</td><td>Do sangue — linhagens antigas, herança familiar</td></tr>
+      <tr><td>4</td><td>Do estudo — livros, fórmulas, anos de aprendizado</td></tr>
+      <tr><td>5</td><td>De entidades — pactos com seres de outros planos</td></tr>
+      <tr><td>6</td><td>Ninguém sabe — simplesmente existe, como o ar</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual o limite da magia:</summary>
+    <table>
+      <tr><th>d6</th><th>Limite</th></tr>
+      <tr><td>1</td><td>Não pode trazer os mortos de volta</td></tr>
+      <tr><td>2</td><td>Não pode alterar o livre-arbítrio</td></tr>
+      <tr><td>3</td><td>Não pode criar algo do nada — sempre exige um preço</td></tr>
+      <tr><td>4</td><td>Não pode parar o tempo</td></tr>
+      <tr><td>5</td><td>Não pode curar certas feridas — só mascará-las</td></tr>
+      <tr><td>6</td><td>Não tem limite claro — e isso assusta todo mundo</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Quem pode usá-la:</summary>
+    <table>
+      <tr><th>d6</th><th>Acesso</th></tr>
+      <tr><td>1</td><td>Todos — mas poucos têm talento</td></tr>
+      <tr><td>2</td><td>Só os treinados — escolas, mestres, aprendizes</td></tr>
+      <tr><td>3</td><td>Só certas linhagens — sangue decide</td></tr>
+      <tr><td>4</td><td>Só os escolhidos — deuses, entidades, destino</td></tr>
+      <tr><td>5</td><td>Só os desesperados — o preço é alto demais para curiosos</td></tr>
+      <tr><td>6</td><td>Qualquer um — mas ninguém sabe como ensinar</td></tr>
+    </table></details>
+
+    <div class="callout example">
+      <strong>✨ A magia do cotidiano (defina o tom, não role):</strong> Grande magia acontece <em>lá fora</em>. Aqui, ela é pequena e encantadora: a poeira forma constelações quando ninguém varre, o chá muda de sabor conforme o humor de quem bebe, as sombras imitam com dois segundos de atraso. Escolha (ou invente) <strong>uma</strong> maravilha assim que seja a marca do <em>seu</em> mundo — ela vai reaparecer em cenas tranquilas o jogo inteiro.
+    </div>
+
+    <details class="cartilha">
+      <summary>⚙️ Marcas — em três frases</summary>
+      <p>Marcas são etiquetas narrativas que descrevem o estado do mundo, dos relacionamentos e dos artefatos. Elas não têm valor numérico — são verdades da ficção que o jogo reconhece e usa. Quando uma Marca muda, a história mudou. Quando ela persiste, algo ainda não foi resolvido.</p>
+      <p><em>Regras completas → <a href="sistema-tags.html">Marcas</a>.</em></p>
+    </details>
+
+    <h3>1.2 — A Natureza dos Artefatos</h3>
+    <p>Artefatos são o coração do jogo — são o que os Quebradores trazem, o que você restaura, o que guarda na Contracena. O que eles são nesse mundo?</p>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — De onde vêm os artefatos:</summary>
+    <table>
+      <tr><th>d6</th><th>Origem</th></tr>
+      <tr><td>1</td><td><strong>Ecos de deuses mortos</strong> — cada artefato é um fragmento de algo divino que se foi</td></tr>
+      <tr><td>2</td><td><strong>Lágrimas do mundo</strong> — o mundo chora quando algo importante morre, e essas lágrimas se cristalizam</td></tr>
+      <tr><td>3</td><td><strong>Sonhos materializados</strong> — quando alguém sonha forte demais, o sonho vira objeto</td></tr>
+      <tr><td>4</td><td><strong>Erros da magia</strong> — quando um feitiço dá errado, o resíduo se solidifica</td></tr>
+      <tr><td>5</td><td><strong>Memórias que não querem ser esquecidas</strong> — pessoas que morrem com algo importante não dito deixam artefatos</td></tr>
+      <tr><td>6</td><td><strong>Ninguém sabe</strong> — aparecem, ponto. E melhor não questionar</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como o mundo está lidando com artefatos agora:</summary>
+    <table>
+      <tr><th>d6</th><th>Estado</th></tr>
+      <tr><td>1</td><td><strong>Estão morrendo</strong> — cada vez menos aparecem, os antigos estão perdendo poder</td></tr>
+      <tr><td>2</td><td><strong>Estão proliferando</strong> — nunca houve tantos, e ninguém sabe por quê</td></tr>
+      <tr><td>3</td><td><strong>Estão mudando</strong> — artefatos antigos estão se comportando de forma estranha</td></tr>
+      <tr><td>4</td><td><strong>Estão estáveis</strong> — sempre apareceram, sempre aparecerão</td></tr>
+      <tr><td>5</td><td><strong>Estão ficando perigosos</strong> — algo neles está mais agressivo ultimamente</td></tr>
+      <tr><td>6</td><td><strong>Estão ficando... conscientes?</strong> — alguns parecem estar acordando</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que as pessoas comuns sabem sobre artefatos:</summary>
+    <table>
+      <tr><th>d6</th><th>Conhecimento</th></tr>
+      <tr><td>1</td><td><strong>Superstição total</strong> — "não toque, não olhe, não fale sobre"</td></tr>
+      <tr><td>2</td><td><strong>Ciência rudimentar</strong> — há estudiosos, mas a maioria acha que é bobagem</td></tr>
+      <tr><td>3</td><td><strong>Comércio banal</strong> — são mercadoria, como qualquer outra coisa</td></tr>
+      <tr><td>4</td><td><strong>Medo reverente</strong> — são sagrados, perigosos, e ninguém mexe sem ritual</td></tr>
+      <tr><td>5</td><td><strong>Indiferença</strong> — "ah, isso? já vi pior"</td></tr>
+      <tr><td>6</td><td><strong>Ignorância perigosa</strong> — as pessoas usam sem saber o que fazem</td></tr>
+    </table></details>
+
+    <h3>1.3 — O Conflito do Mundo</h3>
+    <p>Toda história tem tensão. Qual é o conflito central que define a era atual?</p>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O grande conflito:</summary>
+    <table>
+      <tr><th>d6</th><th>Conflito</th></tr>
+      <tr><td>1</td><td><strong>Pós-catástrofe</strong> — o mundo está se reconstruindo de algo terrível</td></tr>
+      <tr><td>2</td><td><strong>Guerra fria</strong> — tensões entre reinos/círculos, mas sem conflito aberto</td></tr>
+      <tr><td>3</td><td><strong>Decadência lenta</strong> — o mundo está morrendo, ninguém sabe como parar</td></tr>
+      <tr><td>4</td><td><strong>Expansão</strong> — novas fronteiras, descobertas, otimismo</td></tr>
+      <tr><td>5</td><td><strong>Isolamento</strong> — cada cidade/reino cuida de si, desconfiança geral</td></tr>
+      <tr><td>6</td><td><strong>Equilíbrio frágil</strong> — paz recente, todos sabem que pode acabar</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Quando foi a última grande guerra:</summary>
+    <table>
+      <tr><th>d6</th><th>Quando</th></tr>
+      <tr><td>1</td><td>Há uma geração — os avós ainda contam histórias</td></tr>
+      <tr><td>2</td><td>Há séculos — virou lenda, poucos acreditam que foi real</td></tr>
+      <tr><td>3</td><td>Está acontecendo agora — em outra região, mas chega aqui</td></tr>
+      <tr><td>4</td><td>Há 10 anos — ainda há cicatrizes visíveis</td></tr>
+      <tr><td>5</td><td>Nunca houve — este mundo nunca conheceu guerra aberta</td></tr>
+      <tr><td>6</td><td>Ninguém sabe ao certo — os registros foram perdidos</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Quem são os "heróis" do mundo:</summary>
+    <table>
+      <tr><th>d6</th><th>Heróis</th></tr>
+      <tr><td>1</td><td>Quebradores de confraria — mercenários organizados</td></tr>
+      <tr><td>2</td><td>Cavaleiros reais — juramentados a um trono</td></tr>
+      <tr><td>3</td><td>Magos errantes — sábios solitários que ajudam quando podem</td></tr>
+      <tr><td>4</td><td>Camponeses armados — quando a ameaça chega, todos lutam</td></tr>
+      <tr><td>5</td><td>Paladinos sagrados — guerreiros de uma fé</td></tr>
+      <tr><td>6</td><td>Ninguém em especial — cada um cuida de si</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que os comuns pensam sobre Quebradores:</summary>
+    <table>
+      <tr><th>d6</th><th>Percepção</th></tr>
+      <tr><td>1</td><td>Admiração — são celebridades, ídolos</td></tr>
+      <tr><td>2</td><td>Medo — "gente que atrai problemas"</td></tr>
+      <tr><td>3</td><td>Indiferença — "que façam seu trabalho longe daqui"</td></tr>
+      <tr><td>4</td><td>Desconfiança — "ninguém volta igual"</td></tr>
+      <tr><td>5</td><td>Compaixão — "coitados, carregam tanto peso"</td></tr>
+      <tr><td>6</td><td>Respeito pragmático — "alguém tem que fazer"</td></tr>
+    </table></details>
+
+    <p><em>Lembre: neste jogo, os Quebradores são quem bate na sua porta com relíquias quebradas. Muitos não querem ser heróis — há quem caçe tesouro para abrir uma padaria, há quem tenha pavor de monstros e vá mesmo assim. O "herói" que a cidade admira pode ser, de perto, alguém cansado que só queria voltar para casa.</em></p>
+
+    <h3>1.4 — As Presenças Culturais</h3>
+    <p>Agora defina quem habita esse mundo. Não são "raças jogáveis" com bônus mecânicos — são povos, culturas, presenças orgânicas. Recomendado: 3 a 5 presenças.</p>
+
+    <h4>Para cada presença, responda:</h4>
+    <ul>
+      <li><strong>Nome:</strong> (humanos, elfos, anões, tieflings, ou algo próprio do seu mundo — use a tabela de <a href="criacao-racas.html">Criação: Raças</a> como inspiração)</li>
+      <li><strong>Como aparecem no cotidiano?</strong> (1-2 frases)</li>
+      <li><strong>Qual a relação com a magia?</strong> (têm afinidade? temem? controlam?)</li>
+      <li><strong>Qual a relação com as outras presenças?</strong> (tensão? cooperação? indiferença?)</li>
+    </ul>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Tensão entre presenças:</summary>
+    <table>
+      <tr><th>d6</th><th>Dinâmica</th></tr>
+      <tr><td>1</td><td><strong>Histórica</strong> — guerras antigas, ressentimentos passados</td></tr>
+      <tr><td>2</td><td><strong>Econômica</strong> — competição por recursos, comércio</td></tr>
+      <tr><td>3</td><td><strong>Cultural</strong> — valores diferentes, mal-entendidos</td></tr>
+      <tr><td>4</td><td><strong>Religiosa</strong> — deuses diferentes, rituais incompatíveis</td></tr>
+      <tr><td>5</td><td><strong>Coexistência pacífica</strong> — tensões mínimas, cooperação</td></tr>
+      <tr><td>6</td><td><strong>Hierarquia clara</strong> — uma presença domina, outras subordinadas</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual presença é mais comum:</summary>
+    <table>
+      <tr><th>d6</th><th>Maioria</th></tr>
+      <tr><td>1</td><td>Humanos — a presença padrão, o "normal"</td></tr>
+      <tr><td>2</td><td>Elfos — antigos, numerosos, culturalmente dominantes</td></tr>
+      <tr><td>3</td><td>Anões — montanhas e cidades subterrâneas lotadas</td></tr>
+      <tr><td>4</td><td>Halflings — pequenos mas em toda parte</td></tr>
+      <tr><td>5</td><td>Nenhuma — equilíbrio entre várias presenças</td></tr>
+      <tr><td>6</td><td>Uma presença própria do seu mundo</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Há presença rara ou em extinção?</summary>
+    <table>
+      <tr><th>d6</th><th>Situação</th></tr>
+      <tr><td>1</td><td>Sim — uma presença quase desapareceu, restam poucos</td></tr>
+      <tr><td>2</td><td>Sim — mas ninguém fala sobre isso</td></tr>
+      <tr><td>3</td><td>Não — todas as presenças estão estáveis</td></tr>
+      <tr><td>4</td><td>Sim — foram caçadas no passado, agora se escondem</td></tr>
+      <tr><td>5</td><td>Depende de onde você está — raras aqui, comuns acolá</td></tr>
+      <tr><td>6</td><td>Há rumores de uma presença "perdida" — ninguém viu há gerações</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como cada presença cultural vê artefatos:</summary>
+    <table>
+      <tr><th>d6</th><th>Visão</th></tr>
+      <tr><td>1</td><td><strong>Sagrados</strong> — são relíquias dos ancestrais, devem ser venerados</td></tr>
+      <tr><td>2</td><td><strong>Perigosos</strong> — trazem desgraça, melhor não tocar</td></tr>
+      <tr><td>3</td><td><strong>Comuns</strong> — são ferramentas, nada mais</td></tr>
+      <tr><td>4</td><td><strong>Comerciais</strong> — valem dinheiro, e isso é o que importa</td></tr>
+      <tr><td>5</td><td><strong>Misteriosos</strong> — ninguém entende, mas todos respeitam</td></tr>
+      <tr><td>6</td><td><strong>Proibidos</strong> — sua cultura não permite lidar com eles</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Há artefatos específicos de certas culturas?</summary>
+    <table>
+      <tr><th>d6</th><th>Artefato Cultural</th></tr>
+      <tr><td>1</td><td><strong>Os Elfos têm</strong> — artefatos que cantam, feitos de luz solidificada</td></tr>
+      <tr><td>2</td><td><strong>Os Anões têm</strong> — artefatos de pedra que nunca quebram</td></tr>
+      <tr><td>3</td><td><strong>Os Tieflings têm</strong> — artefatos que sussurram segredos</td></tr>
+      <tr><td>4</td><td><strong>Os Halflings têm</strong> — artefatos que parecem inofensivos, mas não são</td></tr>
+      <tr><td>5</td><td><strong>Não há</strong> — artefatos são universais, não culturais</td></tr>
+      <tr><td>6</td><td><strong>Há, mas são secretos</strong> — cada cultura tem os seus, e não fala sobre</td></tr>
+    </table></details>
+
+    <h3>1.5 — O Tom do Mundo</h3>
+    <p>Como você quer que o mundo se sinta?</p>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Tom geral:</summary>
+    <table>
+      <tr><th>d6</th><th>Tom</th></tr>
+      <tr><td>1</td><td><strong>Esperançoso</strong> — o mundo é difícil, mas há luz</td></tr>
+      <tr><td>2</td><td><strong>Melancólico</strong> — algo se perdeu, há saudade do que foi</td></tr>
+      <tr><td>3</td><td><strong>Épico</strong> — grandes destinos, heróis, lendas</td></tr>
+      <tr><td>4</td><td><strong>Íntimo</strong> — foco nas pessoas, não nos grandes eventos</td></tr>
+      <tr><td>5</td><td><strong>Misterioso</strong> — há segredos em cada esquina</td></tr>
+      <tr><td>6</td><td><strong>Cozy</strong> — mesmo com problemas, há conforto no cotidiano</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que te empolga nesse mundo:</summary>
+    <table>
+      <tr><th>d6</th><th>Empolgação</th></tr>
+      <tr><td>1</td><td>A magia no cotidiano — pequenas maravilhas do dia a dia</td></tr>
+      <tr><td>2</td><td>Os relacionamentos — histórias de amor, amizade, família</td></tr>
+      <tr><td>3</td><td>Os mistérios — segredos antigos esperando serem descobertos</td></tr>
+      <tr><td>4</td><td>A construção — ver a Confraria e a cidade crescerem</td></tr>
+      <tr><td>5</td><td>A restauração — dar nova vida a coisas quebradas</td></tr>
+      <tr><td>6</td><td>A escrita — registrar histórias, deixar o que fica</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que te assusta (ou te desinteressa):</summary>
+    <table>
+      <tr><th>d6</th><th>Evitar</th></tr>
+      <tr><td>1</td><td>Combate pesado — prefiro evitar conflitos diretos</td></tr>
+      <tr><td>2</td><td>Morte de personagens — quero finais felizes</td></tr>
+      <tr><td>3</td><td>Atmosfera densa demais — prefiro descobrir aos poucos</td></tr>
+      <tr><td>4</td><td>Política complexa — quero foco nas pessoas</td></tr>
+      <tr><td>5</td><td>Romance forçado — quero que surja naturalmente</td></tr>
+      <tr><td>6</td><td>Nada específico — estou aberto(a) a tudo</td></tr>
+    </table></details>
+
+    <div class="callout tip">
+      <strong>🎯 Estas duas tabelas são ferramentas, não só sabor.</strong> O que te <em>empolga</em> aponta o holofote — e cada opção puxa um dos 5 Cantos do <a href="sistema-legado.html">O Que Fica</a>. O que te <em>assusta</em> é uma ferramenta de segurança: combine com o seu <a href="sistema-modos.html">Clima</a> (o Clima Ameno já desliga morte e garante finais felizes). Humor e leveza são uma lente que pode cobrir qualquer linha acima.
+    </div>
+
+    <div class="callout example">
+      <h3>📖 Exemplo de Mundo Criado</h3>
+      <p><strong>Magia:</strong> Comum e banal, mas moribunda — está desaparecendo lentamente. Vem do estudo. Não pode trazer mortos de volta. Só os treinados podem usá-la. As pessoas comuns veem com naturalidade.</p>
+      <p><strong>Artefatos:</strong> Vêm de memórias que não querem ser esquecidas. Estão morrendo — cada vez menos aparecem. As pessoas comuns têm medo reverente deles.</p>
+      <p><strong>Conflito:</strong> Pós-catástrofe — o mundo está se reconstruindo de uma guerra mágica há 50 anos. Heróis são Quebradores de confraria. Comuns os veem com compaixão.</p>
+      <p><strong>Presenças:</strong> Humanos (maioria), Elfos (raros, melancólicos), Anões (artesãos), Tieflings (comerciantes). Tensão histórica. Mistura livre.</p>
+      <p><strong>Tom:</strong> Melancólico e íntimo. Empolga: restauração. Assusta: nada específico.</p>
+    </div>
+  </section>
+
+  <div class="section-divider">❦ ❦ ❦</div>
+
+  <section>
+    <h2>Passo 2 — A Cidade</h2>
+    <p>Agora que o mundo está definido, foque na cidade onde a Contracena está. Esta é a escala local — onde os NPCs vivem, onde os eventos acontecem, onde as ruas têm cheiro.</p>
+
+    <h3>2.1 — A Cidade em Si</h3>
+    <p>Role 1d6 para escolher a cidade ou escolha uma das opções:</p>
+
+    <p><a href="criacao-cidade.html" class="callout example">📖 Ver as 6 cidades em Criação: Cidade →</a></p>
+
+    <h3>2.2 — As Presenças na Cidade</h3>
+    <p>Como as presenças culturais que você definiu no Passo 1 se manifestam especificamente <strong>nesta cidade</strong>?</p>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual presença domina a cidade:</summary>
+    <table>
+      <tr><th>d6</th><th>Domínio</th></tr>
+      <tr><td>1</td><td>A maioria — é a cidade deles por direito histórico</td></tr>
+      <tr><td>2</td><td>Uma minoria rica — controlam o comércio e a política</td></tr>
+      <tr><td>3</td><td>Ninguém — equilíbrio tenso entre várias presenças</td></tr>
+      <tr><td>4</td><td>Uma presença recente — chegaram há poucas gerações e tomaram conta</td></tr>
+      <tr><td>5</td><td>Uma presença antiga — mas está em declínio</td></tr>
+      <tr><td>6</td><td>A Confraria — a cidade gira ao redor dela</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como as presenças convivem nesta cidade:</summary>
+    <p><em>Uma rolagem só — combina "onde moram" e "quão tensa é a convivência" num retrato com consequência.</em></p>
+    <table>
+      <tr><th>d6</th><th>Convívio</th><th>O gancho que abre</th></tr>
+      <tr><td>1</td><td><strong>Mistura orgânica</strong> — bairros e casamentos se misturam; a diferença é tempero, não fronteira</td><td>Onde a harmonia racha em segredo?</td></tr>
+      <tr><td>2</td><td><strong>Convívio com cicatriz</strong> — vivem juntos, mas há <em>um</em> assunto que ninguém toca</td><td>Qual injustiça antiga todos fingem esquecer?</td></tr>
+      <tr><td>3</td><td><strong>Fronteiras educadas</strong> — cada presença tem seu canto; circula-se livre, mas "o lugar de cada um" é tácito</td><td>O que acontece com quem cruza a linha errada?</td></tr>
+      <tr><td>4</td><td><strong>Tensão latente</strong> — sorrisos de dia, muros pichados de noite; falta só um estopim</td><td>Quem se beneficia se a fricção explodir?</td></tr>
+      <tr><td>5</td><td><strong>Hierarquia assumida</strong> — uma presença manda, as outras servem, e ninguém finge que é igual</td><td>Quem, embaixo, está cansado de servir?</td></tr>
+      <tr><td>6</td><td><strong>Linha de bolso, não de sangue</strong> — o que separa é a riqueza</td><td>De que lado da linha fica a Contracena?</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como os forasteiros são tratados:</summary>
+    <p><em>Importante porque você — e os Quebradores que batem à sua porta — muitas vezes <strong>são</strong> os forasteiros.</em></p>
+    <table>
+      <tr><th>d6</th><th>Forasteiros</th></tr>
+      <tr><td>1</td><td>Bem-vindos — a cidade vive de comércio e visitantes</td></tr>
+      <tr><td>2</td><td>Com desconfiança — "o que você quer aqui?"</td></tr>
+      <tr><td>3</td><td>Com indiferença — cada um cuida da sua vida</td></tr>
+      <tr><td>4</td><td>Depende de onde vem — alguns são bem-vindos, outros não</td></tr>
+      <tr><td>5</td><td>Com curiosidade — "de onde você veio? conta!"</td></tr>
+      <tr><td>6</td><td>Com cautela — a cidade já foi machucada por forasteiros</td></tr>
+    </table></details>
+
+    <h3>2.3 — A Cidade em Fantasia</h3>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Economia principal:</summary>
+    <table>
+      <tr><th>d6</th><th>Economia</th></tr>
+      <tr><td>1</td><td><strong>Comércio</strong> — mercado, mercadores, caravanas</td></tr>
+      <tr><td>2</td><td><strong>Artesanato</strong> — oficinas, ferreiros, tecelões</td></tr>
+      <tr><td>3</td><td><strong>Agricultura</strong> — campos, fazendas, celeiros</td></tr>
+      <tr><td>4</td><td><strong>Mineração</strong> — pedreiras, minas, metal</td></tr>
+      <tr><td>5</td><td><strong>Magia</strong> — artefatos, encantamentos, estudos</td></tr>
+      <tr><td>6</td><td><strong>Mista</strong> — um pouco de tudo</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Governo:</summary>
+    <table>
+      <tr><th>d6</th><th>Governo</th></tr>
+      <tr><td>1</td><td><strong>Monarquia</strong> — rei/rainha, nobres</td></tr>
+      <tr><td>2</td><td><strong>Conselho</strong> — mercadores, artesãos, anciãos</td></tr>
+      <tr><td>3</td><td><strong>Teocracia</strong> — sacerdotes, templo</td></tr>
+      <tr><td>4</td><td><strong>Anarquia</strong> — cada um se vira, lei do mais forte</td></tr>
+      <tr><td>5</td><td><strong>Confraria</strong> — a Confraria de Quebradores manda</td></tr>
+      <tr><td>6</td><td><strong>Magocracia</strong> — magos no poder</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual o cheiro característico da cidade:</summary>
+    <table>
+      <tr><th>d6</th><th>Cheiro</th></tr>
+      <tr><td>1</td><td>Sal e peixe — cidade-porto, brisa do mar</td></tr>
+      <tr><td>2</td><td>Ervas e especiarias — mercado sempre ativo</td></tr>
+      <tr><td>3</td><td>Fumaça de forja — metal e carvão no ar</td></tr>
+      <tr><td>4</td><td>Pão assado — padarias em cada esquina</td></tr>
+      <tr><td>5</td><td>Incenso e flores — templos e jardins</td></tr>
+      <tr><td>6</td><td>Poeira antiga — pedra velha, livros, memória</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que os forasteiros reparam primeiro ao chegar:</summary>
+    <table>
+      <tr><th>d6</th><th>Primeira impressão</th></tr>
+      <tr><td>1</td><td>Uma estátua enorme na praça central</td></tr>
+      <tr><td>2</td><td>O barulho — a cidade nunca dorme</td></tr>
+      <tr><td>3</td><td>O silêncio — algo estranho no ar</td></tr>
+      <tr><td>4</td><td>As cores — tudo é vibrante, pintado, decorado</td></tr>
+      <tr><td>5</td><td>As muralhas — a cidade é fortificada</td></tr>
+      <tr><td>6</td><td>As pessoas — há algo diferente nelas</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Há algo único que só existe aqui:</summary>
+    <table>
+      <tr><th>d6</th><th>Único</th></tr>
+      <tr><td>1</td><td>Um prato — receita secreta, só aqui</td></tr>
+      <tr><td>2</td><td>Um costume — ritual local que ninguém mais faz</td></tr>
+      <tr><td>3</td><td>Um lugar — uma construção, um jardim, uma praça</td></tr>
+      <tr><td>4</td><td>Uma bebida — destilaria antiga, receita perdida</td></tr>
+      <tr><td>5</td><td>Um festival — celebração anual única</td></tr>
+      <tr><td>6</td><td>Uma lenda — história que só se conta aqui</td></tr>
+    </table></details>
+
+    <h3>2.4 — Artefatos na Cidade</h3>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como a cidade reage a artefatos:</summary>
+    <table>
+      <tr><th>d6</th><th>Reação</th></tr>
+      <tr><td>1</td><td><strong>Pânico moral</strong> — "isso é coisa do diabo"</td></tr>
+      <tr><td>2</td><td><strong>Fascínio comercial</strong> — a cidade vive de vender artefatos</td></tr>
+      <tr><td>3</td><td><strong>Medo pragmático</strong> — "deixe com os especialistas, não mexa"</td></tr>
+      <tr><td>4</td><td><strong>Indiferença cansada</strong> — "já vimos de tudo, traga o que tiver"</td></tr>
+      <tr><td>5</td><td><strong>Veneração silenciosa</strong> — ninguém fala, mas todos sabem que são sagrados</td></tr>
+      <tr><td>6</td><td><strong>Curiosidade mórbida</strong> — "me mostra! me deixa tocar!"</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual o incidente recente com artefato que a cidade não esquece:</summary>
+    <table>
+      <tr><th>d6</th><th>Incidente</th></tr>
+      <tr><td>1</td><td><strong>O Artefato que Cantou</strong> — uma relíquia começou a cantar à noite. Ninguém dormiu por uma semana. Até que parou.</td></tr>
+      <tr><td>2</td><td><strong>A Rua que Desapareceu</strong> — um artefato ativou e uma rua inteira sumiu por três dias. Voltou, mas não é a mesma.</td></tr>
+      <tr><td>3</td><td><strong>O Mercador que Envelheceu</strong> — um homem tocou algo e envelheceu 40 anos em uma noite. Ainda vive, mas não é mais ele.</td></tr>
+      <tr><td>4</td><td><strong>A Chuva de Espelhos</strong> — choveu fragmentos de espelho por uma hora. Cada um mostrava um rosto diferente.</td></tr>
+      <tr><td>5</td><td><strong>O Silêncio</strong> — por um dia inteiro, nenhum som existiu na cidade. Ninguém sabe por quê.</td></tr>
+      <tr><td>6</td><td><strong>O Presente</strong> — um artefato apareceu na porta de uma casa. Ninguém sabe quem deixou. A família nunca mais foi a mesma.</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como é o mercado de artefatos na cidade:</summary>
+    <table>
+      <tr><th>d6</th><th>Mercado</th></tr>
+      <tr><td>1</td><td><strong>Ilegal</strong> — só no submundo, preços absurdos, perigo constante</td></tr>
+      <tr><td>2</td><td><strong>Regulado</strong> — só a Confraria pode vender, tudo é rastreado</td></tr>
+      <tr><td>3</td><td><strong>Livre</strong> — qualquer um pode comprar, mas por sua conta e risco</td></tr>
+      <tr><td>4</td><td><strong>Inexistente</strong> — ninguém vende, só troca ou doa</td></tr>
+      <tr><td>5</td><td><strong>Misto</strong> — há lojas legais e mercado negro, todos sabem</td></tr>
+      <tr><td>6</td><td><strong>Secreto</strong> — existe, mas só quem sabe, sabe</td></tr>
+    </table></details>
+
+    <h3>2.5 — Bairros e a Tensão na Cidade</h3>
+    <p>A cidade começa pequena. Role 1d3 para saber quantos bairros existem no início. Para tabelas de bairros e locais específicos, veja <a href="criacao-cidade.html">Criação: Cidade</a>.</p>
+
+    <p>Nenhuma cidade está em paz perfeita. Algo está acontecendo <em>agora</em> — e molda o humor das ruas, os sussurros nas tavernas.</p>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que está acontecendo na cidade:</summary>
+    <table>
+      <tr><th>d6</th><th>Tensão</th><th>Natureza</th></tr>
+      <tr><td>1</td><td><strong>O Artefato Roubado</strong> — uma relíquia importante sumiu de um templo, museu ou cofre nobre. A cidade está em polvorosa, recompensas foram oferecidas, e todo mundo desconfia de todo mundo.</td><td>Artefato</td></tr>
+      <tr><td>2</td><td><strong>A Criatura nos Arredores</strong> — algo apareceu nos limites da cidade. Ninguém sabe se é perigoso, domesticável, ou apenas perdido. Alguns querem caçar, outros querem proteger.</td><td>Fantasia</td></tr>
+      <tr><td>3</td><td><strong>O Bairro que Desapareceu</strong> — há três semanas, um bairro inteiro sumiu durante a noite. Os mapas ainda mostram, mas quem vai até lá não encontra nada.</td><td>Mistério</td></tr>
+      <tr><td>4</td><td><strong>A Disputa entre Mercadores</strong> — duas confrarias comerciais estão em guerra fria. Preços subindo, boicotes, ameaças veladas. Os comuns pagam a conta.</td><td>Mundano</td></tr>
+      <tr><td>5</td><td><strong>O Festival Cancelado</strong> — a maior celebração do ano foi cancelada sem explicação oficial. Rumores circulam: alguém morreu, algo foi encontrado, uma profecia se cumpriu.</td><td>Mistério/Social</td></tr>
+      <tr><td>6</td><td><strong>A Doença dos Sonhos</strong> — ninguém morre, mas ninguém dorme direito. As pessoas sonham com o mesmo lugar, a mesma figura, a mesma mensagem.</td><td>Fantasia/Mistério</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como a cidade reage:</summary>
+    <table>
+      <tr><th>d6</th><th>Reação</th></tr>
+      <tr><td>1</td><td><strong>Negação</strong> — "não está acontecendo", "é só fofoca"</td></tr>
+      <tr><td>2</td><td><strong>Pânico contido</strong> — as pessoas sorriem, mas não saem à noite</td></tr>
+      <tr><td>3</td><td><strong>Resignação</strong> — "já passamos por pior"</td></tr>
+      <tr><td>4</td><td><strong>Divisão</strong> — metade culpa um grupo, metade culpa outro</td></tr>
+      <tr><td>5</td><td><strong>Curiosidade mórbida</strong> — virou atração, assunto de taverna</td></tr>
+      <tr><td>6</td><td><strong>Organização</strong> — comitês, patrulhas, assembleias. A cidade está tentando resolver</td></tr>
+    </table></details>
+
+    <div class="callout rule">
+      <strong>⚙️ Onde isso vira mecânica:</strong> guarde esta tensão. Quando você ligar os <a href="sistema-relogios.html">Fios</a>, ela é a candidata natural a virar um <strong>Fio de Tensão</strong> — o pano de fundo que pode piorar, sumir, ou se transformar conforme você joga.
+    </div>
+  </section>
+
+  <div class="section-divider">❦ ❦ ❦</div>
+
+  <section>
+    <h2>Passo 3 — A Confraria (e sua Lenda)</h2>
+    <p>A instituição que define as regras sociais, políticas e mágicas da Contracena. Aqui também nasce a lenda de fundação — e o conflito recente que moldou quem ela é hoje.</p>
+
+    <details class="cartilha">
+      <summary>⚙️ Vínculos — em três frases</summary>
+      <p>Vínculos medem sua reputação com a Confraria numa escala de 0 a 5. Eles sobem quando você resolve problemas, restaura artefatos importantes, ou age de acordo com a Regra Inquebrável. Quando caem, o Mestre nota — e a cidade começa a notar também.</p>
+      <p><em>Regras completas → <a href="progressao-reputacao.html">Progressão: Vínculos</a>.</em></p>
+    </details>
+
+    <h3>3.1 — Estrutura, Mestre e Lenda</h3>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Estrutura da Confraria:</summary>
+    <table>
+      <tr><th>d6</th><th>Estrutura</th></tr>
+      <tr><td>1</td><td><strong>Meritocracia brutal</strong> — quem traz mais, manda mais</td></tr>
+      <tr><td>2</td><td><strong>Burocracia arcanista</strong> — tudo exige carimbo, ritual, três cópias</td></tr>
+      <tr><td>3</td><td><strong>Família disfuncional</strong> — laços de sangue e afeto</td></tr>
+      <tr><td>4</td><td><strong>Corporação mercantil</strong> — tudo é lucro</td></tr>
+      <tr><td>5</td><td><strong>Ordem quase religiosa</strong> — juramentos, rituais, hierarquia sagrada</td></tr>
+      <tr><td>6</td><td><strong>Anarquia supervisionada</strong> — cada um faz o que quer, mas há alguém segurando</td></tr>
+    </table></details>
+
+    <h4>Role 1d2-1 — Trabalhadores iniciais:</h4>
+    <p>0 ou 1 trabalhador além de você e do Mestre.</p>
+
+    <h4>Role 1d10 — O Mestre da Confraria:</h4>
+    <p><a href="criacao-guilda.html" class="callout example">📖 Ver as 10 opções em Criação: Confraria →</a></p>
+
+    <p>A Confraria é <strong>nova</strong> — recém-instalada nesta cidade, portas ainda cheirando a serragem e tinta fresca. Quem a fundou foi uma restauradora vinda de fora. O resto — de onde ela veio, o que a trouxe, o que carrega, o que já estava aqui esperando, e por que precisa de você — é com você. Role cada tabela abaixo, ou escolha, ou invente; no final, junte tudo numa lenda só.</p>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — De onde ela veio:</summary>
+    <table>
+      <tr><th>d6</th><th>Origem</th></tr>
+      <tr><td>1</td><td>De uma cidade portuária distante, fugindo de dívidas</td></tr>
+      <tr><td>2</td><td>De uma ordem de restauradores dissolvida por escândalo</td></tr>
+      <tr><td>3</td><td>De lugar nenhum — nasceu na estrada, nunca teve endereço fixo</td></tr>
+      <tr><td>4</td><td>De uma família de artesãos que a expulsou</td></tr>
+      <tr><td>5</td><td>De outra Confraria, mais antiga, da qual ela fugiu ou foi expulsa</td></tr>
+      <tr><td>6</td><td>Ninguém sabe — e ela nunca conta</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que a trouxe até aqui:</summary>
+    <table>
+      <tr><th>d6</th><th>O Boato</th></tr>
+      <tr><td>1</td><td>Um mapa desenhado por um estranho moribundo</td></tr>
+      <tr><td>2</td><td>Uma carta anônima com um endereço e nada mais</td></tr>
+      <tr><td>3</td><td>Um sonho recorrente que não a deixava em paz</td></tr>
+      <tr><td>4</td><td>Um comerciante viajante contou sobre um porão "estranho" no bairro dos artesãos</td></tr>
+      <tr><td>5</td><td>Ela seguiu o rastro de outra pessoa que procurava a mesma coisa</td></tr>
+      <tr><td>6</td><td>Não foi boato nenhum — foi coincidência, ou destino, dependendo de quem conta</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — A relíquia que ela carrega:</summary>
+    <table>
+      <tr><th>d6</th><th>Relíquia</th></tr>
+      <tr><td>1</td><td>Uma chave de bronze sem fechadura</td></tr>
+      <tr><td>2</td><td>Um relógio que nunca marca a hora certa</td></tr>
+      <tr><td>3</td><td>Um anel que não sai do dedo, nem à força</td></tr>
+      <tr><td>4</td><td>Um mapa que muda quando ninguém olha</td></tr>
+      <tr><td>5</td><td>Uma carta lacrada que ela nunca leu</td></tr>
+      <tr><td>6</td><td>Um instrumento musical que ela não sabe tocar — mas às vezes toca sozinho</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que já estava selado no porão (ela só descobriu depois de assinar o contrato):</summary>
+    <table>
+      <tr><th>d6</th><th>O Selo</th></tr>
+      <tr><td>1</td><td>Algo que sussurra, mas só à noite</td></tr>
+      <tr><td>2</td><td>Uma porta sem maçaneta, do lado errado da parede</td></tr>
+      <tr><td>3</td><td>Um nome gravado repetidamente na pedra</td></tr>
+      <tr><td>4</td><td>Frio que não vai embora, não importa a estação</td></tr>
+      <tr><td>5</td><td>Cheiro de cera queimada onde não há velas</td></tr>
+      <tr><td>6</td><td>Nada visível — só o peso de saber que tem algo</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Por que ela precisa de um(a) Restaurador(a):</summary>
+    <table>
+      <tr><th>d6</th><th>Motivo</th></tr>
+      <tr><td>1</td><td>Ela não tem jeito com as mãos — só sabe organizar e negociar</td></tr>
+      <tr><td>2</td><td>Jurou nunca mais restaurar nada com as próprias mãos, e não diz por quê</td></tr>
+      <tr><td>3</td><td>Suas mãos tremem demais desde que algo deu errado</td></tr>
+      <tr><td>4</td><td>É ótima tecnicamente, mas entra em pânico perto do selo — precisa de alguém que consiga chegar perto</td></tr>
+      <tr><td>5</td><td>A cidade exige "atividade comprovada de restauração" para manter o alvará — e ela sozinha não dá conta</td></tr>
+      <tr><td>6</td><td>Não confia em si mesma perto de artefatos poderosos — por um motivo ainda não revelado</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Quem apresentou vocês (opcional, útil quando criar seu NPC de Conexão):</summary>
+    <table>
+      <tr><th>d6</th><th>Apresentação</th></tr>
+      <tr><td>1</td><td>Um antigo professor seu, que confia na fundadora</td></tr>
+      <tr><td>2</td><td>Alguém que devia um favor à fundadora e pagou com seu nome</td></tr>
+      <tr><td>3</td><td>Um anúncio na praça — mas foi seu contato que te empurrou a ir</td></tr>
+      <tr><td>4</td><td>Um encontro por acaso que seu contato transformou em oportunidade</td></tr>
+      <tr><td>5</td><td>Seu contato já trabalhava lá e recomendou você</td></tr>
+      <tr><td>6</td><td>Ninguém apresentou de verdade — seu contato só disse "vai lá, confia"</td></tr>
+    </table></details>
+
+    <div class="callout example">
+      <strong>📖 Junte as peças:</strong> escreva duas ou três frases combinando o que você rolou ou escolheu. Exemplo: <em>"Vim de uma cidade portuária distante, atrás de um mapa desenhado por um estranho moribundo. Trago comigo uma chave de bronze sem fechadura. Não sabia que o porão já guardava algo que sussurra à noite. Preciso de um(a) Restaurador(a) porque minhas mãos tremem demais desde que algo deu errado."</em>
+    </div>
+
+    <h4>Perguntas sobre a Lenda:</h4>
+    <ul>
+      <li><strong>O que os comuns acham que aconteceu?</strong> (versão oficial — pode ser bem diferente da lenda que você acabou de montar)</li>
+      <li><strong>Alguém além de você sabe a versão real?</strong></li>
+    </ul>
+
+    <h3>3.2 — Artefatos na Confraria</h3>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual a política da Confraria sobre receber artefatos:</summary>
+    <table>
+      <tr><th>d6</th><th>Política</th></tr>
+      <tr><td>1</td><td><strong>Aceita tudo</strong> — a Regra Inquebrável é clara: nunca negar abrigo</td></tr>
+      <tr><td>2</td><td><strong>Seletiva</strong> — só aceita o que pode ser restaurado com segurança</td></tr>
+      <tr><td>3</td><td><strong>Desconfiada</strong> — inspeciona três vezes antes de aceitar</td></tr>
+      <tr><td>4</td><td><strong>Lucrativa</strong> — aceita, mas cobra caro pelo "risco"</td></tr>
+      <tr><td>5</td><td><strong>Relutante</strong> — aceita porque precisa do dinheiro, mas reclama</td></tr>
+      <tr><td>6</td><td><strong>Proibitiva</strong> — há uma lista do que NÃO aceita. E ninguém questiona.</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual o artefato mais famoso que já passou pela Confraria:</summary>
+    <table>
+      <tr><th>d6</th><th>Artefato</th></tr>
+      <tr><td>1</td><td><strong>O Espelho que Não Reflete</strong> — mostra o que você foi, não o que é. Foi restaurado, mas ninguém sabe para quem.</td></tr>
+      <tr><td>2</td><td><strong>A Chave sem Porta</strong> — abre algo que ninguém encontrou ainda. Está no Relicário Selado.</td></tr>
+      <tr><td>3</td><td><strong>O Livro que Escreve Sozinho</strong> — cada noite, uma nova página aparece. Ninguém lê em voz alta.</td></tr>
+      <tr><td>4</td><td><strong>O Relógio que Anda para Trás</strong> — marca o tempo que já passou. Ninguém sabe por quê.</td></tr>
+      <tr><td>5</td><td><strong>A Espada que Chora</strong> — chora toda noite. Ninguém sabe de quem é a dor.</td></tr>
+      <tr><td>6</td><td><strong>O Nome Proibido</strong> — um artefato cujo nome não pode ser dito. Ninguém sabe o que ele faz.</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que a Confraria faz com artefatos que não podem ser restaurados:</summary>
+    <table>
+      <tr><th>d6</th><th>Destino</th></tr>
+      <tr><td>1</td><td><strong>Selam no Relicário</strong> — lá embaixo, onde ninguém vai</td></tr>
+      <tr><td>2</td><td><strong>Destroem</strong> — mas ninguém sabe como, e ninguém pergunta</td></tr>
+      <tr><td>3</td><td><strong>Devolvem ao Quebrador</strong> — "problema seu"</td></tr>
+      <tr><td>4</td><td><strong>Enterram</strong> — em algum lugar que ninguém sabe</td></tr>
+      <tr><td>5</td><td><strong>Deixam partir</strong> — colocam num rio, soltam no vento, algo assim</td></tr>
+      <tr><td>6</td><td><strong>Ninguém sabe</strong> — desaparecem, e ninguém fala sobre isso</td></tr>
+    </table></details>
+
+    <h3>3.3 — O Conflito Recente da Confraria</h3>
+    <p>A Confraria é jovem — mas jovem não quer dizer tranquila. Desde que abriu as portas, algo já aconteceu que ainda reverbera na Contracena, nas conversas com o Mestre, no jeito como os trabalhadores se olham. Esta é a ferida recente. Talvez seja por isso que você foi contratado(a) tão cedo. Talvez seja por isso que ninguém fala sobre o Relicário Selado.</p>
+
+    <p><em>Este conflito não é sua culpa — você chegou depois, ou chegou bem no meio dele. Mas você vai herdar as consequências.</em></p>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que aconteceu recentemente com a Confraria:</summary>
+    <table>
+      <tr><th>d6</th><th>Conflito</th><th>Natureza</th></tr>
+      <tr><td>1</td><td><strong>O Artefato que Não Deveria Ser Restaurado</strong> — a Confraria aceitou restaurar algo proibido. Funcionou… mas algo mudou. Sonhos estranhos, sombras erradas, uma porta que não existia. A Confraria finge que está tudo bem.</td><td>Artefato/Mistério</td></tr>
+      <tr><td>2</td><td><strong>A Morte do Quebrador</strong> — um Quebrador jovem morreu numa missão que a Confraria recomendou. A família culpa a Confraria. A cidade cochicha. O Mestre não dorme mais.</td><td>Mundano/Drama</td></tr>
+      <tr><td>3</td><td><strong>O Artefato Proibido Aceito</strong> — alguém trouxe algo que ninguém deveria tocar. A Confraria aceitou, porque é a Regra Inquebrável. Agora círculos externos querem o artefato — e não vão perguntar duas vezes.</td><td>Artefato/Político</td></tr>
+      <tr><td>4</td><td><strong>O Trabalhador que Desapareceu</strong> — há três meses, um trabalhador sumiu dentro da Contracena. As buscas não encontraram nada. O Fio Oculto do Relicário avançou +1 nó desde então. Ninguém fala o nome dele(a) em voz alta.</td><td>Mistério/Contracena</td></tr>
+      <tr><td>5</td><td><strong>A Acusação de Falsificação</strong> — alguém acusou a Confraria de vender artefatos falsificados. A Confraria é inocente… ou é? Os vínculos ainda estão manchados, e alguns clientes sumiram.</td><td>Mundano/Político</td></tr>
+      <tr><td>6</td><td><strong>O que o Relicário Selado Mostrou</strong> — um trabalhador curioso abriu um pouco a porta. Viu algo. Não conta o quê, mas não é mais a mesma pessoa. A Confraria selou a porta de novo — mas o selo está rachado.</td><td>Mistério/Fantasia</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como a Confraria está lidando com isso:</summary>
+    <table>
+      <tr><th>d6</th><th>Postura</th></tr>
+      <tr><td>1</td><td><strong>Silêncio total</strong> — ninguém fala sobre o assunto, nem entre si</td></tr>
+      <tr><td>2</td><td><strong>Investigação discreta</strong> — o Mestre está tentando resolver em segredo</td></tr>
+      <tr><td>3</td><td><strong>Negação pública</strong> — "tudo está bem", enquanto as paredes racham</td></tr>
+      <tr><td>4</td><td><strong>Divisão interna</strong> — alguns querem resolver, outros querem esquecer</td></tr>
+      <tr><td>5</td><td><strong>Busca de ajuda externa</strong> — a Confraria está procurando especialistas</td></tr>
+      <tr><td>6</td><td><strong>Aceitação estranha</strong> — "isso sempre acontece. Faz parte."</td></tr>
+    </table></details>
+
+    <h4>Perguntas para responder (opcional):</h4>
+    <ul>
+      <li><strong>Você sabe sobre esse conflito antes de começar?</strong> Ou vai descobrir durante o jogo?</li>
+      <li><strong>A Regra Inquebrável tem relação com esse conflito?</strong></li>
+      <li><strong>O Mestre te contou algo, ou esconde de você?</strong></li>
+    </ul>
+
+    <div class="callout rule">
+      <strong>⚙️ Onde isso vira mecânica:</strong> este conflito é combustível de dois Fios. Se ele mexe com o <a href="sistema-camara.html">Relicário Selado</a>, ele já começa o <strong>Fio Oculto do Relicário</strong> alguns nós adiantado. Se é um segredo a desenterrar, vira um <strong>Fio de Mistério</strong> na <a href="jornada-avancada.html">Jornada II</a>.
+    </div>
+
+    <h3>3.4 — A Regra Inquebrável</h3>
+    <p>Defina uma regra que nunca pode ser quebrada. É a lei máxima da Contracena — quem a viola enfrenta consequências terríveis.</p>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Exemplos de Regras Inquebráveis:</summary>
+    <table>
+      <tr><th>d6</th><th>Regra</th></tr>
+      <tr><td>1</td><td>Nunca abrir um artefato à noite</td></tr>
+      <tr><td>2</td><td>Nunca dizer o nome verdadeiro de uma relíquia</td></tr>
+      <tr><td>3</td><td>Nunca descer ao Relicário Selado sozinho(a)</td></tr>
+      <tr><td>4</td><td>Nunca aceitar presentes de Quebradores sem inspecionar antes</td></tr>
+      <tr><td>5</td><td>Nunca abrir um livro cuja capa está virada para a parede</td></tr>
+      <tr><td>6</td><td>Nunca negar abrigo a uma relíquia quebrada (a regra original)</td></tr>
+    </table></details>
+
+    <p><a href="criacao-guilda.html" class="callout example">📖 Abrir: Criação de Confraria →</a></p>
+  </section>
+
+  <div class="section-divider">❦ ❦ ❦</div>
+
+  <section>
+    <h2>Passo 4 — A Contracena</h2>
+    <p>Seu lar físico e local de trabalho. Onde os gestos do jogo acontecem. As 5 zonas canônicas — Oficina, Armazém, Arquivo, Aposentos, Relicário Selado — existem em toda Contracena. O que muda é o caráter de cada uma na sua história.</p>
+
+    <h4>O que fazer:</h4>
+    <ul>
+      <li>Role 1d6 para cada uma das 5 zonas</li>
+      <li>Role 1d6 para a Presença na Contracena (quem ou o que habita com você)</li>
+      <li>Role 2d6 para seus Aposentos</li>
+      <li>Responda: qual o som mais comum? Há algum detalhe vivo? Qual zona você mais evita?</li>
+    </ul>
+
+    <p><a href="criacao-bastidores.html" class="callout example">📖 Abrir: Criação de Contracena (tabelas completas) →</a></p>
+
+    <details class="cartilha">
+      <summary>⚙️ Relicário Selado — em três frases</summary>
+      <p>O Relicário Selado é a zona mais profunda da Contracena — um espaço canônico que existe em toda Contracena, mas que ninguém abre sem razão. Ele carrega um Fio Oculto próprio que avança conforme certos eventos acontecem. O que há lá dentro é parte do mistério central da sua Estação.</p>
+      <p><em>Regras completas → <a href="sistema-camara.html">O Relicário Selado</a>.</em></p>
+    </details>
+
+    <details class="cartilha">
+      <summary>⚙️ Cômodos e Progressão da Contracena — em três frases</summary>
+      <p>Ao longo do jogo, você pode expandir e melhorar os espaços da Contracena. Cômodos desbloqueados mudam o que você pode fazer e quais gestos ficam disponíveis. A Contracena cresce junto com você.</p>
+      <p><em>Regras completas → <a href="progressao-oficio.html">Progressão: Ofício e Cômodos</a>.</em></p>
+    </details>
+  </section>
+
+  <div class="section-divider">❦ ❦ ❦</div>
+
+  <section>
+    <h2>Passo 5 — O Jogador</h2>
+    <p>Agora que o mundo está pronto, você cria quem habita esse espaço. Quem é você na Contracena? Esta seção guia a criação do seu jogador — a pessoa que vive, trabalha e ama entre as prateleiras.</p>
+
+    <details class="cartilha">
+      <summary>⚙️ Instrumentos e Resolução (2d6) — o motor do jogo</summary>
+      <p>Quando você age e o resultado é incerto, role 2d6 e some o modificador do Instrumento relevante: <strong>AGULHA</strong> (trabalho manual, curadoria), <strong>LENTE</strong> (percepção, investigação), <strong>BRASA</strong> (empatia, conexão emocional), <strong>PENA</strong> (conhecimento, memória). 10+ é Inteiro (sucesso total). 7–9 é Cicatrizes de Ouro (sucesso com custo). 6− é Cacos (complicação que abre nova direção — e sempre rende +1 Retalho quando descrito com estilo).</p>
+      <p><em>Regras completas → <a href="sistema-resolucao.html">Resolução de Ações</a>.</em></p>
+    </details>
+
+    <h4>Ordem sugerida:</h4>
+    <p>Nome → Chegada na Cidade → Como Virou Restaurador(a) → Instrumentos → Background → Relíquia → Medo → Hábito → Lugar Favorito.</p>
+
+    <h4>Instrumentos — distribua os valores:</h4>
+    <p>Você tem 4 Instrumentos. Distribua os valores <strong>+2, +1, +1, 0</strong> (versão competente) OU <strong>+2, +1, 0, −1</strong> (com ponto fraco claro). Os Instrumentos não aumentam ao longo da campanha — a progressão acontece por outros caminhos.</p>
+
+    <h4>Role 1d10 — Background:</h4>
+    <p><a href="criacao-protagonista.html" class="callout example">📖 Ver os 10 Backgrounds e tabelas completas do Jogador →</a></p>
+
+    <details class="cartilha">
+      <summary>⚙️ Fôlego — em três frases</summary>
+      <p>Você tem 3 Fôlegos por dia narrativo. Ações significativas custam 1 Fôlego cada (trabalhar num artefato, conversar profundamente, sair da Contracena custa 2). Quando o Fôlego acaba, o dia termina — use o gesto <em>Descansar e Refletir</em> para recuperar.</p>
+      <p><em>Regras completas, custos exatos e Descanso Extra → <a href="sistema-atos.html">Fôlego</a>.</em></p>
+    </details>
+
+    <details class="cartilha">
+      <summary>⚙️ Retalhos e Recursos — em três frases</summary>
+      <p>Retalhos são a moeda narrativa do jogo — ganhos ao aceitar complicações com estilo e gastos para influenciar a ficção, pedir ajuda, ou reinterpretar um resultado. Recursos são a moeda material — recebidos por restaurações, gastos em suprimentos e melhorias. Ambos têm espaço na ficha.</p>
+      <p><em>Regras completas → <a href="sistema-ecos-recursos.html">Retalhos e Recursos</a>.</em></p>
+    </details>
+
+    <h3>5.1 — Como Você Chegou Nesta Cidade</h3>
+    <p>Você não é daqui — pelo menos, não há tempo suficiente para conhecer todo mundo ainda.</p>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como você chegou:</summary>
+    <table>
+      <tr><th>d6</th><th>Chegada</th></tr>
+      <tr><td>1</td><td>Ouviu um boato sobre uma Confraria nova procurando gente — e seguiu o boato até aqui.</td></tr>
+      <tr><td>2</td><td>Estava fugindo de algo (ou alguém) que ficou para trás, e esta cidade foi onde as pernas pararam.</td></tr>
+      <tr><td>3</td><td>Veio a negócio — uma entrega, uma herança, um recado — e simplesmente não foi embora.</td></tr>
+      <tr><td>4</td><td>Alguém que já morava aqui te trouxe, prometendo que valeria a pena.</td></tr>
+      <tr><td>5</td><td>Nasceu perto daqui, ou até aqui mesmo, e está voltando depois de anos fora.</td></tr>
+      <tr><td>6</td><td>Não sabe explicar direito — só sabia, de um jeito que não dá pra racionalizar, que precisava vir.</td></tr>
+    </table></details>
+
+    <p><em>Role, escolha, ou ignore tudo e invente sua própria chegada.</em></p>
+
+    <h3>5.2 — Como Virou Restaurador(a)</h3>
+    <p>A Confraria de Quebradores desta cidade é <strong>nova</strong> (Passo 3) — abriu há pouco tempo, e ainda está descobrindo do que precisa. Como você foi parar lá dentro?</p>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Seu caminho até o ofício:</summary>
+    <table>
+      <tr><th>d6</th><th>Caminho até o Ofício</th></tr>
+      <tr><td>1</td><td>Já sabia consertar coisas antes de chegar — só faltava um lugar que precisasse disso, e a Confraria nova apareceu na hora certa.</td></tr>
+      <tr><td>2</td><td>Aprendeu sozinho, remendando objetos pequenos, até que alguém viu potencial e te apresentou à fundadora.</td></tr>
+      <tr><td>3</td><td>Nunca tinha restaurado nada antes — foi a própria fundadora quem te ensinou, porque ela precisava de mãos e você precisava de um lugar.</td></tr>
+      <tr><td>4</td><td>Sempre quis o ofício, mas nunca teve coragem de tentar — a Confraria abrindo as portas foi a desculpa que faltava.</td></tr>
+      <tr><td>5</td><td>Foi quase um acidente: apareceu no dia errado, ofereceu ajuda com algo quebrado, e nunca mais foi embora.</td></tr>
+      <tr><td>6</td><td>Não escolheu — foi indicado, cobrado ou empurrado por alguém (uma dívida, uma promessa, uma obrigação), e só depois descobriu que gostava.</td></tr>
+    </table></details>
+
+    <p><em>Quem te apresentou à fundadora? A tabela "6 — Quem Apresentou Vocês" em <a href="criacao-guilda.html">Criação: Confraria</a> combina bem com esta — pode até ser a mesma pessoa do seu NPC de Conexão (Passo 6). Role, escolha, ou invente seu próprio caminho até a Curadoria.</em></p>
+
+    <h3>5.3 — Sua Relação com Artefatos</h3>
+    <p>Você é um(a) Restaurador(a) — mas o que isso significa para você pessoalmente?</p>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual sua relação pessoal com artefatos:</summary>
+    <table>
+      <tr><th>d6</th><th>Relação</th></tr>
+      <tr><td>1</td><td><strong>Fascínio</strong> — você ama isso, é por isso que está aqui</td></tr>
+      <tr><td>2</td><td><strong>Medo respeitoso</strong> — você sabe o que podem fazer, e tem cuidado</td></tr>
+      <tr><td>3</td><td><strong>Indiferença profissional</strong> — são trabalho, nada mais</td></tr>
+      <tr><td>4</td><td><strong>Trauma</strong> — um artefato machucou alguém que você ama</td></tr>
+      <tr><td>5</td><td><strong>Curiosidade perigosa</strong> — você quer tocar, abrir, descobrir</td></tr>
+      <tr><td>6</td><td><strong>Dever</strong> — você não gosta, mas alguém precisa fazer</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Você já perdeu um artefato?</summary>
+    <table>
+      <tr><th>d6</th><th>Perda</th></tr>
+      <tr><td>1</td><td><strong>Sim — e foi sua culpa</strong> — você tocou quando não devia</td></tr>
+      <tr><td>2</td><td><strong>Sim — e não foi sua culpa</strong> — algo aconteceu, e você não pôde evitar</td></tr>
+      <tr><td>3</td><td><strong>Sim — e você não sabe o que aconteceu</strong> — simplesmente sumiu</td></tr>
+      <tr><td>4</td><td><strong>Não — mas quase</strong> — você viu de perto, e nunca esqueceu</td></tr>
+      <tr><td>5</td><td><strong>Não — e espera nunca perder</strong></td></tr>
+      <tr><td>6</td><td><strong>Sim — e você o recuperou</strong> — mas ele não é mais o mesmo</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Há algum tipo de artefato que você nunca tocaria?</summary>
+    <table>
+      <tr><th>d6</th><th>Limite</th></tr>
+      <tr><td>1</td><td><strong>Os que sussurram</strong> — você não confia em coisas que falam</td></tr>
+      <tr><td>2</td><td><strong>Os que parecem vivos</strong> — há uma linha, e você não cruza</td></tr>
+      <tr><td>3</td><td><strong>Os que vêm de certo lugar</strong> — você sabe de onde, e não quer saber mais</td></tr>
+      <tr><td>4</td><td><strong>Os que pertenceram a alguém específico</strong> — há nomes que você não toca</td></tr>
+      <tr><td>5</td><td><strong>Nenhum</strong> — você toca em tudo, e vê no que dá</td></tr>
+      <tr><td>6</td><td><strong>Os que você mesmo fez</strong> — há coisas que você criou, e não quer ver de novo</td></tr>
+    </table></details>
+  </section>
+
+  <div class="section-divider">❦ ❦ ❦</div>
+
+  <section>
+    <h2>Passo 6 — NPC de Conexão</h2>
+    <p>Crie uma pessoa que o jogador já conhece na cidade — um amigo, mentor, ou figura familiar que te ancora antes de qualquer romance.</p>
+
+    <div class="callout tip">
+      <strong>✨ E os NPCs romanceáveis?</strong> Eles não são criados aqui. Vão aparecer ao longo da <a href="jornada-iniciante.html">Jornada Iniciante</a>, um de cada vez ou vários no mesmo dia, conforme a história pedir — consulte <a href="criacao-npcs.html">Criação de NPCs</a> quando chegar a hora de apresentar cada um. Por enquanto, o único vínculo que você define é este.
+    </div>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d8 — Tipo de conexão:</summary>
+    <table>
+      <tr><th>d8</th><th>Tipo</th></tr>
+      <tr><td>1</td><td><strong>Mentor(a)</strong> — te ensinou o ofício, ou te apresentou à Contracena</td></tr>
+      <tr><td>2</td><td><strong>Amigo(a) de Infância</strong> — vocês cresceram juntos, mesmo que separados</td></tr>
+      <tr><td>3</td><td><strong>Comerciante</strong> — te dá descontos, te conhece pelo nome, pergunta como você está</td></tr>
+      <tr><td>4</td><td><strong>Vizinho(a)</strong> — mora perto da Contracena, sempre tem chá quente</td></tr>
+      <tr><td>5</td><td><strong>Ex-Colega</strong> — trabalharam juntos em outro lugar, ainda se encontram</td></tr>
+      <tr><td>6</td><td><strong>Figura Misteriosa</strong> — te ajudou quando você precisava, mas nunca explicou por quê</td></tr>
+      <tr><td>7</td><td><strong>A Ponte</strong> — foi essa pessoa quem te apresentou ao Mestre ou fundador(a) da Confraria, ainda quando ela mal tinha aberto as portas</td></tr>
+      <tr><td>8</td><td><strong>Escolha Livre</strong> — nenhuma das opções acima combina; invente a sua (vale a Regra de Ouro)</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que essa pessoa sabe sobre você:</summary>
+    <table>
+      <tr><th>d6</th><th>Sabe</th></tr>
+      <tr><td>1</td><td><strong>Tudo</strong> — ou quase. É a pessoa que te conhece de verdade.</td></tr>
+      <tr><td>2</td><td><strong>Seu passado</strong> — mas não quem você é hoje.</td></tr>
+      <tr><td>3</td><td><strong>Quem você é hoje</strong> — mas nada do seu passado.</td></tr>
+      <tr><td>4</td><td><strong>Seu maior medo</strong> — porque estava lá quando ele nasceu.</td></tr>
+      <tr><td>5</td><td><strong>Um segredo seu</strong> — e nunca tocou no assunto.</td></tr>
+      <tr><td>6</td><td><strong>Menos do que pensa</strong> — e você prefere assim.</td></tr>
+    </table></details>
+
+    <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O ritual de vocês:</summary>
+    <table>
+      <tr><th>d6</th><th>Ritual</th></tr>
+      <tr><td>1</td><td>Chá ou café toda semana, no mesmo horário</td></tr>
+      <tr><td>2</td><td>Uma partida de um jogo de tabuleiro que nunca termina</td></tr>
+      <tr><td>3</td><td>Trocar bilhetes por baixo da porta</td></tr>
+      <tr><td>4</td><td>Caminhar juntos até o mercado</td></tr>
+      <tr><td>5</td><td>Consertar coisas um do outro — de graça, sempre</td></tr>
+      <tr><td>6</td><td>Sentar em silêncio no mesmo banco, olhando a cidade</td></tr>
+    </table></details>
+
+    <p><em>Para aprofundar (opcional): como vocês se conheceram? O que essa pessoa faria por você sem pensar duas vezes? E o que você nunca pediria a ela?</em></p>
+  </section>
+
+  <div class="section-divider">❦ ❦ ❦</div>
+
+  <section>
+    <h2>Passo 7 — O Primeiro Fio</h2>
+    <p>Todo jogo começa com pelo menos dois Fios ativos: um de Tensão (algo que ameaça ou pressiona) e um de Mistério (algo que você não entende ainda). Eles não precisam ser grandes — podem ser pequenos, íntimos, quase domésticos. O que importa é que puxem você para frente.</p>
+
+    <details class="cartilha">
+      <summary>⚙️ Fios — visão geral</summary>
+      <p>Fios são tensões narrativas rastreadas em relógios de 0 a 8 nós. Cada tipo de Fio representa uma categoria de drama: Tensão (conflito e pressão), Mistério (segredos a desenterrar), Romance (vínculos afetivos em desenvolvimento) e Entardecer (o tempo que passa). Fios avançam quando eventos relevantes acontecem — e quando chegam a 8 nós, algo se resolve, para o bem ou para o mal.</p>
+      <p><em>Regras completas → <a href="sistema-relogios.html">Fios e Nós</a>. Criação dos Fios iniciais → <a href="criacao-lenda.html">O Primeiro Fio</a>.</em></p>
+    </details>
+
+    <details class="cartilha">
+      <summary>⚙️ O Entardecer — o Fio do tempo</summary>
+      <p>O Entardecer é um Fio especial de 8 nós que avança sempre — um nó por ciclo narrativo, independente do que aconteça. Quando chega a 8, a Estação termina. Não é morte; é mudança. O que você construiu fica; o que não terminou deixa rastro. O Entardecer existe para dar peso ao tempo: cada escolha é uma escolha em vez de outra, porque os dias são contados.</p>
+      <p>Você começa com o Entardecer em 0 nós. Ele vai avançar sozinho quando você começar a jogar. A Jornada Iniciante explica o ritmo.</p>
+      <p><em>Regras completas → <a href="sistema-evento-final.html">O Entardecer</a>.</em></p>
+    </details>
+
+    <h4>Defina agora:</h4>
+    <ul>
+      <li><strong>Fio de Tensão inicial:</strong> que pressão existe sobre a Contracena? Pode vir do conflito recente da Confraria (Passo 3), da tensão da cidade (Passo 2), ou de algo pessoal do seu jogador (Passo 5). Começa em quantos nós?</li>
+      <li><strong>Fio de Mistério inicial:</strong> o que você ainda não entende? Pode ser o Relicário Selado, a Lenda da Confraria, algo no passado do seu jogador. Começa em 0 nós.</li>
+    </ul>
+
+    <p><a href="criacao-lenda.html" class="callout example">📖 Abrir: O Primeiro Fio (guia de criação) →</a></p>
+  </section>
+
+  <div class="section-divider">❦ ❦ ❦</div>
+
+  <section>
+    <h2>Passo 8 — O Clima</h2>
+    <p>Cada Estação começa com um Clima — uma lente que ajusta o tom do jogo e define quais tipos de eventos são possíveis. Você pode mudar o Clima ao longo do jogo, mas escolher um agora ajuda a calibrar as expectativas da sua Estação.</p>
+
+    <details class="cartilha">
+      <summary>⚙️ Climas — em três frases</summary>
+      <p>Climas vão de Brisa (levíssimo, quase sem risco, foco total no cotidiano e nas relações) até Vendaval (denso, consequente, com possibilidade de perdas reais). No meio estão Ameno (o padrão cozy — garante finais sem morte), Neblina (mistério e ambiguidade) e Tempestade (tensão alta, mas ainda com esperança). Escolha o que combina com o tom que você quer para esta Estação.</p>
+      <p><em>Regras completas → <a href="sistema-modos.html">Climas</a>.</em></p>
+    </details>
+  </section>
+
+  <div class="section-divider">❦ ❦ ❦</div>
+
+  <section>
+    <h2>Passo 9 — A Estação</h2>
+    <p>O jogo se organiza em dias narrativos dentro de uma Estação — um ciclo de tempo que tem começo, meio e fim, e que avança com o Entardecer. Você não precisa dominar isso agora; a Jornada Iniciante vai guiar os primeiros ciclos. Mas é bom saber que o tempo existe — e que ele conta.</p>
+
+    <details class="cartilha">
+      <summary>⚙️ A Estação — ciclo narrativo</summary>
+      <p>Uma Estação dura até o Entardecer chegar a 8 nós — o que pode acontecer em poucas sessões ou ao longo de muitas, dependendo do ritmo. Cada dia narrativo tem três Fôlegos. Cada ciclo avança o Entardecer em 1 nó. Quando a Estação termina, você escolhe o que fica, o que muda, e se começa uma nova Estação (Amanhecer de Novo) ou encerra a história.</p>
+      <p><em>Regras completas → <a href="sistema-loop.html">A Estação</a>.</em></p>
+    </details>
+  </section>
+
+  <div class="section-divider">❦ ❦ ❦</div>
+
+  <section>
+    <h2>✅ A Contracena Está Tecida</h2>
+    <p>Se você chegou até aqui, seu mundo tem: magia com regras, artefatos com histórias, uma cidade com tensão, uma Confraria com passado, uma Contracena com segredos, um jogador com medos, NPCs com vida — e pelo menos dois Fios esperando para puxar você para frente.</p>
+
+    <p>Isso já foi jogar. A Contracena não estava pronta esperando por você — ela nasceu enquanto você respondia às perguntas. Cada escolha foi uma cena. Cada tabela rolada, uma lembrança que já existia antes de você saber que era uma memória.</p>
+
+    <div class="callout tip">
+      <strong>Checklist do Mínimo Viável:</strong>
       <ul>
-        <li><strong>Nome:</strong> (humanos, elfos, anões, tieflings, ou algo próprio do seu mundo — use a tabela de <a href="criacao-racas.html">Criação: Raças</a> como inspiração)</li>
-        <li><strong>Como aparecem no cotidiano?</strong> (1-2 frases)</li>
-        <li><strong>Qual a relação com a magia?</strong> (têm afinidade? temem? controlam?)</li>
-        <li><strong>Qual a relação com as outras presenças?</strong> (tensão? cooperação? indiferença?)</li>
+        <li>☐ Mundo — magia, artefatos, conflito, presenças culturais, tom</li>
+        <li>☐ Cidade — economia, governo, tensão atual</li>
+        <li>☐ Confraria — estrutura, Mestre, Lenda, conflito recente, Regra Inquebrável</li>
+        <li>☐ Contracena — 5 zonas, Presença, seus Aposentos</li>
+        <li>☐ Jogador — Instrumentos, Background, Relíquia, Medo, Hábito, Lugar Favorito</li>
+        <li>☐ NPC de Conexão — criado</li>
+        <li>☐ NPCs romanceáveis — chegam ao longo da Jornada Iniciante; nada a fazer aqui</li>
+        <li>☐ Fios — 1 de Tensão, 1 de Mistério, Entardecer em 0</li>
+        <li>☐ Clima — escolhido</li>
       </ul>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Tensão entre presenças:</summary>
-      <table>
-        <tr><th>d6</th><th>Dinâmica</th></tr>
-        <tr><td>1</td><td><strong>Histórica</strong> — guerras antigas, ressentimentos passados</td></tr>
-        <tr><td>2</td><td><strong>Econômica</strong> — competição por recursos, comércio</td></tr>
-        <tr><td>3</td><td><strong>Cultural</strong> — valores diferentes, mal-entendidos</td></tr>
-        <tr><td>4</td><td><strong>Religiosa</strong> — deuses diferentes, rituais incompatíveis</td></tr>
-        <tr><td>5</td><td><strong>Coexistência pacífica</strong> — tensões mínimas, cooperação</td></tr>
-        <tr><td>6</td><td><strong>Hierarquia clara</strong> — uma presença domina, outras subordinadas</td></tr>
-      </table></details>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual presença é mais comum:</summary>
-      <table>
-        <tr><th>d6</th><th>Maioria</th></tr>
-        <tr><td>1</td><td>Humanos — a presença padrão, o "normal"</td></tr>
-        <tr><td>2</td><td>Elfos — antigos, numerosos, culturalmente dominantes</td></tr>
-        <tr><td>3</td><td>Anões — montanhas e cidades subterrâneas lotadas</td></tr>
-        <tr><td>4</td><td>Halflings — pequenos mas em toda parte</td></tr>
-        <tr><td>5</td><td>Nenhuma — equilíbrio entre várias presenças</td></tr>
-        <tr><td>6</td><td>Uma presença própria do seu mundo</td></tr>
-      </table></details>
+      <p>Anote tudo na <a href="ficha-mundo.html">Ficha do Mundo</a>, na <a href="ficha-prota.html">Ficha do Jogador</a> e na <a href="ficha-npcs.html">Ficha de NPCs</a>.</p>
+    </div>
 
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Há presença rara ou em extinção?</summary>
-      <table>
-        <tr><th>d6</th><th>Situação</th></tr>
-        <tr><td>1</td><td>Sim — uma presença quase desapareceu, restam poucos</td></tr>
-        <tr><td>2</td><td>Sim — mas ninguém fala sobre isso</td></tr>
-        <tr><td>3</td><td>Não — todas as presenças estão estáveis</td></tr>
-        <tr><td>4</td><td>Sim — foram caçadas no passado, agora se escondem</td></tr>
-        <tr><td>5</td><td>Depende de onde você está — raras aqui, comuns acolá</td></tr>
-        <tr><td>6</td><td>Há rumores de uma presença "perdida" — ninguém viu há gerações</td></tr>
-      </table></details>
+    <div class="callout celestial">
+      <strong>🌅 Próximo passo:</strong> <a href="jornada-iniciante.html">Ir para Os Primeiros Dias →</a>
+    </div>
 
-      <p><em>Como essas presenças <strong>convivem no dia a dia</strong> (misturadas, separadas, em tensão) você define depois, já dentro da cidade dos Bastidores, no Passo 2.2 — aqui basta saber <strong>quem existe</strong> e <strong>por que se estranham</strong>.</em></p>
+    <p><em>A <a href="rapido.html">Referência Rápida</a> está sempre à mão quando precisar consultar algo durante o jogo.</em></p>
 
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como cada presença cultural vê artefatos:</summary>
-      <table>
-        <tr><th>d6</th><th>Visão</th></tr>
-        <tr><td>1</td><td><strong>Sagrados</strong> — são relíquias dos ancestrais, devem ser venerados</td></tr>
-        <tr><td>2</td><td><strong>Perigosos</strong> — trazem desgraça, melhor não tocar</td></tr>
-        <tr><td>3</td><td><strong>Comuns</strong> — são ferramentas, nada mais</td></tr>
-        <tr><td>4</td><td><strong>Comerciais</strong> — valem dinheiro, e isso é o que importa</td></tr>
-        <tr><td>5</td><td><strong>Misteriosos</strong> — ninguém entende, mas todos respeitam</td></tr>
-        <tr><td>6</td><td><strong>Proibidos</strong> — sua cultura não permite lidar com eles</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Há artefatos específicos de certas culturas?</summary>
-      <table>
-        <tr><th>d6</th><th>Artefato Cultural</th></tr>
-        <tr><td>1</td><td><strong>Os Elfos têm</strong> — artefatos que cantam, feitos de luz solidificada</td></tr>
-        <tr><td>2</td><td><strong>Os Anões têm</strong> — artefatos de pedra que nunca quebram</td></tr>
-        <tr><td>3</td><td><strong>Os Tieflings têm</strong> — artefatos que sussurram segredos</td></tr>
-        <tr><td>4</td><td><strong>Os Halflings têm</strong> — artefatos que parecem inofensivos, mas não são</td></tr>
-        <tr><td>5</td><td><strong>Não há</strong> — artefatos são universais, não culturais</td></tr>
-        <tr><td>6</td><td><strong>Há, mas são secretos</strong> — cada cultura tem os seus, e não fala sobre</td></tr>
-      </table></details>
-
-      <h3>1.5 — O Tom do Mundo</h3>
-      <p>Como você quer que o mundo se sinta?</p>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Tom geral:</summary>
-      <table>
-        <tr><th>d6</th><th>Tom</th></tr>
-        <tr><td>1</td><td><strong>Esperançoso</strong> — o mundo é difícil, mas há luz</td></tr>
-        <tr><td>2</td><td><strong>Melancólico</strong> — algo se perdeu, há saudade do que foi</td></tr>
-        <tr><td>3</td><td><strong>Épico</strong> — grandes destinos, heróis, lendas</td></tr>
-        <tr><td>4</td><td><strong>Íntimo</strong> — foco nas pessoas, não nos grandes eventos</td></tr>
-        <tr><td>5</td><td><strong>Misterioso</strong> — há segredos em cada esquina</td></tr>
-        <tr><td>6</td><td><strong>Cozy</strong> — mesmo com problemas, há conforto no cotidiano</td></tr>
-      </table></details>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que te empolga nesse mundo:</summary>
-      <table>
-        <tr><th>d6</th><th>Empolgação</th></tr>
-        <tr><td>1</td><td>A magia no cotidiano — pequenas maravilhas do dia a dia</td></tr>
-        <tr><td>2</td><td>Os relacionamentos — histórias de amor, amizade, família</td></tr>
-        <tr><td>3</td><td>Os mistérios — segredos antigos esperando serem descobertos</td></tr>
-        <tr><td>4</td><td>A construção — ver a Guilda e a cidade crescerem</td></tr>
-        <tr><td>5</td><td>A restauração — dar nova vida a coisas quebradas</td></tr>
-        <tr><td>6</td><td>A escrita — registrar histórias, deixar um legado</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que te assusta (ou te desinteressa):</summary>
-      <table>
-        <tr><th>d6</th><th>Evitar</th></tr>
-        <tr><td>1</td><td>Combate pesado — prefiro evitar conflitos diretos</td></tr>
-        <tr><td>2</td><td>Morte de personagens — quero finais felizes</td></tr>
-        <tr><td>3</td><td>Lore denso demais — prefiro descobrir aos poucos</td></tr>
-        <tr><td>4</td><td>Política complexa — quero foco nas pessoas</td></tr>
-        <tr><td>5</td><td>Romance forçado — quero que surja naturalmente</td></tr>
-        <tr><td>6</td><td>Nada específico — estou aberto(a) a tudo</td></tr>
-      </table></details>
-
-      <div class="callout tip">
-        <strong>🎯 Estas duas tabelas são ferramentas, não só sabor.</strong> O que te <em>empolga</em> aponta o holofote — e cada opção puxa um pilar do <a href="sistema-legado.html">Legado</a>: relacionamentos→❤️ Amor, construção→🏛️ Comunidade, restauração e mistérios→📚 Sabedoria, escrita→🪶 Criatividade (e, se quiser aventura, expedições→⚔️ Glória). O que te <em>assusta</em> é uma ferramenta de segurança: combine com o seu <a href="sistema-modos.html">Modo de Jogo</a> (o Modo Cozy já desliga morte e garante finais felizes). E lembre: <strong>humor e leveza</strong> não são um item da lista — são uma lente que pode cobrir qualquer linha acima.
-      </div>
-
-      <div class="callout example">
-        <h3>📖 Exemplo de Mundo Criado</h3>
-        <p><strong>Magia:</strong> Comum e banal, mas moribunda — está desaparecendo lentamente. Vem do estudo. Não pode trazer mortos de volta. Só os treinados podem usá-la. As pessoas comuns veem com naturalidade.</p>
-        <p><strong>Artefatos:</strong> Vêm de memórias que não querem ser esquecidas. Estão morrendo — cada vez menos aparecem. As pessoas comuns têm medo reverente deles.</p>
-        <p><strong>Conflito:</strong> Pós-catástrofe — o mundo está se reconstruindo de uma guerra mágica há 50 anos. Heróis são aventureiros de guilda. Comuns os veem com compaixão.</p>
-        <p><strong>Presenças:</strong> Humanos (maioria), Elfos (raros, melancólicos), Anões (artesãos), Tieflings (comerciantes). Tensão histórica. Mistura livre. Elfos veem artefatos como sagrados, Tieflings como comerciais.</p>
-        <p><strong>Tom:</strong> Melancólico e íntimo. Empolga: restauração. Assusta: nada específico.</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Passo 2 — A Cidade</h2>
-      <p>Agora que o mundo está definido, foque na cidade onde os Bastidores estão. Esta é a escala local — onde os NPCs vivem, onde os eventos acontecem.</p>
-      
-      <h3>2.1 — A Cidade em Si</h3>
-      <p>Role 1d6 para escolher a cidade ou escolha uma das 6 opções:</p>
-      
-      <p><a href="criacao-cidade.html" class="callout example">📖 Ver as 6 cidades em Criação: Cidade →</a></p>
-      
-      <h3>2.2 — As Presenças na Cidade</h3>
-      <p>Como as presenças culturais que você definiu no Passo 1 se manifestam especificamente <strong>nesta cidade</strong>?</p>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual presença domina a cidade:</summary>
-      <table>
-        <tr><th>d6</th><th>Domínio</th></tr>
-        <tr><td>1</td><td>A maioria — é a cidade deles por direito histórico</td></tr>
-        <tr><td>2</td><td>Uma minoria rica — controlam o comércio e a política</td></tr>
-        <tr><td>3</td><td>Ninguém — equilíbrio tenso entre várias presenças</td></tr>
-        <tr><td>4</td><td>Uma presença recente — chegaram há poucas gerações e tomaram conta</td></tr>
-        <tr><td>5</td><td>Uma presença antiga — mas está em declínio</td></tr>
-        <tr><td>6</td><td>A Guilda — a cidade gira ao redor dela</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como as presenças convivem nesta cidade:</summary>
-      <p><em>Uma rolagem só — combina "onde moram" e "quão tensa é a convivência" num retrato com consequência.</em></p>
-      <table>
-        <tr><th>d6</th><th>Convívio</th><th>O gancho que abre</th></tr>
-        <tr><td>1</td><td><strong>Mistura orgânica</strong> — bairros e casamentos se misturam; a diferença é tempero, não fronteira</td><td>Onde a harmonia racha em segredo?</td></tr>
-        <tr><td>2</td><td><strong>Convívio com cicatriz</strong> — vivem juntos, mas há <em>um</em> assunto que ninguém toca</td><td>Qual injustiça antiga todos fingem esquecer?</td></tr>
-        <tr><td>3</td><td><strong>Fronteiras educadas</strong> — cada presença tem seu canto; circula-se livre, mas "o lugar de cada um" é tácito</td><td>O que acontece com quem cruza a linha errada?</td></tr>
-        <tr><td>4</td><td><strong>Tensão latente</strong> — sorrisos de dia, muros pichados de noite; falta só um estopim</td><td>Quem se beneficia se a fricção explodir?</td></tr>
-        <tr><td>5</td><td><strong>Hierarquia assumida</strong> — uma presença manda, as outras servem, e ninguém finge que é igual</td><td>Quem, embaixo, está cansado de servir?</td></tr>
-        <tr><td>6</td><td><strong>Linha de bolso, não de sangue</strong> — o que separa é a riqueza: ricos de toda origem de um lado, pobres de toda origem do outro</td><td>De que lado da linha ficam os Bastidores?</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como os forasteiros são tratados?</summary>
-      <p><em>Importante porque você — e os aventureiros que batem à sua porta — muitas vezes <strong>são</strong> os forasteiros. Se o seu Background for "Forasteiro(a) em Refúgio", esta resposta já é o clima que te espera na rua.</em></p>
-      <table>
-        <tr><th>d6</th><th>Forasteiros</th></tr>
-        <tr><td>1</td><td>Bem-vindos — a cidade vive de comércio e visitantes</td></tr>
-        <tr><td>2</td><td>Com desconfiança — "o que você quer aqui?"</td></tr>
-        <tr><td>3</td><td>Com indiferença — cada um cuida da sua vida</td></tr>
-        <tr><td>4</td><td>Depende de onde vem — alguns são bem-vindos, outros não</td></tr>
-        <tr><td>5</td><td>Com curiosidade — "de onde você veio? conta!"</td></tr>
-        <tr><td>6</td><td>Com cautela — a cidade já foi machucada por forasteiros</td></tr>
-      </table></details>
-
-      <h3>2.3 — A Cidade em Fantasia</h3>
-      <p>Perguntas básicas sobre como a cidade funciona:</p>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Economia principal:</summary>
-      <table>
-        <tr><th>d6</th><th>Economia</th></tr>
-        <tr><td>1</td><td><strong>Comércio</strong> — mercado, mercadores, caravanas</td></tr>
-        <tr><td>2</td><td><strong>Artesanato</strong> — oficinas, ferreiros, tecelões</td></tr>
-        <tr><td>3</td><td><strong>Agricultura</strong> — campos, fazendas, celeiros</td></tr>
-        <tr><td>4</td><td><strong>Mineração</strong> — pedreiras, minas, metal</td></tr>
-        <tr><td>5</td><td><strong>Magia</strong> — artefatos, encantamentos, estudos</td></tr>
-        <tr><td>6</td><td><strong>Mista</strong> — um pouco de tudo</td></tr>
-      </table></details>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Governo:</summary>
-      <table>
-        <tr><th>d6</th><th>Governo</th></tr>
-        <tr><td>1</td><td><strong>Monarquia</strong> — rei/rainha, nobres</td></tr>
-        <tr><td>2</td><td><strong>Conselho</strong> — mercadores, artesãos, anciãos</td></tr>
-        <tr><td>3</td><td><strong>Teocracia</strong> — sacerdotes, templo</td></tr>
-        <tr><td>4</td><td><strong>Anarquia</strong> — cada um se vira, lei do mais forte</td></tr>
-        <tr><td>5</td><td><strong>Guilda</strong> — a Guilda de Aventureiros manda</td></tr>
-        <tr><td>6</td><td><strong>Magocracia</strong> — magos no poder</td></tr>
-      </table></details>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual o cheiro característico da cidade:</summary>
-      <table>
-        <tr><th>d6</th><th>Cheiro</th></tr>
-        <tr><td>1</td><td>Sal e peixe — cidade-porto, brisa do mar</td></tr>
-        <tr><td>2</td><td>Ervas e especiarias — mercado sempre ativo</td></tr>
-        <tr><td>3</td><td>Fumaça de forja — metal e carvão no ar</td></tr>
-        <tr><td>4</td><td>Pão assado — padarias em cada esquina</td></tr>
-        <tr><td>5</td><td>Incenso e flores — templos e jardins</td></tr>
-        <tr><td>6</td><td>Poeira antiga — pedra velha, livros, memória</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que os forasteiros reparam primeiro ao chegar:</summary>
-      <table>
-        <tr><th>d6</th><th>Primeira impressão</th></tr>
-        <tr><td>1</td><td>Uma estátua enorme na praça central</td></tr>
-        <tr><td>2</td><td>O barulho — a cidade nunca dorme</td></tr>
-        <tr><td>3</td><td>O silêncio — algo estranho no ar</td></tr>
-        <tr><td>4</td><td>As cores — tudo é vibrante, pintado, decorado</td></tr>
-        <tr><td>5</td><td>As muralhas — a cidade é fortificada</td></tr>
-        <tr><td>6</td><td>As pessoas — há algo diferente nelas</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Há algo único que só existe aqui:</summary>
-      <table>
-        <tr><th>d6</th><th>Único</th></tr>
-        <tr><td>1</td><td>Um prato — receita secreta, só aqui</td></tr>
-        <tr><td>2</td><td>Um costume — ritual local que ninguém mais faz</td></tr>
-        <tr><td>3</td><td>Um lugar — uma construção, um jardim, uma praça</td></tr>
-        <tr><td>4</td><td>Uma bebida — destilaria antiga, receita perdida</td></tr>
-        <tr><td>5</td><td>Um festival — celebração anual única</td></tr>
-        <tr><td>6</td><td>Uma lenda — história que só se conta aqui</td></tr>
-      </table></details>
-
-      <h3>2.4 — Artefatos na Cidade</h3>
-      <p>Como a cidade lida com artefatos? Qual é a relação prática entre os cidadãos e essas relíquias?</p>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como a cidade reage a artefatos:</summary>
-      <table>
-        <tr><th>d6</th><th>Reação</th></tr>
-        <tr><td>1</td><td><strong>Pânico moral</strong> — "arte? isso é coisa do diabo"</td></tr>
-        <tr><td>2</td><td><strong>Fascínio comercial</strong> — a cidade vive de vender artefatos</td></tr>
-        <tr><td>3</td><td><strong>Medo pragmático</strong> — "deixe com os especialistas, não mexa"</td></tr>
-        <tr><td>4</td><td><strong>Indiferença cansada</strong> — "já vimos de tudo, traga o que tiver"</td></tr>
-        <tr><td>5</td><td><strong>Veneração silenciosa</strong> — ninguém fala, mas todos sabem que são sagrados</td></tr>
-        <tr><td>6</td><td><strong>Curiosidade mórbida</strong> — "me mostra! me deixa tocar!"</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual o incidente recente com artefato que a cidade não esquece?</summary>
-      <table>
-        <tr><th>d6</th><th>Incidente</th></tr>
-        <tr><td>1</td><td><strong>O Artefato que Cantou</strong> — uma relíquia começou a cantar à noite. Ninguém dormiu por uma semana. Até que parou.</td></tr>
-        <tr><td>2</td><td><strong>A Rua que Desapareceu</strong> — um artefato ativou e uma rua inteira sumiu por três dias. Voltou, mas não é a mesma.</td></tr>
-        <tr><td>3</td><td><strong>O Mercador que Envelheceu</strong> — um homem tocou algo e envelheceu 40 anos em uma noite. Ainda vive, mas não é mais ele.</td></tr>
-        <tr><td>4</td><td><strong>A Chuva de Espelhos</strong> — choveu fragmentos de espelho por uma hora. Cada um mostrava um rosto diferente.</td></tr>
-        <tr><td>5</td><td><strong>O Silêncio</strong> — por um dia inteiro, nenhum som existiu na cidade. Ninguém sabe por quê.</td></tr>
-        <tr><td>6</td><td><strong>O Presente</strong> — um artefato apareceu na porta de uma casa. Ninguém sabe quem deixou. A família nunca mais foi a mesma.</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como é o mercado de artefatos na cidade?</summary>
-      <table>
-        <tr><th>d6</th><th>Mercado</th></tr>
-        <tr><td>1</td><td><strong>Ilegal</strong> — só no submundo, preços absurdos, perigo constante</td></tr>
-        <tr><td>2</td><td><strong>Regulado</strong> — só a Guilda pode vender, tudo é rastreado</td></tr>
-        <tr><td>3</td><td><strong>Livre</strong> — qualquer um pode comprar, mas por sua conta e risco</td></tr>
-        <tr><td>4</td><td><strong>Inexistente</strong> — ninguém vende, só troca ou doa</td></tr>
-        <tr><td>5</td><td><strong>Misto</strong> — há lojas legais e mercado negro, todos sabem</td></tr>
-        <tr><td>6</td><td><strong>Secreto</strong> — existe, mas só quem sabe, sabe</td></tr>
-      </table></details>
-
-      <h3>2.5 — Bairros e Locais</h3>
-      <p>A cidade começa pequena. Role 1d3 para saber quantos bairros existem no início (1-3, com 1-2 sendo o mais comum).</p>
-      
-      <p><a href="criacao-cidade.html" class="callout example">📖 Ver tabelas de bairros e locais em Criação: Cidade →</a></p>
-
-      <h3>2.6 — A Tensão na Cidade</h3>
-      <p>Nenhuma cidade está em paz perfeita. Algo está acontecendo <em>agora</em> — ou aconteceu recentemente — e molda o humor das ruas, os sussurros nas tavernas, os olhares desconfiados. Essa tensão é o pano de fundo do seu jogo.</p>
-      
-      <p><em>Dica: A tensão não precisa ser resolvida. Ela é cenário — como o cheiro da cidade, como o clima. Às vezes some, às vezes piora, às vezes vira outra coisa.</em></p>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que está acontecendo na cidade:</summary>
-      <table>
-        <tr><th>d6</th><th>Tensão</th><th>Natureza</th></tr>
-        <tr>
-          <td>1</td>
-          <td><strong>O Artefato Roubado</strong> — uma relíquia importante sumiu de um templo, museu ou cofre nobre. A cidade está em polvorosa, recompensas foram oferecidas, e todo mundo desconfia de todo mundo.</td>
-          <td>Artefato</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td><strong>A Criatura nos Arredores</strong> — algo apareceu nos limites da cidade. Ninguém sabe se é perigoso, domesticável, ou apenas perdido. Alguns querem caçar, outros querem proteger.</td>
-          <td>Fantasia</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td><strong>O Bairro que Desapareceu</strong> — há três semanas, um bairro inteiro sumiu durante a noite. Os mapas ainda mostram, mas quem vai até lá não encontra nada. Ninguém fala sobre isso em voz alta.</td>
-          <td>Mistério</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td><strong>A Disputa entre Mercadores</strong> — duas guildas comerciais estão em guerra fria. Preços subindo, boicotes, ameaças veladas. Os comuns pagam a conta.</td>
-          <td>Mundano</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td><strong>O Festival Cancelado</strong> — a maior celebração do ano foi cancelada sem explicação oficial. Rumores circulam: alguém morreu, algo foi encontrado, uma profecia se cumpriu. Ninguém sabe a verdade.</td>
-          <td>Mistério/Social</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td><strong>A Doença dos Sonhos</strong> — ninguém morre, mas ninguém dorme direito. As pessoas sonham com o mesmo lugar, a mesma figura, a mesma mensagem. Os curandeiros não sabem o que fazer.</td>
-          <td>Fantasia/Mistério</td>
-        </tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como a cidade reage:</summary>
-      <table>
-        <tr><th>d6</th><th>Reação</th></tr>
-        <tr><td>1</td><td><strong>Negação</strong> — "não está acontecendo", "é só fofoca"</td></tr>
-        <tr><td>2</td><td><strong>Pânico contido</strong> — as pessoas sorriem, mas não saem à noite</td></tr>
-        <tr><td>3</td><td><strong>Resignação</strong> — "já passamos por pior"</td></tr>
-        <tr><td>4</td><td><strong>Divisão</strong> — metade culpa um grupo, metade culpa outro</td></tr>
-        <tr><td>5</td><td><strong>Curiosidade mórbida</strong> — virou atração, assunto de taverna</td></tr>
-        <tr><td>6</td><td><strong>Organização</strong> — comitês, patrulhas, assembleias. A cidade está tentando resolver</td></tr>
-      </table></details>
-
-      <h4>Perguntas para responder (opcional):</h4>
-      <ul>
-        <li><strong>Como essa tensão afeta os Bastidores?</strong> (mais artefatos chegando? menos? mais perigosos?)</li>
-        <li><strong>Seu NPC de conexão tem opinião sobre isso?</strong></li>
-        <li><strong>Você já viu algo relacionado pessoalmente?</strong></li>
-      </ul>
-
-      <div class="callout rule">
-        <strong>⚙️ Onde isso vira mecânica:</strong> guarde esta tensão. Quando você ligar os <a href="sistema-relogios.html">Relógios</a> na <a href="jornada-avancada.html">Jornada II</a>, ela é a candidata natural a virar um <strong>Relógio de Tensão</strong> — o pano de fundo que pode piorar, sumir, ou se transformar em outra coisa conforme você joga.
-      </div>
-    </section>
-
-    <section>
-      <h2>Passo 3 — A Guilda (e sua Lenda)</h2>
-      <p>A instituição que define as regras sociais, políticas e mágicas dos Bastidores. Aqui também nasce a lenda de fundação — e o conflito recente que moldou quem ela é hoje.</p>
-      
-      <h3>3.1 — Estrutura, Mestre e Lenda</h3>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Estrutura da Guilda:</summary>
-      <table>
-        <tr><th>d6</th><th>Estrutura</th></tr>
-        <tr><td>1</td><td><strong>Meritocracia brutal</strong> — quem traz mais, manda mais</td></tr>
-        <tr><td>2</td><td><strong>Burocracia arcanista</strong> — tudo exige carimbo, ritual, três cópias</td></tr>
-        <tr><td>3</td><td><strong>Família disfuncional</strong> — laços de sangue e afeto</td></tr>
-        <tr><td>4</td><td><strong>Corporação mercantil</strong> — tudo é lucro</td></tr>
-        <tr><td>5</td><td><strong>Ordem quase religiosa</strong> — juramentos, rituais, hierarquia sagrada</td></tr>
-        <tr><td>6</td><td><strong>Anarquia supervisionada</strong> — cada um faz o que quer, mas há alguém segurando</td></tr>
-      </table></details>
-
-      <h4>Role 1d2-1 — Trabalhadores iniciais:</h4>
-      <p>0 ou 1 trabalhador além de você e do Mestre.</p>
-
-      <h4>Role 1d10 — O Mestre da Guilda:</h4>
-      <p><a href="criacao-guilda.html" class="callout example">📖 Ver as 10 opções em Criação: Guilda →</a></p>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">A Lenda de Fundação (role 1d6):</summary>
-      <table>
-        <tr><th>d6</th><th>Origem Real</th></tr>
-        <tr><td>1</td><td>Fundada por um(a) restaurador(a) solitário(a) após uma catástrofe mágica</td></tr>
-        <tr><td>2</td><td>Nasceu de um pacto entre artesãos e uma entidade antiga</td></tr>
-        <tr><td>3</td><td>Cresceu ao redor de uma relíquia impossível de destruir</td></tr>
-        <tr><td>4</td><td>Foi criada por decreto real após um acidente com artefatos</td></tr>
-        <tr><td>5</td><td>Surgiu como refúgio para quem sobreviveu a algo "lá fora"</td></tr>
-        <tr><td>6</td><td>É mais antiga que a cidade — a cidade cresceu ao redor dela</td></tr>
-      </table></details>
-
-      <h4>Perguntas sobre a Lenda:</h4>
-      <ul>
-        <li><strong>O que os comuns acham que aconteceu?</strong> (versão oficial)</li>
-        <li><strong>O que realmente aconteceu?</strong> (versão real)</li>
-      </ul>
-
-      <h3>3.2 — Artefatos na Guilda</h3>
-      <p>A Guilda é o coração do comércio de artefatos — ou deveria ser. Como ela lida com essas relíquias?</p>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual a política da Guilda sobre receber artefatos?</summary>
-      <table>
-        <tr><th>d6</th><th>Política</th></tr>
-        <tr><td>1</td><td><strong>Aceita tudo</strong> — a Regra Inquebrável é clara: nunca negar abrigo</td></tr>
-        <tr><td>2</td><td><strong>Seletiva</strong> — só aceita o que pode ser restaurado com segurança</td></tr>
-        <tr><td>3</td><td><strong>Desconfiada</strong> — inspeciona três vezes antes de aceitar</td></tr>
-        <tr><td>4</td><td><strong>Lucrativa</strong> — aceita, mas cobra caro pelo "risco"</td></tr>
-        <tr><td>5</td><td><strong>Relutante</strong> — aceita porque precisa do dinheiro, mas reclama</td></tr>
-        <tr><td>6</td><td><strong>Proibitiva</strong> — há uma lista do que NÃO aceita. E ninguém questiona.</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual o artefato mais famoso que já passou pela Guilda?</summary>
-      <table>
-        <tr><th>d6</th><th>Artefato</th></tr>
-        <tr><td>1</td><td><strong>O Espelho que Não Reflete</strong> — mostra o que você foi, não o que é. Foi restaurado, mas ninguém sabe para quem.</td></tr>
-        <tr><td>2</td><td><strong>A Chave sem Porta</strong> — abre algo que ninguém encontrou ainda. Está na Câmara Selada.</td></tr>
-        <tr><td>3</td><td><strong>O Livro que Escreve Sozinho</strong> — cada noite, uma nova página aparece. Ninguém lê em voz alta.</td></tr>
-        <tr><td>4</td><td><strong>O Relógio que Anda para Trás</strong> — marca o tempo que já passou. Ninguém sabe por quê.</td></tr>
-        <tr><td>5</td><td><strong>A Espada que Chora</strong> — chora toda noite. Ninguém sabe de quem é a dor.</td></tr>
-        <tr><td>6</td><td><strong>O Nome Proibido</strong> — um artefato cujo nome não pode ser dito. Ninguém sabe o que ele faz.</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que a Guilda faz com artefatos que não podem ser restaurados?</summary>
-      <table>
-        <tr><th>d6</th><th>Destino</th></tr>
-        <tr><td>1</td><td><strong>Selam na Câmara</strong> — lá embaixo, onde ninguém vai</td></tr>
-        <tr><td>2</td><td><strong>Destroem</strong> — mas ninguém sabe como, e ninguém pergunta</td></tr>
-        <tr><td>3</td><td><strong>Devolve ao aventureiro</strong> — "problema seu"</td></tr>
-        <tr><td>4</td><td><strong>Enterram</strong> — em algum lugar que ninguém sabe</td></tr>
-        <tr><td>5</td><td><strong>Deixam partir</strong> — colocam num rio, soltam no vento, algo assim</td></tr>
-        <tr><td>6</td><td><strong>Ninguém sabe</strong> — desaparecem, e ninguém fala sobre isso</td></tr>
-      </table></details>
-
-      <h3>3.3 — O Conflito Recente da Guilda</h3>
-      <p>A Guilda é antiga, mas algo aconteceu <em>nos últimos meses</em> — algo que ainda reverbera nos Bastidores, nas conversas com o Mestre, no jeito como os trabalhadores se olham. Essa é a ferida recente. Talvez seja por isso que você foi contratado(a). Talvez seja por isso que ninguém fala sobre a Câmara Selada.</p>
-
-      <p><em>Este conflito não é sua culpa — você chegou depois. Mas você vai herdar as consequências dele.</em></p>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que aconteceu recentemente com a Guilda:</summary>
-      <table>
-        <tr><th>d6</th><th>Conflito</th><th>Natureza</th></tr>
-        <tr>
-          <td>1</td>
-          <td><strong>O Artefato que Não Deveria Ser Restaurado</strong> — a Guilda aceitou restaurar algo proibido. Funcionou… mas algo mudou. Sonhos estranhos, sombras erradas, uma porta que não existia. A Guilda finge que está tudo bem.</td>
-          <td>Artefato/Mistério</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td><strong>A Morte do Aventureiro</strong> — um aventureiro jovem morreu numa missão que a Guilda recomendou. A família culpa a Guilda. A cidade cochicha. O Mestre não dorme mais.</td>
-          <td>Mundano/Drama</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td><strong>O Artefato Proibido Aceito</strong> — alguém trouxe algo que ninguém deveria tocar. A Guilda aceitou, porque é a Regra Inquebrável. Agora facções externas querem o artefato — e não vão perguntar duas vezes.</td>
-          <td>Artefato/Político</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td><strong>O Trabalhador que Desapareceu</strong> — há três meses, um trabalhador sumiu dentro dos Bastidores. As buscas não encontraram nada. A Câmara Selada avançou +1 segmento desde então. Ninguém fala o nome dele(a) em voz alta.</td>
-          <td>Mistério/Bastidores</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td><strong>A Acusação de Falsificação</strong> — alguém acusou a Guilda de vender artefatos falsificados. A Guilda é inocente… ou é? A reputação ainda está manchada, e alguns clientes sumiram.</td>
-          <td>Mundano/Político</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td><strong>O que a Câmara Selada Mostrou</strong> — um trabalhador curioso abriu um pouco a porta. Viu algo. Não conta o quê, mas não é mais a mesma pessoa. A Guilda selou a porta de novo — mas o selo está rachado.</td>
-          <td>Mistério/Fantasia</td>
-        </tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Como a Guilda está lidando com isso:</summary>
-      <table>
-        <tr><th>d6</th><th>Postura</th></tr>
-        <tr><td>1</td><td><strong>Silêncio total</strong> — ninguém fala sobre o assunto, nem entre si</td></tr>
-        <tr><td>2</td><td><strong>Investigação discreta</strong> — o Mestre está tentando resolver em segredo</td></tr>
-        <tr><td>3</td><td><strong>Negação pública</strong> — "tudo está bem", enquanto as paredes racham</td></tr>
-        <tr><td>4</td><td><strong>Divisão interna</strong> — alguns querem resolver, outros querem esquecer</td></tr>
-        <tr><td>5</td><td><strong>Busca de ajuda externa</strong> — a Guilda está procurando especialistas</td></tr>
-        <tr><td>6</td><td><strong>Aceitação estranha</strong> — "isso sempre acontece. Faz parte."</td></tr>
-      </table></details>
-
-      <h4>Perguntas para responder (opcional):</h4>
-      <ul>
-        <li><strong>Você sabe sobre esse conflito antes de começar?</strong> Ou vai descobrir durante o jogo?</li>
-        <li><strong>A Regra Inquebrável tem relação com esse conflito?</strong> (talvez ela exista justamente para evitar que algo assim aconteça de novo)</li>
-        <li><strong>O Mestre te contou algo, ou esconde de você?</strong></li>
-      </ul>
-
-      <div class="callout rule">
-        <strong>⚙️ Onde isso vira mecânica:</strong> este conflito é combustível de dois Relógios. Se ele mexe com a <a href="sistema-camara.html">Câmara Selada</a> (o trabalhador que sumiu, a porta que rachou), ele já começa o <strong>Relógio da Câmara</strong> alguns segmentos adiantado. Se é um segredo a desenterrar, vira um <strong>Relógio de Mistério</strong> na <a href="jornada-avancada.html">Jornada II</a>. Você herdou a ferida — decida o quão perto ela já está de sangrar.
-      </div>
-
-      <h3>3.4 — A Regra Inquebrável</h3>
-      <p>Defina uma regra que nunca pode ser quebrada. É a lei máxima dos Bastidores — quem a viola enfrenta consequências terríveis.</p>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Exemplos de Regras Inquebráveis:</summary>
-      <table>
-        <tr><th>d6</th><th>Regra</th></tr>
-        <tr><td>1</td><td>Nunca abrir um artefato à noite</td></tr>
-        <tr><td>2</td><td>Nunca dizer o nome verdadeiro de uma relíquia</td></tr>
-        <tr><td>3</td><td>Nunca descer à Câmara Selada sozinho(a)</td></tr>
-        <tr><td>4</td><td>Nunca aceitar presentes de aventureiros sem inspecionar antes</td></tr>
-        <tr><td>5</td><td>Nunca abrir um livro cuja capa está virada para a parede</td></tr>
-        <tr><td>6</td><td>Nunca negar abrigo a uma relíquia quebrada (a regra original)</td></tr>
-      </table></details>
-
-      <p><a href="criacao-guilda.html" class="callout example">📖 Abrir: Criação de Guilda →</a></p>
-    </section>
-
-    <section>
-      <h2>Passo 4 — Os Bastidores</h2>
-      <p>Seu lar físico e local de trabalho. Onde as ações do jogo acontecem.</p>
-      
-      <h4>O que fazer:</h4>
-      <ul>
-        <li>Role 1d6 para cada uma das 5 zonas (Oficina, Armazém, Arquivo, Aposentos, Câmara Selada)</li>
-        <li>Role 1d6 para a Presença nos Bastidores</li>
-        <li>Role 2d6 para seus Aposentos</li>
-        <li>Responda: qual o som mais comum? Há algum detalhe vivo? Qual zona você mais evita?</li>
-      </ul>
-      
-      <p><a href="criacao-bastidores.html" class="callout example">📖 Abrir: Criação de Bastidores →</a></p>
-    </section>
-
-    <section>
-      <h2>Passo 5 — O Protagonista</h2>
-      <p>Agora que o mundo está pronto, você cria quem habita esse espaço.</p>
-      
-      <h4>O que fazer:</h4>
-      <ul>
-        <li>Escolha um nome (ou role 1d6)</li>
-        <li>Distribua as Capacidades Inatas: +2, +1, +1, 0 (ou +2, +1, 0, -1)</li>
-        <li>Role 1d10 para o Background</li>
-        <li>Role 1d6 para: Relíquia Pessoal, Medo, Hábito, Lugar Favorito</li>
-        <li>Responda: aparência marcante? Por que você é um(a) Restaurador(a)?</li>
-      </ul>
-
-      <h3>5.1 — Sua Relação com Artefatos</h3>
-      <p>Você é um(a) Restaurador(a) — mas o que isso significa para você pessoalmente? Qual é sua relação com essas relíquias que passam pelas suas mãos todos os dias?</p>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Qual sua relação pessoal com artefatos?</summary>
-      <table>
-        <tr><th>d6</th><th>Relação</th></tr>
-        <tr><td>1</td><td><strong>Fascínio</strong> — você ama isso, é por isso que está aqui</td></tr>
-        <tr><td>2</td><td><strong>Medo respeitoso</strong> — você sabe o que podem fazer, e tem cuidado</td></tr>
-        <tr><td>3</td><td><strong>Indiferença profissional</strong> — são trabalho, nada mais</td></tr>
-        <tr><td>4</td><td><strong>Trauma</strong> — um artefato machucou alguém que você ama</td></tr>
-        <tr><td>5</td><td><strong>Curiosidade perigosa</strong> — você quer tocar, abrir, descobrir</td></tr>
-        <tr><td>6</td><td><strong>Dever</strong> — você não gosta, mas alguém precisa fazer</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Você já perdeu um artefato?</summary>
-      <table>
-        <tr><th>d6</th><th>Perda</th></tr>
-        <tr><td>1</td><td><strong>Sim — e foi sua culpa</strong> — você tocou quando não devia</td></tr>
-        <tr><td>2</td><td><strong>Sim — e não foi sua culpa</strong> — algo aconteceu, e você não pôde evitar</td></tr>
-        <tr><td>3</td><td><strong>Sim — e você não sabe o que aconteceu</strong> — simplesmente sumiu</td></tr>
-        <tr><td>4</td><td><strong>Não — mas quase</strong> — você viu de perto, e nunca esqueceu</td></tr>
-        <tr><td>5</td><td><strong>Não — e espera nunca perder</strong></td></tr>
-        <tr><td>6</td><td><strong>Sim — e você o recuperou</strong> — mas ele não é mais o mesmo</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Há algum tipo de artefato que você nunca tocaria?</summary>
-      <table>
-        <tr><th>d6</th><th>Limite</th></tr>
-        <tr><td>1</td><td><strong>Os que sussurram</strong> — você não confia em coisas que falam</td></tr>
-        <tr><td>2</td><td><strong>Os que parecem vivos</strong> — há uma linha, e você não cruza</td></tr>
-        <tr><td>3</td><td><strong>Os que vêm de certo lugar</strong> — você sabe de onde, e não quer saber mais</td></tr>
-        <tr><td>4</td><td><strong>Os que pertenceram a alguém específico</strong> — há nomes que você não toca</td></tr>
-        <tr><td>5</td><td><strong>Nenhum</strong> — você toca em tudo, e vê no que dá</td></tr>
-        <tr><td>6</td><td><strong>Os que você mesmo fez</strong> — há coisas que você criou, e não quer ver de novo</td></tr>
-      </table></details>
-      
-      <p><a href="criacao-protagonista.html" class="callout example">📖 Abrir: Criação de Protagonista →</a></p>
-    </section>
-
-    <section>
-      <h2>Passo 6 — NPC de Conexão</h2>
-      <p>Alguém que o protagonista já conhece na cidade. Um amigo, mentor, ou figura familiar que te ancora.</p>
-      
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Tipo de conexão:</summary>
-      <table>
-        <tr><th>d6</th><th>Tipo</th></tr>
-        <tr><td>1</td><td><strong>Mentor(a)</strong> — te ensinou o ofício, ou te apresentou aos Bastidores</td></tr>
-        <tr><td>2</td><td><strong>Amigo(a) de Infância</strong> — vocês cresceram juntos, mesmo que separados</td></tr>
-        <tr><td>3</td><td><strong>Comerciante</strong> — te dá descontos, te conhece pelo nome, pergunta como você está</td></tr>
-        <tr><td>4</td><td><strong>Vizinho(a)</strong> — mora perto dos Bastidores, sempre tem chá quente</td></tr>
-        <tr><td>5</td><td><strong>Ex-Colega</strong> — trabalharam juntos em outro lugar, ainda se encontram</td></tr>
-        <tr><td>6</td><td><strong>Figura Misteriosa</strong> — te ajudou quando você precisava, mas nunca explicou por quê</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — Profissão/presença:</summary>
-      <table>
-        <tr><th>d6</th><th>Quem é</th></tr>
-        <tr><td>1</td><td>Dono(a) de taverna/cafeteria</td></tr>
-        <tr><td>2</td><td>Artesão(ã) — ferreiro, costureira, carpinteiro</td></tr>
-        <tr><td>3</td><td>Herborista/Alquimista</td></tr>
-        <tr><td>4</td><td>Bibliotecário(a)/Escriba</td></tr>
-        <tr><td>5</td><td>Guarda/Funcionário(a) público(a)</td></tr>
-        <tr><td>6</td><td>Trabalhador(a) da própria Guilda — de outro setor</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O que essa pessoa sabe sobre você:</summary>
-      <table>
-        <tr><th>d6</th><th>Sabe</th></tr>
-        <tr><td>1</td><td><strong>Tudo</strong> — ou quase. É a pessoa que te conhece de verdade.</td></tr>
-        <tr><td>2</td><td><strong>Seu passado</strong> — mas não quem você é hoje.</td></tr>
-        <tr><td>3</td><td><strong>Quem você é hoje</strong> — mas nada do seu passado.</td></tr>
-        <tr><td>4</td><td><strong>Seu maior medo</strong> — porque estava lá quando ele nasceu.</td></tr>
-        <tr><td>5</td><td><strong>Um segredo seu</strong> — e nunca tocou no assunto.</td></tr>
-        <tr><td>6</td><td><strong>Menos do que pensa</strong> — e você prefere assim.</td></tr>
-      </table></details>
-
-      <details class="tabela-colapsavel"><summary class="pergunta">Role 1d6 — O ritual de vocês:</summary>
-      <table>
-        <tr><th>d6</th><th>Ritual</th></tr>
-        <tr><td>1</td><td>Chá ou café toda semana, no mesmo horário</td></tr>
-        <tr><td>2</td><td>Uma partida de um jogo de tabuleiro que nunca termina</td></tr>
-        <tr><td>3</td><td>Trocar bilhetes por baixo da porta</td></tr>
-        <tr><td>4</td><td>Caminhar juntos até o mercado</td></tr>
-        <tr><td>5</td><td>Consertar coisas um do outro — de graça, sempre</td></tr>
-        <tr><td>6</td><td>Sentar em silêncio no mesmo banco, olhando a cidade</td></tr>
-      </table></details>
-
-      <p><em>Para aprofundar (opcional): como vocês se conheceram? O que essa pessoa faria por você sem pensar duas vezes? E o que você nunca pediria a ela?</em></p>
-
-      <p><a href="criacao-npcs.html" class="callout example">📖 Abrir: Criação de NPCs (para detalhar) →</a></p>
-
-      <p>Os NPCs romanceáveis não precisam ser criados agora — eles chegam na Jornada II (Capítulo 4). Crie-os quando chegar a hora, ou use <a href="criacao-npcs.html">Criação: NPCs</a> se preferir já ter tudo pronto.</p>
-    </section>
-
-    <div class="section-divider">❦ ❦ ❦</div>
-
-    <section>
-      <h2>✅ Pronto para Jogar</h2>
-      <p>Se você chegou até aqui, seu mundo tem: magia com regras, artefatos com histórias, uma cidade com tensão, uma Guilda com passado, Bastidores com segredos, um protagonista com medos — e alguém que te espera para o chá. É tudo que você precisa.</p>
-
-      <div class="callout tip">
-        <strong>Checklist do Mínimo Viável:</strong>
-        <ul>
-          <li>☐ Mundo — magia, artefatos, conflito, presenças culturais, tom</li>
-          <li>☐ Cidade — economia, governo, tensão atual</li>
-          <li>☐ Guilda — estrutura, Mestre, Lenda, conflito recente, Regra Inquebrável</li>
-          <li>☐ Bastidores — 5 zonas, Presença, seus Aposentos</li>
-          <li>☐ Protagonista — Capacidades, Background, Relíquia, Medo, Hábito, Lugar Favorito</li>
-          <li>☐ NPC de Conexão — quem é, o que sabe, o ritual de vocês</li>
-        </ul>
-        <p>Anote tudo na <a href="ficha-mundo.html">Ficha do Mundo</a> e na <a href="ficha-prota.html">Ficha do Protagonista</a>.</p>
-      </div>
-
-      <div class="callout celestial">
-        <strong>🌅 Próximo passo:</strong> Comece a jogar com a <a href="jornada-iniciante.html">Jornada do Jogador I — Primeiros Dias →</a>. Ela é um cardápio de ações para cada momento do dia, com um guia de progressão para você descobrir o jogo no seu ritmo. 
-      </div>
-    </section>
+    <p><em>Se preferir herdar um mundo pronto em vez de tecer o seu, <a href="quickstart.html">a Contracena de Vaelstrom espera</a>.</em></p>
+  </section>
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Jornada do Jogador — Sessão 0: Criação do Mundo</p>
-  <p><a href="index.html">← Início</a> | <a href="jornada-iniciante.html">Próxima: Jornada I →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Tecer a Contracena</p>
+  <p><a href="comecar.html">← Antes do Primeiro Café</a> | <a href="jornada-iniciante.html">Próxima: Os Primeiros Dias →</a></p>
 </footer>
 
 </div>
@@ -830,7 +1001,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

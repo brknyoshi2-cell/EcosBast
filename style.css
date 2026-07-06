@@ -17,21 +17,6 @@
   --soft: #6b8a4a;
 }
 
-[data-theme="dark"] {
-  --parchment: #1a1a1a;
-  --parchment-dark: #2a2a2a;
-  --ink: #e8dcc0;
-  --ink-soft: #e8dcc0;
-  --accent: #c9873d;
-  --accent-light: #b8860b;
-  --gold: #d4a574;
-  --danger: #a04040;
-  --success: #6b8a4a;
-  --mystery: #6b6b8a;
-  --romance: #d47aa0;
-  --soft: #8aaa6a;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -380,6 +365,115 @@ table.compact td {
   content: "✨ ";
   font-style: normal;
   font-size: 1.5rem;
+}
+
+.callout.critical {
+  background: rgba(122, 46, 46, 0.08);
+  border: 2px solid var(--danger);
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.callout.critical::before {
+  content: "💔 ";
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+.callout.romance {
+  background: rgba(184, 92, 138, 0.08);
+  border: 2px solid var(--romance);
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.callout.romance::before {
+  content: "💕 ";
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+.move {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 1px 4px rgba(43, 29, 14, 0.1);
+}
+
+.move h4 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.move .trigger {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+
+.move .attribute {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--parchment);
+  padding: 0.15rem 0.7rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-variant: small-caps;
+  margin-bottom: 0.8rem;
+}
+
+.move.sem-rolagem {
+  border-left-style: dashed;
+  border-left-color: var(--ink-soft);
+  background: rgba(74, 56, 32, 0.05);
+}
+
+.move.sem-rolagem h4::after {
+  content: "🕊️ sem rolagem";
+  float: right;
+  font-size: 0.7rem;
+  font-weight: normal;
+  font-style: italic;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
+
+.result {
+  margin: 0.4rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid transparent;
+}
+
+.result.success {
+  border-left-color: var(--success);
+}
+
+.result.partial {
+  border-left-color: var(--gold);
+}
+
+.result.failure {
+  border-left-color: var(--danger);
+}
+
+.result strong {
+  color: var(--accent);
+}
+
+.choice {
+  background: rgba(184, 134, 11, 0.08);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  margin: 0.2rem 0;
+  font-style: italic;
+}
+
+.choice strong {
+  color: var(--gold);
 }
 
 /* ============================================================
@@ -884,6 +978,35 @@ header.hero .flavor {
   background: var(--accent);
 }
 
+/* --------------------------------------------------------------
+   DESTAQUE DOS PILARES TEMÁTICOS (Núcleo + 5 Pilares)
+   ------------------------------------------------------------
+   Distinção sutil de "Os Dias" e "Referências": só um fundo
+   dourado translúcido atrás do rótulo, no mesmo tamanho/padding
+   do botão padrão — não altera a altura/largura do menu.
+   color-mix() lê a variável --gold do tema ativo (claro/escuro),
+   então o tom acompanha a troca de tema automaticamente.
+   -------------------------------------------------------------- */
+.dropbtn-core {
+  background: color-mix(in srgb, var(--gold) 22%, transparent);
+}
+
+.dropbtn-core:hover {
+  background: var(--accent);
+}
+
+/* "Os Dias" (onboarding): terceira cor, agora um tom rosado-suave
+   (--romance) — mais claro que --mystery/--ink, então se destaca
+   do fundo escuro do menu em vez de se misturar a ele; intensidade
+   bem baixa para ficar discreto. */
+.dropbtn-dias {
+  background: color-mix(in srgb, var(--romance) 12%, transparent);
+}
+
+.dropbtn-dias:hover {
+  background: var(--accent);
+}
+
 /* Conteúdo do dropdown (escondido por padrão) */
 .dropdown-content {
   display: none;
@@ -1115,4 +1238,685 @@ details.tabela-colapsavel > summary.pergunta {
 /* dentro do corpo de ação, os parágrafos herdam o espaçamento de .acao */
 details.acao-corpo > *:not(summary) {
   margin-left: 0.1rem;
+}
+
+/* ============================================================
+   === GERADORES v2 ===
+   Sistema de geradores automáticos (geradores.js + gen-*.js)
+   Usa somente as variáveis já existentes no :root.
+   ============================================================ */
+
+/* --- Dica sob o título do gerador --- */
+.gen-hint {
+  text-align: center;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  margin: -0.8rem 0 1.2rem;
+}
+
+/* --- Placeholder do output vazio --- */
+.gen-placeholder {
+  text-align: center;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: 0;
+}
+
+/* --- Spinner de geração (reaproveita .loading-spinner / .spinner já existentes) --- */
+.gen-spinner-wrap {
+  position: static;
+  padding: 1rem 0;
+}
+
+/* --- Resultado renderizado --- */
+.gen-result {
+  animation: gen-fade-in 0.25s ease;
+}
+
+@keyframes gen-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gen-result-title {
+  color: var(--accent);
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  margin: 0 0 0.8rem;
+}
+
+.gen-field-label {
+  font-variant: small-caps;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+  margin-right: 0.4rem;
+}
+
+/* --- Toolbar do resultado (Guardar / Gerar outro) --- */
+.gen-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--ink-soft);
+}
+
+.gen-tool-btn {
+  background: none;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  transition: background 0.15s, color 0.15s;
+}
+
+.gen-tool-btn:hover {
+  background: var(--accent);
+  color: var(--parchment);
+}
+
+.gen-tool-btn.saved {
+  background: rgba(184, 134, 11, 0.25);
+  border-color: var(--gold);
+  color: var(--ink);
+  cursor: default;
+}
+
+.gen-tool-btn.saved:hover {
+  background: rgba(184, 134, 11, 0.25);
+  color: var(--ink);
+}
+
+.gen-tool-btn:disabled {
+  opacity: 0.85;
+}
+
+/* --- Painel de guardados --- */
+.gen-saved-panel {
+  background: var(--parchment-dark);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin: 1.5rem 0;
+}
+
+.gen-saved-panel > summary {
+  cursor: pointer;
+  list-style: none;
+  color: var(--accent);
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.gen-saved-panel > summary::-webkit-details-marker {
+  display: none;
+}
+
+.gen-saved-panel > summary::before {
+  content: "▸ ";
+}
+
+.gen-saved-panel[open] > summary::before {
+  content: "▾ ";
+}
+
+.gen-saved-body-wrap {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.gen-saved-empty {
+  color: var(--ink-soft);
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* --- Item individual guardado --- */
+.gen-saved-item {
+  background: var(--parchment);
+  border: 1px solid var(--accent-light);
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+}
+
+.gen-saved-item > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.gen-saved-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.gen-saved-title {
+  color: var(--ink);
+  font-weight: bold;
+}
+
+.gen-saved-meta {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-left: auto;
+}
+
+.gen-saved-body {
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--ink-soft);
+}
+
+.gen-delete-btn {
+  background: none;
+  border: 1px solid var(--danger);
+  border-radius: 4px;
+  color: var(--danger);
+  padding: 0.3rem 0.8rem;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.82rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.gen-delete-btn:hover {
+  background: var(--danger);
+  color: var(--parchment);
+}
+
+.gen-clear-all-btn {
+  align-self: flex-start;
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.gen-clear-all-btn:hover {
+  background: var(--danger);
+  color: var(--parchment);
+}
+
+/* --- Hub de geradores (geradores.html) --- */
+.gen-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.gen-hub-card {
+  background: var(--parchment-dark);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.gen-hub-card h3 {
+  text-align: center;
+  color: var(--gold);
+  margin: 0 0 1rem;
+}
+
+.gen-hub-card .generator-output {
+  flex-grow: 1;
+}
+
+.gen-hub-link {
+  display: inline-block;
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent-light);
+  font-size: 0.9rem;
+  align-self: center;
+}
+
+.gen-hub-link:hover {
+  color: var(--gold);
+}
+
+/* --- Nome Verdadeiro / Pistas / Nome Oculto ---
+   Migrado de artefatos.html para uso compartilhado (página + hub) */
+.nome-verdadeiro-box {
+  background: var(--parchment-dark);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  padding: 1.2rem 1.4rem;
+  margin: 1.4rem 0 1.8rem;
+  box-shadow: 0 2px 8px rgba(43, 29, 14, 0.12);
+}
+
+.nome-verdadeiro-box h3 {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+.nome-verdadeiro-box p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.nome-verdadeiro-box a {
+  color: var(--accent);
+}
+
+.pistas-container {
+  margin: 1rem 0 0.5rem;
+}
+
+.pista-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin: 0.5rem 0;
+}
+
+.pista-num {
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--parchment);
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pista-texto {
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.nome-oculto-wrapper {
+  margin-top: 1rem;
+  border-top: 1px dashed var(--ink-soft);
+  padding-top: 0.9rem;
+}
+
+.nome-oculto-toggle {
+  background: none;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.15s;
+}
+
+.nome-oculto-toggle:hover {
+  background: var(--accent);
+  color: var(--parchment);
+}
+
+.nome-oculto-reveal {
+  display: none;
+  margin-top: 0.7rem;
+  background: rgba(184, 134, 11, 0.08);
+  border-left: 3px solid var(--gold);
+  padding: 0.6rem 0.9rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.nome-oculto-reveal.visible {
+  display: block;
+}
+
+.nome-oculto-reveal .nome-label {
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.nome-oculto-reveal .nome-valor {
+  font-size: 1.05rem;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.nome-oculto-reveal .nome-propriedade {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-top: 0.3rem;
+}
+
+/* --- Impressão: esconder geradores e painéis --- */
+@media print {
+  .gen-saved-panel,
+  .gen-toolbar,
+  .gen-hub-grid,
+  .generator-section {
+    display: none !important;
+  }
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .gen-hub-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gen-saved-meta {
+    margin-left: 0;
+  }
+
+  .gen-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gen-tool-btn {
+    text-align: center;
+  }
+}
+
+/* ============================================================================
+   Motor de Rolagem (dado.js) — linha sorteada, selo e botão
+   Casa com a paleta de pergaminho; funciona em tema claro e escuro pelas vars.
+   Regras vêm ao FINAL do arquivo de propósito: vencem o tr:nth-child(even) td
+   por ordem de origem, sem precisar de !important.
+   ========================================================================== */
+
+/* Linha sorteada — realce dourado suave com barra de acento à esquerda */
+tr.dado-resultado td {
+  background: linear-gradient(
+    to right,
+    rgba(184, 134, 11, 0.28),
+    rgba(184, 134, 11, 0.14)
+  );
+  border-bottom-color: rgba(184, 134, 11, 0.45);
+}
+tr.dado-resultado td:first-child {
+  box-shadow: inset 3px 0 0 0 var(--gold);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Pulso gentil ao cair na linha (uma vez) */
+@keyframes dado-brilho {
+  0%   { background-color: rgba(184, 134, 11, 0.55); }
+  100% { background-color: rgba(184, 134, 11, 0.14); }
+}
+tr.dado-resultado--anim td {
+  animation: dado-brilho 0.9s ease-out 1;
+}
+
+/* Selo com o número rolado (no summary ou dentro do botão) */
+.dado-badge {
+  display: inline-block;
+  margin-left: 0.6rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--parchment);
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(43, 29, 14, 0.25);
+}
+@keyframes dado-selo-pulso {
+  0%   { transform: scale(0.7); opacity: 0; }
+  60%  { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.dado-badge--pulse {
+  animation: dado-selo-pulso 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 1;
+}
+
+/* Botão de rolagem — discreto, no tom do jogo */
+.dado-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.2rem 0 1.2rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--parchment);
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.08s ease;
+}
+.dado-btn:hover {
+  background: var(--accent);
+  color: var(--parchment);
+}
+.dado-btn:active {
+  transform: translateY(1px);
+}
+
+/* Dentro de tabela colapsável, o botão fica levemente recuado */
+details.tabela-colapsavel .dado-btn {
+  margin-top: 0.6rem;
+}
+
+/* Acessibilidade: sem animações para quem prefere movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  tr.dado-resultado--anim td,
+  .dado-badge--pulse {
+    animation: none;
+  }
+  .dado-btn {
+    transition: none;
+  }
+}
+
+/* Não imprime botões de rolagem nem selos */
+@media print {
+  .dado-btn { display: none !important; }
+}
+
+/* ============================================================================
+   Tabela Múltipla — dado-multiplo.js
+   N colunas side-by-side com rolagens independentes.
+   Cada coluna destaca sua linha com uma cor diferente.
+   Suporta 2, 3, 4 ou mais colunas — o grid se ajusta automaticamente via
+   auto-fit. As classes de highlight seguem o padrão .dado-resultado-col-N
+   (N = índice 0-based), com até 6 paletas distintas definidas abaixo.
+   ========================================================================== */
+
+/* Container das colunas — auto-fit: distribui igualmente até 320px/coluna */
+.tabela-multipla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+  margin: 0.5rem 0 1rem;
+}
+
+@media (max-width: 520px) {
+  .tabela-multipla {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Rótulo acima de cada coluna */
+.tabela-multipla-col-label {
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.4rem;
+}
+
+/* Controle (botão + resultado) injetado acima do grid */
+.tabela-multipla-ctrl {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.tabela-multipla-btn {
+  margin: 0;
+}
+
+/* Área de resultado composto */
+.tabela-multipla-resultado {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.88rem;
+  min-height: 1.8rem;
+}
+
+@keyframes multiplo-resultado-pulso {
+  0%   { opacity: 0; transform: translateY(-4px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.tabela-multipla-resultado--pulse {
+  animation: multiplo-resultado-pulso 0.3s ease-out 1;
+}
+
+/* Badge base — cada coluna recebe uma subclasse de cor */
+.multiplo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(43, 29, 14, 0.2);
+  color: var(--parchment);
+}
+
+.multiplo-separador {
+  color: var(--ink-soft);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* ---- Paleta de cores por coluna (0-based) --------------------------------
+   Col 0 → dourado (--gold)
+   Col 1 → acento terra (--accent)
+   Col 2 → mistério (--mystery)
+   Col 3 → romance (--romance)
+   Col 4 → soft verde (--soft)
+   Col 5 → perigo/rubi (--danger)
+   Adicione mais conforme necessário.
+   -------------------------------------------------------------------------- */
+
+/* Badges */
+.multiplo-badge-col-0 { background: var(--gold); }
+.multiplo-badge-col-1 { background: var(--accent); }
+.multiplo-badge-col-2 { background: var(--mystery); }
+.multiplo-badge-col-3 { background: var(--romance); }
+.multiplo-badge-col-4 { background: var(--soft); }
+.multiplo-badge-col-5 { background: var(--danger); }
+
+/* Linhas destacadas — fundo degradê + barra lateral */
+
+/* Col 0 — dourado */
+.dado-resultado-col-0 td {
+  background: linear-gradient(to right, rgba(184,134,11,0.30), rgba(184,134,11,0.12));
+  border-bottom-color: rgba(184,134,11,0.45);
+}
+.dado-resultado-col-0 td:first-child {
+  box-shadow: inset 3px 0 0 0 var(--gold);
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* Col 1 — acento terra */
+.dado-resultado-col-1 td {
+  background: linear-gradient(to right, rgba(139,69,19,0.22), rgba(139,69,19,0.08));
+  border-bottom-color: rgba(139,69,19,0.35);
+}
+.dado-resultado-col-1 td:first-child {
+  box-shadow: inset 3px 0 0 0 var(--accent);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Col 2 — mistério (azul-arroxeado) */
+.dado-resultado-col-2 td {
+  background: linear-gradient(to right, rgba(74,74,107,0.22), rgba(74,74,107,0.08));
+  border-bottom-color: rgba(74,74,107,0.35);
+}
+.dado-resultado-col-2 td:first-child {
+  box-shadow: inset 3px 0 0 0 var(--mystery);
+  font-weight: 700;
+  color: var(--mystery);
+}
+
+/* Col 3 — romance (rosa) */
+.dado-resultado-col-3 td {
+  background: linear-gradient(to right, rgba(184,92,138,0.20), rgba(184,92,138,0.07));
+  border-bottom-color: rgba(184,92,138,0.32);
+}
+.dado-resultado-col-3 td:first-child {
+  box-shadow: inset 3px 0 0 0 var(--romance);
+  font-weight: 700;
+  color: var(--romance);
+}
+
+/* Col 4 — soft verde */
+.dado-resultado-col-4 td {
+  background: linear-gradient(to right, rgba(107,138,74,0.22), rgba(107,138,74,0.08));
+  border-bottom-color: rgba(107,138,74,0.35);
+}
+.dado-resultado-col-4 td:first-child {
+  box-shadow: inset 3px 0 0 0 var(--soft);
+  font-weight: 700;
+  color: var(--soft);
+}
+
+/* Col 5 — perigo/rubi */
+.dado-resultado-col-5 td {
+  background: linear-gradient(to right, rgba(122,46,46,0.22), rgba(122,46,46,0.08));
+  border-bottom-color: rgba(122,46,46,0.35);
+}
+.dado-resultado-col-5 td:first-child {
+  box-shadow: inset 3px 0 0 0 var(--danger);
+  font-weight: 700;
+  color: var(--danger);
+}
+
+/* Não imprime controles de dado múltiplo */
+@media print {
+  .tabela-multipla-ctrl { display: none !important; }
 }

@@ -4,18 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Sistema de Crafting</title>
+<title>Retalhos da Contracena — O Ninho: Moldagem</title>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="sistema-crafting.html">Sistema</a> &gt; <strong>Crafting</strong>
+  <a href="index.html">Início</a> &gt; <a href="pilar-ninho.html">O Ninho</a> &gt; <a href="pilar-ninho-raizes.html">Raízes</a> &gt; <strong>Moldagem</strong>
 </div>
 
 <div class="container">
@@ -26,40 +22,71 @@
   <h4>⚖️ Regra de Empilhamento de Bônus</h4>
   <p>Bônus de diferentes fontes <strong>não se acumulam</strong> automaticamente. Use a seguinte ordem de prioridade:</p>
   <ol>
-    <li><strong>Bônus de Módulos</strong> (+1 ou +2)</li>
-    <li><strong>Bônus de Crafting</strong> (+1 ou +2)</li>
-    <li><strong>Bônus de Tags</strong> (+1)</li>
-    <li><strong>Bônus de Conquistas</strong> (+1)</li>
+    <li><strong>Bônus de Cômodos</strong> <em>(análogo a: Upgrade de Base)</em> (+1 ou +2)</li>
+    <li><strong>Bônus de Moldagem</strong> (+1 ou +2)</li>
+    <li><strong>Bônus de Marcas</strong> (+1)</li>
+    <li><strong>Bônus de Saberes</strong> (+1)</li>
   </ol>
-  <p><strong>Regra:</strong> Use o <strong>maior bônus</strong> disponível. Bônus de fontes diferentes <strong>não se somam</strong> (ex: +1 de módulo + +1 de crafting = +1, não +2).</p>
-  <p><strong>Exceção:</strong> Bônus de Sinergias Ativas podem ser somados a um bônus base (ex: +1 de módulo + +2 de sinergia = +3).</p>
+  <p><strong>Regra:</strong> Use o <strong>maior bônus</strong> disponível. Bônus de fontes diferentes <strong>não se somam</strong> (ex: +1 de cômodo + +1 de moldagem = +1, não +2). Isso vale igualmente quando <strong>3 ou mais fontes</strong> empatam no mesmo valor — três fontes de +1 continuam valendo +1 no total, nunca +3. A ordem de prioridade acima só desempata qual fonte é narrativamente citada como origem do bônus, não altera o valor final.</p>
+  <p><strong>Exceções (as únicas duas):</strong></p>
+  <ol>
+    <li><strong>Harmonias Ativas</strong> somam a um bônus base (ex: +1 de cômodo + +2 de harmonia = +3).</li>
+    <li><strong>Marca de Especialização + seu Cômodo correspondente</strong> somam para <strong>+2</strong> — <span class="tag">GUERREIRO</span> + Sala de Armas, <span class="tag">SÁBIO</span> + Biblioteca Arcana, <span class="tag">OCULTISTA</span> + Arquivo dos Espíritos. Veja <a href="progressao-oficio.html#marcas-potencializam-comodos">Marcas Potencializam Cômodos</a> em Progressão: Cômodos.</li>
+  </ol>
+  <p>Fora essas duas exceções, nenhuma outra combinação de fontes se acumula. E nenhuma combinação de bônus de Marcas passa de +2 por rolagem — veja o teto global nas Regras de Invocação de <a href="sistema-tags.html">sistema-tags.html</a>.</p>
 </div>
 
-<h2>🔨 Forjando o Novo — Sistema de Crafting</h2>
+<h2>🔨 Forjando o Novo — Sistema de Moldagem</h2>
 <p>Você não é apenas um restaurador — você também pode criar. Com as ferramentas certas e materiais, você pode forjar novos itens, melhorar artefatos e personalizar seu equipamento.</p>
 
+<div class="callout rule">
+  <h4>⚖️ Moldagem x O Ninho — qual sistema usar?</h4>
+  <p>Algumas receitas de Moldagem (Bancada de Trabalho, Estante de Livros, Poltrona Confortável) produzem o mesmo tipo de objeto que aparece nas categorias do <a href="sistema-decoracao.html">Ninho</a>. A diferença é a origem do objeto, não o efeito:</p>
+  <ul>
+    <li><strong>Moldagem</strong> — você <strong>cria</strong> o item: exige nível de Curadoria, materiais específicos e Fôlego. Pode virar Nome Verdadeiro.</li>
+    <li><strong><a href="sistema-decoracao.html">O Ninho</a></strong> — você <strong>compra</strong> o item pronto, gastando só Recursos, sem pré-requisito de nível.</li>
+  </ul>
+  <p>Um item moldado com efeito de mobília <strong>conta normalmente para os bônus de categoria do Ninho</strong> (ex: 3 itens de Móveis, seja qual for a origem) — a Moldagem só troca o custo (materiais + Fôlego em vez de Recursos) pelo potencial extra de Nome Verdadeiro.</p>
+</div>
+
 <div class="callout tip">
-  <strong>Como usar:</strong> Gaste Recursos e Atos para criar itens. O crafting é opcional, mas pode dar vantagens significativas.
+  <strong>Como usar:</strong> Gaste Recursos e Fôlego para criar itens. A Moldagem é opcional, mas pode dar vantagens significativas.
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Níveis de Crafting</h3>
+<h3>Níveis de Moldagem</h3>
 
-<p>Seu nível de crafting é igual ao seu <strong>Nível de Ofício</strong> (veja <a href="progressao-oficio.html">Progressão: Ofício</a>). Cada nível desbloqueia novas receitas.</p>
+<p>A Moldagem tem uma trilha <strong>própria</strong> — ela não caminha mais atrelada ao seu Nível de Curadoria. Seu nível sobe por <strong>marcos de intenção</strong>: criações que carregam intenção, não rolagens, não um clock contando, nem o volume bruto de itens fabricados. No espírito d'<a href="pilar-ninho-raizes.html">O Ninho</a>, <em>não há nível marcando quanto falta — há só o que você já fez existir.</em></p>
+
+<p>Cada criação de Moldagem marca <strong>+1 na sua Trilha de Moldagem</strong> quando carrega intenção. A intenção se evidencia por <strong>qualquer uma</strong> das três formas abaixo — basta uma para marcar (e ter mais de uma na mesma criação ainda conta como +1):</p>
+
+<div class="callout rule">
+  <h4>❦ As três evidências de intenção</h4>
+  <ol>
+    <li><strong>Nova natureza</strong> — é a primeira vez que você molda algo daquela <em>natureza</em> de fazer. "Natureza" é uma família de material <strong>ou</strong> um propósito que você ainda não explorou. Guia sugerido (não uma checklist rígida — vale o seu julgamento; <em>todas as regras são sugestões</em>): famílias de material — <strong>madeira</strong>, <strong>metal</strong>, <strong>têxtil/couro</strong>, <strong>essência/gema</strong>; propósitos — <strong>ferramenta de ofício</strong>, <strong>mobília/conforto</strong>, <strong>proteção/expedição</strong>, <strong>artefato/relíquia</strong>.</li>
+    <li><strong>Nomeada</strong> — a criação recebeu um <strong>Nome Verdadeiro</strong>. Usa a mesma régua qualitativa que o <a href="sistema-legado.html">Legado</a> já canoniza: <em>não uma criação de manutenção, mas algo que exigiu planejamento, recursos e intenção.</em> Toda Moldagem significativa que vira Nome Verdadeiro marca.</li>
+    <li><strong>Dada</strong> — a criação foi <strong>feita para um NPC específico</strong> (um presente, uma encomenda pessoal, um objeto que entra na vida de alguém), em vez de guardada anonimamente para si.</li>
+  </ol>
+  <p><strong>O que não marca:</strong> repetir uma receita já explorada, anônima, guardada para você mesmo (a quinta estante idêntica na sua própria sala não marca nada). <strong>Exceção:</strong> a <em>mesma</em> receita volta a marcar se ganhar uma das três evidências — aquela quinta estante, se for um presente para o Ferreiro, marca via <em>Dada</em>.</p>
+</div>
+
+<p>O objeto moldado <em>carrega a marca de ter sido feito, não comprado</em> — e é isso que a trilha premia. No começo quase tudo será "nova natureza" (explorar é barato enquanto o ofício é largo); nos níveis altos, a trilha passa a pedir significância (Nome Verdadeiro) ou relação (presentes). O ofício começa largo e termina exigindo intenção deliberada — sem nenhum clock.</p>
 
 <table>
-<tr><th>Nível</th><th>Nome</th><th>Itens que pode criar</th></tr>
-<tr><td>1</td><td>Aprendiz</td><td>Itens simples (ferramentas básicas)</td></tr>
-<tr><td>2</td><td>Artesão</td><td>Itens médios (móveis, utensílios)</td></tr>
-<tr><td>3</td><td>Mestre Restaurador</td><td>Itens complexos (decoração, armaduras leves)</td></tr>
-<tr><td>4</td><td>Sábio das Relíquias</td><td>Itens raros (artefatos personalizados)</td></tr>
-<tr><td>5</td><td>Lenda Viva</td><td>Itens lendários (objetos únicos)</td></tr>
+<tr><th>Nível</th><th>Nome</th><th>Destrava com</th><th>Itens que pode criar</th></tr>
+<tr><td>1</td><td>Aprendiz</td><td>início (você já começa aqui)</td><td>Itens simples (ferramentas básicas)</td></tr>
+<tr><td>2</td><td>Artesão</td><td>2 marcos de intenção</td><td>Itens médios (móveis, utensílios)</td></tr>
+<tr><td>3</td><td>Mestre Restaurador</td><td>4 marcos de intenção</td><td>Itens complexos (ninho, armaduras leves)</td></tr>
+<tr><td>4</td><td>Sábio das Relíquias</td><td>7 marcos de intenção</td><td>Itens raros (artefatos personalizados)</td></tr>
+<tr><td>5</td><td>Lenda Viva</td><td>10 marcos de intenção</td><td>Itens lendários (objetos únicos)</td></tr>
 </table>
+
+<p><em>Você já começa como Aprendiz</em> — o Nível 1 é o ponto de partida gratuito. Não há como travar no início: as suas primeiras criações naturalmente marcam via "nova natureza" enquanto você experimenta famílias de material e propósitos pela primeira vez.</p>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Materiais de Crafting</h3>
+<h3>Materiais de Moldagem</h3>
 
 <p>Materiais podem ser encontrados na cidade, em expedições, ou comprados com Recursos.</p>
 
@@ -77,50 +104,54 @@
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Receitas de Crafting</h3>
+<h3>Receitas de Moldagem</h3>
 
 <h4>Nível 1 — Aprendiz</h4>
 <table>
-<tr><th>Item</th><th>Materiais</th><th>Custo em Atos</th><th>Efeito</th></tr>
-<tr><td>Ferramentas Básicas</td><td>Madeira Comum (2) + Metal Básico (1)</td><td>1 Ato</td><td>+1 em restauração de artefatos comuns</td></tr>
-<tr><td>Caixa de Armazenamento</td><td>Madeira Comum (3)</td><td>1 Ato</td><td>+1 espaço para artefatos</td></tr>
+<tr><th>Item</th><th>Materiais</th><th>Custo em Fôlego</th><th>Efeito</th></tr>
+<tr><td>Ferramentas Básicas</td><td>Madeira Comum (2) + Metal Básico (1)</td><td>1 Fôlego</td><td>+1 em restauração de artefatos comuns</td></tr>
+<tr><td>Caixa de Armazenamento</td><td>Madeira Comum (3)</td><td>1 Fôlego</td><td>+1 espaço para artefatos</td></tr>
 </table>
 
 <h4>Nível 2 — Artesão</h4>
 <table>
-<tr><th>Item</th><th>Materiais</th><th>Custo em Atos</th><th>Efeito</th></tr>
-<tr><td>Bancada de Trabalho</td><td>Madeira Comum (4) + Metal Básico (2)</td><td>2 Atos</td><td>+1 em todos os moves de Ofício</td></tr>
-<tr><td>Estante de Livros</td><td>Madeira Comum (3) + Tecido (1)</td><td>1 Ato</td><td>+1 em rolagens de MENTE</td></tr>
-<tr><td>Poltrona Confortável</td><td>Madeira Comum (2) + Couro (2)</td><td>2 Atos</td><td>+1 em rolagens de descanso</td></tr>
+<tr><th>Item</th><th>Materiais</th><th>Custo em Fôlego</th><th>Efeito</th></tr>
+<tr><td>Bancada de Trabalho</td><td>Madeira Comum (4) + Metal Básico (2)</td><td>2 Fôlegos</td><td>+1 em todos os gestos de Curadoria</td></tr>
+<tr><td>Estante de Livros</td><td>Madeira Comum (3) + Tecido (1)</td><td>1 Fôlego</td><td>+1 em rolagens de PENA</td></tr>
+<tr><td>Poltrona Confortável</td><td>Madeira Comum (2) + Couro (2)</td><td>2 Fôlegos</td><td>+1 em rolagens de descanso</td></tr>
 </table>
 
 <h4>Nível 3 — Mestre Restaurador</h4>
 <table>
-<tr><th>Item</th><th>Materiais</th><th>Custo em Atos</th><th>Efeito</th></tr>
-<tr><td>Ferramentas de Precisão</td><td>Metal Raro (2) + Madeira Rara (1)</td><td>2 Atos</td><td>+2 em restauração de artefatos raros</td></tr>
-<tr><td>Armadura Leve</td><td>Couro (3) + Metal Básico (2)</td><td>2 Atos</td><td>+1 em expedições (proteção)</td></tr>
-<tr><td>Luminária Mágica</td><td>Metal Básico (2) + Essência Mágica (1)</td><td>2 Atos</td><td>+1 em rolagens noturnas</td></tr>
+<tr><th>Item</th><th>Materiais</th><th>Custo em Fôlego</th><th>Efeito</th></tr>
+<tr><td>Ferramentas de Precisão</td><td>Metal Raro (2) + Madeira Rara (1)</td><td>2 Fôlegos</td><td>+2 em restauração de artefatos raros</td></tr>
+<tr><td>Armadura Leve</td><td>Couro (3) + Metal Básico (2)</td><td>2 Fôlegos</td><td>+1 em expedições (proteção)</td></tr>
+<tr><td>Luminária Mágica</td><td>Metal Básico (2) + Essência Mágica (1)</td><td>2 Fôlegos</td><td>+1 em rolagens noturnas</td></tr>
 </table>
 
 <h4>Nível 4 — Sábio das Relíquias</h4>
 <table>
-<tr><th>Item</th><th>Materiais</th><th>Custo em Atos</th><th>Efeito</th></tr>
-<tr><td>Artefato Personalizado</td><td>Metal Raro (3) + Gema Bruta (2) + Essência Mágica (2)</td><td>3 Atos</td><td>Escolha um bônus (+1 em qualquer capacidade)</td></tr>
-<tr><td>Mapa Encantado</td><td>Madeira Rara (1) + Essência Mágica (1)</td><td>2 Atos</td><td>+2 em expedições de conhecimento</td></tr>
+<tr><th>Item</th><th>Materiais</th><th>Custo em Fôlego</th><th>Efeito</th></tr>
+<tr><td>Artefato Personalizado</td><td>Metal Raro (3) + Gema Bruta (2) + Essência Mágica (2)</td><td>3 Fôlegos</td><td>Escolha um bônus (+1 em qualquer Instrumento)</td></tr>
+<tr><td>Mapa Encantado</td><td>Madeira Rara (1) + Essência Mágica (1)</td><td>2 Fôlegos</td><td>+2 em expedições de conhecimento</td></tr>
 </table>
 
 <h4>Nível 5 — Lenda Viva</h4>
 <table>
-<tr><th>Item</th><th>Materiais</th><th>Custo em Atos</th><th>Efeito</th></tr>
-<tr><td>Artefato Lendário</td><td>Metal Raro (5) + Gema Bruta (5) + Essência Mágica (5)</td><td>5 Atos</td><td>+3 em uma capacidade específica + Tag [LENDA]</td></tr>
-<tr><td>Relíquia Única</td><td>Materiais especiais (determinados pela história)</td><td>5 Atos</td><td>Efeito narrativo único — defina com a história</td></tr>
+<tr><th>Item</th><th>Materiais</th><th>Custo em Fôlego</th><th>Efeito</th></tr>
+<tr><td>Artefato Lendário</td><td>Metal Raro (5) + Gema Bruta (5) + Essência Mágica (5)</td><td>5 Fôlegos</td><td>+3 em um Instrumento específico + Marca [LENDA]</td></tr>
+<tr><td>Relíquia Única</td><td>Materiais especiais (determinados pela história)</td><td>5 Fôlegos</td><td>Efeito narrativo único — defina com a história</td></tr>
 </table>
+
+<div class="callout tip">
+  <strong>📜 Canto do Porão:</strong> uma Moldagem que o sistema classifique como significativa (Nível 3+, ou Nível inferior com forte carga narrativa) pode receber um Nome Verdadeiro e ser registrada no Álbum — uma das três vias que preenchem o Canto do Porão. Uma Moldagem assim também marca a sua Trilha de Moldagem, via evidência <em>Nomeada</em>. Veja <a href="sistema-legado.html">O Que Fica</a>.
+</div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Especializações de Crafting</h3>
+<h3>Especializações de Moldagem</h3>
 
-<p>Você pode se especializar em um tipo de crafting, ganhando bônus adicionais:</p>
+<p>Você pode se especializar em um tipo de Moldagem, ganhando bônus adicionais:</p>
 
 <table>
 <tr><th>Especialização</th><th>Requisito</th><th>Bônus</th></tr>
@@ -132,15 +163,15 @@
 <div class="callout example">
   <h3>📖 Exemplo de Uso</h3>
   <p><strong>Gabriel (O Restaurador):</strong> "Quero criar Ferramentas de Precisão para restaurar artefatos raros."</p>
-  <p><strong>Requisitos:</strong> Nível 3 (Mestre Restaurador) + Metal Raro (2) + Madeira Rara (1) + 2 Atos.</p>
+  <p><strong>Requisitos:</strong> Nível 3 (Mestre Restaurador) + Metal Raro (2) + Madeira Rara (1) + 2 Fôlegos.</p>
   <p><strong>Resultado:</strong> Gabriel ganha +2 em restauração de artefatos raros — exatamente o que ele precisava.</p>
 </div>
 
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Sistema — Crafting</p>
-  <p><a href="sistema-decoracao.html">← Decoração</a> | <a href="sistema-misterios.html">Próxima: Mistérios →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Sistema — Moldagem</p>
+  <p><a href="sistema-decoracao.html">← O Ninho</a> | <a href="sistema-misterios.html">Próxima: Mistérios →</a></p>
 </footer>
 
 </div>
@@ -148,7 +179,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

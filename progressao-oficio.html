@@ -4,83 +4,129 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Progressão: Oficina</title>
+<title>Retalhos da Contracena — Curadoria: Cômodos e Harmonias</title>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="progressao-oficio.html">Progressão</a> &gt; <strong>Oficina</strong>
+  <a href="index.html">Início</a> &gt; <a href="pilar-curadoria.html">Curadoria</a> &gt; <a href="pilar-curadoria-raizes.html">Raízes</a> &gt; <strong>Cômodos e Harmonias</strong>
 </div>
 
 <div class="container">
 
-<h2>Seu Espaço, Sua Marca — A Oficina</h2>
-<p>A oficina é o coração físico dos Bastidores. Ela cresce com você — novos módulos, novas ferramentas, novos espaços que refletem sua jornada e seus relacionamentos.</p>
+<h2>Seu Espaço, Sua Marca — Os Cômodos</h2>
+<p>Os cômodos são o coração físico da Contracena. Eles crescem com você — novos espaços, novas ferramentas, novos cantos que refletem seus dias e seus relacionamentos.</p>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Módulos Individuais</h3>
+<h3>Cômodos Individuais</h3>
 
-<p>Cada NPC romanceável tem um módulo da oficina desbloqueado quando o Relógio de Romance atinge <strong>9–10/10</strong>.</p>
+<p>Cada NPC romanceável tem um cômodo desbloqueado quando o Fio de Romance atinge <strong>9–10/10</strong>.</p>
 
 <table>
-<tr><th>Módulo</th><th>NPC</th><th>Custo</th><th>Benefícios</th></tr>
+<tr><th>Cômodo</th><th>NPC</th><th>Custo</th><th>Benefícios</th></tr>
 <tr><td>Sala de Armas</td><td>Explorador</td><td>6 Recursos</td><td>+1 em restauração de artefatos de expedição; acesso a artefatos raros.</td></tr>
 <tr><td>Biblioteca Arcana</td><td>Colega</td><td>6 Recursos</td><td>+1 em investigação; acesso a grimórios e pergaminhos secretos.</td></tr>
 <tr><td>Arquivo dos Espíritos</td><td>Forasteiro</td><td>6 Recursos</td><td>+1 em rolagens sociais; acesso a artefatos proibidos.</td></tr>
 </table>
 
 <div class="callout rule">
-  <strong>⚖️ Custo Crescente:</strong> Cada módulo adicional custa mais Recursos para construir:
+  <strong>⚖️ Custo Crescente:</strong> Cada cômodo adicional custa mais Recursos para construir:
   <ul>
-    <li><strong>1º módulo:</strong> 6 Recursos</li>
-    <li><strong>2º módulo:</strong> 8 Recursos (+2)</li>
-    <li><strong>3º módulo:</strong> 10 Recursos (+2)</li>
+    <li><strong>1º cômodo:</strong> 6 Recursos</li>
+    <li><strong>2º cômodo:</strong> 8 Recursos (+2)</li>
+    <li><strong>3º cômodo:</strong> 10 Recursos (+2)</li>
   </ul>
-  <p><strong>Total para todos os 3 módulos:</strong> 24 Recursos</p>
+  <p><strong>Total para todos os 3 cômodos:</strong> 24 Recursos</p>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Módulos e Relógios de Romance</h3>
+<h3 id="resumo-comodos">Um Cômodo de Relance — Resumo de Benefícios</h3>
 
-<p>Cada módulo acelera o Relógio de Romance com seu NPC correspondente:</p>
+<p>Antes de mergulhar seção por seção, aqui está tudo o que cada cômodo oferece, reunido num só lugar. Os detalhes completos de cada linha — condições, exceções, o porquê de cada número — estão nas seções abaixo.</p>
+
+<div class="callout tip">
+  <h4>🗡️ Sala de Armas <span style="font-weight:normal;">(Explorador/a)</span></h4>
+  <table>
+  <tr><th>Benefício</th><th>O que faz</th></tr>
+  <tr><td>Fio de Romance acelerado</td><td>Usar <em>"Arriscar-se por Alguém"</em> dá +1 extra no Fio</td></tr>
+  <tr><td>Retalho extra</td><td>Ao restaurar um artefato de guerra com Inteiro no Gesto, +1 Retalho</td></tr>
+  <tr><td>Desconto em gasto de Retalho</td><td>+1 em rolagem de combate/restauração custa 1 Retalho (em vez de 2)</td></tr>
+  <tr><td>Marca permanente</td><td><span class="tag">GUERREIRO</span> — +1 em rolagens com quebradores e em conflito. Com Marca + Cômodo, sobe para +2 (exceção ao empilhamento)</td></tr>
+  <tr><td>Desconto de Recursos</td><td>Restaurar artefatos de guerra custa 1 Recurso a menos</td></tr>
+  <tr><td>NPCs não-romanceáveis</td><td>Quebradores (favores, 1x/capítulo) · Ferreiro(a) da Cidade (desconto de 1 Recurso)</td></tr>
+  </table>
+  <p><a href="#fios-de-romance">Detalhes nas seções abaixo</a></p>
+</div>
+
+<div class="callout tip">
+  <h4>📚 Biblioteca Arcana <span style="font-weight:normal;">(Colega)</span></h4>
+  <table>
+  <tr><th>Benefício</th><th>O que faz</th></tr>
+  <tr><td>Fio de Romance acelerado</td><td>Usar <em>"Conversar Profundamente"</em> sobre tópico acadêmico dá +1 extra no Fio</td></tr>
+  <tr><td>Retalho extra</td><td>Ao decifrar um enigma com Inteiro no Gesto, +1 Retalho</td></tr>
+  <tr><td>Desconto em gasto de Retalho</td><td>Lembrar um detalhe custa 1 Retalho (em vez de 2)</td></tr>
+  <tr><td>Marca permanente</td><td><span class="tag">SÁBIO</span> — +1 em rolagens com acadêmicos e em situações de conhecimento. Com Marca + Cômodo, sobe para +2 (exceção ao empilhamento)</td></tr>
+  <tr><td>Desconto de Recursos</td><td>Pesquisar tópicos custa 0 Recursos (1x por capítulo)</td></tr>
+  <tr><td>NPCs não-romanceáveis</td><td>Acadêmicos/Estudiosos (pesquisa sem Fôlego, 1x/capítulo) · Livreiros da Cidade (acesso a livros raros)</td></tr>
+  </table>
+  <p><a href="#fios-de-romance">Detalhes nas seções abaixo</a></p>
+</div>
+
+<div class="callout tip">
+  <h4>👻 Arquivo dos Espíritos <span style="font-weight:normal;">(Forasteiro/a)</span></h4>
+  <table>
+  <tr><th>Benefício</th><th>O que faz</th></tr>
+  <tr><td>Fio de Romance acelerado</td><td>Usar <em>"Consolar ou Acolher"</em> dá +1 extra no Fio</td></tr>
+  <tr><td>Retalho extra</td><td>Ao descobrir um segredo com Inteiro no Gesto, +1 Retalho</td></tr>
+  <tr><td>Desconto em gasto de Retalho</td><td>Forçar encontro com NPC marginal custa 1 Retalho (em vez de 2)</td></tr>
+  <tr><td>Marca permanente</td><td><span class="tag">OCULTISTA</span> — +1 em rolagens com marginais e em situações de segredos. Com Marca + Cômodo, sobe para +2 (exceção ao empilhamento)</td></tr>
+  <tr><td>Desconto de Recursos</td><td>Subornos para marginais custam 1 Recurso a menos</td></tr>
+  <tr><td>NPCs não-romanceáveis</td><td>Marginais/Excluídos (+1 ao descobrir segredos da cidade) · Velhos sábios/Reclusos (histórias esquecidas, 1x/capítulo)</td></tr>
+  </table>
+  <p><a href="#fios-de-romance">Detalhes nas seções abaixo</a></p>
+</div>
+
+<p>Dois Cômodos juntos desbloqueiam Harmonias — <a href="#harmonias">veja abaixo</a>.</p>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3 id="fios-de-romance">Cômodos e Fios de Romance</h3>
+
+<p>Cada cômodo acelera o Fio de Romance com seu NPC correspondente:</p>
 
 <table>
-<tr><th>Módulo</th><th>Relógio Acelerado</th><th>Condição</th><th>Bônus</th></tr>
-<tr><td>Sala de Armas</td><td>Explorador(a)</td><td>Usar <em>"Arriscar-se por Alguém"</em></td><td>+1 extra no Relógio</td></tr>
-<tr><td>Biblioteca Arcana</td><td>Colega</td><td>Usar <em>"Conversar Profundamente"</em> sobre tópico acadêmico</td><td>+1 extra no Relógio</td></tr>
-<tr><td>Arquivo dos Espíritos</td><td>Forasteiro(a)</td><td>Usar <em>"Consolar ou Acolher"</em></td><td>+1 extra no Relógio</td></tr>
+<tr><th>Cômodo</th><th>Fio Acelerado</th><th>Condição</th><th>Bônus</th></tr>
+<tr><td>Sala de Armas</td><td>Explorador(a)</td><td>Usar <em>"Arriscar-se por Alguém"</em></td><td>+1 extra no Fio</td></tr>
+<tr><td>Biblioteca Arcana</td><td>Colega</td><td>Usar <em>"Conversar Profundamente"</em> sobre tópico acadêmico</td><td>+1 extra no Fio</td></tr>
+<tr><td>Arquivo dos Espíritos</td><td>Forasteiro(a)</td><td>Usar <em>"Consolar ou Acolher"</em></td><td>+1 extra no Fio</td></tr>
 </table>
 
 <div class="callout narrative">
-  <p><strong>Narrativa:</strong> <em>"O módulo não é só um espaço físico — é uma extensão do relacionamento. O NPC se sente mais conectado a você porque você construiu um espaço que reflete quem ele é."</em></p>
+  <p><strong>Narrativa:</strong> <em>"O cômodo não é só um espaço físico — é uma extensão do relacionamento. O NPC se sente mais conectado a você porque você construiu um espaço que reflete quem ele é."</em></p>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3 id="sinergias">Sinergias entre Módulos</h3>
+<h3 id="harmonias">Harmonias entre Cômodos</h3>
 
-<p>Ter dois módulos desbloqueados permite <strong>sinergias</strong> — habilidades adicionais que combinam os conhecimentos de ambos os espaços.</p>
+<p>Ter dois cômodos desbloqueados permite <strong>harmonias</strong> — habilidades adicionais que combinam os conhecimentos de ambos os espaços.</p>
 
 <div class="callout example">
-  <h4>📖 Tipos de Sinergias</h4>
+  <h4>📖 Tipos de Harmonias</h4>
   <ul>
-    <li><strong>Sinergias Ativas:</strong> Ações especiais que você pode ativar gastando <strong>1 Eco</strong>. Cada uma pode ser usada <strong>1x por capítulo</strong>.</li>
-    <li><strong>Sinergias Emergentes:</strong> Benefícios automáticos que se aplicam sempre que a condição é atendida.</li>
+    <li><strong>Harmonias Ativas:</strong> Ações especiais que você pode ativar gastando <strong>1 Retalho</strong>. Cada uma pode ser usada <strong>1x por capítulo</strong>.</li>
+    <li><strong>Harmonias Emergentes:</strong> Benefícios automáticos que se aplicam sempre que a condição é atendida.</li>
   </ul>
 </div>
 
 <div class="callout rule">
-  <h4>⚖️ Relógios de Ligação Ativam Sinergias</h4>
-  <p>Se dois NPCs têm Relógio de Ligação em <strong>6/8+</strong>, as sinergias entre seus módulos custam <strong>0 Eco</strong> (gratuitas).</p>
-  <p>Se dois NPCs têm Relógio de Ligação em <strong>8/8</strong>, desbloqueie uma <strong>Sinergia Especial</strong> única entre os dois.</p>
+  <h4>⚖️ Fios de Ligação Ativam Harmonias</h4>
+  <p>Se dois NPCs têm Fio de Ligação em <strong>6/8+</strong>, as harmonias entre seus cômodos custam <strong>0 Retalho</strong> (gratuitas).</p>
+  <p>Se dois NPCs têm Fio de Ligação em <strong>8/8</strong>, desbloqueie uma <strong>Harmonia Especial</strong> única entre os dois.</p>
 </div>
 
 <div class="section-divider" style="margin: 1.5rem 0;">❦</div>
@@ -92,13 +138,13 @@
 <tr>
   <td><strong>Ativa</strong></td>
   <td><em>"Pesquisa de Campo"</em></td>
-  <td>Estude um artefato <strong>sem gastar 1 Ato</strong> (normalmente custa 1 Ato)</td>
-  <td>1 Eco • 1x por capítulo</td>
+  <td>Estude um artefato <strong>sem gastar 1 Fôlego</strong> (normalmente custa 1 Fôlego)</td>
+  <td>1 Retalho • 1x por capítulo</td>
 </tr>
 <tr>
   <td><strong>Emergente</strong></td>
   <td><em>"Arqueologia Bélica"</em></td>
-  <td>Ao estudar um artefato de guerra, ganhe <strong>+1 Eco extra</strong></td>
+  <td>Ao estudar um artefato de guerra, ganhe <strong>+1 Retalho extra</strong></td>
   <td>Automático • Sempre que aplicável</td>
 </tr>
 <tr>
@@ -123,7 +169,7 @@
   <td><strong>Ativa</strong></td>
   <td><em>"Comunhão Guerreira"</em></td>
   <td>Ganhe <strong>+2 em uma rolagem</strong> que envolva um artefato com história de conflito</td>
-  <td>1 Eco • 1x por capítulo</td>
+  <td>1 Retalho • 1x por capítulo</td>
 </tr>
 <tr>
   <td><strong>Emergente</strong></td>
@@ -134,7 +180,7 @@
 <tr>
   <td><strong>Especial (Ligação 8/8)</strong></td>
   <td><em>"O Escudo de Almas"</em></td>
-  <td>Uma vez por capítulo, proteja um NPC de uma consequência negativa (anule um 6− para ele).</td>
+  <td>Uma vez por capítulo, proteja um NPC de um rastro negativo (anule Cacos para ele).</td>
   <td>Gratuito • 1x por capítulo</td>
 </tr>
 </table>
@@ -153,7 +199,7 @@
   <td><strong>Ativa</strong></td>
   <td><em>"Leitura de Almas"</em></td>
   <td>Descubra <strong>um segredo de um NPC</strong> sem rolagem</td>
-  <td>1 Eco • 1x por capítulo</td>
+  <td>1 Retalho • 1x por capítulo</td>
 </tr>
 <tr>
   <td><strong>Emergente</strong></td>
@@ -175,58 +221,59 @@
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Módulos e Ecos</h3>
+<h3 id="retalhos-extras">Cômodos e Retalhos</h3>
 
-<p>Cada módulo gera <strong>Ecos extras</strong> em contextos específicos:</p>
+<p>Cada cômodo gera <strong>Retalhos extras</strong> em contextos específicos:</p>
 
 <table>
-<tr><th>Módulo</th><th>Quando ganha Eco extra</th><th>Quantidade</th></tr>
-<tr><td>Sala de Armas</td><td>Ao restaurar um artefato de guerra (10+ no move)</td><td>+1 Eco</td></tr>
-<tr><td>Biblioteca Arcana</td><td>Ao decifrar um enigma (10+ no move)</td><td>+1 Eco</td></tr>
-<tr><td>Arquivo dos Espíritos</td><td>Ao descobrir um segredo (10+ no move)</td><td>+1 Eco</td></tr>
+<tr><th>Cômodo</th><th>Quando ganha Retalho extra</th><th>Quantidade</th></tr>
+<tr><td>Sala de Armas</td><td>Ao restaurar um artefato de guerra (Inteiro no Gesto)</td><td>+1 Retalho</td></tr>
+<tr><td>Biblioteca Arcana</td><td>Ao decifrar um enigma (Inteiro no Gesto)</td><td>+1 Retalho</td></tr>
+<tr><td>Arquivo dos Espíritos</td><td>Ao descobrir um segredo (Inteiro no Gesto)</td><td>+1 Retalho</td></tr>
 </table>
 
 <div class="callout rule">
-  <h4>⚖️ Gastar Ecos com Desconto</h4>
-  <p>Cada módulo oferece desconto em um gasto específico de Eco:</p>
+  <h4>⚖️ Gastar Retalhos com Desconto</h4>
+  <p>Cada cômodo oferece desconto em um gasto específico de Retalho:</p>
   <ul>
-    <li><strong>Sala de Armas:</strong> Gastar Eco para +1 em rolagem de combate/restauração → custa <strong>1 Eco</strong> em vez de 2</li>
-    <li><strong>Biblioteca Arcana:</strong> Gastar Eco para lembrar um detalhe → custa <strong>1 Eco</strong> em vez de 2</li>
-    <li><strong>Arquivo dos Espíritos:</strong> Gastar Eco para forçar encontro com NPC marginal → custa <strong>1 Eco</strong> em vez de 2</li>
+    <li><strong>Sala de Armas:</strong> Gastar Retalho para +1 em rolagem de combate/restauração → custa <strong>1 Retalho</strong> em vez de 2</li>
+    <li><strong>Biblioteca Arcana:</strong> Gastar Retalho para lembrar um detalhe → custa <strong>1 Retalho</strong> em vez de 2</li>
+    <li><strong>Arquivo dos Espíritos:</strong> Gastar Retalho para forçar encontro com NPC marginal → custa <strong>1 Retalho</strong> em vez de 2</li>
   </ul>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Módulos e Tags</h3>
+<h3 id="marcas-comodos">Cômodos e Marcas</h3>
 
-<p>Cada módulo desbloqueia uma <strong>Tag permanente</strong>:</p>
+<p>Cada cômodo desbloqueia uma <strong>Marca permanente</strong>:</p>
 
 <table>
-<tr><th>Módulo</th><th>Tag Desbloqueada</th><th>Efeito da Tag</th></tr>
-<tr><td>Sala de Armas</td><td><span class="tag">GUERREIRO</span></td><td>+1 em rolagens com aventureiros e em situações de conflito</td></tr>
+<tr><th>Cômodo</th><th>Marca Desbloqueada</th><th>Efeito da Marca</th></tr>
+<tr><td>Sala de Armas</td><td><span class="tag">GUERREIRO</span></td><td>+1 em rolagens com quebradores e em situações de conflito</td></tr>
 <tr><td>Biblioteca Arcana</td><td><span class="tag">SÁBIO</span></td><td>+1 em rolagens com acadêmicos e em situações de conhecimento</td></tr>
 <tr><td>Arquivo dos Espíritos</td><td><span class="tag">OCULTISTA</span></td><td>+1 em rolagens com marginais e em situações de segredos</td></tr>
 </table>
 
-<div class="callout rule">
-  <h4>⚖️ Tags Potencializam Módulos</h4>
-  <p>Se você tem a Tag correspondente, o bônus do módulo aumenta:</p>
+<div class="callout rule" id="marcas-potencializam-comodos">
+  <h4>⚖️ Marcas Potencializam Cômodos</h4>
+  <p>Se você tem a Marca correspondente, o bônus do cômodo aumenta:</p>
   <ul>
-    <li><span class="tag">GUERREIRO</span> + Sala de Armas → <strong>+2</strong> em rolagens com aventureiros (em vez de +1)</li>
+    <li><span class="tag">GUERREIRO</span> + Sala de Armas → <strong>+2</strong> em rolagens com quebradores (em vez de +1)</li>
     <li><span class="tag">SÁBIO</span> + Biblioteca Arcana → <strong>+2</strong> em rolagens com acadêmicos (em vez de +1)</li>
     <li><span class="tag">OCULTISTA</span> + Arquivo dos Espíritos → <strong>+2</strong> em rolagens com marginais (em vez de +1)</li>
   </ul>
+  <p>Este é um caso <strong>excepcional</strong> de soma: a regra geral de empilhamento de bônus (veja <a href="sistema-crafting.html">Sistema de Moldagem</a>) manda usar apenas o maior bônus disponível entre fontes diferentes — mesmo quando 3 ou mais fontes empatam no mesmo valor. O +2 aqui é uma das duas únicas exceções — e já é o teto: nenhuma combinação de Marcas passa de +2 por rolagem.</p>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Módulos e Recursos</h3>
+<h3 id="recursos-desconto">Cômodos e Recursos</h3>
 
-<p>Cada módulo oferece descontos em gastos de Recursos:</p>
+<p>Cada cômodo oferece descontos em gastos de Recursos:</p>
 
 <table>
-<tr><th>Módulo</th><th>Desconto em Recursos</th></tr>
+<tr><th>Cômodo</th><th>Desconto em Recursos</th></tr>
 <tr><td>Sala de Armas</td><td>Restaurar artefatos de guerra custa <strong>1 Recurso a menos</strong></td></tr>
 <tr><td>Biblioteca Arcana</td><td>Pesquisar tópicos custa <strong>0 Recursos</strong> (1x por capítulo)</td></tr>
 <tr><td>Arquivo dos Espíritos</td><td>Subornos para marginais custam <strong>1 Recurso a menos</strong></td></tr>
@@ -234,15 +281,15 @@
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Benefícios Narrativos em NPCs Não-Romanceáveis</h3>
+<h3 id="npcs-nao-romanceaveis">Benefícios Narrativos em NPCs Não-Romanceáveis</h3>
 
-<p>Cada módulo também desbloqueia interações especiais com certos tipos de NPCs:</p>
+<p>Cada cômodo também desbloqueia interações especiais com certos tipos de NPCs:</p>
 
 <table>
-<tr><th>Módulo</th><th>NPC Tipo</th><th>Como muda a interação</th></tr>
+<tr><th>Cômodo</th><th>NPC Tipo</th><th>Como muda a interação</th></tr>
 <tr>
   <td><strong>Sala de Armas</strong></td>
-  <td>Aventureiros</td>
+  <td>Quebradores</td>
   <td>Você pode pedir <strong>favores</strong> relacionados a artefatos de expedição (1x por capítulo)</td>
 </tr>
 <tr>
@@ -253,7 +300,7 @@
 <tr>
   <td><strong>Biblioteca Arcana</strong></td>
   <td>Acadêmicos/Estudiosos</td>
-  <td>Pesquise <strong>qualquer tópico</strong> sem gastar Ato (1x por capítulo)</td>
+  <td>Pesquise <strong>qualquer tópico</strong> sem gastar Fôlego (1x por capítulo)</td>
 </tr>
 <tr>
   <td><strong>Biblioteca Arcana</strong></td>
@@ -274,9 +321,9 @@
 
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Progressão — Oficina</p>
-  <p><a href="progressao-reputacao.html">← Reputação</a> | <a href="progressao-relacionamentos.html">Próxima: Relacionamentos →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Progressão — Cômodos</p>
+  <p><a href="progressao-reputacao.html">← Vínculos</a> | <a href="progressao-relacionamentos.html">Próxima: Relacionamentos →</a></p>
 </footer>
 
 </div>
@@ -284,7 +331,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

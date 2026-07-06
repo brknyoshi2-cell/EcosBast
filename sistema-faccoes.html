@@ -4,18 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Sistema de Facções</title>
+<title>Retalhos da Contracena — Confraria & Cidade: Círculos</title>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="sistema-faccoes.html">Sistema</a> &gt; <strong>Facções</strong>
+  <a href="index.html">Início</a> &gt; <a href="pilar-confraria.html">Confraria &amp; Cidade</a> &gt; <a href="pilar-confraria-raizes.html">Raízes</a> &gt; <strong>Círculos</strong>
 </div>
 
 <div class="container">
@@ -23,58 +19,63 @@
 <div class="tier-badge avancado">🔵 Avançado <span class="tier-desc">— camada opcional, adicione quando quiser mais profundidade</span></div>
 
 <div class="callout rule">
-  <h4>⚖️ Relação com Reputação da Cidade</h4>
-  <p>Facções são <strong>subgrupos</strong> dentro da cidade. Sua Reputação na Cidade (de <a href="progressao-reputacao.html">Progressão: Reputação</a>) afeta sua percepção inicial pelas facções:</p>
+  <h4>⚖️ Duas trilhas distintas — não confunda os nomes</h4>
+  <p>Esta página usa <strong>duas escalas diferentes</strong>, e vale a pena fixar os nomes qualificados antes de continuar:</p>
   <ul>
-    <li><strong>Reputação na Cidade 1-2:</strong> Facções te veem como <strong>desconhecido</strong> (reputação inicial 0)</li>
-    <li><strong>Reputação na Cidade 3-4:</strong> Facções te veem como <strong>conhecido</strong> (reputação inicial +1 com todas)</li>
-    <li><strong>Reputação na Cidade 5:</strong> Facções te veem como <strong>respeitado</strong> (reputação inicial +2 com todas)</li>
+    <li><strong>Vínculo da Cidade (1–5):</strong> sua reputação geral com a cidade — canônico em <a href="progressao-reputacao.html">Progressão: Vínculos</a>, não desta página.</li>
+    <li><strong>Vínculo de Círculo (0–10, em 4 faixas):</strong> sua relação com <strong>um</strong> Círculo específico — a trilha própria desta página, detalhada na tabela "Vínculo de Círculo por Círculo" abaixo.</li>
   </ul>
-  <p><strong>Importante:</strong> A Reputação de Facção é <strong>separada</strong> da Reputação da Cidade. Você pode ser odiado por uma facção e amado pela cidade.</p>
+  <p>O único ponto de contato entre as duas é o <strong>bônus inicial</strong>: o nível do seu Vínculo da Cidade define onde você começa em cada Círculo novo.</p>
+  <ul>
+    <li><strong>Vínculo da Cidade 1–2</strong> (Desconhecido/Conhecido): começa em <strong>0</strong> de Vínculo de Círculo.</li>
+    <li><strong>Vínculo da Cidade 3–4</strong> (Respeitado/Influente): começa em <strong>+1</strong> de Vínculo de Círculo com todos.</li>
+    <li><strong>Vínculo da Cidade 5</strong> (Lenda Urbana): começa em <strong>+2</strong> de Vínculo de Círculo com todos.</li>
+  </ul>
+  <p><strong>Depois disso, as duas evoluem de forma independente:</strong> dá para ser odiado por um Círculo (Vínculo de Círculo baixo) e, ainda assim, ser Lenda Urbana (Vínculo da Cidade alto) — e vice-versa.</p>
 </div>
 
-<h2>🏛️ O Poder por Trás das Coisas — Sistema de Facções</h2>
+<h2>🏛️ O Poder por Trás das Coisas — Sistema de Círculos <em>(análogo a: Facções)</em></h2>
 <p>A cidade não é um lugar vazio. Há grupos, interesses, alianças e conflitos. Este sistema adiciona profundidade política à sua campanha.</p>
 
 <div class="callout tip">
-  <strong>Como usar:</strong> No início da campanha, crie 3-5 facções. Cada uma tem objetivos, membros e uma relação com a Guilda.
+  <strong>Como usar:</strong> No início da campanha, crie 3-5 círculos. Cada um tem objetivos, membros e uma relação com a Confraria.
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Gerador de Facções (d20)</h3>
+<h3>Gerador de Círculos (d20)</h3>
 
-<p>Role 1d20 para gerar uma facção:</p>
+<p>Role 1d20 para gerar um círculo:</p>
 
 <table>
-<tr><th>d20</th><th>Facção</th><th>Objetivo</th><th>Relação com a Guilda</th></tr>
+<tr><th>d20</th><th>Círculo</th><th>Objetivo</th><th>Relação com a Confraria</th></tr>
 <tr><td>1</td><td><strong>Os Mercadores Livres</strong></td><td>Controlar o comércio da cidade</td><td>Neutro — querem acesso aos artefatos</td></tr>
 <tr><td>2</td><td><strong>A Ordem dos Magos</strong></td><td>Proteger o conhecimento arcano</td><td>Aliado — compartilham pergaminhos</td></tr>
-<tr><td>3</td><td><strong>Os Guardiões da Floresta</strong></td><td>Proteger a natureza ao redor</td><td>Desconfiado — acham que a Guilda explora</td></tr>
+<tr><td>3</td><td><strong>Os Guardiões da Floresta</strong></td><td>Proteger a natureza ao redor</td><td>Desconfiado — acham que a Confraria explora</td></tr>
 <tr><td>4</td><td><strong>A Irmandade dos Ferreiros</strong></td><td>Controlar a produção de metal</td><td>Aliado — fornecem ferramentas</td></tr>
-<tr><td>5</td><td><strong>Os Seguidores do Silêncio</strong></td><td>Preservar os segredos da cidade</td><td>Hostil — querem a Guilda fechada</td></tr>
+<tr><td>5</td><td><strong>Os Seguidores do Silêncio</strong></td><td>Preservar os segredos da cidade</td><td>Hostil — querem a Confraria fechada</td></tr>
 <tr><td>6</td><td><strong>O Conselho dos Nobres</strong></td><td>Manter a ordem e a tradição</td><td>Neutro — querem influência</td></tr>
-<tr><td>7</td><td><strong>Os Artistas Livres</strong></td><td>Celebrar a beleza e a criatividade</td><td>Aliado — decoram a Guilda</td></tr>
+<tr><td>7</td><td><strong>Os Artistas Livres</strong></td><td>Celebrar a beleza e a criatividade</td><td>Aliado — decoram a Confraria</td></tr>
 <tr><td>8</td><td><strong>A Irmandade dos Viajantes</strong></td><td>Explorar o mundo além da cidade</td><td>Aliado — trazem notícias</td></tr>
 <tr><td>9</td><td><strong>Os Guardiões dos Mortos</strong></td><td>Proteger os cemitérios</td><td>Neutro — querem respeito</td></tr>
 <tr><td>10</td><td><strong>Os Mercadores de Sonhos</strong></td><td>Controlar o comércio de sonhos e memórias</td><td>Hostil — querem os artefatos para si</td></tr>
-<tr><td>11</td><td><strong>A Ordem dos Curadores</strong></td><td>Curar os doentes e feridos</td><td>Aliado — ajudam aventureiros feridos</td></tr>
+<tr><td>11</td><td><strong>A Ordem dos Curadores</strong></td><td>Curar os doentes e feridos</td><td>Aliado — ajudam quebradores feridos</td></tr>
 <tr><td>12</td><td><strong>Os Seguidores do Fogo</strong></td><td>Adorar o fogo e suas chamas</td><td>Neutro — querem acesso à forja</td></tr>
-<tr><td>13</td><td><strong>Os Guardiões do Tempo</strong></td><td>Proteger a linha do tempo</td><td>Hostil — acham que a Guilda a distorce</td></tr>
+<tr><td>13</td><td><strong>Os Guardiões do Tempo</strong></td><td>Proteger a linha do tempo</td><td>Hostil — acham que a Confraria a distorce</td></tr>
 <tr><td>14</td><td><strong>Os Mercadores de Almas</strong></td><td>Comerciar com espíritos e mortos</td><td>Hostil — querem os artefatos para seus rituais</td></tr>
 <tr><td>15</td><td><strong>A Irmandade dos Caçadores</strong></td><td>Caçar criaturas perigosas</td><td>Aliado — protegem a cidade</td></tr>
 <tr><td>16</td><td><strong>Os Seguidores das Estrelas</strong></td><td>Ler o futuro nos astros</td><td>Neutro — querem acesso aos artefatos antigos</td></tr>
 <tr><td>17</td><td><strong>Os Guardiões da Memória</strong></td><td>Preservar as histórias da cidade</td><td>Aliado — registram as expedições</td></tr>
-<tr><td>18</td><td><strong>Os Mercadores de Ilusões</strong></td><td>Controlar o comércio de ilusões</td><td>Hostil — querem enganar a Guilda</td></tr>
-<tr><td>19</td><td><strong>Os Seguidores do Silêncio</strong></td><td>Buscar a paz interior</td><td>Neutro — querem que a Guilda pare de perturbar</td></tr>
-<tr><td>20</td><td><strong>A Ordem dos Escultores</strong></td><td>Criar obras de arte eternas</td><td>Aliado — decoram a Guilda com artefatos</td></tr>
+<tr><td>18</td><td><strong>Os Mercadores de Ilusões</strong></td><td>Controlar o comércio de ilusões</td><td>Hostil — querem enganar a Confraria</td></tr>
+<tr><td>19</td><td><strong>Os Seguidores do Silêncio</strong></td><td>Buscar a paz interior</td><td>Neutro — querem que a Confraria pare de perturbar</td></tr>
+<tr><td>20</td><td><strong>A Ordem dos Escultores</strong></td><td>Criar obras de arte eternas</td><td>Aliado — decoram a Confraria com artefatos</td></tr>
 </table>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Reputação por Facção</h3>
+<h3>Vínculo de Círculo por Círculo</h3>
 
-<p>Cada facção tem sua própria reputação (0-10). Suas ações afetam essas reputações.</p>
+<p>Cada círculo tem seu próprio Vínculo de Círculo (0–10). Suas ações afetam esse Vínculo, sempre em relação a um Círculo específico — nunca a cidade como um todo.</p>
 
 <table>
 <tr><th>Nível</th><th>Nome</th><th>Benefícios</th></tr>
@@ -85,24 +86,24 @@
 </table>
 
 <div class="callout rule">
-  <h4>⚖️ Como Ganhar Reputação</h4>
+  <h4>⚖️ Como Ganhar Vínculo de Círculo</h4>
   <ul>
-    <li><strong>+1:</strong> Completar uma missão para a facção</li>
+    <li><strong>+1:</strong> Completar um chamado para o círculo</li>
     <li><strong>+1:</strong> Dar um presente significativo</li>
-    <li><strong>+2:</strong> Resolver um conflito em favor da facção</li>
-    <li><strong>−1:</strong> Ajudar uma facção rival</li>
-    <li><strong>−2:</strong> Trair ou enganar a facção</li>
+    <li><strong>+2:</strong> Resolver um conflito em favor do círculo</li>
+    <li><strong>−1:</strong> Ajudar um círculo rival</li>
+    <li><strong>−2:</strong> Trair ou enganar o círculo</li>
   </ul>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Conflitos entre Facções</h3>
+<h3>Conflitos entre Círculos</h3>
 
-<p>Facções podem entrar em conflito. Quando isso acontece, você precisa escolher um lado — ou tentar negociar.</p>
+<p>Círculos podem entrar em conflito. Quando isso acontece, você precisa escolher um lado — ou tentar negociar.</p>
 
 <table>
-<tr><th>Conflito</th><th>Facção A</th><th>Facção B</th><th>Escolha</th></tr>
+<tr><th>Conflito</th><th>Círculo A</th><th>Círculo B</th><th>Escolha</th></tr>
 <tr><td>Controle do Mercado</td><td>Mercadores Livres</td><td>Mercadores de Sonhos</td><td>Apoiar A ou B</td></tr>
 <tr><td>Conhecimento Proibido</td><td>Ordem dos Magos</td><td>Seguidores do Silêncio</td><td>Apoiar A ou B</td></tr>
 <tr><td>Proteção da Natureza</td><td>Guardiões da Floresta</td><td>Irmandade dos Ferreiros</td><td>Apoiar A ou B</td></tr>
@@ -110,27 +111,38 @@
 </table>
 
 <div class="callout rule">
-  <h4>⚖️ Consequências dos Conflitos</h4>
+  <h4>⚖️ Rastros dos Conflitos</h4>
   <ul>
-    <li><strong>Apoiar uma facção:</strong> +2 de reputação com ela, −1 com a rival</li>
-    <li><strong>Negociar:</strong> +1 com ambas (se bem-sucedido, role 2d6 + CORAÇÃO)</li>
-    <li><strong>Ignorar:</strong> −1 com ambas (ambas se sentem desrespeitadas)</li>
+    <li><strong>Apoiar um círculo:</strong> +2 de Vínculo de Círculo com ele, −1 com o rival</li>
+    <li><strong>Negociar:</strong> +1 de Vínculo de Círculo com ambos (se bem-sucedido, role 2d6 + BRASA)</li>
+    <li><strong>Ignorar:</strong> −1 de Vínculo de Círculo com ambos (ambos se sentem desrespeitados)</li>
   </ul>
+</div>
+
+<div class="callout warning">
+  <h4>⚔️ Quando Dois Círculos Próximos Entram em Guerra</h4>
+  <p>Às vezes o conflito não é entre um círculo que você mal conhece e outro — é entre <strong>dois círculos com Vínculo 6+ (Confiável ou Aliado)</strong>, os dois já provados como parceiros da Contracena. Nesse caso, a escolha dói mais do que a tabela acima sozinha sugere, e vale usar esta versão mais pesada das mesmas três opções:</p>
+  <ul>
+    <li><strong>Apoiar um lado:</strong> aplique o +2/−1 normal, mas o lado rejeitado também <strong>cai uma faixa inteira</strong> (não só −1) — ex.: de Aliado (9–10) para Confiável (6–8). A queda reflete que essa era uma relação de confiança real, não um contato qualquer.</li>
+    <li><strong>Negociar:</strong> role 2d6 + BRASA como sempre, mas em um resultado de <strong>Cicatrizes de Ouro (7–9)</strong>, a paz tem um preço: ganhe uma Marca <span class="tag tensao">TENSÃO</span> (ver <a href="sistema-tags.html">Sistema: Marcas</a>) ligada a um dos dois círculos, à sua escolha — a trégua que você costurou ainda pode desandar.</li>
+    <li><strong>Ignorar:</strong> os dois círculos <strong>caem uma faixa inteira</strong> (não só −1) e a guerra se resolve sozinha, fora de cena — o resultado narrativo fica a critério de quem estiver narrando (você mesmo, no solo).</li>
+  </ul>
+  <p><em>Esta variante só se aplica quando ambos os lados do conflito já estão em 6+; conflitos entre círculos Desconhecidos ou Conhecidos seguem a tabela padrão de Rastros dos Conflitos.</em></p>
 </div>
 
 <div class="callout example">
   <h3>📖 Exemplo de Uso</h3>
-  <p><strong>Carlos (O Worldbuilder):</strong> "Quero criar uma facção de mercadores que querem controlar o comércio de artefatos."</p>
-  <p><strong>Facção criada:</strong> <em>Os Mercadores de Ossun</em> — Objetivo: controlar todos os artefatos que entram na cidade. Relação com a Guilda: Hostil (querem monopolizar).</p>
-  <p><strong>Conflito:</strong> Os Mercadores de Ossun entram em conflito com a Guilda. Carlos precisa escolher: negociar, confrontar ou ignorar.</p>
-  <p><strong>Resultado:</strong> Carlos negocia — ganha +2 de reputação com ambas as facções.</p>
+  <p><strong>Carlos (O Worldbuilder):</strong> "Quero criar um círculo de mercadores que querem controlar o comércio de artefatos."</p>
+  <p><strong>Círculo criado:</strong> <em>Os Mercadores de Ossun</em> — Objetivo: controlar todos os artefatos que entram na cidade. Relação com a Confraria: Hostil (querem monopolizar).</p>
+  <p><strong>Conflito:</strong> Os Mercadores de Ossun entram em conflito com a Confraria. Carlos precisa escolher: negociar, confrontar ou ignorar.</p>
+  <p><strong>Resultado:</strong> Carlos negocia — ganha +2 de Vínculo de Círculo com ambos os círculos.</p>
 </div>
 
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Sistema — Facções</p>
-  <p><a href="prompts-escrita.html">← Prompts de Escrita</a> | <a href="sistema-estatisticas.html">Próxima: Estatísticas →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Sistema — Círculos</p>
+  <p><a href="prompts-escrita.html">← Convites de Escrita</a> | <a href="sistema-estatisticas.html">Próxima: Registros →</a></p>
 </footer>
 
 </div>
@@ -138,7 +150,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

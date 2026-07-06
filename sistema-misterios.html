@@ -4,18 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Sistema de Mistérios</title>
+<title>Retalhos da Contracena — Núcleo: Mistérios</title>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="sistema-misterios.html">Sistema</a> &gt; <strong>Mistérios</strong>
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>Mistérios</strong>
 </div>
 
 <div class="container">
@@ -23,10 +19,10 @@
 <div class="tier-badge avancado">🔵 Avançado <span class="tier-desc">— camada opcional, adicione quando quiser mais profundidade</span></div>
 
 <h2>🔍 O Que Está Escondido — Mistérios e Pistas</h2>
-<p>O mundo dos Bastidores está cheio de segredos. Esta seção expande o sistema de mistérios, adicionando pistas concretas, investigação ativa e revelações surpreendentes.</p>
+<p>O mundo da Contracena está cheio de segredos. Esta seção expande o sistema de mistérios, adicionando pistas concretas, investigação ativa e revelações surpreendentes.</p>
 
 <div class="callout tip">
-  <strong>Como usar:</strong> Mistérios são Relógios especiais (6-8 segmentos). Ao invés de apenas rolar, você coleta <strong>pistas</strong> que, quando combinadas, revelam a verdade.
+  <strong>Como usar:</strong> Mistérios são Fios especiais (6-8 nós). Ao invés de apenas rolar, você coleta <strong>pistas</strong> que, quando combinadas, revelam a verdade.
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
@@ -37,60 +33,163 @@
 
 <table>
 <tr><th>Componente</th><th>Descrição</th><th>Exemplo</th></tr>
-<tr><td><strong>Pergunta</strong></td><td>O que você quer descobrir?</td><td>"O que há na Câmara Selada?"</td></tr>
+<tr><td><strong>Pergunta</strong></td><td>O que você quer descobrir?</td><td>"O que há no Relicário Selado?"</td></tr>
 <tr><td><strong>Pistas (3-5)</strong></td><td>Fragmentos de informação</td><td>"Uma porta de bronze com inscrições"</td></tr>
-<tr><td><strong>Revelação</strong></td><td>A verdade que você descobre</td><td>"A Câmara guarda o primeiro Mestre"</td></tr>
-<tr><td><strong>Consequência</strong></td><td>O que muda com a revelação</td><td>"O Mestre ainda está vivo — e ele quer falar com você"</td></tr>
+<tr><td><strong>Revelação</strong></td><td>A verdade que você descobre</td><td>"O Relicário guarda o primeiro Mestre"</td></tr>
+<tr><td><strong>Rastro</strong></td><td>O que muda com a revelação</td><td>"O Mestre ainda está vivo — e ele quer falar com você"</td></tr>
 </table>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Gerador de Mistérios (d20)</h3>
+<h3>Oráculo de Mistérios (3d20)</h3>
 
-<p>Role 1d20 para gerar um mistério para sua campanha:</p>
+<p>Role os três dados para gerar a semente de um mistério. O resultado é um ponto de partida — adapte, combine, reinterprete. A narrativa dita, o dado serve a ela.</p>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> role uma vez em cada coluna — <strong>O Que Não Se Explica</strong> (o fenômeno que abre o mistério), <strong>Onde a Pista Está</strong> (o primeiro fragmento de evidência) e <strong>O Que Está Por Trás</strong> (o coração emocional da verdade). As três rolagens juntas formam a semente de um Fio de Mistério — o resto você descobre jogando, com o Sistema de Pistas abaixo.
+</div>
+
+<details class="tabela-colapsavel">
+<summary class="pergunta">Expandir tabelas — Oráculo de Mistérios</summary>
+<div class="tabela-multipla" data-tabela-multipla>
+
+  <div data-tabela-multipla-col data-dado="d20" data-label="O Que Não Se Explica">
+    <p class="tabela-multipla-col-label">🎲¹ O Que Não Se Explica</p>
+    <table>
+    <tr><th>#</th><th>Fenômeno</th></tr>
+    <tr><td>1</td><td>Um artefato que você já restaurou começa a sussurrar de novo</td></tr>
+    <tr><td>2</td><td>Um bairro inteiro esqueceu o nome de uma rua</td></tr>
+    <tr><td>3</td><td>As velas da Contracena se apagam sempre à mesma hora</td></tr>
+    <tr><td>4</td><td>Um Quebrador voltou de uma expedição e não reconhece ninguém</td></tr>
+    <tr><td>5</td><td>Uma porta do Ninho leva a um cômodo que não deveria existir</td></tr>
+    <tr><td>6</td><td>Uma canção conhecida muda de letra a cada vez que alguém a canta</td></tr>
+    <tr><td>7</td><td>Um cliente insiste que já trouxe o mesmo artefato — duas vezes</td></tr>
+    <tr><td>8</td><td>Um relógio da cidade nunca marca a mesma hora duas vezes</td></tr>
+    <tr><td>9</td><td>Um Quebrador conta uma história que você jura ter vivido</td></tr>
+    <tr><td>10</td><td>As Marcas de um artefato mudam de posição durante a noite</td></tr>
+    <tr><td>11</td><td>Alguém na cidade guarda luto por uma pessoa que ninguém mais lembra</td></tr>
+    <tr><td>12</td><td>Um cheiro de chá recém-feito aparece na Contracena vazia</td></tr>
+    <tr><td>13</td><td>Uma criança desenha sempre o mesmo rosto — e não sabe de quem é</td></tr>
+    <tr><td>14</td><td>Um artefato recusa-se a ser embrulhado, como se quisesse ficar</td></tr>
+    <tr><td>15</td><td>Um NPC repete a mesma frase todo fim de tarde, sem perceber</td></tr>
+    <tr><td>16</td><td>Um mapa da cidade mostra uma rua que não existe mais</td></tr>
+    <tr><td>17</td><td>Um Círculo inteiro parou de falar sobre um certo assunto, de comum acordo</td></tr>
+    <tr><td>18</td><td>Uma janela da Contracena mostra uma estação do ano diferente da real</td></tr>
+    <tr><td>19</td><td>Um Quebrador some por um dia inteiro e volta sem lembrar nada</td></tr>
+    <tr><td>20</td><td>Um artefato guardado no Relicário Selado começou a esquentar sozinho</td></tr>
+    </table>
+  </div>
+
+  <div data-tabela-multipla-col data-dado="d20" data-label="Onde a Pista Está">
+    <p class="tabela-multipla-col-label">🎲² Onde a Pista Está</p>
+    <table>
+    <tr><th>#</th><th>Evidência</th></tr>
+    <tr><td>1</td><td>Num diário que ninguém escreveu</td></tr>
+    <tr><td>2</td><td>No fundo de uma gaveta que você já abriu cem vezes</td></tr>
+    <tr><td>3</td><td>Na canção que a estalajadeira canta toda noite</td></tr>
+    <tr><td>4</td><td>Nas mãos de alguém que nega ter tocado em algo</td></tr>
+    <tr><td>5</td><td>Numa carta nunca enviada, escondida atrás de um retrato</td></tr>
+    <tr><td>6</td><td>No padrão de poeira que nunca se acumula num certo canto</td></tr>
+    <tr><td>7</td><td>Na letra de uma criança que copia palavras que não entende</td></tr>
+    <tr><td>8</td><td>Num bilhete trocado entre dois NPCs que fingem não se conhecer</td></tr>
+    <tr><td>9</td><td>Nas marcas de sapato que sempre param no mesmo lugar</td></tr>
+    <tr><td>10</td><td>No silêncio de alguém que muda de assunto sempre na mesma hora</td></tr>
+    <tr><td>11</td><td>Numa xícara que nunca esfria, mesmo esquecida</td></tr>
+    <tr><td>12</td><td>No verso de uma etiqueta de artefato, escrito por outra mão</td></tr>
+    <tr><td>13</td><td>Na data riscada num calendário antigo</td></tr>
+    <tr><td>14</td><td>No jeito como um animal da cidade evita um certo beco</td></tr>
+    <tr><td>15</td><td>Numa costura malfeita, escondida por dentro de uma roupa</td></tr>
+    <tr><td>16</td><td>No cheiro que fica depois que alguém sai de um cômodo</td></tr>
+    <tr><td>17</td><td>Num recorte de jornal guardado por alguém que diz não ler jornal</td></tr>
+    <tr><td>18</td><td>Nas mãos trêmulas de quem serve o chá, só àquela hora</td></tr>
+    <tr><td>19</td><td>Numa fechadura que aceita uma chave que ninguém lembra ter forjado</td></tr>
+    <tr><td>20</td><td>No desenho apagado atrás de um quadro pendurado há anos</td></tr>
+    </table>
+  </div>
+
+  <div data-tabela-multipla-col data-dado="d20" data-label="O Que Está Por Trás">
+    <p class="tabela-multipla-col-label">🎲³ O Que Está Por Trás</p>
+    <table>
+    <tr><th>#</th><th>Verdade</th></tr>
+    <tr><td>1</td><td>Alguém quis proteger uma pessoa amada</td></tr>
+    <tr><td>2</td><td>Um artefato está tentando voltar para quem o fez</td></tr>
+    <tr><td>3</td><td>A cidade tem medo de lembrar o que aconteceu</td></tr>
+    <tr><td>4</td><td>Duas pessoas guardam metade de um segredo cada uma, sem saber</td></tr>
+    <tr><td>5</td><td>Alguém trocou de lugar com quem deveria ter partido</td></tr>
+    <tr><td>6</td><td>Um antigo Mestre nunca foi embora — só parou de ser visto</td></tr>
+    <tr><td>7</td><td>A dor de alguém virou hábito da cidade inteira, sem que ninguém percebesse</td></tr>
+    <tr><td>8</td><td>Um artefato guarda a última promessa de alguém que já morreu</td></tr>
+    <tr><td>9</td><td>Alguém está pagando, sem saber, por uma dívida que não é sua</td></tr>
+    <tr><td>10</td><td>A saudade de uma pessoa criou algo que ainda anda por aí</td></tr>
+    <tr><td>11</td><td>Um segredo foi dividido em pedaços para que ninguém o carregasse sozinho</td></tr>
+    <tr><td>12</td><td>Alguém confundiu proteção com prisão, e ainda não percebeu</td></tr>
+    <tr><td>13</td><td>Uma despedida nunca aconteceu — e ainda está esperando para acontecer</td></tr>
+    <tr><td>14</td><td>Um erro pequeno de alguém virou uma verdade grande demais para admitir</td></tr>
+    <tr><td>15</td><td>Uma promessa feita em desespero está sendo cumprida ao pé da letra</td></tr>
+    <tr><td>16</td><td>Alguém trocou o próprio nome por um que doía menos lembrar</td></tr>
+    <tr><td>17</td><td>Uma pessoa amada não partiu de verdade — só mudou de forma</td></tr>
+    <tr><td>18</td><td>O medo de esquecer fez alguém repetir os mesmos gestos, todos os dias</td></tr>
+    <tr><td>19</td><td>Alguém carrega a culpa de algo que na verdade não fez</td></tr>
+    <tr><td>20</td><td>A cidade guarda, sem saber, o desejo de alguém de ser lembrado</td></tr>
+    </table>
+  </div>
+
+</div>
+</details>
+
+<details class="tabela-colapsavel">
+<summary class="pergunta">Mistérios Prontos (d20) — galeria de exemplos</summary>
+
+<p>Uma galeria de mistérios já montados, prontos para usar direto na mesa — ou para servir de inspiração de tom e escala para os seus próprios, gerados no Oráculo acima.</p>
 
 <table>
 <tr><th>d20</th><th>Pergunta</th><th>Pistas</th><th>Revelação</th></tr>
-<tr><td>1</td><td>Quem fundou a Guilda?</td><td>Chave de bronze, retrato sem rosto, carta antiga</td><td>A fundadora ainda está viva — como a Presença dos Bastidores</td></tr>
-<tr><td>2</td><td>O que há na Câmara Selada?</td><td>Porta de bronze, sussurros, marcas de garras</td><td>O primeiro Mestre está preso lá — e quer sair</td></tr>
+<tr><td>1</td><td>Quem fundou a Confraria?</td><td>Chave de bronze, retrato sem rosto, carta antiga</td><td>A fundadora ainda está viva — como a Presença da Contracena</td></tr>
+<tr><td>2</td><td>O que há no Relicário Selado?</td><td>Porta de bronze, sussurros, marcas de garras</td><td>O primeiro Mestre está preso lá — e quer sair</td></tr>
 <tr><td>3</td><td>Por que o Mestre desapareceu?</td><td>Carta sem remetente, mapa rasgado, testemunha silenciosa</td><td>Ele foi atrás de um artefato proibido — e o encontrou</td></tr>
 <tr><td>4</td><td>O que o artefato sussurra?</td><td>Palavras em língua morta, sonhos estranhos, reações mágicas</td><td>Ele contém a consciência de um deus esquecido</td></tr>
-<tr><td>5</td><td>Quem é o Forasteiro?</td><td>Identidade falsa, cicatriz, conhecimento suspeito</td><td>Ele é um ex-membro da Guilda — e voltou para se vingar</td></tr>
-<tr><td>6</td><td>O que aconteceu com a antiga Guilda?</td><td>Ruínas, diário queimado, sobrevivente amnésico</td><td>Ela foi destruída por um artefato que eles mesmos criaram</td></tr>
+<tr><td>5</td><td>Quem é o Forasteiro?</td><td>Identidade falsa, cicatriz, conhecimento suspeito</td><td>Ele é um ex-membro da Confraria — e voltou para se vingar</td></tr>
+<tr><td>6</td><td>O que aconteceu com a antiga Confraria?</td><td>Ruínas, diário queimado, sobrevivente amnésico</td><td>Ela foi destruída por um artefato que eles mesmos criaram</td></tr>
 <tr><td>7</td><td>Por que os artefatos estão despertando?</td><td>Padrão estranho, datas coincidentes, presságios</td><td>Algo está chamando-os — e você é o alvo</td></tr>
-<tr><td>8</td><td>Quem é a Presença nos Bastidores?</td><td>Sussurros, objetos que se movem, sombras que observam</td><td>É a fundadora — ela nunca foi embora</td></tr>
+<tr><td>8</td><td>Quem é a Presença na Contracena?</td><td>Sussurros, objetos que se movem, sombras que observam</td><td>É a fundadora — ela nunca foi embora</td></tr>
 <tr><td>9</td><td>O que há no subsolo da cidade?</td><td>Entrada selada, inscrições antigas, lendas locais</td><td>Uma cidade inteira enterrada — mais antiga que a atual</td></tr>
-<tr><td>10</td><td>O que o Mestre esconde?</td><td>Quarto trancado, registros apagados, medo estranho</td><td>Ele cometeu um crime para fundar a Guilda</td></tr>
+<tr><td>10</td><td>O que o Mestre esconde?</td><td>Quarto trancado, registros apagados, medo estranho</td><td>Ele cometeu um crime para fundar a Confraria</td></tr>
 <tr><td>11</td><td>De onde vieram os artefatos?</td><td>Padrões similares, origem desconhecida, magia estranha</td><td>Eles são de outro mundo — e algo os trouxe</td></tr>
-<tr><td>12</td><td>Quem é o verdadeiro herdeiro da Guilda?</td><td>Testamento escondido, linhagem secreta, reivindicação</td><td>É você — e você não sabia</td></tr>
+<tr><td>12</td><td>Quem é o verdadeiro herdeiro da Confraria?</td><td>Testamento escondido, linhagem secreta, reivindicação</td><td>É você — e você não sabia</td></tr>
 <tr><td>13</td><td>O que a cidade esconde?</td><td>Mapa incompleto, memórias apagadas, festival estranho</td><td>A cidade foi construída sobre um local sagrado — e algo ainda está lá</td></tr>
 <tr><td>14</td><td>Por que o romanceável se aproximou de você?</td><td>Encontros "acidentais", perguntas estranhas, segredo</td><td>Ele foi enviado por alguém — mas agora quer ficar</td></tr>
-<tr><td>15</td><td>O que o Arquivo dos Espíritos contém?</td><td>Livros proibidos, espíritos presos, conhecimento perdido</td><td>O arquivo guarda a história de todos os que passaram pela Guilda</td></tr>
-<tr><td>16</td><td>Quem sabotou a expedição?</td><td>Equipamento danificado, sabotagem, pista falsa</td><td>Foi alguém de dentro — e ainda está na Guilda</td></tr>
-<tr><td>17</td><td>O que a taça nunca esvazia realmente faz?</td><td>Sonhos estranhos, mudanças de humor, dependência</td><td>Ela não cura — ela substitui. Você está perdendo algo a cada gole</td></tr>
-<tr><td>18</td><td>Para onde vai a chave de bronze?</td><td>Fechadura invisível, portas que aparecem, passagens secretas</td><td>Ela abre a entrada para a verdadeira Guilda — a que está abaixo</td></tr>
+<tr><td>15</td><td>O que o Arquivo dos Espíritos contém?</td><td>Livros proibidos, espíritos presos, conhecimento perdido</td><td>O arquivo guarda a história de todos os que passaram pela Confraria</td></tr>
+<tr><td>16</td><td>Quem sabotou a expedição?</td><td>Equipamento danificado, sabotagem, pista falsa</td><td>Foi alguém de dentro — e ainda está na Confraria</td></tr>
+<tr><td>17</td><td>O que a taça que nunca esvazia realmente faz?</td><td>Sonhos estranhos, mudanças de humor, dependência</td><td>Ela não cura — ela substitui. Você está perdendo algo a cada gole</td></tr>
+<tr><td>18</td><td>Para onde vai a chave de bronze?</td><td>Fechadura invisível, portas que aparecem, passagens secretas</td><td>Ela abre a entrada para a verdadeira Confraria — a que está abaixo</td></tr>
 <tr><td>19</td><td>O que o gato fantasma protege?</td><td>Comportamento estranho, alertas, segredo</td><td>Ele guarda um artefato que ninguém deve encontrar</td></tr>
-<tr><td>20</td><td>Qual é o verdadeiro propósito dos Bastidores?</td><td>Construção antiga, padrões ocultos, energia estranha</td><td>Eles não são uma oficina — são uma prisão. E o prisioneiro está acordando</td></tr>
+<tr><td>20</td><td>Qual é o verdadeiro propósito da Contracena?</td><td>Construção antiga, padrões ocultos, energia estranha</td><td>Ela não é uma oficina — é uma prisão. E o prisioneiro está acordando</td></tr>
 </table>
+
+</details>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
 <h3>Sistema de Pistas</h3>
 
-<p>Ao invés de apenas rolar para avançar um Relógio de Mistério, você pode <strong>encontrar pistas</strong> em diferentes lugares:</p>
+<p>Ao invés de apenas rolar para avançar um Fio de Mistério, você pode <strong>encontrar pistas</strong> em diferentes lugares:</p>
 
 <table>
-<tr><th>Como encontrar</th><th>Exemplo</th><th>Move usado</th></tr>
-<tr><td><strong>Investigando um local</strong></td><td>Examinar a porta da Câmara Selada</td><td>Explorar Bairro / Visitar Local</td></tr>
+<tr><th>Como encontrar</th><th>Exemplo</th><th>Gesto usado</th></tr>
+<tr><td><strong>Investigando um local</strong></td><td>Examinar a porta do Relicário Selado</td><td>Explorar Bairro / Visitar Local</td></tr>
 <tr><td><strong>Conversando com NPCs</strong></td><td>Perguntar ao Mestre sobre o passado</td><td>Conversar Profundamente / Negociar</td></tr>
 <tr><td><strong>Estudando um artefato</strong></td><td>Analisar as runas da espada</td><td>Estudar um Artefato / Decifrar Enigma</td></tr>
-<tr><td><strong>Expedições</strong></td><td>Encontrar um pergaminho antigo</td><td>Sistema de Aventureiros</td></tr>
+<tr><td><strong>Expedições</strong></td><td>Encontrar um pergaminho antigo</td><td>Sistema de Quebradores</td></tr>
 <tr><td><strong>Sonhos</strong></td><td>Visões durante a noite</td><td>Sonhar</td></tr>
+<tr><td><strong>Nomear um artefato</strong></td><td>Ao declarar o Nome Verdadeiro de um artefato, as 3 pistas da Fase Ouvir podem abrir um Fio de Mistério já em 3/6</td><td>Nome Verdadeiro (Curadoria)</td></tr>
 </table>
 
 <div class="callout rule">
   <h4>⚖️ Regra de Pistas</h4>
-  <p>Cada pista encontrada preenche <strong>1 segmento</strong> do Relógio de Mistério. Quando o Relógio estiver cheio, você pode <strong>montar as pistas</strong> e descobrir a revelação — sem rolagem adicional.</p>
+  <p>Cada pista encontrada preenche <strong>1 nó</strong> do Fio de Mistério. Quando o Fio estiver cheio, você pode <strong>montar as pistas</strong> e descobrir a revelação — sem rolagem adicional.</p>
+  <p><strong>Teto de ritmo:</strong> no máximo <strong>1 pista por cena</strong> conta para o Fio, mesmo que você repita a mesma abordagem (ex.: investigar o mesmo local duas vezes na mesma cena) ou combine duas fontes diferentes na mesma cena (ex.: investigar o local <em>e</em> conversar com um NPC sobre ele, um atrás do outro, sem nada de novo acontecer entre as duas ações). O objetivo é que o mistério se desenrole ao longo de várias cenas, não que seja estourado de uma vez.</p>
+  <p><strong>Exceção:</strong> a rajada de <strong>3 pistas</strong> aberta pelo Nome Verdadeiro (linha "Nomear um artefato" acima) é intencional e não conta contra esse teto — ela representa pistas que já existiam, reveladas de uma vez pela Fase Ouvir.</p>
+  <p><strong>Fios em paralelo:</strong> o teto de ritmo vale <strong>por Fio</strong>, não pelo total de mistérios abertos. Se você tem dois Fios de Mistério rodando ao mesmo tempo, uma única cena pode preencher <strong>1 nó em cada um</strong> — desde que a cena revele uma pista genuinamente distinta para cada mistério (fontes diferentes, ou a mesma fonte respondendo duas Perguntas Pendentes diferentes). Se a cena só rende uma informação só, que por acaso interessa aos dois Fios ao mesmo tempo (mesma fonte, mesmo fato, resolvendo as duas de uma vez), essa pista preenche <strong>apenas um</strong> Fio — escolha qual antes de descrever a cena. A pista não se duplica de graça só porque dois mistérios estavam olhando para o mesmo lugar.</p>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
@@ -116,19 +215,19 @@
 
 <div class="callout example">
   <h3>📖 Exemplo de Uso</h3>
-  <p><strong>Pedro (O Detetive):</strong> "Quero descobrir o que há na Câmara Selada."</p>
-  <p><strong>Pista 1:</strong> Examinando a porta — encontro inscrições em élfico antigo. (Explorar Bairro — 10+)</p>
-  <p><strong>Pista 2:</strong> Perguntando ao Mestre — ele hesita e muda de assunto. (Conversar Profundamente — 7-9)</p>
-  <p><strong>Pista 3:</strong> Estudando um artefato encontrado perto da porta — ele reage à Câmara. (Estudar um Artefato — 10+)</p>
-  <p><strong>Pista 4:</strong> Sonho com uma figura acorrentada. (Sonhar — 10+)</p>
-  <p><strong>Revelação:</strong> O primeiro Mestre está preso na Câmara Selada — e ele quer falar com você.</p>
+  <p><strong>Pedro (O Detetive):</strong> "Quero descobrir o que há no Relicário Selado."</p>
+  <p><strong>Pista 1:</strong> Examinando a porta — encontro inscrições em élfico antigo. (Explorar Bairro — Inteiro)</p>
+  <p><strong>Pista 2:</strong> Perguntando ao Mestre — ele hesita e muda de assunto. (Conversar Profundamente — Cicatrizes de Ouro)</p>
+  <p><strong>Pista 3:</strong> Estudando um artefato encontrado perto da porta — ele reage ao Relicário. (Estudar um Artefato — Inteiro)</p>
+  <p><strong>Pista 4:</strong> Sonho com uma figura acorrentada. (Sonhar — Inteiro)</p>
+  <p><strong>Revelação:</strong> O primeiro Mestre está preso no Relicário Selado — e ele quer falar com você.</p>
 </div>
 
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
+  <p>❦ Retalhos da Contracena ❦</p>
   <p>Sistema — Mistérios</p>
-  <p><a href="sistema-crafting.html">← Crafting</a> | <a href="sistema-rotas-romance.html">Próxima: Rotas de Romance →</a></p>
+  <p><a href="sistema-crafting.html">← Moldagem</a> | <a href="sistema-rotas-romance.html">Próxima: Rotas de Romance →</a></p>
 </footer>
 
 </div>
@@ -136,7 +235,8 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
+<script src="dado-multiplo.js"></script>
 </body>
 </html>

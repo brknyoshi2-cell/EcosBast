@@ -4,30 +4,81 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Sistema: Tags</title>
+<title>Retalhos da Contracena — Núcleo: Marcas</title>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="sistema-resolucao.html">Sistema</a> &gt; <strong>Tags</strong>
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>Marcas</strong>
 </div>
 
 <div class="container">
 
-<div class="tier-badge recomendado">🟡 Recomendado <span class="tier-desc">— usado no Tutorial e no Quick Start</span></div>
+<div class="tier-badge recomendado">🟡 Recomendado <span class="tier-desc">— usado no Tutorial e no Início Rápido</span></div>
 
-<h2>As Marcas da História — Tags Narrativas</h2>
-<p>Tags são marcadores temáticos e mecânicos. Representam momentos, laços, segredos e tensões que moldam a campanha.</p>
+<h2>As Marcas da História — Marcas Narrativas</h2>
+<p><strong>Marcas</strong> <em>(análogo a: Tags / Condições)</em> são o que você carrega. Não são atributos — são perguntas abertas, laços visíveis, feridas que ainda doem. Cada Marca transforma o modo como o mundo te vê e o modo como você se vê. O bônus mecânico existe, mas é consequência: primeiro vem a história, depois vem o número.</p>
+
+<h3 id="mapa-marcas">O Mapa das Marcas — Resumo por Categoria</h3>
+
+<p>Para consulta rápida durante a sessão: cinco categorias de Marca, o que cada uma representa em termos de origem e permanência. Os detalhes completos — Perguntas Pendentes, reações de NPCs, exemplos individuais — continuam nas seções abaixo; esta tabela é só o mapa.</p>
+
+<table>
+<tr><th>Categoria</th><th>Exemplos</th><th>Como se ganha</th><th>Permanente?</th><th>Efeito mecânico típico</th></tr>
+<tr>
+  <td><a href="#marcas-base">Marcas Base</a></td>
+  <td><span class="tag vinculo-plus">VÍNCULO+</span> <span class="tag tensao">TENSÃO</span> <span class="tag eco">MEMÓRIA</span></td>
+  <td>Nascem do cotidiano, das relações e de eventos narrativos — sorteáveis no <a href="#gerador">Gerador de Marca</a></td>
+  <td>Transforma-se <em>(ganha sufixo pessoal ao responder a Pergunta Pendente)</em></td>
+  <td>Invocável +1/+2 (dentro do teto global); +1 automático após transformação</td>
+</tr>
+<tr>
+  <td><a href="#marcas-perda">Marcas de Perda e Superação</a></td>
+  <td><span class="tag" style="background: var(--danger); color: var(--parchment);">LUTO</span> <span class="tag" style="background: var(--mystery); color: var(--parchment);">CICATRIZ</span></td>
+  <td>Perda de NPC importante (LUTO) ou evento de expedição (CICATRIZ)</td>
+  <td>Não / Transforma-se <em>(LUTO é temporária — 3 capítulos, removível por ritual; CICATRIZ transforma-se como Marca Base)</em></td>
+  <td>LUTO: −1 em BRASA por 3 capítulos; CICATRIZ: +1 após transformação</td>
+</tr>
+<tr>
+  <td><a href="#marcas-especializacao">Marcas de Especialização</a></td>
+  <td><span class="tag" style="background: var(--accent); color: var(--parchment);">GUERREIRO</span> <span class="tag" style="background: var(--mystery); color: var(--parchment);">SÁBIO</span> <span class="tag" style="background: #4a2a2a; color: var(--parchment);">OCULTISTA</span></td>
+  <td>Construir o Cômodo correspondente na Contracena</td>
+  <td>Sim</td>
+  <td>+1 fixo em rolagens no contexto temático da especialização</td>
+</tr>
+<tr>
+  <td><a href="#marcas-relacionamento">Marcas de Relacionamento</a></td>
+  <td><span class="tag" style="background: var(--success); color: var(--parchment);">CONFIANÇA</span> <span class="tag" style="background: var(--romance); color: var(--parchment);">INTIMIDADE</span> <span class="tag" style="background: var(--gold); color: var(--parchment);">PARCEIRO</span></td>
+  <td>Avançar Rota de Romance ou evolução de NPC</td>
+  <td>Sim <em>(vinculada a um NPC específico)</em></td>
+  <td>+1 fixo (INTIMIDADE: +2) em rolagens envolvendo o NPC vinculado</td>
+</tr>
+<tr>
+  <td><a href="#marcas-progressao">Marcas de Progressão</a></td>
+  <td><span class="tag" style="background: var(--gold); color: var(--parchment);">LENDÁRIO</span> <span class="tag" style="background: var(--success); color: var(--parchment);">MONUMENTO</span> <span class="tag" style="background: var(--accent); color: var(--parchment);">HERÓI</span></td>
+  <td>Eventos grandes de Clima Tempestade</td>
+  <td>Sim</td>
+  <td>+1 fixo em contexto temático (MALDITO é a exceção: −1 em sorte, +1 em superação)</td>
+</tr>
+</table>
+
+<div class="callout tip">
+  <p><strong>Lembretes universais de invocação:</strong> todo bônus de Marca aplicado à mesma rolagem soma até um <strong>teto global de +2</strong> — não importa quantas Marcas diferentes estejam envolvidas. Invocar uma Marca sempre exige justificativa narrativa: diga por que ela se conecta ao momento. <span class="tag vinculo-minus">VÍNCULO−</span> é a única invocável como penalidade — aceite −1 no dado para ganhar +1 Retalho.</p>
+</div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Tags Base</h3>
+<h3 id="marcas-base">Marcas Base</h3>
+
+<p>As Marcas Base são as que aparecem com mais frequência — nascidas do cotidiano, das relações, dos eventos que deixam rastro. Cada uma carrega uma <strong>Pergunta Pendente</strong>: algo que a história ainda não respondeu. Quando você responde essa pergunta — por escrita, por ação, por escolha — a Marca <strong>se transforma</strong>.</p>
+
+<p>Além das seis fundamentais, a categoria também inclui variações mais específicas do cotidiano — nascidas de situações mais pontuais, mas seguindo exatamente a mesma mecânica de Pergunta Pendente e transformação. O <a href="#gerador">Gerador de Marca</a> ao fim desta página sorteia entre todas elas.</p>
+
+<div class="callout rule">
+  <p><strong>Transformação de Marca:</strong> ao responder narrativamente a Pergunta Pendente de uma Marca Base, adicione um sufixo pessoal a ela. <span class="tag vinculo-plus">VÍNCULO+</span> vira <span class="tag vinculo-plus">VÍNCULO+: O Peso do Nome de Kael</span>. A Marca transformada dá +1 em rolagens tematicamente conectadas a essa resposta específica.</p>
+</div>
 
 <p>
   <span class="tag vinculo-plus">VÍNCULO+</span>
@@ -35,22 +86,176 @@
   <span class="tag misterio">MISTÉRIO</span>
   <span class="tag tensao">TENSÃO</span>
   <span class="tag domestico">DOMÉSTICO</span>
-  <span class="tag eco">ECO</span>
+  <span class="tag eco">MEMÓRIA</span>
+  <span class="tag" style="background: var(--mystery); color: var(--parchment);">SAUDADE</span>
+  <span class="tag" style="background: #4a2a2a; color: var(--parchment);">INSÔNIA</span>
+  <span class="tag" style="background: var(--gold); color: var(--parchment);">PROMESSA</span>
+  <span class="tag" style="background: var(--accent); color: var(--parchment);">COSTURA</span>
+  <span class="tag" style="background: var(--tensao, var(--accent)); color: var(--parchment);">VIGÍLIA</span>
+  <span class="tag" style="background: var(--danger); color: var(--parchment);">DÍVIDA</span>
+  <span class="tag" style="background: #4a2a2a; color: var(--parchment);">FERRUGEM</span>
+  <span class="tag" style="background: var(--success); color: var(--parchment);">COLHEITA</span>
+  <span class="tag" style="background: var(--mystery); color: var(--parchment);">INVERNO</span>
+  <span class="tag" style="background: var(--success); color: var(--parchment);">RAIZ</span>
+  <span class="tag" style="background: var(--romance); color: var(--parchment);">PONTE</span>
+  <span class="tag" style="background: var(--gold); color: var(--parchment);">HERANÇA</span>
+  <span class="tag" style="background: var(--danger); color: var(--parchment);">CHAMA</span>
 </p>
 
 <table>
-<tr><th>Tag</th><th>Significado</th><th>Exemplo</th></tr>
-<tr><td><span class="tag vinculo-plus">VÍNCULO+</span></td><td>Laço positivo com NPC ou lugar</td><td>"Kael confia em você"</td></tr>
-<tr><td><span class="tag vinculo-minus">VÍNCULO−</span></td><td>Laço negativo ou tensão</td><td>"Dívida com a Guilda"</td></tr>
-<tr><td><span class="tag misterio">MISTÉRIO</span></td><td>Algo não resolvido</td><td>"O que há na Câmara?"</td></tr>
-<tr><td><span class="tag tensao">TENSÃO</span></td><td>Pressão ou perigo iminente</td><td>"A Maldição se aproxima"</td></tr>
-<tr><td><span class="tag domestico">DOMÉSTICO</span></td><td>Conforto e rotina</td><td>"Café da manhã com Lyra"</td></tr>
-<tr><td><span class="tag eco">ECO</span></td><td>Momento significativo já registrado</td><td>"Memória do primeiro beijo"</td></tr>
+<tr><th>Marca</th><th>O Que Representa</th><th>Pergunta Pendente</th><th>Reações de NPCs</th></tr>
+<tr>
+  <td><span class="tag vinculo-plus">VÍNCULO+</span></td>
+  <td>Laço positivo com NPC ou lugar</td>
+  <td><em>"O que essa pessoa faria por você que ninguém mais faria?"</em></td>
+  <td>O NPC em questão te procura primeiro quando precisa de ajuda. Outros notam o laço e podem pedir que você interceda por eles.</td>
+</tr>
+<tr>
+  <td><span class="tag vinculo-minus">VÍNCULO−</span></td>
+  <td>Laço tenso ou dívida não resolvida</td>
+  <td><em>"O que vocês evitam dizer um ao outro — e quem vai falar primeiro?"</em></td>
+  <td>O NPC age com cautela perto de você. Outros que sabem da tensão ficam desconfortáveis quando vocês dois estão na mesma cena.</td>
+</tr>
+<tr>
+  <td><span class="tag misterio">MISTÉRIO</span></td>
+  <td>Algo não resolvido, uma lacuna na história</td>
+  <td><em>"O que você acha que está por trás disso — e por que tem medo de estar certo?"</em></td>
+  <td>NPCs curiosos fazem perguntas que você não consegue responder. NPCs que sabem mais do que parecem te observam de longe.</td>
+</tr>
+<tr>
+  <td><span class="tag tensao">TENSÃO</span></td>
+  <td>Pressão iminente, algo prestes a romper</td>
+  <td><em>"Se isso piorar, o que você perde primeiro?"</em></td>
+  <td>NPCs falam em voz baixa perto de você. Alguns te evitam. Outros se aproximam porque querem estar do lado certo quando a coisa quebrar.</td>
+</tr>
+<tr>
+  <td><span class="tag domestico">DOMÉSTICO</span></td>
+  <td>Conforto e rotina, o que ancora o dia</td>
+  <td><em>"Que parte da sua rotina você não sobreviveria sem — e o que acontece quando ela é interrompida?"</em></td>
+  <td>NPCs te pedem favores caseiros sem cerimônia. Figurantes que te veem com frequência já sabem seu pedido antes de você fazer.</td>
+</tr>
+<tr>
+  <td><span class="tag eco">MEMÓRIA</span></td>
+  <td>Momento significativo já vivido e registrado</td>
+  <td><em>"Se pudesse reviver esse momento, mudaria algo — ou tem medo de descobrir que não mudaria nada?"</em></td>
+  <td>NPCs presentes nessa memória reagem de forma diferente quando o assunto vem à tona. Às vezes eles lembram diferente de você.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--mystery); color: var(--parchment);">SAUDADE</span></td>
+  <td>Algo que ficou pela metade — despedida mal feita, estação que acabou cedo</td>
+  <td><em>"O que você faria diferente se soubesse, na hora, que era a última vez?"</em></td>
+  <td>NPCs que dividiram esse momento com você mudam de assunto se ele vier à tona sem aviso. Alguns preferem não tocar no nome; outros perguntam por ele toda vez que te veem.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: #4a2a2a; color: var(--parchment);">INSÔNIA</span></td>
+  <td>Noites maldormidas por preocupação</td>
+  <td><em>"O que você faz nas horas que ninguém vê você acordado?"</em></td>
+  <td>NPCs que moram perto notam a luz acesa tarde da noite e comentam, com cuidado ou com humor. Alguns se oferecem pra fazer companhia; outros só fingem não ter notado.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--gold); color: var(--parchment);">PROMESSA</span></td>
+  <td>Compromisso feito de coração aberto e ainda não cumprido</td>
+  <td><em>"O que vai custar cumprir essa promessa — e você ainda está disposto a pagar?"</em></td>
+  <td>Quem sabe da promessa cobra, mesmo que com delicadeza — um comentário solto, uma pergunta capciosa. Quem não sabe nota que você fica tenso quando o assunto se aproxima.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--accent); color: var(--parchment);">COSTURA</span></td>
+  <td>Reparo visível — em artefato ou em relação, com a emenda à mostra</td>
+  <td><em>"O reparo ficou mais bonito do que o original — ou só mais honesto?"</em></td>
+  <td>NPCs que conhecem a história por trás do reparo tocam a emenda com respeito, quase reverência. Estranhos perguntam por curiosidade, sem saber o peso da resposta.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--tensao, var(--accent)); color: var(--parchment);">VIGÍLIA</span></td>
+  <td>Cuidar de algo ou alguém que exige atenção constante</td>
+  <td><em>"O que acontece com você quando finalmente baixa a guarda?"</em></td>
+  <td>NPCs próximos notam o cansaço acumulado e oferecem revezar, mesmo que você recuse. Quem depende do seu cuidado constante busca sua presença antes de qualquer outra.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--danger); color: var(--parchment);">DÍVIDA</span></td>
+  <td>Favor recebido que ainda não foi retribuído</td>
+  <td><em>"O que essa pessoa vai pedir de volta — e você vai conseguir recusar, se precisar?"</em></td>
+  <td>Quem é credor age com uma cordialidade calculada — nunca cobra na cara, mas nunca deixa esquecer. Outros que sabem do favor ficam de olho em como (e se) você vai saldar.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: #4a2a2a; color: var(--parchment);">FERRUGEM</span></td>
+  <td>Deterioração lenta — algo se perdendo aos poucos e sem alarde</td>
+  <td><em>"Quando você notou pela primeira vez que algo estava se perdendo — e por que não fez nada na hora?"</em></td>
+  <td>NPCs que lembram de como as coisas eram comentam a mudança com pesar, mesmo sem dizer diretamente. Quem só conheceu você depois não nota nada — e isso, de algum jeito, também dói.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--success); color: var(--parchment);">COLHEITA</span></td>
+  <td>Resultado de um esforço longo finalmente aparecendo</td>
+  <td><em>"Esse resultado é tudo que você esperava — ou também é uma despedida do processo que te trouxe até aqui?"</em></td>
+  <td>NPCs que apoiaram o esforço celebram com você, genuinamente felizes. Alguns já perguntam qual é o próximo projeto, antes que você tenha tempo de sentir o que essa colheita significa.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--mystery); color: var(--parchment);">INVERNO</span></td>
+  <td>Período de retração emocional — fechar-se um pouco, guardar energia</td>
+  <td><em>"O que você está esperando passar — e vai reconhecer quando isso acontecer?"</em></td>
+  <td>NPCs próximos respeitam a distância, mesmo sem entender totalmente. Alguns insistem, gentilmente, em manter contato mínimo — só pra você saber que a porta continua aberta.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--success); color: var(--parchment);">RAIZ</span></td>
+  <td>Pertencimento profundo a um lugar</td>
+  <td><em>"O que aconteceria com você se precisasse ir embora desse lugar amanhã?"</em></td>
+  <td>Figurantes e vizinhos te tratam como parte da paisagem, não como visita. Quem ameaça o lugar te encontra defendendo-o antes mesmo de perceber que decidiu isso.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--romance); color: var(--parchment);">PONTE</span></td>
+  <td>Reconciliação em andamento — duas pessoas tentando se encontrar de novo</td>
+  <td><em>"Quem vai dar o primeiro passo dessa vez — e o que acontece se ninguém der?"</em></td>
+  <td>NPCs que testemunharam o afastamento observam a aproximação com uma mistura de esperança e cautela. Alguns torcem abertamente; outros preferem não se envolver, temendo que piore.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--gold); color: var(--parchment);">HERANÇA</span></td>
+  <td>Algo deixado por alguém antes de você — não escolhido, apenas recebido</td>
+  <td><em>"Você quer isso porque é seu — ou porque era de quem veio antes?"</em></td>
+  <td>NPCs que conheceram quem veio antes de você fazem comparações, às vezes sem querer. Alguns esperam que você continue exatamente igual; outros esperam o oposto.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--danger); color: var(--parchment);">CHAMA</span></td>
+  <td>Paixão recente e urgente — interesse, pessoa ou projeto que tomou conta de repente</td>
+  <td><em>"O que você está disposto a deixar de lado por causa dessa urgência?"</em></td>
+  <td>NPCs que dependiam da sua atenção antes notam a ausência e reagem — alguns com ciúme, outros com genuíno interesse em entender o que te tomou de assalto.</td>
+</tr>
 </table>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Tags de Especialização (Aventureiros e Módulos)</h3>
+<h3 id="marcas-perda">Marcas de Perda e Superação</h3>
+
+<p>Chegam sem convite. Saem com cerimônia — ou não saem.</p>
+
+<p>
+  <span class="tag" style="background: var(--danger); color: var(--parchment);">LUTO</span>
+  <span class="tag" style="background: var(--mystery); color: var(--parchment);">CICATRIZ</span>
+</p>
+
+<table>
+<tr><th>Marca</th><th>O Que Representa</th><th>Pergunta Pendente</th><th>Reações de NPCs</th><th>Como obter</th><th>Efeito mecânico</th></tr>
+<tr>
+  <td><span class="tag" style="background: var(--danger); color: var(--parchment);">LUTO</span></td>
+  <td>Perda de alguém importante</td>
+  <td><em>"O que você ainda não disse a quem partiu — e ainda dá tempo de dizer, de algum jeito?"</em></td>
+  <td>NPCs próximos falam com cuidado excessivo. Alguns te evitam porque não sabem o que dizer. Outros chegam com comida e silêncio.</td>
+  <td>Morte de NPC em expedição (opcional)</td>
+  <td>−1 em BRASA por 3 capítulos. +1 em PENA sobre perda (permanente após transformação). Pode ser removida com ritual de despedida (1 Fôlego + 1 Retalho).</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--mystery); color: var(--parchment);">CICATRIZ</span></td>
+  <td>Marca física ou emocional de uma aventura</td>
+  <td><em>"Quando alguém a nota, o que você diz — e o que você decide não contar?"</em></td>
+  <td>Estranhos ficam curiosos e às vezes perguntam diretamente. NPCs que conhecem a história ficam em silêncio. Os que não conhecem inventam.</td>
+  <td>Evento de expedição (d6: 4)</td>
+  <td>Narrativa. Quando transformada, dá +1 em rolagens de superação relacionadas à origem da cicatriz.</td>
+</tr>
+</table>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3 id="marcas-especializacao">Marcas de Especialização</h3>
+
+<p>Nascidas do espaço que você habita e do que você aprendeu a ver. São permanentes — não podem ser removidas — e mudam como o mundo categoriza você.</p>
 
 <p>
   <span class="tag" style="background: var(--accent); color: var(--parchment);">GUERREIRO</span>
@@ -59,15 +264,38 @@
 </p>
 
 <table>
-<tr><th>Tag</th><th>Significado</th><th>Como obter</th><th>Efeito</th></tr>
-<tr><td><span class="tag" style="background: var(--accent); color: var(--parchment);">GUERREIRO</span></td><td>Especialista em combate e conflito</td><td>Módulo Sala de Armas</td><td>+1 em rolagens com aventureiros e situações de conflito</td></tr>
-<tr><td><span class="tag" style="background: var(--mystery); color: var(--parchment);">SÁBIO</span></td><td>Especialista em conhecimento e pesquisa</td><td>Módulo Biblioteca Arcana</td><td>+1 em rolagens com acadêmicos e situações de conhecimento</td></tr>
-<tr><td><span class="tag" style="background: #4a2a2a; color: var(--parchment);">OCULTISTA</span></td><td>Especialista em segredos e mistérios</td><td>Módulo Arquivo dos Espíritos</td><td>+1 em rolagens com marginais e situações de segredos</td></tr>
+<tr><th>Marca</th><th>O Que Representa</th><th>Pergunta Pendente</th><th>Reações de NPCs</th><th>Como obter</th><th>Efeito mecânico</th></tr>
+<tr>
+  <td><span class="tag" style="background: var(--accent); color: var(--parchment);">GUERREIRO</span></td>
+  <td>Especialista em conflito e risco</td>
+  <td><em>"Você entende de combate — mas entende por que as pessoas chegam até ele?"</em></td>
+  <td>Quebradores te respeitam sem precisar de apresentação. Civis te olham com uma mistura de alívio e desconforto.</td>
+  <td>Cômodo Sala de Armas</td>
+  <td>+1 em rolagens com quebradores e situações de conflito.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--mystery); color: var(--parchment);">SÁBIO</span></td>
+  <td>Especialista em conhecimento e pesquisa</td>
+  <td><em>"Existe algo que você sabe que preferia não saber?"</em></td>
+  <td>Acadêmicos te procuram com perguntas. Pessoas comuns te pedem para "explicar de um jeito que faça sentido".</td>
+  <td>Cômodo Biblioteca Arcana</td>
+  <td>+1 em rolagens com acadêmicos e situações de conhecimento.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: #4a2a2a; color: var(--parchment);">OCULTISTA</span></td>
+  <td>Especialista em segredos e margens</td>
+  <td><em>"O que você sabe que ninguém mais sabe — e por que ainda não contou?"</em></td>
+  <td>Marginais te falam com franqueza incomum. NPCs respeitáveis fingem não te conhecer em público.</td>
+  <td>Cômodo Arquivo dos Espíritos</td>
+  <td>+1 em rolagens com marginais e situações de segredos.</td>
+</tr>
 </table>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Tags de Relacionamento (Rotas de Romance)</h3>
+<h3 id="marcas-relacionamento">Marcas de Relacionamento</h3>
+
+<p>Ganhas no caminho do romance e da amizade profunda. São permanentes e vinculadas a um NPC específico.</p>
 
 <p>
   <span class="tag" style="background: var(--success); color: var(--parchment);">CONFIANÇA</span>
@@ -78,9 +306,9 @@
 </p>
 
 <table>
-<tr><th>Tag</th><th>Significado</th><th>Como obter</th><th>Efeito</th></tr>
-<tr><td><span class="tag" style="background: var(--success); color: var(--parchment);">CONFIANÇA</span></td><td>O NPC confia em você profundamente</td><td>Rota de Romance — Fase 2 (Amizade Profunda)</td><td>+1 em rolagens de CORAÇÃO com este NPC</td></tr>
-<tr><td><span class="tag" style="background: var(--romance); color: var(--parchment);">INTIMIDADE</span></td><td>Vocês compartilham segredos e vulnerabilidades</td><td>Rota de Romance — Fase 3 (Romance)</td><td>+2 em rolagens de CORAÇÃO com este NPC</td></tr>
+<tr><th>Marca</th><th>Significado</th><th>Como obter</th><th>Efeito mecânico</th></tr>
+<tr><td><span class="tag" style="background: var(--success); color: var(--parchment);">CONFIANÇA</span></td><td>O NPC confia em você profundamente</td><td>Rota de Romance — Fase 2 (Amizade Profunda)</td><td>+1 em rolagens de BRASA com este NPC</td></tr>
+<tr><td><span class="tag" style="background: var(--romance); color: var(--parchment);">INTIMIDADE</span></td><td>Vocês compartilham segredos e vulnerabilidades</td><td>Rota de Romance — Fase 3 (Romance)</td><td>+2 em rolagens de BRASA com este NPC</td></tr>
 <tr><td><span class="tag" style="background: var(--gold); color: var(--parchment);">PARCEIRO</span></td><td>Vocês são parceiros para sempre</td><td>Rota de Romance — Fase 4 (Compromisso)</td><td>+1 em todas as rolagens quando trabalhando com este NPC</td></tr>
 <tr><td><span class="tag" style="background: var(--success); color: var(--parchment);">CORAJOSO</span></td><td>Explorador superou um medo</td><td>Evolução de NPC (Explorador)</td><td>+1 em rolagens de risco</td></tr>
 <tr><td><span class="tag" style="background: var(--romance); color: var(--parchment);">CONFIÁVEL</span></td><td>Forasteiro encontrou confiança</td><td>Evolução de NPC (Forasteiro)</td><td>+1 em rolagens de confiança</td></tr>
@@ -88,55 +316,105 @@
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Tags de Perda e Superação</h3>
+<h3 id="marcas-progressao">Marcas de Progressão</h3>
+
+<p>Chegam com os eventos grandes — os que mudam a direção da história. Não são ganhas por esforço contínuo, mas por momentos que não podem ser desfeitos.</p>
 
 <p>
-  <span class="tag" style="background: var(--danger); color: var(--parchment);">LUTO</span>
-  <span class="tag" style="background: var(--mystery); color: var(--parchment);">CICATRIZ</span>
+  <span class="tag" style="background: var(--gold); color: var(--parchment);">LENDÁRIO</span>
+  <span class="tag" style="background: var(--danger); color: var(--parchment);">MALDITO</span>
+  <span class="tag" style="background: var(--romance); color: var(--parchment);">ACOLHEDOR</span>
+  <span class="tag" style="background: var(--accent); color: var(--parchment);">PROFETIZADO</span>
+  <span class="tag" style="background: #4a2a2a; color: var(--parchment);">DESPERTADO</span>
+  <span class="tag" style="background: var(--success); color: var(--parchment);">MONUMENTO</span>
+  <span class="tag" style="background: var(--mystery); color: var(--parchment);">ALIADO</span>
+  <span class="tag" style="background: var(--accent); color: var(--parchment);">HERÓI</span>
 </p>
 
 <table>
-<tr><th>Tag</th><th>Significado</th><th>Como obter</th><th>Efeito</th></tr>
-<tr><td><span class="tag" style="background: var(--danger); color: var(--parchment);">LUTO</span></td><td>Perda de alguém importante</td><td>Morte de NPC em expedição (opcional)</td><td>−1 em CORAÇÃO por 3 capítulos; +1 em MENTE sobre perda (permanente)</td></tr>
-<tr><td><span class="tag" style="background: var(--mystery); color: var(--parchment);">CICATRIZ</span></td><td>Marca física ou emocional de uma aventura</td><td>Evento de expedição (d6: 4)</td><td>Narrativa — pode ser invocada para +1 em rolagens de superação</td></tr>
+<tr><th>Marca</th><th>O Que Representa</th><th>Pergunta Pendente</th><th>Reações de NPCs</th><th>Como obter</th><th>Efeito mecânico</th></tr>
+<tr>
+  <td><span class="tag" style="background: var(--gold); color: var(--parchment);">LENDÁRIO</span></td>
+  <td>Você tocou algo maior do que si mesmo</td>
+  <td><em>"O que você fez com isso — e valeu o preço?"</em></td>
+  <td>NPCs que reconhecem o feito mudam de postura na sua presença — alguns pedem para ver o artefato de perto, outros preferem manter distância do que ele representa.</td>
+  <td>Evento Clima Tempestade: Artefato Lendário Encontrado</td>
+  <td>+1 em restauração de artefatos raros</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--danger); color: var(--parchment);">MALDITO</span></td>
+  <td>Algo antigo te marcou em troca</td>
+  <td><em>"Você aceitaria desfazer a maldição se isso apagasse tudo que veio junto com ela?"</em></td>
+  <td>Quem sabe o que é mantém distância calculada, educada mas firme. Quem não sabe sente que algo está errado sem conseguir dizer o quê.</td>
+  <td>Evento Clima Tempestade: A Maldição Antiga</td>
+  <td>−1 em rolagens de sorte, +1 em rolagens de superação</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--romance); color: var(--parchment);">ACOLHEDOR</span></td>
+  <td>Você abriu espaço para quem não tinha</td>
+  <td><em>"O que você ganhou ao abrir essa porta — que você não esperava receber?"</em></td>
+  <td>Quem você acolheu fala de você com um carinho que constrange. Outros na mesma situação passam a te procurar primeiro, sabendo que a porta está aberta.</td>
+  <td>Ajudar um figurante em situação de vulnerabilidade</td>
+  <td>+1 em rolagens com refugiados e comunidades marginalizadas</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--accent); color: var(--parchment);">PROFETIZADO</span></td>
+  <td>Uma profecia te escolheu — ou você a escolheu</td>
+  <td><em>"E se a profecia estiver errada sobre você?"</em></td>
+  <td>Crentes na profecia te tratam com um misto de reverência e expectativa pesada. Céticos questionam abertamente, testando se você aguenta a pressão do papel.</td>
+  <td>Evento Clima Tempestade: Profecia Antiga</td>
+  <td>+1 em rolagens de mistério</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: #4a2a2a; color: var(--parchment);">DESPERTADO</span></td>
+  <td>Você acordou algo que dormia há séculos</td>
+  <td><em>"O que desperta junto com o que você acordou?"</em></td>
+  <td>NPCs sensíveis ao sobrenatural sentem uma mudança sutil ao seu redor e evitam perguntar diretamente. Os que sabem o que você acordou observam de longe, à espera do que vem a seguir.</td>
+  <td>Evento Clima Tempestade: Deus Desperta</td>
+  <td>Eventos divinos podem ocorrer (narrativo)</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--success); color: var(--parchment);">MONUMENTO</span></td>
+  <td>A cidade te conhece pelo que você fez</td>
+  <td><em>"Você ainda é a pessoa que fez aquilo — ou virou outra desde então?"</em></td>
+  <td>Moradores da cidade te apontam para visitantes, contando a história (às vezes errada) do que você fez. Alguns esperam que você continue sendo aquela pessoa; outros já não reconhecem quem você virou.</td>
+  <td>Evento Clima Tempestade: Monumento Construído</td>
+  <td>+1 em rolagens sociais na cidade</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--mystery); color: var(--parchment);">ALIADO</span></td>
+  <td>Um círculo poderoso te reconhece</td>
+  <td><em>"O que eles esperam em troca — e você está disposto a dar?"</em></td>
+  <td>Membros do Círculo te tratam com um respeito cauteloso, cientes do preço que vem junto do reconhecimento. Rivais do Círculo passam a te ver como alvo por associação.</td>
+  <td>Evento Clima Tempestade: Aliança Épica</td>
+  <td>+1 em rolagens com círculos</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--accent); color: var(--parchment);">HERÓI</span></td>
+  <td>Uma lenda viva cruzou o seu caminho</td>
+  <td><em>"O que você aprendeu com ela que contradiz o que você pensava saber?"</em></td>
+  <td>Quebradores comentam o encontro como se fosse lenda, mesmo quando você minimiza. Alguns tentam replicar o que você aprendeu; outros duvidam que a lição valha o que custou.</td>
+  <td>Evento Clima Tempestade: O Herói Retorna</td>
+  <td>+1 em rolagens com quebradores</td>
+</tr>
 </table>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Tags de Progressão e Conquistas</h3>
+<h3>Como o Mundo Vê Suas Marcas</h3>
 
-<p>
-  <span class="tag" style="background: var(--gold); color: var(--parchment);">EFICIENTE</span>
-  <span class="tag" style="background: var(--accent); color: var(--parchment);">PROFETIZADO</span>
-  <span class="tag" style="background: #4a2a2a; color: var(--parchment);">DESPERTADO</span>
-  <span class="tag" style="background: var(--gold); color: var(--parchment);">LENDÁRIO</span>
-  <span class="tag" style="background: var(--success); color: var(--parchment);">MONUMENTO</span>
-  <span class="tag" style="background: var(--mystery); color: var(--parchment);">ALIADO</span>
-  <span class="tag" style="background: var(--accent); color: var(--parchment);">HERÓI</span>
-  <span class="tag" style="background: var(--danger); color: var(--parchment);">MALDITO</span>
-  <span class="tag" style="background: var(--romance); color: var(--parchment);">ACOLHEDOR</span>
-  <span class="tag" style="background: #a04040; color: var(--parchment);">VELOZ</span>
-  <span class="tag" style="background: #4a4a2a; color: var(--parchment);">EXTREMO</span>
-  <span class="tag" style="background: var(--gold); color: var(--parchment);">PERFEITO</span>
-  <span class="tag" style="background: var(--mystery); color: var(--parchment);">DISCIPLINADO</span>
-</p>
+<p>Marcas visíveis mudam o que os outros fazem — antes mesmo de você abrir a boca. Use esses exemplos como ponto de partida; improvise o resto a partir do que faz sentido para o NPC em questão.</p>
 
-<table>
-<tr><th>Tag</th><th>Significado</th><th>Como obter</th><th>Efeito</th></tr>
-<tr><td><span class="tag" style="background: var(--gold); color: var(--parchment);">EFICIENTE</span></td><td>Otimização e eficiência</td><td>Speedrun sem narrativa (Conquista "Frio e Calculista")</td><td>+1 em rolagens de otimização e eficiência</td></tr>
-<tr><td><span class="tag" style="background: var(--accent); color: var(--parchment);">PROFETIZADO</span></td><td>Marcado por uma profecia</td><td>Evento Épico: Profecia Antiga</td><td>+1 em rolagens de mistério</td></tr>
-<tr><td><span class="tag" style="background: #4a2a2a; color: var(--parchment);">DESPERTADO</span></td><td>Despertou algo antigo</td><td>Evento Épico: Deus Desperta</td><td>Eventos divinos podem ocorrer (narrativo)</td></tr>
-<tr><td><span class="tag" style="background: var(--gold); color: var(--parchment);">LENDÁRIO</span></td><td>Encontrou um artefato lendário</td><td>Evento Épico: Artefato Lendário Encontrado</td><td>+1 em restauração de artefatos raros</td></tr>
-<tr><td><span class="tag" style="background: var(--success); color: var(--parchment);">MONUMENTO</span></td><td>Monumento construído em sua honra</td><td>Evento Épico: Monumento Construído</td><td>+1 em rolagens sociais na cidade</td></tr>
-<tr><td><span class="tag" style="background: var(--mystery); color: var(--parchment);">ALIADO</span></td><td>Aliado de uma facção poderosa</td><td>Evento Épico: Aliança Épica</td><td>+1 em rolagens com facções</td></tr>
-<tr><td><span class="tag" style="background: var(--accent); color: var(--parchment);">HERÓI</span></td><td>Recebeu um herói lendário</td><td>Evento Épico: O Herói Retorna</td><td>+1 em rolagens com aventureiros</td></tr>
-<tr><td><span class="tag" style="background: var(--danger); color: var(--parchment);">MALDITO</span></td><td>Amaldiçoado por algo antigo</td><td>Evento Épico: A Maldição Antiga</td><td>−1 em rolagens de sorte, +1 em rolagens de superação</td></tr>
-<tr><td><span class="tag" style="background: var(--romance); color: var(--parchment);">ACOLHEDOR</span></td><td>Acolheu refugiados ou marginalizados</td><td>Ajudar um figurante (ex: professora escondendo aluno)</td><td>+1 em rolagens com refugiados e comunidades marginalizadas</td></tr>
-<tr><td><span class="tag" style="background: #a04040; color: var(--parchment);">VELOZ</span></td><td>Completou a Trilha de Speedrun</td><td>Modo Speedrun — Recompensa</td><td>+1 em rolagens de agilidade e velocidade</td></tr>
-<tr><td><span class="tag" style="background: #4a4a2a; color: var(--parchment);">EXTREMO</span></td><td>Speedrun em 3 capítulos</td><td>Desafio Speedrun Extremo</td><td>+2 em rolagens de velocidade</td></tr>
-<tr><td><span class="tag" style="background: var(--gold); color: var(--parchment);">PERFEITO</span></td><td>Speedrun com 0 falhas</td><td>Desafio Otimizador Total</td><td>+1 em rolagens de precisão</td></tr>
-<tr><td><span class="tag" style="background: var(--mystery); color: var(--parchment);">DISCIPLINADO</span></td><td>Speedrun sem atalhos</td><td>Desafio Speedrun Silencioso</td><td>+1 em rolagens de autocontrole</td></tr>
-</table>
+<div class="callout example">
+  <p><strong><span class="tag vinculo-plus">VÍNCULO+</span> visível (ex: você sempre senta com Kael):</strong> Quem quer chegar até Kael começa a te procurar. Quem tem rixa com Kael evita cruzar seu caminho.</p>
+  <p><strong><span class="tag tensao">TENSÃO</span> visível (ex: você está no meio de um conflito de facções):</strong> NPCs neutros ficam cautelosos. Alguns fazem perguntas veladas para saber de que lado você está. Outros simplesmente saem da sala.</p>
+  <p><strong><span class="tag domestico">DOMÉSTICO</span> visível (ex: você é conhecido pela sua rotina):</strong> Figurantes te cumprimentam pelo nome antes que você os conheça. Alguém deixa seu pedido pronto antes de você pedir.</p>
+  <p><strong><span class="tag" style="background: var(--mystery); color: var(--parchment);">CICATRIZ</span> visível:</strong> Estranhos perguntam diretamente. NPCs que sabem a história ficam em silêncio — o silêncio é uma resposta também.</p>
+  <p><strong><span class="tag" style="background: var(--danger); color: var(--parchment);">LUTO</span> visível:</strong> NPCs chegam com comida, chá, silêncio. Ninguém sabe o que dizer direito — e isso aparece.</p>
+  <p><strong><span class="tag misterio">MISTÉRIO</span> visível (ex: você foi visto saindo do Relicário):</strong> Rumores. Perguntas indiretas. Alguém que sabe mais do que você está te monitorando de longe.</p>
+  <p><strong><span class="tag" style="background: var(--gold); color: var(--parchment);">LENDÁRIO</span> visível:</strong> NPCs que reconhecem o artefato param. Mudam o tom. Alguns querem comprar. Outros querem avisar.</p>
+  <p><strong><span class="tag" style="background: var(--danger); color: var(--parchment);">MALDITO</span> visível:</strong> Quem sabe o que é fica na distância certa. Quem não sabe sente algo errado sem conseguir nomear.</p>
+</div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
@@ -144,32 +422,49 @@
 
 <div class="callout rule">
   <ul>
-    <li>Tags podem ser <strong>invocadas</strong> para dar <strong>+1/+2 em rolagens</strong> (máx +2 por rolagem).</li>
-    <li>Justifique narrativamente por que a tag ajuda naquela situação.</li>
-    <li><span class="tag vinculo-minus">VÍNCULO−</span> pode ser invocada como penalidade: −1 no dado para ganhar +1 Eco.</li>
-    <li>Tags <span class="tag eco">ECO</span> representam momentos que já deram Ecos quando criadas — invocá-las traz +1 adicional.</li>
-    <li>Tags de Especialização (<span class="tag" style="background: var(--accent); color: var(--parchment);">GUERREIRO</span>, <span class="tag" style="background: var(--mystery); color: var(--parchment);">SÁBIO</span>, <span class="tag" style="background: #4a2a2a; color: var(--parchment);">OCULTISTA</span>) são permanentes e não podem ser removidas.</li>
-    <li>Tags de Relacionamento (<span class="tag" style="background: var(--success); color: var(--parchment);">CONFIANÇA</span>, <span class="tag" style="background: var(--romance); color: var(--parchment);">INTIMIDADE</span>, <span class="tag" style="background: var(--gold); color: var(--parchment);">PARCEIRO</span>) são permanentes e vinculadas a um NPC específico.</li>
-    <li><span class="tag" style="background: var(--danger); color: var(--parchment);">LUTO</span> é temporária (3 capítulos) e pode ser removida com um ritual de despedida (1 Ato + 1 Eco).</li>
-    <li>Tags de Progressão e Conquistas (<span class="tag" style="background: var(--gold); color: var(--parchment);">EFICIENTE</span>, <span class="tag" style="background: var(--accent); color: var(--parchment);">PROFETIZADO</span>, etc.) são permanentes e não podem ser removidas.</li>
+    <li><strong>Teto global de +2 por rolagem:</strong> some todos os bônus de Marcas que se apliquem à mesma rolagem — invocações, bônus automáticos de Marcas transformadas, qualquer combinação — e o total nunca ultrapassa +2. O limite é <em>por rolagem</em>, não por Marca: não importa quantas Marcas diferentes estejam envolvidas na cena, elas dividem o mesmo teto.</li>
+    <li>Marcas podem ser <strong>invocadas</strong> para dar +1/+2 em rolagens, dentro desse teto. Justifique narrativamente por que a marca se conecta ao momento.</li>
+    <li><strong>Marcas transformadas</strong> (com sufixo pessoal) dão +1 automático em rolagens relacionadas à resposta que as criou — sem precisar invocar, mas esse +1 também conta para o teto global de +2.</li>
+    <li><span class="tag vinculo-minus">VÍNCULO−</span> pode ser invocada como penalidade: −1 no dado para ganhar +1 Retalho.</li>
+    <li>Marcas <span class="tag eco">MEMÓRIA</span> já geraram Retalhos quando criadas — invocá-las traz +1 adicional.</li>
+    <li>Marcas de Especialização (<span class="tag" style="background: var(--accent); color: var(--parchment);">GUERREIRO</span>, <span class="tag" style="background: var(--mystery); color: var(--parchment);">SÁBIO</span>, <span class="tag" style="background: #4a2a2a; color: var(--parchment);">OCULTISTA</span>) são permanentes e não podem ser removidas.</li>
+    <li>Marcas de Relacionamento (<span class="tag" style="background: var(--success); color: var(--parchment);">CONFIANÇA</span>, <span class="tag" style="background: var(--romance); color: var(--parchment);">INTIMIDADE</span>, <span class="tag" style="background: var(--gold); color: var(--parchment);">PARCEIRO</span>) são permanentes e vinculadas a um NPC específico.</li>
+    <li><span class="tag" style="background: var(--danger); color: var(--parchment);">LUTO</span> é temporária (3 capítulos) e pode ser removida com um ritual de despedida (1 Fôlego + 1 Retalho).</li>
+    <li>Marcas de Progressão são permanentes e não podem ser removidas.</li>
   </ul>
 </div>
 
 <h3>Exemplos de Uso</h3>
 
 <div class="callout example">
-  <p><strong>Exemplo 1:</strong> Você tem a tag <span class="tag vinculo-plus">VÍNCULO+</span> "Kael confia em você". Ao tentar convencer Kael a te ajudar em uma missão, você invoca a tag e ganha +1 na rolagem.</p>
-  <p><strong>Exemplo 2:</strong> Você tem a tag <span class="tag" style="background: var(--accent); color: var(--parchment);">GUERREIRO</span>. Ao lidar com um aventureiro na Guilda, você invoca a tag e ganha +1.</p>
-  <p><strong>Exemplo 3:</strong> Você tem a tag <span class="tag" style="background: var(--danger); color: var(--parchment);">LUTO</span>. Em uma rolagem de CORAÇÃO, você sofre −1. Mas em uma rolagem de MENTE sobre perda, ganha +1.</p>
-  <p><strong>Exemplo 4:</strong> Você tem a tag <span class="tag" style="background: var(--accent); color: var(--parchment);">PROFETIZADO</span> de um Evento Épico. Ao investigar um mistério, você invoca a tag e ganha +1 na rolagem.</p>
-  <p><strong>Exemplo 5:</strong> Você tem a tag <span class="tag" style="background: var(--romance); color: var(--parchment);">ACOLHEDOR</span> por ter ajudado um figurante. Ao lidar com refugiados na cidade, você invoca a tag e ganha +1.</p>
+  <p><strong>Exemplo 1 — Marca Base:</strong> Você tem <span class="tag vinculo-plus">VÍNCULO+</span> "Kael confia em você". A Pergunta Pendente é: <em>o que ele faria por você que ninguém mais faria?</em> Num momento difícil, você escreve: <em>ele venderia a espada do pai para me ajudar, e eu não pedi.</em> A Marca se transforma em <span class="tag vinculo-plus">VÍNCULO+: O Que Kael Venderia</span>. A partir daí, dá +1 em rolagens que envolvem confiar nele — ou deixá-lo confiar em você.</p>
+  <p><strong>Exemplo 2 — Reação de NPC:</strong> Você tem <span class="tag" style="background: var(--mystery); color: var(--parchment);">CICATRIZ</span> visível no pulso. Um NPC que você mal conhece pergunta: "isso foi na expedição às Minas?" Você decide o que contar — e o que não contar. Essa escolha pode virar uma cena.</p>
+  <p><strong>Exemplo 3 — Invocação:</strong> Você tem <span class="tag" style="background: var(--danger); color: var(--parchment);">LUTO</span>. Em uma rolagem de BRASA, sofre −1. Mas ao escrever uma carta para quem partiu — respondendo à pergunta pendente — a Marca começa seu processo de transformação.</p>
+  <p><strong>Exemplo 4 — Especialização:</strong> Você tem <span class="tag" style="background: var(--mystery); color: var(--parchment);">SÁBIO</span>. Um acadêmico te procura com uma pergunta que você nunca considerou antes. A Pergunta Pendente da Marca — <em>existe algo que você sabe que preferia não saber?</em> — de repente parece sobre essa conversa.</p>
 </div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<div class="generator-section" id="gerador">
+  <h3>🎲 Gerador de Marca</h3>
+  <p class="gen-hint">Um atalho, não uma obrigação — a <strong>Regra de Ouro das Tabelas</strong> vale aqui: aceite, adapte ou ignore.</p>
+  <div class="generator-controls">
+    <button class="generator-btn" data-generate="marca">✨ Gerar Marca</button>
+  </div>
+  <div class="generator-output" data-output="marca">
+    <p class="gen-placeholder">Clique no botão para gerar</p>
+  </div>
+</div>
+
+<details class="gen-saved-panel" data-saved-panel data-saved-filter="marca">
+  <summary>📜 Guardados</summary>
+</details>
 
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Sistema — Tags</p>
-  <p><a href="sistema-ecos-recursos.html">← Ecos & Recursos</a> | <a href="sistema-relogios.html">Próxima: Relógios →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Sistema — Marcas</p>
+  <p><a href="sistema-ecos-recursos.html">← Retalhos & Recursos</a> | <a href="sistema-relogios.html">Próxima: Fios →</a></p>
 </footer>
 
 </div>
@@ -177,7 +472,9 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
+<script src="geradores.js"></script>
+<script src="gen-marcas.js"></script>
 </body>
 </html>

@@ -4,50 +4,201 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Sistema: Relógios</title>
+<title>Retalhos da Contracena — Núcleo: Fios</title>
+<style>
+.fio-barra-wrap { margin: 0.6rem 0 1rem 0; }
+.fio-barra-label { font-size: 0.85rem; font-family: Georgia, serif; color: var(--ink-soft); margin-bottom: 0.25rem; font-style: italic; }
+.fio-barra { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; }
+.fio-no { width: 18px; height: 18px; border-radius: 50%; border: 2px solid currentColor; display: inline-block; flex-shrink: 0; }
+.fio-no.preenchido { background: currentColor; }
+.fio-no.vazio { background: transparent; opacity: 0.35; }
+.fio-fase { font-size: 0.78rem; font-style: italic; margin-left: 8px; color: var(--ink-soft); white-space: nowrap; }
+.fio-romance .fio-no { color: var(--romance); }
+.fio-tensao .fio-no  { color: var(--danger); }
+.fio-misterio .fio-no { color: var(--mystery); }
+.fio-ligacao .fio-no  { color: var(--gold); }
+.fio-suave .fio-no    { color: var(--soft); }
+.fio-entardecer .fio-no { color: var(--accent); }
+.fio-painel-bloco { background: var(--parchment-dark); border-left: 4px solid var(--accent-light); border-radius: 6px; padding: 1rem 1.2rem; margin-bottom: 1rem; }
+.fio-painel-bloco h5 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--accent); }
+.fio-marco-tabela { width: 100%; border-collapse: collapse; margin-top: 0.5rem; font-size: 0.9rem; }
+.fio-marco-tabela th { text-align: left; color: var(--ink-soft); font-weight: normal; font-style: italic; padding: 0.2rem 0.5rem; border-bottom: 1px solid var(--accent-light); }
+.fio-marco-tabela td { padding: 0.25rem 0.5rem; vertical-align: top; border-bottom: 1px dotted var(--parchment-dark); }
+.fio-marco-tabela tr:last-child td { border-bottom: none; }
+.fio-marco-tabela td:first-child { white-space: nowrap; padding-right: 1rem; font-weight: bold; }
+.callout-ritual { background: var(--parchment-dark); border: 1px solid var(--accent-light); border-radius: 6px; padding: 1.1rem 1.3rem; margin: 1.2rem 0; }
+.callout-ritual h4 { color: var(--accent); margin-bottom: 0.5rem; font-size: 1rem; }
+.callout-ritual p { font-style: italic; color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 0.3rem; }
+.callout-ritual ul { margin: 0.5rem 0 0 1.2rem; color: var(--ink-soft); font-size: 0.92rem; }
+.callout-ritual li { margin-bottom: 0.3rem; }
+</style>
 </head>
 <body>
-
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
 
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="sistema-resolucao.html">Sistema</a> &gt; <strong>Relógios</strong>
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>Fios</strong>
 </div>
 
 <div class="container">
 
-<div class="tier-badge recomendado">🟡 Recomendado <span class="tier-desc">— usado no Tutorial e no Quick Start</span></div>
+<div class="tier-badge recomendado">🟡 Recomendado <span class="tier-desc">— usado no Tutorial e no Início Rápido</span></div>
 
-<h2>A Tensão que Avança — Relógios</h2>
-<p>Relógios são opcionais. Se preferir narrar sem rastrear segmentos, ignore-os. Se quiser só alguns tipos (só Romance, só Tensão), ative apenas eles.</p>
-<p>Relógios são círculos de segmentos que avançam conforme a história progride. São o coração do pacing do jogo — cada segmento preenchido representa progresso, tensão ou mudança.</p>
+<h2>A Tensão que Avança — Fios</h2>
+<p>Fios são opcionais. Se preferir narrar sem rastrear nós, ignore-os. Se quiser só alguns tipos (só Romance, só Tensão), ative apenas eles.</p>
+<p><strong>Fios</strong> <em>(análogo a: Clock / Medidor de Progresso)</em> são círculos de nós que avançam conforme a história progride. São o coração do pacing do jogo — cada nó preenchido representa progresso, tensão ou mudança.</p>
 
-
+<div class="callout tip">
+  <strong>🏠 Fios com casa própria:</strong> esta página é o canônico dos Fios genéricos — Tensão, Mistério, Entardecer. Dois Fios têm página dedicada em seu próprio Pilar: o Fio de Romance é detalhado em <a href="sistema-rotas-romance.html">Rotas de Romance</a> (Pilar Romance) e o Fio de Encomenda em <a href="sistema-encomendas.html">Encomendas</a> (Pilar Curadoria).
+</div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Tipos de Relógios</h3>
+<h3 id="painel">Onde Estou Agora? — Painel de Estado dos Fios</h3>
+
+<p>Antes de consultar as regras, olhe para os seus Fios ativos. Cada um tem um tamanho e um sabor emocional. Os exemplos abaixo mostram como representar visualmente o estado de cada tipo — use ● para nós preenchidos e ○ para nós vazios.</p>
+
+<div class="fio-painel-bloco">
+  <h5>💗 Romance — 10 nós</h5>
+  <p class="fio-barra-label">Exemplo: 6 de 10 nós preenchidos → Amizade Profunda</p>
+  <div class="fio-barra fio-romance">
+    <span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span>
+    <span class="fio-fase">— Amizade Profunda</span>
+  </div>
+  <table class="fio-marco-tabela">
+    <tr><th>Nós</th><th>Fase</th><th>O que muda no NPC</th></tr>
+    <tr><td>0–3</td><td>Conhecimento</td><td>Sorri ao te ver. Curioso, mas contido. Pode recusar convites.</td></tr>
+    <tr><td>4–6</td><td>Amizade Profunda</td><td>Vem até você sem ser chamado. Compartilha coisas pessoais. Te chama pelo nome.</td></tr>
+    <tr><td>7–8</td><td>Romance</td><td>Hesita antes de falar. Olha para você por tempo demais. Toca sem perceber.</td></tr>
+    <tr><td>9–10</td><td>Compromisso</td><td>Deixa coisas suas na Contracena. Aparece nos seus sonhos como presença, não como figura.</td></tr>
+  </table>
+</div>
+
+<div class="fio-painel-bloco">
+  <h5>⚡ Tensão — 4 a 8 nós</h5>
+  <p class="fio-barra-label">Exemplo: 3 de 6 nós preenchidos → A ameaça se aproxima</p>
+  <div class="fio-barra fio-tensao">
+    <span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span>
+    <span class="fio-fase">— A ameaça se aproxima</span>
+  </div>
+  <table class="fio-marco-tabela">
+    <tr><th>Faixa</th><th>Sabor emocional</th><th>Sinal no mundo</th></tr>
+    <tr><td>1–2 nós</td><td>Desconforto leve</td><td>Algo está errado, mas ainda parece distante. Uma sombra no canto do olho.</td></tr>
+    <tr><td>3–4 nós (metade)</td><td>Pressão real</td><td>O problema invade o cotidiano. NPCs falam sobre isso. Fios de Mistério começam a se mexer.</td></tr>
+    <tr><td>5–6 nós</td><td>Urgência</td><td>Ignorar já tem custo. A Contracena sente o peso. O Entardecer avança junto.</td></tr>
+    <tr><td>7–8 nós (máximo)</td><td>Crise imediata</td><td>Algo se quebra. Um NPC some, um artefato falha, a cidade muda de tom.</td></tr>
+  </table>
+</div>
+
+<div class="fio-painel-bloco">
+  <h5>🔮 Mistério — 6 a 8 nós</h5>
+  <p class="fio-barra-label">Exemplo: 4 de 8 nós preenchidos → A verdade ganha forma</p>
+  <div class="fio-barra fio-misterio">
+    <span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span>
+    <span class="fio-fase">— A verdade ganha forma</span>
+  </div>
+  <table class="fio-marco-tabela">
+    <tr><th>Faixa</th><th>Sabor emocional</th><th>Sinal no mundo</th></tr>
+    <tr><td>1–2 nós</td><td>Estranheza</td><td>Algo não encaixa. O artefato se comporta diferente. O NPC hesita antes de responder.</td></tr>
+    <tr><td>3–4 nós (metade)</td><td>Intuição</td><td>Você tem peças suficientes para suspeitar. O Entardecer avança 1 nó.</td></tr>
+    <tr><td>5–6 nós</td><td>Revelação parcial</td><td>Uma verdade menor vem à tona. O NPC muda de comportamento. A história se reorienta.</td></tr>
+    <tr><td>7–8 nós (resolução)</td><td>Epifania</td><td>O Mistério se fecha. A intimidade com o NPC envolvido aumenta. O próximo capítulo começa diferente.</td></tr>
+  </table>
+</div>
+
+<div class="fio-painel-bloco">
+  <h5>🔗 Ligação — 8 nós</h5>
+  <p class="fio-barra-label">Exemplo: 5 de 8 nós preenchidos → Confiança estabelecida</p>
+  <div class="fio-barra fio-ligacao">
+    <span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span>
+    <span class="fio-fase">— Confiança estabelecida</span>
+  </div>
+  <table class="fio-marco-tabela">
+    <tr><th>Faixa</th><th>Sabor emocional</th><th>Sinal no mundo</th></tr>
+    <tr><td>1–3 nós</td><td>Familiaridade</td><td>Os dois NPCs se reconhecem. Há cordialidade, mas não intimidade.</td></tr>
+    <tr><td>4 nós (metade)</td><td>Confiança</td><td>Eles buscam um ao outro em momentos de dúvida. A Ligação começa a puxar Romance +1.</td></tr>
+    <tr><td>5–7 nós</td><td>Lealdade</td><td>Harmonias entre os cômodos dos dois custam 0 Retalho. A presença de um conforta o outro.</td></tr>
+    <tr><td>8 nós</td><td>Vínculo Especial</td><td>Desbloqueia Harmonia Especial única. Os NPCs aparecem juntos nas cenas de maneira orgânica.</td></tr>
+  </table>
+</div>
+
+<div class="fio-painel-bloco">
+  <h5>🌿 Suaves — 2 a 4 nós</h5>
+  <p class="fio-barra-label">Exemplo: 2 de 3 nós preenchidos → Quase resolvido</p>
+  <div class="fio-barra fio-suave">
+    <span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no vazio"></span>
+    <span class="fio-fase">— Quase resolvido</span>
+  </div>
+  <p style="font-size:0.88rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic;">Fios Suaves são pequenas histórias. Um silêncio que precisa de palavras. Uma curiosidade que quer resposta. Quando chegam ao último nó, resolvem-se de maneira natural — sem drama, apenas fechamento.</p>
+</div>
+
+<div class="fio-painel-bloco">
+  <h5>🌅 Entardecer — 8 nós</h5>
+  <p class="fio-barra-label">Exemplo: 5 de 8 nós preenchidos → O crepúsculo se aproxima</p>
+  <div class="fio-barra fio-entardecer">
+    <span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no preenchido"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span><span class="fio-no vazio"></span>
+    <span class="fio-fase">— O crepúsculo se aproxima</span>
+  </div>
+  <table class="fio-marco-tabela">
+    <tr><th>Faixa</th><th>Sabor emocional</th></tr>
+    <tr><td>1–2 nós</td><td>O horizonte ainda está longe. Há tempo. A história respira.</td></tr>
+    <tr><td>3–4 nós</td><td>Uma sensação de urgência suave. Você começa a escolher o que importa.</td></tr>
+    <tr><td>5–6 nós</td><td>O fim é real. Cada capítulo tem mais peso. Os NPCs parecem mais presentes.</td></tr>
+    <tr><td>7 nós</td><td>Último ato. O que ainda não foi dito precisa ser dito agora.</td></tr>
+    <tr><td>8 nós</td><td>O Entardecer. Veja <a href="sistema-evento-final.html">O Evento Final</a>.</td></tr>
+  </table>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Tipos de Fios</h3>
 
 <table>
-<tr><th>Categoria</th><th>Segmentos</th><th>Exemplos</th><th>Como Recua</th></tr>
-<tr><td><strong>Tensão</strong></td><td>4–8</td><td>"A Maldição do Artefato", "Interesse da Guilda"</td><td>1 Eco por segmento</td></tr>
+<tr><th>Categoria</th><th>Nós</th><th>Exemplos</th><th>Como Recua</th></tr>
+<tr><td><strong>Tensão</strong></td><td>4–8</td><td>"A Maldição do Artefato", "Interesse da Confraria"</td><td>1 Retalho por nó</td></tr>
 <tr><td><strong>Romance</strong></td><td>10</td><td>"O Coração de [NPC]" (×3)</td><td>Congela; só regrede em falha grave</td></tr>
 <tr><td><strong>Ligação</strong></td><td>8</td><td>"Ligação entre [NPC X] e [NPC Y]" (×3)</td><td>Conflitos, distância</td></tr>
 <tr><td><strong>Mistério</strong></td><td>6–8</td><td>"A Verdade sobre [NPC]", "O Enigma da Cidade"</td><td>Não recua — só se resolve</td></tr>
 <tr><td><strong>Suaves</strong></td><td>2–4</td><td>"Silêncio entre Vocês", "Curiosidade da Cidade"</td><td>Resolução natural</td></tr>
-<tr><td><strong>Evento Final</strong></td><td>8</td><td>Gerado no início do jogo</td><td>Nunca recua (exceto gastando Eco)</td></tr>
+<tr><td><strong>Entardecer</strong></td><td>8</td><td>Gerado no início do jogo</td><td>Nunca recua (exceto gastando Retalho)</td></tr>
 </table>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Relógios de Romance — 10 Segmentos em 4 Fases</h3>
+<h3>Entrelaçamento — Fios que Puxam Fios</h3>
+
+<p>Fios paralelos fazem nada. Fios que se cruzam fazem tecido. Esse é o princípio do entrelaçamento: quando um Fio atinge sua metade, ele não avança sozinho — ele puxa outro consigo.</p>
+
+<div class="callout rule">
+  <h4>🧵 A Regra do Entrelaçamento</h4>
+  <p>Quando qualquer Fio atinge sua metade (4/8 nós, ou 5/10 nós), ele automaticamente puxa outro Fio em +1 nó. Consulte a tabela abaixo para saber qual Fio é puxado.</p>
+  <p>Antes de preencher o nó puxado, escreva 1–2 frases explicando <em>por que</em> aquele Fio puxou o outro — como os dois se tocam na sua história neste momento. Isso não gera Retalho extra (o Retalho pelo avanço do Fio original já cobre).</p>
+</div>
 
 <table>
-<tr><th>Segmentos</th><th>Fase</th><th>Significado</th></tr>
+<tr><th>Fio que atinge a metade</th><th>Puxa</th><th>Por quê</th></tr>
+<tr><td><strong>Romance</strong></td><td>Tensão +1</td><td><em>"Amar alguém te torna vulnerável."</em></td></tr>
+<tr><td><strong>Tensão</strong></td><td>Mistério +1</td><td><em>"Sob pressão, segredos vêm à tona."</em></td></tr>
+<tr><td><strong>Mistério</strong></td><td>Entardecer +1</td><td><em>"Cada verdade te aproxima do fim."</em></td></tr>
+<tr><td><strong>Ligação</strong></td><td>Romance +1</td><td><em>"Intimidade nasce de confiança."</em></td></tr>
+<tr><td><strong>Entardecer</strong></td><td>Tensão +1</td><td><em>"O fim que se aproxima pressiona tudo."</em></td></tr>
+</table>
+
+<div class="callout tip">
+  <strong>A tabela é sugestão, não lei.</strong> Se fizer mais sentido narrativo que seu Fio de Romance puxe o Mistério (porque o NPC esconde algo), faça isso. O entrelaçamento serve à história — não ao contrário. O que importa é que você escreva as frases que explicam a conexão.
+</div>
+
+<div class="callout tip">
+  <strong>Efeito em cascata.</strong> Se o nó puxado pelo entrelaçamento também faz um Fio atingir sua metade, o segundo entrelaçamento <em>não</em> acontece automaticamente. Resolva um por vez — histórias que se desenrolam devagar ficam mais ricas.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Fios de Romance — 10 Nós em 4 Fases</h3>
+
+<table>
+<tr><th>Nós</th><th>Fase</th><th>Significado</th></tr>
 <tr><td>0–3</td><td><strong>Conhecimento</strong></td><td>Vocês se conhecem, há simpatia</td></tr>
 <tr><td>4–6</td><td><strong>Amizade Profunda</strong></td><td>Amizade próxima, confiança, carinho</td></tr>
 <tr><td>7–8</td><td><strong>Romance</strong></td><td>Atração romântica, primeiros beijos, confissões</td></tr>
@@ -56,34 +207,34 @@
 
 <div class="callout tip">
   <strong>Parar em 6/10 = Final de Amizade Perfeita.</strong> Desbloqueia acesso à <strong>casa do NPC</strong> na cidade.<br>
-  <strong>Chegar a 9–10/10 = Final de Romance.</strong> Desbloqueia o <strong>módulo da oficina</strong> do NPC.
+  <strong>Chegar a 9–10/10 = Final de Romance.</strong> Desbloqueia o <strong>cômodo da oficina</strong> do NPC.
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Interação entre Relógios</h3>
+<h3>Interação entre Fios</h3>
 
 <div class="callout rule">
-  <h4>⚖️ Relógios de Tensão Afetam Relógios de Romance</h4>
+  <h4>⚖️ Fios de Tensão Afetam Fios de Romance</h4>
   <ul>
-    <li><strong>Tensão em 4/6+:</strong> Relógios de Romance avançam <strong>+1 extra</strong> quando você conforta o NPC (a tensão cria intimidade).</li>
-    <li><strong>Tensão em 6/6+:</strong> Relógios de Romance <strong>não recuam</strong> por uma falha (a tensão já é suficiente para manter a conexão).</li>
+    <li><strong>Tensão em 4/6+:</strong> Fios de Romance avançam <strong>+1 extra</strong> quando você conforta o NPC (a tensão cria intimidade).</li>
+    <li><strong>Tensão em 6/6+:</strong> Fios de Romance <strong>não recuam</strong> por uma falha (a tensão já é suficiente para manter a conexão).</li>
   </ul>
 </div>
 
 <div class="callout rule">
-  <h4>⚖️ Relógios de Romance Afetam Relógios de Tensão</h4>
+  <h4>⚖️ Fios de Romance Afetam Fios de Tensão</h4>
   <ul>
-    <li><strong>Romance em 6/10+:</strong> Relógio de Tensão <strong>recua 1</strong> quando você está com o NPC (conforto emocional).</li>
-    <li><strong>Romance em 9-10/10:</strong> Relógio de Tensão <strong>recua 2</strong> quando você está com o NPC.</li>
+    <li><strong>Romance em 6/10+:</strong> Fio de Tensão <strong>recua 1</strong> quando você está com o NPC (conforto emocional).</li>
+    <li><strong>Romance em 9-10/10:</strong> Fio de Tensão <strong>recua 2</strong> quando você está com o NPC.</li>
   </ul>
 </div>
 
 <div class="callout rule">
-  <h4>⚖️ Relógios de Mistério Afetam Relógios de Romance</h4>
+  <h4>⚖️ Fios de Mistério Afetam Fios de Romance</h4>
   <ul>
-    <li><strong>Mistério resolvido:</strong> +1 em um Relógio de Romance à sua escolha (revelação cria intimidade).</li>
-    <li><strong>Mistério em 4/6+:</strong> Relógios de Romance com NPCs envolvidos no mistério avançam <strong>+1 extra</strong>.</li>
+    <li><strong>Mistério resolvido:</strong> +1 em um Fio de Romance à sua escolha (revelação cria intimidade).</li>
+    <li><strong>Mistério em 4/6+:</strong> Fios de Romance com NPCs envolvidos no mistério avançam <strong>+1 extra</strong>.</li>
   </ul>
 </div>
 
@@ -91,43 +242,43 @@
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Tabela Mestra de Avanço de Relógios</h3>
+<h3>Tabela Mestra de Avanço de Fios</h3>
 
-<p>Use esta tabela para avançar Relógios de Romance:</p>
+<p>Use esta tabela para avançar Fios de Romance:</p>
 
 <table>
-<tr><th>Ação / Move</th><th>10+</th><th>7–9</th><th>6−</th></tr>
-<tr><td>Conversar Profundamente</td><td>+1 seg</td><td>+0 (pendência)</td><td>−1 seg</td></tr>
-<tr><td>Visitar Casa do NPC</td><td>+2 seg</td><td>+1 seg (complicação)</td><td>−1 seg</td></tr>
-<tr><td>Preparar Café/Chá para NPC</td><td>+1 seg</td><td>+0 (interrompido)</td><td>−1 seg</td></tr>
-<tr><td>Dar Presente</td><td>+1 seg</td><td>+1 seg (constrangido)</td><td>+0 (rejeitado)</td></tr>
-<tr><td>Seduzir ou Encantar</td><td>+2 seg</td><td>+1 seg (hesitação)</td><td>−1 seg</td></tr>
-<tr><td>Arriscar-se por Alguém</td><td>+2 seg</td><td>+1 seg (custo físico)</td><td>−1 seg</td></tr>
-<tr><td>Consolar ou Acolher</td><td>+1 seg</td><td>+0 (não se abre)</td><td>−1 seg</td></tr>
-<tr><td>Celebrar o Amor</td><td>+2 seg</td><td>+1 seg (com condição)</td><td>−1 seg</td></tr>
+<tr><th>Ação / Gesto</th><th>Inteiro (10+)</th><th>Ouro (7–9)</th><th>Cacos (6−)</th></tr>
+<tr><td>Conversar Profundamente</td><td>+1 nó</td><td>+0 (pendência)</td><td>−1 nó</td></tr>
+<tr><td>Visitar Casa do NPC</td><td>+2 nós</td><td>+1 nó (complicação)</td><td>−1 nó</td></tr>
+<tr><td>Preparar Café/Chá para NPC</td><td>+1 nó</td><td>+0 (interrompido)</td><td>−1 nó</td></tr>
+<tr><td>Dar Presente</td><td colspan="3">Ver gesto <a href="moves-amor.html#dar-um-presente">Dar um Presente</a> — o avanço depende da cena que o presente abre, não do resultado bruto.</td></tr>
+<tr><td>Seduzir ou Encantar</td><td>+2 nós</td><td>+1 nó (hesitação)</td><td>−1 nó</td></tr>
+<tr><td>Arriscar-se por Alguém</td><td>+2 nós</td><td>+1 nó (custo físico)</td><td>−1 nó</td></tr>
+<tr><td>Consolar ou Acolher</td><td>+1 nó</td><td>+0 (não se abre)</td><td>−1 nó</td></tr>
+<tr><td>Celebrar o Amor</td><td>+2 nós</td><td>+1 nó (com condição)</td><td>−1 nó</td></tr>
 </table>
 
-<p><em>Em dúvida sobre quantos segmentos avançar? Um por interação significativa bem-sucedida é o padrão.</em></p>
+<p><em>Em dúvida sobre quantos nós avançar? Um por interação significativa bem-sucedida é o padrão.</em></p>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
 <h3>Integração com Expedições</h3>
 
-<p>As expedições do <a href="sistema-aventureiros.html">Sistema de Aventureiros</a> afetam diretamente os Relógios:</p>
+<p>As expedições do <a href="sistema-aventureiros.html">Sistema de Quebradores</a> afetam diretamente os Fios:</p>
 
 <table>
-<tr><th>Resultado da Expedição</th><th>Efeito nos Relógios</th></tr>
-<tr><td><strong>Sucesso Total (10+)</strong></td>
+<tr><th>Resultado da Expedição</th><th>Efeito nos Fios</th></tr>
+<tr><td><strong>Inteiro (10+)</strong></td>
   <td>
     <ul>
-      <li><strong>Romance:</strong> +1 no Relógio com qualquer NPC romanceável que participou</li>
-      <li><strong>Ligação:</strong> +1 no Relógio de Ligação entre os aventureiros que foram juntos</li>
+      <li><strong>Romance:</strong> +1 no Fio com qualquer NPC romanceável que participou</li>
+      <li><strong>Ligação:</strong> +1 no Fio de Ligação entre os quebradores que foram juntos</li>
       <li><strong>Tensão:</strong> −1 (o sucesso alivia a pressão)</li>
       <li><strong>Mistério:</strong> +1 se a expedição encontrou pistas</li>
     </ul>
   </td>
 </tr>
-<tr><td><strong>Sucesso Parcial (7–9)</strong></td>
+<tr><td><strong>Cicatrizes de Ouro (7–9)</strong></td>
   <td>
     <ul>
       <li><strong>Romance:</strong> +0 (o NPC está preocupado com a complicação)</li>
@@ -137,11 +288,11 @@
     </ul>
   </td>
 </tr>
-<tr><td><strong>Falha (6−)</strong></td>
+<tr><td><strong>Cacos (6−)</strong></td>
   <td>
     <ul>
-      <li><strong>Romance:</strong> −1 no Relógio com qualquer NPC romanceável que participou (preocupação, medo)</li>
-      <li><strong>Ligação:</strong> −1 no Relógio de Ligação (culpa, frustração)</li>
+      <li><strong>Romance:</strong> −1 no Fio com qualquer NPC romanceável que participou (preocupação, medo)</li>
+      <li><strong>Ligação:</strong> −1 no Fio de Ligação (culpa, frustração)</li>
       <li><strong>Tensão:</strong> +2 (a falha aumenta a pressão)</li>
       <li><strong>Mistério:</strong> +0 (a falha não revelou nada)</li>
     </ul>
@@ -150,52 +301,86 @@
 </table>
 
 <div class="callout rule">
-  <strong>Regra de Ouro:</strong> Em caso de dúvida, uma expedição bem-sucedida avança 1 Relógio de Romance, e uma falha recua 1.
+  <strong>Regra de Ouro:</strong> Em caso de dúvida, uma expedição bem-sucedida avança 1 Fio de Romance, e uma falha recua 1.
+</div>
+
+<div class="callout tip">
+  <strong>Entrelaçamento por expedição:</strong> se o avanço causado por uma expedição fizer um Fio atingir sua metade, o entrelaçamento acontece normalmente — escreva as frases de conexão como parte do relato do retorno.
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Relógios de Ligação entre NPCs (8 segmentos)</h3>
+<h3>Fios de Ligação entre NPCs (8 nós)</h3>
 
 <ul>
-  <li><strong>+1 seg:</strong> NPCs interagem na mesma cena</li>
-  <li><strong>+2 seg:</strong> Protagonista gasta 1 Eco para forçar encontro</li>
-  <li><strong>+1 seg:</strong> Protagonista escolhe um NPC em detrimento do outro (ciúme)</li>
-  <li><strong>+1 seg:</strong> Aventureiros que vão juntos em expedição</li>
+  <li><strong>+1 nó:</strong> NPCs interagem na mesma cena</li>
+  <li><strong>+2 nós:</strong> Jogador gasta 1 Retalho para forçar encontro</li>
+  <li><strong>+1 nó:</strong> Jogador escolhe um NPC em detrimento do outro (ciúme)</li>
+  <li><strong>+1 nó:</strong> Quebradores que vão juntos em expedição</li>
 </ul>
 
 <div class="callout rule">
-  <h4>⚖️ Relógios de Ligação Ativam Sinergias</h4>
+  <h4>⚖️ Fios de Ligação Ativam Harmonias</h4>
   <ul>
-    <li><strong>Ligação em 6/8+:</strong> Sinergias entre módulos dos dois NPCs custam <strong>0 Eco</strong>.</li>
-    <li><strong>Ligação em 8/8:</strong> Desbloqueia uma <strong>Sinergia Especial</strong> única entre os dois (veja <a href="progressao-oficina.html#sinergias">Progressão: Oficina</a>).</li>
+    <li><strong>Ligação em 6/8+:</strong> Harmonias entre cômodos dos dois NPCs custam <strong>0 Retalho</strong>.</li>
+    <li><strong>Ligação em 8/8:</strong> Desbloqueia uma <strong>Harmonia Especial</strong> única entre os dois (veja <a href="progressao-oficio.html#harmonias">Harmonias de Cômodos</a>).</li>
   </ul>
 </div>
 
-<h3>Relógios de Tensão (4–8 segmentos)</h3>
+<h3>Fios de Tensão (4–8 nós)</h3>
 
 <ul>
-  <li>Avançam conforme gatilhos específicos de cada Relógio</li>
-  <li><strong>Recuam:</strong> 1 Eco por segmento</li>
-  <li><strong>No máximo:</strong> Crise imediata + avanço do Evento Final</li>
-  <li><strong>Expedição falha:</strong> Relógio de Tensão +1 (além dos efeitos normais)</li>
+  <li>Avançam conforme gatilhos específicos de cada Fio</li>
+  <li><strong>Recuam:</strong> 1 Retalho por nó</li>
+  <li><strong>No máximo:</strong> Crise imediata + avanço do Entardecer</li>
+  <li><strong>Expedição falha:</strong> Fio de Tensão +1 (além dos efeitos normais)</li>
 </ul>
 
-<h3>Relógios de Mistério (6–8 segmentos)</h3>
+<h3>Fios de Mistério (6–8 nós)</h3>
 
 <ul>
-  <li>Avançam com moves: Estudar Artefato, Decifrar Enigma, Descobrir Segredo, Sonhar</li>
+  <li>Avançam com gestos: Estudar Artefato, Decifrar Enigma, Descobrir Segredo, Sonhar</li>
   <li><strong>Não recuam</strong> — só se resolvem</li>
-  <li><strong>Epifania Narrativa:</strong> Gastar 3 Ecos para preencher instantaneamente</li>
+  <li><strong>Revelação:</strong> Gastar 3 Retalhos para preencher instantaneamente</li>
   <li><strong>Expedição pode avançar:</strong> se encontrar pistas</li>
 </ul>
 
+<div class="section-divider">❦ ❦ ❦</div>
 
+<h3>Ritual do Fim de Capítulo — Checagem dos Fios</h3>
+
+<div class="callout-ritual">
+  <h4>🕯 O Espelho dos Fios</h4>
+  <p>Ao fechar um capítulo, antes de começar o próximo, olhe para cada Fio ativo. Para cada um, pergunte em silêncio:</p>
+  <ul>
+    <li>O que este Fio pede de mim no próximo capítulo?</li>
+    <li>Ele está avançando no ritmo certo — ou estou evitando alguma coisa?</li>
+    <li>Se este Fio terminasse agora, a história estaria completa?</li>
+  </ul>
+  <p>Não precisa escrever as respostas. Esse é um ritual de orientação, não de registro. Um espelho antes de continuar.</p>
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h3>Onde Estou na História? — Perguntas de Auto-Checagem</h3>
+
+<div class="callout tip">
+  <strong>Abra esta seção quando sentir que a história perdeu direção.</strong> Responda com calma — não é uma ficha a preencher, é uma conversa com o jogo.
+</div>
+
+<ul>
+  <li><strong>Qual Fio está mais próximo do fim?</strong> O que acontece quando ele fechar?</li>
+  <li><strong>Qual Fio está estagnado há mais de dois capítulos?</strong> Ele ainda faz parte da sua história — ou você o abandonou sem perceber?</li>
+  <li><strong>Qual Fio te surpreendeu?</strong> Avançou mais rápido do que você esperava? O que isso revela sobre o que você realmente quer narrar?</li>
+  <li><strong>O Entardecer está em que nó?</strong> Você tem tempo ou está no último ato? O que ainda não foi dito?</li>
+  <li><strong>Qual NPC está mais presente nos seus Fios ativos?</strong> A história está sendo contada sobre quem?</li>
+  <li><strong>Há Fios de Tensão e Romance com o mesmo NPC?</strong> Isso é drama. Deixe acontecer.</li>
+</ul>
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Sistema — Relógios</p>
-  <p><a href="sistema-tags.html">← Tags</a> | <a href="sistema-evento-final.html">Próxima: Evento Final →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Sistema — Fios</p>
+  <p><a href="sistema-tags.html">← Marcas</a> | <a href="sistema-evento-final.html">Próxima: O Entardecer →</a></p>
 </footer>
 
 </div>
@@ -203,7 +388,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

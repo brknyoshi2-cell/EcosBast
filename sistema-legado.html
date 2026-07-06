@@ -4,197 +4,350 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Sistema de Legado</title>
+<title>Retalhos da Contracena — Núcleo: O Que Fica</title>
 <style>
-.legacy-card {
+.album-canto {
   background: var(--parchment-dark);
-  border: 2px solid var(--gold);
-  padding: 1.5rem;
+  border-left: 4px solid var(--gold);
+  padding: 1.4rem 1.6rem;
   margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+}
+.album-canto .canto-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+.album-canto h3 {
+  margin: 0;
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+.album-canto .canto-tag {
+  display: inline-block;
+  background: var(--ink-soft);
+  color: var(--parchment);
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  padding: 0.1rem 0.6rem;
+  border-radius: 3px;
+  opacity: 0.75;
+}
+.album-canto p {
+  margin: 0.4rem 0 0;
+  font-size: 0.97rem;
+}
+.album-canto .canto-gatilho {
+  margin-top: 0.8rem;
+  padding: 0.7rem 1rem;
+  background: rgba(255,255,255,0.05);
+  border-left: 3px solid var(--accent);
+  font-size: 0.93rem;
+}
+.album-canto .canto-gatilho strong {
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pagina-exemplo {
+  background: var(--parchment);
+  border: 1px dashed var(--accent-light);
+  border-radius: 6px;
+  padding: 1.1rem 1.4rem;
+  margin: 1.2rem 0;
+  font-style: italic;
+  font-size: 0.93rem;
+  color: var(--ink-soft);
+}
+.pagina-exemplo strong {
+  display: block;
+  font-style: normal;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.nivel-row {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0 1rem;
+  align-items: start;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--accent-light);
+}
+.nivel-row:last-child {
+  border-bottom: none;
+}
+.nivel-paginas {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-variant: small-caps;
+}
+.nivel-nome {
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 0.15rem;
+}
+.nivel-desc {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.capstone-box {
+  background: rgba(184, 134, 11, 0.07);
+  border: 2px solid var(--gold);
   border-radius: 8px;
+  padding: 1.5rem 1.8rem;
+  margin: 2rem 0;
   text-align: center;
 }
-.legacy-card h3 {
-  margin-top: 0;
+.capstone-box h3 {
   color: var(--gold);
-}
-.legacy-card .legacy-value {
-  font-size: 2rem;
-  color: var(--accent);
-  font-weight: bold;
-}
-.contribution-card {
-  background: var(--parchment);
-  border: 1px solid var(--accent-light);
-  padding: 1rem;
-  margin: 0.8rem 0;
-  border-radius: 6px;
-}
-.contribution-card h4 {
   margin-top: 0;
-  color: var(--accent);
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+}
+.capstone-box p {
+  margin: 0.5rem 0;
+  font-size: 0.97rem;
+}
+
+.niveis-wrapper {
+  background: var(--parchment-dark);
+  border-radius: 6px;
+  padding: 0.5rem 1.5rem 1rem;
+  margin: 1.5rem 0;
 }
 </style>
 </head>
 <body>
 
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
-
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="sistema-legado.html">Sistema</a> &gt; <strong>Legado</strong>
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>O Que Fica</strong>
 </div>
 
 <div class="container">
 
 <div class="tier-badge avancado">🔵 Avançado <span class="tier-desc">— camada opcional, adicione quando quiser mais profundidade</span></div>
 
-<h2>📜 O Que Fica — Sistema de Legado</h2>
-<p>Toda história deixa um legado. O que você construiu, quem você amou, o que você restaurou — tudo contribui para a memória que você deixa nos Bastidores.</p>
+<h2>📖 O Que Fica <em>(análogo a: Sistema de Legado)</em> — O Álbum de Nomes Verdadeiros</h2>
+<p>Ao longo de uma Estação, o jogador aprende Nomes. Não os nomes que o mundo usa — os que aparecem em cartazes, registros e apresentações —, mas os Nomes Verdadeiros: aqueles que só emergem quando há intimidade suficiente para ouvi-los. O Nome de uma pessoa é o que ela é debaixo de tudo que mostra. O Nome de um lugar é o que ele guarda. O Nome de um artefato é o que ele testemunhou. O Nome de uma criação é o que ela se tornou.</p>
+<p>O Álbum de Nomes Verdadeiros é o registro dessa escuta. Cada página preenchida é a prova de que você esteve realmente presente — não apenas de passagem, mas de coração aberto.</p>
 
 <div class="callout tip">
-  <strong>⚖️ Legado x Reputação:</strong> Não são a mesma coisa. <strong><a href="progressao-reputacao.html">Reputação</a></strong> é contínua — muda durante o jogo, capítulo a capítulo. <strong>Legado</strong> é um cálculo único, feito no final da campanha, que resume tudo que ficou.
+  <strong>O Que Fica × Vínculos:</strong> Não são a mesma coisa. <a href="progressao-reputacao.html">Vínculos</a> medem sua reputação junto à Confraria, capítulo a capítulo, durante o jogo. O Que Fica é um registro acumulado — o Álbum que você constrói ao longo de toda a campanha e que conta sua história no Entardecer.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>Os 5 Cantos do Álbum</h2>
+<p>O Álbum tem cinco seções — os Cantos — e cada uma reúne um tipo de Nome. Não há pontuação numérica complexa: cada página preenchida conta como uma. O que importa é quantas páginas você conseguiu escrever.</p>
+
+<div class="album-canto">
+  <div class="canto-header">
+    <h3>🔥 A Lareira</h3>
+    <span class="canto-tag">Nomes de NPCs</span>
+  </div>
+  <p>O canto das pessoas. Cada página aqui é o Nome Verdadeiro de um NPC — não o nome de batismo, mas o nome que você descobriu ao revelar todas as 5 Facetas da Árvore da Intimidade daquela pessoa.</p>
+  <div class="canto-gatilho">
+    <strong>Como uma página é desbloqueada</strong>
+    Complete a Árvore da Intimidade de um NPC: as 5 Facetas reveladas. Quando o fruto amadurece e você declara o Nome Verdadeiro desse NPC (conforme descrito em <a href="progressao-relacionamentos.html">Relacionamentos</a>), uma página de A Lareira é preenchida.
+  </div>
+</div>
+
+<div class="album-canto">
+  <div class="canto-header">
+    <h3>🪟 A Janela</h3>
+    <span class="canto-tag">Nomes de Lugares</span>
+  </div>
+  <p>O canto dos lugares. Cada página aqui é o Nome Verdadeiro de um local — uma rua, uma sala, uma ruína, um recanto da cidade — que você compreendeu a fundo ao resolver um Fio ligado a ele.</p>
+  <div class="canto-gatilho">
+    <strong>Como uma página é desbloqueada</strong>
+    Resolva um Fio (de Mistério, Tensão ou Romance) cujo centro seja um lugar específico. Ao fechar o Fio, você pode declarar o Nome Verdadeiro daquele local: o que ele é além da pedra e da sombra.
+  </div>
+</div>
+
+<div class="album-canto">
+  <div class="canto-header">
+    <h3>📚 A Estante</h3>
+    <span class="canto-tag">Nomes de Artefatos</span>
+  </div>
+  <p>O canto dos objetos. Cada página aqui é o Nome Verdadeiro de um artefato que você restaurou com profundidade suficiente para ouvir sua história — o Nome que emergiu da prática do Nome Verdadeiro em Curadoria.</p>
+  <div class="canto-gatilho">
+    <strong>Como uma página é desbloqueada</strong>
+    Conclua as três fases do Nome Verdadeiro de um artefato (conforme descritas em <a href="moves-oficio.html">Gestos: Curadoria</a>): Ouvir, Moldar e Nomear. Quando o Nome Verdadeiro é declarado e se sustenta, uma página de A Estante é preenchida.
+  </div>
+</div>
+
+<div class="album-canto">
+  <div class="canto-header">
+    <h3>🚪 A Soleira da Porta</h3>
+    <span class="canto-tag">Nomes de Comunidades</span>
+  </div>
+  <p>O canto do coletivo. Cada página aqui é o Nome Verdadeiro de uma comunidade — um grupo, uma facção, um conjunto de pessoas que você uniu ou acolheu a ponto de compreender o que as mantém juntas.</p>
+  <div class="canto-gatilho">
+    <strong>Como uma página é desbloqueada</strong>
+    Conecte genuinamente 3 ou mais NPCs entre si (revelando e mediando a relação entre eles) ou acolha 3 ou mais Quebradores na Contracena de forma que eles desenvolvam laços uns com os outros. Quando o tecido do grupo se forma, você pode declarar o Nome daquela comunidade.
+  </div>
+</div>
+
+<div class="album-canto">
+  <div class="canto-header">
+    <h3>🪶 O Porão</h3>
+    <span class="canto-tag">Nomes de Criações</span>
+  </div>
+  <p>O canto da criatividade — o que você fez com as próprias mãos, com as palavras ou com o espaço que chama de seu. Cada página aqui é o Nome Verdadeiro de uma criação significativa, e existem três caminhos até ela.</p>
+  <div class="canto-gatilho">
+    <strong>Como uma página é desbloqueada — três vias</strong>
+    <p><strong>1. Moldagem:</strong> complete uma Moldagem que o sistema classifique como significativa (não uma criação de manutenção, mas algo que exigiu planejamento, recursos e intenção). Ao terminar, declare o Nome do que criou — não o nome funcional, mas o que aquele objeto se tornou ao sair das suas mãos.</p>
+    <p><strong>2. Escrita:</strong> quando uma cena de Escrita render uma Revelação (veja <a href="sistema-escrita-epifania.html">Sistema: Escrita</a>, +2 Retalhos), você pode declarar o Nome dessa Revelação — o que ela te mostrou, nomeado como se fosse um objeto guardado na prateleira da memória.</p>
+    <p><strong>3. O Ninho:</strong> ao completar 3 itens de uma mesma categoria do Ninho (veja <a href="sistema-decoracao.html">Sistema: O Ninho</a>), declare o Nome desse conjunto — o que ele diz sobre o espaço que você construiu.</p>
+  </div>
 </div>
 
 <div class="callout tip">
-  <strong>Como usar:</strong> No final da campanha, calcule seu Legado com base em suas conquistas. O Legado determina o que será lembrado sobre você.
+  <strong>🏛️ Cada Canto tem um Pilar:</strong> 🔥 A Lareira → <a href="pilar-romance.html">Romance</a>; 📚 A Estante → <a href="pilar-curadoria.html">Curadoria</a>; 🚪 A Soleira da Porta → <a href="pilar-confraria.html">Confraria &amp; Cidade</a>; 🪟 A Janela → <a href="pilar-quebradores.html">Quebradores</a>; 🪶 O Porão → <a href="pilar-ninho.html">O Ninho</a>. Cada Pilar tem sua própria página "O Que Fica" detalhando o Canto correspondente — esta página aqui é o canônico do sistema como um todo.
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Componentes do Legado</h3>
+<h2>Escrevendo uma Página</h2>
+<p>Cada página do Álbum tem dois campos. Não há formulário a preencher — são campos narrativos, escritos pelo jogador.</p>
 
-<p>Seu Legado é composto por <strong>5 pilares</strong>, cada um representando um aspecto da sua jornada:</p>
+<div class="pagina-exemplo">
+  <strong>modelo de página</strong>
+  <em>O Nome:</em> escreva o Nome Verdadeiro. Uma palavra, uma frase curta, uma imagem. Não um título genérico — algo que só se aplica a este ser, este lugar, este objeto, esta comunidade, esta criação.<br><br>
+  <em>Como foi descoberto:</em> escreva uma história curta — dois ou três parágrafos, ou menos — sobre o momento em que você compreendeu. O que aconteceu? O que você percebeu? Por que aquele nome e não outro?<br><br>
+  <em>O que esse Nome diz sobre mim (uma palavra): ___</em> — campo opcional. Uma única palavra que esse Nome revelou sobre você, não sobre o ser que você nomeou. Não precisa ser óbvia. Pode ser uma surpresa.
+</div>
 
-<table>
-<tr><th>Pilar</th><th>O que representa</th><th>Como acumular pontos</th></tr>
-<tr><td><strong>❤️ Amor</strong></td><td>Relacionamentos construídos</td><td>Pontos em Relógios de Romance</td></tr>
-<tr><td><strong>⚔️ Glória</strong></td><td>Aventuras e expedições</td><td>Expedições completadas</td></tr>
-<tr><td><strong>📚 Sabedoria</strong></td><td>Conhecimento e restauração</td><td>Artefatos restaurados e mistérios resolvidos</td></tr>
-<tr><td><strong>🏛️ Comunidade</strong></td><td>Crescimento da Guilda e cidade</td><td>Fase do Mundo, trabalhadores, bairros</td></tr>
-<tr><td><strong>🪶 Criatividade</strong></td><td>Escrita e decoração</td><td>Cenas escritas e itens decorados</td></tr>
-</table>
+<p>O jogo não valida a página. Você decide se o Nome é verdadeiro. A honestidade dessa decisão é o que faz o Álbum ter peso.</p>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Calculando seu Legado</h3>
+<p>Antes de declarar o Nome de Si Mesmo, releia as palavras-eco de cada página — a palavra que cada Nome disse sobre você ao longo da jornada. Elas não são o Nome: são o rastro que levou até ele. O Nome de Si Mesmo não nasce do nada; nasce do acúmulo dessas escutas. Se nenhuma palavra-eco foi anotada, isso também é uma resposta: talvez a jornada ainda esteja chegando lá.</p>
 
-<div class="legacy-card">
-  <h3>📊 Seu Legado</h3>
-  <p><strong>❤️ Amor:</strong> ___ / 30 (10 por NPC romanceável)</p>
-  <p><strong>⚔️ Glória:</strong> ___ / 20 (1 por expedição)</p>
-  <p><strong>📚 Sabedoria:</strong> ___ / 30 (2 por artefato, 5 por mistério)</p>
-  <p><strong>🏛️ Comunidade:</strong> ___ / 20 (5 por fase, 2 por trabalhador, 1 por bairro)</p>
-  <p><strong>🪶 Criatividade:</strong> ___ / 20 (1 por cena, 2 por item decorado)</p>
-  <hr>
-  <div class="legacy-value">___ / 120</div>
-  <p style="font-size: 0.9rem; color: var(--ink-soft);">Seu Legado Total</p>
+<div class="capstone-box">
+  <h3>✦ O Nome de Si Mesmo</h3>
+  <p>No Entardecer — quando o Fio do Entardecer atinge 8/8 e a história chega ao seu fim —, o jogador pode fazer uma última coisa antes de fechar o Álbum.</p>
+  <p>Pode declarar seu próprio Nome Verdadeiro.</p>
+  <p>Não o nome que seus pais deram, não o título que a Confraria usa. O nome que toda a jornada revelou. Quem você é depois de tudo que viveu, perdeu, consertou e nomeou.</p>
+  <p>Escreva esse Nome na última página do Álbum. Não há gatilho mecânico: ele nasce do que você viveu. Se a história não o revelou, o Nome ainda não chegou — e não chegar também é uma resposta.</p>
+  <p><strong>Se o Nome de Si Mesmo for declarado, ele eleva o nível do Que Fica em +1.</strong></p>
 </div>
 
-<div class="section-divider">❦ ❦ ❦</div>
-
-<h3>Níveis de Legado</h3>
-
-<table>
-<tr><th>Pontos</th><th>Nível</th><th>Descrição</th></tr>
-<tr><td>0-20</td><td><strong>Esquecido</strong></td><td>"Sua história se perdeu no tempo."</td></tr>
-<tr><td>21-40</td><td><strong>Lembrado</strong></td><td>"Alguns se lembram de você."</td></tr>
-<tr><td>41-60</td><td><strong>Conhecido</strong></td><td>"Sua história é contada na Guilda."</td></tr>
-<tr><td>61-80</td><td><strong>Respeitado</strong></td><td>"Seu nome é mencionado com honra."</td></tr>
-<tr><td>81-100</td><td><strong>Lendário</strong></td><td>"Sua história vive em canções."</td></tr>
-<tr><td>101-120</td><td><strong>Imortal</strong></td><td>"Você se tornou parte dos Bastidores."</td></tr>
-</table>
-
-<div class="section-divider">❦ ❦ ❦</div>
-
-<h3>Contribuições Especiais</h3>
-
-<p>Certas ações dão <strong>contribuições especiais</strong> para o Legado:</p>
-
-<div class="contribution-card">
-  <h4>❤️ Amor — O Primeiro Beijo</h4>
-  <p><strong>Bônus:</strong> +5 ao Legado</p>
-  <p><strong>Como obter:</strong> Atingir 8/10 em um Relógio de Romance</p>
-  <p><strong>Descrição:</strong> <em>"Você amou profundamente."</em></p>
-</div>
-
-<div class="contribution-card">
-  <h4>⚔️ Glória — A Expedição Lendária</h4>
-  <p><strong>Bônus:</strong> +5 ao Legado</p>
-  <p><strong>Como obter:</strong> Completar uma expedição Lendária</p>
-  <p><strong>Descrição:</strong> <em>"Você ousou ir onde ninguém mais iria."</em></p>
-</div>
-
-<div class="contribution-card">
-  <h4>📚 Sabedoria — A Relíquia Perdida</h4>
-  <p><strong>Bônus:</strong> +5 ao Legado</p>
-  <p><strong>Como obter:</strong> Restaurar um artefato lendário</p>
-  <p><strong>Descrição:</strong> <em>"Você trouxe de volta o que estava perdido."</em></p>
-</div>
-
-<div class="contribution-card">
-  <h4>🏛️ Comunidade — O Novo Mestre</h4>
-  <p><strong>Bônus:</strong> +5 ao Legado</p>
-  <p><strong>Como obter:</strong> Tornar-se Mestre da Guilda (Fase Lendária)</p>
-  <p><strong>Descrição:</strong> <em>"Você liderou com coração."</em></p>
-</div>
-
-<div class="contribution-card">
-  <h4>🪶 Criatividade — O Livro dos Bastidores</h4>
-  <p><strong>Bônus:</strong> +5 ao Legado</p>
-  <p><strong>Como obter:</strong> Escrever 20 cenas profundas</p>
-  <p><strong>Descrição:</strong> <em>"Suas palavras viverão para sempre."</em></p>
+<div class="callout tip">
+  <strong>Ritmo:</strong> Reler o Álbum inteiro e declarar o Nome de Si Mesmo na mesma sessão pode ser uma cena pesada. Veja o aviso de ritmo em <a href="sistema-loop.html#aviso-ritmo">A Estação</a> antes de empilhar isso com outras cenas de peso no mesmo dia.
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>O Legado no New Game+</h3>
+<h2>Níveis do Que Fica</h2>
+<p>Ao final da campanha, conte o total de páginas preenchidas no Álbum — uma por Nome, em qualquer Canto. Esse número determina o nível do Que Fica.</p>
+
+<div class="niveis-wrapper">
+  <div class="nivel-row">
+    <div class="nivel-paginas">0 páginas</div>
+    <div>
+      <div class="nivel-nome">Quem Passou</div>
+      <div class="nivel-desc">"Esteve aqui. Poucos se lembram."</div>
+    </div>
+  </div>
+  <div class="nivel-row">
+    <div class="nivel-paginas">1–5 páginas</div>
+    <div>
+      <div class="nivel-nome">Quem Ficou</div>
+      <div class="nivel-desc">"Deixou marcas que o tempo não apagou ainda."</div>
+    </div>
+  </div>
+  <div class="nivel-row">
+    <div class="nivel-paginas">6–12 páginas</div>
+    <div>
+      <div class="nivel-nome">Quem É Lembrado</div>
+      <div class="nivel-desc">"Histórias suas circulam. Alguns as conhecem de cor."</div>
+    </div>
+  </div>
+  <div class="nivel-row">
+    <div class="nivel-paginas">13–19 páginas</div>
+    <div>
+      <div class="nivel-nome">Quem É Procurado</div>
+      <div class="nivel-desc">"Estranhos chegam à cidade perguntando pelo restaurador."</div>
+    </div>
+  </div>
+  <div class="nivel-row">
+    <div class="nivel-paginas">20–25 páginas</div>
+    <div>
+      <div class="nivel-nome">Quem É Parte da Casa</div>
+      <div class="nivel-desc">"A Contracena não faz mais sentido sem o que você deixou."</div>
+    </div>
+  </div>
+</div>
+
+<p>Se o Nome de Si Mesmo foi declarado no Entardecer, suba o resultado final em um nível.</p>
+
+<div class="callout tip">
+  <strong>Sem teto obrigatório:</strong> Não há número máximo de páginas por Canto. Uma campanha com muitos NPCs pode ter uma Lareira generosa. Outra, focada em artefatos, pode ter uma Estante cheia. O Álbum reflete a história que foi vivida — não uma lista de tarefas a cumprir.
+</div>
+
+<div class="section-divider">❦ ❦ ❦</div>
+
+<h2>Amanhecer de Novo <em>(análogo a: Novo Jogo+ (NG+))</em> — O Que Você Carrega</h2>
 
 <div class="callout celestial">
-  <h3>✨ Legado no New Game+</h3>
-  <p>Quando você começa uma nova campanha no New Game+, seu Legado da campanha anterior <strong>não é perdido</strong> — ele é a base para a nova história.</p>
+  <h3>✨ Amanhecer de Novo</h3>
+  <p>Se você iniciar uma nova campanha a partir desta — seja com o mesmo jogador envelhecido passando a Contracena a um aprendiz, seja com um novo começo no mesmo mundo —, o nível do Que Fica determina o que atravessa o limiar.</p>
 
-  <h4>O que é herdado:</h4>
-  <ul>
-    <li><strong>Nível de Legado:</strong> Você começa com +1 em um atributo de sua escolha para cada nível de Legado acima de "Esquecido".</li>
-    <li><strong>Tags de Legado:</strong> Você ganha tags permanentes baseadas no seu Legado.</li>
-    <li><strong>Histórias:</strong> As histórias da campanha anterior são conhecidas na nova cidade.</li>
-  </ul>
+  <p>No novo ciclo, o jogador carrega <strong>1 Marca [MEMÓRIA:]</strong> por nível do Que Fica alcançado na campanha anterior. O conteúdo de cada Marca é escolhido pelo jogador com base nas páginas do Álbum: pode ser o Nome de um NPC que permanece vivo na memória, o Nome de um artefato que ainda existe na Contracena, uma lição que a jornada ensinou.</p>
 
-  <h4>Tags de Legado:</h4>
-  <ul>
-    <li><strong>Legado 21-40:</strong> [LEMBRADO] — +1 em rolagens sociais (sua história é conhecida)</li>
-    <li><strong>Legado 41-60:</strong> [CONHECIDO] — +2 em rolagens sociais</li>
-    <li><strong>Legado 61-80:</strong> [RESPEITADO] — +1 em todas as rolagens</li>
-    <li><strong>Legado 81-100:</strong> [LENDÁRIO] — +2 em todas as rolagens</li>
-    <li><strong>Legado 101-120:</strong> [IMORTAL] — +3 em todas as rolagens + Tag [BASTIDORES] (permanente)</li>
-  </ul>
+  <p>Essas Marcas são narrativas — não dão bônus automáticos, mas podem ser invocadas em cenas relevantes como qualquer outra Marca [MEMÓRIA:], conforme descrito em <a href="sistema-tags.html">Sistema: Marcas</a>.</p>
 
-  <p><em>"Seu legado não é o que você deixou — é o que você construiu."</em></p>
+  <p>As páginas do Álbum não se transferem: os Nomes que o novo jogador vai descobrir são os seus. Mas os ecos dos Nomes anteriores existem no mundo — como lendas, como objetos deixados para trás, como a razão pela qual a Contracena ainda está de pé.</p>
+</div>
+
+<div class="callout rule">
+  <h4>⚖️ Resumo Mecânico — O Que Atravessa o Limiar</h4>
+  <p>Além das Marcas [MEMÓRIA:] do Álbum (acima), o Amanhecer de Novo também traz benefícios <strong>mecânicos automáticos</strong>, independentes do nível do Que Fica. Regras completas e recompensas adicionais estão em <a href="finais.html#new-game-plus">Finais: Amanhecer de Novo</a> — resumo rápido:</p>
+  <table>
+    <tr><th>O que acontece</th><th>Atravessa?</th></tr>
+    <tr><td><strong>Fios</strong> (Tensão, Mistério, Romance, Entardecer)</td><td>❌ Zerados — a nova campanha começa do zero</td></tr>
+    <tr><td><strong>Marcas [MEMÓRIA:]</strong> do Álbum</td><td>✅ 1 por nível do Que Fica (ver acima)</td></tr>
+    <tr><td><strong>Saberes</strong> (conquistas ativas da campanha anterior, máx. 5)</td><td>❌ Não atravessam — zerados junto com os Fios. O que atravessa em nome deles são as Marcas [MEMÓRIA:] acima, não os Saberes em si.</td></tr>
+    <tr><td><strong>Instrumentos</strong></td><td>✅ +1 em todos, no novo jogador (herdou o conhecimento do mentor)</td></tr>
+    <tr><td><strong>Vínculos</strong> (Confraria/Cidade)</td><td>✅ +1 inicial (a cidade lembra do jogador original)</td></tr>
+    <tr><td><strong>Retalhos e Recursos</strong></td><td>✅ +5 Retalhos e +3 Recursos iniciais</td></tr>
+    <tr><td><strong>Maravilha Cotidiana</strong> da Contracena</td><td>✅ +1 permanente, deixada pelo mentor</td></tr>
+    <tr><td><strong>Segredos, mistérios e relacionamentos resolvidos</strong> na campanha anterior</td><td>✅ Permanecem resolvidos (não voltam a ser mistério)</td></tr>
+    <tr><td><strong>Páginas do Álbum de Nomes Verdadeiros</strong></td><td>❌ Não se transferem — o novo jogador descobre os seus próprios Nomes</td></tr>
+  </table>
 </div>
 
 <div class="callout example">
-  <h3>📖 Exemplo de Legado</h3>
-  <p><strong>Elara (a protagonista):</strong></p>
-  <ul>
-    <li><strong>❤️ Amor:</strong> 10/10 com Kael, 8/10 com Lyra, 4/10 com Dorian = 22/30</li>
-    <li><strong>⚔️ Glória:</strong> 2 expedições Fáceis, 3 Médias, 1 Difícil, 1 Lendária = 7/20</li>
-    <li><strong>📚 Sabedoria:</strong> 8 artefatos restaurados, 3 mistérios resolvidos = 16 + 15 = 31/30</li>
-    <li><strong>🏛️ Comunidade:</strong> Fase Lendária (5), 7 trabalhadores (14), 6 bairros (6) = 25/20</li>
-    <li><strong>🪶 Criatividade:</strong> 15 cenas (15), 5 itens decorados (10) = 25/20</li>
-  </ul>
-  <p><strong>Total:</strong> 22 + 7 + 31 + 25 + 25 = 110/120 → <strong>Nível: Imortal</strong></p>
-  <p><strong>Descrição:</strong> <em>"Elara se tornou parte dos Bastidores. Sua história é contada em cada sala, em cada artefato, em cada coração que ela tocou."</em></p>
+  <h3>📖 Exemplo: O Álbum de Mira</h3>
+  <p>Mira encerrou sua campanha com as seguintes páginas no Álbum:</p>
+  <p><strong>A Lareira:</strong> 3 páginas — os Nomes Verdadeiros de Fen ("O Que Não Partiu"), de Dara ("A Que Aprende a Cair") e de um velho ferreiro chamado Talo ("Brasa Quieta").</p>
+  <p><strong>A Janela:</strong> 2 páginas — o Nome do Mercado dos Ecos ("Onde as Coisas Voltam") e o Nome de uma ruína ao norte da cidade ("O Que a Cidade Esqueceu de Derrubar").</p>
+  <p><strong>A Estante:</strong> 4 páginas — quatro artefatos que ela ouviu antes de consertar.</p>
+  <p><strong>A Soleira da Porta:</strong> 1 página — o Nome do grupo de aprendizes que ela reuniu ao redor da Contracena ("Os Que Chegaram Quebrados").</p>
+  <p><strong>O Porão:</strong> 3 páginas — uma Moldagem (um bastão de sabugueiro que "sabia" onde queria ser gasto), uma Revelação escrita sobre por que ela evita se apegar a lugares, e o conjunto "Têxtil" do Ninho ("O Que Aquece Mesmo Vazio").</p>
+  <p><strong>Total: 12 páginas</strong> → nível <em>Quem É Lembrado</em>. No Entardecer, Mira declarou seu Nome de Si Mesmo: "A Que Escuta". O nível sobe para <em>Quem É Procurado</em>.</p>
+  <p>No Amanhecer de Novo, o aprendiz que assumiu a Contracena começa com 4 Marcas [MEMÓRIA:], escolhidas entre os Nomes que Mira deixou.</p>
 </div>
 
-
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Sistema — Legado</p>
-  <p><a href="sistema-bastidores-exploracao.html">← Exploração dos Bastidores</a> | <a href="finais.html">Próxima: Finais →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Sistema — O Que Fica</p>
+  <p><a href="sistema-bastidores-exploracao.html">← Exploração da Contracena</a> | <a href="finais.html">Próxima: Finais →</a></p>
 </footer>
 
 </div>
@@ -202,7 +355,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>

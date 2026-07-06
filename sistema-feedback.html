@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Ecos dos Bastidores — Feedback de Progresso</title>
+<title>Retalhos da Contracena — Núcleo: Ressonâncias</title>
 <style>
 .progress-container {
   background: var(--parchment-dark);
@@ -45,38 +45,43 @@
   background: var(--parchment-dark);
   color: var(--ink-soft);
 }
+.callout-ritual { background: var(--parchment-dark); border: 1px solid var(--accent-light); border-radius: 6px; padding: 1.1rem 1.3rem; margin: 1.2rem 0; }
+.callout-ritual h4 { color: var(--accent); margin-bottom: 0.5rem; font-size: 1rem; }
+.callout-ritual p { font-style: italic; color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 0.3rem; }
+.callout-ritual ul { margin: 0.5rem 0 0 1.2rem; color: var(--ink-soft); font-size: 0.92rem; }
+.callout-ritual li { margin-bottom: 0.3rem; }
 </style>
 </head>
 <body>
 
-<div class="floating-controls no-print">
-  <button class="control-btn" id="themeToggle">🌙 Tema Escuro</button>
-</div>
-
 <nav class="top-nav no-print" id="nav-container"></nav>
 
 <div class="breadcrumbs no-print">
-  <a href="index.html">Início</a> &gt; <a href="sistema-feedback.html">Sistema</a> &gt; <strong>Feedback</strong>
+  <a href="index.html">Início</a> &gt; <a href="nucleo.html">Núcleo</a> &gt; <strong>Ressonâncias</strong>
 </div>
 
 <div class="container">
 
 <div class="tier-badge avancado">🔵 Avançado <span class="tier-desc">— camada opcional, adicione quando quiser mais profundidade</span></div>
 
-<h2>📈 Onde Você Está — Feedback Visual de Progresso</h2>
-<p>Esta página te mostra como você está progredindo. Use-a para ver seu crescimento e planejar seus próximos passos.</p>
+<h2>🪞 Ressonâncias — O Ritual de Fim de Capítulo</h2>
+<p>Esta página não é onde seus números vivem — é onde você para para olhar para eles. Ao fechar um capítulo, antes de abrir o próximo, venha até aqui e pergunte o que esses números estão dizendo sobre a Estação que você está vivendo.</p>
 
 <div class="callout tip">
-  <strong>Como usar:</strong> Preencha as barras de progresso com seus números atuais. Veja onde você está e onde quer chegar.
+  <strong>⚖️ Ressonâncias × Ficha do Jogador:</strong> Não são a mesma coisa. A <a href="ficha-prota.html">Ficha do Jogador</a> é onde seus números VIVEM — você os atualiza durante o jogo, capítulo a capítulo. Ressonâncias é onde você OLHA para eles no fim de cada capítulo e pergunta o que estão dizendo. A ficha registra; aqui você reflete.
+</div>
+
+<div class="callout tip">
+  <strong>Como usar:</strong> Não é uma ficha para preencher. Atualize seus números na <a href="ficha-prota.html">Ficha do Jogador</a> primeiro; as barras abaixo são só um espelho. Olhe para elas e deixe as perguntas de cada bloco guiarem sua reflexão — sem precisar escrever nada.
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Progresso do Protagonista</h3>
+<h3>Progresso do Jogador</h3>
 
 <div class="progress-container">
   <div class="progress-label">
-    <span>Ofício (Ticks)</span>
+    <span>Curadoria (Pontos)</span>
     <span>0 / 20</span>
   </div>
   <div class="progress-bar">
@@ -86,7 +91,7 @@
 
 <div class="progress-container">
   <div class="progress-label">
-    <span>Reputação na Guilda</span>
+    <span>Vínculos na Confraria</span>
     <span>0 / 20</span>
   </div>
   <div class="progress-bar">
@@ -96,21 +101,30 @@
 
 <div class="progress-container">
   <div class="progress-label">
-    <span>Reputação na Cidade</span>
+    <span>Vínculos na Cidade</span>
     <span>0 / 20</span>
   </div>
   <div class="progress-bar">
     <div class="progress-fill" style="width: 0%;"></div>
   </div>
+</div>
+
+<div class="callout-ritual">
+  <h4>🪞 O Que os Números Dizem</h4>
+  <p>Olhe para os três números acima. Pergunte em silêncio:</p>
+  <ul>
+    <li>Qual desses cresceu sem você perceber?</li>
+    <li>Qual está parado — e o que isso conta sobre a sua Estação?</li>
+  </ul>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Relógios</h3>
+<h3>Fios</h3>
 
 <div class="progress-container">
   <div class="progress-label">
-    <span>Relógio de Romance (NPC 1)</span>
+    <span>Fio de Romance (NPC 1)</span>
     <span>0 / 10</span>
   </div>
   <div class="progress-bar">
@@ -120,7 +134,7 @@
 
 <div class="progress-container">
   <div class="progress-label">
-    <span>Relógio de Romance (NPC 2)</span>
+    <span>Fio de Romance (NPC 2)</span>
     <span>0 / 10</span>
   </div>
   <div class="progress-bar">
@@ -130,7 +144,7 @@
 
 <div class="progress-container">
   <div class="progress-label">
-    <span>Relógio de Romance (NPC 3)</span>
+    <span>Fio de Romance (NPC 3)</span>
     <span>0 / 10</span>
   </div>
   <div class="progress-bar">
@@ -140,7 +154,7 @@
 
 <div class="progress-container">
   <div class="progress-label">
-    <span>Evento Final</span>
+    <span>Fio do Entardecer</span>
     <span>0 / 8</span>
   </div>
   <div class="progress-bar">
@@ -148,41 +162,60 @@
   </div>
 </div>
 
+<div class="callout-ritual">
+  <h4>🕯 Os Fios Que Você Carrega</h4>
+  <p>Para cada Fio ativo, pergunte:</p>
+  <ul>
+    <li>Qual Fio você está evitando olhar?</li>
+    <li>Se um destes terminasse agora, a história estaria completa?</li>
+  </ul>
+</div>
+
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Conquistas</h3>
+<h3>Saberes</h3>
 
 <div>
   <span class="milestone milestone-pending">☐ Mãos de Ouro</span>
   <span class="milestone milestone-pending">☐ Coração Aberto</span>
-  <span class="milestone milestone-pending">☐ Mente Brilhante</span>
-  <span class="milestone milestone-pending">☐ Olhos Aguçados</span>
-  <span class="milestone milestone-pending">☐ Lenda dos Bastidores</span>
+  <span class="milestone milestone-pending">☐ Pena Afiada</span>
+  <span class="milestone milestone-pending">☐ Lente Polida</span>
+  <span class="milestone milestone-pending">☐ Lenda da Confraria</span>
   <span class="milestone milestone-pending">☐ Mestre do Amor</span>
   <span class="milestone milestone-pending">☐ Colecionador de Histórias</span>
-  <span class="milestone milestone-pending">☐ Guardião dos Bastidores</span>
+  <span class="milestone milestone-pending">☐ Guardião da Contracena</span>
+</div>
+
+<div class="callout-ritual">
+  <h4>🏆 O Que Você Aprendeu</h4>
+  <p>Olhe para os Saberes que já são seus. Pergunte:</p>
+  <ul>
+    <li>Que Saber conta a história que você mais quer lembrar desta Estação?</li>
+    <li>Qual Saber ainda falta — e o que ele custaria a você agora?</li>
+  </ul>
 </div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Próximos Marcos</h3>
+<h3>Próximos Sinais — O Fecho do Ritual</h3>
+<p>Termine a leitura olhando para frente: o que se aproxima?</p>
 
 <ul>
-  <li><strong>Próximo nível de Ofício:</strong> ___ Ticks restantes</li>
-  <li><strong>Próximo nível de Reputação:</strong> ___ Ticks restantes</li>
-  <li><strong>Próximo Relógio de Romance:</strong> ___ segmentos restantes</li>
-  <li><strong>Próxima Conquista:</strong> ___</li>
+  <li><strong>Próximo nível de Curadoria:</strong> ___ Pontos restantes</li>
+  <li><strong>Próximo nível de Vínculos:</strong> ___ Pontos restantes</li>
+  <li><strong>Próximo Fio de Romance:</strong> ___ nós restantes</li>
+  <li><strong>Próximo Saber:</strong> ___</li>
 </ul>
 
 <div class="callout tip">
-  <strong>Dica:</strong> Use esta página no final de cada capítulo para ver seu progresso. Celebre cada marco alcançado!
+  <strong>Feche o ritual:</strong> Não precisa escrever respostas às perguntas de ressonância — é um momento de orientação, não de registro. Guarde o que perceber; volte à <a href="ficha-prota.html">Ficha do Jogador</a> só se quiser atualizar algum número antes do próximo capítulo.
 </div>
 
 
 <footer>
-  <p>❦ Ecos dos Bastidores ❦</p>
-  <p>Sistema — Feedback</p>
-  <p><a href="sistema-estatisticas.html">← Estatísticas</a> | <a href="progressao-conquistas.html">Próxima: Conquistas →</a></p>
+  <p>❦ Retalhos da Contracena ❦</p>
+  <p>Sistema — Ressonâncias</p>
+  <p><a href="sistema-estatisticas.html">← Registros</a> | <a href="progressao-conquistas.html">Próxima: Saberes →</a></p>
 </footer>
 
 </div>
@@ -190,7 +223,7 @@
 <button class="back-to-top" id="backToTop" title="Voltar ao topo">↑</button>
 
 <script src="menu.js"></script>
-<script src="theme.js"></script>
 <script src="backtotop.js"></script>
+<script src="dado.js"></script>
 </body>
 </html>
