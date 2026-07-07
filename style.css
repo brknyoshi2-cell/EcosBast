@@ -1020,6 +1020,70 @@ header.hero .flavor {
   padding: 0.3rem 0;
   z-index: 1000;
   border: 1px solid var(--accent-light);
+  /* Dropdowns longos (ex.: Núcleo) ganham scroll próprio em vez de
+     estourar a viewport e "vazar" o scroll pra página por trás. */
+  max-height: min(75vh, 520px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* Barra de rolagem discreta, no tom do tema (Firefox) */
+.dropdown-content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-light) transparent;
+}
+
+/* --------------------------------------------------------------
+   INDICADOR DE CONTEÚDO ESCONDIDO ("tem mais pra baixo")
+   ------------------------------------------------------------
+   Setinha discreta, fixa no rodapé visível do dropdown (position:
+   sticky dentro do próprio scroll), que só aparece quando o JS
+   (menu.js) detecta que ainda há itens abaixo da área visível.
+   Some sozinha ao rolar até o fim — não precisa de clique. */
+.scroll-hint {
+  display: none;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 0.2rem;
+  padding: 0.15rem 0 0.25rem;
+  text-align: center;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--gold);
+  background: linear-gradient(to bottom, transparent, var(--ink) 55%);
+  pointer-events: none;
+  animation: scrollHintBounce 1.4s ease-in-out infinite;
+}
+
+.scroll-hint.visible {
+  display: block;
+}
+
+@keyframes scrollHintBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.75; }
+  50%      { transform: translateY(2px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint {
+    animation: none;
+  }
+}
+
+/* Barra de rolagem discreta, no tom do tema (Chrome/Safari/Edge) */
+.dropdown-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+  background: var(--accent-light);
+  border-radius: 3px;
 }
 
 /* Links dentro do dropdown */
@@ -1129,6 +1193,39 @@ header.hero .flavor {
   margin: 0.6rem 0 0.2rem 0;
 }
 
+/* Ação colapsável — o próprio título é o clique (jornada-iniciante.html
+   e jornada-avancada.html usam <details class="acao"> diretamente, sem
+   o rótulo genérico "Como jogar"; jornada-final.html mantém o formato
+   antigo — div.acao + h4 + details.acao-corpo — e não foi tocada). */
+details.acao > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: bold;
+  user-select: none;
+}
+details.acao > summary::-webkit-details-marker { display: none; }
+details.acao > summary::before {
+  content: "▸";
+  font-size: 0.75em;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+details.acao[open] > summary::before {
+  transform: rotate(90deg);
+}
+details.acao > summary:hover {
+  opacity: 0.8;
+}
+details.acao[open] > summary {
+  margin-bottom: 0.5rem;
+}
+
 .fase-badge {
   display: inline-block;
   background: var(--parchment-dark);
@@ -1235,9 +1332,122 @@ details.tabela-colapsavel > summary.pergunta {
   font-variant: small-caps;
   letter-spacing: 0.03em;
 }
+
+/* Modificador "com-caixa": mesma abinha de sempre, mas quando abre
+   sobra uma caixinha ao redor de tudo — igual ao cartilha/"O Mundo
+   Pergunta", só que no tom de cor que a tabela-colapsavel já usava
+   (dourado/accent, o mesmo do resto do site; o tom místico é
+   exclusivo do cartilha). Usado em jornada-iniciante.html e
+   jornada-avancada.html. */
+details.tabela-colapsavel.com-caixa {
+  border: 1px solid var(--accent-light);
+  border-radius: 8px;
+  background: var(--parchment-dark);
+  overflow: hidden;
+  margin: 0.6rem 0;
+}
+details.tabela-colapsavel.com-caixa > summary,
+details.tabela-colapsavel.com-caixa > summary.pergunta {
+  width: auto;
+  max-width: none;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  padding: 0.6rem 1rem;
+}
+details.tabela-colapsavel.com-caixa > summary:hover {
+  background: rgba(184, 134, 11, 0.12);
+}
+details.tabela-colapsavel.com-caixa[open] > summary {
+  border-bottom: 1px solid var(--accent-light);
+  margin-bottom: 0;
+}
+details.tabela-colapsavel.com-caixa > *:not(summary) {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+details.tabela-colapsavel.com-caixa > *:not(summary):first-of-type {
+  margin-top: 0.8rem;
+}
+details.tabela-colapsavel.com-caixa > *:last-child {
+  margin-bottom: 1rem;
+}
 /* dentro do corpo de ação, os parágrafos herdam o espaçamento de .acao */
 details.acao-corpo > *:not(summary) {
   margin-left: 0.1rem;
+}
+
+/* ============================================================
+   CARTILHA — cartões colapsáveis (cartões-resumo e blocos maiores
+   de conteúdo, como "🌍 O Mundo Pergunta"). Mesma mecânica de
+   abrir/fechar da abinha acima (seta que gira + transição suave,
+   sem o marcador padrão do navegador) — só que em formato de
+   cartão, porque aqui dentro cabe mais conteúdo.
+   ============================================================ */
+details.cartilha {
+  margin: 1.3rem 0;
+  border: 1px solid var(--accent-light);
+  border-radius: 8px;
+  background: var(--parchment-dark);
+  overflow: hidden;
+}
+details.cartilha > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.02rem;
+  user-select: none;
+  transition: background 0.15s;
+}
+details.cartilha > summary::-webkit-details-marker { display: none; }
+details.cartilha > summary::before {
+  content: "▸";
+  font-size: 0.85em;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+details.cartilha[open] > summary::before {
+  transform: rotate(90deg);
+}
+details.cartilha > summary:hover {
+  background: rgba(184, 134, 11, 0.12);
+}
+details.cartilha[open] > summary {
+  border-bottom: 1px solid var(--accent-light);
+}
+details.cartilha > *:not(summary) {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+details.cartilha > *:not(summary):first-of-type {
+  margin-top: 1rem;
+}
+details.cartilha > *:last-child {
+  margin-bottom: 1.2rem;
+}
+
+/* Modificador "mundo-pergunta": a mecânica de abrir/fechar é a MESMA
+   de qualquer .cartilha — o que muda é só o tom de cor, para os blocos
+   "🌍 O Mundo Pergunta" se distinguirem dos cartões-resumo comuns sem
+   precisar de um botão diferente. */
+details.cartilha.mundo-pergunta {
+  background: rgba(74, 74, 107, 0.07);
+  border-color: var(--mystery);
+}
+details.cartilha.mundo-pergunta > summary {
+  color: var(--mystery);
+}
+details.cartilha.mundo-pergunta > summary:hover {
+  background: rgba(74, 74, 107, 0.14);
+}
+details.cartilha.mundo-pergunta[open] > summary {
+  border-bottom-color: var(--mystery);
 }
 
 /* ============================================================

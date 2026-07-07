@@ -78,6 +78,7 @@
 
 <div class="callout rule">
   <p><strong>Transformação de Marca:</strong> ao responder narrativamente a Pergunta Pendente de uma Marca Base, adicione um sufixo pessoal a ela. <span class="tag vinculo-plus">VÍNCULO+</span> vira <span class="tag vinculo-plus">VÍNCULO+: O Peso do Nome de Kael</span>. A Marca transformada dá +1 em rolagens tematicamente conectadas a essa resposta específica.</p>
+  <p>A coluna <strong>Invocação (+1/+2)</strong> abaixo mostra o padrão específico de cada Marca Base — o mesmo texto que o <a href="#gerador">Gerador de Marca</a> usa por trás das cortinas. Todas seguem o teto global de +2 por rolagem (ver <a href="#regras-invocacao">Regras de Invocação</a>).</p>
 </div>
 
 <p>
@@ -92,6 +93,7 @@
   <span class="tag" style="background: var(--gold); color: var(--parchment);">PROMESSA</span>
   <span class="tag" style="background: var(--accent); color: var(--parchment);">COSTURA</span>
   <span class="tag" style="background: var(--tensao, var(--accent)); color: var(--parchment);">VIGÍLIA</span>
+  <span class="tag" style="background: var(--gold); color: var(--parchment);">FAVOR</span>
   <span class="tag" style="background: var(--danger); color: var(--parchment);">DÍVIDA</span>
   <span class="tag" style="background: #4a2a2a; color: var(--parchment);">FERRUGEM</span>
   <span class="tag" style="background: var(--success); color: var(--parchment);">COLHEITA</span>
@@ -100,27 +102,33 @@
   <span class="tag" style="background: var(--romance); color: var(--parchment);">PONTE</span>
   <span class="tag" style="background: var(--gold); color: var(--parchment);">HERANÇA</span>
   <span class="tag" style="background: var(--danger); color: var(--parchment);">CHAMA</span>
+  <span class="tag" style="background: var(--accent-light); color: var(--parchment);">BÊNÇÃO</span>
+  <span class="tag" style="background: var(--soft); color: var(--parchment);">ENCANTO</span>
+  <span class="tag" style="background: var(--mystery); color: var(--parchment);">FERA</span>
 </p>
 
 <table>
-<tr><th>Marca</th><th>O Que Representa</th><th>Pergunta Pendente</th><th>Reações de NPCs</th></tr>
+<tr><th>Marca</th><th>O Que Representa</th><th>Pergunta Pendente</th><th>Reações de NPCs</th><th>Invocação (+1/+2)</th></tr>
 <tr>
   <td><span class="tag vinculo-plus">VÍNCULO+</span></td>
   <td>Laço positivo com NPC ou lugar</td>
   <td><em>"O que essa pessoa faria por você que ninguém mais faria?"</em></td>
   <td>O NPC em questão te procura primeiro quando precisa de ajuda. Outros notam o laço e podem pedir que você interceda por eles.</td>
+  <td>+1 quando a ação nasce diretamente do vínculo (pedir ajuda, confiar um segredo); +2 se o momento colocar esse vínculo à prova de verdade. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag vinculo-minus">VÍNCULO−</span></td>
   <td>Laço tenso ou dívida não resolvida</td>
   <td><em>"O que vocês evitam dizer um ao outro — e quem vai falar primeiro?"</em></td>
   <td>O NPC age com cautela perto de você. Outros que sabem da tensão ficam desconfortáveis quando vocês dois estão na mesma cena.</td>
+  <td>Pode ser invocada como penalidade: −1 no dado para ganhar +1 Retalho, quando a tensão pesa sobre a cena. Como bônus positivo, +1 se a ação for enfrentar a tensão de frente.</td>
 </tr>
 <tr>
   <td><span class="tag misterio">MISTÉRIO</span></td>
   <td>Algo não resolvido, uma lacuna na história</td>
   <td><em>"O que você acha que está por trás disso — e por que tem medo de estar certo?"</em></td>
   <td>NPCs curiosos fazem perguntas que você não consegue responder. NPCs que sabem mais do que parecem te observam de longe.</td>
+  <td>+1 ao investigar ou puxar o fio dessa lacuna; +2 se a investigação te expuser a algum risco real. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag tensao">TENSÃO</span></td>
@@ -133,90 +141,133 @@
   <td>Conforto e rotina, o que ancora o dia</td>
   <td><em>"Que parte da sua rotina você não sobreviveria sem — e o que acontece quando ela é interrompida?"</em></td>
   <td>NPCs te pedem favores caseiros sem cerimônia. Figurantes que te veem com frequência já sabem seu pedido antes de você fazer.</td>
+  <td>+1 em rolagens que envolvam a Contracena, o cotidiano ou o cuidado com o espaço; +2 se a rotina estiver sob ameaça direta. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag eco">MEMÓRIA</span></td>
   <td>Momento significativo já vivido e registrado</td>
   <td><em>"Se pudesse reviver esse momento, mudaria algo — ou tem medo de descobrir que não mudaria nada?"</em></td>
   <td>NPCs presentes nessa memória reagem de forma diferente quando o assunto vem à tona. Às vezes eles lembram diferente de você.</td>
+  <td>Já gerou Retalho quando criada — invocá-la traz +1 adicional em rolagens que revisitem essa lembrança; +2 se reviver a cena exigir enfrentar algo doloroso.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--mystery); color: var(--parchment);">SAUDADE</span></td>
   <td>Algo que ficou pela metade — despedida mal feita, estação que acabou cedo</td>
   <td><em>"O que você faria diferente se soubesse, na hora, que era a última vez?"</em></td>
   <td>NPCs que dividiram esse momento com você mudam de assunto se ele vier à tona sem aviso. Alguns preferem não tocar no nome; outros perguntam por ele toda vez que te veem.</td>
+  <td>+1 em rolagens de PENA ou BRASA quando o passado se conecta diretamente à cena; +2 se reencontrar de fato o que ficou pela metade. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: #4a2a2a; color: var(--parchment);">INSÔNIA</span></td>
   <td>Noites maldormidas por preocupação</td>
   <td><em>"O que você faz nas horas que ninguém vê você acordado?"</em></td>
   <td>NPCs que moram perto notam a luz acesa tarde da noite e comentam, com cuidado ou com humor. Alguns se oferecem pra fazer companhia; outros só fingem não ter notado.</td>
+  <td>+1 em rolagens de LENTE em cenas noturnas; −1 em BRASA no primeiro Gesto do dia enquanto ativa (custo aceito em troca do bônus). Nunca mais que +2 de bônus na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--gold); color: var(--parchment);">PROMESSA</span></td>
   <td>Compromisso feito de coração aberto e ainda não cumprido</td>
   <td><em>"O que vai custar cumprir essa promessa — e você ainda está disposto a pagar?"</em></td>
   <td>Quem sabe da promessa cobra, mesmo que com delicadeza — um comentário solto, uma pergunta capciosa. Quem não sabe nota que você fica tenso quando o assunto se aproxima.</td>
+  <td>+1 em rolagens que aproximem você de cumprir a promessa; +2 no Gesto que efetivamente a cumpre. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--accent); color: var(--parchment);">COSTURA</span></td>
   <td>Reparo visível — em artefato ou em relação, com a emenda à mostra</td>
   <td><em>"O reparo ficou mais bonito do que o original — ou só mais honesto?"</em></td>
   <td>NPCs que conhecem a história por trás do reparo tocam a emenda com respeito, quase reverência. Estranhos perguntam por curiosidade, sem saber o peso da resposta.</td>
+  <td>+1 em Curadoria quando o trabalho envolve consertar algo já quebrado antes; +2 se o reparo for de algo simbolicamente importante para você. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--tensao, var(--accent)); color: var(--parchment);">VIGÍLIA</span></td>
   <td>Cuidar de algo ou alguém que exige atenção constante</td>
   <td><em>"O que acontece com você quando finalmente baixa a guarda?"</em></td>
   <td>NPCs próximos notam o cansaço acumulado e oferecem revezar, mesmo que você recuse. Quem depende do seu cuidado constante busca sua presença antes de qualquer outra.</td>
+  <td>+1 em rolagens de proteção ou cuidado contínuo; +2 no momento exato em que a vigília é testada por um imprevisto. Nunca mais que +2 na mesma rolagem.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--gold); color: var(--parchment);">FAVOR</span></td>
+  <td>Um favor que te devem — crédito de boa-fé que a cidade guarda em seu nome</td>
+  <td><em>"O que você está guardando esse favor para pedir — e por que ainda não pediu?"</em></td>
+  <td>Quem te deve age com uma generosidade preventiva: se antecipa, oferece antes que você peça, para que a conta não pese. Outros que sabem do favor calculam se vale a pena estar do seu lado quando você for cobrar.</td>
+  <td>É saldável, não segue o padrão +1/+2: cobrar o favor não custa Retalho, custa o crédito construído (ver Regras de Invocação abaixo).</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--danger); color: var(--parchment);">DÍVIDA</span></td>
   <td>Favor recebido que ainda não foi retribuído</td>
   <td><em>"O que essa pessoa vai pedir de volta — e você vai conseguir recusar, se precisar?"</em></td>
   <td>Quem é credor age com uma cordialidade calculada — nunca cobra na cara, mas nunca deixa esquecer. Outros que sabem do favor ficam de olho em como (e se) você vai saldar.</td>
+  <td>Pode ser invocada como penalidade: −1 no dado para ganhar +1 Retalho, quando o peso da dívida pesa sobre a cena. Como ação de saldar, +1 no Gesto que paga a dívida.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: #4a2a2a; color: var(--parchment);">FERRUGEM</span></td>
   <td>Deterioração lenta — algo se perdendo aos poucos e sem alarde</td>
   <td><em>"Quando você notou pela primeira vez que algo estava se perdendo — e por que não fez nada na hora?"</em></td>
   <td>NPCs que lembram de como as coisas eram comentam a mudança com pesar, mesmo sem dizer diretamente. Quem só conheceu você depois não nota nada — e isso, de algum jeito, também dói.</td>
+  <td>Aplica −1 em rolagens diretamente ligadas ao que está enferrujando; pode ser invocada para +1 quando você decide finalmente agir para deter a perda. Nunca mais que +2 de bônus na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--success); color: var(--parchment);">COLHEITA</span></td>
   <td>Resultado de um esforço longo finalmente aparecendo</td>
   <td><em>"Esse resultado é tudo que você esperava — ou também é uma despedida do processo que te trouxe até aqui?"</em></td>
   <td>NPCs que apoiaram o esforço celebram com você, genuinamente felizes. Alguns já perguntam qual é o próximo projeto, antes que você tenha tempo de sentir o que essa colheita significa.</td>
+  <td>+1 em rolagens que colham diretamente o fruto desse esforço; +2 se colher esse fruto exigir abrir mão de outra coisa. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--mystery); color: var(--parchment);">INVERNO</span></td>
   <td>Período de retração emocional — fechar-se um pouco, guardar energia</td>
   <td><em>"O que você está esperando passar — e vai reconhecer quando isso acontecer?"</em></td>
   <td>NPCs próximos respeitam a distância, mesmo sem entender totalmente. Alguns insistem, gentilmente, em manter contato mínimo — só pra você saber que a porta continua aberta.</td>
+  <td>Aplica −1 em rolagens sociais que exijam abertura enquanto ativa; pode ser invocada para +1 em rolagens de PENA ou BRASA quando o silêncio em si é a escolha certa. Nunca mais que +2 de bônus na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--success); color: var(--parchment);">RAIZ</span></td>
   <td>Pertencimento profundo a um lugar</td>
   <td><em>"O que aconteceria com você se precisasse ir embora desse lugar amanhã?"</em></td>
   <td>Figurantes e vizinhos te tratam como parte da paisagem, não como visita. Quem ameaça o lugar te encontra defendendo-o antes mesmo de perceber que decidiu isso.</td>
+  <td>+1 em rolagens sociais ou de cuidado dentro desse lugar; +2 se o lugar estiver sob ameaça direta. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--romance); color: var(--parchment);">PONTE</span></td>
   <td>Reconciliação em andamento — duas pessoas tentando se encontrar de novo</td>
   <td><em>"Quem vai dar o primeiro passo dessa vez — e o que acontece se ninguém der?"</em></td>
   <td>NPCs que testemunharam o afastamento observam a aproximação com uma mistura de esperança e cautela. Alguns torcem abertamente; outros preferem não se envolver, temendo que piore.</td>
+  <td>+1 em rolagens de BRASA voltadas a reconciliar; +2 se o gesto de reconciliação for público e arriscado. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--gold); color: var(--parchment);">HERANÇA</span></td>
   <td>Algo deixado por alguém antes de você — não escolhido, apenas recebido</td>
   <td><em>"Você quer isso porque é seu — ou porque era de quem veio antes?"</em></td>
   <td>NPCs que conheceram quem veio antes de você fazem comparações, às vezes sem querer. Alguns esperam que você continue exatamente igual; outros esperam o oposto.</td>
+  <td>+1 em rolagens de Curadoria ou Ofício ligadas ao que foi herdado; +2 se usar a herança de um jeito que a pessoa original nunca imaginaria. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--danger); color: var(--parchment);">CHAMA</span></td>
   <td>Paixão recente e urgente — interesse, pessoa ou projeto que tomou conta de repente</td>
   <td><em>"O que você está disposto a deixar de lado por causa dessa urgência?"</em></td>
   <td>NPCs que dependiam da sua atenção antes notam a ausência e reagem — alguns com ciúme, outros com genuíno interesse em entender o que te tomou de assalto.</td>
+  <td>+1 em rolagens que sigam essa urgência com entusiasmo; +2 se seguir a chama significar abrir mão de algo estável. Nunca mais que +2 na mesma rolagem.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--accent-light); color: var(--parchment);">BÊNÇÃO</span></td>
+  <td>Um gesto de fé oferecido ou recebido — prece, ritual da cidade, bênção que alguém insistiu em dar</td>
+  <td><em>"Você acredita que aquilo tocou algo maior — ou só precisava acreditar em alguma coisa naquele dia?"</em></td>
+  <td>Quem fez o gesto observa, sem cobrar resposta, se ele "pegou" em você. Céticos comentam com um meio-sorriso; quem tem fé de verdade trata o assunto com um cuidado maior do que o esperado.</td>
+  <td>+1 em rolagens onde o gesto — o ritual, a prece, a bênção — importa mais que o resultado prático; +2 se a cena testar diretamente se você ainda acredita naquilo. Nunca mais que +2 na mesma rolagem.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--soft); color: var(--parchment);">ENCANTO</span></td>
+  <td>Um instante de assombro simples — algo comum que, por um segundo, pareceu maior do que era</td>
+  <td><em>"O que você faria diferente se soubesse, com certeza, que aquilo era real?"</em></td>
+  <td>Quem também viu troca um olhar cúmplice com você sempre que o assunto ressurge. Quem não viu ouve a história com um ceticismo gentil — ou inveja de não ter estado lá.</td>
+  <td>+1 em rolagens que busquem entender ou recriar esse instante; +2 se a cena colocar à prova se o assombro era real. Nunca mais que +2 na mesma rolagem.</td>
+</tr>
+<tr>
+  <td><span class="tag" style="background: var(--mystery); color: var(--parchment);">FERA</span></td>
+  <td>Um vestígio de algo grande e sem nome que tocou você, um objeto ou um lugar — garra, pelo, rastro, boato de estrada que se recusa a morrer</td>
+  <td><em>"Você vai dar nome ao que deixou esse rastro — ou prefere que continue sendo lenda de estrada?"</em></td>
+  <td>Quem ouve a história se afasta um passo sem perceber, ou se inclina para ouvir mais perto — poucos ficam indiferentes. Céticos pedem prova que você não tem; quem já ouviu boato parecido troca um olhar com você, em silêncio.</td>
+  <td>+1 em rolagens que investiguem, rastreiem ou tentem nomear a origem do vestígio; +2 se a cena colocar diretamente à prova se a fera é real. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 </table>
 
@@ -247,7 +298,7 @@
   <td><em>"Quando alguém a nota, o que você diz — e o que você decide não contar?"</em></td>
   <td>Estranhos ficam curiosos e às vezes perguntam diretamente. NPCs que conhecem a história ficam em silêncio. Os que não conhecem inventam.</td>
   <td>Evento de expedição (d6: 4)</td>
-  <td>Narrativa. Quando transformada, dá +1 em rolagens de superação relacionadas à origem da cicatriz.</td>
+  <td>+1 em rolagens de superação relacionadas à origem da cicatriz, mesmo antes da transformação; +2 se enfrentar diretamente o que a causou. Quando transformada, esse +1 passa a ser permanente. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 </table>
 
@@ -271,7 +322,7 @@
   <td><em>"Você entende de combate — mas entende por que as pessoas chegam até ele?"</em></td>
   <td>Quebradores te respeitam sem precisar de apresentação. Civis te olham com uma mistura de alívio e desconforto.</td>
   <td>Cômodo Sala de Armas</td>
-  <td>+1 em rolagens com quebradores e situações de conflito.</td>
+  <td>+1 em rolagens com quebradores e situações de conflito; +2 se a situação exigir decidir entre proteger e machucar. Nunca mais que +2 na mesma rolagem. É permanente — só pode ser invocada como bônus, nunca como custo.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--mystery); color: var(--parchment);">SÁBIO</span></td>
@@ -279,7 +330,7 @@
   <td><em>"Existe algo que você sabe que preferia não saber?"</em></td>
   <td>Acadêmicos te procuram com perguntas. Pessoas comuns te pedem para "explicar de um jeito que faça sentido".</td>
   <td>Cômodo Biblioteca Arcana</td>
-  <td>+1 em rolagens com acadêmicos e situações de conhecimento.</td>
+  <td>+1 em rolagens com acadêmicos e situações de conhecimento; +2 se o conhecimento em jogo for algo que você guarda a contragosto. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: #4a2a2a; color: var(--parchment);">OCULTISTA</span></td>
@@ -287,7 +338,7 @@
   <td><em>"O que você sabe que ninguém mais sabe — e por que ainda não contou?"</em></td>
   <td>Marginais te falam com franqueza incomum. NPCs respeitáveis fingem não te conhecer em público.</td>
   <td>Cômodo Arquivo dos Espíritos</td>
-  <td>+1 em rolagens com marginais e situações de segredos.</td>
+  <td>+1 em rolagens com marginais e situações de segredo; +2 se revelar o segredo custar caro. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 </table>
 
@@ -307,11 +358,11 @@
 
 <table>
 <tr><th>Marca</th><th>Significado</th><th>Como obter</th><th>Efeito mecânico</th></tr>
-<tr><td><span class="tag" style="background: var(--success); color: var(--parchment);">CONFIANÇA</span></td><td>O NPC confia em você profundamente</td><td>Rota de Romance — Fase 2 (Amizade Profunda)</td><td>+1 em rolagens de BRASA com este NPC</td></tr>
-<tr><td><span class="tag" style="background: var(--romance); color: var(--parchment);">INTIMIDADE</span></td><td>Vocês compartilham segredos e vulnerabilidades</td><td>Rota de Romance — Fase 3 (Romance)</td><td>+2 em rolagens de BRASA com este NPC</td></tr>
-<tr><td><span class="tag" style="background: var(--gold); color: var(--parchment);">PARCEIRO</span></td><td>Vocês são parceiros para sempre</td><td>Rota de Romance — Fase 4 (Compromisso)</td><td>+1 em todas as rolagens quando trabalhando com este NPC</td></tr>
-<tr><td><span class="tag" style="background: var(--success); color: var(--parchment);">CORAJOSO</span></td><td>Explorador superou um medo</td><td>Evolução de NPC (Explorador)</td><td>+1 em rolagens de risco</td></tr>
-<tr><td><span class="tag" style="background: var(--romance); color: var(--parchment);">CONFIÁVEL</span></td><td>Forasteiro encontrou confiança</td><td>Evolução de NPC (Forasteiro)</td><td>+1 em rolagens de confiança</td></tr>
+<tr><td><span class="tag" style="background: var(--success); color: var(--parchment);">CONFIANÇA</span></td><td>O NPC confia em você profundamente</td><td>Rota de Romance — Fase 2 (Amizade Profunda)</td><td>+1 em rolagens de BRASA com este NPC; +2 se a cena colocar essa confiança em teste real. Nunca mais que +2 na mesma rolagem.</td></tr>
+<tr><td><span class="tag" style="background: var(--romance); color: var(--parchment);">INTIMIDADE</span></td><td>Vocês compartilham segredos e vulnerabilidades</td><td>Rota de Romance — Fase 3 (Romance)</td><td>+2 em rolagens de BRASA com este NPC (já é o teto máximo — não some com outros bônus além do limite de +2 por rolagem).</td></tr>
+<tr><td><span class="tag" style="background: var(--gold); color: var(--parchment);">PARCEIRO</span></td><td>Vocês são parceiros para sempre</td><td>Rota de Romance — Fase 4 (Compromisso)</td><td>+1 em todas as rolagens quando trabalhando ao lado deste NPC; +2 se o trabalho envolver proteger o que vocês construíram juntos. Nunca mais que +2 na mesma rolagem.</td></tr>
+<tr><td><span class="tag" style="background: var(--success); color: var(--parchment);">CORAJOSO</span></td><td>Explorador superou um medo</td><td>Evolução de NPC (Explorador)</td><td>+1 em rolagens de risco ao lado desse NPC; +2 se o risco reabrir exatamente o medo que ele superou. Nunca mais que +2 na mesma rolagem.</td></tr>
+<tr><td><span class="tag" style="background: var(--romance); color: var(--parchment);">CONFIÁVEL</span></td><td>Forasteiro encontrou confiança</td><td>Evolução de NPC (Forasteiro)</td><td>+1 em rolagens de confiança envolvendo esse NPC; +2 se a cena exigir provar essa confiança sob pressão. Nunca mais que +2 na mesma rolagem.</td></tr>
 </table>
 
 <div class="section-divider">❦ ❦ ❦</div>
@@ -339,7 +390,7 @@
   <td><em>"O que você fez com isso — e valeu o preço?"</em></td>
   <td>NPCs que reconhecem o feito mudam de postura na sua presença — alguns pedem para ver o artefato de perto, outros preferem manter distância do que ele representa.</td>
   <td>Evento Clima Tempestade: Artefato Lendário Encontrado</td>
-  <td>+1 em restauração de artefatos raros</td>
+  <td>+1 em restauração de artefatos raros; +2 se o artefato remeter diretamente ao evento que originou a Marca. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--danger); color: var(--parchment);">MALDITO</span></td>
@@ -347,7 +398,7 @@
   <td><em>"Você aceitaria desfazer a maldição se isso apagasse tudo que veio junto com ela?"</em></td>
   <td>Quem sabe o que é mantém distância calculada, educada mas firme. Quem não sabe sente que algo está errado sem conseguir dizer o quê.</td>
   <td>Evento Clima Tempestade: A Maldição Antiga</td>
-  <td>−1 em rolagens de sorte, +1 em rolagens de superação</td>
+  <td>Aplica −1 em rolagens de sorte; pode ser invocada para +1 em rolagens de superação quando você usa a própria maldição a seu favor. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--romance); color: var(--parchment);">ACOLHEDOR</span></td>
@@ -355,7 +406,7 @@
   <td><em>"O que você ganhou ao abrir essa porta — que você não esperava receber?"</em></td>
   <td>Quem você acolheu fala de você com um carinho que constrange. Outros na mesma situação passam a te procurar primeiro, sabendo que a porta está aberta.</td>
   <td>Ajudar um figurante em situação de vulnerabilidade</td>
-  <td>+1 em rolagens com refugiados e comunidades marginalizadas</td>
+  <td>+1 em rolagens com refugiados e comunidades marginalizadas; +2 se acolher custar algo concreto naquele momento. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--accent); color: var(--parchment);">PROFETIZADO</span></td>
@@ -363,7 +414,7 @@
   <td><em>"E se a profecia estiver errada sobre você?"</em></td>
   <td>Crentes na profecia te tratam com um misto de reverência e expectativa pesada. Céticos questionam abertamente, testando se você aguenta a pressão do papel.</td>
   <td>Evento Clima Tempestade: Profecia Antiga</td>
-  <td>+1 em rolagens de mistério</td>
+  <td>+1 em rolagens de mistério; +2 se a cena testar diretamente se a profecia é verdadeira. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: #4a2a2a; color: var(--parchment);">DESPERTADO</span></td>
@@ -371,7 +422,7 @@
   <td><em>"O que desperta junto com o que você acordou?"</em></td>
   <td>NPCs sensíveis ao sobrenatural sentem uma mudança sutil ao seu redor e evitam perguntar diretamente. Os que sabem o que você acordou observam de longe, à espera do que vem a seguir.</td>
   <td>Evento Clima Tempestade: Deus Desperta</td>
-  <td>Eventos divinos podem ocorrer (narrativo)</td>
+  <td>Não dá bônus numérico direto — habilita eventos divinos ou sobrenaturais como possibilidade narrativa a qualquer momento.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--success); color: var(--parchment);">MONUMENTO</span></td>
@@ -379,7 +430,7 @@
   <td><em>"Você ainda é a pessoa que fez aquilo — ou virou outra desde então?"</em></td>
   <td>Moradores da cidade te apontam para visitantes, contando a história (às vezes errada) do que você fez. Alguns esperam que você continue sendo aquela pessoa; outros já não reconhecem quem você virou.</td>
   <td>Evento Clima Tempestade: Monumento Construído</td>
-  <td>+1 em rolagens sociais na cidade</td>
+  <td>+1 em rolagens sociais na cidade; +2 se a cena confrontar diretamente a distância entre quem você era e quem você é agora. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--mystery); color: var(--parchment);">ALIADO</span></td>
@@ -387,7 +438,7 @@
   <td><em>"O que eles esperam em troca — e você está disposto a dar?"</em></td>
   <td>Membros do Círculo te tratam com um respeito cauteloso, cientes do preço que vem junto do reconhecimento. Rivais do Círculo passam a te ver como alvo por associação.</td>
   <td>Evento Clima Tempestade: Aliança Épica</td>
-  <td>+1 em rolagens com círculos</td>
+  <td>+1 em rolagens com círculos; +2 se a cena cobrar o preço dessa aliança. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 <tr>
   <td><span class="tag" style="background: var(--accent); color: var(--parchment);">HERÓI</span></td>
@@ -395,7 +446,7 @@
   <td><em>"O que você aprendeu com ela que contradiz o que você pensava saber?"</em></td>
   <td>Quebradores comentam o encontro como se fosse lenda, mesmo quando você minimiza. Alguns tentam replicar o que você aprendeu; outros duvidam que a lição valha o que custou.</td>
   <td>Evento Clima Tempestade: O Herói Retorna</td>
-  <td>+1 em rolagens com quebradores</td>
+  <td>+1 em rolagens com quebradores; +2 se a cena testar diretamente essa lição aprendida. Nunca mais que +2 na mesma rolagem.</td>
 </tr>
 </table>
 
@@ -418,7 +469,7 @@
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Regras de Invocação</h3>
+<h3 id="regras-invocacao">Regras de Invocação</h3>
 
 <div class="callout rule">
   <ul>
@@ -426,6 +477,7 @@
     <li>Marcas podem ser <strong>invocadas</strong> para dar +1/+2 em rolagens, dentro desse teto. Justifique narrativamente por que a marca se conecta ao momento.</li>
     <li><strong>Marcas transformadas</strong> (com sufixo pessoal) dão +1 automático em rolagens relacionadas à resposta que as criou — sem precisar invocar, mas esse +1 também conta para o teto global de +2.</li>
     <li><span class="tag vinculo-minus">VÍNCULO−</span> pode ser invocada como penalidade: −1 no dado para ganhar +1 Retalho.</li>
+    <li><span class="tag" style="background: var(--gold); color: var(--parchment);">FAVOR</span> e <span class="tag" style="background: var(--danger); color: var(--parchment);">DÍVIDA</span> são <strong>saldáveis</strong>: quando o favor é cobrado ou a dívida é paga, a Marca é gasta (riscada) — e a cena que a salda quase sempre abre a próxima. Formam o par da reciprocidade da cidade, detalhado em <a href="pilar-confraria-peso.html">Confraria &amp; Cidade — O Peso</a>. Cobrar um <span class="tag" style="background: var(--gold); color: var(--parchment);">FAVOR</span> é a coincidência que você <em>merece</em> (não custa Retalho, custa o crédito que você construiu); é o contraponto de forçar um encontro pagando 1 Retalho.</li>
     <li>Marcas <span class="tag eco">MEMÓRIA</span> já geraram Retalhos quando criadas — invocá-las traz +1 adicional.</li>
     <li>Marcas de Especialização (<span class="tag" style="background: var(--accent); color: var(--parchment);">GUERREIRO</span>, <span class="tag" style="background: var(--mystery); color: var(--parchment);">SÁBIO</span>, <span class="tag" style="background: #4a2a2a; color: var(--parchment);">OCULTISTA</span>) são permanentes e não podem ser removidas.</li>
     <li>Marcas de Relacionamento (<span class="tag" style="background: var(--success); color: var(--parchment);">CONFIANÇA</span>, <span class="tag" style="background: var(--romance); color: var(--parchment);">INTIMIDADE</span>, <span class="tag" style="background: var(--gold); color: var(--parchment);">PARCEIRO</span>) são permanentes e vinculadas a um NPC específico.</li>
