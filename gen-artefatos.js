@@ -258,6 +258,31 @@ function revelarNome(btn) {
   // Chance de um artefato carregar a tag Ironia, independente da Raridade.
   const CHANCE_IRONIA = 0.2;
 
+  // --- Camada opcional (só Raro/Lendário): RASTRO DE ORIGEM (d10) --
+  // A Fera nunca aparece em cena, nunca é nomeada, nunca é confirmada.
+  // Cada entrada é só um vestígio no jeito como o artefato chegou até
+  // a Contracena — quem trouxe fala pouco, e o que fica implícito é
+  // que algo grande e vivo ainda está lá fora. PROMPT, NÃO FATO: o
+  // jogador decide se isso importa, se é lenda de Quebrador bêbado,
+  // ou se um dia bate à porta.
+  const RASTROS_FERA = [
+    'Arrancado de algo que não deveria ter nome. Quem o trouxe não fala da criatura — só que ela ainda respira, em algum lugar.',
+    'Encontrado ao lado de marcas de garra na pedra, fundas e grandes demais para qualquer bicho que a cidade conheça.',
+    'Chegou enrolado em um tufo de pelo cinza, comprido demais, ainda morno quando foi entregue.',
+    'Veio de dentro do que sobrou de um ninho — de quê, exatamente, o Quebrador preferiu não dizer.',
+    'Achado numa clareira onde as árvores cresceram tortas ao redor de um vazio, como se algo enorme tivesse dormido ali por anos.',
+    'Segundo quem o trouxe, foi tirado da boca de algo — e essa pessoa nunca mais quis falar sobre o resgate.',
+    'Chegou com um cheiro que os cães da cidade não esquecem: fogem da rua toda vez que ele é destampado.',
+    'Foi encontrado perto de ossos grandes demais para identificar — talvez de um animal enorme, talvez de outra coisa.',
+    'O Quebrador jura ter ouvido uma respiração enorme antes de conseguir pegá-lo, e nunca mais voltou àquela direção.',
+    'Veio embrulhado em escamas que não pertencem a peixe nem a lagarto catalogado algum — grandes, e ainda meio úmidas.'
+  ];
+
+  // Chance de um artefato Raro/Lendário carregar um Rastro de Origem —
+  // é tempero opcional, não todo artefato profundo precisa de uma
+  // Fera à espreita.
+  const CHANCE_RASTRO_FERA = 0.4;
+
   // --- Raridade: pesos e o que cada tier libera --------------------
   const NIVEIS = [
     { limite: 60, chave: 'comum', nome: 'Comum', recursos: '1d4 Recursos' },
@@ -291,6 +316,7 @@ function revelarNome(btn) {
       pedido: null,
       defeito: null,
       preco: null,
+      origem: null,
       temNomeVerdadeiro: false
     };
 
@@ -311,6 +337,7 @@ function revelarNome(btn) {
     data.pedido = RDC.pick(PEDIDOS);
     data.defeito = RDC.pick(DEFEITOS);
     data.preco = nivel.chave === 'raro' ? RDC.pick(PRECOS_LEVES) : RDC.pick(PRECOS_PESADOS);
+    data.origem = RDC.chance(CHANCE_RASTRO_FERA) ? RDC.pick(RASTROS_FERA) : null;
 
     const temaA = RDC.pick(TEMA_A);
     const temaB = RDC.pick(TEMA_B);
@@ -359,6 +386,7 @@ function revelarNome(btn) {
             <div class="gen-field"><span class="gen-field-label">Preço</span> ${data.preco}</div>
             <div class="gen-field"><span class="gen-field-label">Defeito (Marca Passiva)</span> ${data.defeito}</div>
             ${data.ironia ? `<div class="gen-field"><span class="gen-field-label">🙃 Ironia</span> ${data.ironia}</div>` : ''}
+            ${data.origem ? `<div class="gen-field"><span class="gen-field-label">🐾 De Onde Veio</span> ${data.origem}</div>` : ''}
           </div>
         </div>
     `;
@@ -414,7 +442,12 @@ function revelarNome(btn) {
     { nome: 'A Escada Cantante', efeito: 'conta os passos de quem sobe em voz baixa e melodiosa.' },
     { nome: 'O Novelo Teimoso', efeito: 'se desenrola sozinho até formar, no chão, a palavra que você mais precisa ouvir.' },
     { nome: 'A Janela de Bom Tempo', efeito: 'deixa entrar um raio de sol mesmo em dias fechados, por exatamente cinco minutos.' },
-    { nome: 'O Relógio de Cozinha Generoso', efeito: 'atrasa sozinho alguns minutos sempre que uma refeição é feita com carinho.' }
+    { nome: 'O Relógio de Cozinha Generoso', efeito: 'atrasa sozinho alguns minutos sempre que uma refeição é feita com carinho.' },
+    { nome: 'O Chá que Não Aceita Mentira', efeito: 'esfria na hora exata em que alguém mente perto dele — mesmo que a mentira seja gentil.' },
+    { nome: 'As Penas Esquecidas', efeito: 'se recusam a escrever o nome de alguém que o dono já esqueceu de verdade.' },
+    { nome: 'O Sabonete de Saudade', efeito: 'cheira, cada dia, ao que quem o usa mais sente falta.' },
+    { nome: 'A Porta que Reconhece Visita', efeito: 'range uma melodia diferente para cada pessoa que bate — e nunca erra quem é.' },
+    { nome: 'O Baú Arrumadinho', efeito: 'se reorganiza sozinho por dentro, sempre que ninguém está prestando atenção.' }
   ];
 
   const ONDE = [

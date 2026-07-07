@@ -6,31 +6,20 @@
 <link rel="stylesheet" href="style.css">
 <title>Retalhos da Contracena — Antes do Primeiro Café</title>
 <style>
-  .rotas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-  }
-
-  .rota-card {
+  .porta-card {
     background: var(--parchment-dark);
-    border: 2px solid var(--accent-light);
+    border: 2px solid var(--gold);
     border-radius: 8px;
-    padding: 1.6rem;
+    padding: 1.8rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-
-  .rota-card:hover {
-    border-color: var(--gold);
-    box-shadow: 0 4px 16px rgba(184, 134, 11, 0.15);
+    margin: 2rem 0 1.2rem;
+    box-shadow: 0 4px 16px rgba(184, 134, 11, 0.12);
   }
 
   .rota-titulo {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-variant: small-caps;
     letter-spacing: 0.05em;
     color: var(--accent);
@@ -47,32 +36,26 @@
     margin: 0;
   }
 
-  .rota-card ul {
+  .porta-card ul {
     margin: 0;
     padding-left: 1.2rem;
   }
 
-  .rota-card ul li {
+  .porta-card ul li {
     margin: 0.35rem 0;
     font-size: 0.93rem;
   }
 
-  .rota-quando {
-    font-size: 0.88rem;
-    color: var(--ink-soft);
-    font-style: italic;
-    margin: 0;
-  }
-
   .rota-link {
     display: inline-block;
-    margin-top: auto;
-    padding: 0.55rem 1.2rem;
+    align-self: flex-start;
+    margin-top: 0.4rem;
+    padding: 0.6rem 1.4rem;
     background: var(--accent);
     color: var(--parchment);
     text-decoration: none;
     border-radius: 5px;
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     font-variant: small-caps;
     letter-spacing: 0.04em;
     transition: background 0.2s;
@@ -83,12 +66,18 @@
     color: var(--parchment);
   }
 
-  .convergencia {
-    text-align: center;
-    font-style: italic;
-    color: var(--ink-soft);
-    font-size: 0.95rem;
-    margin: 0.5rem 0 2rem;
+  .porta-secundaria {
+    background: rgba(74, 74, 107, 0.06);
+    border: 1px dashed var(--accent-light);
+    border-radius: 6px;
+    padding: 1.1rem 1.4rem;
+    margin: 0 0 2rem;
+    font-size: 0.93rem;
+  }
+
+  .porta-secundaria a {
+    font-variant: small-caps;
+    letter-spacing: 0.03em;
   }
 
   .leitura-preparatoria {
@@ -114,8 +103,8 @@
   }
 
   @media (max-width: 600px) {
-    .rotas-grid {
-      grid-template-columns: 1fr;
+    .porta-card {
+      padding: 1.4rem 1.2rem;
     }
   }
 </style>
@@ -157,39 +146,24 @@
 
 <div class="section-divider">❦ ❦ ❦</div>
 
-<h3>Duas Rotas para Entrar</h3>
+<h3>Como Entrar</h3>
 
-<p>Há dois caminhos para começar. Eles chegam no mesmo lugar — o primeiro capítulo dos <a href="jornada-iniciante.html">Primeiros Dias</a>. O que muda é como você chega lá.</p>
+<p>Há uma porta só. Ela leva ao mínimo que precisa existir antes do seu primeiro capítulo — e o resto do mundo se tece enquanto você joga, não antes.</p>
 
-<div class="rotas-grid">
-
-  <div class="rota-card">
-    <p class="rota-titulo">Herdar a Contracena</p>
-    <p class="rota-abertura">O lugar já existe. A Confraria tem nome. A cidade tem ruas. Sua tarefa é dar continuidade.</p>
-    <ul>
-      <li>Mundo pré-pronto — Confraria, cidade e NPCs já esboçados</li>
-      <li>Sistemas explicados em uma linha, com links para aprofundamento</li>
-      <li>Cerca de 15 a 30 minutos até o primeiro capítulo</li>
-    </ul>
-    <p class="rota-quando">Escolha esta rota se você quer jogar hoje — se prefere descobrir o mundo jogando, não construindo. É também a rota certa se você não quer tomar muitas decisões antes de começar: quase tudo já vem pronto.</p>
-    <a href="quickstart.html" class="rota-link">Herdar a Contracena →</a>
-  </div>
-
-  <div class="rota-card">
-    <p class="rota-titulo">Tecer a Contracena</p>
-    <p class="rota-abertura">Um lugar vazio esperando. Você põe cada fio no lugar — a magia, a cidade, a Confraria, o silêncio da Contracena.</p>
-    <ul>
-      <li>Você constrói o mundo com tabelas, escolhas ou invenção livre</li>
-      <li>Cada sistema é explicado quando aparece pela primeira vez</li>
-      <li>Uma a duas horas de tecelagem antes do primeiro capítulo</li>
-    </ul>
-    <p class="rota-quando">Escolha esta rota se você quer que o mundo seja seu — se gosta de preparar o chá antes de bebê-lo.</p>
-    <a href="sessao0.html" class="rota-link">Tecer a Contracena →</a>
-  </div>
-
+<div class="porta-card">
+  <p class="rota-titulo">🌱 O Primeiro Suspiro — o Essencial em 15–25 minutos</p>
+  <p class="rota-abertura">Você, a Contracena, a cidade em uma linha, o NPC de conexão, o primeiro Fio, o Clima, a Estação. Só isso — o suficiente para começar a respirar dentro do jogo.</p>
+  <ul>
+    <li>Só o mínimo antes do Dia 1 — nada de decisões que ainda não importam</li>
+    <li>Tudo é rolável ou inventável, no seu ritmo</li>
+    <li>O resto do mundo (magia, artefatos, presenças, cidade profunda, Confraria profunda) se tece jogando, em blocos "🌍 O Mundo Pergunta" espalhados pela jornada</li>
+  </ul>
+  <a href="sessao0.html" class="rota-link">Ir para O Primeiro Suspiro →</a>
 </div>
 
-<p class="convergencia">Ambas chegam no mesmo lugar — o primeiro dia dos Primeiros Dias. Nenhuma é melhor. São ritmos.</p>
+<div class="porta-secundaria">
+  <strong>Quer zero decisões?</strong> <a href="quickstart.html">Vaelstrom</a> te espera — um mundo de exemplo completo, pronto para você adotar como seu.
+</div>
 
 <div class="section-divider">❦ ❦ ❦</div>
 

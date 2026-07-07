@@ -10,6 +10,9 @@
      Pool de Ganchos — expandido da tabela d10 de finais.html
      Cada item carrega uma categoria interna, usada só para
      escolher uma Semente de Fio e um Clima coerentes.
+     Categoria "boato" (Prompt 06): ganchos de rumor de cidade que
+     o jogador pode ou não transformar num antagonista — nunca uma
+     ameaça declarada pelo próprio gerador.
      -------------------------------------------------------- */
   const GANCHOS = [
     { texto: "Um Quebrador traz um artefato estranho que ninguém quer tocar.", categoria: "misterio" },
@@ -32,7 +35,18 @@
     { texto: "Chega, sem remetente, uma carta de um NPC com quem você havia perdido contato.", categoria: "pessoal" },
     { texto: "Um cliente cujo Fio de Encomenda está quase fechando aparece sem avisar, só para saber notícias do artefato.", categoria: "cobranca" },
     { texto: "Chega um recado seco: se o artefato não estiver pronto até o fim do capítulo, o cliente procura outro Restaurador.", categoria: "cobranca" },
-    { texto: "Um Recorrente reaparece antes do esperado, e não é visita — é cobrança pessoal pelo que ainda está incompleto.", categoria: "cobranca" }
+    { texto: "Um Recorrente reaparece antes do esperado, e não é visita — é cobrança pessoal pelo que ainda está incompleto.", categoria: "cobranca" },
+
+    /* --- Boatos da cidade (Prompt 06 / Projeto Ecos do Lá Fora) ---
+       Categoria "boato": nunca afirma vilão, deus, guerra ou fera — só
+       oferece ao jogador a chance de declarar algo, se quiser. Ver
+       lei 1 (Prompt, não fato) do Bloco de Coesão. */
+    { texto: "A cidade sussurra sobre uma sombra a leste que 'está ficando maior'. Se você quiser um antagonista para esta Estação, é agora — e ele nunca precisa aparecer de perto.", categoria: "boato" },
+    { texto: "Chega uma carta sem remetente, uma frase só: 'Eles sabem onde você está.' Quem são 'eles'? Você decide — ou queima a carta e nunca descobre.", categoria: "boato" },
+    { texto: "Um Quebrador jura ter visto, de relance, algo grande demais para ser bicho e devagar demais para ser vento. Pode ter sido cansaço. Pode não ter sido.", categoria: "boato" },
+    { texto: "Um viajante de passagem conta, baixinho, que uma cidade vizinha 'parou de responder às cartas'. Ninguém confirma. Ninguém desmente.", categoria: "boato" },
+    { texto: "Alguém risca um símbolo estranho na porta da Contracena, de madrugada. Aviso? Travessura de criança? Marca de quem ainda se lembra de você?", categoria: "boato" },
+    { texto: "Um velho da cidade repete sempre a mesma história, quando bebe: um 'senhor sem rosto' que um dia vai cobrar uma dívida antiga. Ninguém mais lembra qual dívida.", categoria: "boato" }
   ];
 
   /* --------------------------------------------------------
@@ -89,6 +103,12 @@
       "Se o Fio de Encomenda já está perto de fechar, este é o momento de lembrar disso na mesa.",
       "Abra ou avance um Fio de Tensão ligado à sua reputação como Restaurador.",
       "Pergunte-se: o que acontece se este Fio de Encomenda fechar antes da próxima entrega?"
+    ],
+    boato: [
+      "Abra um Fio de Tensão distante sobre esse boato ou sombra — ele nunca precisa fechar, e pode nunca mais voltar a aparecer.",
+      "Se quiser, dê um nome a essa ameaça agora; se preferir, deixe-a sem nome — e talvez sem resposta.",
+      "Avance em +1 um Fio de Tensão distante já aberto — o boato ganhou mais um detalhe, verdadeiro ou não.",
+      "Anote o boato num canto da ficha e siga em frente; ele pode nunca voltar — ou ser a semente do próximo capítulo."
     ]
   };
 
@@ -121,7 +141,8 @@
     tensao: ["Tempestade", "Neblina"],
     confraria: ["Ameno", "Neblina", "Brisa"],
     pessoal: ["Brisa", "Ameno", "Neblina"],
-    cobranca: ["Tempestade", "Neblina", "Ameno"]
+    cobranca: ["Tempestade", "Neblina", "Ameno"],
+    boato: ["Neblina", "Ameno", "Brisa"]
   };
 
   function gerarGanchoCapitulo() {

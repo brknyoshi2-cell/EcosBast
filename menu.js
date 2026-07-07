@@ -33,11 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
       dias: true,
       items: [
         { label: '☕ Antes do Primeiro Café', url: 'comecar.html' },
-        { label: '🏛️ Herdar a Contracena', url: 'quickstart.html' },
-        { label: '🧵 Tecer a Contracena', url: 'sessao0.html' },
+        { label: '🌱 O Primeiro Suspiro — O Essencial', url: 'sessao0.html' },
+        { label: '🏛️ Vaelstrom — Um Mundo de Exemplo', url: 'quickstart.html' },
         { label: '🌅 Os Primeiros Dias — Caps 1–3', url: 'jornada-iniciante.html' },
+        { label: '🌗 Interlúdio: O Mundo Respira', url: 'interludio-mundo-respira.html' },
         { label: '🌿 Aprofundando — Caps 4–8', url: 'jornada-avancada.html' },
-        { label: '🌙 Rumo ao Entardecer — Caps 9+', url: 'jornada-avancada.html#fase3' },
+        { label: '🌒 Interlúdio: O Eco Chega Mais Perto', url: 'interludio-eco-mais-perto.html' },
+        { label: '🌙 Rumo ao Entardecer — Caps 9+', url: 'jornada-final.html' },
         { label: '❦ Epílogo', url: 'finais.html' },
         { label: '⚡ Referência Rápida', url: 'rapido.html' }
       ]
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { label: 'Marcas', url: 'sistema-tags.html' },
             { label: '🌦️ Climas', url: 'sistema-modos.html' },
             { label: 'A Estação', url: 'sistema-loop.html' },
+            { label: '🌾 A Roda do Ano', url: 'sistema-roda-do-ano.html' },
             { label: 'O Entardecer', url: 'sistema-evento-final.html' },
             { label: 'Retalhos & Recursos', url: 'sistema-ecos-recursos.html' }
           ]
@@ -97,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
           items: [
             { label: '📊 Registros', url: 'sistema-estatisticas.html' },
             { label: '📈 Ressonâncias', url: 'sistema-feedback.html' },
+            { label: '⚖️ O Peso', url: 'sistema-peso.html' },
             { label: '📜 O Que Fica', url: 'sistema-legado.html' }
           ]
         },
@@ -358,6 +362,51 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
 
   navContainer.innerHTML = html;
+
+  /* ============================================================
+     INDICADOR "TEM MAIS PRA BAIXO" (setinha de scroll)
+     ------------------------------------------------------------
+     Dropdowns longos (ex.: Núcleo) rolam dentro de si mesmos
+     (ver .dropdown-content no style.css). Sem indicação visual,
+     não dá pra saber que existe mais conteúdo abaixo da área
+     visível. Aqui a gente injeta uma setinha (▼) fixa no rodapé
+     de cada dropdown-content e liga/desliga sua visibilidade
+     comparando scrollHeight com a posição atual do scroll.
+     A setinha some sozinha ao chegar no fim da lista. ============ */
+  const scrollHints = [];
+
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const content = dropdown.querySelector('.dropdown-content');
+    if (!content) return;
+
+    const hint = document.createElement('div');
+    hint.className = 'scroll-hint';
+    hint.textContent = '▼';
+    hint.setAttribute('aria-hidden', 'true');
+    content.appendChild(hint);
+
+    const update = () => {
+      const escondido = content.scrollHeight - content.scrollTop - content.clientHeight > 4;
+      hint.classList.toggle('visible', escondido);
+    };
+
+    // Rola dentro do próprio dropdown → reavalia a cada scroll.
+    content.addEventListener('scroll', update, { passive: true });
+    // Abre (hover no desktop / toque no mobile) → precisa recalcular,
+    // já que scrollHeight/clientHeight só existem com display:block.
+    dropdown.addEventListener('mouseenter', () => setTimeout(update, 0));
+    dropdown.addEventListener('click', () => setTimeout(update, 0));
+
+    scrollHints.push(update);
+  });
+
+  // Reavalia tudo se a janela for redimensionada (o max-height do
+  // dropdown depende da viewport — ver style.css, min(75vh, 520px)).
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => scrollHints.forEach(fn => fn()), 120);
+  });
 
   /* ============================================================
      COMPORTAMENTO: "clique navega + hover abre"

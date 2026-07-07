@@ -14,6 +14,19 @@
   // Pendente e transformação, e já documentadas na tabela de Marcas Base em
   // sistema-tags.html. Ficam listadas ao fim do bloco Base, abaixo.
   //
+  // BÊNÇÃO e ENCANTO (Projeto Ecos do Lá Fora, Chat E) entram na mesma
+  // categoria e mecânica. Vocabulário para os elementos "vazantes" Sagrado/Fé
+  // (7) e Assombro/Maravilha (8) — nunca afirmam deus ou magia como fato, só
+  // oferecem a Pergunta Pendente. "ENCANTO" foi escolhido no lugar de
+  // "MARAVILHA" para não colidir com o termo já canônico "Maravilha
+  // Cotidiana" (gen-artefatos.js / artefatos.html).
+  //
+  // FERA (Método Deixar Vazar, intensidade "médio") entra na mesma categoria
+  // e mecânica — vocabulário para o elemento Fera/Monstro (v6, item 4,
+  // "ausente por tese"). Ecoa o Rastro "De Onde Veio" de artefatos.html e o
+  // Bestiário de Boatos de gen-retorno.js/sistema-aventureiros.html, sem
+  // reabrir nenhum dos dois.
+  //
   // cssClass  -> usa a classe .tag já existente na página (marcas base originais)
   // cor       -> usa estilo inline background (marcas base adicionais e demais categorias)
   const MARCAS = [
@@ -172,6 +185,35 @@
       perguntaPendente: 'O que você está disposto a deixar de lado por causa dessa urgência?',
       invocacao: '+1 em rolagens que sigam essa urgência com entusiasmo; +2 se seguir a chama significar abrir mão de algo estável. Nunca mais que +2 na mesma rolagem.',
       transformacao: 'Ao escrever o que sobra depois que a urgência inicial esfria — vira hábito, vira decepção, ou vira outra coisa —, a Marca se transforma com sufixo pessoal e +1 automático nessa nova fase.'
+    },
+    {
+      nome: 'BÊNÇÃO',
+      cor: 'var(--accent-light)',
+      origem: 'Nasce de um gesto de fé oferecido ou recebido — uma prece dita baixo, um ritual da cidade, uma bênção que alguém insistiu em te dar mesmo sem saber se ela "pega". Ninguém aqui afirma que algo maior escutou; só que alguém achou que valia tentar.',
+      perguntaPendente: 'Você acredita que aquilo tocou algo maior — ou só precisava acreditar em alguma coisa naquele dia?',
+      invocacao: '+1 em rolagens onde o gesto — o ritual, a prece, a bênção — importa mais que o resultado prático; +2 se a cena testar diretamente se você ainda acredita naquilo. Nunca mais que +2 na mesma rolagem.',
+      transformacao: 'Ao responder a Pergunta Pendente — decidindo, na prática, se aquilo tinha peso —, a Marca ganha sufixo pessoal (ex: BÊNÇÃO: A Prece que Vovó Insistiu) e passa a dar +1 automático em cenas que revisitem essa fé, respondida ou não.'
+    },
+    {
+      nome: 'ENCANTO',
+      cor: 'var(--soft)',
+      origem: 'Nasce de um instante de assombro simples — algo comum que, por um segundo, pareceu maior do que era: uma luz estranha na janela, um silêncio grande demais, uma coincidência boa demais pra ser só coincidência. Ninguém aqui garante que era magia; só que você parou para olhar.',
+      perguntaPendente: 'O que você faria diferente se soubesse, com certeza, que aquilo era real?',
+      invocacao: '+1 em rolagens que busquem entender ou recriar esse instante; +2 se a cena colocar à prova se o assombro era real. Nunca mais que +2 na mesma rolagem.',
+      transformacao: 'Ao responder a Pergunta Pendente — escrevendo se você decidiu que aquilo era real, era só um efeito de luz, ou não precisa de nome —, a Marca ganha sufixo pessoal e +1 automático em cenas que revisitem esse mesmo assombro.'
+    },
+    {
+      // Projeto Ecos do Lá Fora — Deixar Vazar (Fera/Monstro, intensidade
+      // "médio"). Vocabulário para o rastro de uma criatura clássica de
+      // fantasia — nunca afirma que ela existe, só que algo deixou marca.
+      // Ecoa o Rastro "De Onde Veio" (artefatos.html) e o Bestiário de
+      // Boatos (gen-retorno.js / sistema-aventureiros.html).
+      nome: 'FERA',
+      cor: 'var(--mystery)',
+      origem: 'Nasce de um vestígio que ninguém explica direito — uma garra funda demais na pedra, um pelo grande demais para qualquer bicho catalogado, um boato de estrada que se recusa a morrer. Ninguém aqui afirma que a criatura existe; só que algo, em algum lugar, deixou essa marca.',
+      perguntaPendente: 'Você vai dar nome ao que deixou esse rastro — ou prefere que continue sendo lenda de estrada?',
+      invocacao: '+1 em rolagens que investiguem, rastreiem ou tentem nomear a origem do vestígio; +2 se a cena colocar diretamente à prova se a fera é real. Nunca mais que +2 na mesma rolagem.',
+      transformacao: 'Ao responder a Pergunta Pendente — decidindo se a fera é real, se é boato inflado por medo, ou se nunca precisa ser resolvida —, a Marca ganha sufixo pessoal e +1 automático em cenas que revisitem esse mesmo rastro.'
     },
 
     // ---------- Marcas de Perda e Superação (canônicas) ----------

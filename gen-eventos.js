@@ -17,15 +17,17 @@
     { evento: 'Grupo de Quebradores', efeito: 'Um grupo inteiro de Quebradores chega junto, como quem já decidiu ficar.' },
     { evento: 'Expansão da Confraria', efeito: '+1 Cômodo fica disponível, com custo reduzido — a casa está pedindo para crescer.' },
     { evento: 'Sinal de Tempestade', efeito: 'Algo grande se aproxima — ameaça ou oportunidade, ainda não dá para saber qual.' },
-    { evento: 'Festival da Cidade', efeito: 'Um evento especial toma as ruas — boa hora para uma cena de comunidade.' },
+    { evento: 'Festival da Cidade', efeito: 'Um evento especial toma as ruas — boa hora para uma cena de comunidade. (Se você usa A Roda do Ano: 🌱 Brotar é festa de plantio; 🌸 Florescer é festa dos vínculos; 🌾 Colher é festa da fartura; 🍂 Repousar é uma vigília silenciosa. Convite, nunca obrigação.)' },
     { evento: 'Comerciante Viajante', efeito: 'Itens raros ficam disponíveis só neste capítulo — o carrinho não fica muito tempo.' },
     { evento: 'Lenda Nascente', efeito: '+1 Vínculo com a Confraria e com a Cidade — uma história sobre você começa a circular.' },
     { evento: 'Reforma na Praça', efeito: 'A praça central ganha um banco, uma fonte ou um canteiro novo. +1 Vínculo com a Cidade.' },
     { evento: 'Carta de Um Antigo Cliente', efeito: 'Notícias de um Quebrador que já passou pela Confraria chegam por carta.' },
-    { evento: 'Colheita Farta', efeito: 'A cidade celebra uma colheita generosa. +1 Recurso.' },
+    { evento: 'Colheita Farta', efeito: 'A cidade celebra uma colheita generosa. +1 Recurso. (Combina com a volta 🌾 Colher da Roda do Ano, se você a usa.)' },
     { evento: 'Aprendiz Bate à Porta', efeito: 'Alguém pede para aprender o ofício com você — pode virar trabalhador, se você aceitar.' },
     { evento: 'Boato Gentil', efeito: 'Um boato bondoso sobre a Contracena se espalha pela cidade. +1 Retalho.' },
-    { evento: 'Reencontro Inesperado', efeito: 'Alguém que você conheceu antes da Confraria reaparece na cidade, mudado.' }
+    { evento: 'Reencontro Inesperado', efeito: 'Alguém que você conheceu antes da Confraria reaparece na cidade, mudado.' },
+    { evento: 'Notícia de Longe', efeito: 'Um boato chega sobre algo se movendo no horizonte do mundo — guerra? praga? uma migração inteira? Você decide o que se comenta ao jantar. Nada disso cruza a sua porta, por enquanto. (Opcional: você pode abrir um Fio de Tensão à parte só para esse eco distante — não é o Fio de Tensão da Confraria, e nunca precisa fechar.)' },
+    { evento: 'Retorno da Guerra', efeito: 'Um grupo volta com um a menos, e ninguém conta como. A cidade acende uma vela. Você escreve o nome — ou deixa o silêncio. (Se fizer sentido, quem voltou carrega a Marca [GUERREIRO]; isso não abre combate jogável, só o eco de algo vivido longe daqui.)' }
   ];
 
   const SINAIS_CIDADE = [
@@ -43,7 +45,8 @@
     'Você percebe o assunto correndo de boca em boca antes de alguém te contar de fato.',
     'Um cheiro de comida nova — de uma cozinha que não é a sua — chega pela rua.',
     'A luz muda de jeito diferente na hora em que a novidade chega — mais quente, ou mais fria.',
-    'Alguém aparece na Contracena só para contar, sem pedir nada em troca.'
+    'Alguém aparece na Contracena só para contar, sem pedir nada em troca.',
+    'Um viajante repete, com medo, um nome que você nunca ouviu. Se quiser, é o nome de uma ameaça a leste. Se não, é só o medo de um estranho passando.'
   ];
 
   // ---------------------------------------------------------
